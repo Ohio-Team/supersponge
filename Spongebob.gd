@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
 
-@export var SPEED = 24.0
+@export var SPEED = 40.0
 @onready var camera : ThirdPersonCamera = $ThirdPersonCamera
 const JUMP_VELOCITY = 24.0
 
