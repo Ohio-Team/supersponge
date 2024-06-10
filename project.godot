@@ -23,3 +23,7 @@ MusicPlayer="*res://scenes/MusicPlayer.tscn"
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/bmod/plugin.cfg", "res://addons/third-person-camera/plugin.cfg")
+
+[physics]
+
+3d/default_gravity=34.0
