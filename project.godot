@@ -22,4 +22,4 @@ MusicPlayer="*res://scenes/MusicPlayer.tscn"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/bmod/plugin.cfg", "res://addons/modplayer/plugin.cfg")
+enabled=PackedStringArray("res://addons/bmod/plugin.cfg", "res://addons/third-person-camera/plugin.cfg")

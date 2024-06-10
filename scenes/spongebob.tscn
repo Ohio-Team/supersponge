@@ -1,13 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://kvuqj2x2m3w7"]
+[gd_scene load_steps=5 format=3 uid="uid://kvuqj2x2m3w7"]
 
 [ext_resource type="Script" path="res://Spongebob.gd" id="1_tsn0j"]
 [ext_resource type="ArrayMesh" uid="uid://ddsup8v3qia1" path="res://assets/3d/spongebobby/spongebob.obj" id="2_ihwkd"]
+[ext_resource type="PackedScene" uid="uid://wmf2eu0uuhrg" path="res://addons/third-person-camera/third_person_camera/ThirdPersonCamera.tscn" id="3_got34"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_88wrv"]
 size = Vector3(29.1303, 43.6467, 18.9225)
 
 [node name="Spongebob" type="CharacterBody3D"]
 script = ExtResource("1_tsn0j")
+SPEED = 64.0
 
 [node name="Spongebob" type="MeshInstance3D" parent="."]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 0)
@@ -17,6 +19,11 @@ mesh = ExtResource("2_ihwkd")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.589691, 21.8117, 1.05344)
 shape = SubResource("BoxShape3D_88wrv")
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.959289, 0.282425, 0, -0.282425, 0.959289, 0, 50.2874, 19.9785)
-fov = 110.691
+[node name="ThirdPersonCamera" parent="." instance=ExtResource("3_got34")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 38.7525, 2.9346)
+distance_from_pivot = 45.0
+current = true
+mouse_follow = true
+spring_arm_collision_mask = 277
+spring_arm_margin = 14.66
+near = 0.2
