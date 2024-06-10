@@ -1,0 +1,9 @@
+res://scenes/3dtest.tscn
+res://scenes/3dtest.gd
+res://TestScene.tscn
+res://demo/ChannelIndicator.gd
+res://demo/RowIndicator.gd
+res://scenes/MusicPlayer.tscn
+res://scenes/MusicPlayer.gd
+res://scenes/spongebob.tscn
+res://Spongebob.gd
