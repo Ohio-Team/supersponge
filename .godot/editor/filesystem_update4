@@ -5,3 +5,4 @@ res://TPC-demo/TestScene.tscn
 res://addons/third-person-camera/third_person_camera/ThirdPersonCamera.tscn
 res://scenes/3dtest.gd
 res://Spongebob.gd
+res://scenes/spongebob3d.tscn

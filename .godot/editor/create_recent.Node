@@ -1,3 +1,4 @@
+CSGBox3D
 ThirdPersonCamera
 CollisionShape3D
 CSGCylinder3D
@@ -5,5 +6,4 @@ StaticBody3D
 Camera3D
 CharacterBody3D
 AudioStreamPlayer
-CSGBox3D
 ModPlayer
