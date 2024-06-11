@@ -1,0 +1,52 @@
+[gd_scene load_steps=7 format=3 uid="uid://cmyynlgpadcm4"]
+
+[ext_resource type="Script" path="res://scripts/2dtest.gd" id="1_ltid3"]
+[ext_resource type="Texture2D" uid="uid://bjqf1nbmaob28" path="res://assets/2d/miscsprites/downtown.png" id="1_lx2ql"]
+[ext_resource type="Texture2D" uid="uid://bsodv4tuo7r18" path="res://assets/2d/miscsprites/gradient.png" id="2_6u75i"]
+[ext_resource type="PackedScene" uid="uid://cjoo6ilm8eim1" path="res://scenes/2d/spongebob2d.tscn" id="3_cy4ry"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hetgo"]
+size = Vector2(4800, 22)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_811t0"]
+size = Vector2(209, 20)
+
+[node name="2Dtest" type="Node2D"]
+script = ExtResource("1_ltid3")
+
+[node name="Downtown" type="Sprite2D" parent="."]
+position = Vector2(2400, 435)
+texture = ExtResource("1_lx2ql")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(-4, 4)
+motion_scale = Vector2(0, 0)
+motion_mirroring = Vector2(240, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+texture_filter = 2
+texture_repeat = 2
+position = Vector2(4, -4)
+scale = Vector2(1, 1.4)
+texture = ExtResource("2_6u75i")
+centered = false
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(2400, 636)
+shape = SubResource("RectangleShape2D_hetgo")
+
+[node name="Spongebob" parent="." instance=ExtResource("3_cy4ry")]
+position = Vector2(38, 610)
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(1096, 503)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(103.5, 10)
+rotation = 6.28319
+shape = SubResource("RectangleShape2D_811t0")
+one_way_collision = true
