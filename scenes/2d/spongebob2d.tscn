@@ -199,7 +199,7 @@ texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_u32rl")
 animation = &"groundpound"
 autoplay = "idle"
-frame_progress = 0.783656
+frame_progress = 0.345505
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_putow")
