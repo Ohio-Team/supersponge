@@ -53,10 +53,10 @@ shape = SubResource("RectangleShape2D_811t0")
 one_way_collision = true
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
-offset_left = 5.0
-offset_top = 4.0
-offset_right = 469.0
-offset_bottom = 125.0
+offset_left = 4.0
+offset_top = 434.0
+offset_right = 468.0
+offset_bottom = 555.0
 theme_override_fonts/normal_font = ExtResource("5_ae5i4")
 text = "SUPRSPONGE OHIO MIX ALPHA
 DON'T LEAK OR
