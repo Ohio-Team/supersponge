@@ -20,6 +20,11 @@ config/icon="res://icon.svg"
 BMOD="*res://addons/bmod/autoloads/bmod/bmod.tscn"
 MusicPlayer="*res://scenes/MusicPlayer.tscn"
 
+[editor]
+
+version_control/plugin_name="GitPlugin"
+version_control/autoload_on_startup=true
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/bmod/plugin.cfg", "res://addons/third-person-camera/plugin.cfg")
