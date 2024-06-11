@@ -1,7 +1,7 @@
-res://scenes/spongebob.tscn
+res://TPC-demo/TestScene.tscn
 res://scenes/3dtest.tscn
 res://scenes/MusicPlayer.tscn
-res://TPC-demo/TestScene.tscn
+res://scenes/spongebob.tscn
 res://addons/third-person-camera/third_person_camera/ThirdPersonCamera.tscn
-res://scenes/3dtest.gd
+res://addons/third-person-camera/third_person_camera/ThirdPersonCamera.gd
 res://Spongebob.gd
