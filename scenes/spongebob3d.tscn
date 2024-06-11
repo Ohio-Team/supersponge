@@ -14,6 +14,8 @@ SPEED = 64.0
 
 [node name="Spongebob" type="MeshInstance3D" parent="."]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 0)
+gi_mode = 2
+gi_lightmap_scale = 2
 mesh = ExtResource("2_ihwkd")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

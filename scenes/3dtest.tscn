@@ -41,7 +41,8 @@ environment = SubResource("Environment_p7onn")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
-light_color = Color(0.989831, 0.986275, 0.796685, 1)
+light_color = Color(1, 0.831373, 0.129412, 1)
+light_bake_mode = 1
 shadow_enabled = true
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
@@ -60,6 +61,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.89535, 201.458, -229.522)
 transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 100.335, -232.896)
 
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="StaticBody3D2"]
+transparency = 0.75
+gi_mode = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2"]
 shape = SubResource("CylinderShape3D_ci8t6")
