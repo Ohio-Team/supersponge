@@ -7,7 +7,6 @@
 [ext_resource type="FontFile" uid="uid://c4lyevru8sr3e" path="res://assets/fonts/Krabby Patty.ttf" id="5_1sf6y"]
 [ext_resource type="PackedScene" uid="uid://ijj6qbkx8vhd" path="res://scenes/2d/platform.tscn" id="6_vg0aa"]
 
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hetgo"]
 size = Vector2(4800, 22)
 
@@ -44,7 +43,7 @@ shape = SubResource("RectangleShape2D_hetgo")
 
 [node name="Spongebob" parent="." instance=ExtResource("3_cy4ry")]
 position = Vector2(38, 610)
-state = null
+state = "idle"
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
 position = Vector2(1096, 503)
@@ -101,4 +100,3 @@ scale = Vector2(8.94927, 0.843201)
 [node name="Platform9" parent="." instance=ExtResource("6_vg0aa")]
 position = Vector2(2672, 487)
 scale = Vector2(4.73532, 0.843201)
-
