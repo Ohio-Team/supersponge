@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://btoeeusp2owy4"]
+[gd_scene load_steps=13 format=3 uid="uid://btoeeusp2owy4"]
 
 [ext_resource type="Script" path="res://scenes/3dtest.gd" id="1_cp8ut"]
 [ext_resource type="PackedScene" uid="uid://kvuqj2x2m3w7" path="res://scenes/spongebob3d.tscn" id="2_ou6nn"]
 [ext_resource type="Texture2D" uid="uid://jlh3pvk6qs88" path="res://assets/2d/miscsprites/FRPsLUzVIAEZaeZ.jpg" id="2_qrexv"]
+[ext_resource type="FontFile" uid="uid://c4lyevru8sr3e" path="res://assets/fonts/Krabby Patty.ttf" id="4_gvxe3"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_6kqk3"]
 sky_top_color = Color(0.141299, 0.453608, 0.772759, 1)
@@ -90,4 +91,5 @@ offset_left = 17.0
 offset_top = 16.0
 offset_right = 528.0
 offset_bottom = 135.0
+theme_override_fonts/normal_font = ExtResource("4_gvxe3")
 text = "SPONGEBOB OHIO MIX SUPER ALPHA VERSION DO NOT LEAK OR the pearly gates at heaven will not await you"
