@@ -79,3 +79,10 @@ shape = SubResource("BoxShape3D_oe2g2")
 [node name="CSGBox3D" type="CSGBox3D" parent="StaticBody3D4"]
 transform = Transform3D(1, -1.49012e-08, 0, -1.19209e-07, 1, 0, 0, 0, 1, -0.0704736, 0.692399, -0.00104451)
 size = Vector3(1.36182, 0.0451202, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 17.0
+offset_top = 16.0
+offset_right = 528.0
+offset_bottom = 135.0
+text = "SPONGEBOB OHIO MIX SUPER ALPHA VERSION DO NOT LEAK OR the pearly gates at heaven will not await you"
