@@ -1,3 +1,8 @@
+
+func _ready():
+	MusicPlayer.play_song("res://assets/music/sb-title.mp3")
+
+
 extends CharacterBody2D
 
 
