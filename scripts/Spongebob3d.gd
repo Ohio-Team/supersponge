@@ -7,7 +7,8 @@ const JUMP_VELOCITY = 98.0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
-
+func _ready():
+	Ui.create_dialog("Woah Spongebob. You look [glow][shake][b]so good i[/b][/shake]n 3d.")
 
 func _physics_process(delta):
 	# Add the gravity.

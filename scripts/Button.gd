@@ -10,4 +10,5 @@ func _ready():
 func _process(delta):
 	pass
 func _on_pressed():
+	Singleton.inmenu = false
 	get_tree().change_scene_to_file("res://scenes/3d/3dtest.tscn")

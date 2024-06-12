@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cmyynlgpadcm4"]
+[gd_scene load_steps=10 format=3 uid="uid://cmyynlgpadcm4"]
 
 [ext_resource type="Script" path="res://scripts/2dtest.gd" id="1_ltid3"]
 [ext_resource type="Texture2D" uid="uid://bjqf1nbmaob28" path="res://assets/2d/miscsprites/downtown.png" id="1_lx2ql"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cjoo6ilm8eim1" path="res://scenes/2d/spongebob2d.tscn" id="3_cy4ry"]
 [ext_resource type="FontFile" uid="uid://c4lyevru8sr3e" path="res://assets/fonts/Krabby Patty.ttf" id="5_1sf6y"]
 [ext_resource type="PackedScene" uid="uid://ijj6qbkx8vhd" path="res://scenes/2d/platform.tscn" id="6_vg0aa"]
+[ext_resource type="PackedScene" uid="uid://bmdnpojldt0pf" path="res://scenes/2d/jellyfish.tscn" id="7_mqwyf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hetgo"]
 size = Vector2(4800, 22)
@@ -43,7 +44,6 @@ shape = SubResource("RectangleShape2D_hetgo")
 
 [node name="Spongebob" parent="." instance=ExtResource("3_cy4ry")]
 position = Vector2(38, 610)
-state = "idle"
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
 position = Vector2(1096, 503)
@@ -57,8 +57,10 @@ one_way_collision = true
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer"]
-offset_right = 390.0
-offset_bottom = 82.0
+offset_left = 751.0
+offset_top = 26.0
+offset_right = 1141.0
+offset_bottom = 108.0
 theme_override_fonts/normal_font = ExtResource("5_1sf6y")
 bbcode_enabled = true
 text = "SUPRSPONGE OHIO MIX ALPHA
@@ -100,3 +102,6 @@ scale = Vector2(8.94927, 0.843201)
 [node name="Platform9" parent="." instance=ExtResource("6_vg0aa")]
 position = Vector2(2672, 487)
 scale = Vector2(4.73532, 0.843201)
+
+[node name="Jellyfish" parent="." instance=ExtResource("7_mqwyf")]
+position = Vector2(894, 614)

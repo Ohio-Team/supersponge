@@ -1,12 +1,14 @@
 extends Control
 
-
+@export var full_text = "i love grimace shake"
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	MusicPlayer.play_song("res://assets/music/sb-title.mp3")
 	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	$ColorRect/RichTextLabel.full_text = full_text
+	if $ColorRect/RichTextLabel.finishedtext == true:
+		await Singleton.wait(5)
+		queue_free()
