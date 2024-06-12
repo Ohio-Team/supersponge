@@ -43,6 +43,7 @@ shape = SubResource("RectangleShape2D_hetgo")
 
 [node name="Spongebob" parent="." instance=ExtResource("3_cy4ry")]
 position = Vector2(38, 610)
+state = "idle"
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
 position = Vector2(1096, 503)
