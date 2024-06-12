@@ -20,10 +20,6 @@ func _physics_process(delta):
 		anim.play("hurt")
 		if anim.animation_finished:
 			state = "idle"
-			
-	if state == "attack":
-		if anim.animation == "attack" and anim.animation_finished:
-			state = "idle"
 	if Input.is_action_just_pressed("attack") and is_on_floor():
 		state = "attack"
 		anim.play("attack")
