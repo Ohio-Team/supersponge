@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="SingleSoundEffect" load_steps=3 format=3 uid="uid://tqpg8hh3isjh"]
+
+[ext_resource type="AudioStream" uid="uid://bjywiplffs8eu" path="res://assets/sfx/sfx_item_goldspat.ogg" id="1_byxu0"]
+[ext_resource type="Script" path="res://addons/bmod/scripts/resources/single_sound_effect.gd" id="1_toacs"]
+
+[resource]
+script = ExtResource("1_toacs")
+audio_stream = ExtResource("1_byxu0")
+play = false
+play_on_change = false

@@ -42,6 +42,10 @@ MusicPlayer="*res://scenes/MusicPlayer.tscn"
 Ui="*res://scenes/2d/ui.tscn"
 Singleton="*res://scripts/singleton.gd"
 
+[display]
+
+window/size/resizable=false
+
 [editor]
 
 version_control/plugin_name="GitPlugin"

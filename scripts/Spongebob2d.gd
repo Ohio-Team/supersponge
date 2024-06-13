@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 
 const SPEED = 250.0
-const JUMP_VELOCITY = -350.0
+const JUMP_VELOCITY = -430.0
 
 @onready var anim = $AnimatedSprite2D
 @export var state = "idle"
@@ -49,7 +49,7 @@ func _physics_process(delta):
 		anim.flip_h = true
 	elif direction == 1:
 		anim.flip_h = false
-	if direction and anim.animation != "hurt" or anim.animation != "attack":
+	if direction and anim.animation != "hurt" and anim.animation != "attack":
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
