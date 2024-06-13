@@ -14,6 +14,7 @@ func _process(delta):
 		visible = true
 		
 	$Counter.text = "[shake]x" + str(Singleton.lifes)
+	$Counter2.text = "[shake]x" + str(Singleton.spatulas)
 	
 func create_dialog(text:String):
 	var dialog = preload("res://scenes/2d/dialog.tscn")

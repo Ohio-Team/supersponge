@@ -8,4 +8,5 @@ func _ready():
 func _on_body_entered(body):
 	if body == player:
 			queue_free()
+			Singleton.spatulas += 1
 	
