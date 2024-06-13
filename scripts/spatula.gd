@@ -7,6 +7,7 @@ func _ready():
 
 func _on_body_entered(body):
 	if body == player:
+			BMOD.play_sfx(preload("res://assets/sfx/collect.tres"))
 			queue_free()
 			Singleton.spatulas += 1
 	
