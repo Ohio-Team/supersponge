@@ -127,3 +127,12 @@ texture = ExtResource("9_rmb7m")
 
 [node name="Spongebob" parent="." instance=ExtResource("3_cy4ry")]
 position = Vector2(38, 610)
+
+[node name="Jellyfish2" parent="." instance=ExtResource("7_mqwyf")]
+position = Vector2(935, 599)
+
+[node name="Jellyfish3" parent="." instance=ExtResource("7_mqwyf")]
+position = Vector2(965, 617)
+
+[node name="Jellyfish4" parent="." instance=ExtResource("7_mqwyf")]
+position = Vector2(1100, 614)
