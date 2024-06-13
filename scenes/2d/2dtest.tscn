@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cmyynlgpadcm4"]
+[gd_scene load_steps=13 format=3 uid="uid://cmyynlgpadcm4"]
 
 [ext_resource type="Script" path="res://scripts/2dtest.gd" id="1_ltid3"]
 [ext_resource type="Texture2D" uid="uid://bjqf1nbmaob28" path="res://assets/2d/miscsprites/downtown.png" id="1_lx2ql"]
@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://ijj6qbkx8vhd" path="res://scenes/2d/platform.tscn" id="6_vg0aa"]
 [ext_resource type="PackedScene" uid="uid://bmdnpojldt0pf" path="res://scenes/2d/jellyfish.tscn" id="7_mqwyf"]
 [ext_resource type="PackedScene" uid="uid://b86vokonmmvq5" path="res://scenes/2d/spatula.tscn" id="8_kac2r"]
+[ext_resource type="Texture2D" uid="uid://ii6xurtpt8ji" path="res://assets/2d/miscsprites/222222.png" id="9_rmb7m"]
+[ext_resource type="Texture2D" uid="uid://dxpr5400pmho2" path="res://assets/2d/miscsprites/3222222.png" id="10_swrej"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hetgo"]
 size = Vector2(4800, 22)
@@ -42,9 +44,6 @@ centered = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(2400, 636)
 shape = SubResource("RectangleShape2D_hetgo")
-
-[node name="Spongebob" parent="." instance=ExtResource("3_cy4ry")]
-position = Vector2(38, 610)
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
 position = Vector2(1096, 503)
@@ -108,10 +107,23 @@ scale = Vector2(4.73532, 0.843201)
 position = Vector2(894, 614)
 
 [node name="Spatula" parent="." instance=ExtResource("8_kac2r")]
-position = Vector2(140, 612)
+position = Vector2(239, 611)
 
 [node name="Spatula2" parent="." instance=ExtResource("8_kac2r")]
-position = Vector2(171, 611)
+position = Vector2(285, 610)
 
 [node name="Spatula3" parent="." instance=ExtResource("8_kac2r")]
-position = Vector2(201, 609)
+position = Vector2(332, 611)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(149.375, 567)
+scale = Vector2(0.524419, 0.533333)
+texture = ExtResource("9_rmb7m")
+
+[node name="Spongebob" parent="." instance=ExtResource("3_cy4ry")]
+position = Vector2(38, 610)
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(410, 567)
+scale = Vector2(0.52907, 0.533334)
+texture = ExtResource("10_swrej")
