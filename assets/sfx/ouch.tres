@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="SingleSoundEffect" load_steps=3 format=3 uid="uid://dfq1jpeo41xn8"]
+
+[ext_resource type="AudioStream" uid="uid://dmigh0hf8mbgb" path="res://assets/sfx/sfx_sb_ouch.ogg" id="1_0ykuw"]
+[ext_resource type="Script" path="res://addons/bmod/scripts/resources/single_sound_effect.gd" id="1_msu0b"]
+
+[resource]
+script = ExtResource("1_msu0b")
+audio_stream = ExtResource("1_0ykuw")
+play = false
+play_on_change = false

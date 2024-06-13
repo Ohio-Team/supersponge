@@ -15,6 +15,7 @@ func _ready():
 func _physics_process(delta):
 	# Add the gravity.
 	if state == "hurt":
+		BMOD.play_sfx(preload("res://assets/sfx/ouch.tres"))
 		velocity.x = SPEED * 4
 		velocity.y = -450
 		anim.play("hurt")
