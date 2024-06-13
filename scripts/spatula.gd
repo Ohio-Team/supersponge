@@ -7,9 +7,5 @@ func _ready():
 
 func _on_body_entered(body):
 	if body == player:
-		if player.state == "groundpound" or player.state == "attack":
 			queue_free()
-		else:
-			Singleton.lifes -= 1
-			player.state = "hurt"
-			print(player.state)
+	
