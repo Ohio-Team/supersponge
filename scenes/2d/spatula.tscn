@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://b86vokonmmvq5"]
+
+[ext_resource type="Script" path="res://scripts/spatula.gd" id="1_yyxvo"]
+[ext_resource type="Texture2D" uid="uid://52gml0d00q4w" path="res://assets/2d/collectables/spatula.png" id="2_xj43o"]
+
+[node name="Spatula" type="Node2D"]
+script = ExtResource("1_yyxvo")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_xj43o")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cmyynlgpadcm4"]
+[gd_scene load_steps=11 format=3 uid="uid://cmyynlgpadcm4"]
 
 [ext_resource type="Script" path="res://scripts/2dtest.gd" id="1_ltid3"]
 [ext_resource type="Texture2D" uid="uid://bjqf1nbmaob28" path="res://assets/2d/miscsprites/downtown.png" id="1_lx2ql"]
@@ -7,6 +7,7 @@
 [ext_resource type="FontFile" uid="uid://c4lyevru8sr3e" path="res://assets/fonts/Krabby Patty.ttf" id="5_1sf6y"]
 [ext_resource type="PackedScene" uid="uid://ijj6qbkx8vhd" path="res://scenes/2d/platform.tscn" id="6_vg0aa"]
 [ext_resource type="PackedScene" uid="uid://bmdnpojldt0pf" path="res://scenes/2d/jellyfish.tscn" id="7_mqwyf"]
+[ext_resource type="PackedScene" uid="uid://b86vokonmmvq5" path="res://scenes/2d/spatula.tscn" id="8_kac2r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hetgo"]
 size = Vector2(4800, 22)
@@ -105,3 +106,12 @@ scale = Vector2(4.73532, 0.843201)
 
 [node name="Jellyfish" parent="." instance=ExtResource("7_mqwyf")]
 position = Vector2(894, 614)
+
+[node name="Spatula" parent="." instance=ExtResource("8_kac2r")]
+position = Vector2(140, 612)
+
+[node name="Spatula2" parent="." instance=ExtResource("8_kac2r")]
+position = Vector2(171, 611)
+
+[node name="Spatula3" parent="." instance=ExtResource("8_kac2r")]
+position = Vector2(201, 609)
