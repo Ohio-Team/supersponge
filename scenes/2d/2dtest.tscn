@@ -115,6 +115,11 @@ position = Vector2(285, 610)
 [node name="Spatula3" parent="." instance=ExtResource("8_kac2r")]
 position = Vector2(332, 611)
 
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(410, 567)
+scale = Vector2(0.52907, 0.533334)
+texture = ExtResource("10_swrej")
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(149.375, 567)
 scale = Vector2(0.524419, 0.533333)
@@ -122,8 +127,3 @@ texture = ExtResource("9_rmb7m")
 
 [node name="Spongebob" parent="." instance=ExtResource("3_cy4ry")]
 position = Vector2(38, 610)
-
-[node name="Sprite2D2" type="Sprite2D" parent="."]
-position = Vector2(410, 567)
-scale = Vector2(0.52907, 0.533334)
-texture = ExtResource("10_swrej")
