@@ -115,3 +115,21 @@ position = Vector2(171, 611)
 
 [node name="Spatula3" parent="." instance=ExtResource("8_kac2r")]
 position = Vector2(201, 609)
+
+[node name="Jellyfish2" parent="." instance=ExtResource("7_mqwyf")]
+position = Vector2(821, 581)
+
+[node name="Jellyfish3" parent="." instance=ExtResource("7_mqwyf")]
+position = Vector2(1053, 594)
+
+[node name="Jellyfish4" parent="." instance=ExtResource("7_mqwyf")]
+position = Vector2(733, 590)
+
+[node name="Jellyfish5" parent="." instance=ExtResource("7_mqwyf")]
+position = Vector2(684, 607)
+
+[node name="Jellyfish6" parent="." instance=ExtResource("7_mqwyf")]
+position = Vector2(978, 605)
+
+[node name="Jellyfish7" parent="." instance=ExtResource("7_mqwyf")]
+position = Vector2(1183, 606)
