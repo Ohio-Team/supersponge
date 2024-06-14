@@ -12,8 +12,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 func _ready():
 	Ui.create_dialog("Yo Bob watch out for the jellyfish up ahead they're your opps and they'll try to kill you")
 
-func _physics_process(delta):
-	# Add the gravity.
+func inputs():
 	if state == "hurt":
 		BMOD.play_sfx(preload("res://assets/sfx/ouch.tres"))
 		velocity.x = SPEED * 4
@@ -24,8 +23,6 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("attack") and is_on_floor():
 		state = "attack"
 		anim.play("attack")
-	if not is_on_floor():
-		velocity.y += gravity * delta
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
@@ -43,6 +40,18 @@ func _physics_process(delta):
 	if anim.animation == "fall" or anim.animation == "groundpound" and anim.animation != "attack" and is_on_floor():
 		anim.play("land")
 		state = "land"
+
+func _physics_process(delta):
+	# Add the gravity.
+	inputs()
+	if Singleton.health <= 0:
+		print("game over 💔")
+		Singleton.lifes -= 1
+		Singleton.inmenu = true
+		Singleton.health = 3
+		get_tree().change_scene_to_file("res://scenes/Main Menu.tscn")
+	if not is_on_floor():
+		velocity.y += gravity * delta
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction = Input.get_axis("left", "right")

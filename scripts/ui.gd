@@ -13,7 +13,7 @@ func _process(delta):
 	else:
 		visible = true
 		
-	$Counter.text = "[shake]x" + str(Singleton.lifes)
+	$Counter.text = "[shake]x" + str(Singleton.health)
 	$Counter2.text = "[shake]x" + str(Singleton.spatulas)
 	
 func create_dialog(text:String):

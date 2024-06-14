@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://bbrct2r84j0l2"]
 
 [ext_resource type="Script" path="res://scripts/ui.gd" id="1_eaqxp"]
-[ext_resource type="Texture2D" uid="uid://qtodt1fxvxh7" path="res://assets/2d/miscsprites/krabber.png" id="1_wmu35"]
 [ext_resource type="FontFile" uid="uid://c4lyevru8sr3e" path="res://assets/fonts/Krabby Patty.ttf" id="2_0v11p"]
+[ext_resource type="Texture2D" uid="uid://dmmh6w87woore" path="res://assets/2d/miscsprites/1250238038680797246_webp.png" id="2_lbdou"]
 [ext_resource type="Texture2D" uid="uid://52gml0d00q4w" path="res://assets/2d/collectables/spatula.png" id="4_qlyf8"]
 
 [node name="UI" type="CanvasLayer"]
@@ -10,8 +10,7 @@ script = ExtResource("1_eaqxp")
 
 [node name="Krabber" type="Sprite2D" parent="."]
 position = Vector2(51, 51)
-scale = Vector2(0.298125, 0.295613)
-texture = ExtResource("1_wmu35")
+texture = ExtResource("2_lbdou")
 
 [node name="Counter" type="RichTextLabel" parent="."]
 offset_left = 95.0
