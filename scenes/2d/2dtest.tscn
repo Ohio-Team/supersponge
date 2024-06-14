@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cmyynlgpadcm4"]
+[gd_scene load_steps=18 format=3 uid="uid://cmyynlgpadcm4"]
 
 [ext_resource type="Script" path="res://scripts/2dtest.gd" id="1_ltid3"]
 [ext_resource type="Texture2D" uid="uid://bjqf1nbmaob28" path="res://assets/2d/miscsprites/downtown.png" id="1_lx2ql"]
@@ -10,12 +10,23 @@
 [ext_resource type="PackedScene" uid="uid://b86vokonmmvq5" path="res://scenes/2d/spatula.tscn" id="8_kac2r"]
 [ext_resource type="Texture2D" uid="uid://ii6xurtpt8ji" path="res://assets/2d/miscsprites/222222.png" id="9_rmb7m"]
 [ext_resource type="Texture2D" uid="uid://dxpr5400pmho2" path="res://assets/2d/miscsprites/3222222.png" id="10_swrej"]
+[ext_resource type="Texture2D" uid="uid://c6bjlkvc65f2x" path="res://assets/2d/miscsprites/tileset.jpg" id="11_8jk1i"]
+[ext_resource type="Texture2D" uid="uid://behgja2syty3v" path="res://assets/2d/miscsprites/Screenshot 2024-06-13 174849.png" id="12_4jt1e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hetgo"]
 size = Vector2(4800, 22)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_811t0"]
 size = Vector2(209, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pnl26"]
+size = Vector2(97.75, 60.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4anpu"]
+size = Vector2(129.5, 21)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8song"]
+size = Vector2(145.5, 105)
 
 [node name="2Dtest" type="Node2D"]
 script = ExtResource("1_ltid3")
@@ -119,26 +130,26 @@ scale = Vector2(4.73532, 0.843201)
 position = Vector2(894, 614)
 
 [node name="Spatula" parent="." instance=ExtResource("8_kac2r")]
-position = Vector2(239, 611)
+position = Vector2(345, 552)
 
 [node name="Spatula2" parent="." instance=ExtResource("8_kac2r")]
-position = Vector2(285, 610)
+position = Vector2(371, 552)
 
 [node name="Spatula3" parent="." instance=ExtResource("8_kac2r")]
-position = Vector2(332, 611)
+position = Vector2(214, 609)
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
-position = Vector2(410, 567)
+position = Vector2(378, 476)
 scale = Vector2(0.52907, 0.533334)
 texture = ExtResource("10_swrej")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(149.375, 567)
+position = Vector2(192, 561)
 scale = Vector2(0.524419, 0.533333)
 texture = ExtResource("9_rmb7m")
 
 [node name="Spongebob" parent="." instance=ExtResource("3_cy4ry")]
-position = Vector2(192, 610)
+position = Vector2(70, 609)
 
 [node name="Jellyfish2" parent="." instance=ExtResource("7_mqwyf")]
 position = Vector2(935, 599)
@@ -147,4 +158,49 @@ position = Vector2(935, 599)
 position = Vector2(965, 617)
 
 [node name="Jellyfish4" parent="." instance=ExtResource("7_mqwyf")]
-position = Vector2(1100, 614)
+position = Vector2(1010, 599)
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+position = Vector2(137, 597)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2(225, -2)
+shape = SubResource("RectangleShape2D_pnl26")
+debug_color = Color(9.62615e-07, 0.620227, 0.564091, 0.42)
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D3/CollisionShape2D"]
+position = Vector2(1.90735e-06, 2.86102e-05)
+scale = Vector2(0.382813, 0.234375)
+texture = ExtResource("11_8jk1i")
+
+[node name="Spatula4" parent="." instance=ExtResource("8_kac2r")]
+position = Vector2(187, 609)
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+position = Vector2(274, 1194)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
+position = Vector2(730, -694)
+shape = SubResource("RectangleShape2D_4anpu")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D4/CollisionShape2D"]
+scale = Vector2(0.507813, 0.0859375)
+texture = ExtResource("11_8jk1i")
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="."]
+position = Vector2(597, 2343)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D5"]
+position = Vector2(592.25, -1768.5)
+shape = SubResource("RectangleShape2D_8song")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(1189, 574)
+scale = Vector2(0.310638, 0.233945)
+texture = ExtResource("12_4jt1e")
+
+[node name="Spatula5" parent="." instance=ExtResource("8_kac2r")]
+position = Vector2(490, 512)
+
+[node name="Spatula6" parent="." instance=ExtResource("8_kac2r")]
+position = Vector2(522, 512)

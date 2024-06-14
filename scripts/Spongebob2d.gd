@@ -10,7 +10,7 @@ const JUMP_VELOCITY = -430.0
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func _ready():
-	Ui.create_dialog("Hello Spongebob welcome to our [rainbow][wave]BADASS[/wave][/rainbow] game. Move to see what you have ahead")
+	Ui.create_dialog("Yo Bob watch out for the jellyfish up ahead they're your opps and they'll try to kill you")
 
 func _physics_process(delta):
 	# Add the gravity.
