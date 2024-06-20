@@ -1,100 +1,51 @@
-[gd_scene load_steps=14 format=3 uid="uid://btoeeusp2owy4"]
+[gd_scene load_steps=6 format=3 uid="uid://cm2quo5kr31s4"]
 
-[ext_resource type="Script" path="res://scripts/3dtest.gd" id="1_bqtq5"]
-[ext_resource type="Texture2D" uid="uid://jlh3pvk6qs88" path="res://assets/2d/miscsprites/FRPsLUzVIAEZaeZ.jpg" id="2_g5od7"]
-[ext_resource type="PackedScene" uid="uid://kvuqj2x2m3w7" path="res://scenes/3d/spongebob3d.tscn" id="3_ve0fc"]
-[ext_resource type="FontFile" uid="uid://c4lyevru8sr3e" path="res://assets/fonts/Krabby Patty.ttf" id="4_2ihy1"]
+[ext_resource type="PackedScene" uid="uid://8kbffcc412vs" path="res://scenes/spongebob_3d.tscn" id="1_g5pww"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_6kqk3"]
-sky_top_color = Color(0.141299, 0.453608, 0.772759, 1)
-sky_horizon_color = Color(0.561893, 0.662842, 0.730444, 1)
-ground_bottom_color = Color(0.106272, 0.197759, 0.149017, 1)
-ground_horizon_color = Color(0.561893, 0.662842, 0.730444, 1)
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_igwom"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
 
-[sub_resource type="Sky" id="Sky_3yn0i"]
-sky_material = SubResource("ProceduralSkyMaterial_6kqk3")
+[sub_resource type="Sky" id="Sky_guiua"]
+sky_material = SubResource("ProceduralSkyMaterial_igwom")
 
-[sub_resource type="Environment" id="Environment_p7onn"]
+[sub_resource type="Environment" id="Environment_saag1"]
 background_mode = 2
-sky = SubResource("Sky_3yn0i")
+sky = SubResource("Sky_guiua")
 tonemap_mode = 2
 glow_enabled = true
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_hot1f"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_156dy"]
-albedo_texture = ExtResource("2_g5od7")
-
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_ci8t6"]
-
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_5kbmg"]
-height = 1.68617
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_oe2g2"]
-size = Vector3(1.35474, 0.0543213, 1)
-
-[sub_resource type="SystemFont" id="SystemFont_8yl7b"]
-font_weight = 425
-font_stretch = 125
+[sub_resource type="BoxShape3D" id="BoxShape3D_h15nr"]
+size = Vector3(50, 1, 50)
 
 [node name="3Dtest" type="Node3D"]
-script = ExtResource("1_bqtq5")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_p7onn")
+environment = SubResource("Environment_saag1")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
-light_color = Color(1, 0.831373, 0.129412, 1)
-light_bake_mode = 1
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
 shadow_enabled = true
+shadow_normal_bias = 0.0
+shadow_transmittance_bias = 4.83
+shadow_blur = 0.908
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
-transform = Transform3D(1000, 0, 0, 0, 0.28, 0, 0, 0, 1115.34, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-shape = SubResource("BoxShape3D_hot1f")
+shape = SubResource("BoxShape3D_h15nr")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="StaticBody3D"]
-material_override = SubResource("StandardMaterial3D_156dy")
-
-[node name="Spongebob" parent="." instance=ExtResource("3_ve0fc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.89535, 201.458, -229.522)
+size = Vector3(50, 1, 50)
 
 [node name="StaticBody3D2" type="StaticBody3D" parent="."]
-transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 100.335, -232.896)
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 17.6211, 42.405)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2"]
-shape = SubResource("CylinderShape3D_ci8t6")
+shape = SubResource("BoxShape3D_h15nr")
 
-[node name="StaticBody3D3" type="StaticBody3D" parent="."]
-transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 140.847, 100.335, -232.896)
+[node name="CSGBox3D" type="CSGBox3D" parent="StaticBody3D2"]
+size = Vector3(50, 1, 50)
 
-[node name="CSGCylinder3D" type="CSGCylinder3D" parent="StaticBody3D3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.156034, 0)
-height = 1.69732
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.156034, 0)
-shape = SubResource("CylinderShape3D_5kbmg")
-
-[node name="StaticBody3D4" type="StaticBody3D" parent="."]
-transform = Transform3D(109.991, 35.0948, 0, -137.046, 28.1666, 0, 0, 0, 115.961, 227.872, 55.9824, -232.896)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D4"]
-transform = Transform3D(1, 0, 0, 3.20673e-05, 1, 0, 0, 0, 1, -0.0815535, 0.69314, 0)
-shape = SubResource("BoxShape3D_oe2g2")
-
-[node name="CSGBox3D" type="CSGBox3D" parent="StaticBody3D4"]
-transform = Transform3D(1, -1.49012e-08, 0, -1.19209e-07, 1, 0, 0, 0, 1, -0.0704736, 0.692399, -0.00104451)
-size = Vector3(1.36182, 0.0451202, 1)
-
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
-offset_left = 20.0
-offset_top = 9.0
-offset_right = 473.0
-offset_bottom = 128.0
-theme_override_fonts/normal_font = ExtResource("4_2ihy1")
-theme_override_fonts/bold_font = SubResource("SystemFont_8yl7b")
-bbcode_enabled = true
-text = "SPONGEBOB OHIO MIX SUPER ALPHA VERSION DO NOT LEAK OR [b]the pearly gates at heaven will not await you"
+[node name="Spongebob3d" parent="." instance=ExtResource("1_g5pww")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.44157, 0.5, 3.42529)

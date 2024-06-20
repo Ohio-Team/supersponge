@@ -1,0 +1,76 @@
+[gd_scene load_steps=10 format=3 uid="uid://8kbffcc412vs"]
+
+[ext_resource type="Script" path="res://scripts/Spongebob3d.gd" id="1_pc0ce"]
+[ext_resource type="PackedScene" uid="uid://hrl51edfp36o" path="res://assets/3d/spongebobby/sponebob.blend" id="2_8hb62"]
+[ext_resource type="PackedScene" uid="uid://wmf2eu0uuhrg" path="res://addons/third-person-camera/third_person_camera/ThirdPersonCamera.tscn" id="3_l7qui"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_1sga7"]
+animation = &"idle1"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_8rd1j"]
+animation = &"move"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_itu0e"]
+animation = &"butt"
+
+[sub_resource type="AnimationNodeTransition" id="AnimationNodeTransition_n3pmf"]
+input_0/name = "walking"
+input_0/auto_advance = false
+input_0/reset = true
+input_1/name = "idle"
+input_1/auto_advance = false
+input_1/reset = true
+input_2/name = "butt"
+input_2/auto_advance = false
+input_2/reset = true
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_v2lhl"]
+graph_offset = Vector2(-556.255, 90.1471)
+nodes/Animation/node = SubResource("AnimationNodeAnimation_itu0e")
+nodes/Animation/position = Vector2(-40, 240)
+"nodes/Animation 2/node" = SubResource("AnimationNodeAnimation_1sga7")
+"nodes/Animation 2/position" = Vector2(-240, 140)
+"nodes/Animation 4/node" = SubResource("AnimationNodeAnimation_8rd1j")
+"nodes/Animation 4/position" = Vector2(-140, 20)
+nodes/output/position = Vector2(540, 120)
+nodes/state/node = SubResource("AnimationNodeTransition_n3pmf")
+nodes/state/position = Vector2(200, 100)
+node_connections = [&"output", 0, &"state", &"state", 0, &"Animation 4", &"state", 1, &"Animation 2", &"state", 2, &"Animation"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_x21hn"]
+radius = 1.34723
+height = 4.25818
+
+[node name="Spongebob3d" type="CharacterBody3D"]
+script = ExtResource("1_pc0ce")
+
+[node name="sponebob" parent="." instance=ExtResource("2_8hb62")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+
+[node name="Skeleton3D" parent="sponebob/Armature" index="0"]
+bones/2/rotation = Quaternion(0, 1, 0, -5.52335e-07)
+bones/9/rotation = Quaternion(0.0896658, -0.13357, 0.0611721, 0.985077)
+bones/10/rotation = Quaternion(-2.61546e-08, 0.938902, 9.5878e-09, 0.344185)
+bones/14/rotation = Quaternion(-3.19904e-24, -0.0924465, 8.91998e-16, 0.995718)
+bones/15/rotation = Quaternion(-1.80596e-16, 0.134364, -8.77924e-16, 0.990932)
+bones/16/rotation = Quaternion(4.72988e-16, 0.938902, -1.89195e-15, -0.344186)
+bones/18/rotation = Quaternion(-1.85415e-15, 0.286623, -9.27075e-16, 0.958043)
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+root_node = NodePath("../sponebob")
+tree_root = SubResource("AnimationNodeBlendTree_v2lhl")
+anim_player = NodePath("../sponebob/AnimationPlayer")
+parameters/state/current_state = "idle"
+parameters/state/transition_request = ""
+parameters/state/current_index = 1
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.18019, -0.170951)
+shape = SubResource("CapsuleShape3D_x21hn")
+
+[node name="ThirdPersonCamera" parent="." instance=ExtResource("3_l7qui")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0)
+distance_from_pivot = 6.0
+mouse_follow = true
+
+[editable path="sponebob"]
