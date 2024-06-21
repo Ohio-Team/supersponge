@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://wqoqonv86j4"]
+[gd_scene load_steps=9 format=3 uid="uid://wqoqonv86j4"]
 
 [ext_resource type="Script" path="res://scripts/level1.gd" id="1_huh3m"]
 [ext_resource type="Texture2D" uid="uid://bjqf1nbmaob28" path="res://assets/2d/miscsprites/downtown.png" id="2_jdhyg"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://ijj6qbkx8vhd" path="res://scenes/2d/platform.tscn" id="5_sdvye"]
 [ext_resource type="PackedScene" uid="uid://bmdnpojldt0pf" path="res://scenes/2d/jellyfish.tscn" id="6_lvgs6"]
 [ext_resource type="PackedScene" uid="uid://b86vokonmmvq5" path="res://scenes/2d/spatula.tscn" id="7_6aubs"]
+[ext_resource type="PackedScene" uid="uid://dwh0654dmbwpw" path="res://scenes/2d/soda.tscn" id="8_o7eu5"]
 [ext_resource type="PackedScene" uid="uid://cjoo6ilm8eim1" path="res://scenes/2d/spongebob2d.tscn" id="10_g8oo3"]
 
 [node name="Level1" type="Node2D"]
@@ -127,6 +128,9 @@ position = Vector2(1238, 481)
 
 [node name="Spatula10" parent="Collects" instance=ExtResource("7_6aubs")]
 position = Vector2(1205, 481)
+
+[node name="Soda" parent="Collects" instance=ExtResource("8_o7eu5")]
+position = Vector2(853, 510)
 
 [node name="Enemies" type="Node" parent="."]
 
