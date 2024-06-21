@@ -1,0 +1,179 @@
+[gd_scene load_steps=8 format=3 uid="uid://wqoqonv86j4"]
+
+[ext_resource type="Script" path="res://scripts/level1.gd" id="1_huh3m"]
+[ext_resource type="Texture2D" uid="uid://bjqf1nbmaob28" path="res://assets/2d/miscsprites/downtown.png" id="2_jdhyg"]
+[ext_resource type="Texture2D" uid="uid://bsodv4tuo7r18" path="res://assets/2d/miscsprites/gradient.png" id="3_afw2d"]
+[ext_resource type="PackedScene" uid="uid://ijj6qbkx8vhd" path="res://scenes/2d/platform.tscn" id="5_sdvye"]
+[ext_resource type="PackedScene" uid="uid://bmdnpojldt0pf" path="res://scenes/2d/jellyfish.tscn" id="6_lvgs6"]
+[ext_resource type="PackedScene" uid="uid://b86vokonmmvq5" path="res://scenes/2d/spatula.tscn" id="7_6aubs"]
+[ext_resource type="PackedScene" uid="uid://cjoo6ilm8eim1" path="res://scenes/2d/spongebob2d.tscn" id="10_g8oo3"]
+
+[node name="Level1" type="Node2D"]
+script = ExtResource("1_huh3m")
+
+[node name="Downtown" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(2400, 435)
+texture = ExtResource("2_jdhyg")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+scroll_offset = Vector2(208.571, -1345.04)
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(-4, 4)
+motion_scale = Vector2(0, 0)
+motion_mirroring = Vector2(240, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+texture_filter = 2
+texture_repeat = 2
+position = Vector2(4, -4)
+scale = Vector2(1, 1.4)
+texture = ExtResource("3_afw2d")
+centered = false
+
+[node name="Collisions" type="Node" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Collisions"]
+position = Vector2(0, -7)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Collisions/StaticBody2D"]
+polygon = PackedVector2Array(1, 627, 801, 627, 801, 638, 832, 638, 832, 627, 1170, 627, 1170, 641, 1202, 641, 1202, 627, 1524, 626, 1524, 646, 1567, 646, 1567, 626, 1942, 626, 1942, 643, 1986, 643, 1986, 626, 2676, 626, 2676, 643, 2703, 643, 2703, 627, 4805, 629, 4802, 688)
+
+[node name="Platform" parent="Collisions" instance=ExtResource("5_sdvye")]
+position = Vector2(508, 540)
+scale = Vector2(5.8, 1)
+
+[node name="Platform2" parent="Collisions" instance=ExtResource("5_sdvye")]
+position = Vector2(852, 541)
+scale = Vector2(5.8, 1)
+
+[node name="Platform13" parent="Collisions" instance=ExtResource("5_sdvye")]
+position = Vector2(1200, 513)
+scale = Vector2(10.4, 1)
+
+[node name="Platform14" parent="Collisions" instance=ExtResource("5_sdvye")]
+position = Vector2(3624, 513)
+scale = Vector2(8.80004, 1)
+
+[node name="Platform4" parent="Collisions" instance=ExtResource("5_sdvye")]
+position = Vector2(2272, 540)
+scale = Vector2(4.64, 1)
+
+[node name="Platform5" parent="Collisions" instance=ExtResource("5_sdvye")]
+position = Vector2(2672, 492)
+scale = Vector2(4.64, 1)
+
+[node name="Platform10" parent="Collisions" instance=ExtResource("5_sdvye")]
+position = Vector2(3836, 540)
+scale = Vector2(4.2, 1)
+
+[node name="Platform11" parent="Collisions" instance=ExtResource("5_sdvye")]
+position = Vector2(3980, 540)
+scale = Vector2(4.2, 1)
+
+[node name="Platform12" parent="Collisions" instance=ExtResource("5_sdvye")]
+position = Vector2(3972, 492)
+scale = Vector2(4.2, 1)
+
+[node name="Platform6" parent="Collisions" instance=ExtResource("5_sdvye")]
+position = Vector2(2800, 513)
+scale = Vector2(7.8, 1)
+
+[node name="Platform7" parent="Collisions" instance=ExtResource("5_sdvye")]
+position = Vector2(3054, 573)
+scale = Vector2(4.76, 1)
+
+[node name="Platform3" parent="Collisions" instance=ExtResource("5_sdvye")]
+position = Vector2(1544, 500)
+scale = Vector2(6.24, 1)
+
+[node name="Platform8" parent="Collisions" instance=ExtResource("5_sdvye")]
+position = Vector2(1544, 540)
+scale = Vector2(8.56, 1)
+
+[node name="Platform9" parent="Collisions" instance=ExtResource("5_sdvye")]
+position = Vector2(1952, 513)
+scale = Vector2(12.16, 1)
+
+[node name="Collects" type="Node" parent="."]
+
+[node name="Spatula" parent="Collects" instance=ExtResource("7_6aubs")]
+position = Vector2(338, 600)
+
+[node name="Spatula2" parent="Collects" instance=ExtResource("7_6aubs")]
+position = Vector2(370, 600)
+
+[node name="Spatula3" parent="Collects" instance=ExtResource("7_6aubs")]
+position = Vector2(539, 513)
+
+[node name="Spatula4" parent="Collects" instance=ExtResource("7_6aubs")]
+position = Vector2(483, 512)
+
+[node name="Spatula5" parent="Collects" instance=ExtResource("7_6aubs")]
+position = Vector2(975, 603)
+
+[node name="Spatula6" parent="Collects" instance=ExtResource("7_6aubs")]
+position = Vector2(1017, 603)
+
+[node name="Spatula7" parent="Collects" instance=ExtResource("7_6aubs")]
+position = Vector2(1138, 481)
+
+[node name="Spatula8" parent="Collects" instance=ExtResource("7_6aubs")]
+position = Vector2(1171, 481)
+
+[node name="Spatula9" parent="Collects" instance=ExtResource("7_6aubs")]
+position = Vector2(1238, 481)
+
+[node name="Spatula10" parent="Collects" instance=ExtResource("7_6aubs")]
+position = Vector2(1205, 481)
+
+[node name="Enemies" type="Node" parent="."]
+
+[node name="Jellyfish" parent="Enemies" instance=ExtResource("6_lvgs6")]
+position = Vector2(705, 583)
+
+[node name="Jellyfish2" parent="Enemies" instance=ExtResource("6_lvgs6")]
+position = Vector2(705, 604)
+
+[node name="Jellyfish3" parent="Enemies" instance=ExtResource("6_lvgs6")]
+position = Vector2(703, 553)
+
+[node name="Jellyfish4" parent="Enemies" instance=ExtResource("6_lvgs6")]
+position = Vector2(729, 571)
+
+[node name="Jellyfish5" parent="Enemies" instance=ExtResource("6_lvgs6")]
+position = Vector2(732, 595)
+
+[node name="Jellyfish6" parent="Enemies" instance=ExtResource("6_lvgs6")]
+position = Vector2(727, 534)
+
+[node name="Jellyfish7" parent="Enemies" instance=ExtResource("6_lvgs6")]
+position = Vector2(765, 585)
+
+[node name="Jellyfish8" parent="Enemies" instance=ExtResource("6_lvgs6")]
+position = Vector2(755, 550)
+
+[node name="Jellyfish9" parent="Enemies" instance=ExtResource("6_lvgs6")]
+position = Vector2(791, 608)
+
+[node name="Jellyfish10" parent="Enemies" instance=ExtResource("6_lvgs6")]
+position = Vector2(787, 534)
+
+[node name="Jellyfish11" parent="Enemies" instance=ExtResource("6_lvgs6")]
+position = Vector2(799, 568)
+
+[node name="Jellyfish12" parent="Enemies" instance=ExtResource("6_lvgs6")]
+position = Vector2(757, 517)
+
+[node name="Jellyfish13" parent="Enemies" instance=ExtResource("6_lvgs6")]
+position = Vector2(714, 507)
+
+[node name="Jellyfish14" parent="Enemies" instance=ExtResource("6_lvgs6")]
+position = Vector2(825, 591)
+
+[node name="Jellyfish15" parent="Enemies" instance=ExtResource("6_lvgs6")]
+position = Vector2(825, 535)
+
+[node name="Spongebob" parent="." instance=ExtResource("10_g8oo3")]
+position = Vector2(192, 589)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://cjoo6ilm8eim1"]
+[gd_scene load_steps=75 format=3 uid="uid://cjoo6ilm8eim1"]
 
 [ext_resource type="Script" path="res://scripts/Spongebob2d.gd" id="1_uyiiv"]
 [ext_resource type="Texture2D" uid="uid://dqof8iplybhpj" path="res://assets/2d/spongebobby/net/0.png" id="2_ll1q8"]
@@ -40,15 +40,38 @@
 [ext_resource type="Texture2D" uid="uid://cama1317sf46h" path="res://assets/2d/spongebobby/net/10.png" id="12_r0pk2"]
 [ext_resource type="Texture2D" uid="uid://cy3v41pm4phof" path="res://assets/2d/spongebobby/net/11.png" id="13_njlo3"]
 [ext_resource type="Texture2D" uid="uid://cx0ahofrce2mx" path="res://assets/2d/spongebobby/53.png" id="13_qaynp"]
+[ext_resource type="Texture2D" uid="uid://ddf6er3reodxk" path="res://assets/2d/spongebobby/189.png" id="14_ryjrp"]
 [ext_resource type="Texture2D" uid="uid://dwfeeij6tafk" path="res://assets/2d/spongebobby/54.png" id="14_ukf4j"]
 [ext_resource type="Texture2D" uid="uid://txlmkbgvdgar" path="res://assets/2d/spongebobby/55.png" id="15_22q71"]
+[ext_resource type="Texture2D" uid="uid://blg3ude5diy5f" path="res://assets/2d/spongebobby/186.png" id="15_o6sj1"]
 [ext_resource type="Texture2D" uid="uid://ompat22xqbs" path="res://assets/2d/spongebobby/56.png" id="16_1u4si"]
+[ext_resource type="Texture2D" uid="uid://iac8hwiljefn" path="res://assets/2d/spongebobby/175.png" id="16_keiwk"]
 [ext_resource type="Texture2D" uid="uid://ctrxvg3ouwmsb" path="res://assets/2d/spongebobby/57.png" id="17_7v3wd"]
+[ext_resource type="Texture2D" uid="uid://dvunuvsymmsfo" path="res://assets/2d/spongebobby/176.png" id="17_xik7h"]
+[ext_resource type="Texture2D" uid="uid://bpxh4mwpk6l71" path="res://assets/2d/spongebobby/177.png" id="18_2x4r7"]
 [ext_resource type="Texture2D" uid="uid://i0d8cle7y8m1" path="res://assets/2d/spongebobby/58.png" id="18_krqdg"]
+[ext_resource type="Texture2D" uid="uid://cj6gbo8o5pimq" path="res://assets/2d/spongebobby/178.png" id="19_ih72v"]
 [ext_resource type="Texture2D" uid="uid://beahfyio3bn1j" path="res://assets/2d/spongebobby/59.png" id="19_rvr5r"]
+[ext_resource type="Texture2D" uid="uid://bgi1qos45ieww" path="res://assets/2d/spongebobby/192.png" id="20_aje4x"]
 [ext_resource type="Texture2D" uid="uid://r4s6l01bojrh" path="res://assets/2d/spongebobby/60.png" id="20_kc5sd"]
 [ext_resource type="Texture2D" uid="uid://bpke4ybnsge4n" path="res://assets/2d/spongebobby/61.png" id="21_3hojc"]
+[ext_resource type="Texture2D" uid="uid://ksb7nk57asus" path="res://assets/2d/spongebobby/179.png" id="21_mql0d"]
+[ext_resource type="Texture2D" uid="uid://3m8y8r3u17ri" path="res://assets/2d/spongebobby/180.png" id="22_ghc2k"]
 [ext_resource type="Texture2D" uid="uid://d10587d02vvf4" path="res://assets/2d/spongebobby/62.png" id="22_vldnr"]
+[ext_resource type="Texture2D" uid="uid://ckx2e5uulo2gc" path="res://assets/2d/spongebobby/181.png" id="23_ga161"]
+[ext_resource type="Texture2D" uid="uid://bh7xjbcmsytc0" path="res://assets/2d/spongebobby/187.png" id="24_ib32e"]
+[ext_resource type="Texture2D" uid="uid://deudp1tqgu7y4" path="res://assets/2d/spongebobby/182.png" id="25_nr4st"]
+[ext_resource type="Texture2D" uid="uid://c3jn83mtdtc43" path="res://assets/2d/spongebobby/183.png" id="26_3f5rc"]
+[ext_resource type="Texture2D" uid="uid://bgh44ua13lstq" path="res://assets/2d/spongebobby/184.png" id="27_6j71w"]
+[ext_resource type="Texture2D" uid="uid://dswev3f8iyhtn" path="res://assets/2d/spongebobby/188.png" id="28_cj0gn"]
+[ext_resource type="Texture2D" uid="uid://cq7gsf3va67on" path="res://assets/2d/spongebobby/185.png" id="29_mpod7"]
+[ext_resource type="Texture2D" uid="uid://baloq1dvd28gg" path="res://assets/2d/spongebobby/190.png" id="30_fpguq"]
+[ext_resource type="Texture2D" uid="uid://42qgxaegl8nw" path="res://assets/2d/spongebobby/191.png" id="31_54ko0"]
+[ext_resource type="Texture2D" uid="uid://bsg20eudlqnc2" path="res://assets/2d/spongebobby/193.png" id="32_83u2d"]
+[ext_resource type="Texture2D" uid="uid://c1l5h8lum4upj" path="res://assets/2d/spongebobby/194.png" id="33_wjp2y"]
+[ext_resource type="Texture2D" uid="uid://dehkn8l3djvyf" path="res://assets/2d/spongebobby/195.png" id="34_k8yt8"]
+[ext_resource type="Texture2D" uid="uid://c86ajrpok01mv" path="res://assets/2d/spongebobby/196.png" id="35_gyuho"]
+[ext_resource type="Texture2D" uid="uid://jvqldsl5txea" path="res://assets/2d/spongebobby/197.png" id="36_h0suv"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_u32rl"]
 animations = [{
@@ -91,6 +114,80 @@ animations = [{
 }],
 "loop": false,
 "name": &"attack",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_ryjrp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_o6sj1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_keiwk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_xik7h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_2x4r7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_ih72v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_aje4x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_mql0d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_ghc2k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_ga161")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_ib32e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_nr4st")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_3f5rc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_6j71w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_cj0gn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_mpod7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_fpguq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_54ko0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_83u2d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_wjp2y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_k8yt8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_gyuho")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_h0suv")
+}],
+"loop": false,
+"name": &"dying",
 "speed": 15.0
 }, {
 "frames": [{
@@ -312,8 +409,10 @@ script = ExtResource("1_uyiiv")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_u32rl")
-animation = &"idle"
+animation = &"dying"
 autoplay = "idle"
+frame = 22
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_putow")
@@ -323,7 +422,4 @@ offset = Vector2(0, -50)
 zoom = Vector2(3, 3)
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
-drag_left_margin = 0.1
-drag_top_margin = 0.1
-drag_right_margin = 0.1
-drag_bottom_margin = 0.1
+drag_top_margin = 1.0

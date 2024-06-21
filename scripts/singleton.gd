@@ -1,6 +1,6 @@
 extends Node
 
-@export var inmenu:bool = true
+@export var inmenu:bool = false
 @export var lifes:int = 4
 @export var health:int = 3
 @export var spatulas:int = 0
@@ -16,6 +16,12 @@ func _process(delta):
 
 func create(node:PackedScene):
 	var new_node = node.instantiate()
+	add_child(new_node)
+
+func do_explosion(pos:Vector2):
+	var node = preload("res://scenes/2d/explosion.tscn")
+	var new_node = node.instantiate()
+	new_node.position = pos
 	add_child(new_node)
 
 func wait(seconds: float) -> void:

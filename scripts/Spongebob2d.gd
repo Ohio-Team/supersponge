@@ -10,7 +10,7 @@ const JUMP_VELOCITY = -430.0
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func _ready():
-	Ui.create_dialog("Yo Bob watch out for the jellyfish up ahead they're your opps and they'll try to kill you")
+	pass
 
 func inputs():
 	if state == "hurt":
@@ -37,10 +37,10 @@ func inputs():
 		state = "groundpound"
 	if Input.is_action_just_pressed("ui_cancel"):
 		get_tree().change_scene_to_file("res://scenes/Main Menu.tscn")
-	if velocity.y > 0 and anim.animation != "groundpound" and anim.animation != "hurt"  and anim.animation != "attack" and  not is_on_floor():
+	if velocity.y > 0 and anim.animation != "groundpound" and anim.animation != "hurt"  and anim.animation != "attack" and anim.animation != "dying" and  not is_on_floor():
 		anim.play("fall")
 		state = "fall"
-	if anim.animation == "fall" or anim.animation == "groundpound" and anim.animation != "attack" and is_on_floor():
+	if anim.animation == "fall" or anim.animation == "groundpound" and anim.animation != "attack" and anim.animation != "dying" and is_on_floor():
 		anim.play("land")
 		state = "land"
 
@@ -52,7 +52,10 @@ func _physics_process(delta):
 		Singleton.lifes -= 1
 		Singleton.inmenu = true
 		Singleton.health = 3
-		get_tree().change_scene_to_file("res://scenes/Main Menu.tscn")
+		state = "dying"
+		anim.play("dying")
+		await anim.animation_finished
+		get_tree().reload_current_scene()
 	if not is_on_floor():
 		velocity.y += gravity * delta
 	# Get the input direction and handle the movement/deceleration.
@@ -62,13 +65,13 @@ func _physics_process(delta):
 		anim.flip_h = true
 	elif direction == 1:
 		anim.flip_h = false
-	if direction and anim.animation != "hurt" and anim.animation != "attack":
+	if direction and anim.animation != "hurt" and anim.animation != "attack" and anim.animation != "dying":
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-	if velocity.x != 0 and anim.animation != "jump" and anim.animation != "fall" and anim.animation != "groundpound" and anim.animation != "hurt" and anim.animation != "attack":
+	if velocity.x != 0 and anim.animation != "jump" and anim.animation != "fall" and anim.animation != "groundpound" and anim.animation != "hurt" and anim.animation != "attack" and anim.animation != "dying":
 		anim.play("run")
-	if velocity.x == 0 and velocity.y == 0 and anim.animation != "attack":
+	if velocity.x == 0 and velocity.y == 0 and anim.animation != "attack" and anim.animation != "dying":
 		anim.play("idle")
 		state = "idle"
 	move_and_slide()

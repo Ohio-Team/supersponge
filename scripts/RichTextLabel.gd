@@ -3,7 +3,7 @@ extends RichTextLabel
 # The full text to be displayed
 @export var full_text: String = "Hello. I'm Mr. Frog, this is [b]my show[/b], i eat the bug."
 var finishedtext:bool = false
-var char_interval: float = 0.03
+var char_interval: float = 0.05
 var current_index: int = 0
 
 func _ready():
@@ -16,6 +16,7 @@ func start_text_update():
 
 func _process(delta):
 	_update_text()
+
 
 func _update_text():
 	if current_index < full_text.length():

@@ -3,7 +3,23 @@
 [ext_resource type="Script" path="res://scripts/Main Menu.gd" id="1_cki2b"]
 [ext_resource type="FontFile" uid="uid://c4lyevru8sr3e" path="res://assets/fonts/Krabby Patty.ttf" id="1_jb0v5"]
 [ext_resource type="Script" path="res://scripts/Button.gd" id="2_wkvhc"]
-[ext_resource type="Script" path="res://scripts/Button2.gd" id="3_r3i8e"]
+
+[sub_resource type="GDScript" id="GDScript_kt6nb"]
+script/source = "extends Button
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+func _on_pressed():
+	Singleton.inmenu = false
+	get_tree().change_scene_to_file(\"res://scenes/2d/level1.tscn\")
+"
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -23,8 +39,9 @@ offset_bottom = 276.0
 theme_override_fonts/normal_font = ExtResource("1_jb0v5")
 theme_override_font_sizes/normal_font_size = 36
 bbcode_enabled = true
-text = "BADASS SUPERSPONGE GAME."
+text = "[tornado]BADASS SUPERSPONGE GAME.[/tornado]"
 fit_content = true
+scroll_following = true
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
@@ -41,8 +58,8 @@ offset_left = 372.0
 offset_top = 286.0
 offset_right = 493.0
 offset_bottom = 317.0
-text = "2D super retro"
-script = ExtResource("3_r3i8e")
+text = "Level 1"
+script = SubResource("GDScript_kt6nb")
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="."]
 layout_mode = 0

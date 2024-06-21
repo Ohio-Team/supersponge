@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cu4vij01plso7"
-path="res://.godot/imported/maxresdefault.jpg-85aebb460abf72f9d103d526835e9e78.ctex"
+uid="uid://c8rtjvoax4sv"
+path="res://.godot/imported/5a0fde6a-5cb0-423e-9957-1c8146a01ee9.png-3bc474ac400655af4fa4af492e69b2a6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/2d/miscsprites/maxresdefault.jpg"
-dest_files=["res://.godot/imported/maxresdefault.jpg-85aebb460abf72f9d103d526835e9e78.ctex"]
+source_file="res://assets/2d/miscsprites/explosion/5a0fde6a-5cb0-423e-9957-1c8146a01ee9.png"
+dest_files=["res://.godot/imported/5a0fde6a-5cb0-423e-9957-1c8146a01ee9.png-3bc474ac400655af4fa4af492e69b2a6.ctex"]
 
 [params]
 
