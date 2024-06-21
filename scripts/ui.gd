@@ -16,6 +16,7 @@ func _process(delta):
 		
 	$Counter.text = "[shake]x" + str(Singleton.health)
 	$Counter2.text = "[shake]x" + str(Singleton.spatulas)
+	$Label.text = str(Engine.get_frames_per_second())
 	if $Dialog:
 		$Dialog.finished_dialog.connect(emit_dialogfinished)
 	

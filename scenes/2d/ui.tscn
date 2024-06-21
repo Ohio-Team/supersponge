@@ -36,3 +36,9 @@ text = "[shake]x0"
 position = Vector2(44, 126)
 scale = Vector2(3, 2.875)
 texture = ExtResource("4_qlyf8")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 1062.0
+offset_top = 23.0
+offset_right = 1137.0
+offset_bottom = 91.0
