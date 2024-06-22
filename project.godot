@@ -98,6 +98,10 @@ attack={
 ]
 }
 
+[physics]
+
+3d/physics_engine="GodotPhysics3D"
+
 [rendering]
 
 occlusion_culling/bvh_build_quality=0

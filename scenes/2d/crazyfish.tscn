@@ -1,0 +1,65 @@
+[gd_scene load_steps=10 format=3 uid="uid://dolf5os2imxdu"]
+
+[ext_resource type="Script" path="res://scripts/Crazyfish.gd" id="1_k62qc"]
+[ext_resource type="Texture2D" uid="uid://bvhsoe2nios8e" path="res://assets/2d/enemies/crazyfish1.png" id="2_hjbea"]
+[ext_resource type="Texture2D" uid="uid://cb027sr626i3y" path="res://assets/2d/enemies/crazyfish2.png" id="3_b2t4s"]
+[ext_resource type="Texture2D" uid="uid://bq268l865srkq" path="res://assets/2d/enemies/crazyfish3.png" id="4_gg0kf"]
+[ext_resource type="Texture2D" uid="uid://n6mxmcggqha7" path="res://assets/2d/enemies/crazyfish4.png" id="5_645va"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wcj1d"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_hjbea")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_b2t4s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_gg0kf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_645va")
+}],
+"loop": true,
+"name": &"default",
+"speed": 15.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o6s8t"]
+size = Vector2(14, 25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_woqc3"]
+size = Vector2(568, 410)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_38hmy"]
+size = Vector2(29, 51)
+
+[node name="Crazyfish" type="CharacterBody2D"]
+script = ExtResource("1_k62qc")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+sprite_frames = SubResource("SpriteFrames_wcj1d")
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_o6s8t")
+
+[node name="Visible zone" type="Area2D" parent="."]
+scale = Vector2(0.5, 0.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Visible zone"]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_woqc3")
+
+[node name="hitzone" type="Area2D" parent="."]
+scale = Vector2(0.5, 0.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitzone"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_38hmy")
+
+[connection signal="body_entered" from="Visible zone" to="." method="_on_visiblezone_entered"]
+[connection signal="body_entered" from="hitzone" to="." method="_on_hitzone_body_entered"]

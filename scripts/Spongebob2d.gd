@@ -50,7 +50,6 @@ func _physics_process(delta):
 	if Singleton.health <= 0:
 		print("game over 💔")
 		Singleton.lifes -= 1
-		Singleton.inmenu = true
 		Singleton.health = 3
 		state = "dying"
 		anim.play("dying")

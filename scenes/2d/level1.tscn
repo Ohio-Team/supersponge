@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://wqoqonv86j4"]
+[gd_scene load_steps=10 format=3 uid="uid://wqoqonv86j4"]
 
 [ext_resource type="Script" path="res://scripts/level1.gd" id="1_huh3m"]
 [ext_resource type="Texture2D" uid="uid://bjqf1nbmaob28" path="res://assets/2d/miscsprites/downtown.png" id="2_jdhyg"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bmdnpojldt0pf" path="res://scenes/2d/jellyfish.tscn" id="6_lvgs6"]
 [ext_resource type="PackedScene" uid="uid://b86vokonmmvq5" path="res://scenes/2d/spatula.tscn" id="7_6aubs"]
 [ext_resource type="PackedScene" uid="uid://dwh0654dmbwpw" path="res://scenes/2d/soda.tscn" id="8_o7eu5"]
+[ext_resource type="PackedScene" uid="uid://dolf5os2imxdu" path="res://scenes/2d/crazyfish.tscn" id="9_m2ma8"]
 [ext_resource type="PackedScene" uid="uid://cjoo6ilm8eim1" path="res://scenes/2d/spongebob2d.tscn" id="10_g8oo3"]
 
 [node name="Level1" type="Node2D"]
@@ -39,7 +40,7 @@ centered = false
 position = Vector2(0, -7)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Collisions/StaticBody2D"]
-polygon = PackedVector2Array(1, 627, 801, 627, 801, 638, 832, 638, 832, 627, 1170, 627, 1170, 641, 1202, 641, 1202, 627, 1524, 626, 1524, 646, 1567, 646, 1567, 626, 1942, 626, 1942, 643, 1986, 643, 1986, 626, 2676, 626, 2676, 643, 2703, 643, 2703, 627, 4805, 629, 4802, 688)
+polygon = PackedVector2Array(1, 626, 801, 627, 801, 638, 832, 638, 832, 627, 1170, 627, 1170, 641, 1202, 641, 1202, 627, 1524, 626, 1524, 646, 1567, 646, 1567, 626, 1942, 626, 1942, 643, 1986, 643, 1986, 626, 2676, 626, 2676, 643, 2703, 643, 2703, 627, 4805, 629, 4802, 688, 1, 661)
 
 [node name="Platform" parent="Collisions" instance=ExtResource("5_sdvye")]
 position = Vector2(508, 540)
@@ -178,6 +179,9 @@ position = Vector2(825, 591)
 
 [node name="Jellyfish15" parent="Enemies" instance=ExtResource("6_lvgs6")]
 position = Vector2(825, 535)
+
+[node name="Crazyfish" parent="Enemies" instance=ExtResource("9_m2ma8")]
+position = Vector2(1448, 602)
 
 [node name="Spongebob" parent="." instance=ExtResource("10_g8oo3")]
 position = Vector2(192, 589)
