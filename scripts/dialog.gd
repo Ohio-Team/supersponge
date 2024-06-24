@@ -1,4 +1,4 @@
-extends Control
+extends CanvasLayer
 
 @export var full_text = "i love grimace shake"
 @export var char:String = "spongebob"

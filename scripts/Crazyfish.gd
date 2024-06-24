@@ -9,18 +9,18 @@ func _ready():
 	$AnimatedSprite2D.play("default")
 
 func _physics_process(delta):
+	var direction = (player.position - position).normalized()
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
 		
 	if startmoving:
-		velocity.x = -400
+		velocity.x = direction.x * 250
 		
 	move_and_slide()
 
 func _on_visiblezone_entered(body):
 	if body == player:
-		
 		startmoving = true
 
 func _on_hitzone_body_entered(body):

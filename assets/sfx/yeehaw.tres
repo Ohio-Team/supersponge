@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="SingleSoundEffect" load_steps=3 format=3 uid="uid://ds23urw8towqc"]
+
+[ext_resource type="AudioStream" uid="uid://b7ra5bor2qnuq" path="res://assets/sfx/yeehaw.mp3" id="1_2g6ey"]
+[ext_resource type="Script" path="res://addons/bmod/scripts/resources/single_sound_effect.gd" id="1_i7h6w"]
+
+[resource]
+script = ExtResource("1_i7h6w")
+audio_stream = ExtResource("1_2g6ey")
+play = false
+play_on_change = false

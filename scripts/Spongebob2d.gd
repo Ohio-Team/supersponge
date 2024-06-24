@@ -27,11 +27,11 @@ func inputs():
 		state = "idle"
 		anim.play("idle")
 	# Handle jump.
-	if Input.is_action_just_pressed("jump") and is_on_floor():
+	if Input.is_action_just_pressed("jump") and state != "hurt" and state != "dying" and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 		anim.play("jump")
 		state = "jump"
-	if Input.is_action_just_pressed("jump") and not is_on_floor():
+	if Input.is_action_just_pressed("jump") and state != "hurt" and state != "dying" and not is_on_floor():
 		velocity.y = -JUMP_VELOCITY
 		anim.play("groundpound")
 		state = "groundpound"
@@ -54,7 +54,8 @@ func _physics_process(delta):
 		state = "dying"
 		anim.play("dying")
 		await anim.animation_finished
-		get_tree().reload_current_scene()
+		if get_tree():
+			get_tree().reload_current_scene()
 	if not is_on_floor():
 		velocity.y += gravity * delta
 	# Get the input direction and handle the movement/deceleration.

@@ -1,5 +1,5 @@
-extends CharacterBody3D
-
+@icon("./spongebob-squarepants-2")
+class_name spunchbob extends CharacterBody3D
 
 @export var SPEED = 20.0
 @onready var animation_tree = $AnimationTree

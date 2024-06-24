@@ -33,6 +33,7 @@ bbcode_enabled = true
 text = "[shake]x0"
 
 [node name="Spatula" type="Sprite2D" parent="."]
+texture_filter = 1
 position = Vector2(44, 126)
 scale = Vector2(3, 2.875)
 texture = ExtResource("4_qlyf8")

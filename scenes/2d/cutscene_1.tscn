@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://ce47gwj7i6pua"]
+
+[ext_resource type="Script" path="res://scripts/cutscene_handler.gd" id="1_3dnub"]
+[ext_resource type="VideoStream" path="res://assets/videos/y2mate.com - Rednex Cotton Eye Joe Official Music Video HD RednexMusic com_v240P.ogv" id="1_fw2ij"]
+[ext_resource type="PackedScene" uid="uid://cqym6djwfdoeq" path="res://scenes/2d/level2town.tscn" id="2_uji28"]
+
+[node name="cutscene 1" type="Node2D"]
+script = ExtResource("1_3dnub")
+after_cutscene = ExtResource("2_uji28")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+offset_right = 1152.0
+offset_bottom = 648.0
+stream = ExtResource("1_fw2ij")
+autoplay = true
+expand = true
+buffering_msec = 10
+
+[node name="Label" type="Label" parent="."]
+offset_left = 13.0
+offset_top = 609.0
+offset_right = 325.0
+offset_bottom = 632.0
+text = "Cutscene pending. Press any key to skip."

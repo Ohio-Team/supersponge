@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=3 uid="uid://b2bv5n6x7m2da"]
+
+[ext_resource type="Script" path="res://scenes/2d/level2.gd" id="1_xmle0"]
+[ext_resource type="Texture2D" uid="uid://ds46wqddsw2jd" path="res://assets/2d/miscsprites/7yY5Sc26Mapmc2Z12XSVTQ.png" id="2_uqn11"]
+[ext_resource type="PackedScene" uid="uid://cjoo6ilm8eim1" path="res://scenes/2d/spongebob2d.tscn" id="3_ysv3t"]
+[ext_resource type="PackedScene" uid="uid://ijj6qbkx8vhd" path="res://scenes/2d/platform.tscn" id="4_aqvfg"]
+
+[node name="level2" type="Node2D"]
+script = ExtResource("1_xmle0")
+
+[node name="7yY5Sc26Mapmc2z12xsvtq" type="Sprite2D" parent="."]
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("2_uqn11")
+
+[node name="Spongebob" parent="." instance=ExtResource("3_ysv3t")]
+position = Vector2(-824, 163)
+
+[node name="Collisions" type="Node" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Collisions"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Collisions/StaticBody2D"]
+polygon = PackedVector2Array(-1440, 658, 72, 661, 1, 812, -1443, 827)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Collisions/StaticBody2D"]
+polygon = PackedVector2Array(-1440, 320, -1096, 245, -887, 137, -774, 142, -575, 237, -435, 360, -82, 373, 90, 333, 263, 343, 677, 333, 846, 346, 958, 116, 933, -66, 1446, -84, 1444, 811, 1494, 812, 1527, -239, -914, -275)
+
+[node name="Platform" parent="Collisions" instance=ExtResource("4_aqvfg")]
+position = Vector2(152, 584)
+scale = Vector2(6.48, 1)
+
+[node name="Platform2" parent="Collisions" instance=ExtResource("4_aqvfg")]
+position = Vector2(436, 527)
+scale = Vector2(4.48, 1)
+
+[node name="Platform3" parent="Collisions" instance=ExtResource("4_aqvfg")]
+position = Vector2(605, 587)
+scale = Vector2(4.96958, 1.73759)
+
+[node name="Platform4" parent="Collisions" instance=ExtResource("4_aqvfg")]
+position = Vector2(1005, 584)
+scale = Vector2(18.6096, 1.73759)

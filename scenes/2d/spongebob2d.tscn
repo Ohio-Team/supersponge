@@ -404,6 +404,7 @@ animations = [{
 size = Vector2(20, 30)
 
 [node name="Spongebob" type="CharacterBody2D"]
+floor_stop_on_slope = false
 script = ExtResource("1_uyiiv")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

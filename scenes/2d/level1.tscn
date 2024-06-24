@@ -1,14 +1,23 @@
-[gd_scene load_steps=10 format=3 uid="uid://wqoqonv86j4"]
+[gd_scene load_steps=17 format=3 uid="uid://wqoqonv86j4"]
 
 [ext_resource type="Script" path="res://scripts/level1.gd" id="1_huh3m"]
 [ext_resource type="Texture2D" uid="uid://bjqf1nbmaob28" path="res://assets/2d/miscsprites/downtown.png" id="2_jdhyg"]
 [ext_resource type="Texture2D" uid="uid://bsodv4tuo7r18" path="res://assets/2d/miscsprites/gradient.png" id="3_afw2d"]
+[ext_resource type="Texture2D" uid="uid://b4tkx40gqj1uv" path="res://assets/2d/miscsprites/1200.png" id="3_ed760"]
+[ext_resource type="PackedScene" uid="uid://biiire7ectn7p" path="res://scenes/2d/hurtbox.tscn" id="5_exgwk"]
 [ext_resource type="PackedScene" uid="uid://ijj6qbkx8vhd" path="res://scenes/2d/platform.tscn" id="5_sdvye"]
 [ext_resource type="PackedScene" uid="uid://bmdnpojldt0pf" path="res://scenes/2d/jellyfish.tscn" id="6_lvgs6"]
+[ext_resource type="Texture2D" uid="uid://bsh4jwmai8otr" path="res://assets/2d/miscsprites/box.png" id="6_rxmxx"]
+[ext_resource type="PackedScene" uid="uid://bbsr3i06k8mc8" path="res://scenes/2d/cutscene_door_2d.tscn" id="7_2xj00"]
 [ext_resource type="PackedScene" uid="uid://b86vokonmmvq5" path="res://scenes/2d/spatula.tscn" id="7_6aubs"]
 [ext_resource type="PackedScene" uid="uid://dwh0654dmbwpw" path="res://scenes/2d/soda.tscn" id="8_o7eu5"]
+[ext_resource type="PackedScene" uid="uid://ce47gwj7i6pua" path="res://scenes/2d/cutscene_1.tscn" id="8_xoxlf"]
 [ext_resource type="PackedScene" uid="uid://dolf5os2imxdu" path="res://scenes/2d/crazyfish.tscn" id="9_m2ma8"]
 [ext_resource type="PackedScene" uid="uid://cjoo6ilm8eim1" path="res://scenes/2d/spongebob2d.tscn" id="10_g8oo3"]
+[ext_resource type="PackedScene" uid="uid://bfev5tp3it5jo" path="res://scenes/2d/burger.tscn" id="11_ct6ny"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p5m3d"]
+size = Vector2(33, 29)
 
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_huh3m")
@@ -17,6 +26,11 @@ script = ExtResource("1_huh3m")
 texture_filter = 1
 position = Vector2(2400, 435)
 texture = ExtResource("2_jdhyg")
+
+[node name="1200" type="Sprite2D" parent="."]
+position = Vector2(4612, 556)
+scale = Vector2(0.205417, 0.180251)
+texture = ExtResource("3_ed760")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 scroll_offset = Vector2(208.571, -1345.04)
@@ -40,7 +54,7 @@ centered = false
 position = Vector2(0, -7)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Collisions/StaticBody2D"]
-polygon = PackedVector2Array(1, 626, 801, 627, 801, 638, 832, 638, 832, 627, 1170, 627, 1170, 641, 1202, 641, 1202, 627, 1524, 626, 1524, 646, 1567, 646, 1567, 626, 1942, 626, 1942, 643, 1986, 643, 1986, 626, 2676, 626, 2676, 643, 2703, 643, 2703, 627, 4805, 629, 4802, 688, 1, 661)
+polygon = PackedVector2Array(1, 626, 801, 627, 801, 638, 832, 638, 832, 627, 1170, 627, 1170, 641, 1202, 641, 1202, 627, 1524, 627, 1524, 646, 1567, 646, 1567, 627, 1942, 627, 1942, 643, 1986, 643, 1986, 627, 2676, 627, 2676, 643, 2703, 643, 2703, 627, 2770.72, 627.064, 4805, 629, 4802, 688, 1, 661)
 
 [node name="Platform" parent="Collisions" instance=ExtResource("5_sdvye")]
 position = Vector2(508, 540)
@@ -98,7 +112,61 @@ scale = Vector2(8.56, 1)
 position = Vector2(1952, 513)
 scale = Vector2(12.16, 1)
 
+[node name="hurtbox" parent="Collisions" instance=ExtResource("5_exgwk")]
+position = Vector2(817, 630)
+scale = Vector2(1.68, 1)
+
+[node name="hurtbox2" parent="Collisions" instance=ExtResource("5_exgwk")]
+position = Vector2(1186, 630)
+scale = Vector2(1.68, 1)
+
+[node name="hurtbox3" parent="Collisions" instance=ExtResource("5_exgwk")]
+position = Vector2(1545, 630)
+scale = Vector2(2.36, 1)
+
+[node name="hurtbox4" parent="Collisions" instance=ExtResource("5_exgwk")]
+position = Vector2(1965, 630)
+scale = Vector2(2.36, 1)
+
+[node name="hurtbox5" parent="Collisions" instance=ExtResource("5_exgwk")]
+position = Vector2(2689, 630)
+scale = Vector2(2.36, 1)
+
+[node name="hurtbox6" parent="Collisions" instance=ExtResource("5_exgwk")]
+position = Vector2(2793, 630)
+scale = Vector2(1.86721, 1.13255)
+
+[node name="hurtbox7" parent="Collisions" instance=ExtResource("5_exgwk")]
+position = Vector2(3609, 630)
+scale = Vector2(1.86721, 1.13255)
+
+[node name="hurtbox8" parent="Collisions" instance=ExtResource("5_exgwk")]
+position = Vector2(3721, 630)
+scale = Vector2(1.86721, 1.13255)
+
+[node name="hurtbox9" parent="Collisions" instance=ExtResource("5_exgwk")]
+position = Vector2(3935, 630)
+scale = Vector2(1.86721, 1.13255)
+
+[node name="CutsceneDoor2D" parent="Collisions" instance=ExtResource("7_2xj00")]
+position = Vector2(4548, 573)
+cutscene = ExtResource("8_xoxlf")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Collisions"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions/StaticBody2D2"]
+position = Vector2(4016.5, 631.5)
+shape = SubResource("RectangleShape2D_p5m3d")
+
+[node name="Box" type="Sprite2D" parent="Collisions/StaticBody2D2"]
+position = Vector2(4016.2, 631.5)
+scale = Vector2(0.065625, 0.0566407)
+texture = ExtResource("6_rxmxx")
+
 [node name="Collects" type="Node" parent="."]
+
+[node name="Spatula11" parent="Collects" instance=ExtResource("7_6aubs")]
+position = Vector2(1598, 608)
 
 [node name="Spatula" parent="Collects" instance=ExtResource("7_6aubs")]
 position = Vector2(338, 600)
@@ -132,6 +200,51 @@ position = Vector2(1205, 481)
 
 [node name="Soda" parent="Collects" instance=ExtResource("8_o7eu5")]
 position = Vector2(853, 510)
+
+[node name="Spatula12" parent="Collects" instance=ExtResource("7_6aubs")]
+position = Vector2(1636, 608)
+
+[node name="Spatula13" parent="Collects" instance=ExtResource("7_6aubs")]
+position = Vector2(1927, 602)
+
+[node name="Spatula14" parent="Collects" instance=ExtResource("7_6aubs")]
+position = Vector2(2001, 603)
+
+[node name="Spatula15" parent="Collects" instance=ExtResource("7_6aubs")]
+position = Vector2(2267, 509)
+
+[node name="Spatula16" parent="Collects" instance=ExtResource("7_6aubs")]
+position = Vector2(2677, 461)
+
+[node name="Spatula17" parent="Collects" instance=ExtResource("7_6aubs")]
+position = Vector2(2506, 601)
+
+[node name="Spatula18" parent="Collects" instance=ExtResource("7_6aubs")]
+position = Vector2(2804, 487)
+
+[node name="Soda2" parent="Collects" instance=ExtResource("8_o7eu5")]
+position = Vector2(3624, 409)
+
+[node name="Spatula19" parent="Collects" instance=ExtResource("7_6aubs")]
+position = Vector2(3972, 463)
+
+[node name="Spatula21" parent="Collects" instance=ExtResource("7_6aubs")]
+position = Vector2(3873, 605)
+
+[node name="Burger" parent="Collects" instance=ExtResource("11_ct6ny")]
+position = Vector2(1961, 486)
+
+[node name="Spatula20" parent="Collects" instance=ExtResource("7_6aubs")]
+position = Vector2(4327, 598)
+
+[node name="Spatula22" parent="Collects" instance=ExtResource("7_6aubs")]
+position = Vector2(4262, 600)
+
+[node name="Spatula24" parent="Collects" instance=ExtResource("7_6aubs")]
+position = Vector2(3256, 598)
+
+[node name="Spatula23" parent="Collects" instance=ExtResource("7_6aubs")]
+position = Vector2(4446, 575)
 
 [node name="Enemies" type="Node" parent="."]
 
@@ -182,6 +295,33 @@ position = Vector2(825, 535)
 
 [node name="Crazyfish" parent="Enemies" instance=ExtResource("9_m2ma8")]
 position = Vector2(1448, 602)
+
+[node name="Crazyfish2" parent="Enemies" instance=ExtResource("9_m2ma8")]
+position = Vector2(1746, 602)
+
+[node name="Jellyfish16" parent="Enemies" instance=ExtResource("6_lvgs6")]
+position = Vector2(2137, 585)
+
+[node name="Jellyfish17" parent="Enemies" instance=ExtResource("6_lvgs6")]
+position = Vector2(2219, 582)
+
+[node name="Crazyfish3" parent="Enemies" instance=ExtResource("9_m2ma8")]
+position = Vector2(3679, 598)
+
+[node name="Crazyfish4" parent="Enemies" instance=ExtResource("9_m2ma8")]
+position = Vector2(3479, 595)
+
+[node name="Jellyfish18" parent="Enemies" instance=ExtResource("6_lvgs6")]
+position = Vector2(2870, 593)
+
+[node name="Jellyfish19" parent="Enemies" instance=ExtResource("6_lvgs6")]
+position = Vector2(2914, 556)
+
+[node name="Jellyfish20" parent="Enemies" instance=ExtResource("6_lvgs6")]
+position = Vector2(3886, 574)
+
+[node name="Jellyfish21" parent="Enemies" instance=ExtResource("6_lvgs6")]
+position = Vector2(3224, 596)
 
 [node name="Spongebob" parent="." instance=ExtResource("10_g8oo3")]
 position = Vector2(192, 589)
