@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://bkfis34nkbhyv"]
+[gd_scene load_steps=6 format=3 uid="uid://bkfis34nkbhyv"]
 
 [ext_resource type="Script" path="res://scripts/Main Menu.gd" id="1_cki2b"]
 [ext_resource type="FontFile" uid="uid://c4lyevru8sr3e" path="res://assets/fonts/Krabby Patty.ttf" id="1_jb0v5"]
 [ext_resource type="Script" path="res://scripts/Button.gd" id="2_wkvhc"]
+[ext_resource type="Script" path="res://scenes/lvl2shortcut.gd" id="4_tysbe"]
 
 [sub_resource type="GDScript" id="GDScript_kt6nb"]
 script/source = "extends Button
@@ -61,6 +62,15 @@ offset_bottom = 317.0
 text = "Level 1"
 script = SubResource("GDScript_kt6nb")
 
+[node name="Button3" type="Button" parent="."]
+layout_mode = 0
+offset_left = 373.0
+offset_top = 327.0
+offset_right = 492.0
+offset_bottom = 358.0
+text = "Level 2"
+script = ExtResource("4_tysbe")
+
 [node name="RichTextLabel2" type="RichTextLabel" parent="."]
 layout_mode = 0
 offset_left = 365.0
@@ -72,3 +82,4 @@ text = "[b]tests"
 
 [connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
 [connection signal="pressed" from="Button2" to="Button2" method="_on_pressed"]
+[connection signal="pressed" from="Button3" to="Button3" method="_on_pressed"]
