@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cqym6djwfdoeq"]
+[gd_scene load_steps=10 format=3 uid="uid://cqym6djwfdoeq"]
 
 [ext_resource type="Script" path="res://scripts/level2town.gd" id="1_yv6tt"]
 [ext_resource type="Texture2D" uid="uid://bjqf1nbmaob28" path="res://assets/2d/miscsprites/downtown.png" id="2_5kwty"]
@@ -6,10 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://bsodv4tuo7r18" path="res://assets/2d/miscsprites/gradient.png" id="4_pda6v"]
 [ext_resource type="PackedScene" uid="uid://ijj6qbkx8vhd" path="res://scenes/2d/platform.tscn" id="5_uyetc"]
 [ext_resource type="PackedScene" uid="uid://biiire7ectn7p" path="res://scenes/2d/hurtbox.tscn" id="6_inxqn"]
-[ext_resource type="PackedScene" uid="uid://bbsr3i06k8mc8" path="res://scenes/2d/cutscene_door_2d.tscn" id="7_54ccr"]
-[ext_resource type="PackedScene" uid="uid://ce47gwj7i6pua" path="res://scenes/2d/cutscene_1.tscn" id="8_jc1lb"]
+[ext_resource type="PackedScene" uid="uid://cjoo6ilm8eim1" path="res://scenes/2d/spongebob2d.tscn" id="8_fe0hr"]
 [ext_resource type="Script" path="res://scripts/sewerthing.gd" id="9_vhskc"]
-[ext_resource type="PackedScene" uid="uid://cjoo6ilm8eim1" path="res://scenes/2d/spongebob2d.tscn" id="15_momqg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p5m3d"]
 size = Vector2(33, 29)
@@ -28,7 +26,7 @@ scale = Vector2(0.205417, 0.180251)
 texture = ExtResource("3_ialdc")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-scroll_offset = Vector2(208.571, -1345.04)
+scroll_offset = Vector2(-12425.2, -1474.02)
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 position = Vector2(-4, 4)
@@ -143,10 +141,6 @@ scale = Vector2(1.86721, 1.13255)
 position = Vector2(3935, 630)
 scale = Vector2(1.86721, 1.13255)
 
-[node name="CutsceneDoor2D" parent="Collisions" instance=ExtResource("7_54ccr")]
-position = Vector2(4548, 573)
-cutscene = ExtResource("8_jc1lb")
-
 [node name="sewerthing" type="Area2D" parent="Collisions"]
 script = ExtResource("9_vhskc")
 
@@ -154,7 +148,7 @@ script = ExtResource("9_vhskc")
 position = Vector2(4016.5, 631.5)
 shape = SubResource("RectangleShape2D_p5m3d")
 
-[node name="Spongebob" parent="." instance=ExtResource("15_momqg")]
-position = Vector2(4514, 596)
+[node name="Spongebob" parent="." instance=ExtResource("8_fe0hr")]
+position = Vector2(4498, 572)
 
 [connection signal="body_entered" from="Collisions/sewerthing" to="Collisions/sewerthing" method="_on_body_entered"]

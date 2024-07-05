@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" path="res://scripts/cutscene_handler.gd" id="1_3dnub"]
 [ext_resource type="VideoStream" path="res://assets/videos/y2mate.com - Rednex Cotton Eye Joe Official Music Video HD RednexMusic com_v240P.ogv" id="1_fw2ij"]
-[ext_resource type="PackedScene" uid="uid://cqym6djwfdoeq" path="res://scenes/2d/level2town.tscn" id="2_uji28"]
+[ext_resource type="PackedScene" uid="uid://cqym6djwfdoeq" path="res://scenes/2d/level2town.tscn" id="2_2kr27"]
 
 [node name="cutscene 1" type="Node2D"]
 script = ExtResource("1_3dnub")
-after_cutscene = ExtResource("2_uji28")
+after_cutscene = ExtResource("2_2kr27")
 
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
 offset_right = 1152.0
