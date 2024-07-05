@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="SingleSoundEffect" load_steps=3 format=3 uid="uid://vrerbwbmiuyj"]
+
+[ext_resource type="AudioStream" uid="uid://tbqxqt81fthl" path="res://assets/sfx/sfx_sb_defeated.ogg" id="1_avncw"]
+[ext_resource type="Script" path="res://addons/bmod/scripts/resources/single_sound_effect.gd" id="1_jl7ii"]
+
+[resource]
+script = ExtResource("1_jl7ii")
+audio_stream = ExtResource("1_avncw")
+play = false
+play_on_change = false

@@ -2,8 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://d215ogsgn4fvt" path="res://assets/3d/bikinibottom/textures/jf_sky_color_77.png" id="1_prhbu"]
 [ext_resource type="PackedScene" uid="uid://broib4lslli7c" path="res://assets/3d/bikinibottom/bikinibottom3d.tscn" id="1_qyesc"]
-[ext_resource type="VoxelGIData" uid="uid://dcqa7vsip0drv" path="res://scenes/3d/3dtest.VoxelGI_data.res" id="3_254nx"]
 [ext_resource type="PackedScene" uid="uid://8kbffcc412vs" path="res://scenes/3d/spongebob_3d.tscn" id="4_r005k"]
+[ext_resource type="VoxelGIData" uid="uid://dcqa7vsip0drv" path="res://scenes/3d/3dtest.VoxelGI_data.res" id="4_tdbp8"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_1klxv"]
 panorama = ExtResource("1_prhbu")
@@ -35,6 +35,6 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -107.97, 0.0620189, -57.2939)
 
 [node name="VoxelGI" type="VoxelGI" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55.4556, 90.5835, -73.8372)
-size = Vector3(1464.2, 201.167, 1365.7)
-data = ExtResource("3_254nx")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50.38, 91.9231, -45.0215)
+size = Vector3(1549.91, 203.846, 1464.24)
+data = ExtResource("4_tdbp8")

@@ -401,7 +401,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_putow"]
-size = Vector2(20, 30)
+size = Vector2(12, 30)
 
 [node name="Spongebob" type="CharacterBody2D"]
 floor_stop_on_slope = false
@@ -410,12 +410,11 @@ script = ExtResource("1_uyiiv")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_u32rl")
-animation = &"dying"
+animation = &"idle"
 autoplay = "idle"
-frame = 22
-frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 0)
 shape = SubResource("RectangleShape2D_putow")
 
 [node name="Camera2D" type="Camera2D" parent="."]

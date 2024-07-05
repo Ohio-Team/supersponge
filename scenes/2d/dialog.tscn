@@ -1,9 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://c5cro76q4nkfu"]
+[gd_scene load_steps=6 format=3 uid="uid://c5cro76q4nkfu"]
 
 [ext_resource type="Script" path="res://scripts/dialog.gd" id="1_hgsve"]
 [ext_resource type="FontFile" uid="uid://c4lyevru8sr3e" path="res://assets/fonts/Krabby Patty.ttf" id="1_tvp7w"]
 [ext_resource type="Script" path="res://scripts/RichTextLabel.gd" id="3_kgofs"]
 [ext_resource type="Texture2D" uid="uid://cy6rndpib0avg" path="res://assets/2d/dialogfaces/Sandy.png" id="4_oa5ml"]
+
+[sub_resource type="FontVariation" id="FontVariation_8r68w"]
+base_font = ExtResource("1_tvp7w")
+variation_embolden = 0.5
 
 [node name="Dialog" type="CanvasLayer"]
 script = ExtResource("1_hgsve")
@@ -22,6 +26,7 @@ offset_top = 17.0
 offset_right = 1010.0
 offset_bottom = 139.0
 theme_override_fonts/normal_font = ExtResource("1_tvp7w")
+theme_override_fonts/bold_font = SubResource("FontVariation_8r68w")
 bbcode_enabled = true
 script = ExtResource("3_kgofs")
 

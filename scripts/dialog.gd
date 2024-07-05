@@ -17,6 +17,6 @@ func _ready():
 func _process(delta):
 	$ColorRect/RichTextLabel.full_text = full_text
 	if $ColorRect/RichTextLabel.finishedtext == true:
-		await Singleton.wait(5)
+		await Singleton.wait(3)
 		finished_dialog.emit()
 		queue_free()

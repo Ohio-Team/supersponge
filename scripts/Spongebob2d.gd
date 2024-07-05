@@ -29,6 +29,7 @@ func inputs():
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and state != "hurt" and state != "dying" and is_on_floor():
 		velocity.y = JUMP_VELOCITY
+		BMOD.play_sfx(preload("res://assets/sfx/jump.tres"))
 		anim.play("jump")
 		state = "jump"
 	if Input.is_action_just_pressed("jump") and state != "hurt" and state != "dying" and not is_on_floor():
@@ -49,6 +50,7 @@ func _physics_process(delta):
 	inputs()
 	if Singleton.health <= 0:
 		print("game over 💔")
+		BMOD.play_sfx(preload("res://assets/sfx/death.tres"))
 		Singleton.lifes -= 1
 		Singleton.health = 3
 		state = "dying"

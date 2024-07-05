@@ -1,19 +1,19 @@
 [gd_resource type="Resource" script_class="SingleSoundEffect" load_steps=5 format=3 uid="uid://bj7i221r31q0o"]
 
 [ext_resource type="Script" path="res://addons/bmod/scripts/resources/single_sound_effect.gd" id="1_1v2gj"]
-[ext_resource type="AudioStream" uid="uid://rfhr68f20ia2" path="res://assets/sfx/dialog.wav" id="1_qnm1m"]
+[ext_resource type="AudioStream" uid="uid://rfhr68f20ia2" path="res://assets/sfx/dialog.wav" id="1_cj34o"]
 [ext_resource type="Script" path="res://addons/bmod/scripts/resources/sound_effect_meta.gd" id="2_mh47v"]
 
 [sub_resource type="Resource" id="Resource_26che"]
 script = ExtResource("2_mh47v")
 volume_db = -10.0
-volume_variation_db = 0.0
-pitch_scale = 1.0
-pitch_variation = 1.0
+volume_variation_db = 1.0
+pitch_scale = 0.9
+pitch_variation = 0.0
 
 [resource]
 script = ExtResource("1_1v2gj")
-audio_stream = ExtResource("1_qnm1m")
+audio_stream = ExtResource("1_cj34o")
 meta = SubResource("Resource_26che")
 play = false
 play_on_change = false

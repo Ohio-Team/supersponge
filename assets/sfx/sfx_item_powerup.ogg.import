@@ -2,18 +2,18 @@
 
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
-uid="uid://cap1a3gdallfi"
-path="res://.godot/imported/sfx_item_powerup.ogg-aa3115a757565bb1fe60dbe7a6be7aec.oggvorbisstr"
+uid="uid://deukqekdxg1bx"
+path="res://.godot/imported/sfx_item_powerup.ogg-7ce2051ba5da552db6aeb527cdcb83af.oggvorbisstr"
 
 [deps]
 
-source_file="res://assets/sfx/sfx_item_powerup.ogg"
-dest_files=["res://.godot/imported/sfx_item_powerup.ogg-aa3115a757565bb1fe60dbe7a6be7aec.oggvorbisstr"]
+source_file="res://scenes/2d/sfx_item_powerup.ogg"
+dest_files=["res://.godot/imported/sfx_item_powerup.ogg-7ce2051ba5da552db6aeb527cdcb83af.oggvorbisstr"]
 
 [params]
 
 loop=false
-loop_offset=0.0
-bpm=0.0
+loop_offset=0
+bpm=0
 beat_count=0
 bar_beats=4
