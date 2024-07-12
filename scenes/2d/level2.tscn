@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://b2bv5n6x7m2da"]
+[gd_scene load_steps=14 format=3 uid="uid://b2bv5n6x7m2da"]
 
 [ext_resource type="Script" path="res://scripts/level2.gd" id="1_xmle0"]
 [ext_resource type="Texture2D" uid="uid://dipw334ofksnu" path="res://assets/2d/tilesets/sewers.png" id="2_s0135"]
@@ -7,6 +7,8 @@
 [ext_resource type="AudioStream" uid="uid://brlaotw2ecw7g" path="res://assets/music/jungle.mp3" id="4_i7r10"]
 [ext_resource type="Texture2D" uid="uid://vcowvrxxydtv" path="res://assets/2d/tilesets/toxicwater.png" id="4_ygmr5"]
 [ext_resource type="PackedScene" uid="uid://ijj6qbkx8vhd" path="res://scenes/2d/platform.tscn" id="7_iokox"]
+[ext_resource type="PackedScene" uid="uid://ul6qixbunia7" path="res://scenes/2d/hurtbox_nonlethal.tscn" id="8_57o6g"]
+[ext_resource type="PackedScene" uid="uid://b86vokonmmvq5" path="res://scenes/2d/spatula.tscn" id="8_yg75s"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_26qrh"]
 texture = ExtResource("2_s0135")
@@ -149,3 +151,27 @@ polygon = PackedVector2Array(39, 641, 519, 641, 551, 673, 583, 673, 583, 705, 22
 [node name="Platform" parent="Collisions" instance=ExtResource("7_iokox")]
 position = Vector2(807, 674)
 scale = Vector2(6.34667, 3.23334)
+
+[node name="hurtbox_nonlethal" parent="Collisions" instance=ExtResource("8_57o6g")]
+position = Vector2(753, 683)
+scale = Vector2(16.92, 1)
+
+[node name="Collects" type="Node" parent="."]
+
+[node name="Spatula" parent="Collects" instance=ExtResource("8_yg75s")]
+position = Vector2(424, 616)
+
+[node name="Spatula2" parent="Collects" instance=ExtResource("8_yg75s")]
+position = Vector2(444, 616)
+
+[node name="Spatula3" parent="Collects" instance=ExtResource("8_yg75s")]
+position = Vector2(464, 616)
+
+[node name="Spatula4" parent="Collects" instance=ExtResource("8_yg75s")]
+position = Vector2(767, 617)
+
+[node name="Spatula5" parent="Collects" instance=ExtResource("8_yg75s")]
+position = Vector2(842, 617)
+
+[node name="Spatula6" parent="Collects" instance=ExtResource("8_yg75s")]
+position = Vector2(805, 617)
