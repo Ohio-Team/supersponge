@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://mb4rkl1fiyl3"
-path="res://.godot/imported/spongebob-squarepants-2.svg-bacb618714377bd0fd5981135acb00bf.ctex"
+uid="uid://d2yrsipx17fw"
+path="res://.godot/imported/CupheadCharacter-sheet.png-22dced3747591d719a484658f2b6edde.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scripts/spongebob-squarepants-2.svg"
-dest_files=["res://.godot/imported/spongebob-squarepants-2.svg-bacb618714377bd0fd5981135acb00bf.ctex"]
+source_file="res://assets/2d/miscsprites/CupheadCharacter-sheet.png"
+dest_files=["res://.godot/imported/CupheadCharacter-sheet.png-22dced3747591d719a484658f2b6edde.ctex"]
 
 [params]
 
@@ -32,6 +32,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false

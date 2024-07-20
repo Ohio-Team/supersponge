@@ -403,7 +403,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_putow"]
 size = Vector2(12, 30)
 
-[node name="Spongebob" type="CharacterBody2D"]
+[node name="Spongebob" type="CharacterBody2D" groups=["Player"]]
 floor_stop_on_slope = false
 script = ExtResource("1_uyiiv")
 

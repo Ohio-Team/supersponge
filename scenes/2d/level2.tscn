@@ -8,8 +8,8 @@
 [ext_resource type="AudioStream" uid="uid://brlaotw2ecw7g" path="res://assets/music/jungle.mp3" id="4_i7r10"]
 [ext_resource type="Texture2D" uid="uid://vcowvrxxydtv" path="res://assets/2d/tilesets/toxicwater.png" id="4_ygmr5"]
 [ext_resource type="PackedScene" uid="uid://ijj6qbkx8vhd" path="res://scenes/2d/platform.tscn" id="7_iokox"]
-[ext_resource type="Texture2D" uid="uid://b8r1uetol7878" path="res://assets/2d/miscsprites/spinball.png" id="8_cydu5"]
 [ext_resource type="PackedScene" uid="uid://b86vokonmmvq5" path="res://scenes/2d/spatula.tscn" id="8_yg75s"]
+[ext_resource type="Texture2D" uid="uid://drs4k8qpwbhsk" path="res://assets/2d/miscsprites/solid-concrete-wall_jpg.png" id="9_5jwb1"]
 [ext_resource type="PackedScene" uid="uid://biiire7ectn7p" path="res://scenes/2d/hurtbox.tscn" id="10_qvxtm"]
 [ext_resource type="PackedScene" uid="uid://bv0rvgn2iah1s" path="res://scenes/2d/bumper.tscn" id="11_jgmjf"]
 
@@ -127,6 +127,13 @@ sources/3 = SubResource("TileSetAtlasSource_y8ed1")
 [node name="level2" type="Node2D"]
 script = ExtResource("1_xmle0")
 
+[node name="Spinball" type="Sprite2D" parent="."]
+texture_repeat = 2
+position = Vector2(0, -1283)
+scale = Vector2(3.78456, 3.27611)
+texture = ExtResource("9_5jwb1")
+centered = false
+
 [node name="PointLight2D" type="PointLight2D" parent="."]
 position = Vector2(2028.5, 622.5)
 scale = Vector2(1341.67, 259.667)
@@ -153,16 +160,6 @@ stream = ExtResource("4_i7r10")
 volume_db = -5.0
 autoplay = true
 max_distance = 300.0
-
-[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-
-[node name="Spinball" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-texture_filter = 1
-texture_repeat = 2
-position = Vector2(76, 74)
-texture = ExtResource("8_cydu5")
 
 [node name="Collisions" type="Node" parent="."]
 
@@ -228,8 +225,8 @@ scale = Vector2(31.84, 3.23999)
 position = Vector2(2506, -398)
 
 [node name="hurtbox" parent="Collisions" instance=ExtResource("10_qvxtm")]
-position = Vector2(1576, 684)
-scale = Vector2(99.3315, 1)
+position = Vector2(2311, 684)
+scale = Vector2(172.851, 1)
 
 [node name="Collects" type="Node" parent="."]
 

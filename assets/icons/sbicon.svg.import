@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b8r1uetol7878"
-path="res://.godot/imported/spinball.png-766048f9bd7d8d1ae0f36e16a2b2ce6e.ctex"
+uid="uid://dgm8pdm21moj1"
+path="res://.godot/imported/sbicon.svg-d0c0633f228074588ca0140d614ac0dc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/2d/miscsprites/spinball.png"
-dest_files=["res://.godot/imported/spinball.png-766048f9bd7d8d1ae0f36e16a2b2ce6e.ctex"]
+source_file="res://assets/icons/sbicon.svg"
+dest_files=["res://.godot/imported/sbicon.svg-d0c0633f228074588ca0140d614ac0dc.ctex"]
 
 [params]
 
@@ -32,3 +32,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
+svg/scale=1.0
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false

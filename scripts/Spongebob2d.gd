@@ -1,3 +1,4 @@
+@icon("res://assets/icons/sbicon.svg")
 extends CharacterBody2D
 
 

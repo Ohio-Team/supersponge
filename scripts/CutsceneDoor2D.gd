@@ -1,7 +1,7 @@
 extends Area2D
 
 @export var cutscene:PackedScene
-@onready var player = get_parent().get_parent().get_node("Spongebob")
+@onready var player = get_tree().get_first_node_in_group("Player")
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.

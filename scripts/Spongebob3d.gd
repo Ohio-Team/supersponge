@@ -1,4 +1,4 @@
-@icon("./spongebob-squarepants-2")
+@icon("res://assets/icons/sbicon.svg")
 class_name spunchbob extends CharacterBody3D
 
 @export var SPEED = 20.0

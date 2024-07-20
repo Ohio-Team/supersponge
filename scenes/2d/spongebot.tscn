@@ -1,0 +1,39 @@
+[gd_scene load_steps=7 format=3 uid="uid://l3hvs2p2sier"]
+
+[ext_resource type="Script" path="res://scripts/Spongebot.gd" id="1_exvct"]
+[ext_resource type="Texture2D" uid="uid://c06nowievak4p" path="res://assets/2d/enemies/CupheadCharacter1.png" id="2_5k4c5"]
+[ext_resource type="Texture2D" uid="uid://3vy3qht3ywvt" path="res://assets/2d/enemies/CupheadCharacter2.png" id="3_fbs21"]
+[ext_resource type="Texture2D" uid="uid://vdw8gihq4m21" path="res://assets/2d/enemies/CupheadCharacter3.png" id="4_u7tle"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4vio7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_5k4c5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_fbs21")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_u7tle")
+}],
+"loop": true,
+"name": &"default",
+"speed": 20.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_20yof"]
+size = Vector2(23, 18)
+
+[node name="Spongebot" type="CharacterBody2D"]
+script = ExtResource("1_exvct")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.2, 0.2)
+sprite_frames = SubResource("SpriteFrames_4vio7")
+autoplay = "default"
+frame_progress = 0.0848811
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1.5, -8)
+shape = SubResource("RectangleShape2D_20yof")

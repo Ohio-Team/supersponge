@@ -1,6 +1,6 @@
 extends Area2D
 
-@onready var player = get_parent().get_parent().get_node("Spongebob")
+@onready var player = get_tree().get_first_node_in_group("Player")
 var direction = 1
 # Called when the node enters the scene tree for the first time.
 func _ready():
