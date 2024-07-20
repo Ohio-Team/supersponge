@@ -150,6 +150,7 @@ scale = Vector2(1.86721, 1.13255)
 
 [node name="CutsceneDoor2D" parent="Collisions" instance=ExtResource("7_2xj00")]
 position = Vector2(4548, 573)
+scale = Vector2(1.17958, -8.48438)
 cutscene = ExtResource("8_xoxlf")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="Collisions"]
