@@ -16,14 +16,19 @@ func Update(delta):
 		print(spongebot.position.distance_to(target))
 	if spongebot.position.distance_to(target) < 3:
 		Transitioned.emit(self, "Idle")
+		
+	if direction.x < 0:
+		$"../../AnimatedSprite2D".flip_h = true
+	else:
+		$"../../AnimatedSprite2D".flip_h = false
 
 
 func _on_spongebot_body_entered(body):
 	if body == player:
-		if player.state != "attack" or player.state != "groundpound":
-			if player.state != "dying":
-				player.state = "hurt"
-				Singleton.health -= 1
-		else:
+		if player.state == "groundpound" or player.state == "attack":
 			Singleton.do_explosion(spongebot.position)
-			queue_free()
+			spongebot.queue_free()
+		else:
+			if player.state != "dying":
+				Singleton.health -= 1
+				player.state = "hurt"

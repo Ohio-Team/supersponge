@@ -50,4 +50,5 @@ script = ExtResource("5_ewi18")
 [node name="Homing" type="Node" parent="StateMachine"]
 script = ExtResource("6_2knqe")
 
+[connection signal="body_entered" from="." to="StateMachine/Idle" method="_on_spongebot_body_entered"]
 [connection signal="body_entered" from="." to="StateMachine/Homing" method="_on_spongebot_body_entered"]

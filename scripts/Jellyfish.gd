@@ -20,7 +20,6 @@ func _process(delta):
 
 func _on_body_entered(body):
 	if body == player:
-
 		if player.state == "groundpound" or player.state == "attack" or player.state == "fall" or player.state == "land":
 			if player.state != "attack":
 				player.state = "fall"

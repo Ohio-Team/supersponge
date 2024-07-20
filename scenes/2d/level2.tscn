@@ -15,7 +15,6 @@
 [ext_resource type="PackedScene" uid="uid://dwh0654dmbwpw" path="res://scenes/2d/soda.tscn" id="13_gsurf"]
 [ext_resource type="PackedScene" uid="uid://l3hvs2p2sier" path="res://scenes/2d/spongebot.tscn" id="14_nfdxr"]
 
-
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_26qrh"]
 texture = ExtResource("2_s0135")
 texture_region_size = Vector2i(32, 32)
@@ -309,11 +308,10 @@ position = Vector2(1576, -544)
 position = Vector2(1600, -544)
 
 [node name="Spongebot" parent="." instance=ExtResource("14_nfdxr")]
-position = Vector2(2757, 223)
+position = Vector2(2846, 204)
 
 [node name="Spongebot2" parent="." instance=ExtResource("14_nfdxr")]
-position = Vector2(2747, 220)
+position = Vector2(2617, 167)
 
 [node name="Spongebot3" parent="." instance=ExtResource("14_nfdxr")]
 position = Vector2(2426, 204)
-

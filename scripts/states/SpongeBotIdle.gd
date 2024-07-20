@@ -6,8 +6,18 @@ extends State
 var dir: Vector2
 
 func Enter():
-	await Singleton.wait(1)
+	await Singleton.wait(2)
 
 func Update(delta):
 	if spongebot.position.distance_to(player.position) < 100:
 		Transitioned.emit(self, "Homing")
+
+func _on_spongebot_body_entered(body):
+	if body == player:
+		if player.state == "groundpound" or player.state == "attack":
+			Singleton.do_explosion(spongebot.position)
+			spongebot.queue_free()
+		else:
+			if player.state != "dying":
+				Singleton.health -= 1
+				player.state = "hurt"
