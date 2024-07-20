@@ -249,49 +249,49 @@ position = Vector2(4446, 575)
 [node name="Enemies" type="Node" parent="."]
 
 [node name="Jellyfish" parent="Enemies" instance=ExtResource("6_lvgs6")]
-position = Vector2(705, 583)
+position = Vector2(890, 603)
 
 [node name="Jellyfish2" parent="Enemies" instance=ExtResource("6_lvgs6")]
-position = Vector2(705, 604)
+position = Vector2(700, 603)
 
 [node name="Jellyfish3" parent="Enemies" instance=ExtResource("6_lvgs6")]
 position = Vector2(703, 553)
 
 [node name="Jellyfish4" parent="Enemies" instance=ExtResource("6_lvgs6")]
-position = Vector2(729, 571)
+position = Vector2(736, 580)
 
 [node name="Jellyfish5" parent="Enemies" instance=ExtResource("6_lvgs6")]
-position = Vector2(732, 595)
+position = Vector2(767, 603)
 
 [node name="Jellyfish6" parent="Enemies" instance=ExtResource("6_lvgs6")]
-position = Vector2(727, 534)
+position = Vector2(767, 555)
 
 [node name="Jellyfish7" parent="Enemies" instance=ExtResource("6_lvgs6")]
-position = Vector2(765, 585)
+position = Vector2(929, 579)
 
 [node name="Jellyfish8" parent="Enemies" instance=ExtResource("6_lvgs6")]
-position = Vector2(755, 550)
+position = Vector2(2518, 466)
 
 [node name="Jellyfish9" parent="Enemies" instance=ExtResource("6_lvgs6")]
-position = Vector2(791, 608)
+position = Vector2(891, 558)
 
 [node name="Jellyfish10" parent="Enemies" instance=ExtResource("6_lvgs6")]
-position = Vector2(787, 534)
+position = Vector2(2188, 602)
 
 [node name="Jellyfish11" parent="Enemies" instance=ExtResource("6_lvgs6")]
-position = Vector2(799, 568)
+position = Vector2(670, 582)
 
 [node name="Jellyfish12" parent="Enemies" instance=ExtResource("6_lvgs6")]
-position = Vector2(757, 517)
+position = Vector2(2147, 546)
 
 [node name="Jellyfish13" parent="Enemies" instance=ExtResource("6_lvgs6")]
-position = Vector2(714, 507)
+position = Vector2(2179, 565)
 
 [node name="Jellyfish14" parent="Enemies" instance=ExtResource("6_lvgs6")]
-position = Vector2(825, 591)
+position = Vector2(2518, 513)
 
 [node name="Jellyfish15" parent="Enemies" instance=ExtResource("6_lvgs6")]
-position = Vector2(825, 535)
+position = Vector2(2562, 497)
 
 [node name="Crazyfish" parent="Enemies" instance=ExtResource("9_m2ma8")]
 position = Vector2(1448, 602)
