@@ -31,6 +31,7 @@ DSP/dsp_buffer_count=4
 config/name="Supersponge"
 run/main_scene="res://scenes/Main Menu.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
+run/max_fps=60
 boot_splash/image="res://splash.png"
 config/icon="res://icon.png"
 boot_splash/minimum_display_time=1000
@@ -45,6 +46,7 @@ Singleton="*res://scripts/singleton.gd"
 [display]
 
 window/size/resizable=false
+window/vsync/vsync_mode=0
 
 [editor]
 

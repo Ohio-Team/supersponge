@@ -1,5 +1,6 @@
 extends Node
 
+@export var hasgun:bool = false
 @export var inmenu:bool = false
 @export var lifes:int = 4
 @export var health:int = 3
@@ -22,7 +23,7 @@ func do_explosion(pos:Vector2):
 	var node = preload("res://scenes/2d/explosion.tscn")
 	var new_node = node.instantiate()
 	new_node.position = pos
-	add_child(new_node)
+	get_tree().root.add_child(new_node)
 
 func wait(seconds: float) -> void:
 	await get_tree().create_timer(seconds).timeout
