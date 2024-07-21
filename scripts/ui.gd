@@ -30,7 +30,7 @@ func create_dialog(text:String, char:String = "spongebob"):
 	add_child(new_dialog)
 	
 func _clear_dialog():
-	if $Dialog:
-		$Dialog.queue_free()
+	if get_node_or_null("Dialog"):
+		get_node_or_null("Dialog").queue_free()
 	else:
 		pass

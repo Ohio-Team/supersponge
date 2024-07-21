@@ -13,7 +13,6 @@ func Update(delta):
 	if spongebot.position != target:
 		spongebot.position.x += direction.x * 4
 		spongebot.position.y += direction.y * 4
-		print(spongebot.position.distance_to(target))
 	if spongebot.position.distance_to(target) < 3:
 		Transitioned.emit(self, "Idle")
 		
