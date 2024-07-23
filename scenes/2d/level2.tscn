@@ -188,6 +188,11 @@ polygon = PackedVector2Array(39, 641, 519, 641, 551, 673, 583, 673, 583, 705, 22
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Collisions/StaticBody2D2"]
 polygon = PackedVector2Array(424, 256, 420, -1288, 1959, -1246, 2021, -1057, 2019, -867, 2019, -860, 2087, -860, 2087, -575, 1544, -576, 1544, -512, 2087, -510, 2086, -382, 2729, -382, 2792, -318, 2833, -278, 2867, -244, 2910, -202, 2964, -147, 3018, -93, 2984, -93, 3047, -93, 3048, -63, 3112, -63, 3112, 1, 2789, 1, 2792, 34, 2597, 33, 2599, 64, 2086, 64, 2086, 97, 1575, 97, 1574, 130, 1190, 128, 1192, 161, 998, 160, 999, 195, 742, 192, 743, 224, 488, 224, 487, 258)
 
+[node name="StaticBody2D3" type="StaticBody2D" parent="Collisions"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Collisions/StaticBody2D3"]
+polygon = PackedVector2Array(263, -223, 263, 257, 7, 257, 7, -223)
+
 [node name="Platform" parent="Collisions" instance=ExtResource("7_iokox")]
 position = Vector2(855, 674)
 scale = Vector2(11.0997, 3.23334)
