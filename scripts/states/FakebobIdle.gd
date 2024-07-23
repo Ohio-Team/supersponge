@@ -1,6 +1,6 @@
 extends State
 
-var movement_speed: float = 200.0
+var movement_speed: float = 220.0
 @onready var player:CharacterBody2D = get_tree().get_first_node_in_group("Player")
 @onready var fakebob:CharacterBody2D = get_parent().get_parent()
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
