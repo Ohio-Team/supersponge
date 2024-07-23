@@ -1,12 +1,14 @@
-[gd_scene load_steps=19 format=3 uid="uid://b2bv5n6x7m2da"]
+[gd_scene load_steps=22 format=3 uid="uid://b2bv5n6x7m2da"]
 
 [ext_resource type="Script" path="res://scripts/level2.gd" id="1_xmle0"]
+[ext_resource type="Shader" path="res://scripts/level2.gdshader" id="2_ac0tm"]
 [ext_resource type="Texture2D" uid="uid://dipw334ofksnu" path="res://assets/2d/tilesets/sewers.png" id="2_s0135"]
 [ext_resource type="Texture2D" uid="uid://deteppp1r6nj3" path="res://assets/2d/miscsprites/a1843961409a40687a09056418bf6132d0d87ca8.png" id="2_uq4od"]
 [ext_resource type="Texture2D" uid="uid://d2ew0p72ot5rj" path="res://assets/2d/tilesets/Spr_water.png" id="3_nobyt"]
 [ext_resource type="PackedScene" uid="uid://cjoo6ilm8eim1" path="res://scenes/2d/spongebob2d.tscn" id="3_ysv3t"]
 [ext_resource type="AudioStream" uid="uid://brlaotw2ecw7g" path="res://assets/music/jungle.mp3" id="4_i7r10"]
 [ext_resource type="Texture2D" uid="uid://vcowvrxxydtv" path="res://assets/2d/tilesets/toxicwater.png" id="4_ygmr5"]
+[ext_resource type="PackedScene" uid="uid://jfrxncqf6st2" path="res://scenes/2d/fakebobgate.tscn" id="5_nxabf"]
 [ext_resource type="PackedScene" uid="uid://ijj6qbkx8vhd" path="res://scenes/2d/platform.tscn" id="7_iokox"]
 [ext_resource type="PackedScene" uid="uid://b86vokonmmvq5" path="res://scenes/2d/spatula.tscn" id="8_yg75s"]
 [ext_resource type="Texture2D" uid="uid://drs4k8qpwbhsk" path="res://assets/2d/miscsprites/solid-concrete-wall_jpg.png" id="9_5jwb1"]
@@ -14,6 +16,12 @@
 [ext_resource type="PackedScene" uid="uid://bv0rvgn2iah1s" path="res://scenes/2d/bumper.tscn" id="11_jgmjf"]
 [ext_resource type="PackedScene" uid="uid://dwh0654dmbwpw" path="res://scenes/2d/soda.tscn" id="13_gsurf"]
 [ext_resource type="PackedScene" uid="uid://l3hvs2p2sier" path="res://scenes/2d/spongebot.tscn" id="14_nfdxr"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kv4i4"]
+shader = ExtResource("2_ac0tm")
+shader_parameter/motion = Vector2(3, 0)
+shader_parameter/scale = 1.0
+shader_parameter/offset = Vector2(0, 0)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_26qrh"]
 texture = ExtResource("2_s0135")
@@ -131,6 +139,7 @@ script = ExtResource("1_xmle0")
 
 [node name="Spinball" type="Sprite2D" parent="."]
 texture_repeat = 2
+material = SubResource("ShaderMaterial_kv4i4")
 position = Vector2(0, -1283)
 scale = Vector2(3.78456, 3.27611)
 texture = ExtResource("9_5jwb1")
@@ -144,6 +153,10 @@ energy = 1.1
 shadow_enabled = true
 texture = ExtResource("2_uq4od")
 texture_scale = 0.01
+
+[node name="Fakebobgate" parent="." instance=ExtResource("5_nxabf")]
+position = Vector2(2390, -1162)
+scale = Vector2(0.5, 0.5)
 
 [node name="TileMap" type="TileMap" parent="."]
 texture_filter = 1

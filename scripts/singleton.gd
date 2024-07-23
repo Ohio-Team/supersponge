@@ -5,6 +5,7 @@ extends Node
 @export var lifes:int = 4
 @export var health:int = 3
 @export var spatulas:int = 0
+@export var acceptinput:bool = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
