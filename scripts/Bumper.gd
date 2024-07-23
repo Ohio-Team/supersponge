@@ -14,4 +14,5 @@ func _process(delta):
 
 func _on_body_entered(body):
 	if body == player:
+		BMOD.play_sfx(preload("res://assets/sfx/spring.tres"))
 		player.velocity.y = -1000
