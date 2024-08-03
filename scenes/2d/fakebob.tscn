@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://c682xfnc542qh"]
+[gd_scene load_steps=30 format=3 uid="uid://c682xfnc542qh"]
 
 [ext_resource type="Texture2D" uid="uid://v5ynmw60pqs1" path="res://assets/2d/fakebob/fakeattack1.png" id="1_aweak"]
 [ext_resource type="Texture2D" uid="uid://bsr6sjtdktpp0" path="res://assets/2d/fakebob/fakeattack2.png" id="2_nunwt"]
@@ -164,6 +164,8 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hc5y4"]
 size = Vector2(20, 31)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4agns"]
+
 [node name="Fakebob" type="CharacterBody2D"]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -196,4 +198,10 @@ script = ExtResource("12_osypt")
 [node name="Attack" type="Node" parent="StateMachine"]
 script = ExtResource("26_8f31v")
 
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_4agns")
+
 [connection signal="timeout" from="NavTimer" to="StateMachine/Idle" method="_on_navtimer_timeout"]
+[connection signal="area_entered" from="Area2D" to="StateMachine/Idle" method="_on_area_2d_area_entered"]

@@ -35,3 +35,8 @@ func Physics_Update(delta):
 
 func _on_navtimer_timeout():
 	nav_agent.target_position = player.global_position
+
+
+func _on_area_2d_area_entered(area):
+	if area.is_in_group("Projectiles"):
+		BMOD.play_sfx(preload("res://assets/sfx/bart.tres"))
