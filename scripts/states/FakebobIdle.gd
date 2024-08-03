@@ -23,6 +23,7 @@ func Physics_Update(delta):
 	
 	if dir.y < 0 and fakebob.is_on_floor():
 		$"../../AnimatedSprite2D".play("jump")
+		BMOD.play_sfx(preload("res://assets/sfx/fakejump.tres"))
 		fakebob.velocity.y = -430.0
 		
 	if idlingtime > 0:

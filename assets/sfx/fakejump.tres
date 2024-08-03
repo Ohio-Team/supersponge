@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="SingleSoundEffect" load_steps=5 format=3 uid="uid://drrfe5rivxckw"]
+
+[ext_resource type="AudioStream" uid="uid://b1iyc5ocvr5l0" path="res://assets/sfx/sfx_sb_jump.ogg" id="1_yx55q"]
+[ext_resource type="Script" path="res://addons/bmod/scripts/resources/sound_effect_meta.gd" id="2_g4q31"]
+[ext_resource type="Script" path="res://addons/bmod/scripts/resources/single_sound_effect.gd" id="2_rrf71"]
+
+[sub_resource type="Resource" id="Resource_7c0v6"]
+script = ExtResource("2_g4q31")
+volume_db = 0.0
+volume_variation_db = 0.0
+pitch_scale = 0.5
+pitch_variation = 0.0
+
+[resource]
+script = ExtResource("2_rrf71")
+audio_stream = ExtResource("1_yx55q")
+meta = SubResource("Resource_7c0v6")
+play = false
+play_on_change = false
