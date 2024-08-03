@@ -93,6 +93,6 @@ func generate_bullet():
 	var bullet = preload("res://scenes/2d/bullet.tscn")
 	var new_node = bullet.instantiate()
 	new_node.direction.x = direction
-	new_node.position.x = position.x + 50 * direction
+	new_node.position.x = position.x + 40 * direction
 	new_node.position.y = position.y - 20
 	get_tree().root.add_child(new_node)

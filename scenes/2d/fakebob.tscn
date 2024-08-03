@@ -1,11 +1,19 @@
-[gd_scene load_steps=21 format=3 uid="uid://c682xfnc542qh"]
+[gd_scene load_steps=29 format=3 uid="uid://c682xfnc542qh"]
 
+[ext_resource type="Texture2D" uid="uid://v5ynmw60pqs1" path="res://assets/2d/fakebob/fakeattack1.png" id="1_aweak"]
+[ext_resource type="Texture2D" uid="uid://bsr6sjtdktpp0" path="res://assets/2d/fakebob/fakeattack2.png" id="2_nunwt"]
 [ext_resource type="Texture2D" uid="uid://bhhfub36llid2" path="res://assets/2d/fakebob/fakerun1.png" id="2_oauh5"]
+[ext_resource type="Texture2D" uid="uid://dgjrkuapa5p4q" path="res://assets/2d/fakebob/fakeattack3.png" id="3_g3lkx"]
 [ext_resource type="Texture2D" uid="uid://dry7yna78208p" path="res://assets/2d/fakebob/fakerun2.png" id="3_im7cs"]
 [ext_resource type="Texture2D" uid="uid://qosyvvevbcqb" path="res://assets/2d/fakebob/fakerun3.png" id="4_2dhps"]
+[ext_resource type="Texture2D" uid="uid://d0rbji7isjk3w" path="res://assets/2d/fakebob/fakeattack4.png" id="4_hlatk"]
 [ext_resource type="Texture2D" uid="uid://dhhqjssmvgs82" path="res://assets/2d/fakebob/fakerun4.png" id="5_fsbm0"]
+[ext_resource type="Texture2D" uid="uid://c02xitmsdck51" path="res://assets/2d/fakebob/fakeattack5.png" id="5_sv7eb"]
 [ext_resource type="Texture2D" uid="uid://ddgbmssw6y1sv" path="res://assets/2d/fakebob/fakerun5.png" id="6_b4r68"]
+[ext_resource type="Texture2D" uid="uid://bengk8fet1oq7" path="res://assets/2d/fakebob/fakeattack6.png" id="6_q3u8o"]
 [ext_resource type="Texture2D" uid="uid://d0ydwetligefl" path="res://assets/2d/fakebob/fakerun6.png" id="7_gux6y"]
+[ext_resource type="Texture2D" uid="uid://dnr1gcq7ekdux" path="res://assets/2d/fakebob/fakeattack7.png" id="7_k82i8"]
+[ext_resource type="Texture2D" uid="uid://dpc8sesvd2fux" path="res://assets/2d/fakebob/fakeattack8.png" id="8_17h0f"]
 [ext_resource type="Texture2D" uid="uid://cq2em2gqa5m3t" path="res://assets/2d/fakebob/fakerun7.png" id="8_k338m"]
 [ext_resource type="Texture2D" uid="uid://creaws4h8mybk" path="res://assets/2d/fakebob/fakerun8.png" id="9_w1fub"]
 [ext_resource type="Texture2D" uid="uid://bpbxi6nat30hp" path="res://assets/2d/fakebob/fakerun9.png" id="10_i34kf"]
@@ -17,10 +25,75 @@
 [ext_resource type="Texture2D" uid="uid://dgbs85rdwrpep" path="res://assets/2d/fakebob/fakejump2.png" id="13_1x0rm"]
 [ext_resource type="Texture2D" uid="uid://df47yteoqwnuk" path="res://assets/2d/fakebob/fakejump3.png" id="14_fnr5y"]
 [ext_resource type="Texture2D" uid="uid://bkwgq8n3pp6gn" path="res://assets/2d/fakebob/fakejump4.png" id="15_k1ra3"]
-[ext_resource type="Script" path="res://scripts/State.gd" id="18_wukkl"]
+[ext_resource type="Script" path="res://scripts/states/FakebobAttack.gd" id="26_8f31v"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1a6kk"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_aweak")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_nunwt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_g3lkx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_hlatk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_sv7eb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_q3u8o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_sv7eb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_q3u8o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_sv7eb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_q3u8o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_k82i8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_17h0f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_k82i8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_17h0f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_k82i8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_17h0f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_sv7eb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_q3u8o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_k82i8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_17h0f")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 15.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_oauh5")
@@ -96,15 +169,17 @@ size = Vector2(20, 31)
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_1a6kk")
-animation = &"jump"
+animation = &"attack"
 autoplay = "default"
-frame_progress = 0.136676
+frame = 19
+frame_progress = 0.298363
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1.5)
 shape = SubResource("RectangleShape2D_hc5y4")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+path_desired_distance = 10.0
 debug_enabled = true
 
 [node name="NavTimer" type="Timer" parent="."]
@@ -119,6 +194,6 @@ initial_state = NodePath("Idle")
 script = ExtResource("12_osypt")
 
 [node name="Attack" type="Node" parent="StateMachine"]
-script = ExtResource("18_wukkl")
+script = ExtResource("26_8f31v")
 
 [connection signal="timeout" from="NavTimer" to="StateMachine/Idle" method="_on_navtimer_timeout"]

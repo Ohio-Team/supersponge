@@ -5,9 +5,10 @@ var movement_speed: float = 220.0
 @onready var fakebob:CharacterBody2D = get_parent().get_parent()
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var nav_agent := $"../../NavigationAgent2D"
+var idlingtime : float
 
 func Enter():
-	pass
+	idlingtime = randf_range(5,10)
 
 func Physics_Update(delta):
 	if not fakebob.is_on_floor():
@@ -23,6 +24,12 @@ func Physics_Update(delta):
 	if dir.y < 0 and fakebob.is_on_floor():
 		$"../../AnimatedSprite2D".play("jump")
 		fakebob.velocity.y = -430.0
+		
+	if idlingtime > 0:
+		idlingtime -= delta
+	else:
+		Transitioned.emit(self, "Attack")
+	
 	fakebob.move_and_slide()
 
 func _on_navtimer_timeout():
