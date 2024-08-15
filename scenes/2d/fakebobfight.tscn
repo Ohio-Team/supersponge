@@ -1,10 +1,18 @@
-[gd_scene load_steps=12 format=3 uid="uid://bnyal22s58ujp"]
+[gd_scene load_steps=15 format=3 uid="uid://bnyal22s58ujp"]
 
 [ext_resource type="Script" path="res://scripts/fakebobfight.gd" id="1_howxn"]
 [ext_resource type="Texture2D" uid="uid://dipw334ofksnu" path="res://assets/2d/tilesets/sewers.png" id="1_j2in3"]
+[ext_resource type="Shader" path="res://scripts/level2.gdshader" id="2_7q4er"]
 [ext_resource type="PackedScene" uid="uid://cjoo6ilm8eim1" path="res://scenes/2d/spongebob2d.tscn" id="2_gb4cp"]
 [ext_resource type="PackedScene" uid="uid://ijj6qbkx8vhd" path="res://scenes/2d/platform.tscn" id="3_ldgxs"]
+[ext_resource type="Texture2D" uid="uid://bosvoa5engruh" path="res://assets/2d/miscsprites/pla.png" id="3_lxw2l"]
 [ext_resource type="PackedScene" uid="uid://c682xfnc542qh" path="res://scenes/2d/fakebob.tscn" id="5_7oub3"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2eovp"]
+shader = ExtResource("2_7q4er")
+shader_parameter/motion = Vector2(40, 40)
+shader_parameter/scale = 1.0
+shader_parameter/offset = Vector2(0, 0)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ghavv"]
 texture = ExtResource("1_j2in3")
@@ -198,6 +206,13 @@ _data = {
 
 [node name="fakebobfight" type="Node2D"]
 script = ExtResource("1_howxn")
+
+[node name="Pla" type="Sprite2D" parent="."]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_2eovp")
+position = Vector2(-159, -162)
+texture = ExtResource("3_lxw2l")
+centered = false
 
 [node name="TileMap" type="TileMap" parent="."]
 texture_filter = 1

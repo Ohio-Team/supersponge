@@ -182,6 +182,7 @@ shape = SubResource("RectangleShape2D_hc5y4")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 path_desired_distance = 10.0
+simplify_path = true
 debug_enabled = true
 
 [node name="NavTimer" type="Timer" parent="."]

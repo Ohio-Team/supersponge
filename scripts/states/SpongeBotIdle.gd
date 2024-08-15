@@ -8,9 +8,10 @@ var dir: Vector2
 func Enter():
 	await Singleton.wait(2)
 
-func Update(delta):
-	if spongebot.position.distance_to(player.position) < 100:
-		Transitioned.emit(self, "Homing")
+func Physics_Update(delta):
+	if spongebot:
+		if spongebot.position.distance_to(player.position) < 100:
+			Transitioned.emit(self, "Homing")
 
 func _on_spongebot_body_entered(body):
 	if body == player:

@@ -32,7 +32,10 @@ func Physics_Update(delta):
 		Transitioned.emit(self, "Attack")
 	
 	fakebob.move_and_slide()
-
+	if dir.x < 0:
+		$"../../AnimatedSprite2D".flip_h = true
+	else:
+		$"../../AnimatedSprite2D".flip_h = false
 func _on_navtimer_timeout():
 	nav_agent.target_position = player.global_position
 
