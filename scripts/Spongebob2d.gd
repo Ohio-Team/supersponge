@@ -22,7 +22,7 @@ func inputs(direction):
 			anim.play("hurt")
 			if anim.animation_finished:
 				state = "idle"
-		if Input.is_action_just_pressed("attack") and is_on_floor():
+		if Input.is_action_just_pressed("attack"):
 			if Singleton.hasgun == false:
 				state = "attack"
 				anim.play("attack")
