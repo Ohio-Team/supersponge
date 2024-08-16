@@ -5,10 +5,11 @@ extends State
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func Enter():
-	BMOD.play_sfx(preload("res://assets/sfx/death.tres"))
+	BMOD.play_sfx(preload("res://assets/sfx/fakebobattack.tres"))
 	$"../../AnimatedSprite2D".play("attack")
 	
 func Exit():
+	BMOD.play_sfx(preload("res://assets/sfx/fakebobattackend.tres"))
 	for i in range(5):
 		generate_limbs()
 	make_spongebots()
