@@ -9,6 +9,7 @@ var idlingtime : float
 
 func Enter():
 	idlingtime = randf_range(5,10)
+	$"../../AnimatedSprite2D".rotation = 0
 
 func Physics_Update(delta):
 	if not fakebob.is_on_floor():
@@ -42,4 +43,5 @@ func _on_navtimer_timeout():
 
 func _on_area_2d_area_entered(area):
 	if area.is_in_group("Projectiles"):
+		Transitioned.emit(self, "Hurt")
 		BMOD.play_sfx(preload("res://assets/sfx/bart.tres"))

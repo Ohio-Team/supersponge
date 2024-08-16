@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://c682xfnc542qh"]
+[gd_scene load_steps=32 format=3 uid="uid://c682xfnc542qh"]
 
 [ext_resource type="Texture2D" uid="uid://v5ynmw60pqs1" path="res://assets/2d/fakebob/fakeattack1.png" id="1_aweak"]
 [ext_resource type="Texture2D" uid="uid://bsr6sjtdktpp0" path="res://assets/2d/fakebob/fakeattack2.png" id="2_nunwt"]
@@ -27,6 +27,7 @@
 [ext_resource type="Texture2D" uid="uid://bkwgq8n3pp6gn" path="res://assets/2d/fakebob/fakejump4.png" id="15_k1ra3"]
 [ext_resource type="Texture2D" uid="uid://bng4way311bnr" path="res://assets/2d/fakebob/fakebobhurt.png" id="20_ialhe"]
 [ext_resource type="Script" path="res://scripts/states/FakebobAttack.gd" id="26_8f31v"]
+[ext_resource type="Script" path="res://scripts/Fakebobhurt.gd" id="28_4h5mf"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1a6kk"]
 animations = [{
@@ -141,8 +142,59 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("20_ialhe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_ialhe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_ialhe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_ialhe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_ialhe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_ialhe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_ialhe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_ialhe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_ialhe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_ialhe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_ialhe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_ialhe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_ialhe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_ialhe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_ialhe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_ialhe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_ialhe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_ialhe")
 }],
-"loop": true,
+"loop": false,
 "name": &"hurt",
 "speed": 5.0
 }, {
@@ -205,6 +257,9 @@ script = ExtResource("12_osypt")
 
 [node name="Attack" type="Node" parent="StateMachine"]
 script = ExtResource("26_8f31v")
+
+[node name="Hurt" type="Node" parent="StateMachine"]
+script = ExtResource("28_4h5mf")
 
 [node name="Area2D" type="Area2D" parent="."]
 
