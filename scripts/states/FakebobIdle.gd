@@ -6,9 +6,9 @@ var movement_speed: float = 220.0
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var nav_agent := $"../../NavigationAgent2D"
 var idlingtime : float
-var cooldown : int
+var cooldown : float
 func Enter():
-	cooldown = 3
+	cooldown = 5
 	idlingtime = randf_range(5,10)
 	$"../../AnimatedSprite2D".rotation = 0
 
@@ -32,7 +32,9 @@ func Physics_Update(delta):
 		idlingtime -= delta
 	else:
 		Transitioned.emit(self, "Attack")
-	cooldown -= delta
+		
+	if cooldown > 0:
+		cooldown -= delta
 	
 	fakebob.move_and_slide()
 	if dir.x < 0:
