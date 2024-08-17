@@ -2,7 +2,7 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://bvtj8bi5xhiy7"
+uid="uid://xl012e815eod"
 path="res://.godot/imported/fakebob_attackstart.wav-a4cb297493f7f52c4644b6e31195b39e.sample"
 
 [deps]
@@ -18,7 +18,7 @@ force/max_rate=false
 force/max_rate_hz=44100
 edit/trim=false
 edit/normalize=false
-edit/loop_mode=1
+edit/loop_mode=0
 edit/loop_begin=0
 edit/loop_end=-1
 compress/mode=0
