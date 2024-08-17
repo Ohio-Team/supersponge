@@ -6,14 +6,15 @@ var movement_speed: float = 220.0
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var nav_agent := $"../../NavigationAgent2D"
 var idlingtime : float
-
+var cooldown : int
 func Enter():
+	cooldown = 3
 	idlingtime = randf_range(5,10)
 	$"../../AnimatedSprite2D".rotation = 0
 
 func Physics_Update(delta):
 	if not fakebob.is_on_floor():
-		if $"../../AnimatedSprite2D".animation != "jump":
+		if $"../../AnimatedSprite2D".animation != "jump" or $"../../AnimatedSprite2D".animation != "hurt":
 			$"../../AnimatedSprite2D".play("fall")
 		fakebob.velocity.y += gravity * delta
 	
@@ -31,6 +32,7 @@ func Physics_Update(delta):
 		idlingtime -= delta
 	else:
 		Transitioned.emit(self, "Attack")
+	cooldown -= delta
 	
 	fakebob.move_and_slide()
 	if dir.x < 0:
@@ -40,8 +42,15 @@ func Physics_Update(delta):
 func _on_navtimer_timeout():
 	nav_agent.target_position = player.global_position
 
-
 func _on_area_2d_area_entered(area):
-	if area.is_in_group("Projectiles"):
+	if area.is_in_group("Projectiles") and $"../../AnimatedSprite2D".animation != "jump" and $"../../AnimatedSprite2D".animation != "hurt" and $"../../AnimatedSprite2D".animation != "attack" and cooldown < 0:
+		$"../../AnimatedSprite2D".play("hurt")
 		Transitioned.emit(self, "Hurt")
 		BMOD.play_sfx(preload("res://assets/sfx/bart.tres"))
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body == player:
+		if player.state != "dying":
+			Singleton.health -= 1
+			player.state = "hurt"

@@ -1,0 +1,40 @@
+[gd_scene load_steps=4 format=3 uid="uid://0v84mcpu2xno"]
+
+[ext_resource type="FontFile" uid="uid://c4lyevru8sr3e" path="res://assets/fonts/Krabby Patty.ttf" id="1_7x6de"]
+[ext_resource type="Texture2D" uid="uid://bng4way311bnr" path="res://assets/2d/fakebob/fakebobhurt.png" id="2_31v66"]
+[ext_resource type="Texture2D" uid="uid://di5lu3nv36mmo" path="res://assets/2d/spongebobby/24.png" id="3_gha53"]
+
+[node name="chooseone and one only" type="Node2D"]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_right = 872.0
+offset_bottom = 162.0
+theme_override_fonts/normal_font = ExtResource("1_7x6de")
+theme_override_font_sizes/normal_font_size = 72
+text = "Is fakebob from ohio?"
+
+[node name="Fakebobhurt" type="Sprite2D" parent="."]
+position = Vector2(430, 355)
+texture = ExtResource("2_31v66")
+
+[node name="24" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(151, 343)
+scale = Vector2(7.59524, 4.78205)
+texture = ExtResource("3_gha53")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 588.0
+offset_top = 151.0
+offset_right = 1010.0
+offset_bottom = 312.0
+theme_override_font_sizes/font_size = 72
+text = "YES."
+
+[node name="Button2" type="Button" parent="."]
+offset_left = 595.0
+offset_top = 365.0
+offset_right = 1017.0
+offset_bottom = 526.0
+theme_override_font_sizes/font_size = 72
+text = "Fuck No."

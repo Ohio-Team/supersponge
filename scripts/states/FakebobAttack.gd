@@ -5,6 +5,7 @@ extends State
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func Enter():
+	fakebob.velocity = Vector2(0,0)
 	BMOD.play_sfx(preload("res://assets/sfx/fakebobattack.tres"))
 	$"../../AnimatedSprite2D".play("attack")
 	
@@ -17,6 +18,8 @@ func Exit():
 func Physics_Update(delta):
 	if not fakebob.is_on_floor():
 		fakebob.velocity.y += gravity * delta
+		
+	fakebob.move_and_slide()
 
 func Update(delta):
 	await $"../../AnimatedSprite2D".animation_finished

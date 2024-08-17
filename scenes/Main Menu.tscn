@@ -1,10 +1,18 @@
-[gd_scene load_steps=7 format=3 uid="uid://bkfis34nkbhyv"]
+[gd_scene load_steps=10 format=3 uid="uid://bkfis34nkbhyv"]
 
 [ext_resource type="Script" path="res://scripts/Main Menu.gd" id="1_cki2b"]
 [ext_resource type="FontFile" uid="uid://c4lyevru8sr3e" path="res://assets/fonts/Krabby Patty.ttf" id="1_jb0v5"]
+[ext_resource type="Shader" path="res://scripts/level2.gdshader" id="2_5lfgl"]
 [ext_resource type="Script" path="res://scripts/Button.gd" id="2_wkvhc"]
+[ext_resource type="Texture2D" uid="uid://dbaggvlsp7srw" path="res://assets/2d/miscsprites/spongebob_squarepants_jpg.png" id="3_pulrp"]
 [ext_resource type="Script" path="res://scripts/lvl2shortcut.gd" id="4_tysbe"]
 [ext_resource type="Script" path="res://scripts/states/Button4.gd" id="5_bmuaf"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_oplmi"]
+shader = ExtResource("2_5lfgl")
+shader_parameter/motion = Vector2(15, 0)
+shader_parameter/scale = 1.0
+shader_parameter/offset = Vector2(0, 280.745)
 
 [sub_resource type="GDScript" id="GDScript_kt6nb"]
 script/source = "extends Button
@@ -32,16 +40,23 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_cki2b")
 
+[node name="SpongebobSquarepantsJpg" type="Sprite2D" parent="."]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_oplmi")
+position = Vector2(575.75, 323.925)
+scale = Vector2(1.1525, 1.15329)
+texture = ExtResource("3_pulrp")
+
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 layout_mode = 0
-offset_left = 363.0
-offset_top = 146.0
-offset_right = 849.0
-offset_bottom = 276.0
+offset_left = 481.0
+offset_top = 27.0
+offset_right = 1130.0
+offset_bottom = 157.0
 theme_override_fonts/normal_font = ExtResource("1_jb0v5")
 theme_override_font_sizes/normal_font_size = 36
 bbcode_enabled = true
-text = "[tornado]BADASS SUPERSPONGE GAME.[/tornado]"
+text = "Spongebob Squarepants: SuperSponge THE OHIO MIX."
 fit_content = true
 scroll_following = true
 
