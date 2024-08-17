@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="SingleSoundEffect" load_steps=3 format=3 uid="uid://brk5ommo1x6rr"]
+
+[ext_resource type="AudioStream" uid="uid://bw14n7sxdg6j4" path="res://assets/sfx/bossvulnerable.ogg" id="1_mrjdi"]
+[ext_resource type="Script" path="res://addons/bmod/scripts/resources/single_sound_effect.gd" id="1_wkiv0"]
+
+[resource]
+script = ExtResource("1_wkiv0")
+audio_stream = ExtResource("1_mrjdi")
+play = false
+play_on_change = false

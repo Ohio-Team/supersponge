@@ -8,7 +8,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var idlingtime : float
 var cooldown : float
 func Enter():
-	cooldown = 5
+	cooldown = 3
 	idlingtime = randf_range(5,10)
 	$"../../AnimatedSprite2D".rotation = 0
 
@@ -35,6 +35,10 @@ func Physics_Update(delta):
 		
 	if cooldown > 0:
 		cooldown -= delta
+		
+	if cooldown > 0 and cooldown < 0.03:
+		$"../../AnimatedSprite2D/AnimationPlayer".play("flash")
+		BMOD.play_sfx(preload("res://assets/sfx/bossvulnerable.tres"))
 	
 	fakebob.move_and_slide()
 	if dir.x < 0:

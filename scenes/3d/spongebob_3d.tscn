@@ -97,9 +97,6 @@ bones/28/position = Vector3(-0.0339704, -3.8529, 4.05997e-06)
 bones/29/position = Vector3(2.02859, -3.08745, 1.61851e-06)
 bones/30/position = Vector3(4.7273, 3.72529e-09, 2.4897e-08)
 
-[node name="RemoteTransform3D" type="RemoteTransform3D" parent="sponebob"]
-remote_path = NodePath("../../ThirdPersonCamera")
-
 [node name="AnimationTree" type="AnimationTree" parent="."]
 root_node = NodePath("../sponebob")
 tree_root = SubResource("AnimationNodeBlendTree_v2lhl")
