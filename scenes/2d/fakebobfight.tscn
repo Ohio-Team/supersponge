@@ -242,10 +242,10 @@ tracks/7/keys = {
 "times": PackedFloat32Array(0.1, 4.33333),
 "transitions": PackedFloat32Array(1, 1),
 "values": [{
-"args": ["I see you found my [b]Atlantian[/b] base.", "fakebob"],
+"args": ["You alien bastards will pay for fucking up my hometown...", "spongebob"],
 "method": &"create_dialog"
 }, {
-"args": ["You will pay. FOR MY [b]OHIO[/b] FAMILY!", "spongebob"],
+"args": ["Bro who THE FUCK ARE YOU!!", "fakebob"],
 "method": &"create_dialog"
 }]
 }
