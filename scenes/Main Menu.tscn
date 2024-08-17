@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bkfis34nkbhyv"]
+[gd_scene load_steps=11 format=3 uid="uid://bkfis34nkbhyv"]
 
 [ext_resource type="Script" path="res://scripts/Main Menu.gd" id="1_cki2b"]
 [ext_resource type="FontFile" uid="uid://c4lyevru8sr3e" path="res://assets/fonts/Krabby Patty.ttf" id="1_jb0v5"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dbaggvlsp7srw" path="res://assets/2d/miscsprites/spongebob_squarepants_jpg.png" id="3_pulrp"]
 [ext_resource type="Script" path="res://scripts/lvl2shortcut.gd" id="4_tysbe"]
 [ext_resource type="Script" path="res://scripts/states/Button4.gd" id="5_bmuaf"]
+[ext_resource type="Texture2D" uid="uid://bovp8ym3joakq" path="res://assets/2d/miscsprites/ererreyy.png" id="8_ypp24"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_oplmi"]
 shader = ExtResource("2_5lfgl")
@@ -43,65 +44,70 @@ script = ExtResource("1_cki2b")
 [node name="SpongebobSquarepantsJpg" type="Sprite2D" parent="."]
 texture_repeat = 2
 material = SubResource("ShaderMaterial_oplmi")
-position = Vector2(575.75, 323.925)
+position = Vector2(576, 324)
 scale = Vector2(1.1525, 1.15329)
 texture = ExtResource("3_pulrp")
 
+[node name="Ererreyy" type="Sprite2D" parent="."]
+position = Vector2(595, 159)
+scale = Vector2(0.489167, 0.534091)
+texture = ExtResource("8_ypp24")
+
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 layout_mode = 0
-offset_left = 481.0
-offset_top = 27.0
-offset_right = 1130.0
-offset_bottom = 157.0
+offset_left = 177.0
+offset_top = 346.0
+offset_right = 450.0
+offset_bottom = 387.0
 theme_override_fonts/normal_font = ExtResource("1_jb0v5")
 theme_override_font_sizes/normal_font_size = 36
 bbcode_enabled = true
-text = "Spongebob Squarepants: SuperSponge THE OHIO MIX."
+text = "Part 1: Fake Bob"
 fit_content = true
 scroll_following = true
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
-offset_left = 371.0
-offset_top = 222.0
-offset_right = 459.0
-offset_bottom = 253.0
+offset_left = 759.0
+offset_top = 401.0
+offset_right = 847.0
+offset_bottom = 432.0
 text = "3D unreal."
 script = ExtResource("2_wkvhc")
 
 [node name="Button2" type="Button" parent="."]
 layout_mode = 0
-offset_left = 372.0
-offset_top = 286.0
-offset_right = 493.0
-offset_bottom = 317.0
+offset_left = 238.0
+offset_top = 397.0
+offset_right = 357.0
+offset_bottom = 428.0
 text = "Level 1"
 script = SubResource("GDScript_kt6nb")
 
 [node name="Button3" type="Button" parent="."]
 layout_mode = 0
-offset_left = 373.0
-offset_top = 327.0
-offset_right = 492.0
-offset_bottom = 358.0
+offset_left = 238.0
+offset_top = 433.0
+offset_right = 357.0
+offset_bottom = 464.0
 text = "Level 2"
 script = ExtResource("4_tysbe")
 
 [node name="Button4" type="Button" parent="."]
 layout_mode = 0
-offset_left = 373.0
-offset_top = 367.0
-offset_right = 492.0
-offset_bottom = 398.0
+offset_left = 239.0
+offset_top = 471.0
+offset_right = 358.0
+offset_bottom = 502.0
 text = "Fake Bob"
 script = ExtResource("5_bmuaf")
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="."]
 layout_mode = 0
-offset_left = 365.0
-offset_top = 191.0
-offset_right = 426.0
-offset_bottom = 231.0
+offset_left = 777.0
+offset_top = 372.0
+offset_right = 838.0
+offset_bottom = 412.0
 bbcode_enabled = true
 text = "[b]tests"
 

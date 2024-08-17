@@ -140,7 +140,7 @@ script = ExtResource("1_xmle0")
 [node name="Spinball" type="Sprite2D" parent="."]
 texture_repeat = 2
 material = SubResource("ShaderMaterial_kv4i4")
-position = Vector2(120, -1248)
+position = Vector2(1.52588e-05, -1248)
 scale = Vector2(3.78456, 3.27611)
 texture = ExtResource("9_5jwb1")
 centered = false
