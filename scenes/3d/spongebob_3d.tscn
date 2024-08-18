@@ -28,7 +28,7 @@ input_2/break_loop_at_end = false
 input_2/reset = true
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_v2lhl"]
-graph_offset = Vector2(-556.255, 90.1471)
+graph_offset = Vector2(-555.577, 84.1657)
 nodes/Animation/node = SubResource("AnimationNodeAnimation_itu0e")
 nodes/Animation/position = Vector2(-40, 240)
 "nodes/Animation 2/node" = SubResource("AnimationNodeAnimation_1sga7")
@@ -110,7 +110,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.18019, -0.170951)
 shape = SubResource("CapsuleShape3D_x21hn")
 
 [node name="ThirdPersonCamera" parent="." instance=ExtResource("3_l7qui")]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 3.6897, -0.178368)
 distance_from_pivot = 6.0
 mouse_follow = true
 

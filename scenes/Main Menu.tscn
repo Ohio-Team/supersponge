@@ -68,10 +68,10 @@ scroll_following = true
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
-offset_left = 759.0
-offset_top = 401.0
-offset_right = 847.0
-offset_bottom = 432.0
+offset_left = 533.0
+offset_top = 397.0
+offset_right = 621.0
+offset_bottom = 428.0
 text = "3D unreal."
 script = ExtResource("2_wkvhc")
 
@@ -104,10 +104,10 @@ script = ExtResource("5_bmuaf")
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="."]
 layout_mode = 0
-offset_left = 777.0
-offset_top = 372.0
-offset_right = 838.0
-offset_bottom = 412.0
+offset_left = 534.0
+offset_top = 357.0
+offset_right = 595.0
+offset_bottom = 397.0
 bbcode_enabled = true
 text = "[b]tests"
 

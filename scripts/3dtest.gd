@@ -2,4 +2,4 @@ extends Node3D
 
 
 func _ready() -> void:
-	MusicPlayer.play_song("res://assets/music/redsector.mp3")
+	MusicPlayer.play_mod("res://assets/music/rsectro.mod")

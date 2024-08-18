@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://wqoqonv86j4"]
+[gd_scene load_steps=19 format=3 uid="uid://wqoqonv86j4"]
 
 [ext_resource type="Script" path="res://scripts/level1.gd" id="1_huh3m"]
 [ext_resource type="Texture2D" uid="uid://bjqf1nbmaob28" path="res://assets/2d/miscsprites/downtown.png" id="2_jdhyg"]
@@ -15,6 +15,8 @@
 [ext_resource type="PackedScene" uid="uid://dolf5os2imxdu" path="res://scenes/2d/crazyfish.tscn" id="9_m2ma8"]
 [ext_resource type="PackedScene" uid="uid://cjoo6ilm8eim1" path="res://scenes/2d/spongebob2d.tscn" id="10_g8oo3"]
 [ext_resource type="PackedScene" uid="uid://bfev5tp3it5jo" path="res://scenes/2d/burger.tscn" id="11_ct6ny"]
+[ext_resource type="Texture2D" uid="uid://dxpr5400pmho2" path="res://assets/2d/miscsprites/3222222.png" id="16_wr076"]
+[ext_resource type="Texture2D" uid="uid://ii6xurtpt8ji" path="res://assets/2d/miscsprites/222222.png" id="17_a5o5b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p5m3d"]
 size = Vector2(33, 29)
@@ -326,3 +328,15 @@ position = Vector2(3224, 596)
 
 [node name="Spongebob" parent="." instance=ExtResource("10_g8oo3")]
 position = Vector2(192, 589)
+
+[node name="3222222" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(510, 572)
+scale = Vector2(0.42093, 0.416667)
+texture = ExtResource("16_wr076")
+
+[node name="222222" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(1902, 472)
+scale = Vector2(0.313953, 0.375)
+texture = ExtResource("17_a5o5b")

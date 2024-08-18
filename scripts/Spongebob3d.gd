@@ -10,7 +10,6 @@ const JUMP_VELOCITY = 9.8
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	Ui.create_dialog("Woah Spongebob. You look [shake][b]so good i[/b][/shake]n 3d.")
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -33,7 +32,8 @@ func _physics_process(delta):
 	var input_dir = Input.get_vector("left", "right", "front", "back")
 	var direction = ((camera._camera_rotation_pivot.basis * Vector3(input_dir.x, 0, input_dir.y))).normalized()
 	if direction:
-		animation_tree["parameters/state/transition_request"] = "walking"
+		if is_on_floor():
+			animation_tree["parameters/state/transition_request"] = "walking"
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
 	elif direction == Vector3(0,0,0) and velocity.y == 0:

@@ -1,0 +1,63 @@
+[gd_scene load_steps=12 format=3 uid="uid://djv8t3gstod4s"]
+
+[ext_resource type="Script" path="res://scripts/3dtest.gd" id="1_afk35"]
+[ext_resource type="Texture2D" uid="uid://d215ogsgn4fvt" path="res://assets/3d/bikinibottom/textures/jf_sky_color_77.png" id="2_5nqrr"]
+[ext_resource type="PackedScene" uid="uid://broib4lslli7c" path="res://assets/3d/bikinibottom/bikinibottom3d.tscn" id="3_whwji"]
+[ext_resource type="PackedScene" uid="uid://8kbffcc412vs" path="res://scenes/3d/spongebob_3d.tscn" id="4_u407o"]
+[ext_resource type="LightmapGIData" uid="uid://buuuv7r733toc" path="res://scenes/3d/3dtest.lmbake" id="5_iayy8"]
+[ext_resource type="Texture2D" uid="uid://4y6f8lopmbo0" path="res://assets/2d/miscsprites/smilingfriendsiftheywerethesimpsons.png" id="6_p8ewn"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_1klxv"]
+panorama = ExtResource("2_5nqrr")
+
+[sub_resource type="Sky" id="Sky_ean2u"]
+sky_material = SubResource("PanoramaSkyMaterial_1klxv")
+
+[sub_resource type="Environment" id="Environment_saag1"]
+background_mode = 2
+sky = SubResource("Sky_ean2u")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="Animation" id="Animation_cca6e"]
+resource_name = "Cutscene"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_sovk1"]
+_data = {
+"Cutscene": SubResource("Animation_cca6e")
+}
+
+[node name="Level4" type="Node3D"]
+script = ExtResource("1_afk35")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_saag1")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+light_color = Color(0.682353, 1, 1, 1)
+light_bake_mode = 1
+shadow_enabled = true
+
+[node name="bikinibottom3d" parent="." instance=ExtResource("3_whwji")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+
+[node name="Spongebob3d" parent="." instance=ExtResource("4_u407o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -107.97, 0.0620189, -57.2939)
+
+[node name="LightmapGI" type="LightmapGI" parent="."]
+bounces = 1
+use_denoiser = false
+texel_scale = 0.5
+generate_probes_subdiv = 1
+light_data = ExtResource("5_iayy8")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 68.7133, 6.51477, -73.6882)
+billboard = 1
+texture = ExtResource("6_p8ewn")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_sovk1")
+}
