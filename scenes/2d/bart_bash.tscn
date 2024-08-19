@@ -53,3 +53,60 @@ position = Vector2(951, 297)
 
 [node name="Bart13" parent="Bart(s)" instance=ExtResource("3_x600d")]
 position = Vector2(815, 78)
+
+[node name="Bart14" parent="Bart(s)" instance=ExtResource("3_x600d")]
+position = Vector2(199, 391)
+
+[node name="Bart15" parent="Bart(s)" instance=ExtResource("3_x600d")]
+position = Vector2(91, 375)
+
+[node name="Bart16" parent="Bart(s)" instance=ExtResource("3_x600d")]
+position = Vector2(241, 302)
+
+[node name="Bart17" parent="Bart(s)" instance=ExtResource("3_x600d")]
+position = Vector2(498, 381)
+
+[node name="Bart18" parent="Bart(s)" instance=ExtResource("3_x600d")]
+position = Vector2(664, 302)
+
+[node name="Bart19" parent="Bart(s)" instance=ExtResource("3_x600d")]
+position = Vector2(355, 371)
+
+[node name="Bart20" parent="Bart(s)" instance=ExtResource("3_x600d")]
+position = Vector2(390, 81)
+
+[node name="Bart21" parent="Bart(s)" instance=ExtResource("3_x600d")]
+position = Vector2(749, 403)
+
+[node name="Bart22" parent="Bart(s)" instance=ExtResource("3_x600d")]
+position = Vector2(588, 589)
+
+[node name="Bart23" parent="Bart(s)" instance=ExtResource("3_x600d")]
+position = Vector2(597, 455)
+
+[node name="Bart24" parent="Bart(s)" instance=ExtResource("3_x600d")]
+position = Vector2(789, 575)
+
+[node name="Bart25" parent="Bart(s)" instance=ExtResource("3_x600d")]
+position = Vector2(773, 297)
+
+[node name="Bart26" parent="Bart(s)" instance=ExtResource("3_x600d")]
+position = Vector2(985, 102)
+
+[node name="Bart27" parent="Bart(s)" instance=ExtResource("3_x600d")]
+position = Vector2(864, 393)
+
+[node name="Bart28" parent="Bart(s)" instance=ExtResource("3_x600d")]
+position = Vector2(949, 511)
+
+[node name="Bart29" parent="Bart(s)" instance=ExtResource("3_x600d")]
+position = Vector2(867, 286)
+
+[node name="Bart30" parent="Bart(s)" instance=ExtResource("3_x600d")]
+position = Vector2(365, 535)
+
+[node name="Bart31" parent="Bart(s)" instance=ExtResource("3_x600d")]
+position = Vector2(407, 599)
+
+[node name="Bart32" parent="Bart(s)" instance=ExtResource("3_x600d")]
+position = Vector2(1053, 455)
