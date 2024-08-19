@@ -1,3 +1,55 @@
-[gd_scene format=3 uid="uid://bxcfx81na4cys"]
+[gd_scene load_steps=4 format=3 uid="uid://bxcfx81na4cys"]
+
+[ext_resource type="Script" path="res://scenes/2d/bart_bash.gd" id="1_pcrrk"]
+[ext_resource type="Texture2D" uid="uid://3klrxjuvmqw5" path="res://assets/2d/bartbash/bart bash bg.png" id="2_i40bc"]
+[ext_resource type="PackedScene" uid="uid://dwe0hotw35qse" path="res://scenes/2d/bart.tscn" id="3_x600d"]
 
 [node name="BartBash" type="Node2D"]
+script = ExtResource("1_pcrrk")
+
+[node name="BartBashBg" type="Sprite2D" parent="."]
+visibility_layer = 2
+position = Vector2(577, 325)
+scale = Vector2(1.44375, 1.08167)
+texture = ExtResource("2_i40bc")
+
+[node name="Bart(s)" type="Node2D" parent="."]
+
+[node name="Bart" parent="Bart(s)" instance=ExtResource("3_x600d")]
+position = Vector2(109, 133)
+
+[node name="Bart2" parent="Bart(s)" instance=ExtResource("3_x600d")]
+position = Vector2(251, 142)
+
+[node name="Bart3" parent="Bart(s)" instance=ExtResource("3_x600d")]
+position = Vector2(191, 217)
+
+[node name="Bart4" parent="Bart(s)" instance=ExtResource("3_x600d")]
+position = Vector2(43, 261)
+
+[node name="Bart5" parent="Bart(s)" instance=ExtResource("3_x600d")]
+position = Vector2(306, 433)
+
+[node name="Bart6" parent="Bart(s)" instance=ExtResource("3_x600d")]
+position = Vector2(541, 324)
+
+[node name="Bart7" parent="Bart(s)" instance=ExtResource("3_x600d")]
+position = Vector2(708, 197)
+
+[node name="Bart8" parent="Bart(s)" instance=ExtResource("3_x600d")]
+position = Vector2(827, 499)
+
+[node name="Bart9" parent="Bart(s)" instance=ExtResource("3_x600d")]
+position = Vector2(464, 170)
+
+[node name="Bart10" parent="Bart(s)" instance=ExtResource("3_x600d")]
+position = Vector2(545, 509)
+
+[node name="Bart11" parent="Bart(s)" instance=ExtResource("3_x600d")]
+position = Vector2(199, 551)
+
+[node name="Bart12" parent="Bart(s)" instance=ExtResource("3_x600d")]
+position = Vector2(951, 297)
+
+[node name="Bart13" parent="Bart(s)" instance=ExtResource("3_x600d")]
+position = Vector2(815, 78)
