@@ -1,36 +1,21 @@
-[gd_scene load_steps=11 format=3 uid="uid://bkfis34nkbhyv"]
+[gd_scene load_steps=12 format=3 uid="uid://bkfis34nkbhyv"]
 
 [ext_resource type="Script" path="res://scripts/Main Menu.gd" id="1_cki2b"]
 [ext_resource type="FontFile" uid="uid://c4lyevru8sr3e" path="res://assets/fonts/Krabby Patty.ttf" id="1_jb0v5"]
 [ext_resource type="Shader" path="res://scripts/level2.gdshader" id="2_5lfgl"]
-[ext_resource type="Script" path="res://scripts/Button.gd" id="2_wkvhc"]
 [ext_resource type="Texture2D" uid="uid://dbaggvlsp7srw" path="res://assets/2d/miscsprites/spongebob_squarepants_jpg.png" id="3_pulrp"]
-[ext_resource type="Script" path="res://scripts/lvl2shortcut.gd" id="4_tysbe"]
-[ext_resource type="Script" path="res://scripts/states/Button4.gd" id="5_bmuaf"]
+[ext_resource type="Script" path="res://scripts/MenuButton.gd" id="6_th7r2"]
+[ext_resource type="PackedScene" uid="uid://bnyal22s58ujp" path="res://scenes/2d/fakebobfight.tscn" id="7_diw60"]
+[ext_resource type="PackedScene" uid="uid://b2bv5n6x7m2da" path="res://scenes/2d/level2.tscn" id="8_a2olc"]
 [ext_resource type="Texture2D" uid="uid://bovp8ym3joakq" path="res://assets/2d/miscsprites/ererreyy.png" id="8_ypp24"]
+[ext_resource type="PackedScene" uid="uid://wqoqonv86j4" path="res://scenes/2d/level1.tscn" id="9_y5hbk"]
+[ext_resource type="PackedScene" uid="uid://dk0y3rw1r5i0w" path="res://scenes/2d/level4intro.tscn" id="10_v8ylw"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_oplmi"]
 shader = ExtResource("2_5lfgl")
 shader_parameter/motion = Vector2(15, 0)
 shader_parameter/scale = 1.0
 shader_parameter/offset = Vector2(0, 280.745)
-
-[sub_resource type="GDScript" id="GDScript_kt6nb"]
-script/source = "extends Button
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-func _on_pressed():
-	Singleton.inmenu = false
-	get_tree().change_scene_to_file(\"res://scenes/2d/level1intro.tscn\")
-"
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -66,52 +51,55 @@ text = "Part 1: Fake Bob"
 fit_content = true
 scroll_following = true
 
-[node name="Button" type="Button" parent="."]
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
 layout_mode = 0
-offset_left = 533.0
-offset_top = 397.0
-offset_right = 621.0
-offset_bottom = 428.0
-text = "3D unreal."
-script = ExtResource("2_wkvhc")
+offset_left = 694.0
+offset_top = 347.0
+offset_right = 1079.0
+offset_bottom = 429.0
+theme_override_fonts/normal_font = ExtResource("1_jb0v5")
+theme_override_font_sizes/normal_font_size = 36
+bbcode_enabled = true
+text = "Part 2: Squilliams Weed"
+fit_content = true
+scroll_following = true
 
-[node name="Button2" type="Button" parent="."]
-layout_mode = 0
-offset_left = 238.0
-offset_top = 397.0
-offset_right = 357.0
-offset_bottom = 428.0
-text = "Level 1"
-script = SubResource("GDScript_kt6nb")
-
-[node name="Button3" type="Button" parent="."]
-layout_mode = 0
-offset_left = 238.0
-offset_top = 433.0
-offset_right = 357.0
-offset_bottom = 464.0
-text = "Level 2"
-script = ExtResource("4_tysbe")
-
-[node name="Button4" type="Button" parent="."]
+[node name="Menu_Button" type="Button" parent="."]
 layout_mode = 0
 offset_left = 239.0
 offset_top = 471.0
 offset_right = 358.0
 offset_bottom = 502.0
 text = "Fake Bob"
-script = ExtResource("5_bmuaf")
+script = ExtResource("6_th7r2")
+scene = ExtResource("7_diw60")
 
-[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+[node name="Menu_Button2" type="Button" parent="."]
 layout_mode = 0
-offset_left = 534.0
-offset_top = 357.0
-offset_right = 595.0
-offset_bottom = 397.0
-bbcode_enabled = true
-text = "[b]tests"
+offset_left = 238.0
+offset_top = 433.0
+offset_right = 357.0
+offset_bottom = 464.0
+text = "Level 2"
+script = ExtResource("6_th7r2")
+scene = ExtResource("8_a2olc")
 
-[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
-[connection signal="pressed" from="Button2" to="Button2" method="_on_pressed"]
-[connection signal="pressed" from="Button3" to="Button3" method="_on_pressed"]
-[connection signal="pressed" from="Button4" to="Button4" method="_on_pressed"]
+[node name="Menu_Button3" type="Button" parent="."]
+layout_mode = 0
+offset_left = 238.0
+offset_top = 397.0
+offset_right = 357.0
+offset_bottom = 428.0
+text = "Level 1"
+script = ExtResource("6_th7r2")
+scene = ExtResource("9_y5hbk")
+
+[node name="Menu_Button4" type="Button" parent="."]
+layout_mode = 0
+offset_left = 822.0
+offset_top = 400.0
+offset_right = 941.0
+offset_bottom = 431.0
+text = "Level 4"
+script = ExtResource("6_th7r2")
+scene = ExtResource("10_v8ylw")

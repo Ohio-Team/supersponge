@@ -44,7 +44,7 @@ node_connections = [&"output", 0, &"state", &"state", 0, &"Animation 4", &"state
 radius = 1.34723
 height = 4.25818
 
-[node name="Spongebob3d" type="CharacterBody3D"]
+[node name="Spongebob3d" type="CharacterBody3D" groups=["Player"]]
 script = ExtResource("1_pc0ce")
 
 [node name="sponebob" parent="." instance=ExtResource("2_8hb62")]
