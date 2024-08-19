@@ -115,8 +115,8 @@ position = Vector2(1053, 455)
 [node name="Window" type="Window" parent="."]
 transparent_bg = true
 title = "bart"
-initial_position = 1
-size = Vector2i(1000, 1000)
+position = Vector2i(326, 74)
+size = Vector2i(500, 500)
 visible = false
 unresizable = true
 borderless = true
@@ -126,7 +126,7 @@ transparent = true
 
 [node name="Window" type="Window" parent="Window/Camera2D"]
 title = "BART"
-initial_position = 2
+initial_position = 1
 visible = false
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Window/Camera2D/Window"]
@@ -135,6 +135,6 @@ offset_bottom = 93.695
 text = "You shouldnt have done that."
 
 [node name="Sprite2D" type="Sprite2D" parent="Window/Camera2D"]
-position = Vector2(46.205, 38.655)
+position = Vector2(50, 50)
 scale = Vector2(2, 2)
 texture = ExtResource("4_sosd2")
