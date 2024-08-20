@@ -1,11 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://bxcfx81na4cys"]
+[gd_scene load_steps=7 format=3 uid="uid://bxcfx81na4cys"]
 
 [ext_resource type="Script" path="res://scripts/bart_bash.gd" id="1_pcrrk"]
 [ext_resource type="Texture2D" uid="uid://3klrxjuvmqw5" path="res://assets/2d/bartbash/bart bash bg.png" id="2_i40bc"]
 [ext_resource type="PackedScene" uid="uid://dwe0hotw35qse" path="res://scenes/2d/bart.tscn" id="3_x600d"]
 [ext_resource type="Texture2D" uid="uid://c6iod1ioj3aqd" path="res://assets/2d/bartbash/ohio.png" id="4_p534p"]
 [ext_resource type="Texture2D" uid="uid://cbaby8wobfy6v" path="res://assets/2d/bartbash/creepyassbart.png" id="4_sosd2"]
-[ext_resource type="Script" path="res://scripts/evilbart.gd" id="5_fgljw"]
 [ext_resource type="AudioStream" uid="uid://ddvynie2jhak" path="res://assets/voices/spongebob2_output.wav" id="6_md4hw"]
 
 [node name="BartBash" type="Node2D"]
@@ -129,7 +128,6 @@ visible = false
 unresizable = true
 borderless = true
 transparent = true
-script = ExtResource("5_fgljw")
 
 [node name="Camera2D" type="Camera2D" parent="Window"]
 anchor_mode = 0
