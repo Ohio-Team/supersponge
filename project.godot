@@ -49,6 +49,7 @@ Singleton="*res://scripts/singleton.gd"
 
 [display]
 
+window/size/initial_position_type=3
 window/size/resizable=false
 window/subwindows/embed_subwindows=false
 window/per_pixel_transparency/allowed=true

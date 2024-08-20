@@ -12,8 +12,8 @@ dest_files=["res://.godot/imported/bartbash.mp3-d5cf6d973be11eb8fb6d84289d326bfe
 
 [params]
 
-loop=false
-loop_offset=0
-bpm=0
+loop=true
+loop_offset=0.0
+bpm=0.0
 beat_count=0
 bar_beats=4

@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://8kbffcc412vs" path="res://scenes/3d/spongebob_3d.tscn" id="4_ov10s"]
 [ext_resource type="LightmapGIData" uid="uid://buuuv7r733toc" path="res://scenes/3d/3dtest.lmbake" id="5_i4n1m"]
 [ext_resource type="Texture2D" uid="uid://4y6f8lopmbo0" path="res://assets/2d/miscsprites/smilingfriendsiftheywerethesimpsons.png" id="6_lybu0"]
-[ext_resource type="Script" path="res://scenes/3d/smiling_friends.gd" id="7_5yvl2"]
+[ext_resource type="Script" path="res://scripts/smiling_friends.gd" id="7_5yvl2"]
 [ext_resource type="AudioStream" uid="uid://ds1hcxfx5vric" path="res://assets/voices/smilingfriends_output.wav" id="7_22ta0"]
 [ext_resource type="AudioStream" uid="uid://d33qcmouwphc" path="res://assets/voices/spongebob1_output.wav" id="8_twukn"]
 [ext_resource type="FontFile" uid="uid://c4lyevru8sr3e" path="res://assets/fonts/Krabby Patty.ttf" id="10_drm78"]
