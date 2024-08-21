@@ -4,7 +4,7 @@ class_name spunchbob extends CharacterBody3D
 @export var SPEED = 20.0
 @onready var animation_tree = $AnimationTree
 @onready var camera : ThirdPersonCamera = $ThirdPersonCamera
-const JUMP_VELOCITY = 9.8
+@export var JUMP_VELOCITY = 9.8
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")

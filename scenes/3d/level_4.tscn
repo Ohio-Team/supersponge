@@ -1,0 +1,287 @@
+[gd_scene load_steps=18 format=3 uid="uid://k6460ynggk43"]
+
+[ext_resource type="Script" path="res://scripts/3dtest.gd" id="1_v4in3"]
+[ext_resource type="Texture2D" uid="uid://d215ogsgn4fvt" path="res://assets/3d/bikinibottom/textures/jf_sky_color_77.png" id="2_lna1d"]
+[ext_resource type="PackedScene" uid="uid://broib4lslli7c" path="res://assets/3d/bikinibottom/bikinibottom3d.tscn" id="3_vhacy"]
+[ext_resource type="LightmapGIData" uid="uid://cyfw6h6b3f151" path="res://scenes/3d/level4.lmbake" id="4_15kgx"]
+[ext_resource type="PackedScene" uid="uid://8kbffcc412vs" path="res://scenes/3d/spongebob_3d.tscn" id="5_ehy8v"]
+[ext_resource type="Texture2D" uid="uid://4y6f8lopmbo0" path="res://assets/2d/miscsprites/smilingfriendsiftheywerethesimpsons.png" id="6_dy3b1"]
+[ext_resource type="Script" path="res://scripts/smiling_friends.gd" id="7_sgdm6"]
+[ext_resource type="AudioStream" uid="uid://ds1hcxfx5vric" path="res://assets/voices/smilingfriends_output.wav" id="8_pgru1"]
+[ext_resource type="AudioStream" uid="uid://d33qcmouwphc" path="res://assets/voices/spongebob1_output.wav" id="9_ninet"]
+[ext_resource type="FontFile" uid="uid://c4lyevru8sr3e" path="res://assets/fonts/Krabby Patty.ttf" id="10_8lon8"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_adr1q"]
+panorama = ExtResource("2_lna1d")
+
+[sub_resource type="Sky" id="Sky_ggylu"]
+sky_material = SubResource("PanoramaSkyMaterial_adr1q")
+
+[sub_resource type="Environment" id="Environment_eoepk"]
+background_mode = 2
+sky = SubResource("Sky_ggylu")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_s6keh"]
+size = Vector3(9.91156, 12.2151, 10.5078)
+
+[sub_resource type="Animation" id="Animation_cca6e"]
+resource_name = "Cutscene"
+length = 17.4167
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Subtitles:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.46249, 2.44173, 4.46668, 5.05, 5.75009, 8.99176, 9.75, 10.8834, 11.8834, 12.3, 13.1667, 14.5167, 15.9334),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": ["[center] Oh hey Spongebob
+", "[center] Squilliam called us
+", "[center] and told us to give you the coordinates", "[center] But first!!!!", "[center] We want you to", "[center] experience our new [tornado]Smiling Friends Technology.", "[center] It's called [shake]Bart Bash", "[center] and it's supossed to", "[center] be fun
+", "[center] So yeah
+", "[center] can you please try it out
+", "[center] and tell us what it's like", "[center] before we give you the coordinates?", "[center] Uh yeah sure"]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(17.416),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"switch_scene"
+}]
+}
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../AudioStreamPlayer")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("8_pgru1")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("9_ninet")
+}],
+"times": PackedFloat32Array(0.0333333, 15.7333)
+}
+tracks/2/use_blend = true
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Spongebob3d/ThirdPersonCamera:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1.38333, 17.3667, 17.4167),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.928337, 2.83411, 4.04579), Vector3(-3.35048, 2.83411, 2.92001), Vector3(0.928337, 2.83411, 4.04579), Vector3(0, 3.6897, -0.178368)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Spongebob3d/ThirdPersonCamera:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1.38334, 17.3667, 17.4167),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0.534978, 0), Vector3(0, 0.828891, 0), Vector3(0, 0.534978, 0), Vector3(0, 0, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../Spongebob3d:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(36.5789, 1.54859, -38.8986)]
+}
+
+[sub_resource type="Animation" id="Animation_vkig0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Subtitles:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [""]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Spongebob3d/ThirdPersonCamera:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 3.6897, -0.178368)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Spongebob3d/ThirdPersonCamera:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Spongebob3d:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-53.8024, 0.217664, -31.7717)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_sovk1"]
+_data = {
+"Cutscene": SubResource("Animation_cca6e"),
+"RESET": SubResource("Animation_vkig0")
+}
+
+[node name="Level4" type="Node3D"]
+script = ExtResource("1_v4in3")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_eoepk")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+light_color = Color(0.729412, 1, 1, 1)
+light_bake_mode = 1
+shadow_enabled = true
+
+[node name="bikinibottom3d" parent="." instance=ExtResource("3_vhacy")]
+
+[node name="LightmapGI" type="LightmapGI" parent="."]
+quality = 0
+texel_scale = 0.5
+light_data = ExtResource("4_15kgx")
+
+[node name="Spongebob3d" parent="." instance=ExtResource("5_ehy8v")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -53.8024, 0.217664, -31.7717)
+SPEED = 10.0
+JUMP_VELOCITY = 4.9
+
+[node name="Skeleton3D" parent="Spongebob3d/sponebob/Armature" index="0"]
+bones/0/rotation = Quaternion(-0.707107, 0, 0, 0.707107)
+bones/1/rotation = Quaternion(0, -0.707106, 0, 0.707107)
+bones/2/position = Vector3(2.35193e-07, 0, -1.52589e-07)
+bones/3/position = Vector3(0.00957848, 3.85348, 7.35393e-06)
+bones/4/position = Vector3(-0.00396827, 12.0305, 1.20334e-05)
+bones/5/position = Vector3(-0.429015, 7.04739, 7.27165e-06)
+bones/6/position = Vector3(9.23392e-06, 9.0288, 9.0334e-06)
+bones/7/position = Vector3(-0.00557283, -8.42134, 7.01208)
+bones/8/position = Vector3(3.60885, -1.11773, 1.18248)
+bones/8/rotation = Quaternion(-0.0870057, 0.0919001, -0.0648999, 0.989835)
+bones/8/scale = Vector3(1, 1, 1)
+bones/9/position = Vector3(2.44437, -3.39024, 0.502653)
+bones/9/rotation = Quaternion(0.0896658, -0.13357, 0.0611721, 0.985077)
+bones/10/position = Vector3(-0.0492981, -2.29494, 1.30986)
+bones/10/rotation = Quaternion(-2.61546e-08, 0.938902, 9.58781e-09, 0.344185)
+bones/11/position = Vector3(-1.50634, -4.27337, -1.92051)
+bones/11/rotation = Quaternion(-5.57131e-08, 0.000598326, -3.33351e-11, 1)
+bones/11/scale = Vector3(1, 1, 1)
+bones/12/position = Vector3(-0.326974, -0.929006, -0.417892)
+bones/13/position = Vector3(-0.00559807, -8.50218, -7.28582)
+bones/14/position = Vector3(3.66904, -1.13028, -1.08393)
+bones/14/rotation = Quaternion(0, -0.0924465, 2.23339e-23, 0.995718)
+bones/15/position = Vector3(1.85736, -3.57035, -1.15405)
+bones/15/rotation = Quaternion(-1.33877e-23, 0.134364, -5.45939e-23, 0.990932)
+bones/15/scale = Vector3(1, 1, 1)
+bones/16/position = Vector3(-0.0492613, -2.29492, -1.30991)
+bones/16/rotation = Quaternion(4.94946e-23, 0.938902, 0, -0.344186)
+bones/17/position = Vector3(-1.50631, -4.27342, 1.92049)
+bones/18/position = Vector3(-0.32697, -0.928997, 0.417893)
+bones/18/rotation = Quaternion(1.59978e-22, 0.286623, 7.94094e-23, 0.958043)
+bones/19/position = Vector3(-0.0121345, -2.74753, 2.35983)
+bones/19/scale = Vector3(1, 1, 1)
+bones/20/position = Vector3(-4.88508, 2.4354, -0.0593532)
+bones/21/position = Vector3(-2.56361e-05, -1.14441e-05, 4.88132)
+bones/22/position = Vector3(0.0646168, -4.92662, 4.20288e-06)
+bones/23/position = Vector3(-0.0484409, -3.92096, 5.01643e-06)
+bones/24/position = Vector3(2.05815, -3.06781, 1.13934e-06)
+bones/25/position = Vector3(4.50018, 0.0432192, -4.07227e-08)
+bones/26/position = Vector3(1.4166e-06, 2.28882e-05, -4.88135)
+bones/27/position = Vector3(0.0820764, -4.92637, 4.20344e-06)
+bones/28/position = Vector3(-0.0339704, -3.8529, 4.05997e-06)
+bones/29/position = Vector3(2.02859, -3.08745, 1.61851e-06)
+bones/30/position = Vector3(4.7273, 3.72529e-09, 2.4897e-08)
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 34.8906, 3.38482, -37.2084)
+billboard = 1
+texture = ExtResource("6_dy3b1")
+script = ExtResource("7_sgdm6")
+
+[node name="Area3D" type="Area3D" parent="Sprite3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sprite3D/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.710114, -0.0104218, -0.351654)
+shape = SubResource("BoxShape3D_s6keh")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Sprite3D")
+libraries = {
+"": SubResource("AnimationLibrary_sovk1")
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+bus = &"SFX"
+
+[node name="Subtitles" type="RichTextLabel" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -576.0
+offset_top = -40.0
+offset_right = 576.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 11
+theme_override_fonts/normal_font = ExtResource("10_8lon8")
+theme_override_font_sizes/normal_font_size = 23
+bbcode_enabled = true
+
+[connection signal="body_entered" from="Sprite3D/Area3D" to="Sprite3D" method="_on_area_3d_body_entered"]
+
+[editable path="Spongebob3d"]
+[editable path="Spongebob3d/sponebob"]

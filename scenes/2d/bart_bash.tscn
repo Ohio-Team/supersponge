@@ -8,7 +8,6 @@
 [ext_resource type="AudioStream" uid="uid://ddvynie2jhak" path="res://assets/voices/spongebob2_output.wav" id="6_md4hw"]
 
 [node name="BartBash" type="Node2D"]
-visible = false
 script = ExtResource("1_pcrrk")
 
 [node name="BartBashBg" type="Sprite2D" parent="."]
