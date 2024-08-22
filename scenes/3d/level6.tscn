@@ -1,13 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://coebr5rjm8gg0"]
+[gd_scene load_steps=2 format=3 uid="uid://coebr5rjm8gg0"]
 
 [ext_resource type="Script" path="res://scripts/driving.gd" id="1_lay5p"]
-[ext_resource type="Texture2D" uid="uid://b14o70qs8xsd3" path="res://assets/2d/miscsprites/placeholder.jpg" id="2_pjgnf"]
 
 [node name="level6" type="Node3D"]
 script = ExtResource("1_lay5p")
 
 [node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.10896, 0)
 
-[node name="Sprite3D" type="Sprite3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -7.3693)
-texture = ExtResource("2_pjgnf")
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00482178, 0, -73.8453)
+size = Vector3(2.79211, 1, 148.691)

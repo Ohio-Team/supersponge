@@ -10,16 +10,10 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if canmove:
 		position += speed
-		if position.x < 0:
+		if position.x < 0 or position.x > DisplayServer.screen_get_size().x:
 			position.x = -position.x
 			speed = Vector2i(randf_range(-30,30),randf_range(-30,30))
-		if position.x > DisplayServer.screen_get_size().x:
-			position.x = -position.x
-			speed = Vector2i(randf_range(-30,30),randf_range(-30,30))
-		if position.y < 0:
-			position.y = -position.y
-			speed = Vector2i(randf_range(-30,30),randf_range(-30,30))
-		if position.y > DisplayServer.screen_get_size().y:
+		if position.y < 0 or position.y > DisplayServer.screen_get_size().y:
 			position.y = -position.y
 			speed = Vector2i(randf_range(-30,30),randf_range(-30,30))
 		if position.x > DisplayServer.screen_get_size().x * 2 or position.x < -DisplayServer.screen_get_size().x * 2 or position.y > DisplayServer.screen_get_size().y * 2 or position.y < -DisplayServer.screen_get_size().y * 2:
@@ -29,5 +23,5 @@ func _process(delta: float) -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and mouse_entered and canmove:
 		hide()
+		get_parent().bartcounter += 1
 		get_parent().switch()
-		queue_free()
