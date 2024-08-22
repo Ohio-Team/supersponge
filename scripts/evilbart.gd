@@ -27,10 +27,7 @@ func _process(delta: float) -> void:
 
 
 func _unhandled_input(event: InputEvent) -> void:
-	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and mouse_entered:
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and mouse_entered and canmove:
 		hide()
-		canmove = false
-		MusicPlayer.stop_song()
-		$"../AudioStreamPlayer".play()
-		await $"../AudioStreamPlayer".finished
-		get_tree().change_scene_to_file("res://scenes/3d/driving.tscn")
+		get_parent().switch()
+		queue_free()

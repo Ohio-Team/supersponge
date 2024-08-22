@@ -130,6 +130,7 @@ initial_position = 1
 size = Vector2i(120, 120)
 visible = false
 unresizable = true
+borderless = true
 transparent = true
 script = ExtResource("5_mtn8e")
 
