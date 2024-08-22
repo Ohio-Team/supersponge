@@ -19,9 +19,11 @@ func _process(delta: float) -> void:
 			OS.alert("Let's see if you can bash me.","Ohio Alert")
 			OS.alert("(Before we start, we recommend minimizing other tabs so you dont lose bart)")
 			$Window.canmove = true
-
+	else:
+		return
 func switch() -> void:
 		$Window.canmove = false
+		bartcounter += 1
 		MusicPlayer.stop_song()
 		$AudioStreamPlayer.play()
 		await $AudioStreamPlayer.finished

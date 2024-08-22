@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://k6460ynggk43"]
+[gd_scene load_steps=19 format=3 uid="uid://k6460ynggk43"]
 
 [ext_resource type="Script" path="res://scripts/3dtest.gd" id="1_v4in3"]
 [ext_resource type="Texture2D" uid="uid://d215ogsgn4fvt" path="res://assets/3d/bikinibottom/textures/jf_sky_color_77.png" id="2_lna1d"]
@@ -10,6 +10,7 @@
 [ext_resource type="AudioStream" uid="uid://ds1hcxfx5vric" path="res://assets/voices/smilingfriends_output.wav" id="8_pgru1"]
 [ext_resource type="AudioStream" uid="uid://d33qcmouwphc" path="res://assets/voices/spongebob1_output.wav" id="9_ninet"]
 [ext_resource type="FontFile" uid="uid://c4lyevru8sr3e" path="res://assets/fonts/Krabby Patty.ttf" id="10_8lon8"]
+[ext_resource type="Script" path="res://addons/modplayer/ModPlayer.gd" id="11_35k2p"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_adr1q"]
 panorama = ExtResource("2_lna1d")
@@ -280,6 +281,13 @@ theme_override_constants/outline_size = 11
 theme_override_fonts/normal_font = ExtResource("10_8lon8")
 theme_override_font_sizes/normal_font_size = 23
 bbcode_enabled = true
+
+[node name="ModPlayer" type="Node" parent="."]
+script = ExtResource("11_35k2p")
+file = "res://assets/music/rsectro.mod"
+playing = true
+loop = true
+bus = &"Music"
 
 [connection signal="body_entered" from="Sprite3D/Area3D" to="Sprite3D" method="_on_area_3d_body_entered"]
 
