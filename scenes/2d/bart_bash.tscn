@@ -1,19 +1,23 @@
-[gd_scene load_steps=7 format=3 uid="uid://bxcfx81na4cys"]
+[gd_scene load_steps=9 format=3 uid="uid://bxcfx81na4cys"]
 
 [ext_resource type="Script" path="res://scripts/bart_bash.gd" id="1_pcrrk"]
 [ext_resource type="Texture2D" uid="uid://3klrxjuvmqw5" path="res://assets/2d/bartbash/bart bash bg.png" id="2_i40bc"]
 [ext_resource type="PackedScene" uid="uid://dwe0hotw35qse" path="res://scenes/2d/bart.tscn" id="3_x600d"]
 [ext_resource type="Texture2D" uid="uid://c6iod1ioj3aqd" path="res://assets/2d/bartbash/ohio.png" id="4_p534p"]
 [ext_resource type="Texture2D" uid="uid://cbaby8wobfy6v" path="res://assets/2d/bartbash/creepyassbart.png" id="4_sosd2"]
+[ext_resource type="Script" path="res://scripts/evilbart.gd" id="5_mtn8e"]
 [ext_resource type="AudioStream" uid="uid://ddvynie2jhak" path="res://assets/voices/spongebob2_output.wav" id="6_md4hw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xxln3"]
+size = Vector2(120, 120)
 
 [node name="BartBash" type="Node2D"]
 script = ExtResource("1_pcrrk")
 
 [node name="BartBashBg" type="Sprite2D" parent="."]
 visibility_layer = 2
-position = Vector2(577, 325)
-scale = Vector2(1.44375, 1.08167)
+position = Vector2(639.75, 360.25)
+scale = Vector2(1.60062, 1.19917)
 texture = ExtResource("2_i40bc")
 
 [node name="Bart(s)" type="Node2D" parent="."]
@@ -115,40 +119,32 @@ position = Vector2(407, 599)
 position = Vector2(1053, 455)
 
 [node name="Ohio" type="Sprite2D" parent="."]
+scale = Vector2(1.11111, 1.11111)
 texture = ExtResource("4_p534p")
 centered = false
 
 [node name="Window" type="Window" parent="."]
 transparent_bg = true
 title = "bart"
-position = Vector2i(326, 74)
-size = Vector2i(500, 500)
+initial_position = 1
+size = Vector2i(120, 120)
 visible = false
 unresizable = true
-borderless = true
 transparent = true
+script = ExtResource("5_mtn8e")
 
-[node name="Camera2D" type="Camera2D" parent="Window"]
-anchor_mode = 0
+[node name="Area2D" type="Area2D" parent="Window"]
 
-[node name="Window" type="Window" parent="Window/Camera2D"]
-title = "BART"
-initial_position = 1
-visible = false
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Window/Area2D"]
+scale = Vector2(2, 2)
+shape = SubResource("RectangleShape2D_xxln3")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Window/Camera2D/Window"]
-offset_right = 109.12
-offset_bottom = 93.695
-text = "You shouldnt have done that."
-
-[node name="Sprite2D" type="Sprite2D" parent="Window/Camera2D"]
+[node name="Sprite2D" type="Sprite2D" parent="Window/Area2D"]
 scale = Vector2(2, 2)
 texture = ExtResource("4_sosd2")
 centered = false
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Window"]
-
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_md4hw")
 
-[connection signal="screen_exited" from="Window/VisibleOnScreenNotifier2D" to="Window" method="_on_visible_on_screen_notifier_2d_screen_exited"]
+[connection signal="input_event" from="Window/Area2D" to="Window" method="_on_input_event"]

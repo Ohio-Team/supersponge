@@ -14,16 +14,16 @@ script = ExtResource("1_hgsve")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = 64.0
-offset_top = 469.0
-offset_right = 1093.0
-offset_bottom = 621.0
+offset_top = 553.0
+offset_right = 1246.0
+offset_bottom = 705.0
 color = Color(0.054902, 0.054902, 0.054902, 0.411765)
 
 [node name="RichTextLabel" type="RichTextLabel" parent="ColorRect"]
 layout_mode = 0
 offset_left = 185.0
 offset_top = 17.0
-offset_right = 1010.0
+offset_right = 1146.0
 offset_bottom = 139.0
 theme_override_fonts/normal_font = ExtResource("1_tvp7w")
 theme_override_fonts/bold_font = SubResource("FontVariation_8r68w")

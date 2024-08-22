@@ -10,11 +10,12 @@ func _ready():
 func _process(delta: float) -> void:
 	if bartcounter == 32:
 		$Window.show()
-		$Window.position = lerp(Vector2($Window.position), Vector2(-10,-5), 0.1)
-		MusicPlayer.stop_song()
-		if $Window.position == Vector2i(0,0):
-			await Singleton.wait(5)
-			$Window/Camera2D/Window.show()
-			await Singleton.wait(2)
-			$Window/Camera2D/Window.hide()
-			$AudioStreamPlayer.play()
+		if !$Window.canmove:
+			MusicPlayer.stop_song()
+		await Singleton.wait(5)
+		if !$Window.canmove:
+			MusicPlayer.play_song("res://assets/music/evilbartbash.wav")
+			OS.alert("You shouldnt have done that.","Ohio Alert")
+			OS.alert("Let's see if you can bash me.","Ohio Alert")
+			OS.alert("(Before we start, we recommend minimizing other tabs so you dont lose bart)")
+		$Window.canmove = true

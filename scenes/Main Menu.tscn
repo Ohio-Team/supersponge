@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bnyal22s58ujp" path="res://scenes/2d/fakebobfight.tscn" id="7_diw60"]
 [ext_resource type="PackedScene" uid="uid://b2bv5n6x7m2da" path="res://scenes/2d/level2.tscn" id="8_a2olc"]
 [ext_resource type="Texture2D" uid="uid://bovp8ym3joakq" path="res://assets/2d/miscsprites/ererreyy.png" id="8_ypp24"]
-[ext_resource type="PackedScene" uid="uid://wqoqonv86j4" path="res://scenes/2d/level1.tscn" id="9_y5hbk"]
+[ext_resource type="PackedScene" uid="uid://c4kk7htgjtaco" path="res://scenes/2d/level1intro.tscn" id="9_rg0k4"]
 [ext_resource type="PackedScene" uid="uid://dk0y3rw1r5i0w" path="res://scenes/2d/level4intro.tscn" id="10_v8ylw"]
 [ext_resource type="PackedScene" uid="uid://bxcfx81na4cys" path="res://scenes/2d/bart_bash.tscn" id="11_joccq"]
 
@@ -30,8 +30,8 @@ script = ExtResource("1_cki2b")
 [node name="SpongebobSquarepantsJpg" type="Sprite2D" parent="."]
 texture_repeat = 2
 material = SubResource("ShaderMaterial_oplmi")
-position = Vector2(576, 324)
-scale = Vector2(1.1525, 1.15329)
+position = Vector2(639.875, 359.963)
+scale = Vector2(1.28025, 1.28127)
 texture = ExtResource("3_pulrp")
 
 [node name="Ererreyy" type="Sprite2D" parent="."]
@@ -93,7 +93,7 @@ offset_right = 357.0
 offset_bottom = 428.0
 text = "Level 1"
 script = ExtResource("6_th7r2")
-scene = ExtResource("9_y5hbk")
+scene = ExtResource("9_rg0k4")
 
 [node name="Menu_Button4" type="Button" parent="."]
 layout_mode = 0

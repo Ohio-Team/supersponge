@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://coebr5rjm8gg0"]
+
+[ext_resource type="Texture2D" uid="uid://b14o70qs8xsd3" path="res://assets/2d/miscsprites/placeholder.jpg" id="1_dpf5w"]
+[ext_resource type="Script" path="res://scripts/driving.gd" id="1_jti8a"]
+
+[node name="Driving" type="Node3D"]
+script = ExtResource("1_jti8a")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -7.3693)
+texture = ExtResource("1_dpf5w")
