@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bkfis34nkbhyv"]
+[gd_scene load_steps=14 format=3 uid="uid://bkfis34nkbhyv"]
 
 [ext_resource type="Script" path="res://scripts/Main Menu.gd" id="1_cki2b"]
 [ext_resource type="FontFile" uid="uid://c4lyevru8sr3e" path="res://assets/fonts/Krabby Patty.ttf" id="1_jb0v5"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://c4kk7htgjtaco" path="res://scenes/2d/level1intro.tscn" id="9_rg0k4"]
 [ext_resource type="PackedScene" uid="uid://dk0y3rw1r5i0w" path="res://scenes/2d/level4intro.tscn" id="10_v8ylw"]
 [ext_resource type="PackedScene" uid="uid://bxcfx81na4cys" path="res://scenes/2d/bart_bash.tscn" id="11_joccq"]
+[ext_resource type="PackedScene" uid="uid://coebr5rjm8gg0" path="res://scenes/3d/level6.tscn" id="12_iduxt"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_oplmi"]
 shader = ExtResource("2_5lfgl")
@@ -114,3 +115,13 @@ offset_bottom = 467.0
 text = "Bart Bash Minigame"
 script = ExtResource("6_th7r2")
 scene = ExtResource("11_joccq")
+
+[node name="Menu_Button6" type="Button" parent="."]
+layout_mode = 0
+offset_left = 826.0
+offset_top = 471.0
+offset_right = 945.0
+offset_bottom = 502.0
+text = "Level 6"
+script = ExtResource("6_th7r2")
+scene = ExtResource("12_iduxt")

@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bfuiw54l8whs"
-path.s3tc="res://.godot/imported/rock_purple_79.png-ebb6a06dc866efcf859d23bd8015742c.s3tc.ctex"
+uid="uid://t7xax5w6ds1q"
+path.s3tc="res://.godot/imported/sides.png-fe511c84c71949777d00a1f0c7107649.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/3d/bikinibottom/textures/rock_purple_79.png"
-dest_files=["res://.godot/imported/rock_purple_79.png-ebb6a06dc866efcf859d23bd8015742c.s3tc.ctex"]
+source_file="res://assets/3d/pattywagon/sides.png"
+dest_files=["res://.godot/imported/sides.png-fe511c84c71949777d00a1f0c7107649.s3tc.ctex"]
 
 [params]
 

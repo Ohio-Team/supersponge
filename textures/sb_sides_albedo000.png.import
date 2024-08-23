@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bfuiw54l8whs"
-path.s3tc="res://.godot/imported/rock_purple_79.png-ebb6a06dc866efcf859d23bd8015742c.s3tc.ctex"
+uid="uid://dv3yj5pqklpy1"
+path.s3tc="res://.godot/imported/sb_sides_albedo000.png-134f959c8d6697ebd4f6fcc499252f72.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/3d/bikinibottom/textures/rock_purple_79.png"
-dest_files=["res://.godot/imported/rock_purple_79.png-ebb6a06dc866efcf859d23bd8015742c.s3tc.ctex"]
+source_file="res://textures/sb_sides_albedo000.png"
+dest_files=["res://.godot/imported/sb_sides_albedo000.png-134f959c8d6697ebd4f6fcc499252f72.s3tc.ctex"]
 
 [params]
 

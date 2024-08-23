@@ -66,6 +66,15 @@ version_control/autoload_on_startup=true
 
 enabled=PackedStringArray("res://addons/bmod/plugin.cfg", "res://addons/modplayer/plugin.cfg", "res://addons/third-person-camera/plugin.cfg")
 
+[file_customization]
+
+folder_colors={
+"res://assets/2d/": "yellow",
+"res://assets/3d/": "green",
+"res://assets/fonts/": "red",
+"res://assets/music/": "pink"
+}
+
 [global_group]
 
 Player=""
