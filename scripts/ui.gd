@@ -16,6 +16,7 @@ func _process(delta):
 		
 	$Counter.text = "[shake]x" + str(Singleton.health)
 	$Counter2.text = "[shake]x" + str(Singleton.spatulas)
+	$FuelCounter.text = "[shake]Fuel: " + str(round(Singleton.fuel))
 	$Label.text = str(Engine.get_frames_per_second())
 	
 	

@@ -1,15 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://dmhlnraxq7ndn"]
+[gd_scene load_steps=2 format=3 uid="uid://dmhlnraxq7ndn"]
 
 [ext_resource type="Script" path="res://scripts/MusicPlayer.gd" id="1_swrmy"]
-[ext_resource type="Script" path="res://addons/modplayer/ModPlayer.gd" id="2_853r7"]
 
 [node name="MusicPlayer" type="Node"]
 script = ExtResource("1_swrmy")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-bus = &"Music"
-
-[node name="ModPlayer" type="Node" parent="."]
-script = ExtResource("2_853r7")
-loop = true
 bus = &"Music"

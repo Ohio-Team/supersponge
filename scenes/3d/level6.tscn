@@ -3516,10 +3516,7 @@ light_data = ExtResource("5_iax63")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3444, 0.5, 71.9532)
 
 [node name="Fuel2" parent="." instance=ExtResource("8_gm1q2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.05609, 2.62097, 400.906)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.3742, 3.80948, 579.103)
 
 [node name="Fuel3" parent="." instance=ExtResource("8_gm1q2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.4694, 0.5, 248.672)
-
-[node name="Fuel4" parent="." instance=ExtResource("8_gm1q2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.671, 0.5, 533.501)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.7239, 3.68653, 392.683)
