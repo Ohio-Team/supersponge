@@ -1,19 +1,19 @@
-[gd_scene load_steps=173 format=4 uid="uid://coebr5rjm8gg0"]
+[gd_scene load_steps=176 format=4 uid="uid://coebr5rjm8gg0"]
 
 [ext_resource type="Texture2D" uid="uid://cn8lew1xok6q" path="res://textures/_albedo000.png" id="1_3wdqi"]
 [ext_resource type="Script" path="res://scripts/driving.gd" id="1_lay5p"]
 [ext_resource type="Texture2D" uid="uid://bfqs2nip4d5vi" path="res://textures/Material_albedo000.png" id="2_b2flb"]
 [ext_resource type="PackedScene" uid="uid://q1h0c43bbj4p" path="res://scenes/3d/pattywagon.tscn" id="2_dk7po"]
+[ext_resource type="Texture2D" uid="uid://d215ogsgn4fvt" path="res://assets/3d/bikinibottom/textures/jf_sky_color_77.png" id="2_rskht"]
+[ext_resource type="PackedScene" uid="uid://cyw3j6l7mdr8m" path="res://scenes/3d/fuckeduprock.tscn" id="5_3emhi"]
 [ext_resource type="LightmapGIData" uid="uid://cej3446t8ap6h" path="res://scenes/3d/level6.lmbake" id="5_iax63"]
+[ext_resource type="PackedScene" uid="uid://biv8yra6u0goq" path="res://scenes/3d/fuel.tscn" id="8_gm1q2"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_rgs5v"]
-sky_top_color = Color(0.270903, 0.39608, 0.877318, 1)
-sky_horizon_color = Color(0.716745, 0.793138, 0.92031, 1)
-ground_bottom_color = Color(0.596078, 0.776471, 0.803922, 1)
-ground_horizon_color = Color(0.716745, 0.793138, 0.92031, 1)
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_7k7rw"]
+panorama = ExtResource("2_rskht")
 
 [sub_resource type="Sky" id="Sky_pbdx8"]
-sky_material = SubResource("ProceduralSkyMaterial_rgs5v")
+sky_material = SubResource("PanoramaSkyMaterial_7k7rw")
 
 [sub_resource type="Environment" id="Environment_a21iv"]
 background_mode = 2
@@ -23,7 +23,6 @@ glow_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lpseo"]
 resource_name = "material_0"
-albedo_color = Color(1, 1, 1, 1)
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_lacfy"]
 resource_name = "level6_mesh"
@@ -46,7 +45,6 @@ size = Vector3(43.6363, 1, 690.033)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vi17x"]
 resource_name = "material_1"
-albedo_color = Color(1, 1, 1, 1)
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_crgib"]
 _surfaces = [{
@@ -82,7 +80,6 @@ shadow_mesh = SubResource("ArrayMesh_crgib")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5p2bp"]
 resource_name = "material_2"
-albedo_color = Color(1, 1, 1, 1)
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_5ijxw"]
 _surfaces = [{
@@ -118,7 +115,6 @@ shadow_mesh = SubResource("ArrayMesh_5ijxw")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ymble"]
 resource_name = "material_3"
-albedo_color = Color(1, 1, 1, 1)
 albedo_texture = ExtResource("1_3wdqi")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_2enoh"]
@@ -156,7 +152,6 @@ shadow_mesh = SubResource("ArrayMesh_2enoh")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mmnom"]
 resource_name = "Material"
 cull_mode = 2
-albedo_color = Color(1, 1, 1, 1)
 albedo_texture = ExtResource("2_b2flb")
 roughness = 0.5
 
@@ -3502,7 +3497,13 @@ skeleton = NodePath("")
 [node name="CollisionShape3D77" type="CollisionShape3D" parent="Rocks/fuckeduprock71/fuckeduprock72/fuckeduprock73/fuckeduprock74/fuckeduprock75"]
 shape = SubResource("ConvexPolygonShape3D_2ansq")
 
-[node name="pattywagon" parent="." instance=ExtResource("2_dk7po")]
+[node name="fuckeduprock72" parent="Rocks" instance=ExtResource("5_3emhi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.3681, 0.5, 377.129)
+
+[node name="fuckeduprock73" parent="Rocks" instance=ExtResource("5_3emhi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.51409, 0.5, 279.733)
+
+[node name="pattywagon" parent="." groups=["Player"] instance=ExtResource("2_dk7po")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.393574, 0.5, -1.29782)
 
 [node name="Camera3D" type="Camera3D" parent="pattywagon"]
@@ -3510,3 +3511,15 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 7.5
 
 [node name="LightmapGI" type="LightmapGI" parent="."]
 light_data = ExtResource("5_iax63")
+
+[node name="Fuel" parent="." instance=ExtResource("8_gm1q2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3444, 0.5, 71.9532)
+
+[node name="Fuel2" parent="." instance=ExtResource("8_gm1q2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.05609, 2.62097, 400.906)
+
+[node name="Fuel3" parent="." instance=ExtResource("8_gm1q2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.4694, 0.5, 248.672)
+
+[node name="Fuel4" parent="." instance=ExtResource("8_gm1q2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.671, 0.5, 533.501)

@@ -12,3 +12,6 @@ func _process(delta: float) -> void:
 	engine_force = Input.get_axis("back","front") * 200
 	if position.y < -1:
 		get_tree().reload_current_scene()
+		
+	if Input.is_action_just_pressed("front"):
+		Singleton.fuel -= delta

@@ -37,6 +37,10 @@ func inputs(direction):
 			BMOD.play_sfx(preload("res://assets/sfx/jump.tres"))
 			anim.play("jump")
 			state = "jump"
+			
+		if Input.is_action_just_released("jump") and velocity.y < 0 and state != "groundpound":
+			velocity.y = 0
+		
 		if Input.is_action_just_pressed("jump") and state != "hurt" and state != "dying" and not is_on_floor():
 			velocity.y = -JUMP_VELOCITY
 			anim.play("groundpound")

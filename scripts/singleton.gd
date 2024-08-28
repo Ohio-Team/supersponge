@@ -1,6 +1,7 @@
 extends Node
 
 @export var hasgun:bool = false
+@export var fuel:float = 100.0
 @export var inmenu:bool = false
 @export var lifes:int = 4
 @export var health:int = 3

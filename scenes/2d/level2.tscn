@@ -175,6 +175,7 @@ stream = ExtResource("4_i7r10")
 volume_db = -5.0
 autoplay = true
 max_distance = 300.0
+bus = &"Music"
 
 [node name="Collisions" type="Node" parent="."]
 
