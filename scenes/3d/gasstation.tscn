@@ -1,0 +1,33 @@
+[gd_scene load_steps=7 format=3 uid="uid://d0ejlqy5dvi8k"]
+
+[ext_resource type="PackedScene" uid="uid://8kbffcc412vs" path="res://scenes/3d/spongebob_3d.tscn" id="1_m53n5"]
+[ext_resource type="Script" path="res://scripts/gasstation.gd" id="1_smngk"]
+[ext_resource type="PackedScene" uid="uid://b6iqavb8jf88g" path="res://assets/3d/gasstation/station.blend" id="2_4e41y"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_a7x4s"]
+sky_top_color = Color(0.0737489, 0.505651, 0.556436, 1)
+sky_horizon_color = Color(0.568437, 0.668663, 0.672359, 1)
+ground_horizon_color = Color(0.568437, 0.668663, 0.672359, 1)
+
+[sub_resource type="Sky" id="Sky_q1rhq"]
+sky_material = SubResource("ProceduralSkyMaterial_a7x4s")
+
+[sub_resource type="Environment" id="Environment_ln0gt"]
+background_mode = 2
+sky = SubResource("Sky_q1rhq")
+tonemap_mode = 2
+
+[node name="gasstation" type="Node3D"]
+script = ExtResource("1_smngk")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_ln0gt")
+
+[node name="Spongebob3d" parent="." instance=ExtResource("1_m53n5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.05788, 0)
+
+[node name="station" parent="." instance=ExtResource("2_4e41y")]

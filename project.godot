@@ -64,7 +64,7 @@ version_control/autoload_on_startup=true
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/bmod/plugin.cfg", "res://addons/modplayer/plugin.cfg", "res://addons/third-person-camera/plugin.cfg")
+enabled=PackedStringArray("res://addons/bmod/plugin.cfg", "res://addons/third-person-camera/plugin.cfg")
 
 [file_customization]
 
