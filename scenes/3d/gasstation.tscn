@@ -1,8 +1,18 @@
-[gd_scene load_steps=7 format=3 uid="uid://d0ejlqy5dvi8k"]
+[gd_scene load_steps=11 format=3 uid="uid://ck0qyhot143g8"]
 
 [ext_resource type="PackedScene" uid="uid://8kbffcc412vs" path="res://scenes/3d/spongebob_3d.tscn" id="1_m53n5"]
-[ext_resource type="Script" path="res://scripts/gasstation.gd" id="1_smngk"]
 [ext_resource type="PackedScene" uid="uid://b6iqavb8jf88g" path="res://assets/3d/gasstation/station.blend" id="2_4e41y"]
+[ext_resource type="LightmapGIData" uid="uid://iqgq47t50a46" path="res://scenes/3d/gasstation.lmbake" id="3_ygajm"]
+[ext_resource type="Texture2D" uid="uid://c7lmlrlh475un" path="res://assets/2d/miscsprites/weed.jpg" id="4_eambt"]
+
+[sub_resource type="GDScript" id="GDScript_x6dls"]
+script/source = "extends Node3D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	MusicPlayer.play_song(\"res://assets/music/night.ogg\")
+"
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_a7x4s"]
 sky_top_color = Color(0.0737489, 0.505651, 0.556436, 1)
@@ -17,17 +27,39 @@ background_mode = 2
 sky = SubResource("Sky_q1rhq")
 tonemap_mode = 2
 
+[sub_resource type="Animation" id="Animation_f1a7m"]
+resource_name = "cutscene"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_y0l58"]
+_data = {
+"cutscene": SubResource("Animation_f1a7m")
+}
+
 [node name="gasstation" type="Node3D"]
-script = ExtResource("1_smngk")
+script = SubResource("GDScript_x6dls")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+light_bake_mode = 1
 shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_ln0gt")
 
 [node name="Spongebob3d" parent="." instance=ExtResource("1_m53n5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.05788, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -114.145, 2.50895, 0)
 
 [node name="station" parent="." instance=ExtResource("2_4e41y")]
+
+[node name="LightmapGI" type="LightmapGI" parent="."]
+light_data = ExtResource("3_ygajm")
+
+[node name="Sprite3D" type="Sprite3D" parent="LightmapGI"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.0879, 4.79838, -2.99069)
+billboard = 1
+texture = ExtResource("4_eambt")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_y0l58")
+}

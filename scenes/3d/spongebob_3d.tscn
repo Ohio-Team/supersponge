@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://8kbffcc412vs"]
+[gd_scene load_steps=11 format=3 uid="uid://8kbffcc412vs"]
 
 [ext_resource type="Script" path="res://scripts/Spongebob3d.gd" id="1_pc0ce"]
 [ext_resource type="PackedScene" uid="uid://hrl51edfp36o" path="res://assets/3d/spongebobby/sponebob.blend" id="2_8hb62"]
@@ -6,6 +6,9 @@
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_1sga7"]
 animation = &"idle1"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_0h0wq"]
+animation = &"geekedonthatshit"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_8rd1j"]
 animation = &"move"
@@ -26,19 +29,25 @@ input_2/name = "butt"
 input_2/auto_advance = false
 input_2/break_loop_at_end = false
 input_2/reset = true
+input_3/name = "weed"
+input_3/auto_advance = false
+input_3/break_loop_at_end = false
+input_3/reset = true
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_v2lhl"]
-graph_offset = Vector2(-555.577, 84.1657)
+graph_offset = Vector2(-469.179, 75.5419)
 nodes/Animation/node = SubResource("AnimationNodeAnimation_itu0e")
 nodes/Animation/position = Vector2(-40, 240)
 "nodes/Animation 2/node" = SubResource("AnimationNodeAnimation_1sga7")
 "nodes/Animation 2/position" = Vector2(-240, 140)
+"nodes/Animation 3/node" = SubResource("AnimationNodeAnimation_0h0wq")
+"nodes/Animation 3/position" = Vector2(-100, 380)
 "nodes/Animation 4/node" = SubResource("AnimationNodeAnimation_8rd1j")
 "nodes/Animation 4/position" = Vector2(-140, 20)
 nodes/output/position = Vector2(540, 120)
 nodes/state/node = SubResource("AnimationNodeTransition_n3pmf")
 nodes/state/position = Vector2(200, 100)
-node_connections = [&"output", 0, &"state", &"state", 0, &"Animation 4", &"state", 1, &"Animation 2", &"state", 2, &"Animation"]
+node_connections = [&"output", 0, &"state", &"state", 0, &"Animation 4", &"state", 1, &"Animation 2", &"state", 2, &"Animation", &"state", 3, &"Animation 3"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_x21hn"]
 radius = 1.34723
@@ -96,6 +105,9 @@ bones/27/position = Vector3(0.0820764, -4.92637, 4.20344e-06)
 bones/28/position = Vector3(-0.0339704, -3.8529, 4.05997e-06)
 bones/29/position = Vector3(2.02859, -3.08745, 1.61851e-06)
 bones/30/position = Vector3(4.7273, 3.72529e-09, 2.4897e-08)
+
+[node name="AnimationPlayer" parent="sponebob" index="1"]
+autoplay = "idle1"
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 root_node = NodePath("../sponebob")

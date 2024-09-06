@@ -36,7 +36,7 @@ func _physics_process(delta):
 			animation_tree["parameters/state/transition_request"] = "walking"
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
-	elif direction == Vector3(0,0,0) and velocity.y == 0:
+	elif direction == Vector3(0,0,0) and velocity.y == 0 and animation_tree["parameters/state/current_state"] != "weed":
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		animation_tree["parameters/state/transition_request"] = "idle"
 		velocity.z = move_toward(velocity.z, 0, SPEED)
