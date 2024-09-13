@@ -2,6 +2,7 @@ extends Node2D
 var bartcounter : int = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	Singleton.save_game()
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	MusicPlayer.play_song("res://assets/music/bartbash.mp3")
 

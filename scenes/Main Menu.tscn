@@ -1,23 +1,38 @@
-[gd_scene load_steps=14 format=3 uid="uid://bkfis34nkbhyv"]
+[gd_scene load_steps=10 format=3 uid="uid://bkfis34nkbhyv"]
 
 [ext_resource type="Script" path="res://scripts/Main Menu.gd" id="1_cki2b"]
 [ext_resource type="FontFile" uid="uid://c4lyevru8sr3e" path="res://assets/fonts/Krabby Patty.ttf" id="1_jb0v5"]
 [ext_resource type="Shader" path="res://scripts/level2.gdshader" id="2_5lfgl"]
 [ext_resource type="Texture2D" uid="uid://dbaggvlsp7srw" path="res://assets/2d/miscsprites/spongebob_squarepants_jpg.png" id="3_pulrp"]
 [ext_resource type="Script" path="res://scripts/MenuButton.gd" id="6_th7r2"]
-[ext_resource type="PackedScene" uid="uid://bnyal22s58ujp" path="res://scenes/2d/fakebobfight.tscn" id="7_diw60"]
-[ext_resource type="PackedScene" uid="uid://b2bv5n6x7m2da" path="res://scenes/2d/level2.tscn" id="8_a2olc"]
 [ext_resource type="Texture2D" uid="uid://bovp8ym3joakq" path="res://assets/2d/miscsprites/ererreyy.png" id="8_ypp24"]
 [ext_resource type="PackedScene" uid="uid://c4kk7htgjtaco" path="res://scenes/2d/level1intro.tscn" id="9_rg0k4"]
-[ext_resource type="PackedScene" uid="uid://dk0y3rw1r5i0w" path="res://scenes/2d/level4intro.tscn" id="10_v8ylw"]
-[ext_resource type="PackedScene" uid="uid://bxcfx81na4cys" path="res://scenes/2d/bart_bash.tscn" id="11_joccq"]
-[ext_resource type="PackedScene" uid="uid://coebr5rjm8gg0" path="res://scenes/3d/level6.tscn" id="12_iduxt"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_oplmi"]
 shader = ExtResource("2_5lfgl")
 shader_parameter/motion = Vector2(15, 0)
 shader_parameter/scale = 1.0
-shader_parameter/offset = Vector2(0, 280.745)
+shader_parameter/offset = Vector2(0, 279.815)
+
+[sub_resource type="GDScript" id="GDScript_4d45m"]
+resource_name = "load_button"
+script/source = "extends Button
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+
+
+func _on_pressed() -> void:
+	Singleton.inmenu = false
+	Singleton.load_game()
+"
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -31,97 +46,54 @@ script = ExtResource("1_cki2b")
 [node name="SpongebobSquarepantsJpg" type="Sprite2D" parent="."]
 texture_repeat = 2
 material = SubResource("ShaderMaterial_oplmi")
-position = Vector2(639.875, 359.963)
-scale = Vector2(1.28025, 1.28127)
+position = Vector2(639.5, 471.5)
+scale = Vector2(0.86635, 2.45407)
 texture = ExtResource("3_pulrp")
 
 [node name="Ererreyy" type="Sprite2D" parent="."]
-position = Vector2(595, 159)
+position = Vector2(348, 166)
 scale = Vector2(0.489167, 0.534091)
 texture = ExtResource("8_ypp24")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
-layout_mode = 0
-offset_left = 177.0
-offset_top = 346.0
-offset_right = 450.0
-offset_bottom = 387.0
-theme_override_fonts/normal_font = ExtResource("1_jb0v5")
-theme_override_font_sizes/normal_font_size = 36
-bbcode_enabled = true
-text = "Part 1: Fake Bob"
-fit_content = true
-scroll_following = true
-
-[node name="RichTextLabel2" type="RichTextLabel" parent="."]
-layout_mode = 0
-offset_left = 694.0
-offset_top = 347.0
-offset_right = 1079.0
-offset_bottom = 429.0
-theme_override_fonts/normal_font = ExtResource("1_jb0v5")
-theme_override_font_sizes/normal_font_size = 36
-bbcode_enabled = true
-text = "Part 2: Squilliams Weed"
-fit_content = true
-scroll_following = true
-
-[node name="Menu_Button" type="Button" parent="."]
-layout_mode = 0
-offset_left = 239.0
-offset_top = 471.0
-offset_right = 358.0
-offset_bottom = 502.0
-text = "Fake Bob"
-script = ExtResource("6_th7r2")
-scene = ExtResource("7_diw60")
-
-[node name="Menu_Button2" type="Button" parent="."]
-layout_mode = 0
-offset_left = 238.0
-offset_top = 433.0
-offset_right = 357.0
-offset_bottom = 464.0
-text = "Level 2"
-script = ExtResource("6_th7r2")
-scene = ExtResource("8_a2olc")
-
 [node name="Menu_Button3" type="Button" parent="."]
 layout_mode = 0
-offset_left = 238.0
-offset_top = 397.0
-offset_right = 357.0
-offset_bottom = 428.0
-text = "Level 1"
+offset_left = 110.0
+offset_top = 335.0
+offset_right = 340.0
+offset_bottom = 399.0
+theme_override_fonts/font = ExtResource("1_jb0v5")
+theme_override_font_sizes/font_size = 35
+text = "New Game"
 script = ExtResource("6_th7r2")
 scene = ExtResource("9_rg0k4")
 
-[node name="Menu_Button4" type="Button" parent="."]
+[node name="Menu_Button" type="Button" parent="."]
 layout_mode = 0
-offset_left = 822.0
-offset_top = 400.0
-offset_right = 941.0
-offset_bottom = 431.0
-text = "Level 4"
-script = ExtResource("6_th7r2")
-scene = ExtResource("10_v8ylw")
+offset_left = 111.0
+offset_top = 409.0
+offset_right = 341.0
+offset_bottom = 460.0
+theme_override_fonts/font = ExtResource("1_jb0v5")
+theme_override_font_sizes/font_size = 35
+text = "Continue"
+script = SubResource("GDScript_4d45m")
 
-[node name="Menu_Button5" type="Button" parent="."]
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
 layout_mode = 0
-offset_left = 800.0
-offset_top = 435.0
-offset_right = 964.0
-offset_bottom = 467.0
-text = "Bart Bash Minigame"
-script = ExtResource("6_th7r2")
-scene = ExtResource("11_joccq")
+offset_left = 5.0
+offset_top = 692.0
+offset_right = 150.0
+offset_bottom = 718.0
+text = "Ohio Team. 2024"
 
-[node name="Menu_Button6" type="Button" parent="."]
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
 layout_mode = 0
-offset_left = 826.0
-offset_top = 471.0
-offset_right = 945.0
-offset_bottom = 502.0
-text = "Level 6"
-script = ExtResource("6_th7r2")
-scene = ExtResource("12_iduxt")
+offset_left = 1003.0
+offset_top = 607.0
+offset_right = 1281.0
+offset_bottom = 727.0
+text = "Director: Sweatycowballs105
+Coding: Flowcheer & JuanEnchilada
+Sound: zykotic91 & JuanEnchilada (copyrighted audio by the people who made them lol)"
+
+[connection signal="pressed" from="Menu_Button" to="Menu_Button" method="_on_pressed"]

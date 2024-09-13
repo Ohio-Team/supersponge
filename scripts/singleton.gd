@@ -10,8 +10,7 @@ extends Node
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
-
+	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -29,3 +28,38 @@ func do_explosion(pos:Vector2):
 
 func wait(seconds: float) -> void:
 	await get_tree().create_timer(seconds).timeout
+
+func save_elements():
+	var save_dict = {
+		"current_scene" : get_tree().current_scene.scene_file_path,
+		"lifes" : lifes,
+		"spatulas" : spatulas,
+		"health" : health
+	}
+	return save_dict
+func save_game():
+	var save_file = FileAccess.open("user://tom.save",FileAccess.WRITE)
+	var game_data = save_elements()
+	
+	var json = JSON.stringify(game_data)
+	save_file.store_line(json)
+	print("game saved")
+func load_game():
+	if not FileAccess.file_exists("user://tom.save"):
+		OS.alert("Looks like you don't have a save file","Ohio Alert")
+		return
+	
+	var save_file = FileAccess.open("user://tom.save", FileAccess.READ)
+	while save_file.get_position() < save_file.get_length():
+		var json_string = save_file.get_line()
+		var json = JSON.new()
+		var parse_result = json.parse(json_string)
+		if not parse_result == OK:
+			print("JSON Parse Error: ", json.get_error_message(), " in ", json_string, " at line ", json.get_error_line())
+			continue
+		
+		var data = json.get_data()
+		health = data["health"]
+		spatulas = data["spatulas"]
+		lifes = data["lifes"]
+		get_tree().change_scene_to_file(data["current_scene"])

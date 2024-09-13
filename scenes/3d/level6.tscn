@@ -1,4 +1,4 @@
-[gd_scene load_steps=176 format=4 uid="uid://coebr5rjm8gg0"]
+[gd_scene load_steps=177 format=4 uid="uid://coebr5rjm8gg0"]
 
 [ext_resource type="Texture2D" uid="uid://cn8lew1xok6q" path="res://textures/_albedo000.png" id="1_3wdqi"]
 [ext_resource type="Script" path="res://scripts/driving.gd" id="1_lay5p"]
@@ -2708,6 +2708,9 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_h7ycn")
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_v2akl"]
+size = Vector3(45.0711, 8.9292, 10.0322)
+
 [node name="level6" type="Node3D"]
 script = ExtResource("1_lay5p")
 
@@ -3521,3 +3524,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.3742, 3.80948, 579.103)
 
 [node name="Fuel3" parent="." instance=ExtResource("8_gm1q2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.7239, 3.68653, 392.683)
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.99216, 609.624)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.40018, 0.122803, -0.0698242)
+shape = SubResource("BoxShape3D_v2akl")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

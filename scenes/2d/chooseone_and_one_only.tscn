@@ -40,3 +40,6 @@ offset_right = 1017.0
 offset_bottom = 526.0
 theme_override_font_sizes/font_size = 72
 text = "Fuck No."
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]

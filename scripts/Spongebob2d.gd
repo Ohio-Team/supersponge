@@ -61,7 +61,7 @@ func _physics_process(delta):
 		BMOD.play_sfx(preload("res://assets/sfx/death.tres"))
 		Singleton.lifes -= 1
 		Singleton.health = 3
-		Singleton.spatulas = 0
+		Singleton.spatulas -= 10
 		state = "dying"
 		anim.play("dying")
 		await anim.animation_finished

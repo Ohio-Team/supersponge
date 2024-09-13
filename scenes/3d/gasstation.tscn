@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://ck0qyhot143g8"]
+[gd_scene load_steps=14 format=3 uid="uid://ck0qyhot143g8"]
 
 [ext_resource type="PackedScene" uid="uid://8kbffcc412vs" path="res://scenes/3d/spongebob_3d.tscn" id="1_m53n5"]
 [ext_resource type="PackedScene" uid="uid://b6iqavb8jf88g" path="res://assets/3d/gasstation/station.blend" id="2_4e41y"]
 [ext_resource type="LightmapGIData" uid="uid://iqgq47t50a46" path="res://scenes/3d/gasstation.lmbake" id="3_ygajm"]
 [ext_resource type="Texture2D" uid="uid://c7lmlrlh475un" path="res://assets/2d/miscsprites/weed.jpg" id="4_eambt"]
+[ext_resource type="AudioStream" uid="uid://di0qba0hyf8a2" path="res://assets/sfx/kendrick-scream.mp3" id="5_bgmc0"]
 
 [sub_resource type="GDScript" id="GDScript_x6dls"]
 script/source = "extends Node3D
@@ -11,7 +12,19 @@ script/source = "extends Node3D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	Singleton.save_game()
+	Ui.create_dialog(\"Wow this gas station doesnt even have gas tanks\")
 	MusicPlayer.play_song(\"res://assets/music/night.ogg\")
+
+func play_kend() -> void:
+	MusicPlayer.play_song(\"res://assets/music/alright.mp3\")
+
+func back_to_menu() -> void:
+	get_tree().change_scene_to_file(\"res://scenes/Main Menu.tscn\")
+
+func _on_area_3d_body_entered(body: Node3D) -> void:
+	BMOD.play_sfx(preload(\"res://assets/sfx/fuel.tres\"))
+	$\"AnimationPlayer\".play(\"cutscene\")
 "
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_a7x4s"]
@@ -27,13 +40,149 @@ background_mode = 2
 sky = SubResource("Sky_q1rhq")
 tonemap_mode = 2
 
+[sub_resource type="Animation" id="Animation_r6sqt"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Spongebob3d/AnimationTree:parameters/state/transition_request")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["idle"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Spongebob3d:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-98, 2.509, -3.987)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite3D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-9.3433, 4.79838, -4.06175)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Spongebob3d/ThirdPersonCamera:FOV")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [75.0]
+}
+
 [sub_resource type="Animation" id="Animation_f1a7m"]
 resource_name = "cutscene"
+length = 15.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Spongebob3d/AnimationTree:parameters/state/transition_request")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["weed"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Spongebob3d:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.466667, 15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-9.73021, 0.967451, -3.98664), Vector3(-9.73021, 0.967451, -3.98664)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite3D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1.5),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-9.67831, 3.5015, -4.06175)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Spongebob3d/ThirdPersonCamera:FOV")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 10),
+"transitions": PackedFloat32Array(1, 2.2974),
+"update": 0,
+"values": [75.0, 179.0]
+}
+tracks/4/type = "audio"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AudioStreamPlayer")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("5_bgmc0")
+}],
+"times": PackedFloat32Array(13)
+}
+tracks/4/use_blend = true
+tracks/5/type = "method"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.3, 15),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"play_kend"
+}, {
+"args": [],
+"method": &"back_to_menu"
+}]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_y0l58"]
 _data = {
+"RESET": SubResource("Animation_r6sqt"),
 "cutscene": SubResource("Animation_f1a7m")
 }
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_guy0i"]
+size = Vector3(1.10504, 1.10254, 1)
 
 [node name="gasstation" type="Node3D"]
 script = SubResource("GDScript_x6dls")
@@ -47,19 +196,35 @@ shadow_enabled = true
 environment = SubResource("Environment_ln0gt")
 
 [node name="Spongebob3d" parent="." instance=ExtResource("1_m53n5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -114.145, 2.50895, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -98, 2.509, -3.987)
 
 [node name="station" parent="." instance=ExtResource("2_4e41y")]
 
-[node name="LightmapGI" type="LightmapGI" parent="."]
-light_data = ExtResource("3_ygajm")
-
-[node name="Sprite3D" type="Sprite3D" parent="LightmapGI"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.0879, 4.79838, -2.99069)
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.3433, 4.79838, -4.06175)
 billboard = 1
 texture = ExtResource("4_eambt")
+
+[node name="LightmapGI" type="LightmapGI" parent="."]
+light_data = ExtResource("3_ygajm")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_y0l58")
 }
+autoplay = "RESET"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+volume_db = 1.0
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.36604, 4.75146, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0237732, 0.045166, 0)
+shape = SubResource("BoxShape3D_guy0i")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+
+[editable path="Spongebob3d"]
+[editable path="Spongebob3d/sponebob"]

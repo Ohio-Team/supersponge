@@ -3,6 +3,7 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	Singleton.save_game()
 	Ui._clear_dialog()
 	MusicPlayer.play_song("res://assets/music/jelly.mp3")
 	Ui.create_dialog("Here we go. Let's save [b]my ohio hometown.[b]", "spongebob")

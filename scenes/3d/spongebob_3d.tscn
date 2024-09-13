@@ -35,7 +35,7 @@ input_3/break_loop_at_end = false
 input_3/reset = true
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_v2lhl"]
-graph_offset = Vector2(-469.179, 75.5419)
+graph_offset = Vector2(-166.516, 117.177)
 nodes/Animation/node = SubResource("AnimationNodeAnimation_itu0e")
 nodes/Animation/position = Vector2(-40, 240)
 "nodes/Animation 2/node" = SubResource("AnimationNodeAnimation_1sga7")
@@ -54,6 +54,7 @@ radius = 1.34723
 height = 4.25818
 
 [node name="Spongebob3d" type="CharacterBody3D" groups=["Player"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -98, 2.50895, -3.98664)
 script = ExtResource("1_pc0ce")
 
 [node name="sponebob" parent="." instance=ExtResource("2_8hb62")]
@@ -114,7 +115,7 @@ root_node = NodePath("../sponebob")
 tree_root = SubResource("AnimationNodeBlendTree_v2lhl")
 anim_player = NodePath("../sponebob/AnimationPlayer")
 parameters/state/current_state = "idle"
-parameters/state/transition_request = ""
+parameters/state/transition_request = "idle"
 parameters/state/current_index = 1
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
