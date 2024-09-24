@@ -5,7 +5,7 @@
 [ext_resource type="Shader" path="res://scripts/level2.gdshader" id="2_5lfgl"]
 [ext_resource type="Texture2D" uid="uid://dbaggvlsp7srw" path="res://assets/2d/miscsprites/spongebob_squarepants_jpg.png" id="3_pulrp"]
 [ext_resource type="Script" path="res://scripts/MenuButton.gd" id="6_th7r2"]
-[ext_resource type="PackedScene" uid="uid://dhxbkh5627l1q" path="res://scenes/Options.tscn" id="8_2h21e"]
+[ext_resource type="PackedScene" uid="uid://dhxbkh5627l1q" path="res://scenes/Options.tscn" id="8_72lj6"]
 [ext_resource type="Texture2D" uid="uid://bovp8ym3joakq" path="res://assets/2d/miscsprites/ererreyy.png" id="8_ypp24"]
 [ext_resource type="PackedScene" uid="uid://c4kk7htgjtaco" path="res://scenes/2d/level1intro.tscn" id="9_rg0k4"]
 
@@ -107,6 +107,6 @@ theme_override_fonts/font = ExtResource("1_jb0v5")
 theme_override_font_sizes/font_size = 33
 text = "Options"
 script = ExtResource("6_th7r2")
-scene = ExtResource("8_2h21e")
+scene = ExtResource("8_72lj6")
 
 [connection signal="pressed" from="Menu_Button" to="Menu_Button" method="_on_pressed"]

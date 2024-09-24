@@ -1,10 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://dhxbkh5627l1q"]
+[gd_scene load_steps=5 format=3 uid="uid://dhxbkh5627l1q"]
 
 [ext_resource type="Script" path="res://scripts/options.gd" id="1_gxje3"]
 [ext_resource type="Script" path="res://scripts/audio___master.gd" id="1_ua5gb"]
-[ext_resource type="Script" path="res://scripts/MenuButton.gd" id="2_7iek7"]
 [ext_resource type="Texture2D" uid="uid://blnje08uw142w" path="res://assets/2d/miscsprites/SBSPSS_5_14_2001_Copyright_Screen.png" id="2_pa8yl"]
-[ext_resource type="PackedScene" uid="uid://wqoqonv86j4" path="res://scenes/2d/level1.tscn" id="3_wcele"]
+[ext_resource type="Script" path="res://scripts/optionsmenubutton.gd" id="3_i0ro2"]
 
 [node name="Options" type="Control"]
 layout_mode = 3
@@ -18,15 +17,16 @@ scale = Vector2(2.5, 3.00833)
 texture = ExtResource("2_pa8yl")
 
 [node name="Menu_Button" type="Button" parent="."]
+layout_mode = 0
 offset_left = 496.0
 offset_top = 597.0
 offset_right = 804.0
 offset_bottom = 642.0
 text = "Back... (sends you to level one for now)"
-script = ExtResource("2_7iek7")
-scene = ExtResource("3_wcele")
+script = ExtResource("3_i0ro2")
 
 [node name="Audio - Master" type="HSlider" parent="."]
+layout_mode = 0
 offset_left = 521.0
 offset_top = 105.0
 offset_right = 743.0
@@ -37,6 +37,7 @@ script = ExtResource("1_ua5gb")
 bus_name = "Master"
 
 [node name="Audio - Music" type="HSlider" parent="."]
+layout_mode = 0
 offset_left = 523.0
 offset_top = 158.0
 offset_right = 745.0
@@ -47,6 +48,7 @@ script = ExtResource("1_ua5gb")
 bus_name = "Music"
 
 [node name="Audio - SFX" type="HSlider" parent="."]
+layout_mode = 0
 offset_left = 523.0
 offset_top = 208.0
 offset_right = 745.0
@@ -57,6 +59,7 @@ script = ExtResource("1_ua5gb")
 bus_name = "SFX"
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
 offset_left = 600.0
 offset_top = 121.0
 offset_right = 694.0
@@ -64,6 +67,7 @@ offset_bottom = 160.0
 text = "Master"
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="."]
+layout_mode = 0
 offset_left = 616.0
 offset_top = 220.0
 offset_right = 710.0
@@ -71,8 +75,11 @@ offset_bottom = 259.0
 text = "SFX"
 
 [node name="RichTextLabel3" type="RichTextLabel" parent="."]
+layout_mode = 0
 offset_left = 603.0
 offset_top = 169.0
 offset_right = 697.0
 offset_bottom = 208.0
 text = "Music"
+
+[connection signal="pressed" from="Menu_Button" to="Menu_Button" method="_on_pressed"]
