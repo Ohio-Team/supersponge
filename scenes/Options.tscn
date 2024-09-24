@@ -1,12 +1,30 @@
-[gd_scene load_steps=5 format=3 uid="uid://dhxbkh5627l1q"]
+[gd_scene load_steps=6 format=3 uid="uid://dhxbkh5627l1q"]
 
 [ext_resource type="Script" path="res://scripts/options.gd" id="1_gxje3"]
 [ext_resource type="Script" path="res://scripts/audio___master.gd" id="1_ua5gb"]
 [ext_resource type="Script" path="res://scripts/MenuButton.gd" id="2_7iek7"]
-[ext_resource type="PackedScene" uid="uid://bkfis34nkbhyv" path="res://scenes/Main Menu.tscn" id="3_ce6rd"]
+[ext_resource type="Texture2D" uid="uid://blnje08uw142w" path="res://assets/2d/miscsprites/SBSPSS_5_14_2001_Copyright_Screen.png" id="2_pa8yl"]
+[ext_resource type="PackedScene" uid="uid://wqoqonv86j4" path="res://scenes/2d/level1.tscn" id="3_wcele"]
 
-[node name="Options" type="Node2D"]
+[node name="Options" type="Control"]
+layout_mode = 3
+anchors_preset = 0
 script = ExtResource("1_gxje3")
+
+[node name="BG" type="Sprite2D" parent="."]
+texture_repeat = 2
+position = Vector2(643, 363)
+scale = Vector2(2.5, 3.00833)
+texture = ExtResource("2_pa8yl")
+
+[node name="Menu_Button" type="Button" parent="."]
+offset_left = 496.0
+offset_top = 597.0
+offset_right = 804.0
+offset_bottom = 642.0
+text = "Back... (sends you to level one for now)"
+script = ExtResource("2_7iek7")
+scene = ExtResource("3_wcele")
 
 [node name="Audio - Master" type="HSlider" parent="."]
 offset_left = 521.0
@@ -51,15 +69,6 @@ offset_top = 220.0
 offset_right = 710.0
 offset_bottom = 259.0
 text = "SFX"
-
-[node name="Menu_Button" type="Button" parent="."]
-offset_left = 568.0
-offset_top = 623.0
-offset_right = 682.0
-offset_bottom = 668.0
-text = "Back..."
-script = ExtResource("2_7iek7")
-scene = ExtResource("3_ce6rd")
 
 [node name="RichTextLabel3" type="RichTextLabel" parent="."]
 offset_left = 603.0
