@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://ca02b7dfjvpxt"
 path.s3tc="res://.godot/imported/krustykrab_net.png-ab4ffaf37f0e2dad3a795ee7e94df767.s3tc.ctex"
+path.etc2="res://.godot/imported/krustykrab_net.png-ab4ffaf37f0e2dad3a795ee7e94df767.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/3d/bikinibottom/textures/krustykrab_net.png"
-dest_files=["res://.godot/imported/krustykrab_net.png-ab4ffaf37f0e2dad3a795ee7e94df767.s3tc.ctex"]
+dest_files=["res://.godot/imported/krustykrab_net.png-ab4ffaf37f0e2dad3a795ee7e94df767.s3tc.ctex", "res://.godot/imported/krustykrab_net.png-ab4ffaf37f0e2dad3a795ee7e94df767.etc2.ctex"]
 
 [params]
 

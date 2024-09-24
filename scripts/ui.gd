@@ -2,6 +2,9 @@ extends CanvasLayer
 
 signal dialog_finished
 
+@onready var joystick := $Android/joystick
+@onready var firebutton := $Android/FireButton
+@onready var jumpbutton := $Android/JumpButton
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -16,7 +19,11 @@ func _process(delta):
 		
 	$Counter.text = "[shake]x" + str(Singleton.health)
 	$Counter2.text = "[shake]x" + str(Singleton.spatulas)
-	$FuelCounter.text = "[shake]Fuel: " + str(round(Singleton.fuel))
+	if Singleton.showfuel:
+		$FuelCounter.visible = true
+		$FuelCounter.text = "[shake]Fuel: " + str(round(Singleton.fuel))
+	else:
+		$FuelCounter.visible = false
 	$Label.text = str(Engine.get_frames_per_second())
 	
 	

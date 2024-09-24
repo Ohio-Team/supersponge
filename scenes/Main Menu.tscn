@@ -12,7 +12,7 @@
 shader = ExtResource("2_5lfgl")
 shader_parameter/motion = Vector2(15, 0)
 shader_parameter/scale = 1.0
-shader_parameter/offset = Vector2(0, 279.815)
+shader_parameter/offset = Vector2(0, 190.755)
 
 [sub_resource type="GDScript" id="GDScript_4d45m"]
 resource_name = "load_button"
@@ -46,8 +46,8 @@ script = ExtResource("1_cki2b")
 [node name="SpongebobSquarepantsJpg" type="Sprite2D" parent="."]
 texture_repeat = 2
 material = SubResource("ShaderMaterial_oplmi")
-position = Vector2(639.5, 471.5)
-scale = Vector2(0.86635, 2.45407)
+position = Vector2(639.5, 360)
+scale = Vector2(0.86635, 1.88976)
 texture = ExtResource("3_pulrp")
 
 [node name="Ererreyy" type="Sprite2D" parent="."]

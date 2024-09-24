@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cab4avlraiqg8"
 path.s3tc="res://.godot/imported/gy_rock_wall_glow_darker.png-e87fbd4f353437a66b4247a255a11fb5.s3tc.ctex"
+path.etc2="res://.godot/imported/gy_rock_wall_glow_darker.png-e87fbd4f353437a66b4247a255a11fb5.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/3d/bikinibottom/textures/gy_rock_wall_glow_darker.png"
-dest_files=["res://.godot/imported/gy_rock_wall_glow_darker.png-e87fbd4f353437a66b4247a255a11fb5.s3tc.ctex"]
+dest_files=["res://.godot/imported/gy_rock_wall_glow_darker.png-e87fbd4f353437a66b4247a255a11fb5.s3tc.ctex", "res://.godot/imported/gy_rock_wall_glow_darker.png-e87fbd4f353437a66b4247a255a11fb5.etc2.ctex"]
 
 [params]
 

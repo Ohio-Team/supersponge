@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dlpwr5fk701t2"
 path.s3tc="res://.godot/imported/sign_exit_sm01.png-5e189e939572085707c844070b9199b5.s3tc.ctex"
+path.etc2="res://.godot/imported/sign_exit_sm01.png-5e189e939572085707c844070b9199b5.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/3d/bikinibottom/textures/sign_exit_sm01.png"
-dest_files=["res://.godot/imported/sign_exit_sm01.png-5e189e939572085707c844070b9199b5.s3tc.ctex"]
+dest_files=["res://.godot/imported/sign_exit_sm01.png-5e189e939572085707c844070b9199b5.s3tc.ctex", "res://.godot/imported/sign_exit_sm01.png-5e189e939572085707c844070b9199b5.etc2.ctex"]
 
 [params]
 

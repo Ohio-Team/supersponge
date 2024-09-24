@@ -1,18 +1,49 @@
-[gd_scene load_steps=5 format=3 uid="uid://bbrct2r84j0l2"]
+[gd_scene load_steps=10 format=3 uid="uid://bbrct2r84j0l2"]
 
 [ext_resource type="Script" path="res://scripts/ui.gd" id="1_eaqxp"]
 [ext_resource type="FontFile" uid="uid://c4lyevru8sr3e" path="res://assets/fonts/Krabby Patty.ttf" id="2_0v11p"]
 [ext_resource type="Texture2D" uid="uid://dmmh6w87woore" path="res://assets/2d/miscsprites/1250238038680797246_webp.png" id="2_lbdou"]
 [ext_resource type="Texture2D" uid="uid://52gml0d00q4w" path="res://assets/2d/collectables/spatula.png" id="4_qlyf8"]
+[ext_resource type="PackedScene" uid="uid://7674blky0fw3" path="res://scenes/2d/joystick.tscn" id="5_fi5qv"]
+[ext_resource type="Texture2D" uid="uid://bwx8asmtu3fbp" path="res://assets/android/buttonjump.png" id="6_nsh6p"]
+[ext_resource type="Texture2D" uid="uid://ccfc3op40c8mv" path="res://assets/android/buttonfire.png" id="7_owvjs"]
+
+[sub_resource type="GDScript" id="GDScript_8ceq4"]
+resource_name = "firebutton"
+script/source = "extends Button
+
+var pressing:bool = false
+
+func _on_button_down() -> void:
+	pressing = true
+
+
+func _on_button_up() -> void:
+	pressing = false
+"
+
+[sub_resource type="GDScript" id="GDScript_e3poq"]
+resource_name = "jumpbutton"
+script/source = "extends Button
+
+var pressing:bool = false
+
+func _on_button_down() -> void:
+	pressing = true
+
+
+func _on_button_up() -> void:
+	pressing = false
+"
 
 [node name="UI" type="CanvasLayer"]
 script = ExtResource("1_eaqxp")
 
 [node name="FuelCounter" type="RichTextLabel" parent="."]
-offset_left = 19.0
-offset_top = 669.0
-offset_right = 358.0
-offset_bottom = 705.0
+offset_left = 304.0
+offset_top = 667.0
+offset_right = 643.0
+offset_bottom = 703.0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 10
 theme_override_fonts/normal_font = ExtResource("2_0v11p")
@@ -59,3 +90,38 @@ offset_left = 1062.0
 offset_top = 23.0
 offset_right = 1137.0
 offset_bottom = 91.0
+
+[node name="Android" type="Node" parent="."]
+
+[node name="joystick" parent="Android" instance=ExtResource("5_fi5qv")]
+position = Vector2(114, 612)
+scale = Vector2(2, 2)
+
+[node name="Buttonjump" type="Sprite2D" parent="Android"]
+position = Vector2(1217, 631)
+scale = Vector2(1.1, 1.1)
+texture = ExtResource("6_nsh6p")
+
+[node name="Buttonfire" type="Sprite2D" parent="Android"]
+position = Vector2(1068, 631)
+scale = Vector2(1.1, 1.1)
+texture = ExtResource("7_owvjs")
+
+[node name="FireButton" type="Button" parent="Android"]
+offset_left = 1014.0
+offset_top = 577.0
+offset_right = 1122.0
+offset_bottom = 685.0
+script = SubResource("GDScript_8ceq4")
+
+[node name="JumpButton" type="Button" parent="Android"]
+offset_left = 1163.0
+offset_top = 577.0
+offset_right = 1271.0
+offset_bottom = 685.0
+script = SubResource("GDScript_e3poq")
+
+[connection signal="button_down" from="Android/FireButton" to="Android/FireButton" method="_on_button_down"]
+[connection signal="button_up" from="Android/FireButton" to="Android/FireButton" method="_on_button_up"]
+[connection signal="button_down" from="Android/JumpButton" to="Android/JumpButton" method="_on_button_down"]
+[connection signal="button_up" from="Android/JumpButton" to="Android/JumpButton" method="_on_button_up"]

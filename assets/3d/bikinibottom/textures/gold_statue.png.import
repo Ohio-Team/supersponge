@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cacj3xy8as2rn"
 path.s3tc="res://.godot/imported/gold_statue.png-867acb2a829026c578e76ba8e227e860.s3tc.ctex"
+path.etc2="res://.godot/imported/gold_statue.png-867acb2a829026c578e76ba8e227e860.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/3d/bikinibottom/textures/gold_statue.png"
-dest_files=["res://.godot/imported/gold_statue.png-867acb2a829026c578e76ba8e227e860.s3tc.ctex"]
+dest_files=["res://.godot/imported/gold_statue.png-867acb2a829026c578e76ba8e227e860.s3tc.ctex", "res://.godot/imported/gold_statue.png-867acb2a829026c578e76ba8e227e860.etc2.ctex"]
 
 [params]
 

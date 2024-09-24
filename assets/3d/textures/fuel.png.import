@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cujt7td6pubh0"
 path.s3tc="res://.godot/imported/fuel.png-351f2f34eb0a57475f0f548209025e27.s3tc.ctex"
+path.etc2="res://.godot/imported/fuel.png-351f2f34eb0a57475f0f548209025e27.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/3d/textures/fuel.png"
-dest_files=["res://.godot/imported/fuel.png-351f2f34eb0a57475f0f548209025e27.s3tc.ctex"]
+dest_files=["res://.godot/imported/fuel.png-351f2f34eb0a57475f0f548209025e27.s3tc.ctex", "res://.godot/imported/fuel.png-351f2f34eb0a57475f0f548209025e27.etc2.ctex"]
 
 [params]
 

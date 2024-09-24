@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bkxgxjq88etlm"
 path.s3tc="res://.godot/imported/fountain.png-b1d63bd72ef2e84191034944c53a5b81.s3tc.ctex"
+path.etc2="res://.godot/imported/fountain.png-b1d63bd72ef2e84191034944c53a5b81.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/3d/bikinibottom/textures/fountain.png"
-dest_files=["res://.godot/imported/fountain.png-b1d63bd72ef2e84191034944c53a5b81.s3tc.ctex"]
+dest_files=["res://.godot/imported/fountain.png-b1d63bd72ef2e84191034944c53a5b81.s3tc.ctex", "res://.godot/imported/fountain.png-b1d63bd72ef2e84191034944c53a5b81.etc2.ctex"]
 
 [params]
 

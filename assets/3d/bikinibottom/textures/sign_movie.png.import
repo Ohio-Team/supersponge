@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://77y5spxetaao"
 path.s3tc="res://.godot/imported/sign_movie.png-56dbbec174f5c3a6f4221ac9a5eb6da3.s3tc.ctex"
+path.etc2="res://.godot/imported/sign_movie.png-56dbbec174f5c3a6f4221ac9a5eb6da3.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/3d/bikinibottom/textures/sign_movie.png"
-dest_files=["res://.godot/imported/sign_movie.png-56dbbec174f5c3a6f4221ac9a5eb6da3.s3tc.ctex"]
+dest_files=["res://.godot/imported/sign_movie.png-56dbbec174f5c3a6f4221ac9a5eb6da3.s3tc.ctex", "res://.godot/imported/sign_movie.png-56dbbec174f5c3a6f4221ac9a5eb6da3.etc2.ctex"]
 
 [params]
 

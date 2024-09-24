@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cf7p7vwhosv31"
 path.s3tc="res://.godot/imported/back.png-7fb79ab5b1beea9694504368d57f23de.s3tc.ctex"
+path.etc2="res://.godot/imported/back.png-7fb79ab5b1beea9694504368d57f23de.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/3d/pattywagon/back.png"
-dest_files=["res://.godot/imported/back.png-7fb79ab5b1beea9694504368d57f23de.s3tc.ctex"]
+dest_files=["res://.godot/imported/back.png-7fb79ab5b1beea9694504368d57f23de.s3tc.ctex", "res://.godot/imported/back.png-7fb79ab5b1beea9694504368d57f23de.etc2.ctex"]
 
 [params]
 

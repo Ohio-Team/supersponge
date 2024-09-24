@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://d3aqstdgof86t"
 path.s3tc="res://.godot/imported/rope.png-1724a3e26512b61c7a55c4af4dc8d9d4.s3tc.ctex"
+path.etc2="res://.godot/imported/rope.png-1724a3e26512b61c7a55c4af4dc8d9d4.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/3d/bikinibottom/textures/rope.png"
-dest_files=["res://.godot/imported/rope.png-1724a3e26512b61c7a55c4af4dc8d9d4.s3tc.ctex"]
+dest_files=["res://.godot/imported/rope.png-1724a3e26512b61c7a55c4af4dc8d9d4.s3tc.ctex", "res://.godot/imported/rope.png-1724a3e26512b61c7a55c4af4dc8d9d4.etc2.ctex"]
 
 [params]
 

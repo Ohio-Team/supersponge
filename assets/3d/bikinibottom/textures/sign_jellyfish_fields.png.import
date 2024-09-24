@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://m3wbty5mhee2"
 path.s3tc="res://.godot/imported/sign_jellyfish_fields.png-09d54e2acf5de1bbf492072937fb1206.s3tc.ctex"
+path.etc2="res://.godot/imported/sign_jellyfish_fields.png-09d54e2acf5de1bbf492072937fb1206.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/3d/bikinibottom/textures/sign_jellyfish_fields.png"
-dest_files=["res://.godot/imported/sign_jellyfish_fields.png-09d54e2acf5de1bbf492072937fb1206.s3tc.ctex"]
+dest_files=["res://.godot/imported/sign_jellyfish_fields.png-09d54e2acf5de1bbf492072937fb1206.s3tc.ctex", "res://.godot/imported/sign_jellyfish_fields.png-09d54e2acf5de1bbf492072937fb1206.etc2.ctex"]
 
 [params]
 

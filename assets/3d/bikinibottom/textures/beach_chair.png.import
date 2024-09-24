@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://byp6hfwrwq045"
 path.s3tc="res://.godot/imported/beach_chair.png-21781e0475e98baf99d93722a4fb2661.s3tc.ctex"
+path.etc2="res://.godot/imported/beach_chair.png-21781e0475e98baf99d93722a4fb2661.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/3d/bikinibottom/textures/beach_chair.png"
-dest_files=["res://.godot/imported/beach_chair.png-21781e0475e98baf99d93722a4fb2661.s3tc.ctex"]
+dest_files=["res://.godot/imported/beach_chair.png-21781e0475e98baf99d93722a4fb2661.s3tc.ctex", "res://.godot/imported/beach_chair.png-21781e0475e98baf99d93722a4fb2661.etc2.ctex"]
 
 [params]
 

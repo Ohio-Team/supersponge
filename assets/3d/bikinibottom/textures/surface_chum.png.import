@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bakx8emt8psdc"
 path.s3tc="res://.godot/imported/surface_chum.png-ce7bd53e0d2acb18a067caa7cd149c82.s3tc.ctex"
+path.etc2="res://.godot/imported/surface_chum.png-ce7bd53e0d2acb18a067caa7cd149c82.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/3d/bikinibottom/textures/surface_chum.png"
-dest_files=["res://.godot/imported/surface_chum.png-ce7bd53e0d2acb18a067caa7cd149c82.s3tc.ctex"]
+dest_files=["res://.godot/imported/surface_chum.png-ce7bd53e0d2acb18a067caa7cd149c82.s3tc.ctex", "res://.godot/imported/surface_chum.png-ce7bd53e0d2acb18a067caa7cd149c82.etc2.ctex"]
 
 [params]
 

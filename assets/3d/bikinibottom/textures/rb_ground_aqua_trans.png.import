@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dnmsk5tcfpw68"
 path.s3tc="res://.godot/imported/rb_ground_aqua_trans.png-3b38baf6aa74487dbec8ae72c9e970ee.s3tc.ctex"
+path.etc2="res://.godot/imported/rb_ground_aqua_trans.png-3b38baf6aa74487dbec8ae72c9e970ee.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/3d/bikinibottom/textures/rb_ground_aqua_trans.png"
-dest_files=["res://.godot/imported/rb_ground_aqua_trans.png-3b38baf6aa74487dbec8ae72c9e970ee.s3tc.ctex"]
+dest_files=["res://.godot/imported/rb_ground_aqua_trans.png-3b38baf6aa74487dbec8ae72c9e970ee.s3tc.ctex", "res://.godot/imported/rb_ground_aqua_trans.png-3b38baf6aa74487dbec8ae72c9e970ee.etc2.ctex"]
 
 [params]
 

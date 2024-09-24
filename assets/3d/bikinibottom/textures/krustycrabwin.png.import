@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cfyvmuofwe1wu"
 path.s3tc="res://.godot/imported/krustycrabwin.png-621669d4eeb98f99c98b226536001259.s3tc.ctex"
+path.etc2="res://.godot/imported/krustycrabwin.png-621669d4eeb98f99c98b226536001259.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/3d/bikinibottom/textures/krustycrabwin.png"
-dest_files=["res://.godot/imported/krustycrabwin.png-621669d4eeb98f99c98b226536001259.s3tc.ctex"]
+dest_files=["res://.godot/imported/krustycrabwin.png-621669d4eeb98f99c98b226536001259.s3tc.ctex", "res://.godot/imported/krustycrabwin.png-621669d4eeb98f99c98b226536001259.etc2.ctex"]
 
 [params]
 

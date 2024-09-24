@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bkrbbci1wr7dr"
 path.s3tc="res://.godot/imported/sand_jfflds_wet.png-df49df9590cfc459d198f97e1b59d27f.s3tc.ctex"
+path.etc2="res://.godot/imported/sand_jfflds_wet.png-df49df9590cfc459d198f97e1b59d27f.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/3d/bikinibottom/textures/sand_jfflds_wet.png"
-dest_files=["res://.godot/imported/sand_jfflds_wet.png-df49df9590cfc459d198f97e1b59d27f.s3tc.ctex"]
+dest_files=["res://.godot/imported/sand_jfflds_wet.png-df49df9590cfc459d198f97e1b59d27f.s3tc.ctex", "res://.godot/imported/sand_jfflds_wet.png-df49df9590cfc459d198f97e1b59d27f.etc2.ctex"]
 
 [params]
 

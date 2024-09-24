@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dl7s0txlrm0qi"
 path.s3tc="res://.godot/imported/Patty_Wagon.png-927e743254dbc2bec3cd065be510ac4f.s3tc.ctex"
+path.etc2="res://.godot/imported/Patty_Wagon.png-927e743254dbc2bec3cd065be510ac4f.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/3d/pattywagon/Patty_Wagon.png"
-dest_files=["res://.godot/imported/Patty_Wagon.png-927e743254dbc2bec3cd065be510ac4f.s3tc.ctex"]
+dest_files=["res://.godot/imported/Patty_Wagon.png-927e743254dbc2bec3cd065be510ac4f.s3tc.ctex", "res://.godot/imported/Patty_Wagon.png-927e743254dbc2bec3cd065be510ac4f.etc2.ctex"]
 
 [params]
 

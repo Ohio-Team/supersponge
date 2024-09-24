@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://tku6huf4ihft"
 path.s3tc="res://.godot/imported/sandydome.png-04461fa9ed7759ae2dcf8fb8c436b997.s3tc.ctex"
+path.etc2="res://.godot/imported/sandydome.png-04461fa9ed7759ae2dcf8fb8c436b997.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/3d/bikinibottom/textures/sandydome.png"
-dest_files=["res://.godot/imported/sandydome.png-04461fa9ed7759ae2dcf8fb8c436b997.s3tc.ctex"]
+dest_files=["res://.godot/imported/sandydome.png-04461fa9ed7759ae2dcf8fb8c436b997.s3tc.ctex", "res://.godot/imported/sandydome.png-04461fa9ed7759ae2dcf8fb8c436b997.etc2.ctex"]
 
 [params]
 

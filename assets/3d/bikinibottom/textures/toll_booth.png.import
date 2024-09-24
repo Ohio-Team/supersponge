@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cdybw0x247qy5"
 path.s3tc="res://.godot/imported/toll_booth.png-a84946c7797e74fbc49ff3bb68ad2703.s3tc.ctex"
+path.etc2="res://.godot/imported/toll_booth.png-a84946c7797e74fbc49ff3bb68ad2703.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/3d/bikinibottom/textures/toll_booth.png"
-dest_files=["res://.godot/imported/toll_booth.png-a84946c7797e74fbc49ff3bb68ad2703.s3tc.ctex"]
+dest_files=["res://.godot/imported/toll_booth.png-a84946c7797e74fbc49ff3bb68ad2703.s3tc.ctex", "res://.godot/imported/toll_booth.png-a84946c7797e74fbc49ff3bb68ad2703.etc2.ctex"]
 
 [params]
 

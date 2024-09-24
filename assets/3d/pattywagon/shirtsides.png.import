@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://b7bgpkefyelxx"
 path.s3tc="res://.godot/imported/shirtsides.png-f46f5fc9277b9e9613629c4e109dfd1c.s3tc.ctex"
+path.etc2="res://.godot/imported/shirtsides.png-f46f5fc9277b9e9613629c4e109dfd1c.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/3d/pattywagon/shirtsides.png"
-dest_files=["res://.godot/imported/shirtsides.png-f46f5fc9277b9e9613629c4e109dfd1c.s3tc.ctex"]
+dest_files=["res://.godot/imported/shirtsides.png-f46f5fc9277b9e9613629c4e109dfd1c.s3tc.ctex", "res://.godot/imported/shirtsides.png-f46f5fc9277b9e9613629c4e109dfd1c.etc2.ctex"]
 
 [params]
 

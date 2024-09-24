@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dmasg6utdvp8x"
 path.s3tc="res://.godot/imported/building_blue3.png-a03340ee11f8a114bfd5b2bdcb02ffc4.s3tc.ctex"
+path.etc2="res://.godot/imported/building_blue3.png-a03340ee11f8a114bfd5b2bdcb02ffc4.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/3d/bikinibottom/textures/building_blue3.png"
-dest_files=["res://.godot/imported/building_blue3.png-a03340ee11f8a114bfd5b2bdcb02ffc4.s3tc.ctex"]
+dest_files=["res://.godot/imported/building_blue3.png-a03340ee11f8a114bfd5b2bdcb02ffc4.s3tc.ctex", "res://.godot/imported/building_blue3.png-a03340ee11f8a114bfd5b2bdcb02ffc4.etc2.ctex"]
 
 [params]
 

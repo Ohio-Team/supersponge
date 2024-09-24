@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cuo82jkri6w8m"
 path.s3tc="res://.godot/imported/bowl_floor.png-acb30b322253c51c9e7f2ae4a929a473.s3tc.ctex"
+path.etc2="res://.godot/imported/bowl_floor.png-acb30b322253c51c9e7f2ae4a929a473.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/3d/bikinibottom/textures/bowl_floor.png"
-dest_files=["res://.godot/imported/bowl_floor.png-acb30b322253c51c9e7f2ae4a929a473.s3tc.ctex"]
+dest_files=["res://.godot/imported/bowl_floor.png-acb30b322253c51c9e7f2ae4a929a473.s3tc.ctex", "res://.godot/imported/bowl_floor.png-acb30b322253c51c9e7f2ae4a929a473.etc2.ctex"]
 
 [params]
 

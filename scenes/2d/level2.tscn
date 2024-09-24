@@ -370,3 +370,5 @@ position = Vector2(2617, 167)
 
 [node name="Spongebot3" parent="." instance=ExtResource("14_nfdxr")]
 position = Vector2(2426, 204)
+
+[editable path="Spongebob"]

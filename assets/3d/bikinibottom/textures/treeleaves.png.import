@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://tylwsn13ffd3"
 path.s3tc="res://.godot/imported/treeleaves.png-c89b2304f2cb07d43346caeddde056f3.s3tc.ctex"
+path.etc2="res://.godot/imported/treeleaves.png-c89b2304f2cb07d43346caeddde056f3.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/3d/bikinibottom/textures/treeleaves.png"
-dest_files=["res://.godot/imported/treeleaves.png-c89b2304f2cb07d43346caeddde056f3.s3tc.ctex"]
+dest_files=["res://.godot/imported/treeleaves.png-c89b2304f2cb07d43346caeddde056f3.s3tc.ctex", "res://.godot/imported/treeleaves.png-c89b2304f2cb07d43346caeddde056f3.etc2.ctex"]
 
 [params]
 

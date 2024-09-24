@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://b6up7fup5fil4"
 path.s3tc="res://.godot/imported/house_sb_flowers01.png-8102065037bb310e9cda76eff198582d.s3tc.ctex"
+path.etc2="res://.godot/imported/house_sb_flowers01.png-8102065037bb310e9cda76eff198582d.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/3d/bikinibottom/textures/house_sb_flowers01.png"
-dest_files=["res://.godot/imported/house_sb_flowers01.png-8102065037bb310e9cda76eff198582d.s3tc.ctex"]
+dest_files=["res://.godot/imported/house_sb_flowers01.png-8102065037bb310e9cda76eff198582d.s3tc.ctex", "res://.godot/imported/house_sb_flowers01.png-8102065037bb310e9cda76eff198582d.etc2.ctex"]
 
 [params]
 

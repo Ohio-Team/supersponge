@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://d0r8x8qdnsaqt"
 path.s3tc="res://.godot/imported/sign_shadyshoals.png-a3d003abd16969ff1f37ca046f4a7595.s3tc.ctex"
+path.etc2="res://.godot/imported/sign_shadyshoals.png-a3d003abd16969ff1f37ca046f4a7595.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/3d/bikinibottom/textures/sign_shadyshoals.png"
-dest_files=["res://.godot/imported/sign_shadyshoals.png-a3d003abd16969ff1f37ca046f4a7595.s3tc.ctex"]
+dest_files=["res://.godot/imported/sign_shadyshoals.png-a3d003abd16969ff1f37ca046f4a7595.s3tc.ctex", "res://.godot/imported/sign_shadyshoals.png-a3d003abd16969ff1f37ca046f4a7595.etc2.ctex"]
 
 [params]
 

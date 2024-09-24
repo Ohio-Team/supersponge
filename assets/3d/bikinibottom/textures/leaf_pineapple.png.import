@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://lvtyt52glpew"
 path.s3tc="res://.godot/imported/leaf_pineapple.png-3e2ac8de24a33b9ee4d35dbd692a7452.s3tc.ctex"
+path.etc2="res://.godot/imported/leaf_pineapple.png-3e2ac8de24a33b9ee4d35dbd692a7452.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/3d/bikinibottom/textures/leaf_pineapple.png"
-dest_files=["res://.godot/imported/leaf_pineapple.png-3e2ac8de24a33b9ee4d35dbd692a7452.s3tc.ctex"]
+dest_files=["res://.godot/imported/leaf_pineapple.png-3e2ac8de24a33b9ee4d35dbd692a7452.s3tc.ctex", "res://.godot/imported/leaf_pineapple.png-3e2ac8de24a33b9ee4d35dbd692a7452.etc2.ctex"]
 
 [params]
 

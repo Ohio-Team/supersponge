@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://eiomk067v86r"
 path.s3tc="res://.godot/imported/lift_seashell.png-ead3c7a0aaaab3250bdf8092cacfa170.s3tc.ctex"
+path.etc2="res://.godot/imported/lift_seashell.png-ead3c7a0aaaab3250bdf8092cacfa170.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/3d/bikinibottom/textures/lift_seashell.png"
-dest_files=["res://.godot/imported/lift_seashell.png-ead3c7a0aaaab3250bdf8092cacfa170.s3tc.ctex"]
+dest_files=["res://.godot/imported/lift_seashell.png-ead3c7a0aaaab3250bdf8092cacfa170.s3tc.ctex", "res://.godot/imported/lift_seashell.png-ead3c7a0aaaab3250bdf8092cacfa170.etc2.ctex"]
 
 [params]
 

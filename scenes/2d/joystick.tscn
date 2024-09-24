@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://7674blky0fw3"]
+
+[ext_resource type="Script" path="res://scripts/android/joystick.gd" id="1_76y3x"]
+[ext_resource type="Texture2D" uid="uid://dvemju7o41558" path="res://assets/android/joyring.png" id="1_wt8ni"]
+[ext_resource type="Texture2D" uid="uid://dc3voqq5m1kom" path="res://assets/android/joyknobpng.png" id="2_nst3x"]
+[ext_resource type="Script" path="res://scripts/android/knob.gd" id="4_vbf4d"]
+
+[node name="Joystick" type="Node2D"]
+script = ExtResource("1_76y3x")
+
+[node name="Ring" type="Sprite2D" parent="."]
+self_modulate = Color(1, 1, 1, 0.517647)
+texture = ExtResource("1_wt8ni")
+
+[node name="Knob" type="Sprite2D" parent="."]
+self_modulate = Color(1, 1, 1, 0.517647)
+texture_filter = 1
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_nst3x")
+script = ExtResource("4_vbf4d")
+
+[node name="Button" type="Button" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -51.0
+offset_top = -51.0
+offset_right = 51.0
+offset_bottom = 51.0
+
+[connection signal="button_down" from="Button" to="Knob" method="_on_button_button_down"]
+[connection signal="button_up" from="Button" to="Knob" method="_on_button_button_up"]

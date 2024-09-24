@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://61o3a0sfkev7"
 path.s3tc="res://.godot/imported/tube_house.png-07ce3cb7ca4d377d8aacd88e11082a03.s3tc.ctex"
+path.etc2="res://.godot/imported/tube_house.png-07ce3cb7ca4d377d8aacd88e11082a03.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/3d/bikinibottom/textures/tube_house.png"
-dest_files=["res://.godot/imported/tube_house.png-07ce3cb7ca4d377d8aacd88e11082a03.s3tc.ctex"]
+dest_files=["res://.godot/imported/tube_house.png-07ce3cb7ca4d377d8aacd88e11082a03.s3tc.ctex", "res://.godot/imported/tube_house.png-07ce3cb7ca4d377d8aacd88e11082a03.etc2.ctex"]
 
 [params]
 
