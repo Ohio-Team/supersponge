@@ -3,8 +3,6 @@ extends CanvasLayer
 signal dialog_finished
 
 @onready var joystick := $Android/joystick
-@onready var firebutton := $Android/FireButton
-@onready var jumpbutton := $Android/JumpButton
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -36,6 +34,7 @@ func create_dialog(text:String, char:String = "spongebob"):
 	new_dialog.char = char
 	new_dialog.finished_dialog.connect(emit_dialogfinished)
 	add_child(new_dialog)
+	move_child(new_dialog,6)
 	
 func _clear_dialog():
 	if get_node_or_null("Dialog"):

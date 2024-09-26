@@ -21,7 +21,7 @@ func inputs(direction):
 			anim.play("hurt")
 			if anim.animation_finished:
 				state = "idle"
-		if Input.is_action_just_pressed("attack") or OS.get_name() == "Android" and Ui.firebutton.pressing:
+		if Input.is_action_just_pressed("attack"):
 			if Singleton.hasgun == false:
 				state = "attack"
 				anim.play("attack")
@@ -31,19 +31,20 @@ func inputs(direction):
 			else:
 				generate_bullet()
 	# Handle jump.
-		if Input.is_action_just_pressed("jump") or OS.get_name() == "Android" and Ui.jumpbutton.pressing and state != "hurt" and state != "dying" and is_on_floor():
-			velocity.y = JUMP_VELOCITY
-			BMOD.play_sfx(preload("res://assets/sfx/jump.tres"))
-			anim.play("jump")
-			state = "jump"
-			
-		if Input.is_action_just_released("jump") or OS.get_name() == "Android" and !Ui.jumpbutton.pressing and velocity.y < 0 and state != "groundpound":
-			velocity.y = 0
-		
-		if Input.is_action_just_pressed("jump") and state != "hurt" and state != "dying" and not is_on_floor():
-			velocity.y = -JUMP_VELOCITY
-			anim.play("groundpound")
-			state = "groundpound"
+		if Input.is_action_just_pressed("jump"):
+			if state != "hurt" and state != "dying":
+				if is_on_floor():
+					velocity.y = JUMP_VELOCITY
+					BMOD.play_sfx(preload("res://assets/sfx/jump.tres"))
+					anim.play("jump")
+					state = "jump"
+		if Input.is_action_just_pressed("jump") and not is_on_floor():
+				velocity.y = -JUMP_VELOCITY
+				anim.play("groundpound")
+				state = "groundpound"
+		if Input.is_action_just_released("jump"):
+			if velocity.y < 0 and state != "groundpound":
+				velocity.y = 0
 		if Input.is_action_just_pressed("ui_cancel"):
 			get_tree().change_scene_to_file("res://scenes/Main Menu.tscn")
 		if velocity.y > 0 and anim.animation != "groundpound" and anim.animation != "hurt"  and anim.animation != "attack" and anim.animation != "dying" and  not is_on_floor():

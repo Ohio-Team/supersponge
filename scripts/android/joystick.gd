@@ -4,4 +4,5 @@ var posVector: Vector2
 @export var deadzone = 15
 
 func _ready() -> void:
-	pass
+	if OS.get_name() != "Android":
+		queue_free()
