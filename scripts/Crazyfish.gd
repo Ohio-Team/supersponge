@@ -10,18 +10,23 @@ func _ready():
 
 func _physics_process(delta):
 	var direction = (player.position - position).normalized()
-	# Add the gravity.
+	
+	var distance = position.distance_to(player.position)
+	
+	if distance < 150:
+		startmoving = true
+	else:
+		startmoving = false
+	
 	if not is_on_floor():
 		velocity.y += gravity * delta
 		
 	if startmoving:
 		velocity.x = direction.x * 250
+	else:
+		velocity.x = 0
 		
 	move_and_slide()
-
-func _on_visiblezone_entered(body):
-	if body == player:
-		startmoving = true
 
 func _on_hitzone_body_entered(body):
 	if body == player:
