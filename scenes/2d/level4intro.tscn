@@ -30,19 +30,19 @@ texture = ExtResource("3_s2lwi")
 centered = false
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
-offset_left = 360.0
-offset_top = 404.0
-offset_right = 1013.0
-offset_bottom = 674.0
+offset_left = 230.0
+offset_top = 371.0
+offset_right = 1314.0
+offset_bottom = 641.0
 rotation = -0.438091
 theme_override_colors/default_color = Color(0, 0, 1, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 8
 theme_override_fonts/normal_font = ExtResource("4_81wnc")
-theme_override_font_sizes/normal_font_size = 72
+theme_override_font_sizes/normal_font_size = 96
 bbcode_enabled = true
-text = "PART 2.
-SQUILLIAM'S WEED."
+text = "         PART 2
+SQUILLIAM'S WEED"
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="."]
 offset_left = 1091.0
@@ -51,6 +51,6 @@ offset_right = 1520.0
 offset_bottom = 713.0
 theme_override_font_sizes/normal_font_size = 32
 bbcode_enabled = true
-text = "[shake]Loading..."
+text = "[rainbow]Loading..."
 
 [connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]

@@ -37,18 +37,18 @@ texture = ExtResource("2_lpwat")
 centered = false
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
-offset_left = 503.0
-offset_top = 333.0
-offset_right = 1156.0
-offset_bottom = 603.0
+offset_left = 379.0
+offset_top = 332.0
+offset_right = 1032.0
+offset_bottom = 602.0
 rotation = -0.438091
 theme_override_colors/default_color = Color(0, 0, 1, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 8
 theme_override_fonts/normal_font = ExtResource("3_ew68t")
-theme_override_font_sizes/normal_font_size = 72
+theme_override_font_sizes/normal_font_size = 96
 bbcode_enabled = true
-text = "PART 1.
+text = "  PART 1
 FAKE BOB."
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="."]
@@ -58,6 +58,6 @@ offset_right = 1529.0
 offset_bottom = 722.0
 theme_override_font_sizes/normal_font_size = 32
 bbcode_enabled = true
-text = "[shake]Loading..."
+text = "[rainbow]Loading..."
 
 [connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]
