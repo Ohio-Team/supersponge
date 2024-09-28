@@ -6,7 +6,7 @@ signal dialog_finished
 @onready var joystick := $Android/joystick
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	$Pause.hide()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -23,8 +23,14 @@ func _process(delta):
 		$FuelCounter.text = "[shake]Fuel: " + str(round(Singleton.fuel))
 	else:
 		$FuelCounter.visible = false
-	$Label.text = str(Engine.get_frames_per_second())
-	
+	if Singleton.showfps:
+		$FPS.text = str(Engine.get_frames_per_second())
+		$FPS.visible = true
+	else:
+		$FPS.visible = false
+	if Input.is_action_just_pressed("ui_cancel"):
+		get_tree().paused = true
+		$Pause.visible = true
 	
 func emit_dialogfinished():
 	dialog_finished.emit()

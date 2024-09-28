@@ -4,6 +4,7 @@ extends Node
 @export var showfuel:bool = false
 @export var fuel:float = 100.0
 @export var inmenu:bool = false
+@export var showfps:bool = false
 @export var lifes:int = 4
 @export var health:int = 3
 @export var spatulas:int = 0

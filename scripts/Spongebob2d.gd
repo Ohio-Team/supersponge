@@ -38,17 +38,17 @@ func inputs(direction):
 					BMOD.play_sfx(preload("res://assets/sfx/jump.tres"))
 					anim.play("jump")
 					state = "jump"
-		if Input.is_action_just_pressed("jump") and not is_on_floor():
+		if Input.is_action_just_pressed("jump") and state != "dying" and not is_on_floor():
 				velocity.y = -JUMP_VELOCITY
 				anim.play("groundpound")
 				state = "groundpound"
 		if Input.is_action_just_released("jump"):
 			if velocity.y < 0 and state != "groundpound":
 				velocity.y = 0
-		if velocity.y > 0 and anim.animation != "groundpound" and anim.animation != "hurt"  and anim.animation != "attack" and anim.animation != "dying" and  not is_on_floor():
+		if velocity.y > 0 and anim.animation != "groundpound" and anim.animation != "hurt"  and anim.animation != "attack" and state != "dying" and not is_on_floor():
 			anim.play("fall")
 			state = "fall"
-		if anim.animation == "fall" or anim.animation == "groundpound" and anim.animation != "attack" and anim.animation != "dying" and is_on_floor():
+		if anim.animation == "fall" or anim.animation == "groundpound" and anim.animation != "attack" and state != "dying" and is_on_floor():
 			anim.play("land")
 			state = "land"
 
@@ -77,14 +77,14 @@ func _physics_process(delta):
 		anim.flip_h = true
 	elif direction > 0:
 		anim.flip_h = false
-	if direction and anim.animation != "hurt" and anim.animation != "attack" and anim.animation != "dying":
+	if direction and anim.animation != "hurt" and anim.animation != "attack" and state != "dying":
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-	if velocity.x != 0 and anim.animation != "jump" and anim.animation != "fall" and anim.animation != "groundpound" and anim.animation != "hurt" and anim.animation != "attack" and anim.animation != "dying":
+	if velocity.x != 0 and anim.animation != "jump" and anim.animation != "fall" and anim.animation != "groundpound" and anim.animation != "hurt" and anim.animation != "attack" and state != "dying":
 		anim.play("run")
 		state = "walking"
-	if velocity.x == 0 and velocity.y == 0 and anim.animation != "attack" and anim.animation != "dying":
+	if velocity.x == 0 and velocity.y == 0 and anim.animation != "attack" and state != "dying":
 		anim.play("idle")
 		state = "idle"
 	move_and_slide()

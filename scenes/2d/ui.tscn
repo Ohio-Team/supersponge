@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bbrct2r84j0l2"]
+[gd_scene load_steps=13 format=3 uid="uid://bbrct2r84j0l2"]
 
 [ext_resource type="Script" path="res://scripts/ui.gd" id="1_eaqxp"]
 [ext_resource type="FontFile" uid="uid://c4lyevru8sr3e" path="res://assets/fonts/Krabby Patty.ttf" id="2_0v11p"]
@@ -14,7 +14,71 @@ radius = 50.25
 [sub_resource type="CircleShape2D" id="CircleShape2D_ruj7a"]
 radius = 50.25
 
+[sub_resource type="GDScript" id="GDScript_xmob0"]
+resource_name = "Continue button"
+script/source = "extends Button
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+
+
+func _on_pressed() -> void:
+	get_tree().paused = false
+	$\"..\".visible = false
+"
+
+[sub_resource type="GDScript" id="GDScript_4xmq8"]
+resource_name = "main menu button"
+script/source = "extends Button
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+
+
+func _on_pressed() -> void:
+	$\"..\".visible = false
+	get_tree().paused = false
+	get_tree().change_scene_to_file(\"res://scenes/Main Menu.tscn\")
+"
+
+[sub_resource type="GDScript" id="GDScript_ae5g8"]
+resource_name = "Options button"
+script/source = "extends Button
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+
+
+func _on_pressed() -> void:
+	$\"..\".visible = false
+	Singleton.save_game()
+	get_tree().paused = false
+	get_tree().change_scene_to_file(\"res://scenes/Options.tscn\")
+"
+
 [node name="UI" type="CanvasLayer"]
+process_mode = 3
 script = ExtResource("1_eaqxp")
 
 [node name="Android" type="Node" parent="."]
@@ -85,8 +149,79 @@ position = Vector2(44, 126)
 scale = Vector2(3, 2.875)
 texture = ExtResource("4_qlyf8")
 
-[node name="Label" type="Label" parent="."]
+[node name="FPS" type="Label" parent="."]
 offset_left = 1062.0
 offset_top = 23.0
 offset_right = 1137.0
 offset_bottom = 91.0
+
+[node name="Pause" type="Node2D" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="Pause"]
+offset_left = 320.0
+offset_top = 64.0
+offset_right = 992.0
+offset_bottom = 640.0
+color = Color(0.368627, 0.368627, 0.368627, 0.537255)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Pause"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 592.0
+offset_top = 168.0
+offset_right = 752.0
+offset_bottom = 208.0
+grow_horizontal = 2
+theme_override_fonts/normal_font = ExtResource("2_0v11p")
+theme_override_font_sizes/normal_font_size = 32
+text = "PAUSED"
+
+[node name="Button" type="Button" parent="Pause"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 620.5
+offset_top = 347.0
+offset_right = 699.5
+offset_bottom = 378.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Continue"
+script = SubResource("GDScript_xmob0")
+
+[node name="Button3" type="Button" parent="Pause"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 613.0
+offset_top = 385.5
+offset_right = 709.0
+offset_bottom = 416.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Main Menu"
+script = SubResource("GDScript_4xmq8")
+
+[node name="Button2" type="Button" parent="Pause"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 622.0
+offset_top = 430.5
+offset_right = 701.0
+offset_bottom = 461.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Options"
+script = SubResource("GDScript_ae5g8")
+
+[connection signal="pressed" from="Pause/Button" to="Pause/Button" method="_on_pressed"]
+[connection signal="pressed" from="Pause/Button3" to="Pause/Button3" method="_on_pressed"]
+[connection signal="pressed" from="Pause/Button2" to="Pause/Button2" method="_on_pressed"]

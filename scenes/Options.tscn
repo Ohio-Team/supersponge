@@ -1,9 +1,28 @@
-[gd_scene load_steps=5 format=3 uid="uid://dhxbkh5627l1q"]
+[gd_scene load_steps=6 format=3 uid="uid://dhxbkh5627l1q"]
 
 [ext_resource type="Script" path="res://scripts/options.gd" id="1_gxje3"]
 [ext_resource type="Script" path="res://scripts/audio___master.gd" id="1_ua5gb"]
 [ext_resource type="Texture2D" uid="uid://blnje08uw142w" path="res://assets/2d/miscsprites/SBSPSS_5_14_2001_Copyright_Screen.png" id="2_pa8yl"]
 [ext_resource type="Script" path="res://scripts/optionsmenubutton.gd" id="3_i0ro2"]
+
+[sub_resource type="GDScript" id="GDScript_ufrsh"]
+resource_name = "SHowfps"
+script/source = "extends CheckButton
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+
+
+func _on_pressed() -> void:
+	Singleton.showfps = button_pressed
+"
 
 [node name="Options" type="Control"]
 layout_mode = 3
@@ -82,4 +101,21 @@ offset_right = 697.0
 offset_bottom = 208.0
 text = "Music"
 
+[node name="CheckButton" type="CheckButton" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 527.0
+offset_top = 72.0
+offset_right = 649.0
+offset_bottom = 103.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Show FPS"
+script = SubResource("GDScript_ufrsh")
+
 [connection signal="pressed" from="Menu_Button" to="Menu_Button" method="_on_pressed"]
+[connection signal="pressed" from="CheckButton" to="CheckButton" method="_on_pressed"]
