@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cqym6djwfdoeq"]
+[gd_scene load_steps=13 format=3 uid="uid://cqym6djwfdoeq"]
 
 [ext_resource type="Script" path="res://scripts/level2town.gd" id="1_yv6tt"]
 [ext_resource type="Texture2D" uid="uid://bjqf1nbmaob28" path="res://assets/2d/miscsprites/downtown.png" id="2_5kwty"]
@@ -7,10 +7,15 @@
 [ext_resource type="PackedScene" uid="uid://ijj6qbkx8vhd" path="res://scenes/2d/platform.tscn" id="5_uyetc"]
 [ext_resource type="PackedScene" uid="uid://biiire7ectn7p" path="res://scenes/2d/hurtbox.tscn" id="6_inxqn"]
 [ext_resource type="PackedScene" uid="uid://cjoo6ilm8eim1" path="res://scenes/2d/spongebob2d.tscn" id="8_fe0hr"]
+[ext_resource type="Texture2D" uid="uid://bcq0pcj5k0buw" path="res://assets/2d/miscsprites/truck.png" id="8_nk5x7"]
+[ext_resource type="Texture2D" uid="uid://1t0ew8uxapvk" path="res://assets/2d/miscsprites/sewerindicator.png" id="9_0nj7h"]
 [ext_resource type="Script" path="res://scripts/sewerthing.gd" id="9_vhskc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p5m3d"]
 size = Vector2(33, 29)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qple3"]
+size = Vector2(309, 147)
 
 [node name="Level2town" type="Node2D"]
 script = ExtResource("1_yv6tt")
@@ -24,6 +29,12 @@ texture = ExtResource("2_5kwty")
 position = Vector2(4612, 556)
 scale = Vector2(0.205417, 0.180251)
 texture = ExtResource("3_ialdc")
+
+[node name="Sewerindicator" type="Sprite2D" parent="1200"]
+texture_filter = 1
+position = Vector2(-2906.28, 133.148)
+scale = Vector2(1.9699, 2.1729)
+texture = ExtResource("9_0nj7h")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 scroll_offset = Vector2(-12425.2, -1474.02)
@@ -147,6 +158,24 @@ script = ExtResource("9_vhskc")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions/sewerthing"]
 position = Vector2(4016.5, 631.5)
 shape = SubResource("RectangleShape2D_p5m3d")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="Collisions"]
+position = Vector2(5052, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions/StaticBody2D4"]
+position = Vector2(-97.5, 553.5)
+shape = SubResource("RectangleShape2D_qple3")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="Collisions"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions/StaticBody2D3"]
+position = Vector2(-97.5, 553.5)
+shape = SubResource("RectangleShape2D_qple3")
+
+[node name="Truck" type="Sprite2D" parent="Collisions/StaticBody2D3"]
+position = Vector2(-96, 553)
+scale = Vector2(0.634, 0.496266)
+texture = ExtResource("8_nk5x7")
 
 [node name="Spongebob" parent="." instance=ExtResource("8_fe0hr")]
 position = Vector2(4498, 572)
