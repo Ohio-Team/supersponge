@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://wqoqonv86j4"]
+[gd_scene load_steps=22 format=3 uid="uid://wqoqonv86j4"]
 
 [ext_resource type="Script" path="res://scripts/level1.gd" id="1_huh3m"]
 [ext_resource type="Texture2D" uid="uid://bjqf1nbmaob28" path="res://assets/2d/miscsprites/downtown.png" id="2_jdhyg"]
@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://ii6xurtpt8ji" path="res://assets/2d/miscsprites/222222.png" id="17_a5o5b"]
 [ext_resource type="Texture2D" uid="uid://bcq0pcj5k0buw" path="res://assets/2d/miscsprites/truck.png" id="18_xq3ct"]
 [ext_resource type="Texture2D" uid="uid://bi0dls78ss7tg" path="res://assets/2d/miscsprites/patrick.png" id="19_5d4hi"]
+[ext_resource type="Script" path="res://scenes/2d/pause.gd" id="20_8lina"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p5m3d"]
 size = Vector2(309, 147)
@@ -369,3 +370,23 @@ texture = ExtResource("2_jdhyg")
 position = Vector2(-277, 589)
 scale = Vector2(2.40625, 2.0625)
 texture = ExtResource("19_5d4hi")
+
+[node name="pause" type="Control" parent="."]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("20_8lina")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="pause"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Button" type="Button" parent="pause/VBoxContainer"]
+layout_mode = 2
+text = "Unpause
+"
+
+[connection signal="pressed" from="pause/VBoxContainer/Button" to="pause" method="pause_or_unpause"]
