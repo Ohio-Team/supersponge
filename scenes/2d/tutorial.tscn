@@ -23,7 +23,7 @@ script/source = "extends Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Ui._clear_dialog()
-	MusicPlayer.play_song(\"res://assets/music/tutorial.mp3\")
+	MusicPlayer.play_song(\"res://assets/music/tutorial.ogg\")
 	Ui.create_dialog(\"Welcome to the tutorial. I'll teach you the basic stuff so you don't get lost that easily. First, move either with WASD or the arrows\",\"sandy\")
 
 
