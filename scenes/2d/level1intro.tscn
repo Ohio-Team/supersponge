@@ -1,12 +1,30 @@
 [gd_scene load_steps=5 format=3 uid="uid://c4kk7htgjtaco"]
 
 [ext_resource type="AudioStream" uid="uid://bfbb3e5y460l7" path="res://assets/sfx/levelintro.mp3" id="1_60ltx"]
-[ext_resource type="Script" path="res://scripts/level1intro.gd" id="1_agbuh"]
 [ext_resource type="Texture2D" uid="uid://csbwc3bpqbtfw" path="res://assets/2d/miscsprites/introbackground.png" id="2_lpwat"]
 [ext_resource type="FontFile" uid="uid://c4lyevru8sr3e" path="res://assets/fonts/Krabby Patty.ttf" id="3_ew68t"]
 
+[sub_resource type="GDScript" id="GDScript_gs24a"]
+resource_name = "level1intro"
+script/source = "extends Node2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	MusicPlayer.stop_song()
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+
+
+func _on_audio_stream_player_finished():
+	get_tree().change_scene_to_file(\"res://scenes/2d/level1.tscn\")
+"
+
 [node name="Node2D" type="Node2D"]
-script = ExtResource("1_agbuh")
+script = SubResource("GDScript_gs24a")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_60ltx")
@@ -37,7 +55,7 @@ FAKE BOB."
 offset_left = 1100.0
 offset_top = 675.0
 offset_right = 1529.0
-offset_bottom = 715.0
+offset_bottom = 722.0
 theme_override_font_sizes/normal_font_size = 32
 bbcode_enabled = true
 text = "[shake]Loading..."
