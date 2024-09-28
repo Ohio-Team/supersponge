@@ -160,9 +160,9 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+@export var speed:float = 5
 func _process(delta: float) -> void:
-	pass
+	rotate(speed * delta)
 
 
 func _on_body_entered(body: Node2D) -> void:
@@ -267,4 +267,27 @@ flip_h = true
 position = Vector2(0, -3.05176e-05)
 shape = SubResource("RectangleShape2D_o15g4")
 
+[connection signal="body_entered" from="TileMapLayer/Spatula" to="TileMapLayer/Spatula" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/Jellyfish" to="TileMapLayer/Jellyfish" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@22730" to="TileMapLayer/@Area2D@22730" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@22731" to="TileMapLayer/@Area2D@22731" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@22732" to="TileMapLayer/@Area2D@22732" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@22733" to="TileMapLayer/@Area2D@22733" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@22734" to="TileMapLayer/@Area2D@22734" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@22735" to="TileMapLayer/@Area2D@22735" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@22736" to="TileMapLayer/@Area2D@22736" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@22737" to="TileMapLayer/@Area2D@22737" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@22738" to="TileMapLayer/@Area2D@22738" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@22739" to="TileMapLayer/@Area2D@22739" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@22740" to="TileMapLayer/@Area2D@22740" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@22741" to="TileMapLayer/@Area2D@22741" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@22742" to="TileMapLayer/@Area2D@22742" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@22743" to="TileMapLayer/@Area2D@22743" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@22744" to="TileMapLayer/@Area2D@22744" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/Soda" to="TileMapLayer/Soda" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@22745" to="TileMapLayer/@Area2D@22745" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/Burger" to="TileMapLayer/Burger" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@22747" to="TileMapLayer/@Area2D@22747" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@22748" to="TileMapLayer/@Area2D@22748" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@22749" to="TileMapLayer/@Area2D@22749" method="_on_body_entered"]
 [connection signal="body_entered" from="Patrick" to="Patrick" method="_on_body_entered"]
