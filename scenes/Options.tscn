@@ -18,11 +18,11 @@ texture = ExtResource("2_pa8yl")
 
 [node name="Menu_Button" type="Button" parent="."]
 layout_mode = 0
-offset_left = 496.0
-offset_top = 597.0
-offset_right = 804.0
-offset_bottom = 642.0
-text = "Back... (sends you to level one for now)"
+offset_left = 560.0
+offset_top = 616.0
+offset_right = 728.0
+offset_bottom = 661.0
+text = "Back"
 script = ExtResource("3_i0ro2")
 
 [node name="Audio - Master" type="HSlider" parent="."]
