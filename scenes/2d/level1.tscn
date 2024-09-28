@@ -160,10 +160,6 @@ cutscene = ExtResource("8_xoxlf")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="Collisions"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions/StaticBody2D2"]
-position = Vector2(4016.5, 631.5)
-shape = SubResource("RectangleShape2D_p5m3d")
-
 [node name="Box" type="Sprite2D" parent="Collisions/StaticBody2D2"]
 position = Vector2(4016.2, 631.5)
 scale = Vector2(0.065625, 0.0566407)
