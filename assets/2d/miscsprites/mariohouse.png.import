@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://5rlai4x1w4hl"
-path="res://.godot/imported/33333.png-daa4e39a07480b1b24eb52c1cc66e055.ctex"
+uid="uid://cn5uxgkbprhj3"
+path="res://.godot/imported/mariohouse.png-20288e8399481c126a402445dab0f6d6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/2d/33333.png"
-dest_files=["res://.godot/imported/33333.png-daa4e39a07480b1b24eb52c1cc66e055.ctex"]
+source_file="res://assets/2d/miscsprites/mariohouse.png"
+dest_files=["res://.godot/imported/mariohouse.png-20288e8399481c126a402445dab0f6d6.ctex"]
 
 [params]
 

@@ -45,8 +45,6 @@ func inputs(direction):
 		if Input.is_action_just_released("jump"):
 			if velocity.y < 0 and state != "groundpound":
 				velocity.y = 0
-		if Input.is_action_just_pressed("ui_cancel"):
-			get_tree().change_scene_to_file("res://scenes/Main Menu.tscn")
 		if velocity.y > 0 and anim.animation != "groundpound" and anim.animation != "hurt"  and anim.animation != "attack" and anim.animation != "dying" and  not is_on_floor():
 			anim.play("fall")
 			state = "fall"
@@ -85,6 +83,7 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 	if velocity.x != 0 and anim.animation != "jump" and anim.animation != "fall" and anim.animation != "groundpound" and anim.animation != "hurt" and anim.animation != "attack" and anim.animation != "dying":
 		anim.play("run")
+		state = "walking"
 	if velocity.x == 0 and velocity.y == 0 and anim.animation != "attack" and anim.animation != "dying":
 		anim.play("idle")
 		state = "idle"

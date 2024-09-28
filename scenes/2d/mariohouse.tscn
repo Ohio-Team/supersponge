@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://bsch2ym2ecfmf"]
+
+[ext_resource type="Texture2D" uid="uid://cn5uxgkbprhj3" path="res://assets/2d/miscsprites/mariohouse.png" id="1_6jjtd"]
+
+[sub_resource type="GDScript" id="GDScript_f1x0f"]
+resource_name = "Mariohouse"
+script/source = "extends Sprite2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	Singleton.save_game()
+	MusicPlayer.play_song(\"res://assets/music/lvl4music.mp3\")
+	Ui.create_dialog(\"Surely. I know Mario's home can help me take down the ohio monster.\")
+"
+
+[node name="Mariohouse" type="Sprite2D"]
+scale = Vector2(1, 1.11146)
+texture = ExtResource("1_6jjtd")
+centered = false
+script = SubResource("GDScript_f1x0f")

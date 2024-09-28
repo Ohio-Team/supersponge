@@ -22,7 +22,7 @@
 [ext_resource type="Script" path="res://scenes/2d/pause.gd" id="20_8lina"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p5m3d"]
-size = Vector2(309, 147)
+size = Vector2(34, 31)
 
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_huh3m")
@@ -161,7 +161,7 @@ cutscene = ExtResource("8_xoxlf")
 [node name="StaticBody2D2" type="StaticBody2D" parent="Collisions"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions/StaticBody2D2"]
-position = Vector2(4016.5, 631.5)
+position = Vector2(4016, 631.5)
 shape = SubResource("RectangleShape2D_p5m3d")
 
 [node name="Box" type="Sprite2D" parent="Collisions/StaticBody2D2"]

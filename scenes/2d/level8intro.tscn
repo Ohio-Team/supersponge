@@ -1,10 +1,29 @@
-[gd_scene load_steps=4 format=3 uid="uid://cki147j8nxhsn"]
+[gd_scene load_steps=5 format=3 uid="uid://biitsoqqee626"]
 
 [ext_resource type="AudioStream" uid="uid://bfbb3e5y460l7" path="res://assets/sfx/levelintro.mp3" id="2_6rbwh"]
 [ext_resource type="Texture2D" uid="uid://csbwc3bpqbtfw" path="res://assets/2d/miscsprites/introbackground.png" id="3_bnb0y"]
 [ext_resource type="FontFile" uid="uid://c4lyevru8sr3e" path="res://assets/fonts/Krabby Patty.ttf" id="4_pl5jt"]
 
-[node name="Node2D" type="Node2D"]
+[sub_resource type="GDScript" id="GDScript_nwy1q"]
+resource_name = "lvl8introe"
+script/source = "extends Node2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+
+func _on_audio_stream_player_finished() -> void:
+	get_tree().change_scene_to_file(\"res://scenes/2d/level8cutscene.tscn\")
+"
+
+[node name="Node2D2" type="Node2D"]
+script = SubResource("GDScript_nwy1q")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_6rbwh")

@@ -23,7 +23,7 @@ func _on_audio_stream_player_finished():
 	get_tree().change_scene_to_file(\"res://scenes/2d/level1.tscn\")
 "
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D2" type="Node2D"]
 script = SubResource("GDScript_gs24a")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

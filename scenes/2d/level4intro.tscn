@@ -16,7 +16,7 @@ func _on_audio_stream_player_finished() -> void:
 	get_tree().change_scene_to_file(\"res://scenes/3d/level_4.tscn\")
 "
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D2" type="Node2D"]
 script = SubResource("GDScript_ftepi")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
