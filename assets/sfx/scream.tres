@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="SingleSoundEffect" load_steps=3 format=3 uid="uid://rgwo8h55n6bj"]
+
+[ext_resource type="Script" path="res://addons/bmod/scripts/resources/single_sound_effect.gd" id="1_mn720"]
+[ext_resource type="AudioStream" uid="uid://beo8wmi1pgi5i" path="res://assets/sfx/teleport.wav" id="1_nwexj"]
+
+[resource]
+script = ExtResource("1_mn720")
+audio_stream = ExtResource("1_nwexj")
+play = false
+play_on_change = false

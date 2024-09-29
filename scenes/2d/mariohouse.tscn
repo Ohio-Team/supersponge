@@ -1,10 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://bsch2ym2ecfmf"]
+[gd_scene load_steps=7 format=3 uid="uid://bsch2ym2ecfmf"]
 
 [ext_resource type="Texture2D" uid="uid://cn5uxgkbprhj3" path="res://assets/2d/miscsprites/mariohouse.png" id="1_6jjtd"]
+[ext_resource type="PackedScene" uid="uid://ijj6qbkx8vhd" path="res://scenes/2d/platform.tscn" id="2_sobnu"]
+[ext_resource type="PackedScene" uid="uid://cjoo6ilm8eim1" path="res://scenes/2d/spongebob2d.tscn" id="3_tm0yy"]
 
 [sub_resource type="GDScript" id="GDScript_f1x0f"]
 resource_name = "Mariohouse"
-script/source = "extends Sprite2D
+script/source = "extends Node2D
 
 
 # Called when the node enters the scene tree for the first time.
@@ -14,8 +16,61 @@ func _ready() -> void:
 	Ui.create_dialog(\"Surely. I know Mario's home can help me take down the ohio monster.\")
 "
 
-[node name="Mariohouse" type="Sprite2D"]
+[sub_resource type="GDScript" id="GDScript_c6rb3"]
+resource_name = "floorgap"
+script/source = "extends Area2D
+
+func _on_body_entered(body: Node2D) -> void:
+	if body.is_in_group(\"Player\"):
+		$\"../Platform\".queue_free()
+		$ColorRect.show()
+		BMOD.play_sfx(preload(\"res://assets/sfx/scream.tres\"))
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e4xpu"]
+size = Vector2(169, 45.8856)
+
+[node name="Mariohouse" type="Node2D"]
 scale = Vector2(1, 1.11146)
+script = SubResource("GDScript_f1x0f")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(1, 1.00278)
 texture = ExtResource("1_6jjtd")
 centered = false
-script = SubResource("GDScript_f1x0f")
+
+[node name="Platform" parent="." instance=ExtResource("2_sobnu")]
+position = Vector2(619, 507.441)
+scale = Vector2(55.1606, 1.12874)
+
+[node name="Platform2" parent="." instance=ExtResource("2_sobnu")]
+position = Vector2(116, 367.085)
+rotation = 1.5708
+scale = Vector2(12.8, 1)
+
+[node name="Area2D" type="Area2D" parent="."]
+script = SubResource("GDScript_c6rb3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(338.5, 472.802)
+shape = SubResource("RectangleShape2D_e4xpu")
+
+[node name="ColorRect" type="ColorRect" parent="Area2D"]
+offset_left = 254.0
+offset_top = 495.744
+offset_right = 423.0
+offset_bottom = 819.744
+color = Color(0, 0, 0, 1)
+
+[node name="Spongebob" parent="." instance=ExtResource("3_tm0yy")]
+position = Vector2(1091, 448.959)
+
+[node name="Platform3" parent="." instance=ExtResource("2_sobnu")]
+position = Vector2(837, 457.956)
+scale = Vector2(7.56681, 2.14391)
+
+[node name="Platform4" parent="." instance=ExtResource("2_sobnu")]
+position = Vector2(1181, 376.982)
+scale = Vector2(1, 14.2078)
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
