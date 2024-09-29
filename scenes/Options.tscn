@@ -1,9 +1,16 @@
-[gd_scene load_steps=6 format=3 uid="uid://dhxbkh5627l1q"]
+[gd_scene load_steps=8 format=3 uid="uid://dhxbkh5627l1q"]
 
 [ext_resource type="Script" path="res://scripts/options.gd" id="1_gxje3"]
 [ext_resource type="Script" path="res://scripts/audio___master.gd" id="1_ua5gb"]
 [ext_resource type="Texture2D" uid="uid://blnje08uw142w" path="res://assets/2d/miscsprites/SBSPSS_5_14_2001_Copyright_Screen.png" id="2_pa8yl"]
+[ext_resource type="Shader" path="res://scenes/Options.gdshader" id="2_q1awi"]
 [ext_resource type="Script" path="res://scripts/optionsmenubutton.gd" id="3_i0ro2"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_886qq"]
+shader = ExtResource("2_q1awi")
+shader_parameter/motion = Vector2(30, 30)
+shader_parameter/scale = 1.0
+shader_parameter/offset = Vector2(0, 0)
 
 [sub_resource type="GDScript" id="GDScript_ufrsh"]
 resource_name = "SHowfps"
@@ -29,10 +36,16 @@ layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_gxje3")
 
-[node name="BG" type="Sprite2D" parent="."]
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="BG" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+texture_filter = 1
 texture_repeat = 2
-position = Vector2(643, 363)
-scale = Vector2(2.5, 3.00833)
+material = SubResource("ShaderMaterial_886qq")
+position = Vector2(640, 360)
+scale = Vector2(2.5, 3)
 texture = ExtResource("2_pa8yl")
 
 [node name="Menu_Button" type="Button" parent="."]
