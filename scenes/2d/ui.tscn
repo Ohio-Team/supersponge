@@ -136,15 +136,15 @@ bbcode_enabled = true
 text = "[shake]Fuel: "
 
 [node name="Krabber" type="Sprite2D" parent="."]
-position = Vector2(52.563, 52.5)
+position = Vector2(67.563, 57.5)
 scale = Vector2(0.2, 0.203)
 texture = ExtResource("6_f6ylc")
 
 [node name="Counter" type="RichTextLabel" parent="."]
-offset_left = 107.0
-offset_top = 46.0
-offset_right = 446.0
-offset_bottom = 82.0
+offset_left = 122.0
+offset_top = 51.0
+offset_right = 461.0
+offset_bottom = 87.0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 10
 theme_override_fonts/normal_font = ExtResource("2_0v11p")
@@ -153,10 +153,10 @@ bbcode_enabled = true
 text = "[shake]x3"
 
 [node name="Counter2" type="RichTextLabel" parent="."]
-offset_left = 109.0
-offset_top = 143.0
-offset_right = 451.0
-offset_bottom = 179.0
+offset_left = 124.0
+offset_top = 148.0
+offset_right = 466.0
+offset_bottom = 184.0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 10
 theme_override_fonts/normal_font = ExtResource("2_0v11p")
@@ -165,7 +165,7 @@ bbcode_enabled = true
 text = "[shake]x0"
 
 [node name="Spatula" type="Sprite2D" parent="."]
-position = Vector2(52, 153)
+position = Vector2(67, 158)
 scale = Vector2(0.2, 0.203)
 texture = ExtResource("7_bnkkd")
 
