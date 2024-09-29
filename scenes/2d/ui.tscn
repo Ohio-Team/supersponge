@@ -136,8 +136,8 @@ bbcode_enabled = true
 text = "[shake]Fuel: "
 
 [node name="Krabber" type="Sprite2D" parent="."]
-position = Vector2(58, 53)
-scale = Vector2(0.1205, 0.119)
+position = Vector2(52.5625, 47.875)
+scale = Vector2(0.14225, 0.1395)
 texture = ExtResource("6_f6ylc")
 
 [node name="Counter" type="RichTextLabel" parent="."]
@@ -166,8 +166,8 @@ text = "[shake]x0"
 
 [node name="Spatula" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(57, 127)
-scale = Vector2(0.117, 0.119375)
+position = Vector2(52.563, 124.875)
+scale = Vector2(0.137, 0.139)
 texture = ExtResource("7_bnkkd")
 
 [node name="FPS" type="Label" parent="."]
