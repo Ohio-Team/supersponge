@@ -29,7 +29,7 @@ func generate_limbs():
 	var limb := preload("res://scenes/2d/limbs.tscn")
 	var dir = player.global_position - fakebob.global_position
 	var new_node = limb.instantiate()
-	new_node.position = fakebob.position + Vector2(randi_range(20, 30),randi_range(20, 30))
+	new_node.position = fakebob.position + Vector2(randi_range(-100,0),randi_range(-100,0))
 	new_node.rotation = dir.angle()
 	get_tree().root.add_child(new_node)
 
