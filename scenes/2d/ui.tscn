@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bbrct2r84j0l2"]
+[gd_scene load_steps=19 format=3 uid="uid://bbrct2r84j0l2"]
 
 [ext_resource type="Script" path="res://scripts/ui.gd" id="1_eaqxp"]
 [ext_resource type="FontFile" uid="uid://c4lyevru8sr3e" path="res://assets/fonts/Krabby Patty.ttf" id="2_0v11p"]
@@ -7,12 +7,31 @@
 [ext_resource type="PackedScene" uid="uid://7674blky0fw3" path="res://scenes/2d/joystick.tscn" id="5_fi5qv"]
 [ext_resource type="Texture2D" uid="uid://bwx8asmtu3fbp" path="res://assets/android/buttonjump.png" id="6_nsh6p"]
 [ext_resource type="Texture2D" uid="uid://ccfc3op40c8mv" path="res://assets/android/buttonfire.png" id="7_owvjs"]
+[ext_resource type="Texture2D" uid="uid://dhvs1no5q3k0t" path="res://assets/2d/pausemenu/animframe1.png" id="8_jnmey"]
+[ext_resource type="Texture2D" uid="uid://dg53ntnkig2p6" path="res://assets/2d/pausemenu/animframe2.png" id="9_v8vfu"]
+[ext_resource type="Texture2D" uid="uid://bq6mk17um15oe" path="res://assets/2d/pausemenu/exponja.png" id="10_73r8n"]
+[ext_resource type="Texture2D" uid="uid://dr3fb0mub5n6s" path="res://assets/2d/pausemenu/patricio.png" id="11_g1ndh"]
+[ext_resource type="Texture2D" uid="uid://iwihtwr62oig" path="res://assets/2d/pausemenu/pausegr.png" id="12_fxnwe"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kjtws"]
 radius = 50.25
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ruj7a"]
 radius = 50.25
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_065il"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_jnmey")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_v8vfu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="GDScript" id="GDScript_xmob0"]
 resource_name = "Continue button"
@@ -158,69 +177,76 @@ offset_bottom = 91.0
 [node name="Pause" type="Node2D" parent="."]
 
 [node name="ColorRect" type="ColorRect" parent="Pause"]
-offset_left = 320.0
-offset_top = 64.0
-offset_right = 992.0
-offset_bottom = 640.0
-color = Color(0.368627, 0.368627, 0.368627, 0.537255)
+offset_left = -1.0
+offset_right = 1280.0
+offset_bottom = 720.0
+size_flags_horizontal = 4
+color = Color(0, 0, 0, 0.470588)
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Pause"]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = 592.0
-offset_top = 168.0
-offset_right = 752.0
-offset_bottom = 208.0
-grow_horizontal = 2
-theme_override_fonts/normal_font = ExtResource("2_0v11p")
-theme_override_font_sizes/normal_font_size = 32
-text = "PAUSED"
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Pause"]
+position = Vector2(699, 576)
+sprite_frames = SubResource("SpriteFrames_065il")
+autoplay = "default"
+frame_progress = 0.870413
 
 [node name="Button" type="Button" parent="Pause"]
+self_modulate = Color(1, 1, 1, 0)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 620.5
-offset_top = 347.0
-offset_right = 699.5
-offset_bottom = 378.0
+offset_left = 562.0
+offset_top = 437.0
+offset_right = 720.0
+offset_bottom = 485.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Continue"
 script = SubResource("GDScript_xmob0")
 
 [node name="Button3" type="Button" parent="Pause"]
+self_modulate = Color(1, 1, 1, 0)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 613.0
-offset_top = 385.5
-offset_right = 709.0
-offset_bottom = 416.5
+offset_left = 564.0
+offset_top = 367.0
+offset_right = 736.0
+offset_bottom = 417.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Main Menu"
 script = SubResource("GDScript_4xmq8")
 
 [node name="Button2" type="Button" parent="Pause"]
+self_modulate = Color(1, 1, 1, 0)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 622.0
-offset_top = 430.5
-offset_right = 701.0
-offset_bottom = 461.5
+offset_left = 557.0
+offset_top = 311.0
+offset_right = 764.0
+offset_bottom = 357.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Options"
 script = SubResource("GDScript_ae5g8")
+
+[node name="Exponja" type="Sprite2D" parent="Pause"]
+position = Vector2(1500, 446)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("10_73r8n")
+
+[node name="Patricio" type="Sprite2D" parent="Pause"]
+position = Vector2(-56, 317)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("11_g1ndh")
+
+[node name="Pausegr" type="Sprite2D" parent="Pause"]
+position = Vector2(640, 241)
+texture = ExtResource("12_fxnwe")
 
 [connection signal="pressed" from="Pause/Button" to="Pause/Button" method="_on_pressed"]
 [connection signal="pressed" from="Pause/Button3" to="Pause/Button3" method="_on_pressed"]

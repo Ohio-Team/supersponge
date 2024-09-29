@@ -29,9 +29,18 @@ func _process(delta):
 	else:
 		$FPS.visible = false
 	if Input.is_action_just_pressed("ui_cancel"):
+		_clear_dialog()
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		get_tree().paused = true
 		$Pause.visible = true
-	
+	if get_tree().paused:
+		$Pause/ColorRect.color = lerp($Pause/ColorRect.color, Color(00000078,0.5), delta*10)
+		$Pause/Patricio.position = lerp($Pause/Patricio.position, Vector2(356,317), delta*10)
+		$Pause/Exponja.position = lerp($Pause/Exponja.position, Vector2(919,446), delta*10)
+	else:
+		$Pause/ColorRect.color = lerp($Pause/ColorRect.color, Color(00000000,0), delta*10)
+		$Pause/Patricio.position = lerp($Pause/Patricio.position, Vector2(-106,317), delta*10)
+		$Pause/Exponja.position = lerp($Pause/Exponja.position, Vector2(1500,446), delta*10)
 func emit_dialogfinished():
 	dialog_finished.emit()
 func create_dialog(text:String, char:String = "spongebob"):

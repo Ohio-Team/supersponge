@@ -349,6 +349,9 @@ position = Vector2(3886, 574)
 [node name="Jellyfish21" parent="Enemies" instance=ExtResource("6_lvgs6")]
 position = Vector2(3224, 596)
 
+[node name="Jellyfish22" parent="Enemies" instance=ExtResource("6_lvgs6")]
+position = Vector2(434, 534)
+
 [node name="3222222" type="Sprite2D" parent="."]
 texture_filter = 1
 position = Vector2(510, 572)
