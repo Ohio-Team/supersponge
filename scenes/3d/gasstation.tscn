@@ -12,6 +12,8 @@ script/source = "extends Node3D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	DiscordRPC.details = \"Geeked on that ohio shit\"
+	DiscordRPC.refresh()
 	Singleton.save_game()
 	Ui.create_dialog(\"Wow this gas station doesnt even have gas tanks\")
 	MusicPlayer.play_song(\"res://assets/music/night.ogg\")
@@ -243,10 +245,6 @@ bones/27/position = Vector3(0.0820764, -4.92637, 4.20344e-06)
 bones/28/position = Vector3(-0.0339704, -3.8529, 4.05997e-06)
 bones/29/position = Vector3(2.02859, -3.08745, 1.61851e-06)
 bones/30/position = Vector3(4.7273, 3.72529e-09, 2.4897e-08)
-
-[node name="AnimationTree" parent="Spongebob3d" index="1"]
-parameters/state/current_state = "weed"
-parameters/state/current_index = 3
 
 [node name="station" parent="." instance=ExtResource("2_4e41y")]
 

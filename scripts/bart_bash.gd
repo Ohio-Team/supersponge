@@ -2,6 +2,9 @@ extends Node2D
 var bartcounter : int = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	DiscordRPC.details = "CLICK THE BART!!"
+	DiscordRPC.large_image = "barting"
+	DiscordRPC.refresh()
 	Singleton.save_game()
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	MusicPlayer.play_song("res://assets/music/bartbash.mp3")

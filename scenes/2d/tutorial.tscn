@@ -27,11 +27,10 @@ func _ready() -> void:
 	Ui._clear_dialog()
 	MusicPlayer.play_song(\"res://assets/music/tutorial.ogg\")
 	Ui.create_dialog(\"Welcome to the tutorial. I'll teach you the basic stuff so you don't get lost that easily. First, move either with WASD or the arrows\",\"sandy\")
-
+	DiscordRPC.details = \"In the Tutorial\"
+	DiscordRPC.refresh()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
 "
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_01xcf"]
