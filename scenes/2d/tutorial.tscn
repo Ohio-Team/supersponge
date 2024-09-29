@@ -254,6 +254,7 @@ Character = "sandy"
 [node name="Dialogzone8" parent="." instance=ExtResource("10_y0aui")]
 position = Vector2(2560, 960)
 text = "And thats all you need to know, if you think you're ready touch Patrick."
+Character = "sandy"
 
 [node name="Patrick" type="Area2D" parent="."]
 position = Vector2(2839, 953)

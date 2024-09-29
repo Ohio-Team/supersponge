@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bbrct2r84j0l2"]
+[gd_scene load_steps=20 format=3 uid="uid://bbrct2r84j0l2"]
 
 [ext_resource type="Script" path="res://scripts/ui.gd" id="1_eaqxp"]
 [ext_resource type="FontFile" uid="uid://c4lyevru8sr3e" path="res://assets/fonts/Krabby Patty.ttf" id="2_0v11p"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://bq6mk17um15oe" path="res://assets/2d/pausemenu/exponja.png" id="10_73r8n"]
 [ext_resource type="Texture2D" uid="uid://dr3fb0mub5n6s" path="res://assets/2d/pausemenu/patricio.png" id="11_g1ndh"]
 [ext_resource type="Texture2D" uid="uid://iwihtwr62oig" path="res://assets/2d/pausemenu/pausegr.png" id="12_fxnwe"]
+[ext_resource type="AudioStream" uid="uid://c6ajb6d8qnk6i" path="res://assets/music/pause.mp3" id="13_prtdn"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kjtws"]
 radius = 50.25
@@ -247,6 +248,10 @@ texture = ExtResource("11_g1ndh")
 [node name="Pausegr" type="Sprite2D" parent="Pause"]
 position = Vector2(640, 241)
 texture = ExtResource("12_fxnwe")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Pause"]
+stream = ExtResource("13_prtdn")
+bus = &"Music"
 
 [connection signal="pressed" from="Pause/Button" to="Pause/Button" method="_on_pressed"]
 [connection signal="pressed" from="Pause/Button3" to="Pause/Button3" method="_on_pressed"]

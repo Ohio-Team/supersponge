@@ -9,10 +9,15 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if Input.is_action_just_pressed("front") or (OS.get_name() == "Android" and Ui.joystick.posVector.y >= 0.5) and canopen:
+	if (Input.is_action_just_pressed("front") or (OS.get_name() == "Android" and Ui.joystick.posVector.y < 0)) and canopen:
 		get_tree().change_scene_to_file("res://scenes/2d/fakebobfight.tscn")
 
 
 func _on_body_entered(body):
 	if body == player:
+		player.camera.zoom = Vector2(1,1)
 		canopen = true
+func _on_body_exited(body):
+	if body == player:
+		player.camera.zoom = Vector2(3,3)
+		canopen = false

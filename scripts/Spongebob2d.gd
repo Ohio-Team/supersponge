@@ -4,6 +4,7 @@ extends CharacterBody2D
 const SPEED = 250.0
 const JUMP_VELOCITY = -430.0
 
+@onready var camera = $Camera2D
 @onready var anim = $AnimatedSprite2D
 @export var state = "idle"
 # Get the gravity from the project settings to be synced with RigidBody nodes.

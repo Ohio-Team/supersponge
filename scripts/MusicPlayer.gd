@@ -15,10 +15,4 @@ func stop_song():
 	player.stop()
 
 func _process(delta: float) -> void:
-	if get_tree().paused:
-		if current_song != "res://assets/music/pause.mp3":
-			stop_song()
-		play_song("res://assets/music/pause.mp3")
-	else:
-		if last_song:
-			play_song(last_song)
+	pass

@@ -34,10 +34,13 @@ func _process(delta):
 		get_tree().paused = true
 		$Pause.visible = true
 	if get_tree().paused:
+		if !$Pause/AudioStreamPlayer.playing:
+			$Pause/AudioStreamPlayer.play()
 		$Pause/ColorRect.color = lerp($Pause/ColorRect.color, Color(00000078,0.5), delta*10)
 		$Pause/Patricio.position = lerp($Pause/Patricio.position, Vector2(356,317), delta*10)
 		$Pause/Exponja.position = lerp($Pause/Exponja.position, Vector2(919,446), delta*10)
 	else:
+		$Pause/AudioStreamPlayer.stop()
 		$Pause/ColorRect.color = lerp($Pause/ColorRect.color, Color(00000000,0), delta*10)
 		$Pause/Patricio.position = lerp($Pause/Patricio.position, Vector2(-106,317), delta*10)
 		$Pause/Exponja.position = lerp($Pause/Exponja.position, Vector2(1500,446), delta*10)

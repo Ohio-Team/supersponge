@@ -2,14 +2,14 @@
 
 [ext_resource type="Script" path="res://scripts/car.gd" id="1_arjda"]
 [ext_resource type="Texture2D" uid="uid://dl7s0txlrm0qi" path="res://assets/3d/pattywagon/Patty_Wagon.png" id="1_sipcu"]
-[ext_resource type="Texture2D" uid="uid://cf7p7vwhosv31" path="res://assets/3d/pattywagon/back.png" id="2_fqv6f"]
-[ext_resource type="Texture2D" uid="uid://cyse0xmu0p43w" path="res://assets/3d/pattywagon/Spongebob_face4.png" id="3_b7gj1"]
-[ext_resource type="Texture2D" uid="uid://b0f5w314smhuh" path="res://assets/3d/pattywagon/outline.png" id="4_lyre7"]
-[ext_resource type="Texture2D" uid="uid://b7bgpkefyelxx" path="res://assets/3d/pattywagon/shirtsides.png" id="5_obfuh"]
-[ext_resource type="Texture2D" uid="uid://b4n3i0qq6nnxu" path="res://assets/3d/pattywagon/shirtfront.png" id="6_nfs7w"]
-[ext_resource type="Texture2D" uid="uid://t7xax5w6ds1q" path="res://assets/3d/pattywagon/sides.png" id="7_5hn4b"]
-[ext_resource type="Texture2D" uid="uid://beqlvksbvsnln" path="res://assets/3d/pattywagon/socks.png" id="8_8bwyd"]
-[ext_resource type="Texture2D" uid="uid://biyg6k1vksj6o" path="res://assets/3d/pattywagon/top.png" id="9_u4wic"]
+[ext_resource type="Texture2D" uid="uid://cf7p7vwhosv31" path="res://assets/3d/spongebobby/back.png" id="2_fqv6f"]
+[ext_resource type="Texture2D" uid="uid://cyse0xmu0p43w" path="res://assets/3d/spongebobby/Spongebob_face4.png" id="3_b7gj1"]
+[ext_resource type="Texture2D" uid="uid://b0f5w314smhuh" path="res://assets/3d/spongebobby/outline.png" id="4_lyre7"]
+[ext_resource type="Texture2D" uid="uid://b7bgpkefyelxx" path="res://assets/3d/spongebobby/shirtsides.png" id="5_obfuh"]
+[ext_resource type="Texture2D" uid="uid://b4n3i0qq6nnxu" path="res://assets/3d/spongebobby/shirtfront.png" id="6_nfs7w"]
+[ext_resource type="Texture2D" uid="uid://t7xax5w6ds1q" path="res://assets/3d/spongebobby/sides.png" id="7_5hn4b"]
+[ext_resource type="Texture2D" uid="uid://beqlvksbvsnln" path="res://assets/3d/spongebobby/socks.png" id="8_8bwyd"]
+[ext_resource type="Texture2D" uid="uid://biyg6k1vksj6o" path="res://assets/3d/spongebobby/top.png" id="9_u4wic"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qedgo"]
 resource_name = "patty"

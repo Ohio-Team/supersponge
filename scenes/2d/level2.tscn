@@ -155,7 +155,7 @@ texture = ExtResource("2_uq4od")
 texture_scale = 0.01
 
 [node name="Fakebobgate" parent="." instance=ExtResource("5_nxabf")]
-position = Vector2(2390, -1162)
+position = Vector2(2391, -1163)
 scale = Vector2(0.5, 0.5)
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -356,10 +356,10 @@ position = Vector2(2664, 224)
 [node name="Spatula35" parent="Collects" instance=ExtResource("8_yg75s")]
 position = Vector2(2696, 224)
 
-[node name="Soda" parent="." instance=ExtResource("13_gsurf")]
+[node name="Soda" parent="Collects" instance=ExtResource("13_gsurf")]
 position = Vector2(1576, -544)
 
-[node name="Soda2" parent="." instance=ExtResource("13_gsurf")]
+[node name="Soda2" parent="Collects" instance=ExtResource("13_gsurf")]
 position = Vector2(1600, -544)
 
 [node name="Spongebot" parent="." instance=ExtResource("14_nfdxr")]

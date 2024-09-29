@@ -12,7 +12,7 @@ func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _physics_process(delta):
-	# Add the gravity.
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	if not is_on_floor():
 		velocity.y -= gravity * delta
 
@@ -23,9 +23,6 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("jump") and not is_on_floor():
 		animation_tree["parameters/state/transition_request"] = "butt"
 		velocity.y = -JUMP_VELOCITY
-
-	if Input.is_action_just_pressed("ui_cancel"):
-		get_tree().change_scene_to_file("res://scenes/Main Menu.tscn")
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.

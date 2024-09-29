@@ -8,6 +8,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	steering = move_toward(steering, Input.get_axis("right","left") * 0.8, delta * 2.5)
 	engine_force = Input.get_axis("back","front") * 200
 	if OS.get_name() == "Android":
