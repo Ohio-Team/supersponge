@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" path="res://scripts/ui.gd" id="1_eaqxp"]
 [ext_resource type="FontFile" uid="uid://c4lyevru8sr3e" path="res://assets/fonts/Krabby Patty.ttf" id="2_0v11p"]
-[ext_resource type="Texture2D" uid="uid://dmmh6w87woore" path="res://assets/2d/miscsprites/1250238038680797246_webp.png" id="2_lbdou"]
-[ext_resource type="Texture2D" uid="uid://52gml0d00q4w" path="res://assets/2d/collectables/spatula.png" id="4_qlyf8"]
 [ext_resource type="PackedScene" uid="uid://7674blky0fw3" path="res://scenes/2d/joystick.tscn" id="5_fi5qv"]
+[ext_resource type="Texture2D" uid="uid://bnq32iv0knyvg" path="res://assets/2d/miscsprites/life.png" id="6_f6ylc"]
 [ext_resource type="Texture2D" uid="uid://bwx8asmtu3fbp" path="res://assets/android/buttonjump.png" id="6_nsh6p"]
+[ext_resource type="Texture2D" uid="uid://prwjf5oa5ii1" path="res://assets/2d/miscsprites/spatulaUI.png" id="7_bnkkd"]
 [ext_resource type="Texture2D" uid="uid://ccfc3op40c8mv" path="res://assets/android/buttonfire.png" id="7_owvjs"]
 [ext_resource type="Texture2D" uid="uid://dhvs1no5q3k0t" path="res://assets/2d/pausemenu/animframe1.png" id="8_jnmey"]
 [ext_resource type="Texture2D" uid="uid://dg53ntnkig2p6" path="res://assets/2d/pausemenu/animframe2.png" id="9_v8vfu"]
@@ -136,8 +136,9 @@ bbcode_enabled = true
 text = "[shake]Fuel: "
 
 [node name="Krabber" type="Sprite2D" parent="."]
-position = Vector2(51, 51)
-texture = ExtResource("2_lbdou")
+position = Vector2(58, 53)
+scale = Vector2(0.1205, 0.119)
+texture = ExtResource("6_f6ylc")
 
 [node name="Counter" type="RichTextLabel" parent="."]
 offset_left = 95.0
@@ -165,9 +166,9 @@ text = "[shake]x0"
 
 [node name="Spatula" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(44, 126)
-scale = Vector2(3, 2.875)
-texture = ExtResource("4_qlyf8")
+position = Vector2(57, 127)
+scale = Vector2(0.117, 0.119375)
+texture = ExtResource("7_bnkkd")
 
 [node name="FPS" type="Label" parent="."]
 offset_left = 1062.0
