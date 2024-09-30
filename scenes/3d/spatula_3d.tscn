@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://dmdv8u4uve0r6"]
+
+[ext_resource type="Texture2D" uid="uid://52gml0d00q4w" path="res://assets/2d/collectables/spatula.png" id="1_ykb7y"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_y12oe"]
+
+[node name="Spatula3d" type="Area3D"]
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+billboard = 1
+texture_filter = 2
+texture = ExtResource("1_ykb7y")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_y12oe")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]

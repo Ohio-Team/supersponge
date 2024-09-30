@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://dyk3m0ilabu4e"]
 
 [ext_resource type="PackedScene" uid="uid://c1jqpegpjkgjq" path="res://assets/3d/maze/maze.blend" id="1_6x05c"]
-[ext_resource type="PackedScene" uid="uid://8kbffcc412vs" path="res://scenes/3d/spongebob_3d.tscn" id="2_f88qa"]
+[ext_resource type="PackedScene" uid="uid://eit1pvvg3w60" path="res://scenes/3d/firstpersonplayer.tscn" id="2_pdilh"]
 
 [sub_resource type="GDScript" id="GDScript_tt7vt"]
 resource_name = "maze.gd"
@@ -40,7 +40,7 @@ script/source = "extends OmniLight3D
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
-	position = $\"../Spongebob3d\".position + Vector3(0,5,0)
+	position = $\"../firstpersonplayer\".position + Vector3(0,5,0)
 "
 
 [node name="maze" type="Node3D"]
@@ -52,9 +52,6 @@ environment = SubResource("Environment_355on")
 [node name="maze" parent="." instance=ExtResource("1_6x05c")]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
 
-[node name="Spongebob3d" parent="." instance=ExtResource("2_f88qa")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.49819, 5.28327, -57.4611)
-
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.90728, -14.7178)
 omni_range = 10.0
@@ -63,8 +60,11 @@ script = SubResource("GDScript_phq8p")
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.59706, 108.627)
 radius = 33.5431
-height = 95.1483
+height = 359.473
 
 [node name="OmniLight3D2" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 59.0122, 68.0042)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 181.212, 68.0042)
 omni_range = 49.736
+
+[node name="firstpersonplayer" parent="." instance=ExtResource("2_pdilh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.32857, 6.51703, -41.9009)
