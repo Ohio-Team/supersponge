@@ -28,7 +28,7 @@ func _process(delta):
 		$FPS.visible = true
 	else:
 		$FPS.visible = false
-	if Input.is_action_just_pressed("ui_cancel") and !Singleton.inmenu:
+	if Input.is_action_just_pressed("ui_cancel"):
 		_clear_dialog()
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		get_tree().paused = true

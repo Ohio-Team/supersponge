@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cqym6djwfdoeq"]
+[gd_scene load_steps=14 format=3 uid="uid://cqym6djwfdoeq"]
 
 [ext_resource type="Script" path="res://scripts/level2town.gd" id="1_yv6tt"]
 [ext_resource type="Texture2D" uid="uid://bjqf1nbmaob28" path="res://assets/2d/miscsprites/downtown.png" id="2_5kwty"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://bcq0pcj5k0buw" path="res://assets/2d/miscsprites/truck.png" id="8_nk5x7"]
 [ext_resource type="Texture2D" uid="uid://1t0ew8uxapvk" path="res://assets/2d/miscsprites/sewerindicator.png" id="9_0nj7h"]
 [ext_resource type="Script" path="res://scripts/sewerthing.gd" id="9_vhskc"]
+[ext_resource type="Script" path="res://scenes/2d/pause.gd" id="11_uv5s2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p5m3d"]
 size = Vector2(33, 29)
@@ -180,4 +181,23 @@ texture = ExtResource("8_nk5x7")
 [node name="Spongebob" parent="." instance=ExtResource("8_fe0hr")]
 position = Vector2(4498, 572)
 
+[node name="pause" type="Control" parent="."]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("11_uv5s2")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="pause"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Button" type="Button" parent="pause/VBoxContainer"]
+layout_mode = 2
+text = "Unpause
+"
+
 [connection signal="body_entered" from="Collisions/sewerthing" to="Collisions/sewerthing" method="_on_body_entered"]
+[connection signal="pressed" from="pause/VBoxContainer/Button" to="pause" method="pause_or_unpause"]

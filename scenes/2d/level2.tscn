@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://b2bv5n6x7m2da"]
+[gd_scene load_steps=23 format=3 uid="uid://b2bv5n6x7m2da"]
 
 [ext_resource type="Script" path="res://scripts/level2.gd" id="1_xmle0"]
 [ext_resource type="Shader" path="res://scripts/level2.gdshader" id="2_ac0tm"]
@@ -16,12 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://bv0rvgn2iah1s" path="res://scenes/2d/bumper.tscn" id="11_jgmjf"]
 [ext_resource type="PackedScene" uid="uid://dwh0654dmbwpw" path="res://scenes/2d/soda.tscn" id="13_gsurf"]
 [ext_resource type="PackedScene" uid="uid://l3hvs2p2sier" path="res://scenes/2d/spongebot.tscn" id="14_nfdxr"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_kv4i4"]
-shader = ExtResource("2_ac0tm")
-shader_parameter/motion = Vector2(3, 0)
-shader_parameter/scale = 1.0
-shader_parameter/offset = Vector2(0, 0)
+[ext_resource type="PackedScene" uid="uid://c6w27ujk2uor4" path="res://scenes/2d/dialogzone.tscn" id="17_k6k4w"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_26qrh"]
 texture = ExtResource("2_s0135")
@@ -134,21 +129,19 @@ sources/0 = SubResource("TileSetAtlasSource_26qrh")
 sources/2 = SubResource("TileSetAtlasSource_fqpgp")
 sources/3 = SubResource("TileSetAtlasSource_y8ed1")
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_l8md6"]
+shader = ExtResource("2_ac0tm")
+shader_parameter/motion = Vector2(5, 3)
+shader_parameter/scale = 0.1
+shader_parameter/offset = Vector2(0, 0)
+
 [node name="level2" type="Node2D"]
 script = ExtResource("1_xmle0")
-
-[node name="Spinball" type="Sprite2D" parent="."]
-texture_repeat = 2
-material = SubResource("ShaderMaterial_kv4i4")
-position = Vector2(1.52588e-05, -1248)
-scale = Vector2(3.78456, 3.27611)
-texture = ExtResource("9_5jwb1")
-centered = false
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 position = Vector2(2028.5, 622.5)
 scale = Vector2(1341.67, 259.667)
-color = Color(0.309166, 0.785362, 0, 1)
+color = Color(0.151422, 0.0344178, 0.370908, 1)
 energy = 1.1
 shadow_enabled = true
 texture = ExtResource("2_uq4od")
@@ -366,9 +359,28 @@ position = Vector2(1600, -544)
 position = Vector2(2846, 204)
 
 [node name="Spongebot2" parent="." instance=ExtResource("14_nfdxr")]
-position = Vector2(2617, 167)
+position = Vector2(2774, 192)
 
 [node name="Spongebot3" parent="." instance=ExtResource("14_nfdxr")]
-position = Vector2(2426, 204)
+position = Vector2(2481, 191)
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0, 0)
+
+[node name="Bob" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+texture_filter = 1
+texture_repeat = 2
+material = SubResource("ShaderMaterial_l8md6")
+position = Vector2(0, -1409)
+scale = Vector2(3.86463, 3.45465)
+texture = ExtResource("9_5jwb1")
+centered = false
+
+[node name="Dialogzone" parent="." instance=ExtResource("17_k6k4w")]
+position = Vector2(338, 140)
+text = "This Ye i've given you new weaponry and to use it you can press the X button"
+Character = "kanye"
 
 [editable path="Spongebob"]

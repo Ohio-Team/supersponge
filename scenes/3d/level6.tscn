@@ -3523,7 +3523,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3444, 0.5, 71.9532)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.3742, 3.80948, 579.103)
 
 [node name="Fuel3" parent="." instance=ExtResource("8_gm1q2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.7239, 3.68653, 392.683)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.61794, 3.68653, 340.849)
 
 [node name="Area3D" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.99216, 609.624)

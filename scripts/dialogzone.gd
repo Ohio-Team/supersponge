@@ -1,7 +1,7 @@
 extends Area2D
 
 @export var text:String
-@export var Character:String = "spongebob"
+@export var Character:String = "sandy"
 
 
 func _on_body_entered(body: Node2D) -> void:

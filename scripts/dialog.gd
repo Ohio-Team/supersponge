@@ -11,6 +11,8 @@ func _ready():
 		$ColorRect/Maxresdefault.texture = preload("res://assets/2d/dialogfaces/Fakebob.png")
 	elif char == "sandy":
 		$ColorRect/Maxresdefault.texture = preload("res://assets/2d/dialogfaces/Sandy.png")
+	elif char == "kanye":
+		$ColorRect/Maxresdefault.texture = preload("res://assets/2d/dialogfaces/kanye.png")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

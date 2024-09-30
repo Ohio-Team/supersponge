@@ -1,7 +1,9 @@
-[gd_scene load_steps=22 format=3 uid="uid://wqoqonv86j4"]
+[gd_scene load_steps=26 format=3 uid="uid://wqoqonv86j4"]
 
 [ext_resource type="Script" path="res://scripts/level1.gd" id="1_huh3m"]
+[ext_resource type="Texture2D" uid="uid://cm8qstk377on5" path="res://assets/2d/miscsprites/busses.png" id="2_gkx4r"]
 [ext_resource type="Texture2D" uid="uid://bjqf1nbmaob28" path="res://assets/2d/miscsprites/downtown.png" id="2_jdhyg"]
+[ext_resource type="Texture2D" uid="uid://tx58cxogtahe" path="res://assets/2d/miscsprites/townbg1.png" id="3_3ismf"]
 [ext_resource type="Texture2D" uid="uid://bsodv4tuo7r18" path="res://assets/2d/miscsprites/gradient.png" id="3_afw2d"]
 [ext_resource type="Texture2D" uid="uid://b4tkx40gqj1uv" path="res://assets/2d/miscsprites/1200.png" id="3_ed760"]
 [ext_resource type="PackedScene" uid="uid://biiire7ectn7p" path="res://scenes/2d/hurtbox.tscn" id="5_exgwk"]
@@ -19,6 +21,8 @@
 [ext_resource type="Texture2D" uid="uid://ii6xurtpt8ji" path="res://assets/2d/miscsprites/222222.png" id="17_a5o5b"]
 [ext_resource type="Texture2D" uid="uid://bcq0pcj5k0buw" path="res://assets/2d/miscsprites/truck.png" id="18_xq3ct"]
 [ext_resource type="Texture2D" uid="uid://bi0dls78ss7tg" path="res://assets/2d/miscsprites/patrick.png" id="19_5d4hi"]
+[ext_resource type="PackedScene" uid="uid://c6w27ujk2uor4" path="res://scenes/2d/dialogzone.tscn" id="20_im6y2"]
+[ext_resource type="Texture2D" uid="uid://cy3kgg1tmibmy" path="res://assets/2d/miscsprites/fishfields.png" id="21_087qa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ucewm"]
 size = Vector2(34, 29)
@@ -28,6 +32,41 @@ size = Vector2(309, 147)
 
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_huh3m")
+
+[node name="bus" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(1070, 550)
+texture = ExtResource("2_gkx4r")
+
+[node name="bus3" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(2554, 550)
+texture = ExtResource("2_gkx4r")
+
+[node name="Sprite2D7" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(3289, 520)
+texture = ExtResource("3_3ismf")
+
+[node name="Sprite2D6" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(4295, 527)
+texture = ExtResource("3_3ismf")
+
+[node name="Sprite2D5" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(1857, 524)
+texture = ExtResource("3_3ismf")
+
+[node name="Sprite2D4" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(494, 521)
+texture = ExtResource("3_3ismf")
+
+[node name="bus2" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(4277, 551)
+texture = ExtResource("2_gkx4r")
 
 [node name="Downtown" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -284,7 +323,7 @@ position = Vector2(700, 603)
 position = Vector2(703, 553)
 
 [node name="Jellyfish4" parent="Enemies" instance=ExtResource("6_lvgs6")]
-position = Vector2(736, 580)
+position = Vector2(1367, 486)
 
 [node name="Jellyfish5" parent="Enemies" instance=ExtResource("6_lvgs6")]
 position = Vector2(767, 603)
@@ -305,7 +344,7 @@ position = Vector2(891, 558)
 position = Vector2(2188, 602)
 
 [node name="Jellyfish11" parent="Enemies" instance=ExtResource("6_lvgs6")]
-position = Vector2(670, 582)
+position = Vector2(1397, 592)
 
 [node name="Jellyfish12" parent="Enemies" instance=ExtResource("6_lvgs6")]
 position = Vector2(2147, 546)
@@ -330,9 +369,6 @@ position = Vector2(2137, 585)
 
 [node name="Jellyfish17" parent="Enemies" instance=ExtResource("6_lvgs6")]
 position = Vector2(2219, 582)
-
-[node name="Crazyfish3" parent="Enemies" instance=ExtResource("9_m2ma8")]
-position = Vector2(3679, 598)
 
 [node name="Crazyfish4" parent="Enemies" instance=ExtResource("9_m2ma8")]
 position = Vector2(3479, 595)
@@ -367,11 +403,18 @@ texture = ExtResource("17_a5o5b")
 [node name="Spongebob" parent="." instance=ExtResource("10_g8oo3")]
 position = Vector2(192, 589)
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-2400, 435)
-texture = ExtResource("2_jdhyg")
-
 [node name="Sprite2D2" type="Sprite2D" parent="."]
 position = Vector2(-277, 589)
 scale = Vector2(2.40625, 2.0625)
 texture = ExtResource("19_5d4hi")
+
+[node name="Dialogzone" parent="." instance=ExtResource("20_im6y2")]
+position = Vector2(4775, 600)
+scale = Vector2(-2.46179, 6.28606)
+text = "I really think you ought to head the opposite direction to find the sewers."
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(6208, 590)
+scale = Vector2(0.88, 0.785385)
+texture = ExtResource("21_087qa")
