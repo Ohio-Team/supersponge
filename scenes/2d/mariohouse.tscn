@@ -28,6 +28,7 @@ func _on_body_entered(body: Node2D) -> void:
 		$\"../Platform\".queue_free()
 		$ColorRect.show()
 		BMOD.play_sfx(preload(\"res://assets/sfx/scream.tres\"))
+		$CollisionShape2D.queue_free()
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e4xpu"]
@@ -48,6 +49,11 @@ scale = Vector2(55.1606, 1.12874)
 
 [node name="Platform2" parent="." instance=ExtResource("2_sobnu")]
 position = Vector2(116, 367.085)
+rotation = 1.5708
+scale = Vector2(12.8, 1)
+
+[node name="Platform5" parent="." instance=ExtResource("2_sobnu")]
+position = Vector2(1180, 367.085)
 rotation = 1.5708
 scale = Vector2(12.8, 1)
 
@@ -72,10 +78,6 @@ position = Vector2(1091, 448.959)
 [node name="Platform3" parent="." instance=ExtResource("2_sobnu")]
 position = Vector2(837, 457.956)
 scale = Vector2(7.56681, 2.14391)
-
-[node name="Platform4" parent="." instance=ExtResource("2_sobnu")]
-position = Vector2(1181, 376.982)
-scale = Vector2(1, 14.2078)
 
 [node name="Collects" type="Node" parent="."]
 
