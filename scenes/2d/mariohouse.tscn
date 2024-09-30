@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://hn8oy18sog1j"]
+[gd_scene load_steps=10 format=3 uid="uid://hn8oy18sog1j"]
 
 [ext_resource type="Texture2D" uid="uid://cn5uxgkbprhj3" path="res://assets/2d/miscsprites/mariohouse.png" id="1_6jjtd"]
 [ext_resource type="PackedScene" uid="uid://ijj6qbkx8vhd" path="res://scenes/2d/platform.tscn" id="2_sobnu"]
@@ -33,6 +33,20 @@ func _on_body_entered(body: Node2D) -> void:
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e4xpu"]
 size = Vector2(169, 45.8856)
+
+[sub_resource type="GDScript" id="GDScript_svig4"]
+resource_name = "sent"
+script/source = "extends Area2D
+
+
+
+func _on_body_entered(body: Node2D) -> void:
+	if body.is_in_group(\"Player\"):
+		get_tree().change_scene_to_file(\"res://scenes/3d/maze.tscn\")
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nsgfl"]
+size = Vector2(240.5, 88.2754)
 
 [node name="Mariohouse" type="Node2D"]
 scale = Vector2(1, 1.11146)
@@ -78,6 +92,13 @@ position = Vector2(1091, 448.959)
 position = Vector2(837, 457.956)
 scale = Vector2(7.56681, 2.14391)
 
+[node name="Area2D2" type="Area2D" parent="."]
+script = SubResource("GDScript_svig4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2(334.75, 735.969)
+shape = SubResource("RectangleShape2D_nsgfl")
+
 [node name="Collects" type="Node" parent="."]
 
 [node name="Spatula" parent="Collects" instance=ExtResource("4_dxh5o")]
@@ -96,3 +117,4 @@ scale = Vector2(1, 1.11146)
 position = Vector2(336, 520)
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_entered" from="Area2D2" to="Area2D2" method="_on_body_entered"]

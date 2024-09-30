@@ -115,7 +115,7 @@ root_node = NodePath("../sponebob")
 tree_root = SubResource("AnimationNodeBlendTree_v2lhl")
 anim_player = NodePath("../sponebob/AnimationPlayer")
 parameters/state/current_state = "idle"
-parameters/state/transition_request = "idle"
+parameters/state/transition_request = ""
 parameters/state/current_index = 1
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
@@ -126,5 +126,7 @@ shape = SubResource("CapsuleShape3D_x21hn")
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 3.6897, -0.178368)
 distance_from_pivot = 6.0
 mouse_follow = true
+mouse_x_sensitiveness = 0.5
+mouse_y_sensitiveness = 0.5
 
 [editable path="sponebob"]
