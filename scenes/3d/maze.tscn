@@ -1,0 +1,58 @@
+[gd_scene load_steps=8 format=3 uid="uid://dyk3m0ilabu4e"]
+
+[ext_resource type="PackedScene" uid="uid://c1jqpegpjkgjq" path="res://assets/3d/maze/maze.blend" id="1_6x05c"]
+[ext_resource type="PackedScene" uid="uid://8kbffcc412vs" path="res://scenes/3d/spongebob_3d.tscn" id="2_f88qa"]
+
+[sub_resource type="GDScript" id="GDScript_tt7vt"]
+resource_name = "maze.gd"
+script/source = "extends Node3D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	Ui.create_dialog(\"Oh... I guess i will have to get to that pillar.\",\"spongebob\")
+	MusicPlayer.play_song(\"res://assets/music/scarysong.ogg\")
+"
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xmmd2"]
+sky_top_color = Color(0, 0, 0, 1)
+sky_horizon_color = Color(0.517191, 0.513392, 0.508998, 1)
+sky_energy_multiplier = 0.0
+ground_bottom_color = Color(0.068762, 0.0535688, 0.0359923, 1)
+ground_horizon_color = Color(0.517191, 0.513392, 0.508998, 1)
+
+[sub_resource type="Sky" id="Sky_llbhu"]
+sky_material = SubResource("ProceduralSkyMaterial_xmmd2")
+
+[sub_resource type="Environment" id="Environment_355on"]
+background_mode = 2
+sky = SubResource("Sky_llbhu")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="GDScript" id="GDScript_phq8p"]
+resource_name = "follow"
+script/source = "extends OmniLight3D
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _physics_process(delta: float) -> void:
+	position = $\"../Spongebob3d\".position
+"
+
+[node name="maze" type="Node3D"]
+script = SubResource("GDScript_tt7vt")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_355on")
+
+[node name="maze" parent="." instance=ExtResource("1_6x05c")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+
+[node name="Spongebob3d" parent="." instance=ExtResource("2_f88qa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.49819, 3.56805, -31.359)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.90728, -14.7178)
+omni_range = 10.0
+script = SubResource("GDScript_phq8p")
