@@ -412,6 +412,7 @@ texture = ExtResource("19_5d4hi")
 position = Vector2(4775, 600)
 scale = Vector2(-2.46179, 6.28606)
 text = "I really think you ought to head the opposite direction to find the sewers."
+Character = "Sandy"
 
 [node name="Sprite2D3" type="Sprite2D" parent="."]
 texture_filter = 1

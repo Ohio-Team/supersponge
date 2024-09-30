@@ -40,12 +40,26 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 1.46249, 2.44173, 4.46668, 5.05, 5.75009, 8.99176, 9.75, 10.8834, 11.8834, 12.3, 13.1667, 14.5167, 15.9334),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": ["[center] Oh hey Spongebob
-", "[center] Squilliam called us
-", "[center] and told us to give you the coordinates", "[center] But first!!!!", "[center] We want you to", "[center] experience our new [tornado]Smiling Friends Technology.", "[center] It's called [shake]Bart Bash", "[center] and it's supossed to", "[center] be fun
-", "[center] So yeah
-", "[center] can you please try it out
-", "[center] and tell us what it's like", "[center] before we give you the coordinates?", "[center] Uh yeah sure"]
+"values": ["[center] Smiling Simpsons:
+Oh hey Spongebob
+", "[center] Smiling Simpsons:
+Squilliam called us
+", "[center] Smiling Simpsons:
+and told us to give you the coordinates", "[center] Smiling Simpsons:
+BUT FIRST...", "[center] Smiling Simpsons:
+We want you to,", "[center] Smiling Simpsons:
+experience our new [tornado]Smiling Friends Technology.", "[center] Smiling Simpsons:
+It's called [shake]Bart Bash.", "[center] Smiling Simpsons:
+And it's supposed to..", "[center] Smiling Simpsons:
+..be fun
+", "[center] Smiling Simpsons:
+So yeah
+", "[center] Smiling Simpsons:
+Can you please try it out
+", "[center] Smiling Simpsons:
+and tell us what it's like", "[center] Smiling Simpsons:
+before we give you the coordinates?", "[center] Spongebob Squarepants:
+Uh.. yeah, sure"]
 }
 tracks/1/type = "method"
 tracks/1/imported = false
@@ -226,7 +240,7 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -576.0
-offset_top = -40.0
+offset_top = -67.0
 offset_right = 576.0
 grow_horizontal = 2
 grow_vertical = 0

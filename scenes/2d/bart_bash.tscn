@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bxcfx81na4cys"]
+[gd_scene load_steps=13 format=3 uid="uid://bxcfx81na4cys"]
 
 [ext_resource type="Script" path="res://scripts/bart_bash.gd" id="1_pcrrk"]
 [ext_resource type="Texture2D" uid="uid://3klrxjuvmqw5" path="res://assets/2d/bartbash/bart bash bg.png" id="2_i40bc"]
@@ -7,9 +7,65 @@
 [ext_resource type="Texture2D" uid="uid://cbaby8wobfy6v" path="res://assets/2d/bartbash/creepyassbart.png" id="4_sosd2"]
 [ext_resource type="Script" path="res://scripts/evilbart.gd" id="5_mtn8e"]
 [ext_resource type="AudioStream" uid="uid://ddvynie2jhak" path="res://assets/voices/spongebob2_output.wav" id="6_md4hw"]
+[ext_resource type="FontFile" uid="uid://c4lyevru8sr3e" path="res://assets/fonts/Krabby Patty.ttf" id="8_woibe"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xxln3"]
 size = Vector2(120, 120)
+
+[sub_resource type="Animation" id="Animation_s6q7i"]
+resource_name = "bartbash1"
+length = 7.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.166667, 7.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": ["[center] Spongebob Squarepants:
+..brother, this game sucks. I don't know how this game made me happy but I think it's cursed. Just give me the coordinates man.", "[center] Spongebob Squarepants:
+..brother, this game sucks. I don't know how this game made me happy but I think it's cursed. Just give me the coordinates man."]
+}
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../AudioStreamPlayer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("6_md4hw")
+}],
+"times": PackedFloat32Array(0.0333333)
+}
+tracks/1/use_blend = true
+
+[sub_resource type="Animation" id="Animation_4sgog"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.233333),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["[center] Spongebob Squarepants:
+..brother, this game sucks. I don't know how this game made me happy but I think it's cursed. Just give me the coordinates man."]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ua60p"]
+_data = {
+"RESET": SubResource("Animation_4sgog"),
+"bartbash1": SubResource("Animation_s6q7i")
+}
 
 [node name="BartBash" type="Node2D"]
 script = ExtResource("1_pcrrk")
@@ -146,6 +202,31 @@ texture = ExtResource("4_sosd2")
 centered = false
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("6_md4hw")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Subtitles")
+libraries = {
+"": SubResource("AnimationLibrary_ua60p")
+}
+
+[node name="Subtitles" type="RichTextLabel" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 61.0
+offset_top = 630.0
+offset_right = 1213.0
+offset_bottom = 715.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 11
+theme_override_fonts/normal_font = ExtResource("8_woibe")
+theme_override_font_sizes/normal_font_size = 23
+bbcode_enabled = true
+text = "[center] Spongebob Squarepants:
+..brother, this game sucks. I don't know how this game made me happy but I think it's cursed. Just give me the coordinates man."
 
 [connection signal="input_event" from="Window/Area2D" to="Window" method="_on_input_event"]
