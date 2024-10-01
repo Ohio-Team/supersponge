@@ -4,7 +4,7 @@
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_pptmq"]
 
-[node name="firstpersonplayer" type="CharacterBody3D"]
+[node name="firstpersonplayer" type="CharacterBody3D" groups=["Player"]]
 script = ExtResource("1_rc5od")
 
 [node name="TwistPivot" type="Node3D" parent="."]
