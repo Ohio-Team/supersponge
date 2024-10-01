@@ -45,8 +45,8 @@ func _physics_process(delta):
 	$TwistPivot/PitchPivot.rotate_x(pitch_input)
 	$TwistPivot/PitchPivot.rotation.x = clamp(
 		$TwistPivot/PitchPivot.rotation.x,
-		-0.5,
-		0.5
+		-0.7,
+		0.7
 	)
 	twist_input = 0.0
 	pitch_input = 0.0

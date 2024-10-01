@@ -5,9 +5,17 @@ extends CharacterBody3D
 var SPEED = 10.0
 var direction = Vector3()
 func _physics_process(delta: float) -> void:
-	velocity = velocity.lerp(direction,10)
+	velocity = velocity.lerp(direction * 6, 50 * delta)
 	move_and_slide()
 func _on_timer_timeout() -> void:
-	nav_agent.target_position = player.position
-	direction = nav_agent.get_next_path_position() - global_transform.origin
+	nav_agent.target_position = player.global_position
+	direction = nav_agent.get_next_path_position() - global_position
 	direction = direction.normalized()
+
+
+func _on_area_3d_body_entered(body: Node3D) -> void:
+	if body.is_in_group("Player"):
+		OS.alert("Ohio Alert!","ONLY IN OHIO! OOOH!")
+		OS.alert("Ohio Alert!","ONLY IN OHIO! OOOH!")
+		if get_tree():
+			get_tree().reload_current_scene()

@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://fi1roct1auwg"]
+
+[ext_resource type="Texture2D" uid="uid://c2p3tlo6n0acs" path="res://assets/2d/miscsprites/angrybirds.jpg" id="1_vdtkn"]
+
+[node name="angrybirds" type="Node2D"]
+
+[node name="Angrybirds" type="Sprite2D" parent="."]
+scale = Vector2(0.714286, 0.869565)
+texture = ExtResource("1_vdtkn")
+centered = false
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 4.0
+offset_top = 540.0
+offset_right = 1274.0
+offset_bottom = 721.0
+theme_override_font_sizes/normal_font_size = 68
+text = "how tf do you get banned from angry birds"
