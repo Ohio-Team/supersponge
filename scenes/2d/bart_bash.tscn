@@ -12,6 +12,22 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xxln3"]
 size = Vector2(120, 120)
 
+[sub_resource type="Animation" id="Animation_4sgog"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.233333),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["[center] Spongebob Squarepants:
+..brother, this game sucks. I don't know how this game made me happy but I think it's cursed. Just give me the coordinates man."]
+}
+
 [sub_resource type="Animation" id="Animation_s6q7i"]
 resource_name = "bartbash1"
 length = 7.7
@@ -44,22 +60,6 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0.0333333)
 }
 tracks/1/use_blend = true
-
-[sub_resource type="Animation" id="Animation_4sgog"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:text")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0.233333),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["[center] Spongebob Squarepants:
-..brother, this game sucks. I don't know how this game made me happy but I think it's cursed. Just give me the coordinates man."]
-}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ua60p"]
 _data = {
