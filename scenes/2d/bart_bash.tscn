@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bxcfx81na4cys"]
+[gd_scene load_steps=10 format=3 uid="uid://bxcfx81na4cys"]
 
 [ext_resource type="Script" path="res://scripts/bart_bash.gd" id="1_pcrrk"]
 [ext_resource type="Texture2D" uid="uid://3klrxjuvmqw5" path="res://assets/2d/bartbash/bart bash bg.png" id="2_i40bc"]
@@ -11,61 +11,6 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xxln3"]
 size = Vector2(120, 120)
-
-[sub_resource type="Animation" id="Animation_4sgog"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:text")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0.233333),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["[center] Spongebob Squarepants:
-..brother, this game sucks. I don't know how this game made me happy but I think it's cursed. Just give me the coordinates man."]
-}
-
-[sub_resource type="Animation" id="Animation_s6q7i"]
-resource_name = "bartbash1"
-length = 7.7
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:text")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0.166667, 7.1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": ["[center] Spongebob Squarepants:
-..brother, this game sucks. I don't know how this game made me happy but I think it's cursed. Just give me the coordinates man.", "[center] Spongebob Squarepants:
-..brother, this game sucks. I don't know how this game made me happy but I think it's cursed. Just give me the coordinates man."]
-}
-tracks/1/type = "audio"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../AudioStreamPlayer")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"clips": [{
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource("6_md4hw")
-}],
-"times": PackedFloat32Array(0.0333333)
-}
-tracks/1/use_blend = true
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_ua60p"]
-_data = {
-"RESET": SubResource("Animation_4sgog"),
-"bartbash1": SubResource("Animation_s6q7i")
-}
 
 [node name="BartBash" type="Node2D"]
 script = ExtResource("1_pcrrk")
@@ -187,6 +132,7 @@ size = Vector2i(120, 120)
 visible = false
 unresizable = true
 borderless = true
+always_on_top = true
 transparent = true
 script = ExtResource("5_mtn8e")
 
@@ -202,14 +148,11 @@ texture = ExtResource("4_sosd2")
 centered = false
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-root_node = NodePath("../Subtitles")
-libraries = {
-"": SubResource("AnimationLibrary_ua60p")
-}
+stream = ExtResource("6_md4hw")
+bus = &"SFX"
 
 [node name="Subtitles" type="RichTextLabel" parent="."]
+visible = false
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0

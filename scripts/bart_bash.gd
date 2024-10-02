@@ -29,6 +29,6 @@ func switch() -> void:
 		$Window.canmove = false
 		MusicPlayer.stop_song()
 		$AudioStreamPlayer.play()
-		$"../AnimationPlayer".play("bartbash1")
+		$Subtitles.show()
 		await $AudioStreamPlayer.finished
 		get_tree().change_scene_to_file("res://scenes/3d/level6.tscn")
