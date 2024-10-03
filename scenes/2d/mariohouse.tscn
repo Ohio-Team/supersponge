@@ -96,7 +96,7 @@ scale = Vector2(7.56681, 2.14391)
 script = SubResource("GDScript_svig4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
-position = Vector2(355, 735.969)
+position = Vector2(349, 747.665)
 shape = SubResource("RectangleShape2D_nsgfl")
 
 [node name="Collects" type="Node" parent="."]
