@@ -75,7 +75,7 @@ func _process(delta: float) -> void:
 
 func _on_body_entered(body: Node3D) -> void:
 	if body.is_in_group(\"Player\"):
-		get_tree().get_first_node_in_group(\"Player\").velocity.y = 90.0
+		get_tree().get_first_node_in_group(\"Player\").velocity.y = 80.0
 		BMOD.play_sfx_3d(preload(\"res://assets/sfx/fuel.tres\"),position)
 "
 

@@ -7,7 +7,7 @@
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3pljq"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_p5bae"]
-size = Vector3(4.46547, 7.57598, 4.46594)
+size = Vector3(2.542, 7.576, 2.542)
 
 [node name="OHIO MONSTER" type="CharacterBody3D"]
 script = ExtResource("1_6llre")
@@ -38,7 +38,7 @@ bus = &"SFX"
 [node name="Area3D" type="Area3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00919342, 2.7937, -0.00909424)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0142307, 2.7937, -0.00712633)
 shape = SubResource("BoxShape3D_p5bae")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
