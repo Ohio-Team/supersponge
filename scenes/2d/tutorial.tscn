@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://ii6xurtpt8ji" path="res://assets/2d/miscsprites/222222.png" id="8_obvdg"]
 [ext_resource type="Texture2D" uid="uid://dxpr5400pmho2" path="res://assets/2d/miscsprites/3222222.png" id="9_m04r6"]
 [ext_resource type="Texture2D" uid="uid://5rlai4x1w4hl" path="res://assets/2d/miscsprites/33333.png" id="10_gnj5k"]
-[ext_resource type="PackedScene" uid="uid://c6w27ujk2uor4" path="res://scenes/2d/dialogzone.tscn" id="10_y0aui"]
+[ext_resource type="PackedScene" path="res://scenes/2d/dialogzone.tscn" id="10_y0aui"]
 [ext_resource type="PackedScene" uid="uid://dolf5os2imxdu" path="res://scenes/2d/crazyfish.tscn" id="11_03vh8"]
 [ext_resource type="Texture2D" uid="uid://bi0dls78ss7tg" path="res://assets/2d/miscsprites/patrick.png" id="14_occxr"]
 
