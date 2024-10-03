@@ -14,7 +14,7 @@ script/source = "extends Node3D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Singleton.save_game()
-	if OS.get_name() != "Android":
+	if OS.get_name() != \"Android\":
 		DiscordRPC.details = \"Ohio Monster Maze\"
 		DiscordRPC.refresh()
 	Ui.create_dialog(\"Oh... I guess i will have to get to that pillar.\",\"spongebob\")

@@ -27,7 +27,7 @@ func _ready() -> void:
 	Ui._clear_dialog()
 	MusicPlayer.play_song(\"res://assets/music/tutorial.ogg\")
 	Ui.create_dialog(\"Welcome to the tutorial. I'll teach you the basic stuff so you don't get lost that easily. First, move either with WASD or the arrows\",\"sandy\")
-	if OS.get_name() != "Android":
+	if OS.get_name() != \"Android\":
 		DiscordRPC.details = \"In the Tutorial\"
 		DiscordRPC.refresh()
 "
