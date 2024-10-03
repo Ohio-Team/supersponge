@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="SingleSoundEffect" load_steps=5 format=3 uid="uid://cqxibashbw72y"]
 
 [ext_resource type="Script" path="res://addons/bmod/scripts/resources/single_sound_effect.gd" id="1_d15d3"]
-[ext_resource type="AudioStream" uid="uid://d0cw53bcjghla" path="res://assets/sfx/shoot.mp3" id="1_o3he2"]
+[ext_resource type="AudioStream" uid="uid://dhq8ed0hkecvr" path="res://assets/sfx/shoot.mp3" id="1_o3he2"]
 [ext_resource type="Script" path="res://addons/bmod/scripts/resources/sound_effect_meta.gd" id="2_t3a4s"]
 
 [sub_resource type="Resource" id="Resource_yibp4"]

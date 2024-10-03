@@ -3,10 +3,9 @@ extends Node3D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	if OS.get_name() != "Android":
-		DiscordRPC.details = "🚙"
-		DiscordRPC.large_image = "bigimage"
-		DiscordRPC.refresh()
+	DiscordRPC.details = "🚙"
+	DiscordRPC.large_image = "bigimage"
+	DiscordRPC.refresh()
 	Singleton.save_game()
 	Singleton.showfuel = true
 	Singleton.fuel = 100.0

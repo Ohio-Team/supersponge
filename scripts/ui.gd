@@ -2,8 +2,6 @@
 extends CanvasLayer
 
 signal dialog_finished
-
-@onready var joystick := $Android/joystick
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	

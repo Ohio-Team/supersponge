@@ -1,24 +1,15 @@
-[gd_scene load_steps=27 format=3 uid="uid://bbrct2r84j0l2"]
+[gd_scene load_steps=22 format=3 uid="uid://bbrct2r84j0l2"]
 
 [ext_resource type="Script" path="res://scripts/ui.gd" id="1_eaqxp"]
-[ext_resource type="FontFile" uid="uid://c4lyevru8sr3e" path="res://assets/fonts/Krabby Patty.ttf" id="2_0v11p"]
-[ext_resource type="PackedScene" uid="uid://7674blky0fw3" path="res://scenes/2d/joystick.tscn" id="5_fi5qv"]
-[ext_resource type="Texture2D" uid="uid://bnq32iv0knyvg" path="res://assets/2d/miscsprites/life.png" id="6_f6ylc"]
-[ext_resource type="Texture2D" uid="uid://bwx8asmtu3fbp" path="res://assets/android/buttonjump.png" id="6_nsh6p"]
-[ext_resource type="Texture2D" uid="uid://prwjf5oa5ii1" path="res://assets/2d/miscsprites/spatulaUI.png" id="7_bnkkd"]
-[ext_resource type="Texture2D" uid="uid://ccfc3op40c8mv" path="res://assets/android/buttonfire.png" id="7_owvjs"]
-[ext_resource type="Texture2D" uid="uid://dhvs1no5q3k0t" path="res://assets/2d/pausemenu/animframe1.png" id="8_jnmey"]
-[ext_resource type="Texture2D" uid="uid://dg53ntnkig2p6" path="res://assets/2d/pausemenu/animframe2.png" id="9_v8vfu"]
-[ext_resource type="Texture2D" uid="uid://bq6mk17um15oe" path="res://assets/2d/pausemenu/exponja.png" id="10_73r8n"]
-[ext_resource type="Texture2D" uid="uid://dr3fb0mub5n6s" path="res://assets/2d/pausemenu/patricio.png" id="11_g1ndh"]
-[ext_resource type="Texture2D" uid="uid://iwihtwr62oig" path="res://assets/2d/pausemenu/pausegr.png" id="12_fxnwe"]
-[ext_resource type="AudioStream" uid="uid://c6ajb6d8qnk6i" path="res://assets/music/pause.mp3" id="13_prtdn"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_kjtws"]
-radius = 50.25
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_ruj7a"]
-radius = 50.25
+[ext_resource type="FontFile" uid="uid://8unhbqp4so2v" path="res://assets/fonts/Krabby Patty.ttf" id="2_0v11p"]
+[ext_resource type="Texture2D" uid="uid://d4go2py34tv5b" path="res://assets/2d/miscsprites/life.png" id="6_f6ylc"]
+[ext_resource type="Texture2D" uid="uid://b6425fe0si61n" path="res://assets/2d/miscsprites/spatulaUI.png" id="7_bnkkd"]
+[ext_resource type="Texture2D" uid="uid://cenm1yifkefnw" path="res://assets/2d/pausemenu/animframe1.png" id="8_jnmey"]
+[ext_resource type="Texture2D" uid="uid://bs63xbw2ym46e" path="res://assets/2d/pausemenu/animframe2.png" id="9_v8vfu"]
+[ext_resource type="Texture2D" uid="uid://cd3ildb12amad" path="res://assets/2d/pausemenu/exponja.png" id="10_73r8n"]
+[ext_resource type="Texture2D" uid="uid://fev0pokm7me7" path="res://assets/2d/pausemenu/patricio.png" id="11_g1ndh"]
+[ext_resource type="Texture2D" uid="uid://brwa4w8yifqnv" path="res://assets/2d/pausemenu/pausegr.png" id="12_fxnwe"]
+[ext_resource type="AudioStream" uid="uid://dpbytnrcdy5uf" path="res://assets/music/pause.mp3" id="13_prtdn"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jq37k"]
 radius = 243.19
@@ -181,28 +172,6 @@ _data = {
 [node name="UI" type="CanvasLayer"]
 process_mode = 3
 script = ExtResource("1_eaqxp")
-
-[node name="Android" type="Node" parent="."]
-
-[node name="joystick" parent="Android" instance=ExtResource("5_fi5qv")]
-position = Vector2(114, 612)
-scale = Vector2(2, 2)
-
-[node name="FireButton" type="TouchScreenButton" parent="Android"]
-position = Vector2(1012, 576)
-scale = Vector2(1.1, 1.1)
-texture_normal = ExtResource("7_owvjs")
-shape = SubResource("CircleShape2D_kjtws")
-action = "attack"
-visibility_mode = 1
-
-[node name="JumpButton" type="TouchScreenButton" parent="Android"]
-position = Vector2(1161, 575)
-scale = Vector2(1.1, 1.1)
-texture_normal = ExtResource("6_nsh6p")
-shape = SubResource("CircleShape2D_ruj7a")
-action = "jump"
-visibility_mode = 1
 
 [node name="FuelCounter" type="RichTextLabel" parent="."]
 offset_left = 304.0

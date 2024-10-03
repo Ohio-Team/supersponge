@@ -12,9 +12,8 @@ script/source = "extends Node3D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	if OS.get_name() != \"Android\":
-		DiscordRPC.details = \"Geeked on that ohio shit\"
-		DiscordRPC.refresh()
+	DiscordRPC.details = \"Geeked on that ohio shit\"
+	DiscordRPC.refresh()
 	Singleton.save_game()
 	Ui.create_dialog(\"Wow this gas station doesnt even have gas tanks\")
 	MusicPlayer.play_song(\"res://assets/music/night.ogg\")

@@ -31,7 +31,6 @@ MusicPlayer="*res://scenes/MusicPlayer.tscn"
 Ui="*res://scenes/2d/ui.tscn"
 Singleton="*res://scripts/singleton.gd"
 DiscordRPCLoader="*res://addons/discord-rpc-gd/nodes/discord_autoload.gd"
-DiscordRpcHandler="*res://scenes/discord_rpc_handler.tscn"
 
 [display]
 

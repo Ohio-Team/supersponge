@@ -12,9 +12,8 @@ script/source = "extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	if OS.get_name() != \"Android\":
-		DiscordRPC.details = \"In Mario's House... Or is it?\"
-		DiscordRPC.refresh()
+	DiscordRPC.details = \"In Mario's House... Or is it?\"
+	DiscordRPC.refresh()
 	Singleton.save_game()
 	MusicPlayer.play_song(\"res://assets/music/lvl4music.mp3\")
 	Ui.create_dialog(\"Surely. I know Mario's home can help me take down the ohio monster.\")

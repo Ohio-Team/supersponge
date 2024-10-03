@@ -26,8 +26,6 @@ func _physics_process(delta):
 	
 	var input_dir = Input.get_vector("left","right","front","back")
 	var direction = ($TwistPivot.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-	if OS.get_name() == "Android":
-		direction = ($TwistPivot.basis * Vector3(Ui.joystick.posVector.x, 0, Ui.joystick.posVector.y)).normalized()
 	if direction:
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
