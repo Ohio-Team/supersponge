@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://bkfis34nkbhyv"]
 
-[ext_resource type="Script" path="res://scripts/Main Menu.gd" id="1_cki2b"]
+[ext_resource type="Script" path="res://scripts/MainMenu.gd" id="1_cki2b"]
 [ext_resource type="FontFile" uid="uid://c4lyevru8sr3e" path="res://assets/fonts/Krabby Patty.ttf" id="1_jb0v5"]
 [ext_resource type="Shader" path="res://scripts/level2.gdshader" id="2_5lfgl"]
 [ext_resource type="Texture2D" uid="uid://dbaggvlsp7srw" path="res://assets/2d/miscsprites/spongebob_squarepants_jpg.png" id="3_pulrp"]
