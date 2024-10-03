@@ -3,8 +3,9 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	DiscordRPC.details = "When you are Spongebob but bob is from OHIO"
-	DiscordRPC.refresh()
+	if OS.get_name() != "Android":
+		DiscordRPC.details = "When you are Spongebob but bob is from OHIO"
+		DiscordRPC.refresh()
 	Singleton.save_game()
 	MusicPlayer.play_song("res://assets/music/fakebob.ogg")
 	Singleton.hasgun = true

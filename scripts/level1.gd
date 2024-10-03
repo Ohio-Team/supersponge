@@ -3,8 +3,9 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	DiscordRPC.details = "Walking on Bikini Bottom"
-	DiscordRPC.refresh()
+	if OS.get_name() != "Android":
+		DiscordRPC.details = "Walking on Bikini Bottom"
+		DiscordRPC.refresh()
 	Singleton.inmenu = false
 	Singleton.save_game()
 	Ui._clear_dialog()

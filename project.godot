@@ -44,7 +44,6 @@ window/per_pixel_transparency/allowed=true
 
 [editor]
 
-movie_writer/movie_file="C:/Users/flowcheer/Documents/GitHub/supersponge/movie.avi"
 version_control/plugin_name="GitPlugin"
 version_control/autoload_on_startup=true
 
@@ -115,6 +114,7 @@ attack={
 [rendering]
 
 occlusion_culling/bvh_build_quality=0
+gl_compatibility/driver.windows="opengl3_angle"
 textures/vram_compression/import_etc2_astc=true
 lights_and_shadows/directional_shadow/soft_shadow_filter_quality=3
 lights_and_shadows/directional_shadow/soft_shadow_filter_quality.mobile=3
