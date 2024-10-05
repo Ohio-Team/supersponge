@@ -14,6 +14,7 @@ var default_container: Node = null
 var default_container_2d: Node2D = null
 var default_container_3d: Node3D = null
 
+var sfx_playing = []
 
 # Play SoundEffect
 # Note: By default it spawns audio players inside the autoload
@@ -35,13 +36,13 @@ func play_sfx(
 		default_container.add_child(player)
 	else:
 		_internal_container.add_child(player)
-	
+	sfx_playing.append(sound_effect)
 	sound_effect.apply_to_player(player)
 	player.bus = _get_sfx_bus(override_bus)
+	player.finished.connect(kill_player)
 	player.finished.connect(player.queue_free)
 	player.play()
 	return player
-
 
 # Play SoundEffect with a 2D position
 # Note: By default it spawns audio players inside the autoload
@@ -64,10 +65,11 @@ func play_sfx_2d(
 		default_container.add_child(player)
 	else:
 		_internal_container.add_child(player)
-	
+	sfx_playing.append(sound_effect)
 	player.global_position = global_position
 	sound_effect.apply_to_player(player)
 	player.bus = _get_sfx_bus(override_bus)
+	player.finished.connect(kill_player)
 	player.finished.connect(player.queue_free)
 	player.play()
 	return player
@@ -94,14 +96,20 @@ func play_sfx_3d(
 		default_container.add_child(player)
 	else:
 		_internal_container.add_child(player)
-	
+	sfx_playing.append(sound_effect)
 	player.global_position = global_position
 	sound_effect.apply_to_player(player)
 	player.bus = _get_sfx_bus(override_bus)
+	player.finished.connect(kill_player)
 	player.finished.connect(player.queue_free)
 	player.play()
 	return player
 
+func get_sfx_playing():
+	return sfx_playing
+
+func kill_player():
+	sfx_playing.clear()
 
 static func _get_sfx_bus(override_bus: StringName) -> StringName:
 	if override_bus == &"":

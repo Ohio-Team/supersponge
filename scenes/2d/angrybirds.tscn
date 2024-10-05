@@ -1,18 +1,63 @@
-[gd_scene load_steps=2 format=3 uid="uid://fi1roct1auwg"]
+[gd_scene load_steps=10 format=3 uid="uid://fi1roct1auwg"]
 
-[ext_resource type="Texture2D" uid="uid://c2p3tlo6n0acs" path="res://assets/2d/miscsprites/angrybirds.jpg" id="1_vdtkn"]
+[ext_resource type="Texture2D" uid="uid://bpuh2xpt6ablw" path="res://assets/2d/angrybirds/angrybird (2).png" id="1_yejji"]
+[ext_resource type="Texture2D" uid="uid://3mnrcq40ss4a" path="res://assets/2d/angrybirds/angrybird (6).png" id="2_0ixhg"]
+[ext_resource type="Texture2D" uid="uid://bxktvi6302o4j" path="res://assets/2d/angrybirds/angrybird (4).png" id="3_boff4"]
+[ext_resource type="Texture2D" uid="uid://dkegt5g3m6cu4" path="res://assets/2d/angrybirds/slingshot (1).png" id="3_wblgb"]
+[ext_resource type="Shader" path="res://scripts/level2.gdshader" id="4_xo47y"]
+[ext_resource type="Texture2D" uid="uid://b8373o7m0yil0" path="res://assets/2d/angrybirds/slingshot (2).png" id="4_yr4jo"]
+[ext_resource type="Texture2D" uid="uid://b6duufffyv7jh" path="res://assets/2d/angrybirds/angrybird (3).png" id="5_xa858"]
+[ext_resource type="Texture2D" uid="uid://lhna2iae4mfo" path="res://assets/2d/angrybirds/angrybird (5).png" id="6_ccfe3"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xbbkx"]
+shader = ExtResource("4_xo47y")
+shader_parameter/motion = Vector2(0, 0)
+shader_parameter/scale = 1.0
+shader_parameter/offset = Vector2(0, 100)
 
 [node name="angrybirds" type="Node2D"]
 
-[node name="Angrybirds" type="Sprite2D" parent="."]
-scale = Vector2(0.714286, 0.869565)
-texture = ExtResource("1_vdtkn")
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0, 0)
+
+[node name="Angrybird(2)" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+scale = Vector2(2.61224, 2.32258)
+texture = ExtResource("1_yejji")
 centered = false
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
-offset_left = 4.0
-offset_top = 540.0
-offset_right = 1274.0
-offset_bottom = 721.0
-theme_override_font_sizes/normal_font_size = 68
-text = "how tf do you get banned from angry birds"
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.1, 0.1)
+
+[node name="Angrybird(6)" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
+scale = Vector2(2.6209, 3.29224)
+texture = ExtResource("2_0ixhg")
+centered = false
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Slingshot(1)" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+position = Vector2(125, 418)
+texture = ExtResource("3_wblgb")
+
+[node name="Slingshot(2)" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+position = Vector2(100, 374)
+texture = ExtResource("4_yr4jo")
+
+[node name="Angrybird(4)" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+position = Vector2(640, 489)
+scale = Vector2(2.88939, 1)
+texture = ExtResource("3_boff4")
+
+[node name="Angrybird(3)" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_xbbkx")
+position = Vector2(639.75, 617)
+scale = Vector2(3.70087, 1)
+texture = ExtResource("5_xa858")
+
+[node name="Angrybird(5)" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+position = Vector2(640, 505)
+scale = Vector2(3.74269, 1)
+texture = ExtResource("6_ccfe3")

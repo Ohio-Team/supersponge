@@ -82,6 +82,8 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 	if velocity.x != 0 and anim.animation != "jump" and anim.animation != "fall" and anim.animation != "groundpound" and anim.animation != "hurt" and anim.animation != "attack" and state != "dying":
 		anim.play("run")
+		if !BMOD.sfx_playing.has(preload("res://assets/sfx/walk.tres")) and is_on_floor():
+			BMOD.play_sfx(preload("res://assets/sfx/walk.tres"))
 		state = "walking"
 	if velocity.x == 0 and velocity.y == 0 and anim.animation != "attack" and state != "dying":
 		anim.play("idle")

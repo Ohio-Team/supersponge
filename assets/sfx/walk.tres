@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="MultiSoundEffect" load_steps=9 format=3 uid="uid://b44gntqd22ra5"]
+
+[ext_resource type="Script" path="res://addons/bmod/scripts/resources/multi_sound_effect_item.gd" id="1_d8ng6"]
+[ext_resource type="Script" path="res://addons/bmod/scripts/resources/multi_sound_effect.gd" id="2_msl82"]
+[ext_resource type="AudioStream" uid="uid://hor4p77c44k" path="res://assets/sfx/sb_walk1.wav" id="2_w67ln"]
+[ext_resource type="AudioStream" uid="uid://cwqfs8uoovj25" path="res://assets/sfx/sb_walk2.wav" id="3_crrwm"]
+[ext_resource type="Script" path="res://addons/bmod/scripts/resources/sound_effect_meta.gd" id="4_8vhm0"]
+
+[sub_resource type="Resource" id="Resource_qtmu5"]
+script = ExtResource("1_d8ng6")
+audio_stream = ExtResource("2_w67ln")
+weight = 1
+
+[sub_resource type="Resource" id="Resource_j2paj"]
+script = ExtResource("1_d8ng6")
+audio_stream = ExtResource("3_crrwm")
+weight = 1
+
+[sub_resource type="Resource" id="Resource_hy2k8"]
+script = ExtResource("4_8vhm0")
+volume_db = 0.0
+volume_variation_db = 0.0
+pitch_scale = 1.0
+pitch_variation = 0.1
+
+[resource]
+script = ExtResource("2_msl82")
+effect_pool = Array[ExtResource("1_d8ng6")]([SubResource("Resource_qtmu5"), SubResource("Resource_j2paj")])
+mode = 1
+meta = SubResource("Resource_hy2k8")
+play = false
+play_on_change = false
