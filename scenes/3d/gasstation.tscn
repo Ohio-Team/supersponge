@@ -1,10 +1,10 @@
 [gd_scene load_steps=14 format=3 uid="uid://ck0qyhot143g8"]
 
 [ext_resource type="PackedScene" uid="uid://8kbffcc412vs" path="res://scenes/3d/spongebob_3d.tscn" id="1_m53n5"]
-[ext_resource type="PackedScene" uid="uid://b6iqavb8jf88g" path="res://assets/3d/gasstation/station.blend" id="2_4e41y"]
+[ext_resource type="PackedScene" uid="uid://dvdqiu3kw72wx" path="res://assets/3d/gasstation/station.blend" id="2_4e41y"]
 [ext_resource type="LightmapGIData" uid="uid://iqgq47t50a46" path="res://scenes/3d/gasstation.lmbake" id="3_ygajm"]
-[ext_resource type="Texture2D" uid="uid://c7lmlrlh475un" path="res://assets/2d/miscsprites/weed.jpg" id="4_eambt"]
-[ext_resource type="AudioStream" uid="uid://di0qba0hyf8a2" path="res://assets/sfx/kendrick-scream.mp3" id="5_bgmc0"]
+[ext_resource type="Texture2D" uid="uid://vowhokwxio6k" path="res://assets/2d/miscsprites/weed.jpg" id="4_eambt"]
+[ext_resource type="AudioStream" uid="uid://dfq534lof5fma" path="res://assets/sfx/kendrick-scream.mp3" id="5_bgmc0"]
 
 [sub_resource type="GDScript" id="GDScript_x6dls"]
 script/source = "extends Node3D
@@ -245,6 +245,9 @@ bones/27/position = Vector3(0.0820764, -4.92637, 4.20344e-06)
 bones/28/position = Vector3(-0.0339704, -3.8529, 4.05997e-06)
 bones/29/position = Vector3(2.02859, -3.08745, 1.61851e-06)
 bones/30/position = Vector3(4.7273, 3.72529e-09, 2.4897e-08)
+
+[node name="AnimationTree" parent="Spongebob3d" index="1"]
+parameters/state/transition_request = "idle"
 
 [node name="station" parent="." instance=ExtResource("2_4e41y")]
 

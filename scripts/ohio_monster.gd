@@ -16,7 +16,7 @@ func _on_timer_timeout() -> void:
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if body.is_in_group("Player"):
 		BMOD.play_sfx(preload("res://assets/sfx/jumpscare.tres"))
-		OS.alert("Ohio Alert!","ONLY IN OHIO! OOOH!")
-		OS.alert("Ohio Alert!","ONLY IN OHIO! OOOH!")
+		OS.alert("ONLY IN OHIO! OOOH!","Ohio Alert!")
+		OS.alert("ONLY IN OHIO! OOOH!","Ohio Alert!")
 		if get_tree():
 			get_tree().reload_current_scene()

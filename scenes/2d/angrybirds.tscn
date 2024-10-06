@@ -23,6 +23,7 @@ func _ready() -> void:
 	Singleton.save_game()
 	DiscordRPC.details = \"The Birds Want Their Eggs Back.\"
 	DiscordRPC.refresh()
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -54,15 +55,23 @@ size = Vector2(542, 534)
 resource_name = "cameraangry"
 script/source = "extends Camera2D
 
+var is_moving = false
+var last_mouse_position = Vector2()
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _physics_process(delta: float) -> void:
-	position = get_local_mouse_position()
+func _input(event):
+	if event is InputEventMouseButton:
+		if event.button_index == MOUSE_BUTTON_RIGHT:
+			if event.pressed:
+				is_moving = true
+				last_mouse_position = get_global_mouse_position()
+			else:
+				is_moving = false
+func _physics_process(delta):
+	if is_moving:
+		var mouse_position = get_global_mouse_position()
+		var delta_position = mouse_position - last_mouse_position
+		position -= delta_position * (delta * 20)
+		last_mouse_position = mouse_position
 "
 
 [node name="angrybirds" type="Node2D"]
