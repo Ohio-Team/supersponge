@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://fi1roct1auwg"]
+[gd_scene load_steps=17 format=3 uid="uid://fi1roct1auwg"]
 
 [ext_resource type="Texture2D" uid="uid://bpuh2xpt6ablw" path="res://assets/2d/angrybirds/angrybird (2).png" id="1_yejji"]
 [ext_resource type="Texture2D" uid="uid://3mnrcq40ss4a" path="res://assets/2d/angrybirds/angrybird (6).png" id="2_0ixhg"]
@@ -8,6 +8,26 @@
 [ext_resource type="Texture2D" uid="uid://b8373o7m0yil0" path="res://assets/2d/angrybirds/slingshot (2).png" id="4_yr4jo"]
 [ext_resource type="Texture2D" uid="uid://b6duufffyv7jh" path="res://assets/2d/angrybirds/angrybird (3).png" id="5_xa858"]
 [ext_resource type="Texture2D" uid="uid://lhna2iae4mfo" path="res://assets/2d/angrybirds/angrybird (5).png" id="6_ccfe3"]
+[ext_resource type="PackedScene" uid="uid://oyjgpx7sh0" path="res://scenes/2d/angry_bird.tscn" id="8_kss6n"]
+[ext_resource type="Texture2D" uid="uid://84nu6b4ix10w" path="res://assets/2d/miscsprites/patrick.png" id="8_lhsp6"]
+[ext_resource type="Texture2D" uid="uid://chtjeh2b32lmm" path="res://assets/2d/miscsprites/ohiomonster.png" id="10_5e1gl"]
+
+[sub_resource type="GDScript" id="GDScript_hqh36"]
+resource_name = "angry birds"
+script/source = "extends Node2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	MusicPlayer.play_song(\"res://assets/music/angrybirds.ogg\")
+	DiscordRPC.details = \"The Birds Want Their Eggs Back.\"
+	DiscordRPC.refresh()
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xbbkx"]
 shader = ExtResource("4_xo47y")
@@ -15,7 +35,37 @@ shader_parameter/motion = Vector2(0, 0)
 shader_parameter/scale = 1.0
 shader_parameter/offset = Vector2(0, 100)
 
+[sub_resource type="GDScript" id="GDScript_gerps"]
+resource_name = "monster"
+script/source = "extends Area2D
+
+
+func _on_body_entered(body: Node2D) -> void:
+	if body.is_in_group(\"Bird\"):
+		BMOD.play_sfx(preload(\"res://assets/sfx/scream.tres\"))
+		queue_free()
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dmnwd"]
+size = Vector2(542, 534)
+
+[sub_resource type="GDScript" id="GDScript_wyt55"]
+resource_name = "cameraangry"
+script/source = "extends Camera2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _physics_process(delta: float) -> void:
+	position = get_local_mouse_position()
+"
+
 [node name="angrybirds" type="Node2D"]
+script = SubResource("GDScript_hqh36")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -23,7 +73,7 @@ shader_parameter/offset = Vector2(0, 100)
 motion_scale = Vector2(0, 0)
 
 [node name="Angrybird(2)" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-scale = Vector2(2.61224, 2.32258)
+scale = Vector2(2.61225, 2.32258)
 texture = ExtResource("1_yejji")
 centered = false
 
@@ -36,14 +86,6 @@ texture = ExtResource("2_0ixhg")
 centered = false
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
-
-[node name="Slingshot(1)" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
-position = Vector2(125, 418)
-texture = ExtResource("3_wblgb")
-
-[node name="Slingshot(2)" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
-position = Vector2(100, 374)
-texture = ExtResource("4_yr4jo")
 
 [node name="Angrybird(4)" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
 position = Vector2(640, 489)
@@ -61,3 +103,44 @@ texture = ExtResource("5_xa858")
 position = Vector2(640, 505)
 scale = Vector2(3.74269, 1)
 texture = ExtResource("6_ccfe3")
+
+[node name="Slingshot(1)" type="Sprite2D" parent="."]
+position = Vector2(125, 418)
+texture = ExtResource("3_wblgb")
+
+[node name="Angry Bird" parent="." instance=ExtResource("8_kss6n")]
+position = Vector2(118, 357)
+
+[node name="Slingshot(2)" type="Sprite2D" parent="."]
+position = Vector2(100, 374)
+texture = ExtResource("4_yr4jo")
+
+[node name="Area2D" type="Area2D" parent="."]
+script = SubResource("GDScript_gerps")
+
+[node name="Ohiomonster" type="Sprite2D" parent="Area2D"]
+position = Vector2(981.75, 235.75)
+scale = Vector2(0.778336, 0.749671)
+texture = ExtResource("10_5e1gl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(982, 255)
+shape = SubResource("RectangleShape2D_dmnwd")
+
+[node name="Patrick" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(73, 486)
+scale = Vector2(1.875, 2.0625)
+texture = ExtResource("8_lhsp6")
+
+[node name="Patrick2" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(25, 487)
+scale = Vector2(1.875, 2.0625)
+texture = ExtResource("8_lhsp6")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(646, 319)
+script = SubResource("GDScript_wyt55")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

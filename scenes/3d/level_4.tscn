@@ -1,15 +1,15 @@
 [gd_scene load_steps=18 format=3 uid="uid://k6460ynggk43"]
 
 [ext_resource type="Script" path="res://scripts/3dtest.gd" id="1_v4in3"]
-[ext_resource type="Texture2D" uid="uid://d215ogsgn4fvt" path="res://assets/3d/bikinibottom/textures/jf_sky_color_77.png" id="2_lna1d"]
+[ext_resource type="Texture2D" uid="uid://c7wiwlmd3jby6" path="res://assets/3d/bikinibottom/textures/jf_sky_color_77.png" id="2_lna1d"]
 [ext_resource type="PackedScene" uid="uid://broib4lslli7c" path="res://assets/3d/bikinibottom/bikinibottom3d.tscn" id="3_vhacy"]
-[ext_resource type="LightmapGIData" uid="uid://cyfw6h6b3f151" path="res://scenes/3d/level4.lmbake" id="4_15kgx"]
 [ext_resource type="PackedScene" uid="uid://8kbffcc412vs" path="res://scenes/3d/spongebob_3d.tscn" id="5_ehy8v"]
-[ext_resource type="Texture2D" uid="uid://4y6f8lopmbo0" path="res://assets/2d/miscsprites/smilingfriendsiftheywerethesimpsons.png" id="6_dy3b1"]
+[ext_resource type="Texture2D" uid="uid://gapq6s2srwla" path="res://assets/2d/miscsprites/smilingfriendsiftheywerethesimpsons.png" id="6_dy3b1"]
 [ext_resource type="Script" path="res://scripts/smiling_friends.gd" id="7_sgdm6"]
-[ext_resource type="AudioStream" uid="uid://ds1hcxfx5vric" path="res://assets/voices/smilingfriends_output.wav" id="8_pgru1"]
-[ext_resource type="AudioStream" uid="uid://d33qcmouwphc" path="res://assets/voices/spongebob1_output.wav" id="9_ninet"]
-[ext_resource type="FontFile" uid="uid://c4lyevru8sr3e" path="res://assets/fonts/Krabby Patty.ttf" id="10_8lon8"]
+[ext_resource type="AudioStream" uid="uid://b0xhyxp1dxdv5" path="res://assets/voices/smilingfriends_output.wav" id="8_pgru1"]
+[ext_resource type="AudioStream" uid="uid://c52n7mocrelyt" path="res://assets/voices/spongebob1_output.wav" id="9_ninet"]
+[ext_resource type="FontFile" uid="uid://ia1v43t7vpqa" path="res://assets/fonts/Krabby Patty.ttf" id="10_8lon8"]
+[ext_resource type="PackedScene" uid="uid://dmdv8u4uve0r6" path="res://scenes/3d/spatula_3d.tscn" id="10_dvwl7"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_adr1q"]
 panorama = ExtResource("2_lna1d")
@@ -205,7 +205,6 @@ shadow_enabled = true
 [node name="LightmapGI" type="LightmapGI" parent="."]
 quality = 0
 texel_scale = 0.5
-light_data = ExtResource("4_15kgx")
 
 [node name="Spongebob3d" parent="." instance=ExtResource("5_ehy8v")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -53.8024, 0.217664, -31.7717)
@@ -249,5 +248,11 @@ theme_override_constants/outline_size = 11
 theme_override_fonts/normal_font = ExtResource("10_8lon8")
 theme_override_font_sizes/normal_font_size = 23
 bbcode_enabled = true
+
+[node name="Spatula3d" parent="." instance=ExtResource("10_dvwl7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.94007, 6.84823, -19.1331)
+
+[node name="Spatula3d2" parent="." instance=ExtResource("10_dvwl7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.6828, 6.08182, -13.0548)
 
 [connection signal="body_entered" from="Sprite3D/Area3D" to="Sprite3D" method="_on_area_3d_body_entered"]

@@ -1,10 +1,10 @@
-[gd_scene load_steps=17 format=3 uid="uid://dyk3m0ilabu4e"]
+[gd_scene load_steps=19 format=3 uid="uid://dyk3m0ilabu4e"]
 
-[ext_resource type="PackedScene" uid="uid://c1jqpegpjkgjq" path="res://assets/3d/maze/maze.blend" id="1_6x05c"]
+[ext_resource type="PackedScene" uid="uid://c2a2viyf4hpun" path="res://assets/3d/maze/maze.blend" id="1_6x05c"]
 [ext_resource type="PackedScene" uid="uid://cj8ncoac82hgs" path="res://scenes/3d/ohio_monster.tscn" id="1_i3y4u"]
 [ext_resource type="PackedScene" uid="uid://eit1pvvg3w60" path="res://scenes/3d/firstpersonplayer.tscn" id="2_pdilh"]
 [ext_resource type="PackedScene" uid="uid://dmdv8u4uve0r6" path="res://scenes/3d/spatula_3d.tscn" id="3_1ttd3"]
-[ext_resource type="Texture2D" uid="uid://bi0dls78ss7tg" path="res://assets/2d/miscsprites/patrick.png" id="5_irk2p"]
+[ext_resource type="Texture2D" uid="uid://84nu6b4ix10w" path="res://assets/2d/miscsprites/patrick.png" id="5_irk2p"]
 
 [sub_resource type="GDScript" id="GDScript_tt7vt"]
 resource_name = "maze.gd"
@@ -93,6 +93,20 @@ albedo_texture = ExtResource("5_irk2p")
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_ydjoq"]
 material = SubResource("StandardMaterial3D_oo8ru")
 radius = 1.0
+
+[sub_resource type="GDScript" id="GDScript_cdr0w"]
+resource_name = "switch"
+script/source = "extends Area3D
+
+
+
+
+func _on_body_entered(body: Node3D) -> void:
+	if body.is_in_group(\"Player\"):
+		get_tree().change_scene_to_file(\"res://scenes/2d/angrybirds.tscn\")
+"
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pjxoo"]
 
 [node name="maze" type="Node3D"]
 script = SubResource("GDScript_tt7vt")
@@ -307,4 +321,11 @@ mesh = SubResource("CapsuleMesh_ydjoq")
 emission_shape = 1
 emission_sphere_radius = 1.0
 
+[node name="Area3D" type="Area3D" parent="Sprite3D"]
+script = SubResource("GDScript_cdr0w")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sprite3D/Area3D"]
+shape = SubResource("BoxShape3D_pjxoo")
+
 [connection signal="body_entered" from="trampoline" to="trampoline" method="_on_body_entered"]
+[connection signal="body_entered" from="Sprite3D/Area3D" to="Sprite3D/Area3D" method="_on_body_entered"]

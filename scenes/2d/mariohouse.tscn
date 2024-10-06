@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://hn8oy18sog1j"]
 
-[ext_resource type="Texture2D" uid="uid://cn5uxgkbprhj3" path="res://assets/2d/miscsprites/mariohouse.png" id="1_6jjtd"]
+[ext_resource type="Texture2D" uid="uid://qf8vcg32iaky" path="res://assets/2d/miscsprites/mariohouse.png" id="1_6jjtd"]
 [ext_resource type="PackedScene" uid="uid://ijj6qbkx8vhd" path="res://scenes/2d/platform.tscn" id="2_sobnu"]
 [ext_resource type="PackedScene" uid="uid://cjoo6ilm8eim1" path="res://scenes/2d/spongebob2d.tscn" id="3_tm0yy"]
 [ext_resource type="PackedScene" uid="uid://b86vokonmmvq5" path="res://scenes/2d/spatula.tscn" id="4_dxh5o"]

@@ -223,9 +223,9 @@ scale = Vector2(0.137, 0.139)
 texture = ExtResource("7_bnkkd")
 
 [node name="FPS" type="Label" parent="."]
-offset_left = 1062.0
+offset_left = 1205.0
 offset_top = 23.0
-offset_right = 1137.0
+offset_right = 1280.0
 offset_bottom = 91.0
 
 [node name="Pause" type="Node2D" parent="."]
