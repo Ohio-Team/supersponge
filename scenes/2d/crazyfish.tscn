@@ -1,10 +1,10 @@
 [gd_scene load_steps=9 format=3 uid="uid://dolf5os2imxdu"]
 
 [ext_resource type="Script" path="res://scripts/Crazyfish.gd" id="1_k62qc"]
-[ext_resource type="Texture2D" uid="uid://bvhsoe2nios8e" path="res://assets/2d/enemies/crazyfish1.png" id="2_hjbea"]
-[ext_resource type="Texture2D" uid="uid://cb027sr626i3y" path="res://assets/2d/enemies/crazyfish2.png" id="3_b2t4s"]
-[ext_resource type="Texture2D" uid="uid://bq268l865srkq" path="res://assets/2d/enemies/crazyfish3.png" id="4_gg0kf"]
-[ext_resource type="Texture2D" uid="uid://n6mxmcggqha7" path="res://assets/2d/enemies/crazyfish4.png" id="5_645va"]
+[ext_resource type="Texture2D" uid="uid://bicewy8fb7djh" path="res://assets/2d/enemies/crazyfish1.png" id="2_hjbea"]
+[ext_resource type="Texture2D" uid="uid://c8ajj552yr8kn" path="res://assets/2d/enemies/crazyfish2.png" id="3_b2t4s"]
+[ext_resource type="Texture2D" uid="uid://dxh04tmb3wy8p" path="res://assets/2d/enemies/crazyfish3.png" id="4_gg0kf"]
+[ext_resource type="Texture2D" uid="uid://btpgpfbr4bik8" path="res://assets/2d/enemies/crazyfish4.png" id="5_645va"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_wcj1d"]
 animations = [{
@@ -32,7 +32,7 @@ size = Vector2(14, 25)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_38hmy"]
 size = Vector2(29, 51)
 
-[node name="Crazyfish" type="CharacterBody2D"]
+[node name="Crazyfish" type="CharacterBody2D" groups=["Enemy"]]
 script = ExtResource("1_k62qc")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

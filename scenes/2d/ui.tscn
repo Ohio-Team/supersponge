@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://bbrct2r84j0l2"]
+[gd_scene load_steps=23 format=3 uid="uid://bbrct2r84j0l2"]
 
 [ext_resource type="Script" path="res://scripts/ui.gd" id="1_eaqxp"]
 [ext_resource type="FontFile" uid="uid://ia1v43t7vpqa" path="res://assets/fonts/Krabby Patty.ttf" id="2_0v11p"]
@@ -67,6 +67,16 @@ func _on_pressed() -> void:
 	$\"..\".visible = false
 	get_tree().paused = false
 	get_tree().change_scene_to_file(\"res://scenes/Main Menu.tscn\")
+"
+
+[sub_resource type="GDScript" id="GDScript_fylcy"]
+resource_name = "Restart"
+script/source = "extends Button
+
+func _on_pressed() -> void:
+	$\"..\".visible = false
+	get_tree().paused = false
+	get_tree().reload_current_scene()
 "
 
 [sub_resource type="GDScript" id="GDScript_ae5g8"]
@@ -229,7 +239,6 @@ offset_right = 1280.0
 offset_bottom = 91.0
 
 [node name="Pause" type="Node2D" parent="."]
-visible = false
 
 [node name="ColorRect" type="ColorRect" parent="Pause"]
 offset_left = -1.0
@@ -273,6 +282,14 @@ offset_bottom = 417.0
 grow_horizontal = 2
 grow_vertical = 2
 script = SubResource("GDScript_4xmq8")
+
+[node name="Button4" type="Button" parent="Pause"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 571.0
+offset_top = 497.0
+offset_right = 738.0
+offset_bottom = 547.0
+script = SubResource("GDScript_fylcy")
 
 [node name="Button2" type="Button" parent="Pause"]
 self_modulate = Color(1, 1, 1, 0)
@@ -321,4 +338,5 @@ bus = &"Music"
 
 [connection signal="pressed" from="Pause/Button" to="Pause/Button" method="_on_pressed"]
 [connection signal="pressed" from="Pause/Button3" to="Pause/Button3" method="_on_pressed"]
+[connection signal="pressed" from="Pause/Button4" to="Pause/Button4" method="_on_pressed"]
 [connection signal="pressed" from="Pause/Button2" to="Pause/Button2" method="_on_pressed"]

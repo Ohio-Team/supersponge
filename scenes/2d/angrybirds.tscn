@@ -88,7 +88,7 @@ texture = ExtResource("1_yejji")
 centered = false
 
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2(0.1, 0.1)
+motion_scale = Vector2(0.01, 0.01)
 
 [node name="Angrybird(6)" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
 scale = Vector2(2.6209, 3.29224)
