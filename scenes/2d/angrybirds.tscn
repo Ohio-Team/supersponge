@@ -27,8 +27,10 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func _physics_process(delta: float) -> void:
+	if !$Area2D:
+		await Singleton.wait(5)
+		get_tree().change_scene_to_file(\"res://scenes/3d/bossfight3d.tscn\")
 "
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xbbkx"]

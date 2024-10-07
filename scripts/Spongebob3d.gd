@@ -5,6 +5,7 @@ class_name spunchbob extends CharacterBody3D
 @onready var animation_tree = $AnimationTree
 @onready var camera : ThirdPersonCamera = $ThirdPersonCamera
 @export var JUMP_VELOCITY = 9.8
+var state = "run"
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -19,9 +20,11 @@ func _physics_process(delta):
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
+		state = "jump"
 		
 	if Input.is_action_just_pressed("jump") and not is_on_floor():
 		animation_tree["parameters/state/transition_request"] = "butt"
+		state = "groundpound"
 		velocity.y = -JUMP_VELOCITY
 
 	# Get the input direction and handle the movement/deceleration.
@@ -31,11 +34,13 @@ func _physics_process(delta):
 	if direction:
 		if is_on_floor():
 			animation_tree["parameters/state/transition_request"] = "walking"
+			state = "walking"
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
 	elif direction == Vector3(0,0,0) and velocity.y == 0 and animation_tree["parameters/state/current_state"] != "weed":
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		animation_tree["parameters/state/transition_request"] = "idle"
+		state = "idle"
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 
 	move_and_slide()
