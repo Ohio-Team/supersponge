@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" path="res://scripts/options.gd" id="1_gxje3"]
 [ext_resource type="Script" path="res://scripts/audio___master.gd" id="1_ua5gb"]
-[ext_resource type="Texture2D" uid="uid://blnje08uw142w" path="res://assets/2d/miscsprites/SBSPSS_5_14_2001_Copyright_Screen.png" id="2_pa8yl"]
+[ext_resource type="Texture2D" uid="uid://bwjx3hxlvdets" path="res://assets/2d/miscsprites/SBSPSS_5_14_2001_Copyright_Screen.png" id="2_pa8yl"]
 [ext_resource type="Shader" path="res://scenes/Options.gdshader" id="2_q1awi"]
 [ext_resource type="Script" path="res://scripts/optionsmenubutton.gd" id="3_i0ro2"]
-[ext_resource type="FontFile" uid="uid://c4lyevru8sr3e" path="res://assets/fonts/Krabby Patty.ttf" id="6_dvybc"]
+[ext_resource type="FontFile" uid="uid://ia1v43t7vpqa" path="res://assets/fonts/Krabby Patty.ttf" id="6_dvybc"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_886qq"]
 shader = ExtResource("2_q1awi")
