@@ -44,6 +44,7 @@ func _process(delta: float) -> void:
 
 
 func _on_pressed() -> void:
+	BMOD.play_sfx(preload(\"res://assets/sfx/funnybuttons/buttons.tres\"))
 	get_tree().paused = false
 	$\"..\".visible = false
 "
@@ -65,6 +66,7 @@ func _process(delta: float) -> void:
 
 func _on_pressed() -> void:
 	$\"..\".visible = false
+	BMOD.play_sfx(preload(\"res://assets/sfx/funnybuttons/buttons.tres\"))
 	get_tree().paused = false
 	get_tree().change_scene_to_file(\"res://scenes/Main Menu.tscn\")
 "
@@ -75,7 +77,9 @@ script/source = "extends Button
 
 func _on_pressed() -> void:
 	$\"..\".visible = false
+	BMOD.play_sfx(preload(\"res://assets/sfx/funnybuttons/buttons.tres\"))
 	get_tree().paused = false
+	MusicPlayer.stop_song()
 	get_tree().reload_current_scene()
 "
 
@@ -97,6 +101,7 @@ func _process(delta: float) -> void:
 func _on_pressed() -> void:
 	$\"..\".visible = false
 	Singleton.save_game()
+	BMOD.play_sfx(preload(\"res://assets/sfx/funnybuttons/buttons.tres\"))
 	get_tree().paused = false
 	get_tree().change_scene_to_file(\"res://scenes/Options.tscn\")
 "
@@ -239,7 +244,6 @@ offset_right = 1280.0
 offset_bottom = 91.0
 
 [node name="Pause" type="Node2D" parent="."]
-visible = false
 
 [node name="ColorRect" type="ColorRect" parent="Pause"]
 offset_left = -1.0
@@ -342,6 +346,8 @@ offset_left = 1151.0
 offset_top = 694.0
 offset_right = 1681.0
 offset_bottom = 760.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
 text = "0"
 
 [connection signal="pressed" from="Pause/Button" to="Pause/Button" method="_on_pressed"]

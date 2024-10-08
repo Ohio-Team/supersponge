@@ -1,0 +1,35 @@
+[gd_resource type="Resource" script_class="MultiSoundEffect" load_steps=11 format=3 uid="uid://bbutvjp2li3rq"]
+
+[ext_resource type="Script" path="res://addons/bmod/scripts/resources/multi_sound_effect_item.gd" id="1_24w2s"]
+[ext_resource type="Script" path="res://addons/bmod/scripts/resources/multi_sound_effect.gd" id="2_24afg"]
+[ext_resource type="AudioStream" uid="uid://bjldim3jwo0h7" path="res://assets/sfx/funnybuttons/Oxe-Rc-v.wav" id="2_ccap2"]
+[ext_resource type="AudioStream" uid="uid://cmduxs77sd577" path="res://assets/sfx/funnybuttons/P7Yij93V.wav" id="3_kkrga"]
+[ext_resource type="AudioStream" uid="uid://bcapw3y4wpmk1" path="res://assets/sfx/funnybuttons/qoOl57RP.wav" id="4_ry5cy"]
+[ext_resource type="AudioStream" uid="uid://dvywc82jt7pk3" path="res://assets/sfx/funnybuttons/XDzYZdyZ.wav" id="5_oltub"]
+
+[sub_resource type="Resource" id="Resource_mllxs"]
+script = ExtResource("1_24w2s")
+audio_stream = ExtResource("2_ccap2")
+weight = 1
+
+[sub_resource type="Resource" id="Resource_rluao"]
+script = ExtResource("1_24w2s")
+audio_stream = ExtResource("3_kkrga")
+weight = 1
+
+[sub_resource type="Resource" id="Resource_0q4i3"]
+script = ExtResource("1_24w2s")
+audio_stream = ExtResource("4_ry5cy")
+weight = 1
+
+[sub_resource type="Resource" id="Resource_skjc8"]
+script = ExtResource("1_24w2s")
+audio_stream = ExtResource("5_oltub")
+weight = 1
+
+[resource]
+script = ExtResource("2_24afg")
+effect_pool = Array[ExtResource("1_24w2s")]([SubResource("Resource_mllxs"), SubResource("Resource_rluao"), SubResource("Resource_0q4i3"), SubResource("Resource_skjc8")])
+mode = 1
+play = false
+play_on_change = false

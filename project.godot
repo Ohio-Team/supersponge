@@ -29,8 +29,8 @@ bmod/default_sfx_bus=&"SFX"
 MusicPlayer="*res://scenes/MusicPlayer.tscn"
 Ui="*res://scenes/2d/ui.tscn"
 Singleton="*res://scripts/singleton.gd"
-DiscordRPCLoader="*res://addons/discord-rpc-gd/nodes/discord_autoload.gd"
 BMOD="*res://addons/bmod/autoloads/bmod/bmod.tscn"
+DiscordRPCLoader="*res://addons/discord-rpc-gd/nodes/discord_autoload.gd"
 
 [display]
 
@@ -48,7 +48,7 @@ version_control/autoload_on_startup=true
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/bmod/plugin.cfg", "res://addons/third-person-camera/plugin.cfg")
+enabled=PackedStringArray("res://addons/bmod/plugin.cfg", "res://addons/discord-rpc-gd/plugin.cfg", "res://addons/third-person-camera/plugin.cfg")
 
 [file_customization]
 

@@ -1,9 +1,9 @@
 [gd_scene load_steps=13 format=3 uid="uid://bnyal22s58ujp"]
 
 [ext_resource type="Script" path="res://scripts/fakebobfight.gd" id="1_howxn"]
-[ext_resource type="Texture2D" uid="uid://dipw334ofksnu" path="res://assets/2d/tilesets/sewers.png" id="1_j2in3"]
+[ext_resource type="Texture2D" uid="uid://cy3y2sjkhfbor" path="res://assets/2d/tilesets/sewers.png" id="1_j2in3"]
 [ext_resource type="PackedScene" uid="uid://cjoo6ilm8eim1" path="res://scenes/2d/spongebob2d.tscn" id="2_gb4cp"]
-[ext_resource type="Texture2D" uid="uid://bhlh0nrcpeesp" path="res://assets/2d/miscsprites/rizzage.png" id="2_t08e7"]
+[ext_resource type="Texture2D" uid="uid://b1xqjyvtwjlaq" path="res://assets/2d/miscsprites/rizzage.png" id="2_t08e7"]
 [ext_resource type="PackedScene" uid="uid://ijj6qbkx8vhd" path="res://scenes/2d/platform.tscn" id="3_ldgxs"]
 [ext_resource type="PackedScene" uid="uid://c682xfnc542qh" path="res://scenes/2d/fakebob.tscn" id="5_7oub3"]
 
