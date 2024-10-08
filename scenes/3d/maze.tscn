@@ -22,7 +22,7 @@ func _ready() -> void:
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xmmd2"]
 sky_top_color = Color(0, 0, 0, 1)
-sky_horizon_color = Color(0.517191, 0.513392, 0.508998, 1)
+sky_horizon_color = Color(0.104874, 0.103547, 0.102011, 1)
 sky_energy_multiplier = 0.0
 ground_bottom_color = Color(0.068762, 0.0535688, 0.0359923, 1)
 ground_horizon_color = Color(0.517191, 0.513392, 0.508998, 1)
@@ -32,6 +32,7 @@ sky_material = SubResource("ProceduralSkyMaterial_xmmd2")
 
 [sub_resource type="Environment" id="Environment_355on"]
 background_mode = 2
+background_energy_multiplier = 0.7
 sky = SubResource("Sky_llbhu")
 tonemap_mode = 2
 glow_enabled = true
@@ -43,20 +44,13 @@ geometry_parsed_geometry_type = 2
 cell_size = 0.15
 border_size = 0.5
 
-[sub_resource type="GDScript" id="GDScript_phq8p"]
-resource_name = "follow"
-script/source = "extends OmniLight3D
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _physics_process(delta: float) -> void:
-	position = $\"../firstpersonplayer\".position + Vector3(0,5,0)
-"
-
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_kiurh"]
 margin = 0.0
 height = 359.473
 radius = 33.5431
+
+[sub_resource type="SeparationRayShape3D" id="SeparationRayShape3D_cb5wl"]
+margin = 1.0
 
 [sub_resource type="GDScript" id="GDScript_k33ja"]
 resource_name = "trampoline"
@@ -123,11 +117,6 @@ navigation_mesh = SubResource("NavigationMesh_mertt")
 [node name="maze" parent="NavigationRegion3D" instance=ExtResource("1_6x05c")]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
 
-[node name="OmniLight3D" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.90728, -14.7178)
-omni_range = 10.0
-script = SubResource("GDScript_phq8p")
-
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="StaticBody3D"]
@@ -145,7 +134,19 @@ omni_range = 79.1062
 omni_attenuation = -0.415
 
 [node name="firstpersonplayer" parent="." instance=ExtResource("2_pdilh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.32857, 6.51703, -41.9009)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.9837, 6.51703, -40.9168)
+
+[node name="Camera3D" parent="firstpersonplayer/TwistPivot/PitchPivot" index="0"]
+fov = 90.0
+
+[node name="CameraSpringArm" type="SpringArm3D" parent="firstpersonplayer/TwistPivot/PitchPivot/Camera3D" index="0"]
+process_priority = 11
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 1, 0.5)
+shape = SubResource("SeparationRayShape3D_cb5wl")
+spring_length = 8.0
+
+[node name="OmniLight3D" type="OmniLight3D" parent="firstpersonplayer/TwistPivot/PitchPivot/Camera3D/CameraSpringArm"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8)
 
 [node name="Spatulas" type="Node3D" parent="."]
 
@@ -329,3 +330,5 @@ shape = SubResource("BoxShape3D_pjxoo")
 
 [connection signal="body_entered" from="trampoline" to="trampoline" method="_on_body_entered"]
 [connection signal="body_entered" from="Sprite3D/Area3D" to="Sprite3D/Area3D" method="_on_body_entered"]
+
+[editable path="firstpersonplayer"]
