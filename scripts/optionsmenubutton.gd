@@ -20,10 +20,11 @@ func _on_pressed() -> void:
 		
 func settings():
 	var dict = {
-		"Music": $"../Music".value,
-		"SFX": $"../SFX".value,
-		"Master": $"../Master".value,
-		"showfps": $"../CheckButton".button_pressed
+		"Music": $"../TabContainer/Audio/MarginContainer/ScrollContainer/VBoxContainer/Music".value,
+		"SFX": $"../TabContainer/Audio/MarginContainer/ScrollContainer/VBoxContainer/SFX".value,
+		"Master": $"../TabContainer/Audio/MarginContainer/ScrollContainer/VBoxContainer/Master".value,
+		"showfps": $"../TabContainer/UI/MarginContainer/ScrollContainer/BoxContainer/Fpsbutton".button_pressed,
+		"showspeedrun": $"../TabContainer/UI/MarginContainer/ScrollContainer/BoxContainer/Speedrunbutton".button_pressed
 	}
 	return dict
 	

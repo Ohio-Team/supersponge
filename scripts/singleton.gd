@@ -5,6 +5,7 @@ extends Node
 @export var fuel:float = 100.0
 @export var inmenu:bool = false
 @export var showfps:bool = false
+@export var showspeedrun:bool = false
 @export var lifes:int = 4
 @export var health:int = 3
 @export var spatulas:int = 0
@@ -83,3 +84,4 @@ func load_settings():
 		AudioServer.set_bus_volume_db(1,linear_to_db(data["Music"]))
 		AudioServer.set_bus_volume_db(2,linear_to_db(data["SFX"]))
 		showfps = data["showfps"]
+		showspeedrun = data["showspeedrun"]

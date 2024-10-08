@@ -20,14 +20,14 @@ func _process(delta):
 
 func _on_body_entered(body):
 	if body == player:
+		print(player.state)
 		if player.state == "groundpound" or player.state == "attack" or player.state == "fall" or player.state == "land":
 			if player.state != "attack":
 				player.state = "fall"
 				player.velocity.y = -400
 			Singleton.do_explosion(position)
 			queue_free()
-		else:
-			if player.state != "dying":
+		elif player.state != "dying" and !player.invincible:
 				Singleton.health -= 1
 				player.state = "hurt"
 

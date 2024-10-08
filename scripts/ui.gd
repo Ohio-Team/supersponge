@@ -1,5 +1,6 @@
-
 extends CanvasLayer
+
+var time: float = 0.0
 
 signal dialog_finished
 # Called when the node enters the scene tree for the first time.
@@ -13,7 +14,12 @@ func _process(delta):
 		visible = false
 	else:
 		visible = true
-		
+	if Singleton.showspeedrun:
+		time += delta
+		$RichTextLabel.visible = true
+		$RichTextLabel.text = str(round(fmod(time,3600) / 60)) + ":" + str(round(fmod(time,60))) + ":" + str(round(fmod(time,1) * 100))
+	else:
+		$RichTextLabel.visible = false
 	$Counter.text = "[shake]x" + str(Singleton.health)
 	$Counter2.text = "[shake]x" + str(Singleton.spatulas)
 	if Singleton.showfuel:

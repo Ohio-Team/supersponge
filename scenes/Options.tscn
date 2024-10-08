@@ -1,11 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://dhxbkh5627l1q"]
+[gd_scene load_steps=10 format=3 uid="uid://dhxbkh5627l1q"]
 
 [ext_resource type="Script" path="res://scripts/options.gd" id="1_gxje3"]
 [ext_resource type="Script" path="res://scripts/audio___master.gd" id="1_ua5gb"]
 [ext_resource type="Texture2D" uid="uid://bwjx3hxlvdets" path="res://assets/2d/miscsprites/SBSPSS_5_14_2001_Copyright_Screen.png" id="2_pa8yl"]
 [ext_resource type="Shader" path="res://scenes/Options.gdshader" id="2_q1awi"]
 [ext_resource type="Script" path="res://scripts/optionsmenubutton.gd" id="3_i0ro2"]
-[ext_resource type="FontFile" uid="uid://ia1v43t7vpqa" path="res://assets/fonts/Krabby Patty.ttf" id="6_dvybc"]
+[ext_resource type="PackedScene" uid="uid://cnnghhi78bxjd" path="res://scenes/rebind.tscn" id="6_ye3qy"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_886qq"]
 shader = ExtResource("2_q1awi")
@@ -30,6 +30,25 @@ func _process(delta: float) -> void:
 
 func _on_pressed() -> void:
 	Singleton.showfps = button_pressed
+"
+
+[sub_resource type="GDScript" id="GDScript_t851n"]
+resource_name = "speedrunbutton.gd"
+script/source = "extends CheckButton
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+
+
+func _on_pressed() -> void:
+	Singleton.showspeedrun = button_pressed
 "
 
 [node name="Options" type="Control"]
@@ -58,90 +77,160 @@ offset_bottom = 661.0
 text = "Back"
 script = ExtResource("3_i0ro2")
 
-[node name="Master" type="HSlider" parent="."]
+[node name="TabContainer" type="TabContainer" parent="."]
 layout_mode = 0
-offset_left = 520.0
-offset_top = 73.0
-offset_right = 742.0
-offset_bottom = 168.0
-max_value = 1.0
-step = 0.001
-script = ExtResource("1_ua5gb")
-bus_name = "Master"
+offset_left = 262.0
+offset_top = 154.0
+offset_right = 978.0
+offset_bottom = 559.0
+current_tab = 2
 
-[node name="Music" type="HSlider" parent="."]
-layout_mode = 0
-offset_left = 522.0
-offset_top = 126.0
-offset_right = 744.0
-offset_bottom = 221.0
-max_value = 1.0
-step = 0.001
-script = ExtResource("1_ua5gb")
-bus_name = "Music"
+[node name="Audio" type="TabBar" parent="TabContainer"]
+visible = false
+layout_mode = 2
+tab_alignment = 1
+metadata/_tab_index = 0
 
-[node name="SFX" type="HSlider" parent="."]
-layout_mode = 0
-offset_left = 522.0
-offset_top = 176.0
-offset_right = 744.0
-offset_bottom = 271.0
-max_value = 1.0
-step = 0.001
-script = ExtResource("1_ua5gb")
-bus_name = "SFX"
-
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
-layout_mode = 0
-offset_left = 599.0
-offset_top = 89.0
-offset_right = 693.0
-offset_bottom = 128.0
-text = "Master"
-
-[node name="RichTextLabel2" type="RichTextLabel" parent="."]
-layout_mode = 0
-offset_left = 615.0
-offset_top = 188.0
-offset_right = 709.0
-offset_bottom = 227.0
-text = "SFX"
-
-[node name="RichTextLabel3" type="RichTextLabel" parent="."]
-layout_mode = 0
-offset_left = 602.0
-offset_top = 137.0
-offset_right = 696.0
-offset_bottom = 176.0
-text = "Music"
-
-[node name="CheckButton" type="CheckButton" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/Audio"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 585.0
-offset_top = 568.0
-offset_right = 707.0
-offset_bottom = 599.0
+offset_left = -349.5
+offset_top = -177.0
+offset_right = 349.5
+offset_bottom = 177.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/Audio/MarginContainer"]
+layout_mode = 2
+follow_focus = true
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
+
+[node name="VBoxContainer" type="BoxContainer" parent="TabContainer/Audio/MarginContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+alignment = 1
+vertical = true
+
+[node name="Label" type="Label" parent="TabContainer/Audio/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "Master                                                                        "
+
+[node name="Master" type="HSlider" parent="TabContainer/Audio/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+script = ExtResource("1_ua5gb")
+bus_name = "Master"
+
+[node name="Label2" type="Label" parent="TabContainer/Audio/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "Music"
+
+[node name="Music" type="HSlider" parent="TabContainer/Audio/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+script = ExtResource("1_ua5gb")
+bus_name = "Music"
+
+[node name="Label3" type="Label" parent="TabContainer/Audio/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "SFX"
+
+[node name="SFX" type="HSlider" parent="TabContainer/Audio/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+script = ExtResource("1_ua5gb")
+bus_name = "SFX"
+
+[node name="UI" type="TabBar" parent="TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/UI"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.00977654
+anchor_top = 0.0160428
+anchor_right = 0.988827
+anchor_bottom = 0.983957
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/UI/MarginContainer"]
+layout_mode = 2
+
+[node name="BoxContainer" type="BoxContainer" parent="TabContainer/UI/MarginContainer/ScrollContainer"]
+layout_mode = 2
+vertical = true
+
+[node name="Fpsbutton" type="CheckButton" parent="TabContainer/UI/MarginContainer/ScrollContainer/BoxContainer"]
+layout_mode = 2
 text = "Show FPS"
 script = SubResource("GDScript_ufrsh")
 
-[node name="Option Labels" type="Node" parent="."]
+[node name="Speedrunbutton" type="CheckButton" parent="TabContainer/UI/MarginContainer/ScrollContainer/BoxContainer"]
+layout_mode = 2
+text = "Show Speedrun Timer"
+script = SubResource("GDScript_t851n")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Option Labels"]
-offset_left = 591.0
-offset_top = 40.0
-offset_right = 833.0
-offset_bottom = 162.0
-theme_override_constants/outline_size = 10
-theme_override_fonts/normal_font = ExtResource("6_dvybc")
-theme_override_font_sizes/normal_font_size = 28
-text = "Audio"
+[node name="Controls" type="TabBar" parent="TabContainer"]
+layout_mode = 2
+metadata/_tab_index = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/Controls"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.00977654
+anchor_top = 0.0160428
+anchor_right = 0.988827
+anchor_bottom = 0.983957
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/Controls/MarginContainer"]
+layout_mode = 2
+
+[node name="BoxContainer" type="BoxContainer" parent="TabContainer/Controls/MarginContainer/ScrollContainer"]
+layout_mode = 2
+theme_override_constants/separation = 64
+vertical = true
+
+[node name="Rebind" parent="TabContainer/Controls/MarginContainer/ScrollContainer/BoxContainer" instance=ExtResource("6_ye3qy")]
+layout_mode = 2
+action_name = "left"
+
+[node name="Rebind2" parent="TabContainer/Controls/MarginContainer/ScrollContainer/BoxContainer" instance=ExtResource("6_ye3qy")]
+layout_mode = 2
+action_name = "right"
+
+[node name="Rebind3" parent="TabContainer/Controls/MarginContainer/ScrollContainer/BoxContainer" instance=ExtResource("6_ye3qy")]
+layout_mode = 2
+action_name = "front"
+
+[node name="Rebind4" parent="TabContainer/Controls/MarginContainer/ScrollContainer/BoxContainer" instance=ExtResource("6_ye3qy")]
+layout_mode = 2
+action_name = "back"
+
+[node name="Rebind5" parent="TabContainer/Controls/MarginContainer/ScrollContainer/BoxContainer" instance=ExtResource("6_ye3qy")]
+layout_mode = 2
+action_name = "jump"
+
+[node name="Rebind6" parent="TabContainer/Controls/MarginContainer/ScrollContainer/BoxContainer" instance=ExtResource("6_ye3qy")]
+layout_mode = 2
+action_name = "attack"
 
 [connection signal="pressed" from="Menu_Button" to="Menu_Button" method="_on_pressed"]
-[connection signal="pressed" from="CheckButton" to="CheckButton" method="_on_pressed"]
+[connection signal="pressed" from="TabContainer/UI/MarginContainer/ScrollContainer/BoxContainer/Fpsbutton" to="TabContainer/UI/MarginContainer/ScrollContainer/BoxContainer/Fpsbutton" method="_on_pressed"]
+[connection signal="pressed" from="TabContainer/UI/MarginContainer/ScrollContainer/BoxContainer/Speedrunbutton" to="TabContainer/UI/MarginContainer/ScrollContainer/BoxContainer/Speedrunbutton" method="_on_pressed"]

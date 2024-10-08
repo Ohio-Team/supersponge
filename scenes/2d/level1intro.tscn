@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://c4kk7htgjtaco"]
 
-[ext_resource type="AudioStream" uid="uid://bfbb3e5y460l7" path="res://assets/sfx/levelintro.mp3" id="1_60ltx"]
-[ext_resource type="Texture2D" uid="uid://csbwc3bpqbtfw" path="res://assets/2d/miscsprites/introbackground.png" id="2_lpwat"]
-[ext_resource type="FontFile" uid="uid://c4lyevru8sr3e" path="res://assets/fonts/Krabby Patty.ttf" id="3_ew68t"]
+[ext_resource type="AudioStream" uid="uid://c7xk80wlasxwe" path="res://assets/sfx/levelintro.mp3" id="1_60ltx"]
+[ext_resource type="Texture2D" uid="uid://cpqmswqw71435" path="res://assets/2d/miscsprites/introbackground.png" id="2_lpwat"]
+[ext_resource type="FontFile" uid="uid://ia1v43t7vpqa" path="res://assets/fonts/Krabby Patty.ttf" id="3_ew68t"]
 
 [sub_resource type="GDScript" id="GDScript_gs24a"]
 resource_name = "level1intro"

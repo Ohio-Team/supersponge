@@ -1,0 +1,33 @@
+[gd_scene load_steps=2 format=3 uid="uid://cnnghhi78bxjd"]
+
+[ext_resource type="Script" path="res://scripts/rebind.gd" id="1_4o3a6"]
+
+[node name="Rebind" type="Control" groups=["rebind_button"]]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4o3a6")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+text = "Action"
+
+[node name="VSeparator" type="VSeparator" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="Button" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+toggle_mode = true
+text = "Action_button"
+
+[connection signal="toggled" from="HBoxContainer/Button" to="." method="_on_button_toggled"]

@@ -239,6 +239,7 @@ offset_right = 1280.0
 offset_bottom = 91.0
 
 [node name="Pause" type="Node2D" parent="."]
+visible = false
 
 [node name="ColorRect" type="ColorRect" parent="Pause"]
 offset_left = -1.0
@@ -335,6 +336,13 @@ texture = ExtResource("12_fxnwe")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Pause"]
 stream = ExtResource("13_prtdn")
 bus = &"Music"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 1151.0
+offset_top = 694.0
+offset_right = 1681.0
+offset_bottom = 760.0
+text = "0"
 
 [connection signal="pressed" from="Pause/Button" to="Pause/Button" method="_on_pressed"]
 [connection signal="pressed" from="Pause/Button3" to="Pause/Button3" method="_on_pressed"]

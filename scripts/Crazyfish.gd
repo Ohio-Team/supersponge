@@ -34,6 +34,6 @@ func _on_hitzone_body_entered(body):
 			Singleton.do_explosion(position)
 			queue_free()
 		else:
-			if player.state != "dying":
+			if player.state != "dying" or !player.invincible:
 				Singleton.health -= 1
 				player.state = "hurt"

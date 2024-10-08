@@ -7,6 +7,8 @@ const JUMP_VELOCITY = -430.0
 @onready var camera = $Camera2D
 @onready var anim = $AnimatedSprite2D
 @export var state = "idle"
+@export var invincible:bool = false
+
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
@@ -17,9 +19,11 @@ func inputs(direction):
 	if Singleton.acceptinput:
 		if state == "hurt":
 			BMOD.play_sfx(preload("res://assets/sfx/ouch.tres"))
+			$Timer.start()
 			velocity.x = SPEED * 4
 			velocity.y = -450
 			anim.play("hurt")
+			invincible = true
 			if anim.animation_finished:
 				state = "idle"
 		if Input.is_action_just_pressed("attack"):
@@ -102,3 +106,7 @@ func generate_bullet():
 	new_node.position.x = position.x + 40 * direction
 	new_node.position.y = position.y - 20
 	get_tree().root.add_child(new_node)
+
+
+func _on_timer_timeout() -> void:
+	invincible = false

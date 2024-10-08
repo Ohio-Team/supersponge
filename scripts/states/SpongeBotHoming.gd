@@ -28,7 +28,7 @@ func _on_spongebot_body_entered(body):
 			Singleton.do_explosion(spongebot.position)
 			spongebot.queue_free()
 		else:
-			if player.state != "dying":
+			if player.state != "dying" and !player.invincible:
 				Singleton.health -= 1
 				player.state = "hurt"
 

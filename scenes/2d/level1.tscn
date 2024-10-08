@@ -18,9 +18,9 @@
 [ext_resource type="PackedScene" uid="uid://cjoo6ilm8eim1" path="res://scenes/2d/spongebob2d.tscn" id="10_g8oo3"]
 [ext_resource type="PackedScene" uid="uid://bfev5tp3it5jo" path="res://scenes/2d/burger.tscn" id="11_ct6ny"]
 [ext_resource type="Texture2D" uid="uid://xy1y5ujgrqpt" path="res://assets/2d/miscsprites/3222222.png" id="16_wr076"]
-[ext_resource type="Texture2D" uid="uid://d26bpcwapeiqj" path="res://assets/2d/miscsprites/222222.png" id="17_a5o5b"]
 [ext_resource type="Texture2D" uid="uid://2xh0u7i4ouyr" path="res://assets/2d/miscsprites/truck.png" id="18_xq3ct"]
 [ext_resource type="Texture2D" uid="uid://84nu6b4ix10w" path="res://assets/2d/miscsprites/patrick.png" id="19_5d4hi"]
+[ext_resource type="Texture2D" uid="uid://bil0cop23c6jd" path="res://assets/2d/miscsprites/33333.png" id="19_c3h7s"]
 [ext_resource type="PackedScene" uid="uid://c6w27ujk2uor4" path="res://scenes/2d/dialogzone.tscn" id="20_im6y2"]
 [ext_resource type="Texture2D" uid="uid://nb1gj5pksbgg" path="res://assets/2d/miscsprites/fishfields.png" id="21_087qa"]
 
@@ -176,8 +176,8 @@ position = Vector2(1545, 630)
 scale = Vector2(2.36, 1)
 
 [node name="hurtbox4" parent="Collisions" instance=ExtResource("5_exgwk")]
-position = Vector2(1965, 630)
-scale = Vector2(2.36, 1)
+position = Vector2(1961, 630)
+scale = Vector2(1.64329, 1)
 
 [node name="hurtbox5" parent="Collisions" instance=ExtResource("5_exgwk")]
 position = Vector2(2689, 630)
@@ -401,9 +401,9 @@ texture = ExtResource("16_wr076")
 
 [node name="222222" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(1902, 472)
-scale = Vector2(0.313953, 0.375)
-texture = ExtResource("17_a5o5b")
+position = Vector2(1904.62, 472)
+scale = Vector2(0.338371, 0.375)
+texture = ExtResource("19_c3h7s")
 
 [node name="Spongebob" parent="." instance=ExtResource("10_g8oo3")]
 position = Vector2(192, 589)

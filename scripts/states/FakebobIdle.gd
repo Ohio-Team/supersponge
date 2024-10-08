@@ -57,6 +57,6 @@ func _on_area_2d_area_entered(area):
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body == player:
-		if player.state != "dying":
+		if player.state != "dying" and !player.invincible:
 			Singleton.health -= 1
 			player.state = "hurt"

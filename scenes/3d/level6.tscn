@@ -1,10 +1,10 @@
 [gd_scene load_steps=177 format=4 uid="uid://coebr5rjm8gg0"]
 
-[ext_resource type="Texture2D" uid="uid://b6ajmf1yqq3ex" path="res://assets/3d/textures/_albedo000.png" id="1_3wdqi"]
+[ext_resource type="Texture2D" uid="uid://cghdnbutnmdlq" path="res://assets/3d/textures/_albedo000.png" id="1_3wdqi"]
 [ext_resource type="Script" path="res://scripts/driving.gd" id="1_lay5p"]
-[ext_resource type="Texture2D" uid="uid://54kqhbjfubjw" path="res://assets/3d/textures/Material_albedo000.png" id="2_b2flb"]
+[ext_resource type="Texture2D" uid="uid://c7jnb2grw18h8" path="res://assets/3d/textures/Material_albedo000.png" id="2_b2flb"]
 [ext_resource type="PackedScene" uid="uid://q1h0c43bbj4p" path="res://scenes/3d/pattywagon.tscn" id="2_dk7po"]
-[ext_resource type="Texture2D" uid="uid://d215ogsgn4fvt" path="res://assets/3d/bikinibottom/textures/jf_sky_color_77.png" id="2_rskht"]
+[ext_resource type="Texture2D" uid="uid://c7wiwlmd3jby6" path="res://assets/3d/bikinibottom/textures/jf_sky_color_77.png" id="2_rskht"]
 [ext_resource type="PackedScene" uid="uid://cyw3j6l7mdr8m" path="res://scenes/3d/fuckeduprock.tscn" id="5_3emhi"]
 [ext_resource type="LightmapGIData" uid="uid://cej3446t8ap6h" path="res://scenes/3d/level6.lmbake" id="5_iax63"]
 [ext_resource type="PackedScene" uid="uid://biv8yra6u0goq" path="res://scenes/3d/fuel.tscn" id="8_gm1q2"]
