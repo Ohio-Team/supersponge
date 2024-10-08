@@ -143,7 +143,7 @@ fov = 90.0
 process_priority = 11
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 1, 0.5)
 shape = SubResource("SeparationRayShape3D_cb5wl")
-spring_length = 8.0
+spring_length = 30.0
 
 [node name="OmniLight3D" type="OmniLight3D" parent="firstpersonplayer/TwistPivot/PitchPivot/Camera3D/CameraSpringArm"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8)
