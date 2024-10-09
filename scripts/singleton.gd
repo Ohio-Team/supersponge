@@ -37,7 +37,8 @@ func save_elements():
 		"current_scene" : get_tree().current_scene.scene_file_path,
 		"lifes" : lifes,
 		"spatulas" : spatulas,
-		"health" : health
+		"health" : health,
+		"time" : Ui.time
 	}
 	return save_dict
 func save_game():
@@ -65,6 +66,7 @@ func load_game():
 		health = data["health"]
 		spatulas = data["spatulas"]
 		lifes = data["lifes"]
+		Ui.time = data["time"]
 		get_tree().change_scene_to_file(data["current_scene"])
 func load_settings():
 	if not FileAccess.file_exists("user://settings.save"):

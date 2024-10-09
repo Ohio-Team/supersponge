@@ -14,7 +14,7 @@ func _process(delta: float) -> void:
 
 
 func _on_button_pressed() -> void:
-	OS.alert("No brother no")
+	get_tree().quit()
 
 
 func _on_button_2_pressed() -> void:

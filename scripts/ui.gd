@@ -14,7 +14,7 @@ func _process(delta):
 		visible = false
 	else:
 		visible = true
-	if Singleton.showspeedrun:
+	if Singleton.showspeedrun and !get_tree().paused:
 		time += delta
 		$RichTextLabel.visible = true
 		$RichTextLabel.text = str(round(fmod(time,3600) / 60)) + ":" + str(round(fmod(time,60))) + ":" + str(round(fmod(time,1) * 100))
