@@ -30,3 +30,7 @@ func load_settings():
 		$TabContainer/Audio/MarginContainer/ScrollContainer/VBoxContainer/SFX.value = data["SFX"]
 		
 	print(InputMap.get_actions())
+
+
+func _on_tab_container_tab_changed(tab: int) -> void:
+	BMOD.play_sfx(preload("res://assets/sfx/funnybuttons/buttons.tres"))

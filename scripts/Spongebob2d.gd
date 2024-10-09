@@ -19,7 +19,7 @@ func inputs(direction):
 	if Singleton.acceptinput:
 		if state == "hurt":
 			BMOD.play_sfx(preload("res://assets/sfx/ouch.tres"))
-			$Timer.start()
+			$Invincibility.start()
 			velocity.x = SPEED * 4
 			velocity.y = -450
 			anim.play("hurt")
@@ -38,17 +38,17 @@ func inputs(direction):
 	# Handle jump.
 		if Input.is_action_just_pressed("jump"):
 			if state != "hurt" and state != "dying":
-				if is_on_floor():
+				if is_on_floor() or !$Coyote.is_stopped():
 					velocity.y = JUMP_VELOCITY
 					BMOD.play_sfx(preload("res://assets/sfx/jump.tres"))
 					anim.play("jump")
 					state = "jump"
-		if Input.is_action_just_pressed("jump") and state != "dying" and not is_on_floor():
+		if Input.is_action_just_pressed("jump") and state != "dying" and not is_on_floor() and $Coyote.is_stopped():
 				velocity.y = -JUMP_VELOCITY
 				anim.play("groundpound")
 				state = "groundpound"
 		if Input.is_action_just_released("jump"):
-			if velocity.y < 0 and state != "groundpound":
+			if velocity.y < 0 and state != "groundpound" and !$Coyote.is_stopped():
 				velocity.y = 0
 		if velocity.y > 0 and anim.animation != "groundpound" and anim.animation != "hurt"  and anim.animation != "attack" and state != "dying" and not is_on_floor():
 			anim.play("fall")
@@ -86,14 +86,17 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 	if velocity.x != 0 and anim.animation != "jump" and anim.animation != "fall" and anim.animation != "groundpound" and anim.animation != "hurt" and anim.animation != "attack" and state != "dying":
 		anim.play("run")
-		if !BMOD.sfx_playing.has(preload("res://assets/sfx/walk.tres")) and is_on_floor():
+		if (!BMOD.sfx_playing.has(preload("res://assets/sfx/walk.tres")) and !BMOD.sfx_playing.has(preload("res://assets/sfx/dialog.tres"))) and is_on_floor():
 			BMOD.play_sfx(preload("res://assets/sfx/walk.tres"))
 		state = "walking"
 	if velocity.x == 0 and velocity.y == 0 and anim.animation != "attack" and state != "dying":
 		anim.play("idle")
 		state = "idle"
+		
+	var was_on_floor = is_on_floor()
 	move_and_slide()
-	
+	if was_on_floor and not is_on_floor():
+		$Coyote.start()
 func generate_bullet():
 	var direction:int
 	if $AnimatedSprite2D.flip_h:

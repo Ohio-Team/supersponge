@@ -17,12 +17,12 @@ func start_text_update():
 func _process(delta):
 	_update_text()
 
-
 func _update_text():
 	if current_index < full_text.length():
 		text += full_text[current_index]
 		current_index += 1
-		BMOD.play_sfx(preload("res://assets/sfx/dialog.tres"))
+		if !BMOD.sfx_playing.has(preload("res://assets/sfx/dialog.tres")): 
+			BMOD.play_sfx(preload("res://assets/sfx/dialog.tres"))
 	else:
 		finishedtext = true
 		set_process(false)

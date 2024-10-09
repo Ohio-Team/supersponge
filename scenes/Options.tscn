@@ -232,5 +232,6 @@ layout_mode = 2
 action_name = "attack"
 
 [connection signal="pressed" from="Menu_Button" to="Menu_Button" method="_on_pressed"]
+[connection signal="tab_clicked" from="TabContainer" to="." method="_on_tab_container_tab_changed"]
 [connection signal="pressed" from="TabContainer/UI/MarginContainer/ScrollContainer/BoxContainer/Fpsbutton" to="TabContainer/UI/MarginContainer/ScrollContainer/BoxContainer/Fpsbutton" method="_on_pressed"]
 [connection signal="pressed" from="TabContainer/UI/MarginContainer/ScrollContainer/BoxContainer/Speedrunbutton" to="TabContainer/UI/MarginContainer/ScrollContainer/BoxContainer/Speedrunbutton" method="_on_pressed"]
