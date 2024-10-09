@@ -2,6 +2,7 @@ extends Button
 
 func _on_pressed() -> void:
 	Singleton.inmenu = false
+	BMOD.play_sfx(preload("res://assets/sfx/funnybuttons/buttons.tres"))
 	var save_file = FileAccess.open("user://tom.save", FileAccess.READ)
 	if not FileAccess.file_exists("user://tom.save"):
 		get_tree().change_scene_to_file("res://scenes/Main Menu.tscn")

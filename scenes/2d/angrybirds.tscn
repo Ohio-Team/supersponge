@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://b8373o7m0yil0" path="res://assets/2d/angrybirds/slingshot (2).png" id="4_yr4jo"]
 [ext_resource type="Texture2D" uid="uid://b6duufffyv7jh" path="res://assets/2d/angrybirds/angrybird (3).png" id="5_xa858"]
 [ext_resource type="Texture2D" uid="uid://lhna2iae4mfo" path="res://assets/2d/angrybirds/angrybird (5).png" id="6_ccfe3"]
-[ext_resource type="PackedScene" path="res://scenes/2d/angry_bird.tscn" id="8_kss6n"]
+[ext_resource type="PackedScene" uid="uid://oyjgpx7sh0" path="res://scenes/2d/angry_bird.tscn" id="8_kss6n"]
 [ext_resource type="Texture2D" uid="uid://84nu6b4ix10w" path="res://assets/2d/miscsprites/patrick.png" id="8_lhsp6"]
 [ext_resource type="Texture2D" uid="uid://chtjeh2b32lmm" path="res://assets/2d/miscsprites/ohiomonster.png" id="10_5e1gl"]
 

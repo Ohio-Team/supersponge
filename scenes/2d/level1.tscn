@@ -21,7 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://2xh0u7i4ouyr" path="res://assets/2d/miscsprites/truck.png" id="18_xq3ct"]
 [ext_resource type="Texture2D" uid="uid://84nu6b4ix10w" path="res://assets/2d/miscsprites/patrick.png" id="19_5d4hi"]
 [ext_resource type="Texture2D" uid="uid://bil0cop23c6jd" path="res://assets/2d/miscsprites/33333.png" id="19_c3h7s"]
-[ext_resource type="PackedScene" uid="uid://c6w27ujk2uor4" path="res://scenes/2d/dialogzone.tscn" id="20_im6y2"]
+[ext_resource type="PackedScene" path="res://scenes/2d/dialogzone.tscn" id="20_im6y2"]
 [ext_resource type="Texture2D" uid="uid://nb1gj5pksbgg" path="res://assets/2d/miscsprites/fishfields.png" id="21_087qa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ucewm"]
