@@ -334,7 +334,8 @@ libraries = {
 autoplay = "movement"
 
 [node name="Pausegr" type="Sprite2D" parent="Pause"]
-position = Vector2(640, 241)
+position = Vector2(657, 182.25)
+scale = Vector2(0.73, 0.73)
 texture = ExtResource("12_fxnwe")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Pause"]

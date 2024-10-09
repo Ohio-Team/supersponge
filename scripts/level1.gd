@@ -6,6 +6,7 @@ func _ready():
 	DiscordRPC.details = "Walking on Bikini Bottom"
 	DiscordRPC.refresh()
 	Singleton.inmenu = false
+	Singleton.hasgun = false
 	Singleton.save_game()
 	Ui._clear_dialog()
 	MusicPlayer.play_song("res://assets/music/jelly.mp3")

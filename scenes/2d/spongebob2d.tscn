@@ -414,9 +414,13 @@ shape = SubResource("RectangleShape2D_putow")
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2(0, -50)
 zoom = Vector2(3, 3)
+position_smoothing_enabled = true
+position_smoothing_speed = 15.0
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
+drag_left_margin = 0.5
 drag_top_margin = 1.0
+drag_right_margin = 0.5
 
 [node name="Invincibility" type="Timer" parent="."]
 one_shot = true

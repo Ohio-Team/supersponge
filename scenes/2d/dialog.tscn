@@ -9,7 +9,7 @@
 base_font = ExtResource("1_tvp7w")
 variation_embolden = 0.5
 
-[node name="Dialog" type="CanvasLayer"]
+[node name="Dialog" type="CanvasLayer" groups=["Dialog"]]
 process_mode = 1
 script = ExtResource("1_hgsve")
 

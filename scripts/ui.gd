@@ -60,7 +60,5 @@ func create_dialog(text:String, char:String = "spongebob"):
 	move_child(new_dialog,6)
 	
 func _clear_dialog():
-	if get_node_or_null("Dialog"):
-		get_node_or_null("Dialog").queue_free()
-	else:
-		pass
+	for i in get_tree().get_nodes_in_group("Dialog"):
+		i.queue_free()

@@ -26,7 +26,7 @@ func inputs(direction):
 			invincible = true
 			if anim.animation_finished:
 				state = "idle"
-		if Input.is_action_just_pressed("attack"):
+		if Input.is_action_just_pressed("attack") and state != "dying" and state != "hurt":
 			if Singleton.hasgun == false:
 				state = "attack"
 				anim.play("attack")
@@ -82,9 +82,9 @@ func _physics_process(delta):
 	elif direction > 0:
 		anim.flip_h = false
 	if direction and anim.animation != "hurt" and anim.animation != "attack" and state != "dying":
-		velocity.x = direction * SPEED
+		velocity.x = lerp(velocity.x,direction * SPEED,delta * 10)
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+		velocity.x = move_toward(velocity.x, 0, SPEED / 2)
 	if velocity.x != 0 and anim.animation != "jump" and anim.animation != "fall" and anim.animation != "groundpound" and anim.animation != "hurt" and anim.animation != "attack" and state != "dying":
 		anim.play("run")
 		if (!BMOD.sfx_playing.has(preload("res://assets/sfx/walk.tres")) and !BMOD.sfx_playing.has(preload("res://assets/sfx/dialog.tres"))) and is_on_floor():
