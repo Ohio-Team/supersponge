@@ -24,7 +24,7 @@ func _on_body_entered(body):
 		if player.state == "groundpound" or player.state == "attack" or player.state == "fall" or player.state == "land":
 			if player.state != "attack":
 				player.state = "fall"
-				player.velocity.y = -400
+				player.velocity.y = -510
 			Singleton.do_explosion(position)
 			queue_free()
 		elif player.state != "dying" and !player.invincible:
