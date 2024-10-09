@@ -81,7 +81,7 @@ func _physics_process(delta):
 		anim.flip_h = true
 	elif direction > 0:
 		anim.flip_h = false
-	if direction and anim.animation != "hurt" and state != "dying":
+	if direction and anim.animation != "hurt" and anim.animation != "attack" and state != "dying":
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
