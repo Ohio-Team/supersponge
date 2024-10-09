@@ -82,7 +82,7 @@ func _physics_process(delta):
 	elif direction > 0:
 		anim.flip_h = false
 	if direction and anim.animation != "hurt" and anim.animation != "attack" and state != "dying":
-		velocity.x = lerp(velocity.x,direction * SPEED,delta * 10)
+		velocity.x = lerp(velocity.x,direction * SPEED,delta * 8)
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED / 2)
 	if velocity.x != 0 and anim.animation != "jump" and anim.animation != "fall" and anim.animation != "groundpound" and anim.animation != "hurt" and anim.animation != "attack" and state != "dying":

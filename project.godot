@@ -108,6 +108,7 @@ attack={
 [physics]
 
 3d/physics_engine="GodotPhysics3D"
+3d/default_gravity=10.0
 
 [rendering]
 
