@@ -80,5 +80,3 @@ func get_audio_stream_sequence() -> AudioStream:
 		_last_audio_stream_index = 0
 
 	return effect_pool[_last_audio_stream_index].audio_stream
-
-
