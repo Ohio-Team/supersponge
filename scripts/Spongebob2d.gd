@@ -31,6 +31,7 @@ func inputs(direction):
 				state = "attack"
 				anim.play("attack")
 				await $AnimatedSprite2D.animation_finished
+				BMOD.play_sfx(preload("res://assets/sfx/net.tres"))
 				state = "idle"
 				anim.play("idle")
 			else:
