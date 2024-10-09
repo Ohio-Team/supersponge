@@ -30,8 +30,8 @@ func inputs(direction):
 			if Singleton.hasgun == false:
 				state = "attack"
 				anim.play("attack")
-				await $AnimatedSprite2D.animation_finished
 				BMOD.play_sfx(preload("res://assets/sfx/net.tres"))
+				await $AnimatedSprite2D.animation_finished
 				state = "idle"
 				anim.play("idle")
 			else:
@@ -81,7 +81,7 @@ func _physics_process(delta):
 		anim.flip_h = true
 	elif direction > 0:
 		anim.flip_h = false
-	if direction and anim.animation != "hurt" and anim.animation != "attack" and state != "dying":
+	if direction and anim.animation != "hurt" and state != "dying":
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
