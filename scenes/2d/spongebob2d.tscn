@@ -1,12 +1,10 @@
-[gd_scene load_steps=75 format=3 uid="uid://cjoo6ilm8eim1"]
+[gd_scene load_steps=73 format=3 uid="uid://cjoo6ilm8eim1"]
 
 [ext_resource type="Script" path="res://scripts/Spongebob2d.gd" id="1_uyiiv"]
-[ext_resource type="Texture2D" uid="uid://bas4yymaqd65f" path="res://assets/2d/spongebobby/net/0.png" id="2_ll1q8"]
 [ext_resource type="Texture2D" uid="uid://do4r7mqil01ed" path="res://assets/2d/spongebobby/4.png" id="2_m3j58"]
 [ext_resource type="Texture2D" uid="uid://crgpccsuefkuo" path="res://assets/2d/spongebobby/82.png" id="2_mcd8j"]
 [ext_resource type="Texture2D" uid="uid://cd5ka2b5udyy7" path="res://assets/2d/spongebobby/88.png" id="3_1h28n"]
 [ext_resource type="Texture2D" uid="uid://cqymfq60tupq" path="res://assets/2d/spongebobby/5.png" id="3_fqmbe"]
-[ext_resource type="Texture2D" uid="uid://dy8xexnigg64j" path="res://assets/2d/spongebobby/net/1.png" id="3_rexdo"]
 [ext_resource type="Texture2D" uid="uid://bnfyjrt8kwg33" path="res://assets/2d/spongebobby/net/2.png" id="4_anmsx"]
 [ext_resource type="Texture2D" uid="uid://djy2s5cbkabt1" path="res://assets/2d/spongebobby/6.png" id="4_cxm3d"]
 [ext_resource type="Texture2D" uid="uid://dxfxoyygihvbd" path="res://assets/2d/spongebobby/89.png" id="4_xqbo6"]
@@ -77,12 +75,6 @@
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_ll1q8")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_rexdo")
-}, {
-"duration": 1.0,
 "texture": ExtResource("4_anmsx")
 }, {
 "duration": 1.0,
@@ -114,7 +106,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"attack",
-"speed": 20.0
+"speed": 25.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -412,6 +404,8 @@ texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_u32rl")
 animation = &"attack"
 autoplay = "idle"
+frame = 9
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, 0)
