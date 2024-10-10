@@ -21,14 +21,14 @@
 [ext_resource type="Texture2D" uid="uid://2xh0u7i4ouyr" path="res://assets/2d/miscsprites/truck.png" id="18_xq3ct"]
 [ext_resource type="Texture2D" uid="uid://84nu6b4ix10w" path="res://assets/2d/miscsprites/patrick.png" id="19_5d4hi"]
 [ext_resource type="Texture2D" uid="uid://bil0cop23c6jd" path="res://assets/2d/miscsprites/33333.png" id="19_c3h7s"]
-[ext_resource type="PackedScene" uid="uid://c6w27ujk2uor4" path="res://scenes/2d/dialogzone.tscn" id="20_im6y2"]
+[ext_resource type="PackedScene" path="res://scenes/2d/dialogzone.tscn" id="20_im6y2"]
 [ext_resource type="Texture2D" uid="uid://nb1gj5pksbgg" path="res://assets/2d/miscsprites/fishfields.png" id="21_087qa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ucewm"]
 size = Vector2(34, 29)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p5m3d"]
-size = Vector2(309, 147)
+size = Vector2(309, 301)
 
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_huh3m")
@@ -225,12 +225,12 @@ shape = SubResource("RectangleShape2D_p5m3d")
 [node name="StaticBody2D3" type="StaticBody2D" parent="Collisions"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions/StaticBody2D3"]
-position = Vector2(-97.5, 553.5)
+position = Vector2(-97.5, 476.5)
 shape = SubResource("RectangleShape2D_p5m3d")
 
 [node name="Truck" type="Sprite2D" parent="Collisions/StaticBody2D3"]
-position = Vector2(-96, 553)
-scale = Vector2(0.634, 0.496266)
+position = Vector2(-96, 544.837)
+scale = Vector2(0.634, 0.549104)
 texture = ExtResource("18_xq3ct")
 
 [node name="Collects" type="Node" parent="."]
