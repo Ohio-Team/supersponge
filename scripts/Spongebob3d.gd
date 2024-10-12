@@ -34,6 +34,7 @@ func _physics_process(delta):
 	if direction:
 		if is_on_floor():
 			animation_tree["parameters/state/transition_request"] = "walking"
+			$sponebob.rotation.y = direction.x - direction.z
 			state = "walking"
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
