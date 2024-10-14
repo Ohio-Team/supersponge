@@ -1,0 +1,67 @@
+[gd_scene load_steps=6 format=3 uid="uid://dpatlm3ej67bl"]
+
+[ext_resource type="Script" path="res://scripts/joystick.gd" id="1_e3kx2"]
+[ext_resource type="Texture2D" uid="uid://cn8j8uaygafs0" path="res://assets/2d/android/joyring.png" id="2_uhat8"]
+[ext_resource type="Texture2D" uid="uid://dg604kbbr2gpo" path="res://assets/2d/android/joyknobpng.png" id="3_8jpbv"]
+
+[sub_resource type="GDScript" id="GDScript_ri1rn"]
+resource_name = "Knob"
+script/source = "extends Sprite2D
+
+@onready var parent = $\"..\"
+
+var pressing = false
+
+@export var maxLength = 50
+var deadzone = 15
+
+func _ready():
+	deadzone = parent.deadzone
+	maxLength *= parent.scale.x
+
+func _process(delta):
+	if pressing:
+		if get_global_mouse_position().distance_to(parent.global_position) <= maxLength:
+			global_position = get_global_mouse_position()
+		else:
+			var angle = parent.global_position.angle_to_point(get_global_mouse_position())
+			global_position.x = parent.global_position.x + cos(angle)*maxLength
+			global_position.y = parent.global_position.y + sin(angle)*maxLength
+		calculateVector()
+	else:
+		global_position = lerp(global_position, parent.global_position, delta*50)
+		parent.posVector = Vector2(0,0)
+		
+func calculateVector():
+	if abs((global_position.x - parent.global_position.x)) >= deadzone:
+		parent.posVector.x = (global_position.x - parent.global_position.x)/maxLength
+	if abs((global_position.y - parent.global_position.y)) >= deadzone:
+		parent.posVector.y = (global_position.y - parent.global_position.y)/maxLength
+		
+func _on_touch_screen_button_pressed():
+	pressing = true
+
+
+func _on_touch_screen_button_released():
+	pressing = false
+"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0twk4"]
+radius = 48.0
+
+[node name="Joystick" type="Node2D"]
+script = ExtResource("1_e3kx2")
+
+[node name="Joyring" type="Sprite2D" parent="."]
+texture = ExtResource("2_uhat8")
+
+[node name="Joyknobpng" type="Sprite2D" parent="."]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("3_8jpbv")
+script = SubResource("GDScript_ri1rn")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="."]
+shape = SubResource("CircleShape2D_0twk4")
+
+[connection signal="pressed" from="TouchScreenButton" to="Joyknobpng" method="_on_touch_screen_button_pressed"]
+[connection signal="released" from="TouchScreenButton" to="Joyknobpng" method="_on_touch_screen_button_released"]

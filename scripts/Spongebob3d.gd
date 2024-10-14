@@ -22,7 +22,7 @@ func _physics_process(delta):
 		velocity.y = JUMP_VELOCITY
 		state = "jump"
 		
-	if Input.is_action_just_pressed("jump") and not is_on_floor():
+	if Input.is_action_just_pressed("groundpound") and not is_on_floor():
 		animation_tree["parameters/state/transition_request"] = "butt"
 		state = "groundpound"
 		velocity.y = -JUMP_VELOCITY
@@ -30,7 +30,7 @@ func _physics_process(delta):
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var input_dir = Input.get_vector("left", "right", "front", "back")
-	var direction = ((camera._camera_rotation_pivot.basis * Vector3(input_dir.x, 0, input_dir.y))).normalized()
+	var direction = ((camera._camera_rotation_pivot.basis * Vector3(Ui.joystick.posVector.x, 0, Ui.joystick.posVector.y))).normalized()
 	if direction:
 		if is_on_floor():
 			animation_tree["parameters/state/transition_request"] = "walking"

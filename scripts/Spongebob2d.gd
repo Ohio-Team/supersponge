@@ -75,7 +75,7 @@ func _physics_process(delta):
 		velocity.y += gravity * delta
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction = Input.get_axis("left", "right")
+	var direction = Ui.joystick.posVector.x
 	inputs(direction)
 	if direction < 0:
 		anim.flip_h = true

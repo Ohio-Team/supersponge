@@ -1,7 +1,8 @@
-[gd_scene load_steps=23 format=3 uid="uid://bbrct2r84j0l2"]
+[gd_scene load_steps=27 format=3 uid="uid://bbrct2r84j0l2"]
 
 [ext_resource type="Script" path="res://scripts/ui.gd" id="1_eaqxp"]
 [ext_resource type="FontFile" uid="uid://ia1v43t7vpqa" path="res://assets/fonts/Krabby Patty.ttf" id="2_0v11p"]
+[ext_resource type="Texture2D" uid="uid://c2urmgqxp3d4v" path="res://assets/2d/miscsprites/lifepressed.png" id="4_j0rax"]
 [ext_resource type="Texture2D" uid="uid://ccfdmkwhs6vc6" path="res://assets/2d/miscsprites/life.png" id="6_f6ylc"]
 [ext_resource type="Texture2D" uid="uid://cavw5dlwryyol" path="res://assets/2d/miscsprites/spatulaUI.png" id="7_bnkkd"]
 [ext_resource type="Texture2D" uid="uid://bemlcpdbpig3f" path="res://assets/2d/pausemenu/animframe1.png" id="8_jnmey"]
@@ -9,7 +10,10 @@
 [ext_resource type="Texture2D" uid="uid://ilrqnrnwq5r" path="res://assets/2d/pausemenu/exponja.png" id="10_73r8n"]
 [ext_resource type="Texture2D" uid="uid://cf12yfdq4rhy8" path="res://assets/2d/pausemenu/patricio.png" id="11_g1ndh"]
 [ext_resource type="Texture2D" uid="uid://ciq7335f7ccf2" path="res://assets/2d/pausemenu/pausegr.png" id="12_fxnwe"]
+[ext_resource type="Texture2D" uid="uid://cvrjies3bykha" path="res://assets/2d/android/buttonfire.png" id="12_yevqa"]
+[ext_resource type="Texture2D" uid="uid://cftsidj3cumjb" path="res://assets/2d/android/buttonjump.png" id="13_ducc1"]
 [ext_resource type="AudioStream" uid="uid://t4jo45yutvro" path="res://assets/music/pause.mp3" id="13_prtdn"]
+[ext_resource type="PackedScene" uid="uid://dpatlm3ej67bl" path="res://scenes/2d/joystick.tscn" id="15_61fgy"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jq37k"]
 radius = 243.19
@@ -189,9 +193,9 @@ process_mode = 3
 script = ExtResource("1_eaqxp")
 
 [node name="FuelCounter" type="RichTextLabel" parent="."]
-offset_left = 33.0
+offset_left = 311.0
 offset_top = 667.0
-offset_right = 372.0
+offset_right = 650.0
 offset_bottom = 703.0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 10
@@ -212,10 +216,11 @@ theme_override_font_sizes/normal_font_size = 32
 bbcode_enabled = true
 text = "[shake]x3"
 
-[node name="TouchScreenButton" type="TouchScreenButton" parent="."]
+[node name="PauseButton" type="TouchScreenButton" parent="."]
 position = Vector2(18, 17)
 scale = Vector2(0.14, 0.14)
 texture_normal = ExtResource("6_f6ylc")
+texture_pressed = ExtResource("4_j0rax")
 shape = SubResource("CircleShape2D_jq37k")
 action = "ui_cancel"
 
@@ -244,6 +249,7 @@ offset_right = 1280.0
 offset_bottom = 91.0
 
 [node name="Pause" type="Node2D" parent="."]
+visible = false
 
 [node name="ColorRect" type="ColorRect" parent="Pause"]
 offset_left = -1.0
@@ -350,6 +356,21 @@ offset_bottom = 760.0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 10
 text = "0"
+
+[node name="ShootButton" type="TouchScreenButton" parent="."]
+position = Vector2(994, 590)
+texture_normal = ExtResource("12_yevqa")
+action = "attack"
+visibility_mode = 1
+
+[node name="JumpButton" type="TouchScreenButton" parent="."]
+position = Vector2(1142, 590)
+texture_normal = ExtResource("13_ducc1")
+action = "jump"
+visibility_mode = 1
+
+[node name="Joystick" parent="." instance=ExtResource("15_61fgy")]
+position = Vector2(78, 652)
 
 [connection signal="pressed" from="Pause/Button" to="Pause/Button" method="_on_pressed"]
 [connection signal="pressed" from="Pause/Button3" to="Pause/Button3" method="_on_pressed"]
