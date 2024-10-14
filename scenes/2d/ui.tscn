@@ -370,7 +370,8 @@ action = "jump"
 visibility_mode = 1
 
 [node name="Joystick" parent="." instance=ExtResource("15_61fgy")]
-position = Vector2(78, 652)
+position = Vector2(115, 610)
+scale = Vector2(2, 2)
 
 [connection signal="pressed" from="Pause/Button" to="Pause/Button" method="_on_pressed"]
 [connection signal="pressed" from="Pause/Button3" to="Pause/Button3" method="_on_pressed"]
