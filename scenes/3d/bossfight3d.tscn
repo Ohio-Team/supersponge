@@ -12,8 +12,6 @@ script/source = "extends Node3D
 func _ready() -> void:
 	Singleton.save_game()
 	MusicPlayer.play_song(\"res://assets/music/ohiomonsterbattle.ogg\")
-	DiscordRPC.details = \"Killing the Ohio Monster\"
-	DiscordRPC.refresh()
 	Ui.create_dialog(\"Let's kill this guy.\")
 "
 

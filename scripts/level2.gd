@@ -3,8 +3,6 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	DiscordRPC.details = "In the Ohio Sewers"
-	DiscordRPC.refresh()
 	Singleton.save_game()
 	MusicPlayer.play_song("res://assets/music/sewers.wav")
 	Ui._clear_dialog()
