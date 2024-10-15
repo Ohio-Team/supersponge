@@ -1085,7 +1085,7 @@ offset_bottom = 720.0
 color = Color(0, 0, 0, 1)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(421, 322)
+position = Vector2(448, 136)
 sprite_frames = ExtResource("1_trurj")
 animation = &"gif"
 autoplay = "gif"
@@ -1097,9 +1097,9 @@ stream = ExtResource("2_avhqf")
 autoplay = true
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
-offset_left = 372.0
+offset_left = 416.0
 offset_top = 504.0
-offset_right = 1185.0
+offset_right = 1229.0
 offset_bottom = 581.0
 theme_override_font_sizes/normal_font_size = 32
 text = "This game supports controllers."
@@ -1109,5 +1109,15 @@ position = Vector2(1226, 670)
 sprite_frames = SubResource("SpriteFrames_4fubu")
 autoplay = "default"
 frame_progress = 0.304775
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+offset_left = 440.0
+offset_top = 272.0
+offset_right = 856.0
+offset_bottom = 512.0
+theme_override_font_sizes/normal_font_size = 28
+text = "Ohio Team isn't affiliated with Nickelodeon or 
+anyone else involved with the 
+SpongeBob franchise."
 
 [connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]
