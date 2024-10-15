@@ -1114,9 +1114,9 @@ frame_progress = 0.304775
 offset_left = 440.0
 offset_top = 272.0
 offset_right = 856.0
-offset_bottom = 448.0
+offset_bottom = 512.0
 theme_override_font_sizes/normal_font_size = 28
-text = "Ohio Team isn't affiliated to Nickelodeon or 
+text = "Ohio Team isn't affiliated with Nickelodeon or 
 anyone else involved with the 
 SpongeBob franchise."
 
