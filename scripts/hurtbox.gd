@@ -15,7 +15,8 @@ func _process(delta):
 func _on_body_entered(body):
 	if body == player:
 		if player.state != "dying":
-			Singleton.health = 0
+			Singleton.health -= 1
+			player.velocity.y += -1000
 			player.state = "hurt"
 	if body.is_in_group("Enemy"):
 		BMOD.play_sfx_2d(preload("res://assets/sfx/scream.tres"),body.position)

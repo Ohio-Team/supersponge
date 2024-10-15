@@ -8,7 +8,7 @@ const JUMP_VELOCITY = -430.0
 @onready var anim = $AnimatedSprite2D
 @export var state = "idle"
 @export var invincible:bool = false
-
+var direction:float
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
@@ -21,7 +21,7 @@ func inputs(direction):
 			BMOD.play_sfx(preload("res://assets/sfx/ouch.tres"))
 			$Invincibility.start()
 			velocity.x = SPEED * 4
-			velocity.y = -450
+			velocity.y += -450
 			anim.play("hurt")
 			invincible = true
 			if anim.animation_finished:
@@ -44,7 +44,7 @@ func inputs(direction):
 					BMOD.play_sfx(preload("res://assets/sfx/jump.tres"))
 					anim.play("jump")
 					state = "jump"
-		if Input.is_action_just_pressed("jump") and state != "dying" and not is_on_floor() and $Coyote.is_stopped():
+		if Input.is_action_just_pressed("groundpound") and state != "dying" and state != "hurt" and not is_on_floor() and $Coyote.is_stopped():
 				velocity.y = -JUMP_VELOCITY
 				anim.play("groundpound")
 				state = "groundpound"
@@ -75,16 +75,17 @@ func _physics_process(delta):
 		velocity.y += gravity * delta
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction = Ui.joystick.posVector.x
+	direction = Ui.joystick.posVector.x
+	var prev_dir = direction
 	inputs(direction)
 	if direction < 0:
 		anim.flip_h = true
 	elif direction > 0:
 		anim.flip_h = false
-	if direction and anim.animation != "hurt" and anim.animation != "attack" and state != "dying":
-		velocity.x = lerp(velocity.x,direction * SPEED,delta * 8)
+	if direction and anim.animation != "hurt" and anim.animation != "turn" and anim.animation != "attack" and state != "dying":
+		velocity.x = lerp(velocity.x,direction * SPEED,delta * 5)
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED / 2)
+		velocity.x = move_toward(velocity.x, 0, SPEED / 3)
 	if velocity.x != 0 and anim.animation != "jump" and anim.animation != "fall" and anim.animation != "groundpound" and anim.animation != "hurt" and anim.animation != "attack" and state != "dying":
 		anim.play("run")
 		if (!BMOD.sfx_playing.has(preload("res://assets/sfx/walk.tres")) and !BMOD.sfx_playing.has(preload("res://assets/sfx/dialog.tres"))) and is_on_floor():
@@ -93,7 +94,6 @@ func _physics_process(delta):
 	if velocity.x == 0 and velocity.y == 0 and anim.animation != "attack" and state != "dying":
 		anim.play("idle")
 		state = "idle"
-		
 	var was_on_floor = is_on_floor()
 	move_and_slide()
 	if was_on_floor and not is_on_floor():

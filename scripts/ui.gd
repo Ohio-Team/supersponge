@@ -33,7 +33,7 @@ func _process(delta):
 		$FPS.visible = true
 	else:
 		$FPS.visible = false
-	if Input.is_action_just_pressed("ui_cancel") and !Singleton.inmenu:
+	if Input.is_action_just_pressed("pause") and !Singleton.inmenu and !get_tree().paused:
 		_clear_dialog()
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		get_tree().paused = true
@@ -46,7 +46,7 @@ func _process(delta):
 		$Pause/Exponja.position = lerp($Pause/Exponja.position, Vector2(919,446), delta*10)
 	else:
 		$Pause/AudioStreamPlayer.stop()
-		$Pause/ColorRect.color = lerp($Pause/ColorRect.color, Color(00000000,0), delta*10)
+		$Pause/ColorRect.color = lerp($Pause/ColorRect.color, Color(0, 0, 0, 0), delta*10)
 		$Pause/Patricio.position = lerp($Pause/Patricio.position, Vector2(-106,317), delta*10)
 		$Pause/Exponja.position = lerp($Pause/Exponja.position, Vector2(1500,446), delta*10)
 func emit_dialogfinished():
