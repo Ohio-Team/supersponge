@@ -146,7 +146,8 @@ shape = SubResource("SeparationRayShape3D_cb5wl")
 spring_length = 30.0
 
 [node name="OmniLight3D" type="OmniLight3D" parent="firstpersonplayer/TwistPivot/PitchPivot/Camera3D/CameraSpringArm"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8)
+transform = Transform3D(1.30739, 0, 0, 0, 1.30739, 0, 0, 0, 1.30739, 1.90735e-06, 0, 8)
+omni_range = 15.065
 
 [node name="Spatulas" type="Node3D" parent="."]
 
