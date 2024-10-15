@@ -1,0 +1,15 @@
+[remap]
+
+importer="import_gif_to_sprite_frames"
+type="SpriteFrames"
+uid="uid://vgqyi66iob4"
+path="res://.godot/imported/badass.gif-4ced7fc798f864178c43cb80f4ee9dfc.tres"
+
+[deps]
+
+source_file="res://assets/2d/miscsprites/badass.gif"
+dest_files=["res://.godot/imported/badass.gif-4ced7fc798f864178c43cb80f4ee9dfc.tres"]
+
+[params]
+
+frames_per_second=30

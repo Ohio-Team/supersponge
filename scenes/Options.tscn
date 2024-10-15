@@ -231,6 +231,14 @@ action_name = "jump"
 layout_mode = 2
 action_name = "attack"
 
+[node name="Rebind7" parent="TabContainer/Controls/MarginContainer/ScrollContainer/BoxContainer" instance=ExtResource("6_ye3qy")]
+layout_mode = 2
+action_name = "groundpound"
+
+[node name="Rebind8" parent="TabContainer/Controls/MarginContainer/ScrollContainer/BoxContainer" instance=ExtResource("6_ye3qy")]
+layout_mode = 2
+action_name = "groundpound"
+
 [connection signal="pressed" from="Menu_Button" to="Menu_Button" method="_on_pressed"]
 [connection signal="tab_clicked" from="TabContainer" to="." method="_on_tab_container_tab_changed"]
 [connection signal="pressed" from="TabContainer/UI/MarginContainer/ScrollContainer/BoxContainer/Fpsbutton" to="TabContainer/UI/MarginContainer/ScrollContainer/BoxContainer/Fpsbutton" method="_on_pressed"]

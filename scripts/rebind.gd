@@ -19,6 +19,7 @@ func set_action_name():
 		"back": label.text = "Backwards"
 		"attack": label.text = "Attack"
 		"jump": label.text = "Jump"
+		"groundpound": label.text = "Groundpound"
 
 func set_text_for_key() -> void:
 	var action_events = InputMap.action_get_events(action_name)
