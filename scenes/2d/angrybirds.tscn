@@ -23,6 +23,8 @@ func _ready() -> void:
 	Singleton.save_game()
 	DiscordRPC.details = \"The Birds Want Their Eggs Back.\"
 	DiscordRPC.refresh()
+	Ui._clear_dialog()
+	Ui.create_dialog(\"Don't worry spongebob buddy i'll take care of this guy for you\",\"patrick\")
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
 
@@ -46,12 +48,14 @@ script/source = "extends Area2D
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group(\"Bird\"):
-		BMOD.play_sfx(preload(\"res://assets/sfx/scream.tres\"))
-		queue_free()
+		Ui._clear_dialog()
+		Ui.create_dialog(\"Sigh i have to kill this thing myself don't i\",\"spongebob\")
+		BMOD.play_sfx(preload(\"res://assets/sfx/patscream.tres\"))
+		$\"../Angry Bird\".queue_free()
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dmnwd"]
-size = Vector2(542, 534)
+size = Vector2(545, 534)
 
 [sub_resource type="GDScript" id="GDScript_wyt55"]
 resource_name = "cameraangry"
@@ -128,15 +132,16 @@ position = Vector2(100, 374)
 texture = ExtResource("4_yr4jo")
 
 [node name="Area2D" type="Area2D" parent="."]
+position = Vector2(272, 0)
 script = SubResource("GDScript_gerps")
 
 [node name="Ohiomonster" type="Sprite2D" parent="Area2D"]
-position = Vector2(981.75, 235.75)
+position = Vector2(680, 264)
 scale = Vector2(0.778336, 0.749671)
 texture = ExtResource("10_5e1gl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(982, 255)
+position = Vector2(680, 264)
 shape = SubResource("RectangleShape2D_dmnwd")
 
 [node name="Patrick" type="Sprite2D" parent="."]
@@ -155,4 +160,8 @@ texture = ExtResource("8_lhsp6")
 position = Vector2(646, 319)
 script = SubResource("GDScript_wyt55")
 
+[connection signal="child_entered_tree" from="Angry Bird" to="Area2D" method="_on_angry_bird_child_entered_tree"]
+[connection signal="tree_entered" from="Angry Bird" to="Area2D" method="_on_angry_bird_tree_entered"]
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="tree_entered" from="Area2D" to="Angry Bird" method="_on_area_2d_tree_entered"]
+[connection signal="tree_entered" from="Area2D/Ohiomonster" to="Angry Bird" method="_on_ohiomonster_tree_entered"]
