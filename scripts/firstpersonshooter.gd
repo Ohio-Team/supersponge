@@ -50,6 +50,7 @@ func _physics_process(delta):
 		0.7
 	)
 	if Input.is_action_just_pressed("shoot"):
+		BMOD.play_sfx(preload("res://assets/sfx/shoot.tres"))
 		var bullet = preload("res://scenes/3d/bullet3d.tscn")
 		var newbullet = bullet.instantiate()
 		var forward_direction = -$TwistPivot.transform.basis.z.normalized()

@@ -3,7 +3,7 @@
 [ext_resource type="AudioStream" uid="uid://c7xk80wlasxwe" path="res://assets/sfx/levelintro.mp3" id="2_6rbwh"]
 [ext_resource type="Texture2D" uid="uid://cpqmswqw71435" path="res://assets/2d/miscsprites/introbackground.png" id="3_bnb0y"]
 [ext_resource type="FontFile" uid="uid://ia1v43t7vpqa" path="res://assets/fonts/Krabby Patty.ttf" id="4_pl5jt"]
-[ext_resource type="SpriteFrames" uid="uid://bxack1vfpfdvu" path="res://assets/2d/miscsprites/yandhi.tres" id="4_xw4mn"]
+[ext_resource type="SpriteFrames" uid="uid://50grqm1g4bay" path="res://assets/2d/miscsprites/yandhi.tres" id="4_xw4mn"]
 
 [sub_resource type="GDScript" id="GDScript_nwy1q"]
 resource_name = "lvl8introe"
