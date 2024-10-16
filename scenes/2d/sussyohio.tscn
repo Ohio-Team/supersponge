@@ -1,0 +1,50 @@
+[gd_scene load_steps=7 format=3 uid="uid://g0n7avqcnmv3"]
+
+[ext_resource type="Script" path="res://scenes/2d/sussyohio.gd" id="1_8efvl"]
+[ext_resource type="PackedScene" uid="uid://ijj6qbkx8vhd" path="res://scenes/2d/platform.tscn" id="1_24mg1"]
+[ext_resource type="PackedScene" uid="uid://cjoo6ilm8eim1" path="res://scenes/2d/spongebob2d.tscn" id="2_1wi20"]
+[ext_resource type="Texture2D" uid="uid://byooo02dyr3q5" path="res://assets/2d/miscsprites/box.png" id="4_315sj"]
+[ext_resource type="SpriteFrames" uid="uid://cr84fqy15s2s3" path="res://assets/2d/miscsprites/sussyohio/sussy ohio 7.gif" id="5_6d16t"]
+[ext_resource type="SpriteFrames" uid="uid://bhfln3bom21pe" path="res://assets/2d/miscsprites/sussyohio/marioinohio.gif" id="6_jr888"]
+
+[node name="Sussyohio" type="Node2D"]
+script = ExtResource("1_8efvl")
+
+[node name="Spongebob" parent="." instance=ExtResource("2_1wi20")]
+position = Vector2(3560, 592)
+
+[node name="Collisions" type="Node" parent="."]
+
+[node name="Platform" parent="Collisions" instance=ExtResource("1_24mg1")]
+position = Vector2(1800, 720)
+scale = Vector2(187.843, 8.34372)
+
+[node name="Platform2" parent="Collisions" instance=ExtResource("1_24mg1")]
+position = Vector2(3688, 528)
+rotation = 1.57355
+scale = Vector2(22.3779, -1.2088)
+
+[node name="Box" type="Sprite2D" parent="."]
+position = Vector2(1840, 892)
+scale = Vector2(7.18359, 1)
+texture = ExtResource("4_315sj")
+
+[node name="Sussy Ohio" type="Node" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Sussy Ohio"]
+position = Vector2(2920, 504)
+scale = Vector2(0.425, 0.366667)
+sprite_frames = ExtResource("5_6d16t")
+animation = &"gif"
+autoplay = "gif"
+frame = 22
+frame_progress = 0.028753
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Sussy Ohio"]
+position = Vector2(2056, 528)
+scale = Vector2(0.363333, 0.381481)
+sprite_frames = ExtResource("6_jr888")
+animation = &"gif"
+autoplay = "gif"
+frame = 23
+frame_progress = 0.317218

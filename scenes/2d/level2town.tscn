@@ -1,21 +1,36 @@
-[gd_scene load_steps=13 format=3 uid="uid://cqym6djwfdoeq"]
+[gd_scene load_steps=16 format=3 uid="uid://cqym6djwfdoeq"]
 
 [ext_resource type="Script" path="res://scripts/level2town.gd" id="1_yv6tt"]
-[ext_resource type="Texture2D" uid="uid://bjqf1nbmaob28" path="res://assets/2d/miscsprites/downtown.png" id="2_5kwty"]
-[ext_resource type="Texture2D" uid="uid://b4tkx40gqj1uv" path="res://assets/2d/miscsprites/1200.png" id="3_ialdc"]
-[ext_resource type="Texture2D" uid="uid://bsodv4tuo7r18" path="res://assets/2d/miscsprites/gradient.png" id="4_pda6v"]
+[ext_resource type="Texture2D" uid="uid://cmgy4wfwn623l" path="res://assets/2d/miscsprites/downtown.png" id="2_5kwty"]
+[ext_resource type="Texture2D" uid="uid://cglsqdf088ikp" path="res://assets/2d/miscsprites/1200.png" id="3_ialdc"]
+[ext_resource type="Texture2D" uid="uid://c4gumkg4inp4i" path="res://assets/2d/miscsprites/gradient.png" id="4_pda6v"]
 [ext_resource type="PackedScene" uid="uid://ijj6qbkx8vhd" path="res://scenes/2d/platform.tscn" id="5_uyetc"]
 [ext_resource type="PackedScene" uid="uid://biiire7ectn7p" path="res://scenes/2d/hurtbox.tscn" id="6_inxqn"]
 [ext_resource type="PackedScene" uid="uid://cjoo6ilm8eim1" path="res://scenes/2d/spongebob2d.tscn" id="8_fe0hr"]
-[ext_resource type="Texture2D" uid="uid://bcq0pcj5k0buw" path="res://assets/2d/miscsprites/truck.png" id="8_nk5x7"]
-[ext_resource type="Texture2D" uid="uid://1t0ew8uxapvk" path="res://assets/2d/miscsprites/sewerindicator.png" id="9_0nj7h"]
+[ext_resource type="Texture2D" uid="uid://cpfhvt2155qvq" path="res://assets/2d/miscsprites/sewerindicator.png" id="9_0nj7h"]
 [ext_resource type="Script" path="res://scripts/sewerthing.gd" id="9_vhskc"]
+[ext_resource type="Texture2D" uid="uid://bo1a36m1t7t2g" path="res://assets/2d/miscsprites/truck-side.png" id="10_hlrfk"]
+[ext_resource type="Texture2D" uid="uid://flxjdbyashlv" path="res://assets/2d/miscsprites/truckopen.png" id="11_rtkqr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p5m3d"]
 size = Vector2(33, 29)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qple3"]
-size = Vector2(309, 147)
+size = Vector2(292, 147)
+
+[sub_resource type="GDScript" id="GDScript_k884n"]
+resource_name = "sent"
+script/source = "extends Area2D
+
+
+
+func _on_body_entered(body: Node2D) -> void:
+	if body.is_in_group(\"Player\"):
+		get_tree().change_scene_to_file(\"res://scenes/2d/sussyohio.tscn\")
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xkt23"]
+size = Vector2(23, 93.1377)
 
 [node name="Level2town" type="Node2D"]
 script = ExtResource("1_yv6tt")
@@ -169,15 +184,34 @@ shape = SubResource("RectangleShape2D_qple3")
 [node name="StaticBody2D3" type="StaticBody2D" parent="Collisions"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions/StaticBody2D3"]
-position = Vector2(-97.5, 553.5)
+position = Vector2(-106, 553.5)
 shape = SubResource("RectangleShape2D_qple3")
 
-[node name="Truck" type="Sprite2D" parent="Collisions/StaticBody2D3"]
-position = Vector2(-96, 553)
-scale = Vector2(0.634, 0.496266)
-texture = ExtResource("8_nk5x7")
+[node name="Platform15" parent="Collisions" instance=ExtResource("5_uyetc")]
+position = Vector2(68, 585)
+rotation = 0.523599
+scale = Vector2(6.63969, 0.281513)
 
 [node name="Spongebob" parent="." instance=ExtResource("8_fe0hr")]
 position = Vector2(4498, 572)
 
+[node name="Truck-side" type="Sprite2D" parent="."]
+position = Vector2(80, 592)
+rotation = 2.10495
+scale = Vector2(0.651073, 0.537714)
+texture = ExtResource("10_hlrfk")
+
+[node name="Truckopen" type="Sprite2D" parent="."]
+position = Vector2(-100, 556)
+scale = Vector2(0.624, 0.491909)
+texture = ExtResource("11_rtkqr")
+
+[node name="Area2D2" type="Area2D" parent="."]
+script = SubResource("GDScript_k884n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2(33, 527.431)
+shape = SubResource("RectangleShape2D_xkt23")
+
 [connection signal="body_entered" from="Collisions/sewerthing" to="Collisions/sewerthing" method="_on_body_entered"]
+[connection signal="body_entered" from="Area2D2" to="Area2D2" method="_on_body_entered"]

@@ -1,0 +1,15 @@
+[remap]
+
+importer="import_gif_to_sprite_frames"
+type="SpriteFrames"
+uid="uid://c2xr5us2v0f4m"
+path="res://.godot/imported/Sussy_Ohio.gif-c0079d3bb8537a074f21f0d7fbf46e16.tres"
+
+[deps]
+
+source_file="res://assets/2d/miscsprites/sussyohio/Sussy_Ohio.gif"
+dest_files=["res://.godot/imported/Sussy_Ohio.gif-c0079d3bb8537a074f21f0d7fbf46e16.tres"]
+
+[params]
+
+frames_per_second=30
