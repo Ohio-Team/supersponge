@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://dwm7vih3bgtyv"]
+
+[ext_resource type="Script" path="res://scripts/firstpersonshooter.gd" id="1_1kqf8"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_pptmq"]
+
+[node name="firstpersonshooter" type="CharacterBody3D" groups=["Player"]]
+script = ExtResource("1_1kqf8")
+
+[node name="TwistPivot" type="Node3D" parent="."]
+
+[node name="PitchPivot" type="Node3D" parent="TwistPivot"]
+
+[node name="Camera3D" type="Camera3D" parent="TwistPivot/PitchPivot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.92162, -0.496052)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.01956, 0)
+shape = SubResource("CapsuleShape3D_pptmq")

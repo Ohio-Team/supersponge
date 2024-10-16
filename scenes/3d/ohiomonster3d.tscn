@@ -908,9 +908,10 @@ radius = 15.9331
 height = 62.0604
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_tle5t"]
-size = Vector3(1, 48.0107, 36.0251)
+size = Vector3(17.2634, 56.8559, 36.0251)
 
 [node name="ohiomonster" type="CharacterBody3D"]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0, 0, 0)
 script = ExtResource("1_ctdqv")
 
 [node name="Ohiomonster" type="Node3D" parent="."]
@@ -1173,8 +1174,9 @@ autostart = true
 [node name="Area3D" type="Area3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 38.7458, 0.458618)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.420532, 34.3232, 0.458618)
 shape = SubResource("BoxShape3D_tle5t")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

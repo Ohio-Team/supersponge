@@ -182,7 +182,8 @@ motion_scale = Vector2(0.1, 0.1)
 [node name="Bob" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 texture_repeat = 2
 material = SubResource("ShaderMaterial_01xcf")
-scale = Vector2(6.689, 3.762)
+position = Vector2(-118, 0)
+scale = Vector2(7.21344, 3.762)
 texture = ExtResource("2_ngt2k")
 centered = false
 

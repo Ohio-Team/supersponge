@@ -21,11 +21,15 @@ func _physics_process(delta):
 
 	# Handle jump.
 	
+	if Singleton.health <= 0:
+		Singleton.health = 3
+		get_tree().reload_current_scene()
+	
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = 10
 	
 	var input_dir = Input.get_vector("left","right","front","back")
-	var direction = ($TwistPivot.basis * Vector3(Ui.joystick.x, 0, Ui.joystick.y)).normalized()
+	var direction = ($TwistPivot.basis * Vector3(Ui.joystick.posVector.x, 0, Ui.joystick.posVector.y)).normalized()
 	if direction:
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
@@ -45,6 +49,13 @@ func _physics_process(delta):
 		-0.7,
 		0.7
 	)
+	if Input.is_action_just_pressed("shoot"):
+		var bullet = preload("res://scenes/3d/bullet3d.tscn")
+		var newbullet = bullet.instantiate()
+		var forward_direction = -$TwistPivot.transform.basis.z.normalized()
+		newbullet.direction = forward_direction
+		newbullet.position = $TwistPivot/PitchPivot/Camera3D.global_position
+		get_tree().current_scene.add_child(newbullet)
 	twist_input = 0.0
 	pitch_input = 0.0
 	# level.update_ui_distance(distance)
