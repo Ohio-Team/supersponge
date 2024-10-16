@@ -1,11 +1,11 @@
 [gd_scene load_steps=3 format=3 uid="uid://dwm7vih3bgtyv"]
 
-[ext_resource type="Script" path="res://scripts/firstpersonplayer.gd" id="1_6ie27"]
+[ext_resource type="Script" path="res://scripts/firstpersonshooter.gd" id="1_1kqf8"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_pptmq"]
 
-[node name="firstpersonplayer" type="CharacterBody3D" groups=["Player"]]
-script = ExtResource("1_6ie27")
+[node name="firstpersonshooter" type="CharacterBody3D" groups=["Player"]]
+script = ExtResource("1_1kqf8")
 
 [node name="TwistPivot" type="Node3D" parent="."]
 

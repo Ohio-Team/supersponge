@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://dbfmy7gxj813y"]
+[gd_scene load_steps=10 format=3 uid="uid://dbfmy7gxj813y"]
 
 [ext_resource type="PackedScene" uid="uid://d2jf2vdsqv0nu" path="res://assets/3d/ohiomonster/stage.blend" id="1_yv50q"]
+[ext_resource type="PackedScene" uid="uid://dwm7vih3bgtyv" path="res://scenes/3d/firstpersonshooter.tscn" id="2_1exyh"]
 
 [sub_resource type="GDScript" id="GDScript_3bjgi"]
 resource_name = "3dfight"
@@ -8,11 +9,13 @@ script/source = "extends Node3D
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _ready() -> void:
+	Ui.ohiohealth.show()
 	Singleton.save_game()
 	MusicPlayer.play_song(\"res://assets/music/ohiomonsterbattle.ogg\")
 	DiscordRPC.details = \"Killing the Ohio Monster\"
 	DiscordRPC.refresh()
 	Ui.create_dialog(\"Let's kill this guy.\")
+	
 "
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_avwtu"]
@@ -30,8 +33,38 @@ tonemap_mode = 2
 glow_enabled = true
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_akx08"]
-vertices = PackedVector3Array(4.25, 1.5, -7.75, 0.5, 1.5, -9.5, -0.5, 1.5, -9.5, -6, 1.5, -7.25, -7, 1.5, -6.5, -8.75, 1.5, -2, -1, 1.5, -1.5, 3.25, 1.5, -1.5, 3.75, 1.5, 1.5, 3.25, 1.5, 1.75, 7.5, 1.5, 5, 9.5, 1.5, 0.5, 9.5, 1.5, -0.5, 3.75, 1.5, -1.25, 7, 1.5, -6.5, -1, 1.75, 0.5, -0.25, 2.25, 0.5, -0.25, 2.25, -0.5, -1, 1.75, -0.5, -1.25, 1.5, 1.25, -9.5, 1.5, 0.5, -8.5, 1.5, 2.5, 1.5, 3.5, -0.5, 1.5, 3.5, 0.5, 2.75, 3.5, 0.5, 2.75, 3.5, -0.5, 6.5, 1.5, 7, -6.5, 1.5, 7, -0.5, 1.5, 9.5, 0.5, 1.5, 9.5, -1, 1.5, 1.75)
-polygons = [PackedInt32Array(2, 1, 0), PackedInt32Array(5, 4, 3), PackedInt32Array(7, 6, 0), PackedInt32Array(0, 6, 2), PackedInt32Array(2, 6, 3), PackedInt32Array(3, 6, 5), PackedInt32Array(10, 9, 8), PackedInt32Array(11, 10, 12), PackedInt32Array(12, 10, 8), PackedInt32Array(12, 8, 13), PackedInt32Array(13, 7, 12), PackedInt32Array(12, 7, 14), PackedInt32Array(14, 7, 0), PackedInt32Array(18, 17, 15), PackedInt32Array(15, 17, 16), PackedInt32Array(18, 19, 6), PackedInt32Array(6, 19, 21), PackedInt32Array(6, 21, 20), PackedInt32Array(6, 20, 5), PackedInt32Array(18, 15, 19), PackedInt32Array(25, 24, 22), PackedInt32Array(22, 24, 23), PackedInt32Array(26, 9, 10), PackedInt32Array(29, 28, 27), PackedInt32Array(21, 19, 30), PackedInt32Array(9, 26, 30), PackedInt32Array(30, 26, 29), PackedInt32Array(30, 29, 27), PackedInt32Array(30, 27, 21)]
+vertices = PackedVector3Array(6.75, 1.5, -1.25, 8, 1.5, -1.5, 8, 1.5, -2, 6.25, 1.5, -6.25, 0.25, 1.5, -8.75, 6.25, 1.5, 6.25, 8, 1.5, 2, 6.75, 1.5, 1.5, -8.75, 1.5, -0.25, -6.25, 1.5, 6.25, -0.25, 1.5, 8.75, -6.25, 1.5, -6.25, 7.75, 7.25, -0.5, 7.75, 7.25, 0.5, 8.5, 7.25, 0.5, 8.5, 7.25, -0.5, 8, 1.5, -0.25, 8, 1.5, 0.5, 8.75, 1.5, 0.25, 8.75, 1.5, -0.25)
+polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 3), PackedInt32Array(3, 0, 4), PackedInt32Array(7, 6, 5), PackedInt32Array(11, 4, 8), PackedInt32Array(8, 4, 9), PackedInt32Array(9, 4, 10), PackedInt32Array(10, 4, 0), PackedInt32Array(7, 5, 0), PackedInt32Array(0, 5, 10), PackedInt32Array(15, 14, 12), PackedInt32Array(12, 14, 13), PackedInt32Array(19, 18, 16), PackedInt32Array(16, 18, 17)]
+
+[sub_resource type="GDScript" id="GDScript_45v2q"]
+resource_name = "sin"
+script/source = "extends Area3D
+
+
+var health:float = 250
+
+
+func _on_area_entered(area: Area3D) -> void:
+	if area.is_in_group(\"Projectiles\"):
+		health -= 10
+		Ui.ohiohealth.text = \"Ohio Healh: \" + str(health)
+		BMOD.play_sfx_3d(preload(\"res://assets/sfx/cjhurt.tres\"),position)
+		area.queue_free()
+		var monsterling = preload(\"res://scenes/3d/ohiomonster3d.tscn\")
+		var newmonsterling = monsterling.instantiate()
+		newmonsterling.position = Vector3(0,2,0)
+		get_tree().current_scene.add_child(newmonsterling)
+
+
+func _on_timer_timeout() -> void:
+	var monsterling = preload(\"res://scenes/3d/ohiomonster3d.tscn\")
+	var newmonsterling = monsterling.instantiate()
+	newmonsterling.position = Vector3(0,5,0)
+	get_tree().current_scene.add_child(newmonsterling)
+"
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_swyyi"]
+size = Vector3(1, 2.13422, 1.69489)
 
 [node name="Bossfight3d" type="Node3D"]
 script = SubResource("GDScript_3bjgi")
@@ -52,3 +85,20 @@ navigation_mesh = SubResource("NavigationMesh_akx08")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.21319, 8.32798, 0)
+
+[node name="firstpersonshooter" parent="." instance=ExtResource("2_1exyh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0295699, 1.11333, -1.45642)
+
+[node name="Ohio of Sin" type="Area3D" parent="."]
+script = SubResource("GDScript_45v2q")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ohio of Sin"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.24002, 8.03671, 0.000335693)
+shape = SubResource("BoxShape3D_swyyi")
+
+[node name="Timer" type="Timer" parent="Ohio of Sin"]
+wait_time = 5.0
+autostart = true
+
+[connection signal="area_entered" from="Ohio of Sin" to="Ohio of Sin" method="_on_area_entered"]
+[connection signal="timeout" from="Ohio of Sin/Timer" to="Ohio of Sin" method="_on_timer_timeout"]

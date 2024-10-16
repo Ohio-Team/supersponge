@@ -351,6 +351,18 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 10
 text = "0"
 
+[node name="ohiohealth" type="RichTextLabel" parent="."]
+visible = false
+offset_left = 1044.0
+offset_top = 3.0
+offset_right = 1309.0
+offset_bottom = 43.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/normal_font = ExtResource("2_0v11p")
+theme_override_font_sizes/normal_font_size = 32
+text = "Ohio Health: 250"
+
 [connection signal="pressed" from="Pause/Button" to="Pause/Button" method="_on_pressed"]
 [connection signal="pressed" from="Pause/Button3" to="Pause/Button3" method="_on_pressed"]
 [connection signal="pressed" from="Pause/Button4" to="Pause/Button4" method="_on_pressed"]

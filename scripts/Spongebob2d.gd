@@ -109,7 +109,7 @@ func generate_bullet():
 	new_node.direction.x = direction
 	new_node.position.x = position.x + 40 * direction
 	new_node.position.y = position.y - 20
-	get_tree().root.add_child(new_node)
+	get_tree().current_scene.add_child(new_node)
 
 
 func _on_timer_timeout() -> void:

@@ -1,7 +1,7 @@
 extends CanvasLayer
 
 var time: float = 0.0
-
+@onready var ohiohealth = $ohiohealth
 signal dialog_finished
 # Called when the node enters the scene tree for the first time.
 func _ready():
