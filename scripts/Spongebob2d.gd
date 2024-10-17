@@ -21,7 +21,7 @@ func inputs(direction):
 			BMOD.play_sfx(preload("res://assets/sfx/ouch.tres"))
 			$Invincibility.start()
 			velocity.x = SPEED * 4
-			velocity.y += -450
+			velocity.y = -450
 			anim.play("hurt")
 			invincible = true
 			if anim.animation_finished:
@@ -31,9 +31,11 @@ func inputs(direction):
 				state = "attack"
 				anim.play("attack")
 				BMOD.play_sfx(preload("res://assets/sfx/net.tres"))
+				$CollisionShape2D.shape.size = Vector2(48,35)
 				await $AnimatedSprite2D.animation_finished
 				state = "idle"
 				anim.play("idle")
+				$CollisionShape2D.shape.size = Vector2(12,30)
 			else:
 				generate_bullet()
 	# Handle jump.

@@ -2,7 +2,7 @@
 
 [ext_resource type="SpriteFrames" uid="uid://vgqyi66iob4" path="res://assets/2d/miscsprites/badass.gif" id="1_trurj"]
 [ext_resource type="AudioStream" uid="uid://bfimjcqqg3sil" path="res://assets/sfx/intro.ogg" id="2_avhqf"]
-[ext_resource type="SpriteFrames" uid="uid://bxack1vfpfdvu" path="res://assets/2d/miscsprites/yandhi.tres" id="3_35m7w"]
+[ext_resource type="SpriteFrames" uid="uid://50grqm1g4bay" path="res://assets/2d/miscsprites/yandhi.tres" id="3_35m7w"]
 
 [sub_resource type="GDScript" id="GDScript_q31up"]
 resource_name = "intro"

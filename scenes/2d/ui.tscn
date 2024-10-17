@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://cvrjies3bykha" path="res://assets/2d/android/buttonfire.png" id="12_yevqa"]
 [ext_resource type="Texture2D" uid="uid://cftsidj3cumjb" path="res://assets/2d/android/buttonjump.png" id="13_ducc1"]
 [ext_resource type="AudioStream" uid="uid://t4jo45yutvro" path="res://assets/music/pause.mp3" id="13_prtdn"]
-[ext_resource type="PackedScene" uid="uid://dpatlm3ej67bl" path="res://scenes/2d/joystick.tscn" id="15_61fgy"]
+[ext_resource type="PackedScene" path="res://scenes/2d/joystick.tscn" id="15_61fgy"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jq37k"]
 radius = 243.19
@@ -372,6 +372,7 @@ visibility_mode = 1
 [node name="Joystick" parent="." instance=ExtResource("15_61fgy")]
 position = Vector2(115, 610)
 scale = Vector2(2, 2)
+
 [node name="ohiohealth" type="RichTextLabel" parent="."]
 visible = false
 offset_left = 1044.0

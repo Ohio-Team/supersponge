@@ -458,13 +458,10 @@ script = ExtResource("1_uyiiv")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_u32rl")
-animation = &"turn"
+animation = &"attack"
 autoplay = "idle"
-frame = 12
-frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, 0)
 shape = SubResource("RectangleShape2D_putow")
 
 [node name="Camera2D" type="Camera2D" parent="."]

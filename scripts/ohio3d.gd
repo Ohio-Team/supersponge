@@ -27,5 +27,5 @@ func _on_area_3d_area_entered(area: Area3D) -> void:
 		var newhealthth = healththing.instantiate()
 		newhealthth.position = position
 		get_tree().current_scene.add_child(newhealthth)
-		BMOD.play_sfx_3d(preload("res://assets/sfx/jumpscare.tres"),position)
+		BMOD.play_sfx_3d(preload("res://assets/sfx/ohioscreams.tres"),position)
 		queue_free()

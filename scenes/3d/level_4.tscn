@@ -257,4 +257,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.94007, 6.84823, -19.1331)
 [node name="Spatula3d2" parent="." instance=ExtResource("10_dvwl7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.6828, 6.08182, -13.0548)
 
+[node name="Spatula3d3" parent="." instance=ExtResource("10_dvwl7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42.0772, 4.83504, -18.5247)
+
 [connection signal="body_entered" from="Sprite3D/Area3D" to="Sprite3D" method="_on_area_3d_body_entered"]
