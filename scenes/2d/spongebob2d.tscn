@@ -462,7 +462,6 @@ animation = &"attack"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, 0)
 shape = SubResource("RectangleShape2D_putow")
 
 [node name="Camera2D" type="Camera2D" parent="."]
