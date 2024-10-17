@@ -14,7 +14,6 @@ func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	MusicPlayer.stop_song()
 	MusicPlayer.play_song("res://assets/music/sb-title.mp3")
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass

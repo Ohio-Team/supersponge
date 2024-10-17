@@ -16,6 +16,9 @@ func _ready() -> void:
 	DiscordRPC.refresh()
 	Ui.create_dialog(\"Let's kill this guy.\")
 	
+func _physics_process(delta: float) -> void:
+	if $\"Ohio of Sin\".health <= 0:
+		print(\"beaten\")
 "
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_avwtu"]
