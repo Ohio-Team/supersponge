@@ -45,3 +45,5 @@ func save_settings():
 	config.set_value("controls","jump",get_keycode("jump"))
 	config.set_value("controls","groundpound",get_keycode("groundpound"))
 	config.save("user://settings.cfg")
+	Singleton.mouse_sensitivity = $"../TabContainer/Misc/MarginContainer/ScrollContainer/BoxContainer/MouseSensitivity".value
+	Singleton.load_settings()
