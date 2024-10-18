@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="SingleSoundEffect" load_steps=3 format=3 uid="uid://ca0ghh6r1a57j"]
+
+[ext_resource type="Script" path="res://addons/bmod/scripts/resources/single_sound_effect.gd" id="1_jcfit"]
+[ext_resource type="AudioStream" uid="uid://ba0hy4q1h62vj" path="res://assets/sfx/sfx_frontend_move_cursor.ogg" id="1_kwcxb"]
+
+[resource]
+script = ExtResource("1_jcfit")
+audio_stream = ExtResource("1_kwcxb")
+play = false
+play_on_change = false
