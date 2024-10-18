@@ -1,5 +1,7 @@
 extends Control
 
+var config = ConfigFile.new()
+var err = config.load("user://settings.cfg")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -10,26 +12,14 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func load_settings():
-	if not FileAccess.file_exists("user://settings.save"):
+	if err != OK:
 		return
-		
-	var save_file = FileAccess.open("user://settings.save", FileAccess.READ)
-	while save_file.get_position() < save_file.get_length():
-		var json_string = save_file.get_line()
-		var json = JSON.new()
-		var parse_result = json.parse(json_string)
-		if not parse_result == OK:
-			print("JSON Parse Error: ", json.get_error_message(), " in ", json_string, " at line ", json.get_error_line())
-			continue
-		
-		var data = json.get_data()
-		$TabContainer/Misc/MarginContainer/ScrollContainer/BoxContainer/Fpsbutton.button_pressed = data["showfps"]
-		$TabContainer/Misc/MarginContainer/ScrollContainer/BoxContainer/Speedrunbutton.button_pressed = data["showspeedrun"]
-		$TabContainer/Audio/MarginContainer/ScrollContainer/VBoxContainer/Master.value = data["Master"]
-		$TabContainer/Audio/MarginContainer/ScrollContainer/VBoxContainer/Music.value = data["Music"]
-		$TabContainer/Audio/MarginContainer/ScrollContainer/VBoxContainer/SFX.value = data["SFX"]
-		$TabContainer/Misc/MarginContainer/ScrollContainer/BoxContainer/MouseSensitivity.value = data["mouse_sensitivity"]
-		
+	$TabContainer/Misc/MarginContainer/ScrollContainer/BoxContainer/Fpsbutton.button_pressed = config.get_value("misc","showfps")
+	$TabContainer/Misc/MarginContainer/ScrollContainer/BoxContainer/Speedrunbutton.button_pressed = config.get_value("misc","showfps")
+	$TabContainer/Audio/MarginContainer/ScrollContainer/VBoxContainer/Master.value = config.get_value("audio","Master")
+	$TabContainer/Audio/MarginContainer/ScrollContainer/VBoxContainer/Music.value = config.get_value("audio","Music")
+	$TabContainer/Audio/MarginContainer/ScrollContainer/VBoxContainer/SFX.value = config.get_value("audio","SFX")
+	$TabContainer/Misc/MarginContainer/ScrollContainer/BoxContainer/MouseSensitivity.value = config.get_value("misc","mouse_sensitivity")
 
 
 func _on_tab_container_tab_changed(tab: int) -> void:

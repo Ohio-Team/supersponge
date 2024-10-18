@@ -1,5 +1,10 @@
 extends Button
 
+var config = ConfigFile.new()
+
+# Load data from a file.
+var err = config.load("user://settings.cfg")
+
 func _on_pressed() -> void:
 	Singleton.inmenu = false
 	BMOD.play_sfx(preload("res://assets/sfx/funnybuttons/buttons.tres"))
@@ -19,30 +24,24 @@ func _on_pressed() -> void:
 		save_settings()
 		get_tree().change_scene_to_file(data["current_scene"])
 		
-func settings():
-	var dict = {
-		"Music": $"../TabContainer/Audio/MarginContainer/ScrollContainer/VBoxContainer/Music".value,
-		"SFX": $"../TabContainer/Audio/MarginContainer/ScrollContainer/VBoxContainer/SFX".value,
-		"Master": $"../TabContainer/Audio/MarginContainer/ScrollContainer/VBoxContainer/Master".value,
-		"showfps": $"../TabContainer/Misc/MarginContainer/ScrollContainer/BoxContainer/Fpsbutton".button_pressed,
-		"showspeedrun": $"../TabContainer/Misc/MarginContainer/ScrollContainer/BoxContainer/Speedrunbutton".button_pressed,
-		"mouse_sensitivity": $"../TabContainer/Misc/MarginContainer/ScrollContainer/BoxContainer/MouseSensitivity".value,
-		"controls": [
-			"left",
-			"right",
-			"front",
-			"back",
-			"attack",
-			"groundpound"
-		]
-	}
-	return dict
+func get_keycode(action_name:String):
+	var action_events = InputMap.action_get_events(action_name)
+	var action_event = action_events[0]
+	return action_event
+
 	
 func save_settings():
-	var save_file = FileAccess.open("user://settings.save",FileAccess.WRITE)
-	var game_data = settings()
-	
-	var json = JSON.stringify(game_data)
-	save_file.store_line(json)
-	Singleton.load_settings()
-	print("settings saved")
+	config.set_value("audio","Music",$"../TabContainer/Audio/MarginContainer/ScrollContainer/VBoxContainer/Music".value)
+	config.set_value("audio","Master",$"../TabContainer/Audio/MarginContainer/ScrollContainer/VBoxContainer/Master".value)
+	config.set_value("audio","SFX",$"../TabContainer/Audio/MarginContainer/ScrollContainer/VBoxContainer/SFX".value)
+	config.set_value("misc","showfps",$"../TabContainer/Misc/MarginContainer/ScrollContainer/BoxContainer/Fpsbutton".button_pressed)
+	config.set_value("misc","showspeedrun",$"../TabContainer/Misc/MarginContainer/ScrollContainer/BoxContainer/Speedrunbutton".button_pressed)
+	config.set_value("misc","mouse_sensitivity",$"../TabContainer/Misc/MarginContainer/ScrollContainer/BoxContainer/MouseSensitivity".value)
+	config.set_value("controls","right",get_keycode("right"))
+	config.set_value("controls","left",get_keycode("left"))
+	config.set_value("controls","front",get_keycode("front"))
+	config.set_value("controls","back",get_keycode("back"))
+	config.set_value("controls","attack",get_keycode("attack"))
+	config.set_value("controls","jump",get_keycode("jump"))
+	config.set_value("controls","groundpound",get_keycode("groundpound"))
+	config.save("user://settings.cfg")
