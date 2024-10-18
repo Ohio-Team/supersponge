@@ -49,7 +49,7 @@ script = ExtResource("2_y3uk4")
 camera = NodePath("../Camera")
 
 [node name="Camera" type="Camera3D" parent="."]
-transform = Transform3D(1, 4.52574e-16, -1.24344e-15, 0, 0.939693, 0.34202, 1.32324e-15, -0.34202, 0.939693, -1.24343e-14, 3.4202, 9.39692)
+transform = Transform3D(1, 4.52579e-16, -1.24345e-15, 0, 0.939693, 0.34202, 1.32325e-15, -0.34202, 0.939693, -1.24345e-14, 3.4202, 9.39692)
 top_level = true
 
 [node name="CameraDebug" type="MeshInstance3D" parent="Camera"]

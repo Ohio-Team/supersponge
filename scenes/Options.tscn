@@ -83,7 +83,7 @@ offset_left = 262.0
 offset_top = 154.0
 offset_right = 978.0
 offset_bottom = 559.0
-current_tab = 2
+current_tab = 1
 
 [node name="Audio" type="TabBar" parent="TabContainer"]
 visible = false
@@ -151,12 +151,11 @@ step = 0.001
 script = ExtResource("1_ua5gb")
 bus_name = "SFX"
 
-[node name="UI" type="TabBar" parent="TabContainer"]
-visible = false
+[node name="Misc" type="TabBar" parent="TabContainer"]
 layout_mode = 2
 metadata/_tab_index = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="TabContainer/UI"]
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/Misc"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.00977654
@@ -167,24 +166,35 @@ grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/UI/MarginContainer"]
+[node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/Misc/MarginContainer"]
 layout_mode = 2
 
-[node name="BoxContainer" type="BoxContainer" parent="TabContainer/UI/MarginContainer/ScrollContainer"]
+[node name="BoxContainer" type="BoxContainer" parent="TabContainer/Misc/MarginContainer/ScrollContainer"]
 layout_mode = 2
 vertical = true
 
-[node name="Fpsbutton" type="CheckButton" parent="TabContainer/UI/MarginContainer/ScrollContainer/BoxContainer"]
+[node name="Fpsbutton" type="CheckButton" parent="TabContainer/Misc/MarginContainer/ScrollContainer/BoxContainer"]
 layout_mode = 2
 text = "Show FPS"
 script = SubResource("GDScript_ufrsh")
 
-[node name="Speedrunbutton" type="CheckButton" parent="TabContainer/UI/MarginContainer/ScrollContainer/BoxContainer"]
+[node name="Speedrunbutton" type="CheckButton" parent="TabContainer/Misc/MarginContainer/ScrollContainer/BoxContainer"]
 layout_mode = 2
 text = "Show Speedrun Timer"
 script = SubResource("GDScript_t851n")
 
+[node name="Label" type="Label" parent="TabContainer/Misc/MarginContainer/ScrollContainer/BoxContainer"]
+layout_mode = 2
+text = "Mouse Sensitivity"
+
+[node name="MouseSensitivity" type="HSlider" parent="TabContainer/Misc/MarginContainer/ScrollContainer/BoxContainer"]
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+value = 1.0
+
 [node name="Controls" type="TabBar" parent="TabContainer"]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 2
 
@@ -241,5 +251,5 @@ action_name = "groundpound"
 
 [connection signal="pressed" from="Menu_Button" to="Menu_Button" method="_on_pressed"]
 [connection signal="tab_clicked" from="TabContainer" to="." method="_on_tab_container_tab_changed"]
-[connection signal="pressed" from="TabContainer/UI/MarginContainer/ScrollContainer/BoxContainer/Fpsbutton" to="TabContainer/UI/MarginContainer/ScrollContainer/BoxContainer/Fpsbutton" method="_on_pressed"]
-[connection signal="pressed" from="TabContainer/UI/MarginContainer/ScrollContainer/BoxContainer/Speedrunbutton" to="TabContainer/UI/MarginContainer/ScrollContainer/BoxContainer/Speedrunbutton" method="_on_pressed"]
+[connection signal="pressed" from="TabContainer/Misc/MarginContainer/ScrollContainer/BoxContainer/Fpsbutton" to="TabContainer/Misc/MarginContainer/ScrollContainer/BoxContainer/Fpsbutton" method="_on_pressed"]
+[connection signal="pressed" from="TabContainer/Misc/MarginContainer/ScrollContainer/BoxContainer/Speedrunbutton" to="TabContainer/Misc/MarginContainer/ScrollContainer/BoxContainer/Speedrunbutton" method="_on_pressed"]

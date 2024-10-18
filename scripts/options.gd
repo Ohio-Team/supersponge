@@ -23,11 +23,12 @@ func load_settings():
 			continue
 		
 		var data = json.get_data()
-		$TabContainer/UI/MarginContainer/ScrollContainer/BoxContainer/Fpsbutton.button_pressed = data["showfps"]
-		$TabContainer/UI/MarginContainer/ScrollContainer/BoxContainer/Speedrunbutton.button_pressed = data["showspeedrun"]
+		$TabContainer/Misc/MarginContainer/ScrollContainer/BoxContainer/Fpsbutton.button_pressed = data["showfps"]
+		$TabContainer/Misc/MarginContainer/ScrollContainer/BoxContainer/Speedrunbutton.button_pressed = data["showspeedrun"]
 		$TabContainer/Audio/MarginContainer/ScrollContainer/VBoxContainer/Master.value = data["Master"]
 		$TabContainer/Audio/MarginContainer/ScrollContainer/VBoxContainer/Music.value = data["Music"]
 		$TabContainer/Audio/MarginContainer/ScrollContainer/VBoxContainer/SFX.value = data["SFX"]
+		$TabContainer/Misc/MarginContainer/ScrollContainer/BoxContainer/MouseSensitivity.value = data["mouse_sensitivity"]
 		
 	print(InputMap.get_actions())
 

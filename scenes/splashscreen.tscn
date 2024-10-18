@@ -1,5 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://bvqhl1de8ki8g"]
+[gd_scene load_steps=11 format=3 uid="uid://bvqhl1de8ki8g"]
 
+[ext_resource type="Texture2D" uid="uid://bmnbmx44o7bth" path="res://assets/2d/miscsprites/badass.png" id="1_hj74l"]
 [ext_resource type="AudioStream" uid="uid://bfimjcqqg3sil" path="res://assets/sfx/intro.ogg" id="2_avhqf"]
 [ext_resource type="SpriteFrames" uid="uid://50grqm1g4bay" path="res://assets/2d/miscsprites/yandhi.tres" id="3_35m7w"]
 
@@ -29,6 +30,49 @@ func _on_audio_stream_player_finished() -> void:
 	get_tree().change_scene_to_file(\"res://scenes/Main Menu.tscn\")
 "
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_dr3bk"]
+atlas = ExtResource("1_hj74l")
+region = Rect2(0, 0, 393, 92)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4dh67"]
+atlas = ExtResource("1_hj74l")
+region = Rect2(393, 0, 393, 92)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ud61v"]
+atlas = ExtResource("1_hj74l")
+region = Rect2(786, 0, 393, 92)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d5anr"]
+atlas = ExtResource("1_hj74l")
+region = Rect2(1179, 0, 393, 92)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_87xgc"]
+atlas = ExtResource("1_hj74l")
+region = Rect2(1572, 0, 393, 92)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qmn3d"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dr3bk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4dh67")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ud61v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d5anr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_87xgc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 20.0
+}]
+
 [node name="Splashscreen" type="Node2D"]
 script = SubResource("GDScript_q31up")
 
@@ -39,9 +83,9 @@ color = Color(0, 0, 0, 1)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(446, 365)
-animation = &""
-autoplay = "gif"
-frame_progress = 0.778171
+sprite_frames = SubResource("SpriteFrames_qmn3d")
+autoplay = "default"
+frame_progress = 0.774764
 centered = false
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

@@ -24,8 +24,9 @@ func settings():
 		"Music": $"../TabContainer/Audio/MarginContainer/ScrollContainer/VBoxContainer/Music".value,
 		"SFX": $"../TabContainer/Audio/MarginContainer/ScrollContainer/VBoxContainer/SFX".value,
 		"Master": $"../TabContainer/Audio/MarginContainer/ScrollContainer/VBoxContainer/Master".value,
-		"showfps": $"../TabContainer/UI/MarginContainer/ScrollContainer/BoxContainer/Fpsbutton".button_pressed,
-		"showspeedrun": $"../TabContainer/UI/MarginContainer/ScrollContainer/BoxContainer/Speedrunbutton".button_pressed
+		"showfps": $"../TabContainer/Misc/MarginContainer/ScrollContainer/BoxContainer/Fpsbutton".button_pressed,
+		"showspeedrun": $"../TabContainer/Misc/MarginContainer/ScrollContainer/BoxContainer/Speedrunbutton".button_pressed,
+		"mouse_sensitivity": $"../TabContainer/Misc/MarginContainer/ScrollContainer/BoxContainer/MouseSensitivity".value
 	}
 	return dict
 	
@@ -35,4 +36,5 @@ func save_settings():
 	
 	var json = JSON.stringify(game_data)
 	save_file.store_line(json)
+	Singleton.load_settings()
 	print("settings saved")

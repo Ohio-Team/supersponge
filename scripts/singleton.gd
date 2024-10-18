@@ -8,6 +8,7 @@ extends Node
 @export var showspeedrun:bool = false
 @export var lifes:int = 4
 @export var health:int = 3
+@export var mouse_sensitivity:float = 1
 @export var spatulas:int = 0
 @export var acceptinput:bool = true
 
@@ -87,3 +88,4 @@ func load_settings():
 		AudioServer.set_bus_volume_db(2,linear_to_db(data["SFX"]))
 		showfps = data["showfps"]
 		showspeedrun = data["showspeedrun"]
+		mouse_sensitivity = data["mouse_sensitivity"]

@@ -91,6 +91,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.21319, 8.32798, 0)
 
 [node name="firstpersonshooter" parent="." instance=ExtResource("2_1exyh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0295699, 1.11333, -1.45642)
+SPEED = null
 
 [node name="Ohio of Sin" type="Area3D" parent="."]
 script = SubResource("GDScript_45v2q")
