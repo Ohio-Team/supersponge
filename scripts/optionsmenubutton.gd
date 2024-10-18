@@ -26,7 +26,15 @@ func settings():
 		"Master": $"../TabContainer/Audio/MarginContainer/ScrollContainer/VBoxContainer/Master".value,
 		"showfps": $"../TabContainer/Misc/MarginContainer/ScrollContainer/BoxContainer/Fpsbutton".button_pressed,
 		"showspeedrun": $"../TabContainer/Misc/MarginContainer/ScrollContainer/BoxContainer/Speedrunbutton".button_pressed,
-		"mouse_sensitivity": $"../TabContainer/Misc/MarginContainer/ScrollContainer/BoxContainer/MouseSensitivity".value
+		"mouse_sensitivity": $"../TabContainer/Misc/MarginContainer/ScrollContainer/BoxContainer/MouseSensitivity".value,
+		"controls": [
+			"left",
+			"right",
+			"front",
+			"back",
+			"attack",
+			"groundpound"
+		]
 	}
 	return dict
 	

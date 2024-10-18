@@ -30,7 +30,6 @@ func load_settings():
 		$TabContainer/Audio/MarginContainer/ScrollContainer/VBoxContainer/SFX.value = data["SFX"]
 		$TabContainer/Misc/MarginContainer/ScrollContainer/BoxContainer/MouseSensitivity.value = data["mouse_sensitivity"]
 		
-	print(InputMap.get_actions())
 
 
 func _on_tab_container_tab_changed(tab: int) -> void:
