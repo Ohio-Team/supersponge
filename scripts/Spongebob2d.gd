@@ -50,6 +50,7 @@ func inputs(direction):
 				velocity.y = -JUMP_VELOCITY
 				anim.play("groundpound")
 				state = "groundpound"
+				$CollisionShape2D.shape.size = Vector2(12,30)
 		if Input.is_action_just_released("jump"):
 			if velocity.y < 0 and state != "groundpound" and !$Coyote.is_stopped():
 				velocity.y = 0
