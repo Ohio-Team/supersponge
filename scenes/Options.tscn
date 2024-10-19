@@ -250,7 +250,9 @@ action_name = "groundpound"
 layout_mode = 2
 action_name = "groundpound"
 
+[connection signal="mouse_entered" from="Menu_Button" to="Menu_Button" method="_on_mouse_entered"]
 [connection signal="pressed" from="Menu_Button" to="Menu_Button" method="_on_pressed"]
 [connection signal="tab_clicked" from="TabContainer" to="." method="_on_tab_container_tab_changed"]
+[connection signal="tab_hovered" from="TabContainer" to="." method="_on_tab_container_tab_hovered"]
 [connection signal="pressed" from="TabContainer/Misc/MarginContainer/ScrollContainer/BoxContainer/Fpsbutton" to="TabContainer/Misc/MarginContainer/ScrollContainer/BoxContainer/Fpsbutton" method="_on_pressed"]
 [connection signal="pressed" from="TabContainer/Misc/MarginContainer/ScrollContainer/BoxContainer/Speedrunbutton" to="TabContainer/Misc/MarginContainer/ScrollContainer/BoxContainer/Speedrunbutton" method="_on_pressed"]

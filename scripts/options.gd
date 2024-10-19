@@ -24,3 +24,7 @@ func load_settings():
 
 func _on_tab_container_tab_changed(tab: int) -> void:
 	BMOD.play_sfx(preload("res://assets/sfx/funnybuttons/buttons.tres"))
+
+
+func _on_tab_container_tab_hovered(tab: int) -> void:
+	BMOD.play_sfx(preload("res://assets/sfx/menumove.tres"))
