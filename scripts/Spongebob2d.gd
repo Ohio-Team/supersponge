@@ -46,6 +46,7 @@ func inputs(direction):
 					BMOD.play_sfx(preload("res://assets/sfx/jump.tres"))
 					anim.play("jump")
 					state = "jump"
+					$CollisionShape2D.shape.size = Vector2(12,30)
 		if Input.is_action_just_pressed("groundpound") and state != "dying" and state != "hurt" and not is_on_floor() and $Coyote.is_stopped():
 				velocity.y = -JUMP_VELOCITY
 				anim.play("groundpound")
