@@ -47,3 +47,7 @@ func save_settings():
 	config.save("user://settings.cfg")
 	Singleton.mouse_sensitivity = $"../TabContainer/Misc/MarginContainer/ScrollContainer/BoxContainer/MouseSensitivity".value
 	Singleton.load_settings()
+
+
+func _on_mouse_entered() -> void:
+	BMOD.play_sfx(preload("res://assets/sfx/menumove.tres"))
