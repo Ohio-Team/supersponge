@@ -227,7 +227,7 @@ text = "Watch out for those fiendish jellyfish, bob. Press X to attack them with
 
 [node name="Dialogzone3" parent="." instance=ExtResource("10_y0aui")]
 position = Vector2(1205, 490)
-scale = Vector2(3.78657, -9.61802)
+scale = Vector2(3.78657, -15.058)
 text = "Now [b]THIS[/b] is a real challenge, you can kill jellyfish by groundpounding them, to do so press [b]SPACE[/b] on the air"
 
 [node name="Dialogzone4" parent="." instance=ExtResource("10_y0aui")]
@@ -242,7 +242,7 @@ text = "Spatulas are the collectable of this game, they dont do anything but you
 
 [node name="Dialogzone6" parent="." instance=ExtResource("10_y0aui")]
 position = Vector2(1543, 1004)
-scale = Vector2(1, 11.08)
+scale = Vector2(1.00199, 11.3017)
 text = "Crazy fish chase you if they are near you. You can kill them but its hard so try to run as fast as possible"
 
 [node name="Dialogzone7" parent="." instance=ExtResource("10_y0aui")]
@@ -269,27 +269,4 @@ flip_h = true
 position = Vector2(0, -3.05176e-05)
 shape = SubResource("RectangleShape2D_o15g4")
 
-[connection signal="body_entered" from="TileMapLayer/Spatula" to="TileMapLayer/Spatula" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMapLayer/Jellyfish" to="TileMapLayer/Jellyfish" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMapLayer/@Area2D@26175" to="TileMapLayer/@Area2D@26175" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMapLayer/@Area2D@26176" to="TileMapLayer/@Area2D@26176" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMapLayer/@Area2D@26177" to="TileMapLayer/@Area2D@26177" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMapLayer/@Area2D@26178" to="TileMapLayer/@Area2D@26178" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMapLayer/@Area2D@26179" to="TileMapLayer/@Area2D@26179" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMapLayer/@Area2D@26180" to="TileMapLayer/@Area2D@26180" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMapLayer/@Area2D@26181" to="TileMapLayer/@Area2D@26181" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMapLayer/@Area2D@26182" to="TileMapLayer/@Area2D@26182" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMapLayer/@Area2D@26183" to="TileMapLayer/@Area2D@26183" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMapLayer/@Area2D@26184" to="TileMapLayer/@Area2D@26184" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMapLayer/@Area2D@26185" to="TileMapLayer/@Area2D@26185" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMapLayer/@Area2D@26186" to="TileMapLayer/@Area2D@26186" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMapLayer/@Area2D@26187" to="TileMapLayer/@Area2D@26187" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMapLayer/@Area2D@26188" to="TileMapLayer/@Area2D@26188" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMapLayer/@Area2D@26189" to="TileMapLayer/@Area2D@26189" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMapLayer/Soda" to="TileMapLayer/Soda" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMapLayer/@Area2D@26190" to="TileMapLayer/@Area2D@26190" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMapLayer/Burger" to="TileMapLayer/Burger" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMapLayer/@Area2D@26191" to="TileMapLayer/@Area2D@26191" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMapLayer/@Area2D@26192" to="TileMapLayer/@Area2D@26192" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMapLayer/@Area2D@26193" to="TileMapLayer/@Area2D@26193" method="_on_body_entered"]
 [connection signal="body_entered" from="Patrick" to="Patrick" method="_on_body_entered"]

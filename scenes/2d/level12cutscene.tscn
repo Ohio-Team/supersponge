@@ -8,7 +8,7 @@ script/source = "extends Node2D
 
 
 func _on_video_stream_player_finished() -> void:
-	pass # Replace with function body.
+	get_tree().change_scene_to_file(\"res://scenes/2d/jail_cell.tscn\")
 "
 
 [node name="Node2D" type="Node2D"]
