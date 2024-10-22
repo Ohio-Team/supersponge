@@ -1,0 +1,116 @@
+[gd_scene load_steps=9 format=3 uid="uid://dqcaakf56af8d"]
+
+[ext_resource type="Texture2D" uid="uid://ccdp0b6r5mtyr" path="res://assets/2d/miscsprites/placeholder5555.png" id="1_y161f"]
+[ext_resource type="PackedScene" uid="uid://cbynik26mbfvj" path="res://scenes/2d/spongebobandclick.tscn" id="2_laolc"]
+
+[sub_resource type="GDScript" id="GDScript_b6vfp"]
+resource_name = "ggggg"
+script/source = "extends Node2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	DiscordRPC.details = \"On Jail\"
+	DiscordRPC.refresh()
+	MusicPlayer.play_song(\"res://assets/music/lvl4music.mp3\")
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_33s1o"]
+size = Vector2(105.301, 170.14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3wk31"]
+size = Vector2(898, 144)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r3co8"]
+size = Vector2(110, 148.5)
+
+[sub_resource type="GDScript" id="GDScript_w2t1c"]
+resource_name = "desk"
+script/source = "extends Area2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+
+
+func _on_body_entered(body: Node2D) -> void:
+	if body.is_in_group(\"Player\"):
+		body.hasclip = true
+		BMOD.play_sfx(preload(\"res://assets/sfx/extra.tres\"))
+		BMOD.play_sfx(preload(\"res://assets/voices/clipvoice.tres\"))
+		Ui.create_dialog(\"This might be handy for later.\")
+		queue_free()
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3am3b"]
+size = Vector2(167, 200)
+
+[node name="JailCell" type="Node2D"]
+script = SubResource("GDScript_b6vfp")
+
+[node name="Placeholder5555" type="Sprite2D" parent="."]
+position = Vector2(641, 360.25)
+scale = Vector2(1.37339, 1.1512)
+texture = ExtResource("1_y161f")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(206.364, 470.492)
+rotation = -2.56118
+shape = SubResource("RectangleShape2D_33s1o")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(635, 237)
+shape = SubResource("RectangleShape2D_3wk31")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+position = Vector2(-574, 811)
+rotation = -0.941248
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
+position = Vector2(635, 237)
+shape = SubResource("RectangleShape2D_3wk31")
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="."]
+position = Vector2(1479, 1097)
+rotation = -2.21932
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D5"]
+position = Vector2(635, 237)
+shape = SubResource("RectangleShape2D_3wk31")
+
+[node name="StaticBody2D6" type="StaticBody2D" parent="."]
+position = Vector2(-759, 564)
+scale = Vector2(2.32, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D6"]
+position = Vector2(635, 237)
+shape = SubResource("RectangleShape2D_3wk31")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2(1032, 431.75)
+shape = SubResource("RectangleShape2D_r3co8")
+
+[node name="Spongebobandclick" parent="." instance=ExtResource("2_laolc")]
+position = Vector2(566, 539)
+scale = Vector2(2, 2)
+
+[node name="desk" type="Area2D" parent="."]
+script = SubResource("GDScript_w2t1c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="desk"]
+position = Vector2(1032, 425)
+shape = SubResource("RectangleShape2D_3am3b")
+
+[connection signal="body_entered" from="desk" to="desk" method="_on_body_entered"]

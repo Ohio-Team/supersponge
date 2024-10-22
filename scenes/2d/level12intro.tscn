@@ -1,0 +1,50 @@
+[gd_scene load_steps=6 format=3 uid="uid://bdd7m321svx0q"]
+
+[ext_resource type="AudioStream" uid="uid://c7xk80wlasxwe" path="res://assets/sfx/levelintro.mp3" id="1_l8g20"]
+[ext_resource type="Texture2D" uid="uid://cpqmswqw71435" path="res://assets/2d/miscsprites/introbackground.png" id="2_j3t4i"]
+[ext_resource type="FontFile" uid="uid://ia1v43t7vpqa" path="res://assets/fonts/Krabby Patty.ttf" id="3_w8ow7"]
+[ext_resource type="SpriteFrames" uid="uid://50grqm1g4bay" path="res://assets/2d/miscsprites/yandhi.tres" id="4_woom4"]
+
+[sub_resource type="GDScript" id="GDScript_av2s4"]
+resource_name = "level 12 intro"
+script/source = "extends Node2D
+
+
+func _on_audio_stream_player_finished() -> void:
+	get_tree().change_scene_to_file(\"res://scenes/2d/level12cutscene.tscn\")
+"
+
+[node name="Node2D2" type="Node2D"]
+script = SubResource("GDScript_av2s4")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_l8g20")
+autoplay = true
+
+[node name="Introbackground" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(5.33333, 4.5)
+texture = ExtResource("2_j3t4i")
+centered = false
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 207.0
+offset_top = 392.0
+offset_right = 1146.0
+offset_bottom = 719.0
+rotation = -0.438091
+theme_override_colors/default_color = Color(0, 0, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/normal_font = ExtResource("3_w8ow7")
+theme_override_font_sizes/normal_font_size = 96
+bbcode_enabled = true
+text = "[center]PART 3
+GUESS WHO'S GOING TO JAIL"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1230, 678)
+sprite_frames = ExtResource("4_woom4")
+autoplay = "default"
+
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]
