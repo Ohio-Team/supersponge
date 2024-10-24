@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://dqcaakf56af8d"]
+[gd_scene load_steps=12 format=3 uid="uid://dqcaakf56af8d"]
 
 [ext_resource type="Texture2D" uid="uid://ccdp0b6r5mtyr" path="res://assets/2d/miscsprites/placeholder5555.png" id="1_y161f"]
 [ext_resource type="PackedScene" uid="uid://cbynik26mbfvj" path="res://scenes/2d/spongebobandclick.tscn" id="2_laolc"]
+[ext_resource type="Texture2D" uid="uid://dbrqqepxllmge" path="res://assets/2d/miscsprites/lock.png" id="3_txnay"]
 
 [sub_resource type="GDScript" id="GDScript_b6vfp"]
 resource_name = "ggggg"
@@ -50,7 +51,30 @@ func _on_body_entered(body: Node2D) -> void:
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3am3b"]
-size = Vector2(167, 200)
+size = Vector2(118, 153)
+
+[sub_resource type="GDScript" id="GDScript_oaebd"]
+resource_name = "Lock"
+script/source = "extends Area2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+
+
+func _on_body_entered(body: Node2D) -> void:
+	if body.is_in_group(\"Player\") and body.hasclip:
+		get_tree().change_scene_to_file(\"res://scenes/2d/prison.tscn\")
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wkmqy"]
+size = Vector2(71, 123)
 
 [node name="JailCell" type="Node2D"]
 script = SubResource("GDScript_b6vfp")
@@ -94,7 +118,7 @@ position = Vector2(-759, 564)
 scale = Vector2(2.32, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D6"]
-position = Vector2(635, 237)
+position = Vector2(634.483, 226)
 shape = SubResource("RectangleShape2D_3wk31")
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="."]
@@ -104,14 +128,27 @@ position = Vector2(1032, 431.75)
 shape = SubResource("RectangleShape2D_r3co8")
 
 [node name="Spongebobandclick" parent="." instance=ExtResource("2_laolc")]
-position = Vector2(566, 539)
+position = Vector2(582, 366)
 scale = Vector2(2, 2)
 
 [node name="desk" type="Area2D" parent="."]
 script = SubResource("GDScript_w2t1c")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="desk"]
-position = Vector2(1032, 425)
+position = Vector2(1030, 431.5)
 shape = SubResource("RectangleShape2D_3am3b")
 
+[node name="Lock2" type="Area2D" parent="."]
+script = SubResource("GDScript_oaebd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lock2"]
+position = Vector2(918.5, 259.5)
+shape = SubResource("RectangleShape2D_wkmqy")
+
+[node name="Lock" type="Sprite2D" parent="Lock2"]
+position = Vector2(918, 258)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("3_txnay")
+
 [connection signal="body_entered" from="desk" to="desk" method="_on_body_entered"]
+[connection signal="body_entered" from="Lock2" to="Lock2" method="_on_body_entered"]
