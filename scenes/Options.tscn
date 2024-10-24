@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dhxbkh5627l1q"]
+[gd_scene load_steps=11 format=3 uid="uid://dhxbkh5627l1q"]
 
 [ext_resource type="Script" path="res://scripts/options.gd" id="1_gxje3"]
 [ext_resource type="Script" path="res://scripts/audio___master.gd" id="1_ua5gb"]
@@ -12,6 +12,30 @@ shader = ExtResource("2_q1awi")
 shader_parameter/motion = Vector2(30, 30)
 shader_parameter/scale = 1.0
 shader_parameter/offset = Vector2(0, 0)
+
+[sub_resource type="GDScript" id="GDScript_kwgj1"]
+resource_name = "Fullscreen"
+script/source = "extends CheckButton
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+
+
+func _on_toggled(toggled_on: bool) -> void:
+	if button_pressed:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+	else:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+	
+	
+"
 
 [sub_resource type="GDScript" id="GDScript_ufrsh"]
 resource_name = "SHowfps"
@@ -83,7 +107,7 @@ offset_left = 262.0
 offset_top = 154.0
 offset_right = 978.0
 offset_bottom = 559.0
-current_tab = 1
+current_tab = 2
 
 [node name="Audio" type="TabBar" parent="TabContainer"]
 visible = false
@@ -151,9 +175,27 @@ step = 0.001
 script = ExtResource("1_ua5gb")
 bus_name = "SFX"
 
-[node name="Misc" type="TabBar" parent="TabContainer"]
+[node name="Video" type="TabBar" parent="TabContainer"]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/Video"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BoxContainer" type="BoxContainer" parent="TabContainer/Video/MarginContainer"]
+layout_mode = 2
+
+[node name="CheckButton" type="CheckButton" parent="TabContainer/Video/MarginContainer/BoxContainer"]
+layout_mode = 2
+text = "Fullscreen"
+script = SubResource("GDScript_kwgj1")
+
+[node name="Misc" type="TabBar" parent="TabContainer"]
+layout_mode = 2
+metadata/_tab_index = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="TabContainer/Misc"]
 layout_mode = 1
@@ -197,7 +239,7 @@ value = 1.0
 [node name="Controls" type="TabBar" parent="TabContainer"]
 visible = false
 layout_mode = 2
-metadata/_tab_index = 2
+metadata/_tab_index = 3
 
 [node name="MarginContainer" type="MarginContainer" parent="TabContainer/Controls"]
 layout_mode = 1
@@ -254,5 +296,7 @@ action_name = "groundpound"
 [connection signal="pressed" from="Menu_Button" to="Menu_Button" method="_on_pressed"]
 [connection signal="tab_clicked" from="TabContainer" to="." method="_on_tab_container_tab_changed"]
 [connection signal="tab_hovered" from="TabContainer" to="." method="_on_tab_container_tab_hovered"]
+[connection signal="pressed" from="TabContainer/Video/MarginContainer/BoxContainer/CheckButton" to="TabContainer/Video/MarginContainer/BoxContainer/CheckButton" method="_on_pressed"]
+[connection signal="toggled" from="TabContainer/Video/MarginContainer/BoxContainer/CheckButton" to="TabContainer/Video/MarginContainer/BoxContainer/CheckButton" method="_on_toggled"]
 [connection signal="pressed" from="TabContainer/Misc/MarginContainer/ScrollContainer/BoxContainer/Fpsbutton" to="TabContainer/Misc/MarginContainer/ScrollContainer/BoxContainer/Fpsbutton" method="_on_pressed"]
 [connection signal="pressed" from="TabContainer/Misc/MarginContainer/ScrollContainer/BoxContainer/Speedrunbutton" to="TabContainer/Misc/MarginContainer/ScrollContainer/BoxContainer/Speedrunbutton" method="_on_pressed"]
