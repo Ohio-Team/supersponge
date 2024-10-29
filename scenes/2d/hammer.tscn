@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://unp1d3mg2bd7"]
+
+[ext_resource type="Texture2D" uid="uid://bp230gxf5j6a7" path="res://assets/2d/miscsprites/Hammer-gross-2_2048x-1024x686.jpg" id="1_dmuf7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5y0n2"]
+size = Vector2(89, 32)
+
+[node name="RigidBody2D" type="RigidBody2D"]
+mass = 0.1
+
+[node name="Hammer-gross-22048x-1024x686" type="Sprite2D" parent="."]
+position = Vector2(7.62939e-06, 7.62939e-06)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_dmuf7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, -6)
+shape = SubResource("RectangleShape2D_5y0n2")
