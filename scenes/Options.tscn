@@ -188,7 +188,7 @@ offset_bottom = 40.0
 [node name="BoxContainer" type="BoxContainer" parent="TabContainer/Video/MarginContainer"]
 layout_mode = 2
 
-[node name="CheckButton" type="CheckButton" parent="TabContainer/Video/MarginContainer/BoxContainer"]
+[node name="Fullscreen" type="CheckButton" parent="TabContainer/Video/MarginContainer/BoxContainer"]
 layout_mode = 2
 text = "Fullscreen"
 script = SubResource("GDScript_kwgj1")
@@ -296,7 +296,7 @@ action_name = "groundpound"
 [connection signal="pressed" from="Menu_Button" to="Menu_Button" method="_on_pressed"]
 [connection signal="tab_clicked" from="TabContainer" to="." method="_on_tab_container_tab_changed"]
 [connection signal="tab_hovered" from="TabContainer" to="." method="_on_tab_container_tab_hovered"]
-[connection signal="pressed" from="TabContainer/Video/MarginContainer/BoxContainer/CheckButton" to="TabContainer/Video/MarginContainer/BoxContainer/CheckButton" method="_on_pressed"]
-[connection signal="toggled" from="TabContainer/Video/MarginContainer/BoxContainer/CheckButton" to="TabContainer/Video/MarginContainer/BoxContainer/CheckButton" method="_on_toggled"]
+[connection signal="pressed" from="TabContainer/Video/MarginContainer/BoxContainer/Fullscreen" to="TabContainer/Video/MarginContainer/BoxContainer/Fullscreen" method="_on_pressed"]
+[connection signal="toggled" from="TabContainer/Video/MarginContainer/BoxContainer/Fullscreen" to="TabContainer/Video/MarginContainer/BoxContainer/Fullscreen" method="_on_toggled"]
 [connection signal="pressed" from="TabContainer/Misc/MarginContainer/ScrollContainer/BoxContainer/Fpsbutton" to="TabContainer/Misc/MarginContainer/ScrollContainer/BoxContainer/Fpsbutton" method="_on_pressed"]
 [connection signal="pressed" from="TabContainer/Misc/MarginContainer/ScrollContainer/BoxContainer/Speedrunbutton" to="TabContainer/Misc/MarginContainer/ScrollContainer/BoxContainer/Speedrunbutton" method="_on_pressed"]

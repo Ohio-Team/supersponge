@@ -6,6 +6,7 @@ extends Node
 @export var inmenu:bool = false
 @export var showfps:bool = false
 @export var showspeedrun:bool = false
+@export var fullscreen:bool = false
 @export var lifes:int = 4
 @export var health:int = 3
 @export var mouse_sensitivity:float = 1
@@ -93,3 +94,4 @@ func load_settings():
 	showfps = config.get_value("misc","showfps")
 	showspeedrun = config.get_value("misc","showspeedrun")
 	mouse_sensitivity = config.get_value("misc","mouse_sensitivity")
+	fullscreen = config.get_value("video","fullscreen")

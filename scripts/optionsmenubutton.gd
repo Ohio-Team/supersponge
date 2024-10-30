@@ -37,6 +37,7 @@ func save_settings():
 	config.set_value("misc","showfps",$"../TabContainer/Misc/MarginContainer/ScrollContainer/BoxContainer/Fpsbutton".button_pressed)
 	config.set_value("misc","showspeedrun",$"../TabContainer/Misc/MarginContainer/ScrollContainer/BoxContainer/Speedrunbutton".button_pressed)
 	config.set_value("misc","mouse_sensitivity",$"../TabContainer/Misc/MarginContainer/ScrollContainer/BoxContainer/MouseSensitivity".value)
+	config.set_value("video","fullscreen",$"../TabContainer/Video/MarginContainer/BoxContainer/Fullscreen".button_pressed)
 	config.set_value("controls","right",get_keycode("right"))
 	config.set_value("controls","left",get_keycode("left"))
 	config.set_value("controls","front",get_keycode("front"))

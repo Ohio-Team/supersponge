@@ -20,7 +20,7 @@ func load_settings():
 	$TabContainer/Audio/MarginContainer/ScrollContainer/VBoxContainer/Music.value = config.get_value("audio","Music")
 	$TabContainer/Audio/MarginContainer/ScrollContainer/VBoxContainer/SFX.value = config.get_value("audio","SFX")
 	$TabContainer/Misc/MarginContainer/ScrollContainer/BoxContainer/MouseSensitivity.value = config.get_value("misc","mouse_sensitivity")
-
+	$TabContainer/Video/MarginContainer/BoxContainer/Fullscreen.button_pressed =config.get_value("video","fullscreen")
 
 func _on_tab_container_tab_changed(tab: int) -> void:
 	BMOD.play_sfx(preload("res://assets/sfx/funnybuttons/buttons.tres"))
