@@ -585,14 +585,12 @@ input_pickable = true
 script = SubResource("GDScript_u78ge")
 
 [node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="StaticBody2D"]
-scale = Vector2(1, 1)
 sprite_frames = SubResource("SpriteFrames_24e5k")
 autoplay = "default"
 frame_progress = 0.0240721
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(0.000488281, 0)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_hgkps")
 one_way_collision = true
 
