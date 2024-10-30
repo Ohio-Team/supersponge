@@ -95,3 +95,5 @@ func load_settings():
 	showspeedrun = config.get_value("misc","showspeedrun")
 	mouse_sensitivity = config.get_value("misc","mouse_sensitivity")
 	fullscreen = config.get_value("video","fullscreen")
+	if fullscreen:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
