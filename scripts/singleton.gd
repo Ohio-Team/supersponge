@@ -2,6 +2,7 @@ extends Node
 
 @export var hasgun:bool = false
 @export var showfuel:bool = false
+@export var hashammer:bool = false
 @export var fuel:float = 100.0
 @export var inmenu:bool = false
 @export var showfps:bool = false

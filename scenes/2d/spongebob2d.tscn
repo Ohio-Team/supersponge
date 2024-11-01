@@ -467,7 +467,6 @@ frame_progress = 0.243045
 shape = SubResource("RectangleShape2D_putow")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-offset = Vector2(0, -50)
 zoom = Vector2(3, 3)
 position_smoothing_speed = 15.0
 drag_horizontal_enabled = true

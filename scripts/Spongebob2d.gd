@@ -8,6 +8,7 @@ const JUMP_VELOCITY = -430.0
 @onready var anim = $AnimatedSprite2D
 @export var state = "idle"
 @export var invincible:bool = false
+@export var camerashake:bool = false
 var direction:float
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -64,6 +65,12 @@ func inputs(direction):
 
 func _physics_process(delta):
 	# Add the gravity.
+	
+	if camerashake:
+		$Camera2D.offset = Vector2(randf_range(-1,1),randf_range(-49,-51))
+	else:
+		$Camera2D.offset = Vector2(0,-50)
+	
 	if Singleton.health <= 0:
 		print("game over 💔")
 		BMOD.play_sfx(preload("res://assets/sfx/death.tres"))
