@@ -12,6 +12,7 @@ func _on_body_entered(body: Node) -> void:
 	print(\"ok\")
 	if body.is_in_group(\"Player\"):
 		Singleton.hashammer = true
+		BMOD.play_sfx(preload(\"res://assets/sfx/fuel.tres\"))
 		MusicPlayer.stop_song()
 		Ui.create_dialog(\"Great, now [b]kill Patrick.[/b]\",\"sandy\")
 		queue_free()
