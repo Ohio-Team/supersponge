@@ -1,4 +1,4 @@
-[gd_scene load_steps=87 format=4 uid="uid://byaafw2p71v8i"]
+[gd_scene load_steps=88 format=4 uid="uid://byaafw2p71v8i"]
 
 [ext_resource type="Shader" path="res://scripts/flash.gdshader" id="1_a1o0g"]
 [ext_resource type="PackedScene" uid="uid://cjoo6ilm8eim1" path="res://scenes/2d/spongebob2d.tscn" id="1_n1k6g"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://84nu6b4ix10w" path="res://assets/2d/miscsprites/patrick.png" id="3_ppubl"]
 [ext_resource type="Texture2D" uid="uid://dr4nb2c54btur" path="res://assets/2d/miscsprites/cjgym.png" id="4_3rrhi"]
 [ext_resource type="PackedScene" uid="uid://c6w27ujk2uor4" path="res://scenes/2d/dialogzone.tscn" id="5_5mr6n"]
+[ext_resource type="PackedScene" uid="uid://d1tbanaf6elu8" path="res://scenes/2d/prisondoor.tscn" id="7_pedkc"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_n2r1u"]
 shader = ExtResource("1_a1o0g")
@@ -578,14 +579,17 @@ func _on_body_entered(body: Node2D) -> void:
 		BMOD.play_sfx(preload(\"res://assets/sfx/patscream.tres\"))
 		BMOD.play_sfx(preload(\"res://assets/sfx/patscream.tres\"))
 		BMOD.play_sfx(preload(\"res://assets/sfx/alarm.tres\"))
+		BMOD.play_sfx(preload(\"res://assets/sfx/alarm.tres\"))
 		BMOD.play_sfx(preload(\"res://assets/sfx/gib.tres\"))
-		Ui.create_dialog(\"]	łø→ſ¶¶¶¶¶¶¶¶¶þ„¢»»„→»¢„ĸ»¢„„¢»ĸ„¢»łĸ„¢»„¢»ĸ„¢ł¢|„„¢ł¢»„»|¢„„¢„„ł»¢|„»¢ł„ßðđ→→ſ@øđ@øſ€€@ø€ſ→€đAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAÆÆÆÆÆ↓↓↓↓ÞØ@ØÞSS@S@ØÞS@ÞØSÞ@ØÞS@S@Þ→@[S@S@@S[@S@S@[@[@S@SS@SS@ØÞS@ÞS@[@SS@[@SS@S@[S@@SSØØS@ØÞS@ÞØS@ÞØS@ÞØS@ØS@]]]]]]]AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAUUUUGHHH!!!!!!!!!!!!!\",\"patrick\")
 		$\"../AnimationPlayer\".play(\"alarm\")
 		MusicPlayer.play_song(\"res://assets/music/ohiomonsterbattle.ogg\")
 		body.camerashake = true
 		$CPUParticles2D.emitting = true
 		$CollisionShape2D.queue_free()
 		$Patrick.queue_free()
+		Ui.create_dialog(\"]	łø→ſ¶¶¶¶¶¶¶¶¶þ„¢»»„→»¢„ĸ»¢„„¢»ĸ„¢»łĸ„¢»„¢»ĸ„¢ł¢|„„¢ł¢»„»|¢„„¢„„ł»¢|„»¢ł„ßðđ→→ſ@øđ@øſ€€@ø€ſ→€đAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAÆÆÆÆÆ↓↓↓↓ÞØ@ØÞSS@S@ØÞS@ÞØSÞ@ØÞS@S@Þ→@[S@S@@S[@S@S@[@[@S@SS@SS@ØÞS@ÞS@[@SS@[@SS@S@[S@@SSØØS@ØÞS@ÞØS@ÞØS@ÞØS@ØS@]]]]]]]AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAUUUUGHHH!!!!!!!!!!!!!\",\"patrick\")
+		await Ui.dialog_finished
+		Ui.create_dialog(\"The emergency exit is open. GET OUT OF HERE!\",\"sandy\")
 		
 "
 
@@ -734,6 +738,10 @@ text = "Sometimes clicking on objects might reveal something."
 libraries = {
 "": SubResource("AnimationLibrary_sp0p6")
 }
+
+[node name="Fakebobgate" parent="." instance=ExtResource("7_pedkc")]
+position = Vector2(768, -72)
+scale = Vector2(0.119999, 0.120001)
 
 [connection signal="input_event" from="StaticBody2D" to="StaticBody2D" method="_on_input_event"]
 [connection signal="body_entered" from="Patrick" to="Patrick" method="_on_body_entered"]
