@@ -18,7 +18,10 @@ func _on_timer_timeout() -> void:
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if body == player:
 		BMOD.play_sfx_3d(preload("res://assets/sfx/cjhurt.tres"),position)
+		player.doomthing.play("Hurt")
 		Singleton.health -= 1
+		await player.doomthing.animation_finished
+		player.doomthing.play("Idle")
 
 func _on_area_3d_area_entered(area: Area3D) -> void:
 	if area.is_in_group("Projectiles"):

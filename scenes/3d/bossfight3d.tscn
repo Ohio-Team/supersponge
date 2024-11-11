@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dbfmy7gxj813y"]
+[gd_scene load_steps=12 format=3 uid="uid://dbfmy7gxj813y"]
 
 [ext_resource type="PackedScene" uid="uid://d2jf2vdsqv0nu" path="res://assets/3d/ohiomonster/stage.blend" id="1_yv50q"]
 [ext_resource type="PackedScene" uid="uid://dwm7vih3bgtyv" path="res://scenes/3d/firstpersonshooter.tscn" id="2_1exyh"]
@@ -18,7 +18,13 @@ func _ready() -> void:
 	
 func _physics_process(delta: float) -> void:
 	if $\"Ohio of Sin\".health <= 0:
-		print(\"beaten\")
+		$CPUParticles3D.emitting = true
+		BMOD.play_sfx(preload(\"res://assets/sfx/gib.tres\"))
+		await $CPUParticles3D.finished
+		MusicPlayer.stop_song()
+		Ui.ohiohealth.hide()
+		if get_tree():
+			get_tree().change_scene_to_file(\"res://scenes/2d/level12intro.tscn\")
 "
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_avwtu"]
@@ -50,7 +56,7 @@ var health:float = 250
 func _on_area_entered(area: Area3D) -> void:
 	if area.is_in_group(\"Projectiles\"):
 		health -= 10
-		Ui.ohiohealth.text = \"Ohio Healh: \" + str(health)
+		Ui.ohiohealth.text = \"Ohio Health: \" + str(health)
 		BMOD.play_sfx_3d(preload(\"res://assets/sfx/cjhurt.tres\"),position)
 		area.queue_free()
 		var monsterling = preload(\"res://scenes/3d/ohiomonster3d.tscn\")
@@ -68,6 +74,12 @@ func _on_timer_timeout() -> void:
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_swyyi"]
 size = Vector3(1, 2.13422, 1.69489)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1iwqc"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_8h2a1"]
+material = SubResource("StandardMaterial3D_1iwqc")
 
 [node name="Bossfight3d" type="Node3D"]
 script = SubResource("GDScript_3bjgi")
@@ -102,6 +114,20 @@ shape = SubResource("BoxShape3D_swyyi")
 [node name="Timer" type="Timer" parent="Ohio of Sin"]
 wait_time = 5.0
 autostart = true
+
+[node name="CPUParticles3D" type="CPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.01889, 7.64784, 0)
+emitting = false
+amount = 1000
+one_shot = true
+explosiveness = 1.0
+mesh = SubResource("BoxMesh_8h2a1")
+emission_shape = 1
+emission_sphere_radius = 2.0
+emission_colors = PackedColorArray(1, 0, 0, 1)
+spread = 180.0
+radial_accel_min = -74.75
+radial_accel_max = 100.0
 
 [connection signal="area_entered" from="Ohio of Sin" to="Ohio of Sin" method="_on_area_entered"]
 [connection signal="timeout" from="Ohio of Sin/Timer" to="Ohio of Sin" method="_on_timer_timeout"]

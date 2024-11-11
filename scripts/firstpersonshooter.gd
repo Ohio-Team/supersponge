@@ -4,9 +4,11 @@ extends CharacterBody3D
 @export var SPEED = 12.0
 @export var level:Node3D
 
-var mouse_sensitivity := Singleton.mouse_sensitivity
+var mouse_sensitivity := 0.001
 var twist_input := 0.0
+var state : String = "Idle"
 var pitch_input := 0.0
+@onready var doomthing := %Bobby
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -60,6 +62,8 @@ func _physics_process(delta):
 	twist_input = 0.0
 	pitch_input = 0.0
 	# level.update_ui_distance(distance)
+	if %Bobby.animation != "Heal" and %Bobby.animation != "Hurt":
+		%Bobby.play("Idle")
 func _unhandled_input(event: InputEvent):
 	if event is InputEventMouseMotion:
 		if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
