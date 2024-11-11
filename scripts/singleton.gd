@@ -13,6 +13,7 @@ extends Node
 @export var mouse_sensitivity:float = 1
 @export var spatulas:int = 0
 @export var acceptinput:bool = true
+@export var escape:bool = false
 
 var config = ConfigFile.new()
 var err = config.load("user://settings.cfg")

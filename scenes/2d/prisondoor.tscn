@@ -15,8 +15,19 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if Input.is_action_just_pressed(\"front\") and canopen and $Spongebob.camerashake:
+	if Input.is_action_just_pressed(\"front\") and canopen:
 		get_tree().change_scene_to_file(\"res://scenes/2d/prisonescape.tscn\")
+		
+		
+func _on_body_entered(body):
+	if body == player and Singleton.escape:
+		canopen = true
+	else:
+		canopen = false
+
+#func _on_body_exited(body):
+#	if body == player:
+#		canopen = false
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c13r6"]
