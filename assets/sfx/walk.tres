@@ -1,15 +1,19 @@
-[gd_resource type="Resource" script_class="MultiSoundEffect" load_steps=7 format=3 uid="uid://b44gntqd22ra5"]
+[gd_resource type="Resource" script_class="MultiSoundEffect" load_steps=9 format=3 uid="uid://b44gntqd22ra5"]
 
 [ext_resource type="Script" path="res://addons/bmod/scripts/resources/multi_sound_effect_item.gd" id="1_d8ng6"]
 [ext_resource type="Script" path="res://addons/bmod/scripts/resources/multi_sound_effect.gd" id="2_msl82"]
+[ext_resource type="AudioStream" uid="uid://hor4p77c44k" path="res://assets/sfx/sb_walk1.wav" id="2_odcg8"]
+[ext_resource type="AudioStream" uid="uid://cwqfs8uoovj25" path="res://assets/sfx/sb_walk2.wav" id="3_nrv3o"]
 [ext_resource type="Script" path="res://addons/bmod/scripts/resources/sound_effect_meta.gd" id="4_8vhm0"]
 
 [sub_resource type="Resource" id="Resource_qtmu5"]
 script = ExtResource("1_d8ng6")
+audio_stream = ExtResource("2_odcg8")
 weight = 1
 
 [sub_resource type="Resource" id="Resource_j2paj"]
 script = ExtResource("1_d8ng6")
+audio_stream = ExtResource("3_nrv3o")
 weight = 1
 
 [sub_resource type="Resource" id="Resource_hy2k8"]
