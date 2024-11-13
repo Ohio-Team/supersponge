@@ -452,6 +452,7 @@ animations = [{
 size = Vector2(12, 30)
 
 [node name="Spongebob" type="CharacterBody2D" groups=["Player"]]
+input_pickable = true
 floor_stop_on_slope = false
 script = ExtResource("1_uyiiv")
 
@@ -483,4 +484,5 @@ one_shot = true
 wait_time = 0.1
 one_shot = true
 
+[connection signal="input_event" from="." to="." method="_on_input_event"]
 [connection signal="timeout" from="Invincibility" to="." method="_on_timer_timeout"]

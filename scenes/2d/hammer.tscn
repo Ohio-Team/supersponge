@@ -9,7 +9,6 @@ script/source = "extends RigidBody2D
 
 
 func _on_body_entered(body: Node) -> void:
-	print(\"ok\")
 	if body.is_in_group(\"Player\"):
 		Singleton.hashammer = true
 		BMOD.play_sfx(preload(\"res://assets/sfx/fuel.tres\"))

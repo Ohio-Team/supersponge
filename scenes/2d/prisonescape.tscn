@@ -65,3 +65,4 @@ scale = Vector2(21.2961, 2.4987)
 libraries = {
 "": SubResource("AnimationLibrary_sp0p6")
 }
+autoplay = "alarm"

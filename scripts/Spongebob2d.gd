@@ -21,7 +21,7 @@ func inputs(direction):
 		if state == "hurt":
 			BMOD.play_sfx(preload("res://assets/sfx/ouch.tres"))
 			$Invincibility.start()
-			velocity.x = SPEED * 4
+			velocity.x = SPEED * 4 * direction
 			velocity.y = -450
 			anim.play("hurt")
 			invincible = true
@@ -125,3 +125,8 @@ func generate_bullet():
 
 func _on_timer_timeout() -> void:
 	invincible = false
+
+
+func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
+		state = "hurt"
