@@ -4,7 +4,7 @@ extends CharacterBody3D
 @export var SPEED = 12.0
 @export var level:Node3D
 
-var mouse_sensitivity := Singleton.mouse_sensitivity
+var mouse_sensitivity := 0.001
 var twist_input := 0.0
 var pitch_input := 0.0
 

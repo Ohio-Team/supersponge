@@ -51,6 +51,8 @@ func _process(delta):
 func emit_dialogfinished():
 	dialog_finished.emit()
 func create_dialog(text:String, char:String = "spongebob"):
+	for i in get_tree().get_nodes_in_group("Dialog"):
+		i.queue_free()
 	var dialog = preload("res://scenes/2d/dialog.tscn")
 	var new_dialog = dialog.instantiate()
 	new_dialog.full_text = text
