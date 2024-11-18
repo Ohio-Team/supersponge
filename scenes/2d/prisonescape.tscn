@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://c68ldtwatsbr7"]
+[gd_scene load_steps=14 format=4 uid="uid://c68ldtwatsbr7"]
 
 [ext_resource type="Texture2D" uid="uid://culfcrnvqqsnd" path="res://assets/2d/tilesets/jail.png" id="1_75qt4"]
 [ext_resource type="Texture2D" uid="uid://c7wiwlmd3jby6" path="res://assets/3d/bikinibottom/textures/jf_sky_color_77.png" id="1_l1te2"]
@@ -13,10 +13,13 @@ script/source = "extends Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$Spongebob.camerashake = true
+	MusicPlayer.play_song(\"res://assets/music/escape.ogg\")
 	Ui.create_dialog(\"I need to GYATT out of here!\",\"spongebob\")
 	
 	
 "
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_m0dwk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p73rh"]
 texture = ExtResource("1_75qt4")
@@ -99,8 +102,9 @@ motion_scale = Vector2(0.01, 0.01)
 
 [node name="JfSkyColor77" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 texture_repeat = 2
-position = Vector2(0, -1)
-scale = Vector2(10, 5.63281)
+material = SubResource("ShaderMaterial_m0dwk")
+position = Vector2(-16, -16)
+scale = Vector2(10.125, 5.75)
 texture = ExtResource("1_l1te2")
 centered = false
 

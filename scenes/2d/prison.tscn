@@ -587,7 +587,7 @@ func _on_body_entered(body: Node2D) -> void:
 		BMOD.play_sfx(preload(\"res://assets/sfx/alarm.tres\"))
 		BMOD.play_sfx(preload(\"res://assets/sfx/gib.tres\"))
 		$\"../AnimationPlayer\".play(\"alarm\")
-		MusicPlayer.play_song(\"res://assets/music/ohiomonsterbattle.ogg\")
+		MusicPlayer.play_song(\"res://assets/music/escape.ogg\")
 		body.camerashake = true
 		$CPUParticles2D.emitting = true
 		$CollisionShape2D.queue_free()
