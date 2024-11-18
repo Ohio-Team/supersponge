@@ -1,25 +1,13 @@
-[gd_scene load_steps=9 format=3 uid="uid://cj8ncoac82hgs"]
+[gd_scene load_steps=6 format=3 uid="uid://cj8ncoac82hgs"]
 
 [ext_resource type="Script" path="res://scripts/ohio_monster.gd" id="1_6llre"]
 [ext_resource type="Texture2D" uid="uid://chtjeh2b32lmm" path="res://assets/2d/miscsprites/ohiomonster.png" id="1_idi1r"]
 [ext_resource type="AudioStream" uid="uid://dkpk7wwaidu7s" path="res://assets/music/onlyinohio.mp3" id="3_qyad7"]
-[ext_resource type="Shader" path="res://scripts/outline.gdshader" id="4_h2yll"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_p5bae"]
 size = Vector3(2.542, 7.576, 2.542)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3pljq"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_bfcp4"]
-render_priority = 0
-shader = ExtResource("4_h2yll")
-shader_parameter/color = Color(1, 0, 0, 1)
-shader_parameter/size = 1.05
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ebfsy"]
-next_pass = SubResource("ShaderMaterial_bfcp4")
-transparency = 1
-albedo_color = Color(1, 1, 1, 0)
 
 [node name="OHIO MONSTER" type="CharacterBody3D"]
 script = ExtResource("1_6llre")
@@ -53,11 +41,6 @@ volume_db = 5.0
 autoplay = true
 max_distance = 50.0
 bus = &"SFX"
-
-[node name="CSGBox3D" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11438, 2.09033, 0)
-size = Vector3(4.64185, 5.18066, 1)
-material = SubResource("StandardMaterial3D_ebfsy")
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
