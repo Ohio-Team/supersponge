@@ -232,13 +232,16 @@ tracks/7/path = NodePath("Fakebob")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(0.1, 4.33333),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0.1, 4.33333, 6),
+"transitions": PackedFloat32Array(1, 1, 1),
 "values": [{
 "args": ["You alien bastards will pay for fucking up my hometown...", "spongebob"],
 "method": &"create_dialog"
 }, {
 "args": ["Bro who THE FUCK ARE YOU!!", "fakebob"],
+"method": &"create_dialog"
+}, {
+"args": ["Spongebob, you can shoot Fakebob when he is flashing", "sandy"],
 "method": &"create_dialog"
 }]
 }
