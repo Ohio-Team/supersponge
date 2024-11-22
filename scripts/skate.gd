@@ -6,7 +6,7 @@ var direction := 1
 const JUMP_VELOCITY = -400.0
 
 func _ready():
-	Ui.create_dialog("Click to gain speed and right click to jump bob. NOW RUN AS FAST AS YOU CAN!","kanye")
+	Ui.create_dialog("This Ye again click on bob to gain speed and press right click to jump. Now get out of here and do a little... [b]runaway.[b]","kanye")
 
 func _physics_process(delta: float) -> void:
 	$Camera2D.zoom = lerp($Camera2D.zoom,Vector2(1,1),delta * 3)
@@ -17,6 +17,7 @@ func _physics_process(delta: float) -> void:
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
+		BMOD.play_sfx(preload("res://assets/sfx/jump.tres"))
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
