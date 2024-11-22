@@ -1,7 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://dbfmy7gxj813y"]
+[gd_scene load_steps=19 format=3 uid="uid://dbfmy7gxj813y"]
 
 [ext_resource type="PackedScene" uid="uid://d2jf2vdsqv0nu" path="res://assets/3d/ohiomonster/stage.blend" id="1_yv50q"]
 [ext_resource type="PackedScene" uid="uid://dwm7vih3bgtyv" path="res://scenes/3d/firstpersonshooter.tscn" id="2_1exyh"]
+[ext_resource type="Texture2D" uid="uid://ddjesle7j3do3" path="res://assets/3d/maze/bricks.jpg" id="3_1kh10"]
+[ext_resource type="Texture2D" uid="uid://cihcupefh6n1e" path="res://assets/3d/maze/NormalMap.png" id="4_5kngw"]
 
 [sub_resource type="GDScript" id="GDScript_3bjgi"]
 resource_name = "3dfight"
@@ -42,8 +44,102 @@ tonemap_mode = 2
 glow_enabled = true
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_akx08"]
-vertices = PackedVector3Array(6.75, 1.5, -1.25, 8, 1.5, -1.5, 8, 1.5, -2, 6.25, 1.5, -6.25, 0.25, 1.5, -8.75, 6.25, 1.5, 6.25, 8, 1.5, 2, 6.75, 1.5, 1.5, -8.75, 1.5, -0.25, -6.25, 1.5, 6.25, -0.25, 1.5, 8.75, -6.25, 1.5, -6.25, 7.75, 7.25, -0.5, 7.75, 7.25, 0.5, 8.5, 7.25, 0.5, 8.5, 7.25, -0.5, 8, 1.5, -0.25, 8, 1.5, 0.5, 8.75, 1.5, 0.25, 8.75, 1.5, -0.25)
-polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 3), PackedInt32Array(3, 0, 4), PackedInt32Array(7, 6, 5), PackedInt32Array(11, 4, 8), PackedInt32Array(8, 4, 9), PackedInt32Array(9, 4, 10), PackedInt32Array(10, 4, 0), PackedInt32Array(7, 5, 0), PackedInt32Array(0, 5, 10), PackedInt32Array(15, 14, 12), PackedInt32Array(12, 14, 13), PackedInt32Array(19, 18, 16), PackedInt32Array(16, 18, 17)]
+vertices = PackedVector3Array(17, 1.5, 3.25, 17, 1.5, 2.75, 14.25, 1.5, 2.5, 13, 1.5, 13, -0.25, 1.5, -18.25, -13, 1.5, -13, -18.25, 1.5, -0.25, -13, 1.5, 13, 0.25, 1.5, 18.25, 14.25, 1.5, -2.25, 17.25, 1.5, -2.5, 13, 1.5, -13, 15.25, 7.25, -1.5, 15.25, 7.25, 1.5, 17.75, 7.25, 1.5, 17.75, 7.25, -1.5, 17.75, 1.5, 1.5, 18.25, 1.5, 0.25, 17.75, 1.5, -1.25, 15.5, 1.5, -1.25, 15.5, 1.5, 1.5)
+polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 3), PackedInt32Array(5, 4, 6), PackedInt32Array(6, 4, 7), PackedInt32Array(7, 4, 8), PackedInt32Array(8, 4, 9), PackedInt32Array(10, 9, 11), PackedInt32Array(11, 9, 4), PackedInt32Array(2, 3, 9), PackedInt32Array(9, 3, 8), PackedInt32Array(15, 14, 12), PackedInt32Array(12, 14, 13), PackedInt32Array(17, 16, 18), PackedInt32Array(18, 16, 20), PackedInt32Array(18, 20, 19)]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qjcya"]
+albedo_texture = ExtResource("3_1kh10")
+normal_enabled = true
+normal_texture = ExtResource("4_5kngw")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_l3g3g"]
+size = Vector3(5.80582, 0.697266, 5.29691)
+
+[sub_resource type="Animation" id="Animation_inbbw"]
+resource_name = "default"
+length = 10.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5, 8, 10),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 10, 0), Vector3(0, 10, 0), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape3D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 3.14159, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_j2dfm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape3D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1be6s"]
+_data = {
+"RESET": SubResource("Animation_j2dfm"),
+"default": SubResource("Animation_inbbw")
+}
 
 [sub_resource type="GDScript" id="GDScript_45v2q"]
 resource_name = "sin"
@@ -61,7 +157,7 @@ func _on_area_entered(area: Area3D) -> void:
 		area.queue_free()
 		var monsterling = preload(\"res://scenes/3d/ohiomonster3d.tscn\")
 		var newmonsterling = monsterling.instantiate()
-		newmonsterling.position = Vector3(0,2,0)
+		newmonsterling.position = Vector3(10,2,10)
 		get_tree().current_scene.add_child(newmonsterling)
 
 
@@ -98,13 +194,29 @@ navigation_mesh = SubResource("NavigationMesh_akx08")
 
 [node name="stage" parent="NavigationRegion3D" instance=ExtResource("1_yv50q")]
 
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="NavigationRegion3D/StaticBody3D"]
+size = Vector3(5.80582, 0.697266, 5.29691)
+material = SubResource("StandardMaterial3D_qjcya")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/StaticBody3D"]
+shape = SubResource("BoxShape3D_l3g3g")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="NavigationRegion3D/StaticBody3D"]
+libraries = {
+"": SubResource("AnimationLibrary_1be6s")
+}
+autoplay = "default"
+
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.21319, 8.32798, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.3655, 8.32798, 0)
 
 [node name="firstpersonshooter" parent="." instance=ExtResource("2_1exyh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0295699, 1.11333, -1.45642)
 
 [node name="Ohio of Sin" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.01553, 0, 0)
 script = SubResource("GDScript_45v2q")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Ohio of Sin"]
@@ -116,7 +228,7 @@ wait_time = 5.0
 autostart = true
 
 [node name="CPUParticles3D" type="CPUParticles3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.01889, 7.64784, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.2658, 7.64784, 0)
 emitting = false
 amount = 1000
 one_shot = true

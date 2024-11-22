@@ -20,7 +20,6 @@ shape = SubResource("BoxShape3D_p5bae")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.80786, 0)
-visible = false
 billboard = 1
 texture = ExtResource("1_idi1r")
 

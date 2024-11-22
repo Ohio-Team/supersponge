@@ -17,7 +17,9 @@ func _on_body_entered(body):
 	if body == player:
 		player.camera.zoom = Vector2(1,1)
 		canopen = true
+		$RichTextLabel.show()
 func _on_body_exited(body):
 	if body == player:
 		player.camera.zoom = Vector2(3,3)
 		canopen = false
+		$RichTextLabel.hide()
