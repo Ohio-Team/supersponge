@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cjoo6ilm8eim1" path="res://scenes/2d/spongebob2d.tscn" id="1_x7e1u"]
 [ext_resource type="TileSet" uid="uid://bs0lodeb0dkqb" path="res://assets/2d/tilesets/prison.tres" id="3_ajf18"]
 [ext_resource type="Texture2D" uid="uid://cot0yyvc82cus" path="res://assets/2d/spongebobby/skate.png" id="4_f04b4"]
-[ext_resource type="PackedScene" uid="uid://vkkvjrmsl7ai" path="res://scenes/2d/directionbob.tscn" id="6_qa7xx"]
+[ext_resource type="PackedScene" uid="uid://c57njxrqhx87n" path="res://scenes/2d/directionbob.tscn" id="6_qa7xx"]
 [ext_resource type="PackedScene" uid="uid://bv0rvgn2iah1s" path="res://scenes/2d/bumper.tscn" id="7_3v1q8"]
 [ext_resource type="Texture2D" uid="uid://biw7vnjd62pbg" path="res://assets/2d/miscsprites/spongebobhouse.png" id="8_smdgc"]
 
@@ -23,7 +23,7 @@ func _ready() -> void:
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group(\"Player\"):
 		MusicPlayer.stop_song()
-		get_tree().change_scene_to_file(\"res://scenes/ok.tscn\")
+		get_tree().change_scene_to_file(\"res://scenes/2d/ok.tscn\")
 "
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_m0dwk"]
@@ -147,8 +147,19 @@ texture = ExtResource("8_smdgc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spongebobhouse/Area2D"]
 position = Vector2(-60.6904, 197.703)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_whkbk")
 
 [connection signal="body_entered" from="Skatetoggle" to="Skatetoggle" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/Rock" to="TileMapLayer/Rock" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@52203" to="TileMapLayer/@Area2D@52203" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@52204" to="TileMapLayer/@Area2D@52204" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@52205" to="TileMapLayer/@Area2D@52205" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@52206" to="TileMapLayer/@Area2D@52206" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@52207" to="TileMapLayer/@Area2D@52207" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@52208" to="TileMapLayer/@Area2D@52208" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@52209" to="TileMapLayer/@Area2D@52209" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@52210" to="TileMapLayer/@Area2D@52210" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@52211" to="TileMapLayer/@Area2D@52211" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@52212" to="TileMapLayer/@Area2D@52212" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@52213" to="TileMapLayer/@Area2D@52213" method="_on_body_entered"]
 [connection signal="body_entered" from="Spongebobhouse/Area2D" to="." method="_on_area_2d_body_entered"]

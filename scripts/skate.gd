@@ -16,8 +16,8 @@ func _physics_process(delta: float) -> void:
 
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
 		BMOD.play_sfx(preload("res://assets/sfx/jump.tres"))
+		velocity.y = JUMP_VELOCITY
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -35,3 +35,4 @@ func _unhandled_input(event: InputEvent) -> void:
 		$AnimatedSprite2D.play("momentum")
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_RIGHT and is_on_floor():
 		velocity.y = JUMP_VELOCITY
+		BMOD.play_sfx(preload("res://assets/sfx/jump.tres"))

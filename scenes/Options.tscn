@@ -104,10 +104,10 @@ script = ExtResource("3_i0ro2")
 
 [node name="TabContainer" type="TabContainer" parent="."]
 layout_mode = 0
-offset_left = 262.0
-offset_top = 154.0
-offset_right = 978.0
-offset_bottom = 559.0
+offset_left = 280.0
+offset_top = 160.0
+offset_right = 996.0
+offset_bottom = 565.0
 current_tab = 2
 
 [node name="Audio" type="TabBar" parent="TabContainer"]
