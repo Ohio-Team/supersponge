@@ -47,7 +47,9 @@ func save_settings():
 	config.set_value("controls","groundpound",get_keycode("groundpound"))
 	config.save("user://settings.cfg")
 	Singleton.mouse_sensitivity = $"../TabContainer/Misc/MarginContainer/ScrollContainer/BoxContainer/MouseSensitivity".value
-	Singleton.load_settings()
+	AudioServer.set_bus_volume_db(0,linear_to_db($"../TabContainer/Audio/MarginContainer/ScrollContainer/VBoxContainer/Master".value))
+	AudioServer.set_bus_volume_db(1,linear_to_db($"../TabContainer/Audio/MarginContainer/ScrollContainer/VBoxContainer/Music".value))
+	AudioServer.set_bus_volume_db(2,linear_to_db($"../TabContainer/Audio/MarginContainer/ScrollContainer/VBoxContainer/SFX".value))
 
 
 func _on_mouse_entered() -> void:

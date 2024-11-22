@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cnmmvegpi1km0"]
+[gd_scene load_steps=7 format=3 uid="uid://4qh512ue870m"]
 
 [ext_resource type="Script" path="res://scripts/skate.gd" id="1_ji3oo"]
 [ext_resource type="Texture2D" uid="uid://c3oc56x5sm1kh" path="res://assets/2d/miscsprites/tazo2.png" id="2_i7qng"]
@@ -27,7 +27,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kovty"]
 size = Vector2(46, 10)
 
-[node name="Skate" type="CharacterBody2D"]
+[node name="Skate" type="CharacterBody2D" groups=["Player"]]
 script = ExtResource("1_ji3oo")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -45,3 +45,5 @@ shape = SubResource("RectangleShape2D_kovty")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)
+drag_horizontal_enabled = true
+drag_vertical_enabled = true

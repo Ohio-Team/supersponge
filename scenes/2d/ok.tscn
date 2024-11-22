@@ -1,0 +1,46 @@
+[gd_scene load_steps=4 format=3 uid="uid://b2llqhbnfvlti"]
+
+[ext_resource type="FontFile" uid="uid://ia1v43t7vpqa" path="res://assets/fonts/Krabby Patty.ttf" id="1_jd35j"]
+[ext_resource type="AudioStream" uid="uid://bv6lraf7ge786" path="res://assets/music/spongeball.ogg" id="2_4i65b"]
+
+[sub_resource type="GDScript" id="GDScript_yfdh8"]
+resource_name = "alert"
+script/source = "extends Control
+
+
+
+func _on_audio_stream_player_finished() -> void:
+	get_tree().change_scene_to_file(\"res://scenes/Main Menu.tscn\")
+"
+
+[node name="Ok" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_yfdh8")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(0, 0, 0, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 357.0
+offset_top = 309.0
+offset_right = 929.0
+offset_bottom = 529.0
+theme_override_fonts/normal_font = ExtResource("1_jd35j")
+theme_override_font_sizes/normal_font_size = 48
+bbcode_enabled = true
+text = "[tornado][center]Thanks for playing! Wait for the Final Release and report bugs"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_4i65b")
+autoplay = true
+
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]
