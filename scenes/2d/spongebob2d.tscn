@@ -473,7 +473,7 @@ position_smoothing_speed = 15.0
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
 drag_left_margin = 0.15
-drag_top_margin = 0.62
+drag_top_margin = 0.64
 drag_right_margin = 0.15
 
 [node name="Invincibility" type="Timer" parent="."]
