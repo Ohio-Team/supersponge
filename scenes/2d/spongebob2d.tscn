@@ -492,10 +492,9 @@ script = ExtResource("1_uyiiv")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_u32rl")
-animation = &"lookup"
+animation = &"attack"
 autoplay = "idle"
-frame = 6
-frame_progress = 1.0
+frame = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_putow")
@@ -506,9 +505,9 @@ zoom = Vector2(3, 3)
 position_smoothing_speed = 15.0
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
-drag_left_margin = 0.3
+drag_left_margin = 0.18
 drag_top_margin = 1.0
-drag_right_margin = 0.3
+drag_right_margin = 0.18
 
 [node name="Invincibility" type="Timer" parent="."]
 wait_time = 2.0
