@@ -23,10 +23,11 @@ func _physics_process(delta: float) -> void:
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	if $AnimatedSprite2D.animation != "momentum":
 		$AnimatedSprite2D.play("idle")
-	clamp(SPEED,0,500)
 	velocity.x = direction * SPEED
 	if SPEED >= 0:
 		SPEED -= 1
+	SPEED = clampi(SPEED,0,500)
+	$CanvasLayer/RichTextLabel.text = "SPEED: " + str(SPEED / 100)
 	move_and_slide()
 	
 func _unhandled_input(event: InputEvent) -> void:

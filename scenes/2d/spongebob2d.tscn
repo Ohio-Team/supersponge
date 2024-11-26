@@ -1,4 +1,4 @@
-[gd_scene load_steps=85 format=3 uid="uid://cjoo6ilm8eim1"]
+[gd_scene load_steps=92 format=3 uid="uid://cjoo6ilm8eim1"]
 
 [ext_resource type="Script" path="res://scripts/Spongebob2d.gd" id="1_uyiiv"]
 [ext_resource type="Texture2D" uid="uid://do4r7mqil01ed" path="res://assets/2d/spongebobby/4.png" id="2_m3j58"]
@@ -70,6 +70,13 @@
 [ext_resource type="Texture2D" uid="uid://e7kf88hv7x02" path="res://assets/2d/spongebobby/195.png" id="34_k8yt8"]
 [ext_resource type="Texture2D" uid="uid://bl082kyhfnrl6" path="res://assets/2d/spongebobby/196.png" id="35_gyuho"]
 [ext_resource type="Texture2D" uid="uid://jf0xmkaka4fm" path="res://assets/2d/spongebobby/197.png" id="36_h0suv"]
+[ext_resource type="Texture2D" uid="uid://dul0xef64ar51" path="res://assets/2d/spongebobby/99.png" id="54_kj1ma"]
+[ext_resource type="Texture2D" uid="uid://bw2wgshb3cl1t" path="res://assets/2d/spongebobby/100.png" id="55_bdp02"]
+[ext_resource type="Texture2D" uid="uid://ut1md0jfauym" path="res://assets/2d/spongebobby/101.png" id="56_6dhq0"]
+[ext_resource type="Texture2D" uid="uid://c7iqvh6o0ggno" path="res://assets/2d/spongebobby/102.png" id="57_vn3bm"]
+[ext_resource type="Texture2D" uid="uid://dngul05ugo0bn" path="res://assets/2d/spongebobby/103.png" id="58_w22ht"]
+[ext_resource type="Texture2D" uid="uid://b1w6i5o014rj7" path="res://assets/2d/spongebobby/104.png" id="59_enwh6"]
+[ext_resource type="Texture2D" uid="uid://cyhw7kv2xr0iu" path="res://assets/2d/spongebobby/105.png" id="60_aw35c"]
 [ext_resource type="Texture2D" uid="uid://dxdwe3tyjp6hy" path="res://assets/2d/spongebobby/63.png" id="71_3ngnq"]
 [ext_resource type="Texture2D" uid="uid://dxg108q51m0g6" path="res://assets/2d/spongebobby/64.png" id="72_4gvap"]
 [ext_resource type="Texture2D" uid="uid://r0wno8alg8ci" path="res://assets/2d/spongebobby/65.png" id="73_db3di"]
@@ -349,6 +356,32 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("54_kj1ma")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_bdp02")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_6dhq0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_vn3bm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_w22ht")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_enwh6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_aw35c")
+}],
+"loop": false,
+"name": &"lookup",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("6_kip82")
 }, {
 "duration": 1.0,
@@ -459,15 +492,16 @@ script = ExtResource("1_uyiiv")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_u32rl")
-animation = &"idle"
+animation = &"lookup"
 autoplay = "idle"
-frame = 3
-frame_progress = 0.243045
+frame = 6
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_putow")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(70, 0)
 zoom = Vector2(3, 3)
 position_smoothing_speed = 15.0
 drag_horizontal_enabled = true
@@ -477,7 +511,7 @@ drag_top_margin = 1.0
 drag_right_margin = 0.3
 
 [node name="Invincibility" type="Timer" parent="."]
-wait_time = 1.5
+wait_time = 2.0
 one_shot = true
 
 [node name="Coyote" type="Timer" parent="."]

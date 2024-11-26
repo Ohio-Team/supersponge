@@ -24,11 +24,13 @@ func Update(delta):
 
 func _on_spongebot_body_entered(body):
 	if body == player:
-		if player.state == "groundpound" or player.state == "attack":
+		if player.state == "groundpound" or player.state == "attack" or player.state == "fall" or player.state == "land":
+			if player.state != "attack":
+				player.state = "fall"
+				player.velocity.y = -510
 			Singleton.do_explosion(spongebot.position)
 			spongebot.queue_free()
-		else:
-			if player.state != "dying" and !player.invincible:
+		elif player.state != "dying" and !player.invincible:
 				Singleton.health -= 1
 				player.state = "hurt"
 

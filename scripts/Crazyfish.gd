@@ -13,7 +13,7 @@ func _physics_process(delta):
 	
 	var distance = position.distance_to(player.position)
 	
-	if distance < 150:
+	if distance < 150 and !player.invincible:
 		startmoving = true
 	else:
 		startmoving = false
@@ -30,10 +30,9 @@ func _physics_process(delta):
 
 func _on_hitzone_body_entered(body):
 	if body == player:
-		if player.state == "groundpound" or player.state == "attack" or player.state == "land":
+		if player.state == "groundpound" or player.state == "attack" or player.state == "fall" or player.state == "land":
 			Singleton.do_explosion(position)
 			queue_free()
-		else:
-			if player.state != "dying" or !player.invincible:
+		elif player.state != "dying" and !player.invincible:
 				Singleton.health -= 1
 				player.state = "hurt"

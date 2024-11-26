@@ -4,12 +4,11 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://bdjl3b2styeiw"
-path="res://.godot/imported/bikinibottom3d.blend-7113d71b0b3f39935ba6bf8c2c8099f2.scn"
+valid=false
 
 [deps]
 
 source_file="res://assets/3d/bikinibottom/bikinibottom3d.blend"
-dest_files=["res://.godot/imported/bikinibottom3d.blend-7113d71b0b3f39935ba6bf8c2c8099f2.scn"]
 
 [params]
 

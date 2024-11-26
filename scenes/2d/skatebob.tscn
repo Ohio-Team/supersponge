@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://4qh512ue870m"]
+[gd_scene load_steps=8 format=3 uid="uid://4qh512ue870m"]
 
 [ext_resource type="Script" path="res://scripts/skate.gd" id="1_ji3oo"]
 [ext_resource type="Texture2D" uid="uid://c3oc56x5sm1kh" path="res://assets/2d/miscsprites/tazo2.png" id="2_i7qng"]
 [ext_resource type="Texture2D" uid="uid://gk766lpjmfmk" path="res://assets/2d/miscsprites/tazo.png" id="3_kj00x"]
 [ext_resource type="Texture2D" uid="uid://cot0yyvc82cus" path="res://assets/2d/spongebobby/skate.png" id="4_w40v5"]
+[ext_resource type="FontFile" uid="uid://ia1v43t7vpqa" path="res://assets/fonts/Krabby Patty.ttf" id="5_lt0qk"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_o7xgq"]
 animations = [{
@@ -47,3 +48,15 @@ shape = SubResource("RectangleShape2D_kovty")
 zoom = Vector2(3, 3)
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer"]
+offset_left = 958.0
+offset_top = 666.0
+offset_right = 1280.0
+offset_bottom = 719.0
+theme_override_constants/outline_size = 10
+theme_override_fonts/normal_font = ExtResource("5_lt0qk")
+theme_override_font_sizes/normal_font_size = 46
+text = "SPEED:"

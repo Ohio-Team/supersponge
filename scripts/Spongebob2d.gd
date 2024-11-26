@@ -16,7 +16,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 func _ready():
 	pass
 
-func inputs(direction):
+func inputs(direction, delta):
 	if Singleton.acceptinput:
 		if state == "hurt":
 			BMOD.play_sfx(preload("res://assets/sfx/ouch.tres"))
@@ -64,7 +64,10 @@ func inputs(direction):
 			state = "land"
 
 func _physics_process(delta):
-	# Add the gravity.
+	if !$Invincibility.is_stopped():
+		$AnimatedSprite2D.self_modulate = Color("ffffff80")
+	else:
+		$AnimatedSprite2D.self_modulate = Color("ffffff")
 	
 	if camerashake:
 		$Camera2D.offset = Vector2(randf_range(-1,1),randf_range(-49,-51))
@@ -88,7 +91,7 @@ func _physics_process(delta):
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var prev_dir = direction
 	direction = Input.get_axis("left", "right")
-	inputs(direction)
+	inputs(direction,delta)
 	if direction < 0:
 		anim.flip_h = true
 	elif direction > 0:
@@ -99,7 +102,7 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x, 0, SPEED / 3)
 	if velocity.x != 0 and anim.animation != "jump" and anim.animation != "fall" and anim.animation != "groundpound" and anim.animation != "hurt" and anim.animation != "attack" and state != "dying":
 		anim.play("run")
-		if (!BMOD.sfx_playing.has(preload("res://assets/sfx/walk.tres")) and !BMOD.sfx_playing.has(preload("res://assets/sfx/dialog.tres"))) and is_on_floor():
+		if !BMOD.sfx_playing.has(preload("res://assets/sfx/walk.tres")):
 			BMOD.play_sfx(preload("res://assets/sfx/walk.tres"))
 		state = "walking"
 	if velocity.x == 0 and velocity.y == 0 and anim.animation != "attack" and state != "dying":

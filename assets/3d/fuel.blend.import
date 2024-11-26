@@ -4,12 +4,11 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://sw1laun22i3"
-path="res://.godot/imported/fuel.blend-d649fe37531c585201ca5cc4620fc8cc.scn"
+valid=false
 
 [deps]
 
 source_file="res://assets/3d/fuel.blend"
-dest_files=["res://.godot/imported/fuel.blend-d649fe37531c585201ca5cc4620fc8cc.scn"]
 
 [params]
 
