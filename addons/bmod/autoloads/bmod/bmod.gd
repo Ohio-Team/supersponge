@@ -111,7 +111,7 @@ func get_sfx_playing():
 	return sfx_playing
 
 func kill_player(sound_effect):
-	sfx_playing.erase(sound_effect)
+	sfx_playing.clear()
 
 static func _get_sfx_bus(override_bus: StringName) -> StringName:
 	if override_bus == &"":
