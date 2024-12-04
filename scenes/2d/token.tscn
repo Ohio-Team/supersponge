@@ -9,7 +9,7 @@ size = Vector2(24, 24)
 [node name="Token" type="Area2D"]
 script = ExtResource("1_pvlye")
 
-[node name="61Ptk7iykdl" type="Sprite2D" parent="."]
+[node name="Texture" type="Sprite2D" parent="."]
 position = Vector2(0, -4.76837e-07)
 scale = Vector2(0.0207143, 0.02)
 texture = ExtResource("2_8y6qi")
