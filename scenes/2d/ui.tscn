@@ -199,6 +199,7 @@ theme_override_fonts/normal_font = ExtResource("2_0v11p")
 theme_override_font_sizes/normal_font_size = 32
 bbcode_enabled = true
 text = "[shake]Fuel: "
+scroll_active = false
 
 [node name="Counter" type="RichTextLabel" parent="."]
 offset_left = 95.0
@@ -211,6 +212,7 @@ theme_override_fonts/normal_font = ExtResource("2_0v11p")
 theme_override_font_sizes/normal_font_size = 32
 bbcode_enabled = true
 text = "[shake]x3"
+scroll_active = false
 
 [node name="TouchScreenButton" type="TouchScreenButton" parent="."]
 position = Vector2(18, 17)
@@ -230,6 +232,7 @@ theme_override_fonts/normal_font = ExtResource("2_0v11p")
 theme_override_font_sizes/normal_font_size = 32
 bbcode_enabled = true
 text = "[shake]x0"
+scroll_active = false
 
 [node name="Spatula" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -350,6 +353,7 @@ offset_bottom = 760.0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 10
 text = "0"
+scroll_active = false
 
 [node name="ohiohealth" type="RichTextLabel" parent="."]
 visible = false
@@ -362,6 +366,7 @@ theme_override_constants/outline_size = 10
 theme_override_fonts/normal_font = ExtResource("2_0v11p")
 theme_override_font_sizes/normal_font_size = 32
 text = "Ohio Health: 250"
+scroll_active = false
 
 [connection signal="pressed" from="Pause/Button" to="Pause/Button" method="_on_pressed"]
 [connection signal="pressed" from="Pause/Button3" to="Pause/Button3" method="_on_pressed"]

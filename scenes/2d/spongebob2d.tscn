@@ -1,4 +1,4 @@
-[gd_scene load_steps=94 format=3 uid="uid://cjoo6ilm8eim1"]
+[gd_scene load_steps=95 format=3 uid="uid://cjoo6ilm8eim1"]
 
 [ext_resource type="Script" path="res://scripts/Spongebob2d.gd" id="1_uyiiv"]
 [ext_resource type="Texture2D" uid="uid://do4r7mqil01ed" path="res://assets/2d/spongebobby/4.png" id="2_m3j58"]
@@ -486,6 +486,8 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_putow"]
 size = Vector2(12, 30)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2240q"]
+
 [node name="Spongebob" type="CharacterBody2D" groups=["Player"]]
 input_pickable = true
 floor_stop_on_slope = false
@@ -502,6 +504,7 @@ frame = 2
 shape = SubResource("RectangleShape2D_putow")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+material = SubResource("ShaderMaterial_2240q")
 position = Vector2(70, 0)
 zoom = Vector2(3, 3)
 position_smoothing_enabled = true

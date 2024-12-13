@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://btq77cn0mtep8"]
+
+[ext_resource type="Texture2D" uid="uid://b74pyr4dm5rxq" path="res://assets/2d/miscsprites/police car.png" id="1_q1ktj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ccdce"]
+size = Vector2(316, 339)
+
+[node name="policecar" type="Area2D"]
+
+[node name="PoliceCar" type="Sprite2D" parent="."]
+texture = ExtResource("1_q1ktj")
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 27.5)
+shape = SubResource("RectangleShape2D_ccdce")
