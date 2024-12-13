@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dhxbkh5627l1q"]
+[gd_scene load_steps=15 format=3 uid="uid://dhxbkh5627l1q"]
 
 [ext_resource type="Script" path="res://scripts/options.gd" id="1_gxje3"]
 [ext_resource type="Script" path="res://scripts/audio___master.gd" id="1_ua5gb"]
@@ -11,9 +11,16 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_k1wh4"]
 shader = ExtResource("2_3sb6h")
-shader_parameter/motion = Vector2(-1, -1)
+shader_parameter/motion = Vector2(0.5, 0)
 shader_parameter/scale = -0.14
 shader_parameter/offset = Vector2(0, 0)
+
+[sub_resource type="Gradient" id="Gradient_8v1x4"]
+colors = PackedColorArray(1, 0, 0, 1, 1, 1, 0.337255, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_upkdc"]
+gradient = SubResource("Gradient_8v1x4")
+fill_from = Vector2(0, 1)
 
 [sub_resource type="GDScript" id="GDScript_kwgj1"]
 resource_name = "Fullscreen"
@@ -94,6 +101,12 @@ material = SubResource("ShaderMaterial_k1wh4")
 position = Vector2(640, 360)
 scale = Vector2(14.2222, 8)
 texture = ExtResource("3_xtwlt")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+self_modulate = Color(1, 1, 1, 0.501961)
+position = Vector2(640, 360)
+scale = Vector2(20, 11.25)
+texture = SubResource("GradientTexture2D_upkdc")
 
 [node name="Menu_Button" type="Button" parent="."]
 layout_mode = 0
