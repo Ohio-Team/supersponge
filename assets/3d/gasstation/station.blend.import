@@ -4,11 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://dvdqiu3kw72wx"
-valid=false
+path="res://.godot/imported/station.blend-6b4fe9334d8869d2b1fa2e2f476a39c5.scn"
 
 [deps]
 
 source_file="res://assets/3d/gasstation/station.blend"
+dest_files=["res://.godot/imported/station.blend-6b4fe9334d8869d2b1fa2e2f476a39c5.scn"]
 
 [params]
 

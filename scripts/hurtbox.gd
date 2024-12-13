@@ -14,7 +14,7 @@ func _process(delta):
 
 func _on_body_entered(body):
 	if body == player:
-		if player.state != "dying":
+		if player.state != "dying" and !player.invincible:
 			Singleton.health -= 1
 			player.velocity.y += -1000
 			player.state = "hurt"

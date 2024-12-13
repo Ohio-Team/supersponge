@@ -4,11 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://c6ab7a566bvp"
-valid=false
+path="res://.godot/imported/sponebob.blend-cf135e31c221134c399a5651852ceb23.scn"
 
 [deps]
 
 source_file="res://assets/3d/spongebobby/sponebob.blend"
+dest_files=["res://.godot/imported/sponebob.blend-cf135e31c221134c399a5651852ceb23.scn"]
 
 [params]
 

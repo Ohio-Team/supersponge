@@ -4,11 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://b4pml7lpbvqfq"
-valid=false
+path="res://.godot/imported/ohiomonster.blend-814ec69e9977da18cd46c8b4bf23d878.scn"
 
 [deps]
 
 source_file="res://assets/3d/ohiomonster/ohiomonster.blend"
+dest_files=["res://.godot/imported/ohiomonster.blend-814ec69e9977da18cd46c8b4bf23d878.scn"]
 
 [params]
 

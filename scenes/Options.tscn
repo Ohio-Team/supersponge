@@ -1,16 +1,18 @@
-[gd_scene load_steps=11 format=3 uid="uid://dhxbkh5627l1q"]
+[gd_scene load_steps=13 format=3 uid="uid://dhxbkh5627l1q"]
 
 [ext_resource type="Script" path="res://scripts/options.gd" id="1_gxje3"]
 [ext_resource type="Script" path="res://scripts/audio___master.gd" id="1_ua5gb"]
-[ext_resource type="Texture2D" uid="uid://bwjx3hxlvdets" path="res://assets/2d/miscsprites/SBSPSS_5_14_2001_Copyright_Screen.png" id="2_pa8yl"]
-[ext_resource type="Shader" path="res://scenes/Options.gdshader" id="2_q1awi"]
+[ext_resource type="Shader" path="res://scripts/level2.gdshader" id="2_3sb6h"]
 [ext_resource type="Script" path="res://scripts/optionsmenubutton.gd" id="3_i0ro2"]
+[ext_resource type="Texture2D" uid="uid://cxye7fd6lhi12" path="res://assets/2d/pausemenu/+bubbletile.bmp" id="3_xtwlt"]
+[ext_resource type="Texture2D" uid="uid://dx6868mk0fq8h" path="res://assets/2d/pausemenu/slider_marker.png" id="5_0d4ln"]
+[ext_resource type="Texture2D" uid="uid://dmmb1ovvys5ir" path="res://assets/2d/pausemenu/bamboohorizontal.png" id="5_c6mdv"]
 [ext_resource type="PackedScene" uid="uid://cnnghhi78bxjd" path="res://scenes/rebind.tscn" id="6_ye3qy"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_886qq"]
-shader = ExtResource("2_q1awi")
-shader_parameter/motion = Vector2(30, 30)
-shader_parameter/scale = 1.0
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_k1wh4"]
+shader = ExtResource("2_3sb6h")
+shader_parameter/motion = Vector2(-1, -1)
+shader_parameter/scale = -0.14
 shader_parameter/offset = Vector2(0, 0)
 
 [sub_resource type="GDScript" id="GDScript_kwgj1"]
@@ -88,10 +90,10 @@ script = ExtResource("1_gxje3")
 [node name="BG" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 texture_filter = 1
 texture_repeat = 2
-material = SubResource("ShaderMaterial_886qq")
+material = SubResource("ShaderMaterial_k1wh4")
 position = Vector2(640, 360)
-scale = Vector2(2.5, 3)
-texture = ExtResource("2_pa8yl")
+scale = Vector2(14.2222, 8)
+texture = ExtResource("3_xtwlt")
 
 [node name="Menu_Button" type="Button" parent="."]
 layout_mode = 0
@@ -108,10 +110,9 @@ offset_left = 280.0
 offset_top = 160.0
 offset_right = 996.0
 offset_bottom = 565.0
-current_tab = 2
+current_tab = 0
 
 [node name="Audio" type="TabBar" parent="TabContainer"]
-visible = false
 layout_mode = 2
 tab_alignment = 1
 metadata/_tab_index = 0
@@ -149,8 +150,13 @@ text = "Master                                                                  
 
 [node name="Master" type="HSlider" parent="TabContainer/Audio/MarginContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_icons/grabber = ExtResource("5_0d4ln")
+theme_override_icons/grabber_highlight = ExtResource("5_0d4ln")
+theme_override_icons/grabber_disabled = ExtResource("5_0d4ln")
+theme_override_icons/tick = ExtResource("5_c6mdv")
 max_value = 1.0
 step = 0.001
+tick_count = 15
 script = ExtResource("1_ua5gb")
 bus_name = "Master"
 
@@ -160,8 +166,13 @@ text = "Music"
 
 [node name="Music" type="HSlider" parent="TabContainer/Audio/MarginContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_icons/grabber = ExtResource("5_0d4ln")
+theme_override_icons/grabber_highlight = ExtResource("5_0d4ln")
+theme_override_icons/grabber_disabled = ExtResource("5_0d4ln")
+theme_override_icons/tick = ExtResource("5_c6mdv")
 max_value = 1.0
 step = 0.001
+tick_count = 15
 script = ExtResource("1_ua5gb")
 bus_name = "Music"
 
@@ -171,8 +182,13 @@ text = "SFX"
 
 [node name="SFX" type="HSlider" parent="TabContainer/Audio/MarginContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_icons/grabber = ExtResource("5_0d4ln")
+theme_override_icons/grabber_highlight = ExtResource("5_0d4ln")
+theme_override_icons/grabber_disabled = ExtResource("5_0d4ln")
+theme_override_icons/tick = ExtResource("5_c6mdv")
 max_value = 1.0
 step = 0.001
+tick_count = 15
 script = ExtResource("1_ua5gb")
 bus_name = "SFX"
 
@@ -195,6 +211,7 @@ text = "Fullscreen"
 script = SubResource("GDScript_kwgj1")
 
 [node name="Misc" type="TabBar" parent="TabContainer"]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 2
 

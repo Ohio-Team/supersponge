@@ -7,6 +7,7 @@ const JUMP_VELOCITY = -430.0
 @onready var camera = $Camera2D
 @onready var anim = $AnimatedSprite2D
 @export var state = "idle"
+@export var acceleration:float = 0.0
 @export var invincible:bool = false
 @export var camerashake:bool = false
 var direction:float
@@ -97,13 +98,17 @@ func _physics_process(delta):
 	elif direction > 0:
 		anim.flip_h = false
 	if direction and anim.animation != "hurt" and anim.animation != "turn" and anim.animation != "attack" and state != "dying":
-		velocity.x = lerp(velocity.x,direction * SPEED,delta * 5)
+		velocity.x = direction * SPEED * acceleration
+		$AnimatedSprite2D.speed_scale = acceleration
+		acceleration = lerpf(acceleration, 1, delta * 3)
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED / 3)
+		velocity.x = move_toward(velocity.x, 0, SPEED / 2)
+		$AnimatedSprite2D.speed_scale = 1
+		acceleration = lerpf(acceleration, 0, delta * 8)
 	if velocity.x != 0 and anim.animation != "jump" and anim.animation != "fall" and anim.animation != "groundpound" and anim.animation != "hurt" and anim.animation != "attack" and state != "dying":
 		anim.play("run")
-		if !BMOD.sfx_playing.has(preload("res://assets/sfx/walk.tres")):
-			BMOD.play_sfx(preload("res://assets/sfx/walk.tres"))
+		if !$SoundEffectPlayer2D.finished:
+			$SoundEffectPlayer2D.play()
 		state = "walking"
 	if velocity.x == 0 and velocity.y == 0 and anim.animation != "attack" and state != "dying":
 		anim.play("idle")

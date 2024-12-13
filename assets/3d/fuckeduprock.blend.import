@@ -4,11 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://dtfehsc07x3l7"
-valid=false
+path="res://.godot/imported/fuckeduprock.blend-689cce83e0059b6d1dd73fde062f04bc.scn"
 
 [deps]
 
 source_file="res://assets/3d/fuckeduprock.blend"
+dest_files=["res://.godot/imported/fuckeduprock.blend-689cce83e0059b6d1dd73fde062f04bc.scn"]
 
 [params]
 

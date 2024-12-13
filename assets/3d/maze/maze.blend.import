@@ -4,11 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://c2a2viyf4hpun"
-valid=false
+path="res://.godot/imported/maze.blend-006486f365bfc4aad3b9f87685146cd6.scn"
 
 [deps]
 
 source_file="res://assets/3d/maze/maze.blend"
+dest_files=["res://.godot/imported/maze.blend-006486f365bfc4aad3b9f87685146cd6.scn"]
 
 [params]
 

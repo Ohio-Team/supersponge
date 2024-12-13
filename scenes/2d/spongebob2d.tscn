@@ -1,4 +1,4 @@
-[gd_scene load_steps=92 format=3 uid="uid://cjoo6ilm8eim1"]
+[gd_scene load_steps=94 format=3 uid="uid://cjoo6ilm8eim1"]
 
 [ext_resource type="Script" path="res://scripts/Spongebob2d.gd" id="1_uyiiv"]
 [ext_resource type="Texture2D" uid="uid://do4r7mqil01ed" path="res://assets/2d/spongebobby/4.png" id="2_m3j58"]
@@ -89,6 +89,8 @@
 [ext_resource type="Texture2D" uid="uid://b0vwt6jyso8fl" path="res://assets/2d/spongebobby/73.png" id="80_bymcb"]
 [ext_resource type="Texture2D" uid="uid://bmt3w1s18qo44" path="res://assets/2d/spongebobby/74.png" id="81_51agv"]
 [ext_resource type="Texture2D" uid="uid://drgsr887uhj6u" path="res://assets/2d/spongebobby/75.png" id="82_tamco"]
+[ext_resource type="Script" path="res://addons/bmod/scripts/nodes/sound_effect_player_2d.gd" id="90_w42n6"]
+[ext_resource type="Resource" uid="uid://b44gntqd22ra5" path="res://assets/sfx/walk.tres" id="91_n3mg2"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_u32rl"]
 animations = [{
@@ -502,7 +504,8 @@ shape = SubResource("RectangleShape2D_putow")
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(70, 0)
 zoom = Vector2(3, 3)
-position_smoothing_speed = 15.0
+position_smoothing_enabled = true
+position_smoothing_speed = 50.0
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
 drag_left_margin = 0.18
@@ -516,6 +519,11 @@ one_shot = true
 [node name="Coyote" type="Timer" parent="."]
 wait_time = 0.1
 one_shot = true
+
+[node name="SoundEffectPlayer2D" type="Node2D" parent="."]
+script = ExtResource("90_w42n6")
+sound_effect = ExtResource("91_n3mg2")
+bus = &"SFX"
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
 [connection signal="timeout" from="Invincibility" to="." method="_on_timer_timeout"]

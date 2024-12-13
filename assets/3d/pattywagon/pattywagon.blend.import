@@ -4,11 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://cb8bobn2wtd3q"
-valid=false
+path="res://.godot/imported/pattywagon.blend-fd152d3a5ffdb6116d98d79094a5e550.scn"
 
 [deps]
 
 source_file="res://assets/3d/pattywagon/pattywagon.blend"
+dest_files=["res://.godot/imported/pattywagon.blend-fd152d3a5ffdb6116d98d79094a5e550.scn"]
 
 [params]
 
