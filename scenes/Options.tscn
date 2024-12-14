@@ -17,7 +17,7 @@ shader_parameter/scale = -0.14
 shader_parameter/offset = Vector2(0, 0)
 
 [sub_resource type="Gradient" id="Gradient_8v1x4"]
-colors = PackedColorArray(1, 0, 0, 1, 1, 1, 0.337255, 1)
+colors = PackedColorArray(0.0159332, 0.0748915, 1, 1, 0.280039, 0.495666, 1, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_upkdc"]
 gradient = SubResource("Gradient_8v1x4")
