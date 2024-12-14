@@ -22,7 +22,7 @@ func inputs(direction, delta):
 		if state == "hurt":
 			BMOD.play_sfx(preload("res://assets/sfx/ouch.tres"))
 			$Invincibility.start()
-			velocity.x = SPEED * 4 * direction
+			velocity.x += SPEED * 4 * -direction
 			velocity.y = -450
 			anim.play("hurt")
 			invincible = true
