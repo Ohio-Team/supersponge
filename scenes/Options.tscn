@@ -17,11 +17,12 @@ shader_parameter/scale = -0.14
 shader_parameter/offset = Vector2(0, 0)
 
 [sub_resource type="Gradient" id="Gradient_8v1x4"]
-colors = PackedColorArray(0.0159332, 0.0748915, 1, 1, 0.280039, 0.495666, 1, 1)
+colors = PackedColorArray(0.0061604, 0, 0.577781, 1, 0.646506, 0.170108, 0.109176, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_upkdc"]
 gradient = SubResource("Gradient_8v1x4")
-fill_from = Vector2(0, 1)
+fill_from = Vector2(0, 0.5)
+fill_to = Vector2(1, 0.5)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ma72j"]
 texture = ExtResource("5_xmtju")
@@ -173,15 +174,15 @@ metadata/_tab_index = 0
 
 [node name="MarginContainer" type="MarginContainer" parent="TabContainer/Audio"]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
+anchors_preset = -1
+anchor_left = 0.511
+anchor_top = 0.546
+anchor_right = 0.648
+anchor_bottom = 0.591
 offset_left = -349.5
 offset_top = -177.0
 offset_right = 349.5
-offset_bottom = 177.0
+offset_bottom = 173.964
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -189,7 +190,7 @@ grow_vertical = 2
 layout_mode = 2
 follow_focus = true
 horizontal_scroll_mode = 0
-vertical_scroll_mode = 2
+vertical_scroll_mode = 0
 
 [node name="VBoxContainer" type="BoxContainer" parent="TabContainer/Audio/MarginContainer/ScrollContainer"]
 layout_mode = 2
@@ -252,7 +253,10 @@ layout_mode = 2
 metadata/_tab_index = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="TabContainer/Video"]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+offset_left = 0.511
 offset_right = 40.0
 offset_bottom = 40.0
 
