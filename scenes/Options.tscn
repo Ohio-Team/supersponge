@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dhxbkh5627l1q"]
+[gd_scene load_steps=21 format=3 uid="uid://dhxbkh5627l1q"]
 
 [ext_resource type="Script" path="res://scripts/options.gd" id="1_gxje3"]
 [ext_resource type="Script" path="res://scripts/audio___master.gd" id="1_ua5gb"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cxye7fd6lhi12" path="res://assets/2d/pausemenu/+bubbletile.bmp" id="3_xtwlt"]
 [ext_resource type="Texture2D" uid="uid://dx6868mk0fq8h" path="res://assets/2d/pausemenu/slider_marker.png" id="5_0d4ln"]
 [ext_resource type="Texture2D" uid="uid://dmmb1ovvys5ir" path="res://assets/2d/pausemenu/bamboohorizontal.png" id="5_c6mdv"]
+[ext_resource type="Texture2D" uid="uid://dr3eskctiurf" path="res://assets/2d/miscsprites/panel.png" id="5_xmtju"]
 [ext_resource type="PackedScene" uid="uid://cnnghhi78bxjd" path="res://scenes/rebind.tscn" id="6_ye3qy"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_k1wh4"]
@@ -21,6 +22,27 @@ colors = PackedColorArray(1, 0, 0, 1, 1, 1, 0.337255, 1)
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_upkdc"]
 gradient = SubResource("Gradient_8v1x4")
 fill_from = Vector2(0, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ma72j"]
+texture = ExtResource("5_xmtju")
+modulate_color = Color(0.31802, 0.31802, 0.31802, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c5uoq"]
+texture = ExtResource("5_xmtju")
+texture_margin_left = 70.0
+texture_margin_top = 55.0
+texture_margin_right = 30.0
+texture_margin_bottom = 30.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r4uku"]
+texture = ExtResource("5_c6mdv")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j68ff"]
+texture = ExtResource("5_c6mdv")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kvlr0"]
+texture = ExtResource("5_c6mdv")
+modulate_color = Color(0.321728, 0.321728, 0.321728, 1)
 
 [sub_resource type="GDScript" id="GDScript_kwgj1"]
 resource_name = "Fullscreen"
@@ -114,15 +136,34 @@ offset_left = 560.0
 offset_top = 616.0
 offset_right = 728.0
 offset_bottom = 661.0
+theme_override_styles/focus = SubResource("StyleBoxTexture_ma72j")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxTexture_ma72j")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_ma72j")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxTexture_ma72j")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_ma72j")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxTexture_ma72j")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ma72j")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_ma72j")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ma72j")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_ma72j")
+theme_override_styles/normal = SubResource("StyleBoxTexture_ma72j")
 text = "Back"
 script = ExtResource("3_i0ro2")
 
 [node name="TabContainer" type="TabContainer" parent="."]
+texture_filter = 1
 layout_mode = 0
 offset_left = 280.0
 offset_top = 160.0
 offset_right = 996.0
 offset_bottom = 565.0
+theme_override_constants/outline_size = 10
+theme_override_constants/icon_separation = 10
+theme_override_font_sizes/font_size = 26
+theme_override_styles/panel = SubResource("StyleBoxTexture_c5uoq")
+theme_override_styles/tab_selected = SubResource("StyleBoxTexture_r4uku")
+theme_override_styles/tab_hovered = SubResource("StyleBoxTexture_j68ff")
+theme_override_styles/tab_unselected = SubResource("StyleBoxTexture_kvlr0")
 current_tab = 0
 
 [node name="Audio" type="TabBar" parent="TabContainer"]
