@@ -14,6 +14,7 @@ extends Node
 @export var spatulas:int = 0
 @export var acceptinput:bool = true
 @export var escape:bool = false
+@export var tokens = []
 
 var config = ConfigFile.new()
 var err = config.load("user://settings.cfg")
@@ -45,7 +46,8 @@ func save_elements():
 		"lifes" : lifes,
 		"spatulas" : spatulas,
 		"health" : health,
-		"time" : Ui.time
+		"time" : Ui.time,
+		"tokens" : tokens
 	}
 	return save_dict
 func save_game():
@@ -74,6 +76,7 @@ func load_game():
 		spatulas = data["spatulas"]
 		lifes = data["lifes"]
 		Ui.time = data["time"]
+		tokens = data["tokens"]
 		get_tree().change_scene_to_file(data["current_scene"])
 func load_settings():
 	if err != OK:
@@ -97,5 +100,6 @@ func load_settings():
 	showspeedrun = config.get_value("misc","showspeedrun")
 	mouse_sensitivity = config.get_value("misc","mouse_sensitivity")
 	fullscreen = config.get_value("video","fullscreen")
+	
 	if fullscreen:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)

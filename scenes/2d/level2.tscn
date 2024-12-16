@@ -242,6 +242,7 @@ texture = ExtResource("15_ffbtg")
 [node name="Token" parent="." instance=ExtResource("16_m2sev")]
 position = Vector2(3250, 1460)
 image = ExtResource("17_h7gdd")
+id = "jik"
 
 [node name="Bumper" parent="." instance=ExtResource("18_rj64g")]
 position = Vector2(3031, 1492)
