@@ -40,7 +40,6 @@ func play_sfx(
 	sound_effect.apply_to_player(player)
 	player.bus = _get_sfx_bus(override_bus)
 	player.finished.connect(player.queue_free)
-	print(sfx_playing)
 	player.play()
 	return player
 
@@ -70,7 +69,6 @@ func play_sfx_2d(
 	sound_effect.apply_to_player(player)
 	player.bus = _get_sfx_bus(override_bus)
 	player.finished.connect(player.queue_free)
-	print(sfx_playing)
 	player.play()
 	return player
 

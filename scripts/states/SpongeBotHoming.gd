@@ -4,6 +4,7 @@ extends State
 @onready var spongebot = get_parent().get_parent()
 
 var target:Vector2
+var accel:float = 0.0
 
 func Enter():
 	target = player.position
@@ -11,9 +12,11 @@ func Enter():
 func Update(delta):
 	var direction = (target - spongebot.position).normalized()
 	if spongebot.position != target:
-		spongebot.position.x += direction.x * 4
-		spongebot.position.y += direction.y * 4
+		accel = lerpf(accel, 2, delta * 2)
+		spongebot.position.x += direction.x * 4 * accel
+		spongebot.position.y += direction.y * 4 * accel
 	if spongebot.position.distance_to(target) < 3:
+		accel = 0
 		Transitioned.emit(self, "Idle")
 		
 	if direction.x < 0:
