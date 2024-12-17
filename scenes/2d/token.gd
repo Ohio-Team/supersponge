@@ -6,13 +6,15 @@ extends Area2D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$Texture.texture = image
-	
+	if Singleton.tokens.has(id):
+		queue_free()
 	
 func _on_body_entered(body):
 	if body == player:
 		print("token collected")
 		BMOD.play_sfx(preload("res://assets/sfx/token.tres"))
 		Singleton.tokens.append(id)
+		Singleton.save_game()
 		queue_free()
 
 

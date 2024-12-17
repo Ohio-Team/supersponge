@@ -15,5 +15,5 @@ func _process(delta):
 func _on_body_entered(body):
 	if body == player:
 		if player.state != "dying":
-			Singleton.health -= 1
-			player.state = "hurt"
+			Singleton.health = 0
+			player.state = "dying"
