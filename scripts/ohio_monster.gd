@@ -18,4 +18,5 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 		OS.alert("ONLY IN OHIO! OOOH!","Ohio Alert!")
 		OS.alert("ONLY IN OHIO! OOOH!","Ohio Alert!")
 		if get_tree():
+			Singleton.deaths += 1
 			get_tree().reload_current_scene()

@@ -1,10 +1,10 @@
 extends Area2D
 
 @onready var player = get_tree().get_first_node_in_group("Player")
+@onready var time = randf_range(2,5)
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
-
+	$Timer.wait_time = time
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

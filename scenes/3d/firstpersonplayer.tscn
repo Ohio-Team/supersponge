@@ -20,6 +20,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.01956, 0)
 shape = SubResource("CapsuleShape3D_pptmq")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7643, 0)
-billboard = 1
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 8.71876, 0)
+double_sided = false
 texture = ExtResource("2_55e3b")

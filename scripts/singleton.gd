@@ -4,6 +4,7 @@ extends Node
 @export var showfuel:bool = false
 @export var hashammer:bool = false
 @export var fuel:float = 100.0
+@export var deaths:int = 0
 @export var inmenu:bool = false
 @export var showfps:bool = false
 @export var showspeedrun:bool = false
@@ -47,7 +48,8 @@ func save_elements():
 		"spatulas" : spatulas,
 		"health" : health,
 		"time" : Ui.time,
-		"tokens" : tokens
+		"tokens" : tokens,
+		"deaths" : deaths
 	}
 	return save_dict
 func save_game():
@@ -77,6 +79,7 @@ func load_game():
 		lifes = data["lifes"]
 		Ui.time = data["time"]
 		tokens = data["tokens"]
+		deaths = data["deaths"]
 		get_tree().change_scene_to_file(data["current_scene"])
 func load_settings():
 	if err != OK:

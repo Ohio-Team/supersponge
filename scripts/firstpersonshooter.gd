@@ -24,6 +24,7 @@ func _physics_process(delta):
 	# Handle jump.
 	if Singleton.health <= 0:
 		Singleton.health = 3
+		deaths += 1
 		get_tree().reload_current_scene()
 	
 	var input_dir = Input.get_vector("left","right","front","back")
