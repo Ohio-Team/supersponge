@@ -24,6 +24,8 @@ script/source = "extends Node2D
 func _ready() -> void:
 	Ui.time = 0
 	Singleton.inmenu = false
+	Singleton.hasgun = false
+	Singleton.hashammer = false
 	Singleton.save_game()
 	Ui._clear_dialog()
 	MusicPlayer.play_song(\"res://assets/music/tutorial.ogg\")

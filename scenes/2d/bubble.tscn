@@ -35,6 +35,10 @@ func _on_hitbox_body_entered(body: Node2D) -> void:
 		elif player.state != \"dying\" and !player.invincible:
 				Singleton.health -= 1
 				player.state = \"hurt\"
+
+
+func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
+	queue_free()
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_76l42"]
@@ -62,5 +66,8 @@ autostart = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
 shape = SubResource("RectangleShape2D_cud66")
 
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
