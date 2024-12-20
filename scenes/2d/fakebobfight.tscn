@@ -302,6 +302,9 @@ scale = Vector2(6.44, 3.2)
 [node name="Spongebob" parent="." instance=ExtResource("2_gb4cp")]
 position = Vector2(-82, 593)
 
+[node name="Camera2D" parent="Spongebob" index="2"]
+position = Vector2(0, 0)
+
 [node name="Fakebob" parent="." instance=ExtResource("5_7oub3")]
 position = Vector2(1165, 277)
 

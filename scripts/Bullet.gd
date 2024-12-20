@@ -1,4 +1,4 @@
-extends Area2D
+extends RigidBody2D
 
 
 const SPEED = 300.0
@@ -13,7 +13,7 @@ func _ready():
 
 
 func _physics_process(delta):
-	position.x += 10 * direction.x
+	apply_force(Vector2(1000 * direction.x, 0))
 
 
 func _on_timer_timeout():
