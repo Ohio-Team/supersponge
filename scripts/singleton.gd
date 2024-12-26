@@ -106,3 +106,4 @@ func load_settings():
 	
 	if fullscreen:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+		
