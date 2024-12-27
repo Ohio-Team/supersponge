@@ -11,6 +11,7 @@ func _process(delta: float) -> void:
 	pass
 
 func _on_hit_body_entered(body: Node2D) -> void:
+	BMOD.play_sfx_2d(preload("res://assets/sfx/woodrumble.tres"),position)
 	await Singleton.wait(0.5)
 	$CollisionShape2D.disabled = true
 	$WoodB04.visible = false
