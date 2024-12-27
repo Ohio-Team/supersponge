@@ -24,6 +24,8 @@ func _on_spongebot_body_entered(body):
 		elif player.state != "dying" and !player.invincible:
 				Singleton.health -= 1
 				player.state = "hurt"
-	if body.is_in_group("Projectiles"):
+				
+func _on_spongebot_area_entered(area):
+	if area.is_in_group("Projectiles"):
 		Singleton.do_explosion(spongebot.position)
 		spongebot.queue_free()

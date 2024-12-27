@@ -8,7 +8,7 @@ script/source = "extends Area2D
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group(\"Player\"):
-		BMOD.play_sfx_2d(preload(\"res://assets/sfx/collect.tres\"),position)
+		BMOD.play_sfx_2d(preload(\"res://assets/sfx/scream.tres\"),position)
 		body.position = target_position
 "
 

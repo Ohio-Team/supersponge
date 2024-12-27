@@ -13,7 +13,7 @@ func _ready():
 
 
 func _physics_process(delta):
-	apply_force(Vector2(1000 * direction.x, 0))
+	position.x += 10 * direction.x
 
 
 func _on_timer_timeout():

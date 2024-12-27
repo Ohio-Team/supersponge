@@ -23,5 +23,6 @@ func _on_body_entered(body):
 func _on_timer_timeout() -> void:
 	var bu = preload("res://scenes/2d/bubble.tscn")
 	var bubble = bu.instantiate()
-	bubble.position = Vector2(randf_range(position.x - (position.x / scale.x + 0.8),position.x + (position.x / scale.x - 0.8)),position.y)
+	var half_x = scale.x / 2
+	bubble.position = Vector2(position.x+randf_range(-half_x,half_x),position.y)
 	get_parent().add_child(bubble)
