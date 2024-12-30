@@ -32,7 +32,7 @@ func _physics_process(delta: float) -> void:
 	
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT or Input.is_action_just_pressed("attack"):
-		SPEED += 15
+		SPEED += 20
 		$AnimatedSprite2D.play("momentum")
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_RIGHT and is_on_floor():
 		velocity.y = JUMP_VELOCITY
