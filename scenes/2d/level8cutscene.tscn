@@ -1,8 +1,8 @@
 [gd_scene load_steps=10 format=3 uid="uid://b1uxhmmvgd4r3"]
 
 [ext_resource type="VideoStream" path="res://assets/videos/cutscene2.ogv" id="1_wlqgb"]
-[ext_resource type="Texture2D" uid="uid://cg2dwie8jrbxa" path="res://assets/2d/miscsprites/spongebobroom.jpg" id="2_jt6dp"]
-[ext_resource type="AudioStream" uid="uid://cqnrdrh08cuxv" path="res://assets/sfx/this.mp3" id="3_f6lk8"]
+[ext_resource type="Texture2D" uid="uid://kcmuvimb7er8" path="res://assets/2d/miscsprites/spongebobroom.jpg" id="2_jt6dp"]
+[ext_resource type="AudioStream" uid="uid://d0moshp0fqavi" path="res://assets/sfx/this.mp3" id="3_f6lk8"]
 [ext_resource type="PackedScene" uid="uid://cjoo6ilm8eim1" path="res://scenes/2d/spongebob2d.tscn" id="3_pfl55"]
 
 [sub_resource type="GDScript" id="GDScript_d7r1u"]
@@ -21,6 +21,10 @@ func gotomariohouse():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+	
+func _unhandled_key_input(event):
+	if event.is_pressed():
+		gotomariohouse()
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8088g"]
@@ -295,6 +299,8 @@ shape = SubResource("RectangleShape2D_8088g")
 scale = Vector2(6.52832, 6.07406)
 
 [node name="AnimatedSprite2D" parent="Spongebob" index="0"]
+animation = &"run"
+frame = 0
 frame_progress = 0.0
 
 [node name="Camera2D" parent="Spongebob" index="2"]
@@ -321,5 +327,13 @@ offset_bottom = 721.0
 color = Color(0, 0, 0, 1)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="Label" type="Label" parent="."]
+offset_left = 2.0
+offset_top = 691.0
+offset_right = 314.0
+offset_bottom = 714.0
+theme_override_constants/outline_size = 6
+text = "Cutscene pending. Press any key to skip."
 
 [editable path="Spongebob"]
