@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://c68ldtwatsbr7"]
+[gd_scene load_steps=23 format=4 uid="uid://c68ldtwatsbr7"]
 
 [ext_resource type="Texture2D" uid="uid://culfcrnvqqsnd" path="res://assets/2d/tilesets/jail.png" id="1_75qt4"]
 [ext_resource type="Texture2D" uid="uid://c7wiwlmd3jby6" path="res://assets/3d/bikinibottom/textures/jf_sky_color_77.png" id="1_l1te2"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bv0rvgn2iah1s" path="res://scenes/2d/bumper.tscn" id="7_3v1q8"]
 [ext_resource type="Texture2D" uid="uid://biw7vnjd62pbg" path="res://assets/2d/miscsprites/spongebobhouse.png" id="8_smdgc"]
 [ext_resource type="PackedScene" uid="uid://btq77cn0mtep8" path="res://scenes/2d/policecar.tscn" id="9_ie8db"]
+[ext_resource type="Texture2D" uid="uid://da2s1nefiji7j" path="res://assets/2d/miscsprites/run0_0.png" id="10_0qlo1"]
 
 [sub_resource type="GDScript" id="GDScript_7i7c3"]
 script/source = "extends Node2D
@@ -24,7 +25,7 @@ func _ready() -> void:
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group(\"Player\"):
 		MusicPlayer.stop_song()
-		get_tree().change_scene_to_file(\"res://scenes/2d/ok.tscn\")
+		get_tree().change_scene_to_file(\"res://scenes/2d/shootdown.tscn\")
 "
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_m0dwk"]
@@ -72,7 +73,7 @@ func _on_body_entered(body: Node2D) -> void:
 		body.queue_free()
 		var skat = preload(\"res://scenes/2d/skatebob.tscn\")
 		var skatebob = skat.instantiate()
-		skatebob.position = Vector2(position.x,position.y + 10)
+		skatebob.position = Vector2(position.x,position.y - 20)
 		$\"../policecar/AnimationPlayer\".play(\"escape\")
 		get_tree().current_scene.add_child(skatebob)
 		queue_free()
@@ -145,6 +146,23 @@ _data = {
 "escape": SubResource("Animation_qgv0m")
 }
 
+[sub_resource type="GDScript" id="GDScript_fb86i"]
+resource_name = "Superbob"
+script/source = "extends Area2D
+
+func _ready() -> void:
+	if Singleton.tokens.has(\"sbds\"):
+		queue_free()
+
+func _on_body_entered(body: Node2D) -> void:
+	if body.is_in_group(\"Player\"):
+		OS.alert(\"Welcome to my challenge. Get the token and come back\")
+		get_tree().change_scene_to_file(\"res://scenes/2d/level0_15.tscn\")
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vs8gd"]
+size = Vector2(75, 104)
+
 [node name="Prisonescape" type="Node2D"]
 script = SubResource("GDScript_7i7c3")
 
@@ -204,7 +222,7 @@ position = Vector2(4457, -107)
 scale = Vector2(0.5, 0.5)
 
 [node name="Bumper2" parent="." instance=ExtResource("7_3v1q8")]
-position = Vector2(5040, -240)
+position = Vector2(4811, -240)
 
 [node name="Spongebobhouse" type="Sprite2D" parent="."]
 position = Vector2(7497, 97)
@@ -225,5 +243,21 @@ libraries = {
 "": SubResource("AnimationLibrary_h3pbt")
 }
 
+[node name="Directionbob3" parent="." instance=ExtResource("6_qa7xx")]
+position = Vector2(5088, -364)
+scale = Vector2(-0.5, 0.5)
+
+[node name="Superbob" type="Area2D" parent="."]
+script = SubResource("GDScript_fb86i")
+
+[node name="Run00" type="Sprite2D" parent="Superbob"]
+position = Vector2(4381, -442)
+texture = ExtResource("10_0qlo1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Superbob"]
+position = Vector2(4386.5, -437)
+shape = SubResource("RectangleShape2D_vs8gd")
+
 [connection signal="body_entered" from="Skatetoggle" to="Skatetoggle" method="_on_body_entered"]
 [connection signal="body_entered" from="Spongebobhouse/Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Superbob" to="Superbob" method="_on_body_entered"]

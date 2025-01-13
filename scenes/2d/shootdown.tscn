@@ -8,9 +8,19 @@
 resource_name = "shoot"
 script/source = "extends Node2D
 
+var police = 0
 
 # Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	MusicPlayer.play_song(\"res://assets/music/lvl21music.mp3\")
+	Ui.create_dialog(\"This is it Spongebob, kill them all and we will be Free\",\"sandy\")
 
+func _process(delta: float) -> void:
+	if police >= 100:
+		print(\"Beat\")
+		MusicPlayer.stop_song()
+		Singleton.inmenu = true
+		get_tree().change_scene_to_file(\"res://scenes/2d/credits.tscn\")
 
 func _on_timer_timeout() -> void:
 	var police = preload(\"res://scenes/2d/policefish.tscn\")
@@ -53,6 +63,7 @@ position = Vector2(-3.5, 44)
 shape = SubResource("RectangleShape2D_5dd7b")
 
 [node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
 autostart = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

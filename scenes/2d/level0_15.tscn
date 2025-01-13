@@ -1,0 +1,170 @@
+[gd_scene load_steps=16 format=4 uid="uid://b76nxoxpwscn2"]
+
+[ext_resource type="Texture2D" uid="uid://cbeklu72hm2c2" path="res://scenes/2d/tileset.png" id="1_j1ytw"]
+[ext_resource type="PackedScene" uid="uid://b86vokonmmvq5" path="res://scenes/2d/spatula.tscn" id="2_7s0yx"]
+[ext_resource type="PackedScene" uid="uid://4qh512ue870m" path="res://scenes/2d/skatebob.tscn" id="2_fcldy"]
+[ext_resource type="PackedScene" uid="uid://bi4iw0oxdqiql" path="res://scenes/2d/rock2d.tscn" id="3_44vwq"]
+[ext_resource type="PackedScene" uid="uid://vkkvjrmsl7ai" path="res://scenes/2d/directionbob.tscn" id="3_js7bq"]
+[ext_resource type="PackedScene" uid="uid://bv0rvgn2iah1s" path="res://scenes/2d/bumper.tscn" id="4_sgn85"]
+[ext_resource type="Texture2D" uid="uid://c4up8of20l12b" path="res://assets/2d/miscsprites/game_bg0.png" id="5_q4vls"]
+[ext_resource type="PackedScene" uid="uid://msrilsl3hgxf" path="res://scenes/2d/token.tscn" id="8_flhek"]
+[ext_resource type="Texture2D" uid="uid://dt03hf2mm17f3" path="res://assets/2d/tokens/truthorsquare.jpg" id="9_p84rw"]
+[ext_resource type="Script" path="res://scripts/MenuButton.gd" id="10_0lq76"]
+[ext_resource type="PackedScene" uid="uid://c68ldtwatsbr7" path="res://scenes/2d/prisonescape.tscn" id="11_d1wim"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2jiw3"]
+texture = ExtResource("1_j1ytw")
+texture_region_size = Vector2i(80, 80)
+2:2/0 = 0
+3:2/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+2:0/0 = 0
+4:0/0 = 0
+3:0/0 = 0
+6:0/0 = 0
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-40, -40, 40, -40, 40, 40, -40, 40)
+0:2/0 = 0
+1:2/0 = 0
+5:0/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+7:0/0 = 0
+0:0/0 = 0
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_fdkj2"]
+scenes/1/scene = ExtResource("2_7s0yx")
+scenes/2/scene = ExtResource("3_44vwq")
+
+[sub_resource type="TileSet" id="TileSet_whvu1"]
+tile_size = Vector2i(80, 80)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_2jiw3")
+sources/1 = SubResource("TileSetScenesCollectionSource_fdkj2")
+
+[sub_resource type="GDScript" id="GDScript_28wyc"]
+script/source = "extends TileMapLayer
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	Singleton.save_game()
+	if Singleton.deaths >= 15:
+		MusicPlayer.play_song(\"res://assets/music/Tre.ogg\")
+	else:
+		MusicPlayer.play_song(\"res://assets/music/spongeball.ogg\")
+	if Singleton.deaths == 30:
+		OS.alert(\"Why dont you just give up boy\",\"Me\")
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	if Singleton.deaths >= 15:
+		MusicPlayer.play_song(\"res://assets/music/Tre.ogg\")
+"
+
+[node name="level0_15" type="TileMapLayer"]
+texture_filter = 1
+tile_map_data = PackedByteArray("AAAAAAIAAAACAAIAAAABAAIAAAADAAIAAAAAAAMAAAACAAMAAAABAAMAAAADAAMAAAADAAMAAQAAAAAAAQAEAAMAAQAAAAAAAQAFAAMAAQAAAAAAAQALAAMAAQAAAAAAAQAMAAMAAQAAAAAAAQAOAAMAAAAEAAAAAAARAAMAAQAAAAAAAQASAAMAAQAAAAAAAQATAAMAAQAAAAAAAQAVAAMAAAADAAAAAAAYAAMAAQAAAAAAAQAZAAMAAQAAAAAAAQAaAAMAAQAAAAAAAQAcAAMAAAAGAAAAAAAeAAMAAQAAAAAAAQAfAAMAAQAAAAAAAQAgAAMAAQAAAAAAAQAiAAMAAAADAAAAAAAkAAMAAQAAAAAAAQAlAAMAAQAAAAAAAQAmAAMAAQAAAAAAAQAoAAMAAAAEAAAAAAAqAAMAAQAAAAAAAQArAAMAAAACAAAAAAAAAAQAAAABAAAAAAABAAQAAAABAAAAAAACAAQAAAABAAAAAAADAAQAAAABAAAAAAAEAAQAAAABAAAAAAAFAAQAAAABAAAAAAAGAAQAAAABAAAAAAAKAAQAAAABAAAAAAALAAQAAAABAAAAAAAMAAQAAAABAAAAAAANAAQAAAABAAAAAAAOAAQAAAABAAAAAAAPAAQAAAABAAAAAAAQAAQAAAABAAAAAAARAAQAAAABAAAAAAASAAQAAAABAAAAAAATAAQAAAABAAAAAAAUAAQAAAABAAAAAAAVAAQAAAABAAAAAAAWAAQAAAABAAAAAAAXAAQAAAABAAAAAAAYAAQAAAABAAAAAAAZAAQAAAABAAAAAAAaAAQAAAABAAAAAAAbAAQAAAABAAAAAAAcAAQAAAABAAAAAAAdAAQAAAABAAAAAAAeAAQAAAABAAAAAAAfAAQAAAABAAAAAAAgAAQAAAABAAAAAAAhAAQAAAABAAAAAAAiAAQAAAABAAAAAAAjAAQAAAABAAAAAAAkAAQAAAABAAAAAAAlAAQAAAABAAAAAAAmAAQAAAABAAAAAAAnAAQAAAABAAAAAAAoAAQAAAABAAAAAAApAAQAAAABAAAAAAAqAAQAAAABAAAAAAArAAQAAAABAAAAAAAsAAQAAAABAAAAAAAAAAcAAAACAAIAAAABAAcAAAADAAIAAAArAAcAAAAAAAIAAAAsAAcAAAABAAIAAAAAAAgAAAACAAMA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")
+tile_set = SubResource("TileSet_whvu1")
+script = SubResource("GDScript_28wyc")
+metadata/StartDirection = "0"
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+z_index = -1
+position = Vector2(639, 401)
+texture = ExtResource("5_q4vls")
+
+[node name="Skate" parent="." instance=ExtResource("2_fcldy")]
+position = Vector2(3424, 1092)
+scale = Vector2(2, 2)
+
+[node name="Directionbob" parent="." instance=ExtResource("3_js7bq")]
+position = Vector2(3575, 1036)
+scale = Vector2(-1, 1)
+
+[node name="Directionbob2" parent="." instance=ExtResource("3_js7bq")]
+position = Vector2(115, 1038)
+
+[node name="Directionbob3" parent="." instance=ExtResource("3_js7bq")]
+position = Vector2(3543, 638)
+scale = Vector2(-1, 1)
+
+[node name="Directionbob4" parent="." instance=ExtResource("3_js7bq")]
+position = Vector2(83, 640)
+
+[node name="Directionbob5" parent="." instance=ExtResource("3_js7bq")]
+position = Vector2(1775, 240)
+scale = Vector2(-1, 1)
+
+[node name="Directionbob6" parent="." instance=ExtResource("3_js7bq")]
+position = Vector2(75, 246)
+
+[node name="Rock" parent="." instance=ExtResource("3_44vwq")]
+position = Vector2(597, 1092)
+scale = Vector2(2, 2)
+
+[node name="Rock2" parent="." instance=ExtResource("3_44vwq")]
+position = Vector2(1158, 1092)
+scale = Vector2(2, 2)
+
+[node name="Rock3" parent="." instance=ExtResource("3_44vwq")]
+position = Vector2(1639, 1092)
+scale = Vector2(2, 2)
+
+[node name="Rock4" parent="." instance=ExtResource("3_44vwq")]
+position = Vector2(2038, 1092)
+scale = Vector2(2, 2)
+
+[node name="Rock5" parent="." instance=ExtResource("3_44vwq")]
+position = Vector2(2361, 1092)
+scale = Vector2(2, 2)
+
+[node name="Rock6" parent="." instance=ExtResource("3_44vwq")]
+position = Vector2(2361, 1092)
+scale = Vector2(2, 2)
+
+[node name="Rock7" parent="." instance=ExtResource("3_44vwq")]
+position = Vector2(2038, 692)
+scale = Vector2(2, 2)
+
+[node name="Rock8" parent="." instance=ExtResource("3_44vwq")]
+position = Vector2(1961, 692)
+scale = Vector2(2, 2)
+
+[node name="Rock9" parent="." instance=ExtResource("3_44vwq")]
+position = Vector2(1319, 692)
+scale = Vector2(2, 2)
+
+[node name="Rock10" parent="." instance=ExtResource("3_44vwq")]
+position = Vector2(1241, 692)
+scale = Vector2(2, 2)
+
+[node name="Bumper" parent="." instance=ExtResource("4_sgn85")]
+position = Vector2(2840, 1137)
+scale = Vector2(0.2, 0.2)
+
+[node name="Bumper2" parent="." instance=ExtResource("4_sgn85")]
+position = Vector2(679, 727)
+scale = Vector2(0.2, 0.2)
+
+[node name="Token" parent="." instance=ExtResource("8_flhek")]
+position = Vector2(206, 283)
+image = ExtResource("9_p84rw")
+id = "sbds"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Menu_Button" type="Button" parent="CanvasLayer"]
+offset_left = 502.0
+offset_top = 3.0
+offset_right = 573.0
+offset_bottom = 34.0
+text = "Go Back"
+script = ExtResource("10_0lq76")
+scene = ExtResource("11_d1wim")

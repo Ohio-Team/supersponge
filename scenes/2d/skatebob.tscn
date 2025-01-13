@@ -26,7 +26,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kovty"]
-size = Vector2(46, 10)
+size = Vector2(46, 24)
 
 [node name="Skate" type="CharacterBody2D" groups=["Player"]]
 script = ExtResource("1_ji3oo")
@@ -42,6 +42,7 @@ texture_filter = 1
 texture = ExtResource("4_w40v5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -7)
 shape = SubResource("RectangleShape2D_kovty")
 
 [node name="Camera2D" type="Camera2D" parent="."]
