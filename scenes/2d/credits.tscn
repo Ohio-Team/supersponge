@@ -13,6 +13,8 @@ script/source = "extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	DiscordRPC.details = \"Viewing the Credits\"
+	DiscordRPC.refresh()
 	Singleton.inmenu = true
 	if Singleton.tokens.has(\"jik\"):
 		$Jik.show()
@@ -42,7 +44,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(323, 239)]
+"values": [Vector2(323, 120)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -166,7 +168,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 30),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(323, 718), Vector2(323, -951)]
+"values": [Vector2(323, 718), Vector2(323, -1530)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -311,13 +313,20 @@ autoplay = true
 
 [node name="Names" type="RichTextLabel" parent="."]
 offset_left = 323.0
-offset_top = 239.0
+offset_top = -1530.0
 offset_right = 918.0
-offset_bottom = 1209.0
+offset_bottom = 87.0
 theme_override_fonts/normal_font = ExtResource("2_8rr7p")
 bbcode_enabled = true
 text = "[center]Ohio Team Presents:
 Spongebob Squarepants: Supersponge The Ohio Mix
+
+
+
+
+
+
+
 
 
 Spongebob Squarepants by Nickelodeon
@@ -327,12 +336,28 @@ Spongebob Squarepants by Nickelodeon
 
 
 
+
+Original Assets:
+Climax Group
+Heavy Iron Studios
+
+
+
+
+
+
+Project Lead:
+Sweaty cow balls 105
+
+
+
+
+
+
+
 Coding:
 Flowcheer
 Juan Enchilada
-
-
-
 
 
 
@@ -356,14 +381,19 @@ Juan Enchilada
 
 
 
-Music:
+Music & Sound Design:
 Zykotic
 Juan Enchilada
+
+
+
+
 
 
 Playtesters:
 Antaramize
 l4brat"
+scroll_active = false
 
 [node name="Tokens" type="RichTextLabel" parent="."]
 self_modulate = Color(1, 1, 1, 0)
@@ -376,9 +406,9 @@ bbcode_enabled = true
 text = "[center] TOKENS"
 
 [node name="Time" type="RichTextLabel" parent="."]
-offset_left = 159.0
+offset_left = 151.0
 offset_top = 229.0
-offset_right = 754.0
+offset_right = 746.0
 offset_bottom = 1199.0
 theme_override_fonts/normal_font = ExtResource("2_8rr7p")
 bbcode_enabled = true
@@ -397,9 +427,9 @@ Ohio Team | 2025"
 fit_content = true
 
 [node name="Deaths" type="RichTextLabel" parent="."]
-offset_left = 139.0
+offset_left = 135.0
 offset_top = 207.0
-offset_right = 734.0
+offset_right = 730.0
 offset_bottom = 1177.0
 theme_override_fonts/normal_font = ExtResource("2_8rr7p")
 bbcode_enabled = true
@@ -407,9 +437,9 @@ text = "[center] Deaths:"
 
 [node name="Spatula" type="RichTextLabel" parent="."]
 self_modulate = Color(1, 1, 1, 0)
-offset_left = 182.0
+offset_left = 181.0
 offset_top = 186.0
-offset_right = 777.0
+offset_right = 776.0
 offset_bottom = 1156.0
 theme_override_fonts/normal_font = ExtResource("2_8rr7p")
 bbcode_enabled = true

@@ -49,6 +49,8 @@ script/source = "extends TileMapLayer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	DiscordRPC.details = \"The Challenge\"
+	DiscordRPC.refresh()
 	Singleton.save_game()
 	if Singleton.deaths >= 15:
 		MusicPlayer.play_song(\"res://assets/music/Tre.ogg\")
@@ -168,3 +170,57 @@ offset_bottom = 34.0
 text = "Go Back"
 script = ExtResource("10_0lq76")
 scene = ExtResource("11_d1wim")
+
+[connection signal="body_entered" from="Spatula" to="Spatula" method="_on_body_entered"]
+[connection signal="body_entered" from="@Area2D@54243" to="@Area2D@54243" method="_on_body_entered"]
+[connection signal="body_entered" from="@Area2D@54244" to="@Area2D@54244" method="_on_body_entered"]
+[connection signal="body_entered" from="@Area2D@54245" to="@Area2D@54245" method="_on_body_entered"]
+[connection signal="body_entered" from="@Area2D@54246" to="@Area2D@54246" method="_on_body_entered"]
+[connection signal="body_entered" from="@Area2D@54247" to="@Area2D@54247" method="_on_body_entered"]
+[connection signal="body_entered" from="@Area2D@54248" to="@Area2D@54248" method="_on_body_entered"]
+[connection signal="body_entered" from="@Area2D@54249" to="@Area2D@54249" method="_on_body_entered"]
+[connection signal="body_entered" from="@Area2D@54250" to="@Area2D@54250" method="_on_body_entered"]
+[connection signal="body_entered" from="@Area2D@54251" to="@Area2D@54251" method="_on_body_entered"]
+[connection signal="body_entered" from="@Area2D@54252" to="@Area2D@54252" method="_on_body_entered"]
+[connection signal="body_entered" from="@Area2D@54253" to="@Area2D@54253" method="_on_body_entered"]
+[connection signal="body_entered" from="@Area2D@54254" to="@Area2D@54254" method="_on_body_entered"]
+[connection signal="body_entered" from="@Area2D@54255" to="@Area2D@54255" method="_on_body_entered"]
+[connection signal="body_entered" from="@Area2D@54256" to="@Area2D@54256" method="_on_body_entered"]
+[connection signal="body_entered" from="@Area2D@54257" to="@Area2D@54257" method="_on_body_entered"]
+[connection signal="body_entered" from="@Area2D@54258" to="@Area2D@54258" method="_on_body_entered"]
+[connection signal="body_entered" from="@Area2D@54259" to="@Area2D@54259" method="_on_body_entered"]
+[connection signal="body_entered" from="@Area2D@54260" to="@Area2D@54260" method="_on_body_entered"]
+[connection signal="body_entered" from="@Area2D@54261" to="@Area2D@54261" method="_on_body_entered"]
+[connection signal="body_entered" from="@Area2D@54262" to="@Area2D@54262" method="_on_body_entered"]
+[connection signal="body_entered" from="@Area2D@54263" to="@Area2D@54263" method="_on_body_entered"]
+[connection signal="body_entered" from="@Area2D@54264" to="@Area2D@54264" method="_on_body_entered"]
+[connection signal="body_entered" from="@Area2D@54265" to="@Area2D@54265" method="_on_body_entered"]
+[connection signal="body_entered" from="@Area2D@54266" to="@Area2D@54266" method="_on_body_entered"]
+[connection signal="body_entered" from="@Area2D@54267" to="@Area2D@54267" method="_on_body_entered"]
+[connection signal="body_entered" from="@Area2D@54268" to="@Area2D@54268" method="_on_body_entered"]
+[connection signal="body_entered" from="@Area2D@54269" to="@Area2D@54269" method="_on_body_entered"]
+[connection signal="body_entered" from="@Area2D@54270" to="@Area2D@54270" method="_on_body_entered"]
+[connection signal="body_entered" from="@Area2D@54271" to="@Area2D@54271" method="_on_body_entered"]
+[connection signal="body_entered" from="@Area2D@54272" to="@Area2D@54272" method="_on_body_entered"]
+[connection signal="body_entered" from="@Area2D@54273" to="@Area2D@54273" method="_on_body_entered"]
+[connection signal="body_entered" from="@Area2D@54274" to="@Area2D@54274" method="_on_body_entered"]
+[connection signal="body_entered" from="@Area2D@54275" to="@Area2D@54275" method="_on_body_entered"]
+[connection signal="body_entered" from="@Area2D@54276" to="@Area2D@54276" method="_on_body_entered"]
+[connection signal="body_entered" from="@Area2D@54277" to="@Area2D@54277" method="_on_body_entered"]
+[connection signal="body_entered" from="@Area2D@54278" to="@Area2D@54278" method="_on_body_entered"]
+[connection signal="body_entered" from="@Area2D@54279" to="@Area2D@54279" method="_on_body_entered"]
+[connection signal="body_entered" from="@Area2D@54280" to="@Area2D@54280" method="_on_body_entered"]
+[connection signal="body_entered" from="@Area2D@54281" to="@Area2D@54281" method="_on_body_entered"]
+[connection signal="body_entered" from="@Area2D@54282" to="@Area2D@54282" method="_on_body_entered"]
+[connection signal="body_entered" from="@Area2D@54283" to="@Area2D@54283" method="_on_body_entered"]
+[connection signal="body_entered" from="@Area2D@54284" to="@Area2D@54284" method="_on_body_entered"]
+[connection signal="body_entered" from="@Area2D@54285" to="@Area2D@54285" method="_on_body_entered"]
+[connection signal="body_entered" from="@Area2D@54286" to="@Area2D@54286" method="_on_body_entered"]
+[connection signal="body_entered" from="@Area2D@54287" to="@Area2D@54287" method="_on_body_entered"]
+[connection signal="body_entered" from="@Area2D@54288" to="@Area2D@54288" method="_on_body_entered"]
+[connection signal="body_entered" from="@Area2D@54289" to="@Area2D@54289" method="_on_body_entered"]
+[connection signal="body_entered" from="@Area2D@54290" to="@Area2D@54290" method="_on_body_entered"]
+[connection signal="body_entered" from="@Area2D@54291" to="@Area2D@54291" method="_on_body_entered"]
+[connection signal="body_entered" from="@Area2D@54292" to="@Area2D@54292" method="_on_body_entered"]
+[connection signal="body_entered" from="@Area2D@54293" to="@Area2D@54293" method="_on_body_entered"]
+[connection signal="body_entered" from="@Area2D@54294" to="@Area2D@54294" method="_on_body_entered"]
