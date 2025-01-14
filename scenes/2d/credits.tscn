@@ -313,9 +313,9 @@ autoplay = true
 
 [node name="Names" type="RichTextLabel" parent="."]
 offset_left = 323.0
-offset_top = 120.0
+offset_top = -1530.0
 offset_right = 918.0
-offset_bottom = 1737.0
+offset_bottom = 87.0
 theme_override_fonts/normal_font = ExtResource("2_8rr7p")
 bbcode_enabled = true
 text = "[center]Ohio Team Presents:
@@ -340,6 +340,7 @@ Spongebob Squarepants by Nickelodeon
 Original Assets:
 Climax Group
 Heavy Iron Studios
+WayForward
 
 
 
@@ -406,9 +407,9 @@ bbcode_enabled = true
 text = "[center] TOKENS"
 
 [node name="Time" type="RichTextLabel" parent="."]
-offset_left = 151.0
+offset_left = 164.0
 offset_top = 229.0
-offset_right = 746.0
+offset_right = 759.0
 offset_bottom = 1199.0
 theme_override_fonts/normal_font = ExtResource("2_8rr7p")
 bbcode_enabled = true
