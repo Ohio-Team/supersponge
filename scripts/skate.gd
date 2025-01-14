@@ -27,6 +27,10 @@ func _physics_process(delta: float) -> void:
 	if SPEED >= 0:
 		SPEED -= 1
 	SPEED = clampi(SPEED,0,500)
+	if direction == 1:
+		$AnimatedSprite2D.flip_h = false
+	else:
+		$AnimatedSprite2D.flip_h = true
 	$CanvasLayer/RichTextLabel.text = "SPEED: " + str(SPEED / 100)
 	move_and_slide()
 	
