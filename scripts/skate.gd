@@ -6,7 +6,7 @@ var direction := 1
 const JUMP_VELOCITY = -400.0
 
 func _ready():
-	Ui.create_dialog("This Ye again press ATTACK to gain speed and press JUMP to jump. Now get out of here and do a little... [b]runaway.[b]","kanye")
+	return
 
 func _physics_process(delta: float) -> void:
 	$Camera2D.zoom = lerp($Camera2D.zoom,Vector2(1,1),delta * 3)
