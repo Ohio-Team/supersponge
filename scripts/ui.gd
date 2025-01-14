@@ -40,6 +40,14 @@ func _process(delta):
 		get_tree().paused = true
 		$Pause.visible = true
 	if get_tree().paused:
+		if Singleton.tokens.has("jik"):
+			$Pause/Jik.show()
+		if Singleton.tokens.has("mio"):
+			$Pause/Cubes.show()
+		if Singleton.tokens.has("711"):
+			$Pause/Milkshake.show()
+		if Singleton.tokens.has("sbds"):
+			$Pause/Truthorsquare.show()
 		if !$Pause/AudioStreamPlayer.playing:
 			$Pause/AudioStreamPlayer.play()
 		$Pause/ColorRect.color = lerp($Pause/ColorRect.color, Color(00000078,0.5), delta*10)

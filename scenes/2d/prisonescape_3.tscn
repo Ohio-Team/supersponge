@@ -170,9 +170,3 @@ position = Vector2(1084, -80)
 
 [node name="Spongebot" parent="." instance=ExtResource("8_a77q2")]
 position = Vector2(1345, -302)
-
-[connection signal="body_entered" from="NavigationRegion2D/TileMapLayer/Spatula" to="NavigationRegion2D/TileMapLayer/Spatula" method="_on_body_entered"]
-[connection signal="body_entered" from="NavigationRegion2D/TileMapLayer/@Area2D@66244" to="NavigationRegion2D/TileMapLayer/@Area2D@66244" method="_on_body_entered"]
-[connection signal="body_entered" from="NavigationRegion2D/TileMapLayer/@Area2D@66245" to="NavigationRegion2D/TileMapLayer/@Area2D@66245" method="_on_body_entered"]
-[connection signal="body_entered" from="NavigationRegion2D/TileMapLayer/@Area2D@66246" to="NavigationRegion2D/TileMapLayer/@Area2D@66246" method="_on_body_entered"]
-[connection signal="body_entered" from="NavigationRegion2D/TileMapLayer/@Area2D@66247" to="NavigationRegion2D/TileMapLayer/@Area2D@66247" method="_on_body_entered"]
