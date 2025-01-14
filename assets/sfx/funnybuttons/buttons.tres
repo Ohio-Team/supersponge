@@ -1,66 +1,46 @@
-[gd_resource type="Resource" script_class="MultiSoundEffect" load_steps=23 format=3 uid="uid://bbutvjp2li3rq"]
+[gd_resource type="Resource" script_class="MultiSoundEffect" load_steps=13 format=3 uid="uid://bbutvjp2li3rq"]
 
 [ext_resource type="Script" path="res://addons/bmod/scripts/resources/multi_sound_effect_item.gd" id="1_24w2s"]
 [ext_resource type="Script" path="res://addons/bmod/scripts/resources/multi_sound_effect.gd" id="2_24afg"]
-[ext_resource type="AudioStream" uid="uid://crejrofe38fjv" path="res://assets/sfx/funnybuttons/ADYykpqI.wav" id="2_fs8n5"]
-[ext_resource type="AudioStream" uid="uid://c65vgcgp2cgb2" path="res://assets/sfx/funnybuttons/c8NETLjh.wav" id="3_sn8ri"]
-[ext_resource type="AudioStream" uid="uid://4xtdlk5h5d3g" path="res://assets/sfx/funnybuttons/FhHwyu4p.wav" id="4_knhux"]
-[ext_resource type="AudioStream" uid="uid://bjldim3jwo0h7" path="res://assets/sfx/funnybuttons/Oxe-Rc-v.wav" id="5_hlhw5"]
-[ext_resource type="AudioStream" uid="uid://cmduxs77sd577" path="res://assets/sfx/funnybuttons/P7Yij93V.wav" id="6_8wh0m"]
-[ext_resource type="AudioStream" uid="uid://cuojuwpdgfyqm" path="res://assets/sfx/funnybuttons/PlYnHDrn.wav" id="7_xgwxk"]
-[ext_resource type="AudioStream" uid="uid://bcapw3y4wpmk1" path="res://assets/sfx/funnybuttons/qoOl57RP.wav" id="8_v3vv5"]
-[ext_resource type="AudioStream" uid="uid://cqtacf3ok6tpe" path="res://assets/sfx/funnybuttons/rrln7GR7.wav" id="9_k3vrg"]
-[ext_resource type="AudioStream" uid="uid://cpumkapij7gxf" path="res://assets/sfx/funnybuttons/WcoWDYQT.wav" id="10_mte7g"]
-[ext_resource type="AudioStream" uid="uid://dvywc82jt7pk3" path="res://assets/sfx/funnybuttons/XDzYZdyZ.wav" id="11_iltvi"]
 
 [sub_resource type="Resource" id="Resource_mllxs"]
 script = ExtResource("1_24w2s")
-audio_stream = ExtResource("2_fs8n5")
 weight = 1
 
 [sub_resource type="Resource" id="Resource_rluao"]
 script = ExtResource("1_24w2s")
-audio_stream = ExtResource("3_sn8ri")
 weight = 1
 
 [sub_resource type="Resource" id="Resource_0q4i3"]
 script = ExtResource("1_24w2s")
-audio_stream = ExtResource("4_knhux")
 weight = 1
 
 [sub_resource type="Resource" id="Resource_skjc8"]
 script = ExtResource("1_24w2s")
-audio_stream = ExtResource("5_hlhw5")
 weight = 1
 
 [sub_resource type="Resource" id="Resource_5gvot"]
 script = ExtResource("1_24w2s")
-audio_stream = ExtResource("6_8wh0m")
 weight = 1
 
 [sub_resource type="Resource" id="Resource_jhrgf"]
 script = ExtResource("1_24w2s")
-audio_stream = ExtResource("7_xgwxk")
 weight = 1
 
 [sub_resource type="Resource" id="Resource_u16r2"]
 script = ExtResource("1_24w2s")
-audio_stream = ExtResource("8_v3vv5")
 weight = 1
 
 [sub_resource type="Resource" id="Resource_uq6ry"]
 script = ExtResource("1_24w2s")
-audio_stream = ExtResource("9_k3vrg")
 weight = 1
 
 [sub_resource type="Resource" id="Resource_puyvq"]
 script = ExtResource("1_24w2s")
-audio_stream = ExtResource("10_mte7g")
 weight = 1
 
 [sub_resource type="Resource" id="Resource_drhw5"]
 script = ExtResource("1_24w2s")
-audio_stream = ExtResource("11_iltvi")
 weight = 1
 
 [resource]

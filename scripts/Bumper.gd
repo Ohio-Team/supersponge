@@ -13,6 +13,5 @@ func _process(delta):
 
 
 func _on_body_entered(body):
-	if body.is_in_group("Player"):
-		BMOD.play_sfx(preload("res://assets/sfx/spring.tres"))
-		body.velocity.y = bounce_force
+	BMOD.play_sfx(preload("res://assets/sfx/spring.tres"))
+	body.velocity.y = bounce_force

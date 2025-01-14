@@ -35,7 +35,7 @@ tile_size = Vector2i(32, 32)
 sources/1 = SubResource("TileSetAtlasSource_ghavv")
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_8tisr"]
-vertices = PackedVector2Array(554, 587, 1654, 598, -86, 598, 406, 587, 714, 523, 970, 458, 1194, 395, 1046, 395, 822, 458, 566, 523, 554, 503, 566, 439, 970, 374, 1046, 311, 714, 439, 822, 374, 1654, -54, 1194, 311, -85, -54, 406, 503)
+vertices = PackedVector2Array(554.398, 587, 1654, 598, -85.9922, 598, 405.602, 587, 714.398, 523, 970.398, 458, 1194.4, 395, 1045.6, 395, 821.602, 458, 565.602, 523, 554.398, 503, 565.602, 439, 970.398, 374, 1045.6, 311, 714.398, 439, 821.602, 374, 1654, -54, 1194.4, 311, -85.0078, -54, 405.602, 503)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(1, 0, 4, 5), PackedInt32Array(6, 1, 5, 7), PackedInt32Array(8, 5, 4), PackedInt32Array(9, 4, 0), PackedInt32Array(9, 0, 10, 11), PackedInt32Array(7, 5, 12, 13), PackedInt32Array(8, 4, 14, 15), PackedInt32Array(16, 1, 6, 17), PackedInt32Array(18, 16, 17, 13), PackedInt32Array(2, 18, 13, 15, 11), PackedInt32Array(19, 3, 2), PackedInt32Array(11, 10, 19), PackedInt32Array(13, 12, 15), PackedInt32Array(15, 14, 11), PackedInt32Array(2, 11, 19)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-95, -64, 1664, -64, 1664, 608, -96, 608)])
 source_geometry_group_name = &"navigation_polygon_source_group"

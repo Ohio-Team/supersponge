@@ -19,6 +19,8 @@ func _process(delta):
 		$RichTextLabel.visible = true
 		$RichTextLabel.text = str(round(fmod(time,3600) / 60)) + ":" + str(round(fmod(time,60))) + ":" + str(round(fmod(time,1) * 100))
 	else:
+		if !Singleton.inmenu:
+			time += delta
 		$RichTextLabel.visible = false
 	$Counter.text = "[shake]x" + str(Singleton.health)
 	$Counter2.text = "[shake]x" + str(Singleton.spatulas)
