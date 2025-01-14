@@ -350,35 +350,35 @@ stream = ExtResource("13_prtdn")
 bus = &"Music"
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Pause"]
-offset_left = 247.0
-offset_top = 442.0
-offset_right = 349.0
-offset_bottom = 482.0
+offset_left = 616.0
+offset_top = 568.0
+offset_right = 718.0
+offset_bottom = 608.0
 theme_override_fonts/normal_font = ExtResource("2_0v11p")
 theme_override_font_sizes/normal_font_size = 24
 text = "Tokens"
 
 [node name="Jik" type="Sprite2D" parent="Pause"]
 visible = false
-position = Vector2(197, 554)
+position = Vector2(547, 653.5)
 scale = Vector2(0.05, 0.05)
 texture = ExtResource("11_fwb1r")
 
 [node name="Cubes" type="Sprite2D" parent="Pause"]
 visible = false
-position = Vector2(268, 552)
+position = Vector2(627, 653.5)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("12_7ekmn")
 
 [node name="Milkshake" type="Sprite2D" parent="Pause"]
 visible = false
-position = Vector2(340, 550)
+position = Vector2(691, 653.5)
 scale = Vector2(0.15, 0.15)
 texture = ExtResource("13_6o23l")
 
 [node name="Truthorsquare" type="Sprite2D" parent="Pause"]
 visible = false
-position = Vector2(414, 555)
+position = Vector2(763, 653.5)
 scale = Vector2(0.05, 0.05)
 texture = ExtResource("14_rxumh")
 
