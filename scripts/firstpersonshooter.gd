@@ -28,9 +28,6 @@ func _physics_process(delta):
 		Singleton.deaths += 1
 		get_tree().reload_current_scene()
 	
-	if Input.is_action_just_pressed("jump") and is_on_floor():
-		velocity.y = 10
-	
 	var input_dir = Input.get_vector("left","right","front","back")
 	var direction = ($TwistPivot.basis * Vector3(Ui.joystick.posVector.x, 0, Ui.joystick.posVector.y)).normalized()
 	if direction:
@@ -40,7 +37,7 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 	move_and_slide()
-	if Input.is_action_just_pressed("ui_cancel"):
+	if Input.is_action_just_pressed("pause"):
 		if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		else:
@@ -65,8 +62,9 @@ func _physics_process(delta):
 	# level.update_ui_distance(distance)
 	if %Bobby.animation != "Heal" and %Bobby.animation != "Hurt":
 		%Bobby.play("Idle")
-func _unhandled_input(event: InputEvent):
+func _unhandled_input(event):
 	if event is InputEventMouseMotion:
-		if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
-			twist_input = - event.relative.x * mouse_sensitivity
-			pitch_input = - event.relative.y * mouse_sensitivity
+			twist_input = -event.relative.x * mouse_sensitivity
+			pitch_input = -event.relative.y * mouse_sensitivity
+			print(twist_input)
+			print(pitch_input)

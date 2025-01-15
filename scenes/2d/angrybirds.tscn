@@ -21,8 +21,6 @@ script/source = "extends Node2D
 func _ready() -> void:
 	MusicPlayer.play_song(\"res://assets/music/angrybirds.ogg\")
 	Singleton.save_game()
-	DiscordRPC.details = \"The Birds Want Their Eggs Back.\"
-	DiscordRPC.refresh()
 	Ui._clear_dialog()
 	Ui.create_dialog(\"Don't worry spongebob buddy i'll take care of this guy for you\",\"patrick\")
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)

@@ -12,8 +12,7 @@ var police = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	DiscordRPC.details = \"Final Shootdown\"
-	DiscordRPC.refresh()
+	Singleton.save_game()
 	MusicPlayer.play_song(\"res://assets/music/lvl21music.mp3\")
 	Ui.create_dialog(\"This is it Spongebob, kill them all and we will be Free\",\"sandy\")
 

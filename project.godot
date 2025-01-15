@@ -11,7 +11,6 @@ config_version=5
 [application]
 
 config/name="Supersponge"
-config/version="0.0.1"
 run/main_scene="res://scenes/splashscreen.tscn"
 config/use_custom_user_dir=true
 config/custom_user_dir_name="ohio"
@@ -144,6 +143,7 @@ shoot={
 
 occlusion_culling/bvh_build_quality=0
 gl_compatibility/driver.windows="opengl3_angle"
+renderer/rendering_method.mobile="gl_compatibility"
 textures/vram_compression/import_etc2_astc=true
 lights_and_shadows/directional_shadow/soft_shadow_filter_quality=3
 lights_and_shadows/directional_shadow/soft_shadow_filter_quality.mobile=3

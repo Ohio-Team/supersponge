@@ -12,19 +12,6 @@ script/source = "extends Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Singleton.inmenu = true
-	if OS.has_feature(\"standalone\"):
-		var path := OS.get_executable_path().get_base_dir().path_join(\"mods\")
-		if !DirAccess.dir_exists_absolute(OS.get_executable_path().get_base_dir().path_join(\"mods\")):
-			DirAccess.make_dir_recursive_absolute(OS.get_executable_path().get_base_dir().path_join(\"mods\"))
-		var mod_dir := DirAccess.open(path)
-		mod_dir.list_dir_begin()
-		var filename = mod_dir.get_next()
-		while filename != \"\":
-			if filename.get_extension() == \"pck\":
-				ProjectSettings.load_resource_pack(filename)
-			filename.get_next()
-		mod_dir.list_dir_end()
-
 
 func _on_audio_stream_player_finished() -> void:
 	get_tree().change_scene_to_file(\"res://scenes/Main Menu.tscn\")

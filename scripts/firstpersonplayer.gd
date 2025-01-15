@@ -48,8 +48,7 @@ func _physics_process(delta):
 	twist_input = 0.0
 	pitch_input = 0.0
 	# level.update_ui_distance(distance)
-func _unhandled_input(event: InputEvent):
+func _unhandled_input(event):
 	if event is InputEventMouseMotion:
-		if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 			twist_input = - event.relative.x * mouse_sensitivity
 			pitch_input = - event.relative.y * mouse_sensitivity

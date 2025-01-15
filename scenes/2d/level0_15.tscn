@@ -49,8 +49,6 @@ script/source = "extends TileMapLayer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	DiscordRPC.details = \"The Challenge\"
-	DiscordRPC.refresh()
 	Singleton.save_game()
 	if Singleton.deaths >= 15:
 		MusicPlayer.play_song(\"res://assets/music/Tre.ogg\")

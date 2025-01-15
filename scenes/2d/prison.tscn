@@ -20,8 +20,6 @@ script/source = "extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	DiscordRPC.details = \"On Jail\"
-	DiscordRPC.refresh()
 	Singleton.hashammer = false
 	Singleton.escape = false
 	$Spongebob.camerashake = false
@@ -579,8 +577,6 @@ script/source = "extends Area2D
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group(\"Player\") and Singleton.hashammer:
-		DiscordRPC.details = \"Escaping from Jail\"
-		DiscordRPC.refresh()
 		Singleton.escape = true
 		BMOD.play_sfx(preload(\"res://assets/sfx/patscream.tres\"))
 		BMOD.play_sfx(preload(\"res://assets/sfx/patscream.tres\"))
