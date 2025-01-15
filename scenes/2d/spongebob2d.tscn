@@ -88,8 +88,8 @@
 [ext_resource type="Texture2D" uid="uid://b0vwt6jyso8fl" path="res://assets/2d/spongebobby/73.png" id="80_bymcb"]
 [ext_resource type="Texture2D" uid="uid://bmt3w1s18qo44" path="res://assets/2d/spongebobby/74.png" id="81_51agv"]
 [ext_resource type="Texture2D" uid="uid://drgsr887uhj6u" path="res://assets/2d/spongebobby/75.png" id="82_tamco"]
-[ext_resource type="Script" path="res://addons/bmod/scripts/nodes/sound_effect_player_2d.gd" id="90_w42n6"]
-[ext_resource type="Resource" uid="uid://b44gntqd22ra5" path="res://assets/sfx/walk.tres" id="91_n3mg2"]
+[ext_resource type="AudioStream" uid="uid://hor4p77c44k" path="res://assets/sfx/sb_walk1.wav" id="89_q1v5j"]
+[ext_resource type="AudioStream" uid="uid://1pv815515q2r" path="res://assets/sfx/sfx_sb_net.ogg" id="90_pssb3"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_u32rl"]
 animations = [{
@@ -521,10 +521,11 @@ one_shot = true
 wait_time = 0.1
 one_shot = true
 
-[node name="SoundEffectPlayer2D" type="Node2D" parent="."]
-script = ExtResource("90_w42n6")
-sound_effect = ExtResource("91_n3mg2")
-bus = &"SFX"
+[node name="Walk" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("89_q1v5j")
+
+[node name="Attack" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("90_pssb3")
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
 [connection signal="timeout" from="Invincibility" to="." method="_on_timer_timeout"]

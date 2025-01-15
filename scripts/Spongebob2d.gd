@@ -32,8 +32,10 @@ func inputs(direction, delta):
 			if Singleton.hasgun == false:
 				state = "attack"
 				anim.play("attack")
-				BMOD.play_sfx(preload("res://assets/sfx/net.tres"))
+				if !$Attack.playing:
+					$Attack.play()
 				$CollisionShape2D.shape.size = Vector2(48,35)
+				position.y -= 5
 				await $AnimatedSprite2D.animation_finished
 				state = "idle"
 				anim.play("idle")
@@ -106,8 +108,8 @@ func _physics_process(delta):
 		acceleration = lerpf(acceleration, 0, delta * 8)
 	if velocity.x != 0 and anim.animation != "jump" and anim.animation != "fall" and anim.animation != "groundpound" and anim.animation != "hurt" and anim.animation != "attack" and state != "dying":
 		anim.play("run")
-		if !$SoundEffectPlayer2D.finished:
-			$SoundEffectPlayer2D.play()
+		if !$Walk.playing:
+			$Walk.play()
 		state = "walking"
 	if velocity.x == 0 and velocity.y == 0 and anim.animation != "attack" and state != "dying":
 		anim.play("idle")

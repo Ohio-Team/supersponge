@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://ijj6qbkx8vhd" path="res://scenes/2d/platform.tscn" id="3_ldgxs"]
 [ext_resource type="PackedScene" uid="uid://c682xfnc542qh" path="res://scenes/2d/fakebob.tscn" id="5_7oub3"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ghavv"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lu71e"]
 texture = ExtResource("1_j2in3")
 texture_region_size = Vector2i(32, 32)
 5:3/0 = 0
@@ -32,7 +32,7 @@ texture_region_size = Vector2i(32, 32)
 
 [sub_resource type="TileSet" id="TileSet_e33y7"]
 tile_size = Vector2i(32, 32)
-sources/1 = SubResource("TileSetAtlasSource_ghavv")
+sources/1 = SubResource("TileSetAtlasSource_lu71e")
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_8tisr"]
 vertices = PackedVector2Array(554.398, 587, 1654, 598, -85.9922, 598, 405.602, 587, 714.398, 523, 970.398, 458, 1194.4, 395, 1045.6, 395, 821.602, 458, 565.602, 523, 554.398, 503, 565.602, 439, 970.398, 374, 1045.6, 311, 714.398, 439, 821.602, 374, 1654, -54, 1194.4, 311, -85.0078, -54, 405.602, 503)
