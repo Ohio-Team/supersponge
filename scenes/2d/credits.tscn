@@ -1,0 +1,479 @@
+[gd_scene load_steps=11 format=3 uid="uid://bunojm7n7h65f"]
+
+[ext_resource type="AudioStream" uid="uid://b3w4c2n6w2d8a" path="res://assets/music/credits.mp3" id="1_hou2e"]
+[ext_resource type="FontFile" uid="uid://ia1v43t7vpqa" path="res://assets/fonts/Krabby Patty.ttf" id="2_8rr7p"]
+[ext_resource type="Texture2D" uid="uid://dye4odr3qkeck" path="res://assets/2d/tokens/jik.jpg" id="3_nu3fl"]
+[ext_resource type="Texture2D" uid="uid://c7t8gf0osdtxa" path="res://assets/2d/tokens/cubes.png" id="4_yu0vs"]
+[ext_resource type="Texture2D" uid="uid://ybte62d4o5fu" path="res://assets/2d/tokens/milkshake.png" id="5_qlwwv"]
+[ext_resource type="Texture2D" uid="uid://dt03hf2mm17f3" path="res://assets/2d/tokens/truthorsquare.jpg" id="6_vahlv"]
+
+[sub_resource type="GDScript" id="GDScript_mxy3a"]
+script/source = "extends Node2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	DiscordRPC.details = \"Viewing the Credits\"
+	DiscordRPC.refresh()
+	Singleton.inmenu = true
+	if Singleton.tokens.has(\"jik\"):
+		$Jik.show()
+	if Singleton.tokens.has(\"mio\"):
+		$Cubes.show()
+	if Singleton.tokens.has(\"711\"):
+		$Milkshake.show()
+	if Singleton.tokens.has(\"sbds\"):
+			$Truthorsquare.show()
+	$Spatula.text = \"[center] Final Spatula Count: \" + str(Singleton.spatulas)
+	$Deaths.text = \"[center] Deaths: \" + str(Singleton.deaths)
+	$Time.text = \"[center] Time Taken: \" + str(round(fmod(Ui.time,3600) / 60)) + \":\" + str(round(fmod(Ui.time,60))) + \":\" + str(round(fmod(Ui.time,1) * 100))
+func Main_Menu():
+	if get_tree():
+		get_tree().change_scene_to_file(\"res://scenes/Main Menu.tscn\")
+"
+
+[sub_resource type="Animation" id="Animation_durno"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Names:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(323, 120)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Tokens:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Jik:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Cubes:self_modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Milkshake:self_modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Truthorsquare:self_modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Spatula:self_modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Deaths:self_modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Time:self_modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Thanks:self_modulate")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_hqp0a"]
+resource_name = "new_animation"
+length = 60.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Names:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 30),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(323, 718), Vector2(323, -1530)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Tokens:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 29.4, 30, 49.4667, 50),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Jik:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 29.4, 30, 49.4667, 49.9333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Cubes:self_modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 29.4, 30, 49.4667, 49.9667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Milkshake:self_modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 29.4, 30, 49.4667, 49.9333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Truthorsquare:self_modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 29.4, 30, 49.4333, 49.9333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Spatula:self_modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 29.4, 30, 49.4333, 49.9667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Deaths:self_modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 29.4, 30, 49.5333, 49.9667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Time:self_modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 29.4, 30, 49.5333, 49.9667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Thanks:self_modulate")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(2.8, 49.5333, 50),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/10/type = "method"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath(".")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(60),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"Main_Menu"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_npvk4"]
+_data = {
+"RESET": SubResource("Animation_durno"),
+"new_animation": SubResource("Animation_hqp0a")
+}
+
+[node name="Credits" type="Node2D"]
+script = SubResource("GDScript_mxy3a")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(0, 0, 0, 1)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_hou2e")
+autoplay = true
+
+[node name="Names" type="RichTextLabel" parent="."]
+offset_left = 323.0
+offset_top = -1530.0
+offset_right = 918.0
+offset_bottom = 87.0
+theme_override_fonts/normal_font = ExtResource("2_8rr7p")
+bbcode_enabled = true
+text = "[center]Ohio Team Presents:
+Spongebob Squarepants: Supersponge The Ohio Mix
+
+
+
+
+
+
+
+
+
+Spongebob Squarepants by Nickelodeon
+
+
+
+
+
+
+
+Original Assets:
+Climax Group
+Heavy Iron Studios
+WayForward
+
+
+
+
+
+
+Project Lead:
+Sweaty cow balls 105
+
+
+
+
+
+
+
+Coding:
+Flowcheer
+Juan Enchilada
+
+
+
+
+
+
+Art:
+Sweaty Cow Balls 105
+Antaramize
+
+
+
+
+
+Level Design:
+Flowcheer
+Sweaty Cow Balls 105
+Juan Enchilada
+
+
+
+
+
+Music & Sound Design:
+Zykotic
+Juan Enchilada
+
+
+
+
+
+
+Playtesters:
+Antaramize
+l4brat"
+scroll_active = false
+
+[node name="Tokens" type="RichTextLabel" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 318.0
+offset_top = 321.0
+offset_right = 913.0
+offset_bottom = 1291.0
+theme_override_fonts/normal_font = ExtResource("2_8rr7p")
+bbcode_enabled = true
+text = "[center] TOKENS"
+
+[node name="Time" type="RichTextLabel" parent="."]
+offset_left = 164.0
+offset_top = 229.0
+offset_right = 759.0
+offset_bottom = 1199.0
+theme_override_fonts/normal_font = ExtResource("2_8rr7p")
+bbcode_enabled = true
+text = "[center] Time Taken:"
+
+[node name="Thanks" type="RichTextLabel" parent="."]
+offset_left = 324.0
+offset_top = 302.0
+offset_right = 919.0
+offset_bottom = 1272.0
+theme_override_fonts/normal_font = ExtResource("2_8rr7p")
+bbcode_enabled = true
+text = "[center] Thanks for playing!
+
+Ohio Team | 2025
+
+[hint=\"Our site\"][url=https://ohio-team.github.io]https://ohio-team.github.io[url]"
+fit_content = true
+
+[node name="Deaths" type="RichTextLabel" parent="."]
+offset_left = 135.0
+offset_top = 207.0
+offset_right = 730.0
+offset_bottom = 1177.0
+theme_override_fonts/normal_font = ExtResource("2_8rr7p")
+bbcode_enabled = true
+text = "[center] Deaths:"
+
+[node name="Spatula" type="RichTextLabel" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 181.0
+offset_top = 186.0
+offset_right = 776.0
+offset_bottom = 1156.0
+theme_override_fonts/normal_font = ExtResource("2_8rr7p")
+bbcode_enabled = true
+text = "[center] Final Spatula Count:"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_npvk4")
+}
+autoplay = "new_animation"
+
+[node name="Jik" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(386, 420)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("3_nu3fl")
+
+[node name="Cubes" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(552, 418)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_yu0vs")
+
+[node name="Milkshake" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(703, 416)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("5_qlwwv")
+
+[node name="Truthorsquare" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(874, 421)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("6_vahlv")

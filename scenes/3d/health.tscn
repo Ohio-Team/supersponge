@@ -21,6 +21,11 @@ func _on_body_entered(body: Node3D) -> void:
 	if body.is_in_group(\"Player\"):
 		Singleton.health += 1
 		BMOD.play_sfx(preload(\"res://assets/sfx/extra.tres\"))
+		body.doomthing.play(\"Heal\")
+		$Sprite3D.queue_free()
+		$CollisionShape3D.queue_free()
+		await body.doomthing.animation_finished
+		body.doomthing.play(\"Idle\")
 		queue_free()
 "
 

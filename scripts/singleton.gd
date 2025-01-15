@@ -2,14 +2,22 @@ extends Node
 
 @export var hasgun:bool = false
 @export var showfuel:bool = false
+@export var hashammer:bool = false
 @export var fuel:float = 100.0
+@export var deaths:int = 0
 @export var inmenu:bool = false
 @export var showfps:bool = false
 @export var showspeedrun:bool = false
-@export var lifes:int = 4
+@export var fullscreen:bool = false
 @export var health:int = 3
+@export var mouse_sensitivity:float = 1
 @export var spatulas:int = 0
 @export var acceptinput:bool = true
+@export var escape:bool = false
+@export var tokens = []
+
+var config = ConfigFile.new()
+var err = config.load("user://settings.cfg")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -35,10 +43,11 @@ func wait(seconds: float) -> void:
 func save_elements():
 	var save_dict = {
 		"current_scene" : get_tree().current_scene.scene_file_path,
-		"lifes" : lifes,
 		"spatulas" : spatulas,
 		"health" : health,
-		"time" : Ui.time
+		"time" : Ui.time,
+		"tokens" : tokens,
+		"deaths" : deaths
 	}
 	return save_dict
 func save_game():
@@ -65,25 +74,33 @@ func load_game():
 		var data = json.get_data()
 		health = data["health"]
 		spatulas = data["spatulas"]
-		lifes = data["lifes"]
 		Ui.time = data["time"]
+		tokens = data["tokens"]
+		deaths = data["deaths"]
 		get_tree().change_scene_to_file(data["current_scene"])
 func load_settings():
-	if not FileAccess.file_exists("user://settings.save"):
+	if err != OK:
 		return
+	AudioServer.set_bus_volume_db(0,linear_to_db(config.get_value("audio","Master")))
+	AudioServer.set_bus_volume_db(1,linear_to_db(config.get_value("audio","Music")))
+	AudioServer.set_bus_volume_db(2,linear_to_db(config.get_value("audio","SFX")))
+	InputMap.action_erase_event("right",InputEventKey.new())
+	InputMap.action_add_event("right",config.get_value("controls","right"))
+	InputMap.action_erase_event("left",InputEventKey.new())
+	InputMap.action_add_event("left",config.get_value("controls","left"))
+	InputMap.action_erase_event("back",InputEventKey.new())
+	InputMap.action_add_event("back",config.get_value("controls","back"))
+	InputMap.action_erase_event("front",InputEventKey.new())
+	InputMap.action_add_event("front",config.get_value("controls","front"))
+	InputMap.action_erase_event("attack",InputEventKey.new())
+	InputMap.action_add_event("attack",config.get_value("controls","attack"))
+	InputMap.action_erase_event("groundpound",InputEventKey.new())
+	InputMap.action_add_event("groundpound",config.get_value("controls","groundpound"))
+	showfps = config.get_value("misc","showfps")
+	showspeedrun = config.get_value("misc","showspeedrun")
+	mouse_sensitivity = config.get_value("misc","mouse_sensitivity")
+	fullscreen = config.get_value("video","fullscreen")
 	
-	var save_file = FileAccess.open("user://settings.save", FileAccess.READ)
-	while save_file.get_position() < save_file.get_length():
-		var json_string = save_file.get_line()
-		var json = JSON.new()
-		var parse_result = json.parse(json_string)
-		if not parse_result == OK:
-			print("JSON Parse Error: ", json.get_error_message(), " in ", json_string, " at line ", json.get_error_line())
-			continue
+	if fullscreen:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 		
-		var data = json.get_data()
-		AudioServer.set_bus_volume_db(0,linear_to_db(data["Master"]))
-		AudioServer.set_bus_volume_db(1,linear_to_db(data["Music"]))
-		AudioServer.set_bus_volume_db(2,linear_to_db(data["SFX"]))
-		showfps = data["showfps"]
-		showspeedrun = data["showspeedrun"]

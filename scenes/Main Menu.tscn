@@ -1,19 +1,21 @@
-[gd_scene load_steps=11 format=3 uid="uid://bkfis34nkbhyv"]
+[gd_scene load_steps=10 format=3 uid="uid://bkfis34nkbhyv"]
 
 [ext_resource type="Script" path="res://scripts/MainMenu.gd" id="1_cki2b"]
 [ext_resource type="FontFile" uid="uid://ia1v43t7vpqa" path="res://assets/fonts/Krabby Patty.ttf" id="1_jb0v5"]
-[ext_resource type="Shader" path="res://scripts/level2.gdshader" id="2_5lfgl"]
-[ext_resource type="Texture2D" uid="uid://b3ivago241erm" path="res://assets/2d/miscsprites/spongebob_squarepants_jpg.png" id="3_pulrp"]
 [ext_resource type="Script" path="res://scripts/MenuButton.gd" id="6_th7r2"]
 [ext_resource type="PackedScene" uid="uid://behgaq4jmvceh" path="res://scenes/2d/tutorial.tscn" id="7_oxu2a"]
 [ext_resource type="PackedScene" uid="uid://dhxbkh5627l1q" path="res://scenes/Options.tscn" id="8_72lj6"]
 [ext_resource type="Texture2D" uid="uid://lw1u60dv5x6a" path="res://assets/2d/miscsprites/ererreyy.png" id="8_ypp24"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_oplmi"]
-shader = ExtResource("2_5lfgl")
-shader_parameter/motion = Vector2(15, 0)
-shader_parameter/scale = 1.0
-shader_parameter/offset = Vector2(0, 190.755)
+[sub_resource type="Gradient" id="Gradient_ebsv8"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0, 0.522727, 1)
+colors = PackedColorArray(0, 0, 1, 1, 0.401515, 0.401515, 1, 1, 6.16074e-06, 0.733561, 0.528075, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_23esm"]
+gradient = SubResource("Gradient_ebsv8")
+fill_from = Vector2(0.0306122, 0.0357143)
+fill_to = Vector2(1, 1)
 
 [sub_resource type="GDScript" id="GDScript_4d45m"]
 resource_name = "load_button"
@@ -33,6 +35,11 @@ func _process(delta: float) -> void:
 func _on_pressed() -> void:
 	Singleton.inmenu = false
 	Singleton.load_game()
+	
+
+
+func _on_mouse_entered() -> void:
+	BMOD.play_sfx(preload(\"res://assets/sfx/menumove.tres\"))
 "
 
 [node name="MainMenu" type="Control"]
@@ -44,69 +51,93 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_cki2b")
 
-[node name="SpongebobSquarepantsJpg" type="Sprite2D" parent="."]
-texture_repeat = 2
-material = SubResource("ShaderMaterial_oplmi")
-position = Vector2(639.5, 360)
-scale = Vector2(0.86635, 1.88976)
-texture = ExtResource("3_pulrp")
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(20, 11.25)
+texture = SubResource("GradientTexture2D_23esm")
+centered = false
 
 [node name="Ererreyy" type="Sprite2D" parent="."]
-position = Vector2(348, 166)
+position = Vector2(640, 176)
 scale = Vector2(0.489167, 0.534091)
 texture = ExtResource("8_ypp24")
 
-[node name="Menu_Button3" type="Button" parent="."]
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
 layout_mode = 0
-offset_left = 110.0
-offset_top = 335.0
-offset_right = 340.0
-offset_bottom = 399.0
+offset_left = 16.0
+offset_top = 688.0
+offset_right = 203.0
+offset_bottom = 714.0
+text = "Ohio Team 2024 - 2025"
+
+[node name="Buttons" type="Node2D" parent="."]
+position = Vector2(640, 340)
+
+[node name="Menu_Button3" type="Button" parent="Buttons"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -115.0
+offset_top = 80.0
+offset_right = 115.0
+offset_bottom = 144.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_fonts/font = ExtResource("1_jb0v5")
 theme_override_font_sizes/font_size = 35
 text = "New Game"
 script = ExtResource("6_th7r2")
 scene = ExtResource("7_oxu2a")
 
-[node name="Menu_Button" type="Button" parent="."]
-layout_mode = 0
-offset_left = 111.0
-offset_top = 409.0
-offset_right = 341.0
-offset_bottom = 460.0
+[node name="Menu_Button" type="Button" parent="Buttons"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -115.0
+offset_top = 160.0
+offset_right = 115.0
+offset_bottom = 224.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_fonts/font = ExtResource("1_jb0v5")
 theme_override_font_sizes/font_size = 35
 text = "Continue"
 script = SubResource("GDScript_4d45m")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
-layout_mode = 0
-offset_left = 5.0
-offset_top = 692.0
-offset_right = 150.0
-offset_bottom = 718.0
-text = "Ohio Team. 2024"
-
-[node name="RichTextLabel2" type="RichTextLabel" parent="."]
-layout_mode = 0
-offset_left = 1003.0
-offset_top = 607.0
-offset_right = 1281.0
-offset_bottom = 727.0
-text = "Director: Sweatycowballs105
-Coding: Flowcheer & JuanEnchilada
-Sound: zykotic91 & JuanEnchilada (copyrighted audio by the people who made them lol)"
-
-[node name="Menu_Button2" type="Button" parent="."]
-layout_mode = 0
-offset_left = 110.0
-offset_top = 473.0
-offset_right = 339.0
-offset_bottom = 524.0
+[node name="Menu_Button2" type="Button" parent="Buttons"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -114.5
+offset_top = 240.0
+offset_right = 115.5
+offset_bottom = 304.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_fonts/font = ExtResource("1_jb0v5")
 theme_override_font_sizes/font_size = 33
 text = "Options"
 script = ExtResource("6_th7r2")
 scene = ExtResource("8_72lj6")
 
-[connection signal="pressed" from="Menu_Button" to="Menu_Button" method="_on_pressed"]
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 526.0
+offset_top = 416.0
+offset_right = 963.0
+offset_bottom = 544.0
+theme_override_constants/outline_size = 10
+theme_override_fonts/normal_font = ExtResource("1_jb0v5")
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "[wave][rainbow]PRESS ANY KEY"
+
+[connection signal="mouse_entered" from="Buttons/Menu_Button3" to="Buttons/Menu_Button3" method="_on_mouse_entered"]
+[connection signal="mouse_entered" from="Buttons/Menu_Button" to="Buttons/Menu_Button" method="_on_mouse_entered"]
+[connection signal="pressed" from="Buttons/Menu_Button" to="Buttons/Menu_Button" method="_on_pressed"]
+[connection signal="mouse_entered" from="Buttons/Menu_Button2" to="Buttons/Menu_Button2" method="_on_mouse_entered"]

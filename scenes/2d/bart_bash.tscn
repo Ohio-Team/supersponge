@@ -27,7 +27,7 @@ texture = ExtResource("2_i40bc")
 position = Vector2(109, 133)
 
 [node name="Bart2" parent="Bart(s)" instance=ExtResource("3_x600d")]
-position = Vector2(251, 142)
+position = Vector2(248, 151)
 
 [node name="Bart3" parent="Bart(s)" instance=ExtResource("3_x600d")]
 position = Vector2(191, 217)

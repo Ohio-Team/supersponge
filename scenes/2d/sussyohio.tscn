@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://g0n7avqcnmv3"]
+[gd_scene load_steps=6 format=3 uid="uid://g0n7avqcnmv3"]
 
 [ext_resource type="Script" path="res://scenes/2d/sussyohio.gd" id="1_8efvl"]
 [ext_resource type="PackedScene" uid="uid://ijj6qbkx8vhd" path="res://scenes/2d/platform.tscn" id="1_24mg1"]
 [ext_resource type="PackedScene" uid="uid://cjoo6ilm8eim1" path="res://scenes/2d/spongebob2d.tscn" id="2_1wi20"]
 [ext_resource type="Texture2D" uid="uid://byooo02dyr3q5" path="res://assets/2d/miscsprites/box.png" id="4_315sj"]
+[ext_resource type="PackedScene" uid="uid://dolf5os2imxdu" path="res://scenes/2d/crazyfish.tscn" id="5_o7sl6"]
 
 [node name="Sussyohio" type="Node2D"]
 script = ExtResource("1_8efvl")
@@ -28,3 +29,42 @@ scale = Vector2(7.18359, 1)
 texture = ExtResource("4_315sj")
 
 [node name="Sussy Ohio" type="Node" parent="."]
+
+[node name="Crazyfish" parent="Sussy Ohio" instance=ExtResource("5_o7sl6")]
+position = Vector2(2675, 459)
+
+[node name="Crazyfish2" parent="Sussy Ohio" instance=ExtResource("5_o7sl6")]
+position = Vector2(2780, 571)
+
+[node name="Crazyfish3" parent="Sussy Ohio" instance=ExtResource("5_o7sl6")]
+position = Vector2(2635, 582)
+
+[node name="Crazyfish4" parent="Sussy Ohio" instance=ExtResource("5_o7sl6")]
+position = Vector2(2721, 529)
+
+[node name="Crazyfish5" parent="Sussy Ohio" instance=ExtResource("5_o7sl6")]
+position = Vector2(2661, 531)
+
+[node name="Crazyfish6" parent="Sussy Ohio" instance=ExtResource("5_o7sl6")]
+position = Vector2(2697, 484)
+
+[node name="Crazyfish7" parent="Sussy Ohio" instance=ExtResource("5_o7sl6")]
+position = Vector2(2643, 477)
+
+[node name="Crazyfish8" parent="Sussy Ohio" instance=ExtResource("5_o7sl6")]
+position = Vector2(2727, 481)
+
+[node name="Crazyfish9" parent="Sussy Ohio" instance=ExtResource("5_o7sl6")]
+position = Vector2(2767, 542)
+
+[node name="Crazyfish10" parent="Sussy Ohio" instance=ExtResource("5_o7sl6")]
+position = Vector2(2609, 549)
+
+[node name="Crazyfish11" parent="Sussy Ohio" instance=ExtResource("5_o7sl6")]
+position = Vector2(2775, 471)
+
+[node name="Crazyfish12" parent="Sussy Ohio" instance=ExtResource("5_o7sl6")]
+position = Vector2(2565, 480)
+
+[node name="Crazyfish13" parent="Sussy Ohio" instance=ExtResource("5_o7sl6")]
+position = Vector2(2746, 439)

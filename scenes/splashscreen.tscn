@@ -1,6 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://bvqhl1de8ki8g"]
+[gd_scene load_steps=11 format=3 uid="uid://bvqhl1de8ki8g"]
 
-[ext_resource type="SpriteFrames" uid="uid://vgqyi66iob4" path="res://assets/2d/miscsprites/badass.gif" id="1_trurj"]
+[ext_resource type="Texture2D" uid="uid://bmnbmx44o7bth" path="res://assets/2d/miscsprites/badass.png" id="1_hj74l"]
 [ext_resource type="AudioStream" uid="uid://bfimjcqqg3sil" path="res://assets/sfx/intro.ogg" id="2_avhqf"]
 [ext_resource type="SpriteFrames" uid="uid://50grqm1g4bay" path="res://assets/2d/miscsprites/yandhi.tres" id="3_35m7w"]
 
@@ -12,11 +12,66 @@ script/source = "extends Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Singleton.inmenu = true
+	if OS.has_feature(\"standalone\"):
+		var path := OS.get_executable_path().get_base_dir().path_join(\"mods\")
+		if !DirAccess.dir_exists_absolute(OS.get_executable_path().get_base_dir().path_join(\"mods\")):
+			DirAccess.make_dir_recursive_absolute(OS.get_executable_path().get_base_dir().path_join(\"mods\"))
+		var mod_dir := DirAccess.open(path)
+		mod_dir.list_dir_begin()
+		var filename = mod_dir.get_next()
+		while filename != \"\":
+			if filename.get_extension() == \"pck\":
+				ProjectSettings.load_resource_pack(filename)
+			filename.get_next()
+		mod_dir.list_dir_end()
 
 
 func _on_audio_stream_player_finished() -> void:
 	get_tree().change_scene_to_file(\"res://scenes/Main Menu.tscn\")
 "
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dr3bk"]
+atlas = ExtResource("1_hj74l")
+region = Rect2(0, 0, 393, 92)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4dh67"]
+atlas = ExtResource("1_hj74l")
+region = Rect2(393, 0, 393, 92)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ud61v"]
+atlas = ExtResource("1_hj74l")
+region = Rect2(786, 0, 393, 92)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d5anr"]
+atlas = ExtResource("1_hj74l")
+region = Rect2(1179, 0, 393, 92)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_87xgc"]
+atlas = ExtResource("1_hj74l")
+region = Rect2(1572, 0, 393, 92)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qmn3d"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dr3bk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4dh67")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ud61v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d5anr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_87xgc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 20.0
+}]
 
 [node name="Splashscreen" type="Node2D"]
 script = SubResource("GDScript_q31up")
@@ -27,12 +82,10 @@ offset_bottom = 720.0
 color = Color(0, 0, 0, 1)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(446, 365)
-sprite_frames = ExtResource("1_trurj")
-animation = &"gif"
-autoplay = "gif"
-frame_progress = 0.778171
-centered = false
+position = Vector2(640, 340)
+sprite_frames = SubResource("SpriteFrames_qmn3d")
+autoplay = "default"
+frame_progress = 0.277105
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_avhqf")

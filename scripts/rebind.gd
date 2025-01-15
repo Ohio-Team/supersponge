@@ -44,6 +44,7 @@ func _on_button_toggled(button_pressed) -> void:
 
 func _unhandled_key_input(event: InputEvent) -> void:
 	rebind_action_key(event)
+	print(event)
 	button.button_pressed = false
 	
 func rebind_action_key(event):

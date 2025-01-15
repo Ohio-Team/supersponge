@@ -1,0 +1,51 @@
+[gd_scene load_steps=4 format=3 uid="uid://wgwcmaewr6g3"]
+
+[ext_resource type="Texture2D" uid="uid://4cfqg5hd1hqp" path="res://assets/2d/miscsprites/pipe.png" id="1_gfkf6"]
+[ext_resource type="AudioStream" uid="uid://dmckilo36yjmw" path="res://assets/sfx/pipe.mp3" id="2_dgxen"]
+
+[sub_resource type="GDScript" id="GDScript_gdv6f"]
+script/source = "extends RigidBody2D
+
+
+
+func _on_body_entered(body: Node) -> void:
+	$AudioStreamPlayer2D.play()
+
+
+func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
+	queue_free()
+
+
+func _on_timer_timeout() -> void:
+	queue_free()
+"
+
+[node name="Pipe" type="RigidBody2D"]
+input_pickable = true
+mass = 5.0
+center_of_mass_mode = 1
+center_of_mass = Vector2(10, 0)
+contact_monitor = true
+max_contacts_reported = 5061
+script = SubResource("GDScript_gdv6f")
+
+[node name="Pipe" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_gfkf6")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-9, 29, 0, 32, 0, -16, 13, -16, 16, -22, -7, -20)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_dgxen")
+bus = &"SFX"
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

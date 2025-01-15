@@ -1,8 +1,95 @@
-[gd_scene load_steps=3 format=3 uid="uid://dwm7vih3bgtyv"]
+[gd_scene load_steps=10 format=3 uid="uid://dwm7vih3bgtyv"]
 
 [ext_resource type="Script" path="res://scripts/firstpersonshooter.gd" id="1_1kqf8"]
+[ext_resource type="Texture2D" uid="uid://yanmhd5kylxm" path="res://assets/2d/doomfaces/normal.png" id="2_1tblf"]
+[ext_resource type="Texture2D" uid="uid://qcgopt40lv88" path="res://assets/2d/doomfaces/health1.png" id="2_w7c7t"]
+[ext_resource type="Texture2D" uid="uid://dpxp1qcs1a65g" path="res://assets/2d/doomfaces/normalleft.png" id="3_2f6xy"]
+[ext_resource type="Texture2D" uid="uid://inb72fwiwt7a" path="res://assets/2d/doomfaces/normalright.png" id="4_5bhev"]
+[ext_resource type="Texture2D" uid="uid://bm58lyxcfngt2" path="res://assets/2d/doomfaces/normalclosed.png" id="5_bs4rb"]
+[ext_resource type="Texture2D" uid="uid://6rosccmhmnav" path="res://assets/2d/doomfaces/hurt1.png" id="6_p0rer"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_pptmq"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1ici0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_w7c7t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_w7c7t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_w7c7t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_w7c7t")
+}],
+"loop": false,
+"name": &"Heal",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_p0rer")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_p0rer")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_p0rer")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_p0rer")
+}],
+"loop": false,
+"name": &"Hurt",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_1tblf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_1tblf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_1tblf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_bs4rb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_2f6xy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_2f6xy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_2f6xy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_1tblf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_1tblf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_bs4rb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_5bhev")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_5bhev")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_5bhev")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 3.0
+}]
 
 [node name="firstpersonshooter" type="CharacterBody3D" groups=["Player"]]
 script = ExtResource("1_1kqf8")
@@ -17,3 +104,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.92162, -0.496052)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.01956, 0)
 shape = SubResource("CapsuleShape3D_pptmq")
+
+[node name="DoomUI" type="CanvasLayer" parent="."]
+layer = 0
+
+[node name="Bobby" type="AnimatedSprite2D" parent="DoomUI"]
+unique_name_in_owner = true
+texture_filter = 1
+position = Vector2(695, 664)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_1ici0")
+animation = &"Heal"
+autoplay = "Idle"

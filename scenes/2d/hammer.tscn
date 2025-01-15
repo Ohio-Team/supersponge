@@ -1,0 +1,47 @@
+[gd_scene load_steps=4 format=3 uid="uid://unp1d3mg2bd7"]
+
+[ext_resource type="Texture2D" uid="uid://bp230gxf5j6a7" path="res://assets/2d/miscsprites/Hammer-gross-2_2048x-1024x686.jpg" id="1_dmuf7"]
+
+[sub_resource type="GDScript" id="GDScript_hf087"]
+resource_name = "hammer"
+script/source = "extends RigidBody2D
+
+
+
+func _on_body_entered(body: Node) -> void:
+	if body.is_in_group(\"Player\"):
+		Singleton.hashammer = true
+		BMOD.play_sfx(preload(\"res://assets/sfx/fuel.tres\"))
+		MusicPlayer.stop_song()
+		Ui.create_dialog(\"Great, now [b]kill Patrick.[/b]\",\"sandy\")
+		queue_free()
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5y0n2"]
+size = Vector2(90, 35)
+
+[node name="Hammer" type="RigidBody2D"]
+mass = 0.001
+can_sleep = false
+contact_monitor = true
+max_contacts_reported = 10
+script = SubResource("GDScript_hf087")
+
+[node name="Hammer-gross-22048x-1024x686" type="Sprite2D" parent="."]
+position = Vector2(7.62939e-06, 7.62939e-06)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_dmuf7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, -6)
+rotation = -3.14159
+shape = SubResource("RectangleShape2D_5y0n2")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-1, -5.5)
+rotation = -3.14159
+shape = SubResource("RectangleShape2D_5y0n2")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_body_entered"]

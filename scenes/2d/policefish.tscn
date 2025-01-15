@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://5yq4vv6f02pd"]
+
+[ext_resource type="Script" path="res://scripts/policefish.gd" id="1_xjp4b"]
+[ext_resource type="Texture2D" uid="uid://d0rpuh1dbwc0d" path="res://assets/2d/miscsprites/policeplaceholder.jpg" id="2_3j46x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rkopc"]
+size = Vector2(188, 268)
+
+[node name="policefish" type="Area2D"]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_xjp4b")
+
+[node name="Policeplaceholder" type="Sprite2D" parent="."]
+texture = ExtResource("2_3j46x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_rkopc")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

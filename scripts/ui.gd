@@ -20,6 +20,8 @@ func _process(delta):
 		$RichTextLabel.visible = true
 		$RichTextLabel.text = str(round(fmod(time,3600) / 60)) + ":" + str(round(fmod(time,60))) + ":" + str(round(fmod(time,1) * 100))
 	else:
+		if !Singleton.inmenu:
+			time += delta
 		$RichTextLabel.visible = false
 	$Counter.text = "[shake]x" + str(Singleton.health)
 	$Counter2.text = "[shake]x" + str(Singleton.spatulas)
@@ -39,6 +41,14 @@ func _process(delta):
 		get_tree().paused = true
 		$Pause.visible = true
 	if get_tree().paused:
+		if Singleton.tokens.has("jik"):
+			$Pause/Jik.show()
+		if Singleton.tokens.has("mio"):
+			$Pause/Cubes.show()
+		if Singleton.tokens.has("711"):
+			$Pause/Milkshake.show()
+		if Singleton.tokens.has("sbds"):
+			$Pause/Truthorsquare.show()
 		if !$Pause/AudioStreamPlayer.playing:
 			$Pause/AudioStreamPlayer.play()
 		$Pause/ColorRect.color = lerp($Pause/ColorRect.color, Color(00000078,0.5), delta*10)
@@ -52,6 +62,8 @@ func _process(delta):
 func emit_dialogfinished():
 	dialog_finished.emit()
 func create_dialog(text:String, char:String = "spongebob"):
+	for i in get_tree().get_nodes_in_group("Dialog"):
+		i.queue_free()
 	var dialog = preload("res://scenes/2d/dialog.tscn")
 	var new_dialog = dialog.instantiate()
 	new_dialog.full_text = text

@@ -30,7 +30,7 @@ animations = [{
 size = Vector2(14, 25)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_38hmy"]
-size = Vector2(29, 51)
+size = Vector2(34, 56)
 
 [node name="Crazyfish" type="CharacterBody2D" groups=["Enemy"]]
 script = ExtResource("1_k62qc")
@@ -48,7 +48,7 @@ shape = SubResource("RectangleShape2D_o6s8t")
 scale = Vector2(0.5, 0.5)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hitzone"]
-position = Vector2(0, 0.5)
+position = Vector2(1, 0)
 shape = SubResource("RectangleShape2D_38hmy")
 
 [connection signal="body_entered" from="hitzone" to="." method="_on_hitzone_body_entered"]

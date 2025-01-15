@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://msrilsl3hgxf"]
+
+[ext_resource type="Script" path="res://scenes/2d/token.gd" id="1_pvlye"]
+[ext_resource type="Texture2D" uid="uid://dye4odr3qkeck" path="res://assets/2d/tokens/jik.jpg" id="2_y4wai"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6f7or"]
+size = Vector2(24, 24)
+
+[node name="Token" type="Area2D"]
+script = ExtResource("1_pvlye")
+
+[node name="Texture" type="Sprite2D" parent="."]
+position = Vector2(0, -4.76837e-07)
+scale = Vector2(0.0207143, 0.02)
+texture = ExtResource("2_y4wai")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_6f7or")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,0 +1,311 @@
+[gd_scene load_steps=38 format=3 uid="uid://dlpkwjto5urxn"]
+
+[ext_resource type="Script" path="res://scripts/fakebob.gd" id="1_4kskl"]
+[ext_resource type="Shader" path="res://scripts/flash.gdshader" id="2_exoty"]
+[ext_resource type="Texture2D" uid="uid://cs3x1llb7ihsh" path="res://assets/2d/fakebob/fakeattack1.png" id="3_4o2sd"]
+[ext_resource type="Texture2D" uid="uid://dxhegfepd27ah" path="res://assets/2d/fakebob/fakeattack2.png" id="4_2btq2"]
+[ext_resource type="Texture2D" uid="uid://l6ruy2ijyvpo" path="res://assets/2d/fakebob/fakeattack3.png" id="5_r1uty"]
+[ext_resource type="Texture2D" uid="uid://cl13gvivtcyls" path="res://assets/2d/fakebob/fakeattack4.png" id="6_hy18x"]
+[ext_resource type="Texture2D" uid="uid://bs8ujs3xy24k1" path="res://assets/2d/fakebob/fakeattack5.png" id="7_mrcqf"]
+[ext_resource type="Texture2D" uid="uid://xjdawx2ap3uo" path="res://assets/2d/fakebob/fakeattack6.png" id="8_pxrk2"]
+[ext_resource type="Texture2D" uid="uid://b0lytvn71u6xy" path="res://assets/2d/fakebob/fakeattack7.png" id="9_gl15e"]
+[ext_resource type="Texture2D" uid="uid://btmn2b7y2wblr" path="res://assets/2d/fakebob/fakeattack8.png" id="10_jjiqu"]
+[ext_resource type="Texture2D" uid="uid://cg8dvf0p41age" path="res://assets/2d/fakebob/fakerun1.png" id="11_26gbj"]
+[ext_resource type="Texture2D" uid="uid://djto1dagllptn" path="res://assets/2d/fakebob/fakerun2.png" id="12_ocv4k"]
+[ext_resource type="Texture2D" uid="uid://p312lqbja6yo" path="res://assets/2d/fakebob/fakerun3.png" id="13_t0g4s"]
+[ext_resource type="Texture2D" uid="uid://bfq5cjiqja3en" path="res://assets/2d/fakebob/fakerun4.png" id="14_viyvr"]
+[ext_resource type="Texture2D" uid="uid://ybshm8fko5t8" path="res://assets/2d/fakebob/fakerun5.png" id="15_jrc4y"]
+[ext_resource type="Texture2D" uid="uid://dre0sol0ykens" path="res://assets/2d/fakebob/fakerun6.png" id="16_eor1l"]
+[ext_resource type="Texture2D" uid="uid://csakvuri754fj" path="res://assets/2d/fakebob/fakerun7.png" id="17_03yh7"]
+[ext_resource type="Texture2D" uid="uid://ostt1xstmw" path="res://assets/2d/fakebob/fakerun8.png" id="18_8r2a5"]
+[ext_resource type="Texture2D" uid="uid://b6mk72sm4bgka" path="res://assets/2d/fakebob/fakerun9.png" id="19_jmhyq"]
+[ext_resource type="Texture2D" uid="uid://bqskmuqjp6vrc" path="res://assets/2d/fakebob/fakejump5.png" id="20_ercja"]
+[ext_resource type="Texture2D" uid="uid://brq87bhwydqod" path="res://assets/2d/fakebob/fakejump6.png" id="21_q5n2x"]
+[ext_resource type="Texture2D" uid="uid://c8rgunv8jbobs" path="res://assets/2d/fakebob/fakebobhurt.png" id="22_jd7tv"]
+[ext_resource type="Texture2D" uid="uid://duot5063d3ro2" path="res://assets/2d/fakebob/fakejump1.png" id="23_2l031"]
+[ext_resource type="Texture2D" uid="uid://clq51s1in7ckf" path="res://assets/2d/fakebob/fakejump2.png" id="24_ucagw"]
+[ext_resource type="Texture2D" uid="uid://ccc47anr70apd" path="res://assets/2d/fakebob/fakejump3.png" id="25_of6cp"]
+[ext_resource type="Texture2D" uid="uid://ds8htsghftxji" path="res://assets/2d/fakebob/fakejump4.png" id="26_rbxf7"]
+[ext_resource type="Script" path="res://scripts/StateMachine.gd" id="27_h6k6y"]
+[ext_resource type="Script" path="res://scripts/states/FakebobIdle.gd" id="28_pmtsw"]
+[ext_resource type="Script" path="res://scripts/states/FakebobAttack.gd" id="29_kahpb"]
+[ext_resource type="Script" path="res://scripts/states/Fakebobhurt.gd" id="30_4c4db"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ooph5"]
+shader = ExtResource("2_exoty")
+shader_parameter/flash_color = Color(1, 1, 1, 1)
+shader_parameter/flash_value = 0.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1a6kk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_4o2sd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_2btq2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_r1uty")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_hy18x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_mrcqf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_pxrk2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_mrcqf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_pxrk2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_mrcqf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_pxrk2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_gl15e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_jjiqu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_gl15e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_jjiqu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_gl15e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_jjiqu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_mrcqf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_pxrk2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_gl15e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_jjiqu")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_26gbj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_ocv4k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_t0g4s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_viyvr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_jrc4y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_eor1l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_03yh7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_8r2a5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_jmhyq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("20_ercja")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_q5n2x")
+}],
+"loop": true,
+"name": &"fall",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("22_jd7tv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_jd7tv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_jd7tv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_jd7tv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_jd7tv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_jd7tv")
+}],
+"loop": false,
+"name": &"hurt",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("23_2l031")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_ucagw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_of6cp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_rbxf7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_ercja")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_q5n2x")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 10.0
+}]
+
+[sub_resource type="Animation" id="Animation_mynlq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:material:shader_parameter/flash_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:material:shader_parameter/flash_value")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_b1bmm"]
+resource_name = "flash"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:material:shader_parameter/flash_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:material:shader_parameter/flash_value")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667, 0.333333, 0.4, 0.466667, 0.533333, 0.6, 0.666667, 0.733333, 0.8, 0.866667, 0.933333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 1.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hntw4"]
+_data = {
+"RESET": SubResource("Animation_mynlq"),
+"flash": SubResource("Animation_b1bmm")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hc5y4"]
+size = Vector2(20, 31)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4agns"]
+size = Vector2(22, 33)
+
+[node name="Fakebob" type="CharacterBody2D"]
+script = ExtResource("1_4kskl")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+material = SubResource("ShaderMaterial_ooph5")
+sprite_frames = SubResource("SpriteFrames_1a6kk")
+animation = &"jump"
+autoplay = "default"
+frame_progress = 0.900545
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatedSprite2D"]
+libraries = {
+"": SubResource("AnimationLibrary_hntw4")
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1.5)
+shape = SubResource("RectangleShape2D_hc5y4")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+path_desired_distance = 10.0
+
+[node name="NavTimer" type="Timer" parent="."]
+wait_time = 0.1
+autostart = true
+
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
+script = ExtResource("27_h6k6y")
+initial_state = NodePath("Idle")
+
+[node name="Idle" type="Node" parent="StateMachine"]
+script = ExtResource("28_pmtsw")
+
+[node name="Attack" type="Node" parent="StateMachine"]
+script = ExtResource("29_kahpb")
+
+[node name="Hurt" type="Node" parent="StateMachine"]
+script = ExtResource("30_4c4db")
+
+[node name="Area2D" type="Area2D" parent="."]
+input_pickable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 1.5)
+shape = SubResource("RectangleShape2D_4agns")
+
+[connection signal="timeout" from="NavTimer" to="StateMachine/Idle" method="_on_navtimer_timeout"]
+[connection signal="area_entered" from="Area2D" to="StateMachine/Idle" method="_on_area_2d_area_entered"]
+[connection signal="body_entered" from="Area2D" to="StateMachine/Idle" method="_on_area_2d_body_entered"]

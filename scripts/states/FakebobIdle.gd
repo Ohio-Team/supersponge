@@ -48,15 +48,17 @@ func Physics_Update(delta):
 func _on_navtimer_timeout():
 	nav_agent.target_position = player.global_position
 
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body == player:
+		if player.state != "dying" and !player.invincible and player.state != "attack":
+			Singleton.health -= 1
+			player.state = "hurt"
+		if player.state == "attack":
+			Transitioned.emit(self, "Hurt")
+			BMOD.play_sfx(preload("res://assets/sfx/bart.tres"))
+
 func _on_area_2d_area_entered(area):
 	if area.is_in_group("Projectiles") and $"../../AnimatedSprite2D".animation != "jump" and $"../../AnimatedSprite2D".animation != "hurt" and $"../../AnimatedSprite2D".animation != "attack" and cooldown < 0:
 		$"../../AnimatedSprite2D".play("hurt")
 		Transitioned.emit(self, "Hurt")
 		BMOD.play_sfx(preload("res://assets/sfx/bart.tres"))
-
-
-func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body == player:
-		if player.state != "dying" and !player.invincible:
-			Singleton.health -= 1
-			player.state = "hurt"

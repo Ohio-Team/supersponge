@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://eit1pvvg3w60"]
+[gd_scene load_steps=4 format=3 uid="uid://eit1pvvg3w60"]
 
 [ext_resource type="Script" path="res://scripts/firstpersonplayer.gd" id="1_rc5od"]
+[ext_resource type="Texture2D" uid="uid://dj5pmx0pldu06" path="res://assets/2d/miscsprites/SpongeBob_SquarePants_character.svg.png" id="2_55e3b"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_pptmq"]
 
@@ -17,3 +18,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.92162, -0.496052)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.01956, 0)
 shape = SubResource("CapsuleShape3D_pptmq")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 4, 0)
+double_sided = false
+texture = ExtResource("2_55e3b")

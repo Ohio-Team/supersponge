@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://c5cro76q4nkfu"]
+[gd_scene load_steps=7 format=3 uid="uid://c5cro76q4nkfu"]
 
 [ext_resource type="Script" path="res://scripts/dialog.gd" id="1_hgsve"]
 [ext_resource type="FontFile" uid="uid://ia1v43t7vpqa" path="res://assets/fonts/Krabby Patty.ttf" id="1_tvp7w"]
 [ext_resource type="Script" path="res://scripts/RichTextLabel.gd" id="3_kgofs"]
 [ext_resource type="Texture2D" uid="uid://fpqgihr8sxou" path="res://assets/2d/dialogfaces/Sandy.png" id="4_oa5ml"]
+[ext_resource type="AudioStream" uid="uid://jngf3kp5y1ir" path="res://assets/sfx/dialog.wav" id="5_uvd0m"]
 
 [sub_resource type="FontVariation" id="FontVariation_8r68w"]
 base_font = ExtResource("1_tvp7w")
@@ -18,6 +19,8 @@ offset_left = 64.0
 offset_top = 553.0
 offset_right = 1246.0
 offset_bottom = 705.0
+mouse_filter = 1
+mouse_force_pass_scroll_events = false
 color = Color(0.054902, 0.054902, 0.054902, 0.411765)
 
 [node name="RichTextLabel" type="RichTextLabel" parent="ColorRect"]
@@ -35,3 +38,8 @@ script = ExtResource("3_kgofs")
 position = Vector2(105, 80.7)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("4_oa5ml")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_uvd0m")
+pitch_scale = 0.8
+bus = &"SFX"

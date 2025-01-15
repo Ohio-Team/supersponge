@@ -21,8 +21,8 @@ func _update_text():
 	if current_index < full_text.length():
 		text += full_text[current_index]
 		current_index += 1
-		if !BMOD.sfx_playing.has(preload("res://assets/sfx/dialog.tres")) and !BMOD.sfx_playing.has(preload("res://assets/sfx/walk.tres")): 
-			BMOD.play_sfx(preload("res://assets/sfx/dialog.tres"))
+		if !$"../../AudioStreamPlayer".playing: 
+			$"../../AudioStreamPlayer".play()
 	else:
 		finishedtext = true
 		set_process(false)
