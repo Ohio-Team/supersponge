@@ -92,7 +92,7 @@ func _physics_process(delta):
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var prev_dir = direction
-	direction = Input.get_axis("left", "right")
+	direction = Ui.joystick.posVector.x
 	inputs(direction,delta)
 	if direction < 0:
 		anim.flip_h = true

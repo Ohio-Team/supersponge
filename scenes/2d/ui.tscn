@@ -1,7 +1,8 @@
-[gd_scene load_steps=27 format=3 uid="uid://bbrct2r84j0l2"]
+[gd_scene load_steps=32 format=3 uid="uid://bbrct2r84j0l2"]
 
 [ext_resource type="Script" path="res://scripts/ui.gd" id="1_eaqxp"]
 [ext_resource type="FontFile" uid="uid://ia1v43t7vpqa" path="res://assets/fonts/Krabby Patty.ttf" id="2_0v11p"]
+[ext_resource type="Texture2D" uid="uid://c2urmgqxp3d4v" path="res://assets/2d/miscsprites/lifepressed.png" id="4_e61vv"]
 [ext_resource type="Texture2D" uid="uid://ccfdmkwhs6vc6" path="res://assets/2d/miscsprites/life.png" id="6_f6ylc"]
 [ext_resource type="Texture2D" uid="uid://cavw5dlwryyol" path="res://assets/2d/miscsprites/spatulaUI.png" id="7_bnkkd"]
 [ext_resource type="Texture2D" uid="uid://bemlcpdbpig3f" path="res://assets/2d/pausemenu/animframe1.png" id="8_jnmey"]
@@ -14,6 +15,10 @@
 [ext_resource type="Texture2D" uid="uid://ciq7335f7ccf2" path="res://assets/2d/pausemenu/pausegr.png" id="12_fxnwe"]
 [ext_resource type="Texture2D" uid="uid://ybte62d4o5fu" path="res://assets/2d/tokens/milkshake.png" id="13_6o23l"]
 [ext_resource type="Texture2D" uid="uid://dt03hf2mm17f3" path="res://assets/2d/tokens/truthorsquare.jpg" id="14_rxumh"]
+[ext_resource type="PackedScene" uid="uid://dpatlm3ej67bl" path="res://scenes/2d/joystick.tscn" id="15_hd2u4"]
+[ext_resource type="Texture2D" uid="uid://cvrjies3bykha" path="res://assets/2d/android/buttonfire.png" id="17_m2mxp"]
+[ext_resource type="Texture2D" uid="uid://cftsidj3cumjb" path="res://assets/2d/android/buttonjump.png" id="18_b8r05"]
+[ext_resource type="Texture2D" uid="uid://du86p5kt3pqhv" path="res://assets/2d/android/buttonpound.png" id="19_q7nhu"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jq37k"]
 radius = 243.19
@@ -222,8 +227,9 @@ scroll_active = false
 position = Vector2(18, 17)
 scale = Vector2(0.14, 0.14)
 texture_normal = ExtResource("6_f6ylc")
+texture_pressed = ExtResource("4_e61vv")
 shape = SubResource("CircleShape2D_jq37k")
-action = "ui_cancel"
+action = "pause"
 
 [node name="Counter2" type="RichTextLabel" parent="."]
 offset_left = 93.0
@@ -404,6 +410,25 @@ theme_override_fonts/normal_font = ExtResource("2_0v11p")
 theme_override_font_sizes/normal_font_size = 32
 text = "Ohio Health: 250"
 scroll_active = false
+
+[node name="Joystick" parent="." instance=ExtResource("15_hd2u4")]
+position = Vector2(111, 600)
+scale = Vector2(2, 2)
+
+[node name="TouchScreenButton2" type="TouchScreenButton" parent="."]
+position = Vector2(980, 587)
+texture_normal = ExtResource("17_m2mxp")
+action = "attack"
+
+[node name="TouchScreenButton3" type="TouchScreenButton" parent="."]
+position = Vector2(1114, 587)
+texture_normal = ExtResource("18_b8r05")
+action = "jump"
+
+[node name="TouchScreenButton4" type="TouchScreenButton" parent="."]
+position = Vector2(1114, 473)
+texture_normal = ExtResource("19_q7nhu")
+action = "groundpound"
 
 [connection signal="pressed" from="Pause/Button" to="Pause/Button" method="_on_pressed"]
 [connection signal="pressed" from="Pause/Button3" to="Pause/Button3" method="_on_pressed"]
