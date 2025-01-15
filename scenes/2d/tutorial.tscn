@@ -216,17 +216,17 @@ position = Vector2(116, 453)
 [node name="Dialogzone" parent="." instance=ExtResource("10_y0aui")]
 position = Vector2(384, 480)
 scale = Vector2(1, 6.76)
-text = "To jump you can press [b]SPACE[/b]. You can do precise jumps if you release the button early"
+text = "To jump you can press the [b]JUMP[/b] button. You can do precise jumps if you release the button early"
 
 [node name="Dialogzone2" parent="." instance=ExtResource("10_y0aui")]
 position = Vector2(832, 480)
 scale = Vector2(1, 6.72)
-text = "Watch out for those fiendish jellyfish, bob. Press X to attack them with your net."
+text = "Watch out for those fiendish jellyfish, bob. Press the [b]JATTACK[b]J button to get rid of them with your karate glove."
 
 [node name="Dialogzone3" parent="." instance=ExtResource("10_y0aui")]
 position = Vector2(1205, 490)
 scale = Vector2(3.78657, -15.058)
-text = "Now [b]THIS[/b] is a real challenge, you can kill jellyfish by groundpounding them, to do so press [b]SPACE[/b] on the air"
+text = "Now [b]THIS[/b] is a real challenge, you can kill jellyfish by groundpounding them, to do so press the [b]JUMP[/b] button on the air"
 
 [node name="Dialogzone4" parent="." instance=ExtResource("10_y0aui")]
 position = Vector2(1350, 1003)
@@ -262,4 +262,26 @@ flip_h = true
 position = Vector2(0, -3.05176e-05)
 shape = SubResource("RectangleShape2D_o15g4")
 
+[connection signal="body_entered" from="TileMapLayer/Spatula" to="TileMapLayer/Spatula" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/Jellyfish" to="TileMapLayer/Jellyfish" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@38049" to="TileMapLayer/@Area2D@38049" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@38050" to="TileMapLayer/@Area2D@38050" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@38051" to="TileMapLayer/@Area2D@38051" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@38052" to="TileMapLayer/@Area2D@38052" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@38053" to="TileMapLayer/@Area2D@38053" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@38054" to="TileMapLayer/@Area2D@38054" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@38055" to="TileMapLayer/@Area2D@38055" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@38056" to="TileMapLayer/@Area2D@38056" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@38057" to="TileMapLayer/@Area2D@38057" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@38058" to="TileMapLayer/@Area2D@38058" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@38059" to="TileMapLayer/@Area2D@38059" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@38060" to="TileMapLayer/@Area2D@38060" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@38061" to="TileMapLayer/@Area2D@38061" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@38062" to="TileMapLayer/@Area2D@38062" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@38063" to="TileMapLayer/@Area2D@38063" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/Soda" to="TileMapLayer/Soda" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@38064" to="TileMapLayer/@Area2D@38064" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@38065" to="TileMapLayer/@Area2D@38065" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@38066" to="TileMapLayer/@Area2D@38066" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@38067" to="TileMapLayer/@Area2D@38067" method="_on_body_entered"]
 [connection signal="body_entered" from="Patrick" to="Patrick" method="_on_body_entered"]

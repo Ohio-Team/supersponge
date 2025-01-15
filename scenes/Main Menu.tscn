@@ -127,15 +127,15 @@ scene = ExtResource("8_72lj6")
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="."]
 layout_mode = 0
-offset_left = 526.0
+offset_left = 536.0
 offset_top = 416.0
-offset_right = 963.0
+offset_right = 973.0
 offset_bottom = 544.0
 theme_override_constants/outline_size = 10
 theme_override_fonts/normal_font = ExtResource("1_jb0v5")
 theme_override_font_sizes/normal_font_size = 32
 bbcode_enabled = true
-text = "[wave][rainbow]PRESS ANY KEY"
+text = "[wave][rainbow]TAP TO START"
 
 [connection signal="mouse_entered" from="Buttons/Menu_Button3" to="Buttons/Menu_Button3" method="_on_mouse_entered"]
 [connection signal="mouse_entered" from="Buttons/Menu_Button" to="Buttons/Menu_Button" method="_on_mouse_entered"]
