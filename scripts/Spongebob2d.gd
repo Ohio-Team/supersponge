@@ -78,7 +78,6 @@ func _physics_process(delta):
 	if Singleton.health <= 0:
 		print("game over 💔")
 		BMOD.play_sfx(preload("res://assets/sfx/death.tres"))
-		Singleton.lifes -= 1
 		Singleton.health = 3
 		Singleton.spatulas -= 10
 		state = "dying"

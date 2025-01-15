@@ -9,7 +9,6 @@ extends Node
 @export var showfps:bool = false
 @export var showspeedrun:bool = false
 @export var fullscreen:bool = false
-@export var lifes:int = 4
 @export var health:int = 3
 @export var mouse_sensitivity:float = 1
 @export var spatulas:int = 0
@@ -44,7 +43,6 @@ func wait(seconds: float) -> void:
 func save_elements():
 	var save_dict = {
 		"current_scene" : get_tree().current_scene.scene_file_path,
-		"lifes" : lifes,
 		"spatulas" : spatulas,
 		"health" : health,
 		"time" : Ui.time,
@@ -76,7 +74,6 @@ func load_game():
 		var data = json.get_data()
 		health = data["health"]
 		spatulas = data["spatulas"]
-		lifes = data["lifes"]
 		Ui.time = data["time"]
 		tokens = data["tokens"]
 		deaths = data["deaths"]

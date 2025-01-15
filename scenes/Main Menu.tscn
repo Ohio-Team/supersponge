@@ -1,19 +1,21 @@
-[gd_scene load_steps=11 format=3 uid="uid://bkfis34nkbhyv"]
+[gd_scene load_steps=10 format=3 uid="uid://bkfis34nkbhyv"]
 
 [ext_resource type="Script" path="res://scripts/MainMenu.gd" id="1_cki2b"]
 [ext_resource type="FontFile" uid="uid://ia1v43t7vpqa" path="res://assets/fonts/Krabby Patty.ttf" id="1_jb0v5"]
-[ext_resource type="Shader" path="res://scripts/level2.gdshader" id="2_5lfgl"]
-[ext_resource type="Texture2D" uid="uid://b3ivago241erm" path="res://assets/2d/miscsprites/spongebob_squarepants_jpg.png" id="3_pulrp"]
 [ext_resource type="Script" path="res://scripts/MenuButton.gd" id="6_th7r2"]
 [ext_resource type="PackedScene" uid="uid://behgaq4jmvceh" path="res://scenes/2d/tutorial.tscn" id="7_oxu2a"]
 [ext_resource type="PackedScene" uid="uid://dhxbkh5627l1q" path="res://scenes/Options.tscn" id="8_72lj6"]
 [ext_resource type="Texture2D" uid="uid://lw1u60dv5x6a" path="res://assets/2d/miscsprites/ererreyy.png" id="8_ypp24"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_oplmi"]
-shader = ExtResource("2_5lfgl")
-shader_parameter/motion = Vector2(15, 0)
-shader_parameter/scale = 1.0
-shader_parameter/offset = Vector2(0, 190.755)
+[sub_resource type="Gradient" id="Gradient_ebsv8"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0, 0.522727, 1)
+colors = PackedColorArray(0, 0, 1, 1, 0.401515, 0.401515, 1, 1, 6.16074e-06, 0.733561, 0.528075, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_23esm"]
+gradient = SubResource("Gradient_ebsv8")
+fill_from = Vector2(0.0306122, 0.0357143)
+fill_to = Vector2(1, 1)
 
 [sub_resource type="GDScript" id="GDScript_4d45m"]
 resource_name = "load_button"
@@ -49,12 +51,10 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_cki2b")
 
-[node name="SpongebobSquarepantsJpg" type="Sprite2D" parent="."]
-texture_repeat = 2
-material = SubResource("ShaderMaterial_oplmi")
-position = Vector2(639.5, 360)
-scale = Vector2(0.86635, 1.88976)
-texture = ExtResource("3_pulrp")
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(20, 11.25)
+texture = SubResource("GradientTexture2D_23esm")
+centered = false
 
 [node name="Ererreyy" type="Sprite2D" parent="."]
 position = Vector2(640, 176)

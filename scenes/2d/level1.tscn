@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://wqoqonv86j4"]
+[gd_scene load_steps=25 format=3 uid="uid://wqoqonv86j4"]
 
 [ext_resource type="Script" path="res://scripts/level1.gd" id="1_huh3m"]
 [ext_resource type="Texture2D" uid="uid://fpk8y04uovju" path="res://assets/2d/miscsprites/busses.png" id="2_gkx4r"]
@@ -16,7 +16,6 @@
 [ext_resource type="PackedScene" uid="uid://ce47gwj7i6pua" path="res://scenes/2d/cutscene_1.tscn" id="8_xoxlf"]
 [ext_resource type="PackedScene" uid="uid://dolf5os2imxdu" path="res://scenes/2d/crazyfish.tscn" id="9_m2ma8"]
 [ext_resource type="PackedScene" uid="uid://cjoo6ilm8eim1" path="res://scenes/2d/spongebob2d.tscn" id="10_g8oo3"]
-[ext_resource type="PackedScene" uid="uid://bfev5tp3it5jo" path="res://scenes/2d/burger.tscn" id="11_ct6ny"]
 [ext_resource type="Texture2D" uid="uid://xy1y5ujgrqpt" path="res://assets/2d/miscsprites/3222222.png" id="16_wr076"]
 [ext_resource type="Texture2D" uid="uid://2xh0u7i4ouyr" path="res://assets/2d/miscsprites/truck.png" id="18_xq3ct"]
 [ext_resource type="Texture2D" uid="uid://84nu6b4ix10w" path="res://assets/2d/miscsprites/patrick.png" id="19_5d4hi"]
@@ -300,9 +299,6 @@ position = Vector2(3972, 463)
 
 [node name="Spatula21" parent="Collects" instance=ExtResource("7_6aubs")]
 position = Vector2(3873, 605)
-
-[node name="Burger" parent="Collects" instance=ExtResource("11_ct6ny")]
-position = Vector2(1961, 486)
 
 [node name="Spatula20" parent="Collects" instance=ExtResource("7_6aubs")]
 position = Vector2(4327, 598)
