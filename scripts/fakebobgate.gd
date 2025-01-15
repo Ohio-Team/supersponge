@@ -9,7 +9,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if Ui.joystick.y <= -0.1 and canopen:
+	if Input.is_action_just_pressed("jump") and canopen:
 		get_tree().change_scene_to_file("res://scenes/2d/fakebobfight.tscn")
 
 
