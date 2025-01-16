@@ -21,7 +21,8 @@ func _on_button_pressed() -> void:
 	$AnimationPlayer.play("flash")
 	$CanvasLayer/Button.disabled = true
 	$CanvasLayer/Button2.disabled = true
-	$CanvasLayer/Button3.disabled = true
+	if $CanvasLayer/Button3:
+		$CanvasLayer/Button3.disabled = true
 	Ui.create_dialog("You had one chance and you fucked up...","spongebob")
 	$ColorRect.show()
 	await Singleton.wait(3)
