@@ -145,10 +145,15 @@ shoot={
 [rendering]
 
 occlusion_culling/bvh_build_quality=0
+gl_compatibility/driver="opengl3_angle"
 gl_compatibility/driver.windows="opengl3_angle"
+gl_compatibility/driver.linuxbsd="opengl3_es"
+gl_compatibility/driver.macos="opengl3_angle"
+gl_compatibility/fallback_to_native=false
 textures/vram_compression/import_etc2_astc=true
 lights_and_shadows/directional_shadow/soft_shadow_filter_quality=3
 lights_and_shadows/directional_shadow/soft_shadow_filter_quality.mobile=3
 lights_and_shadows/positional_shadow/soft_shadow_filter_quality=3
 lights_and_shadows/positional_shadow/soft_shadow_filter_quality.mobile=3
+limits/opengl/max_renderable_lights=256
 occlusion_culling/use_occlusion_culling=true
