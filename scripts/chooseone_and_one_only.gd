@@ -24,12 +24,14 @@ func _on_button_pressed() -> void:
 	if $CanvasLayer/Button3:
 		$CanvasLayer/Button3.disabled = true
 	Ui.create_dialog("You had one chance and you fucked up...","spongebob")
+	MusicPlayer.stop_song()
 	$ColorRect.show()
 	await Singleton.wait(3)
 	get_tree().change_scene_to_file("res://scenes/2d/level4intro.tscn")
 
 
 func _on_button_2_pressed() -> void:
+	MusicPlayer.play_song("res://assets/music/fakebob-forgiven.ogg")
 	Ui.create_dialog("It's okay brother we all make mistakes")
 	await Singleton.wait(3)
 	Ui.create_dialog("Yay","fakebob")
