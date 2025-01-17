@@ -14,6 +14,7 @@ func _process(delta: float) -> void:
 
 
 func _on_button_pressed() -> void:
+	$CanvasLayer/RichTextLabel.hide()
 	BMOD.play_sfx(preload("res://assets/sfx/shoot.tres"))
 	BMOD.play_sfx(preload("res://assets/sfx/scream.tres"))
 	if $Fakebobhurt:
@@ -31,12 +32,27 @@ func _on_button_pressed() -> void:
 
 
 func _on_button_2_pressed() -> void:
+	$CanvasLayer/RichTextLabel.hide()
+	$CanvasLayer/Button.disabled = true
+	$CanvasLayer/Button2.disabled = true
+	if $CanvasLayer/Button3:
+		$CanvasLayer/Button3.disabled = true
 	MusicPlayer.play_song("res://assets/music/fakebob-forgiven.ogg")
 	Ui.create_dialog("It's okay brother we all make mistakes")
 	await Singleton.wait(3)
 	Ui.create_dialog("Yay","fakebob")
 	await Singleton.wait(3)
-	get_tree().quit()
+	MusicPlayer.stop_song()
+	$AnimationPlayer.play("flash")
+	BMOD.play_sfx(preload("res://assets/sfx/shoot.tres"))
+	BMOD.play_sfx(preload("res://assets/sfx/scream.tres"))
+	if $Fakebobhurt:
+		$Fakebobhurt.queue_free()
+	$ColorRect.show()
+	await Singleton.wait(2)
+	Ui.create_dialog("Oops.")
+	await Singleton.wait(3)
+	get_tree().change_scene_to_file("res://scenes/2d/level4intro.tscn")
 
 func _on_button_3_pressed() -> void:
 	OS.alert("Choose something boy")
