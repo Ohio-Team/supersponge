@@ -21,11 +21,13 @@ texture = ExtResource("2_f2vjb")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(74, 0)
 shape = SubResource("RectangleShape2D_lw4po")
+one_way_collision = true
 
 [node name="hit" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hit"]
 position = Vector2(74, -2.5)
 shape = SubResource("RectangleShape2D_wq1nf")
+one_way_collision = true
 
 [connection signal="body_entered" from="hit" to="." method="_on_hit_body_entered"]

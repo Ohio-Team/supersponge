@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=4 uid="uid://c68ldtwatsbr7"]
+[gd_scene load_steps=27 format=4 uid="uid://c68ldtwatsbr7"]
 
 [ext_resource type="Texture2D" uid="uid://culfcrnvqqsnd" path="res://assets/2d/tilesets/jail.png" id="1_75qt4"]
 [ext_resource type="Texture2D" uid="uid://c7wiwlmd3jby6" path="res://assets/3d/bikinibottom/textures/jf_sky_color_77.png" id="1_l1te2"]
@@ -20,7 +20,7 @@ script/source = "extends Node2D
 func _ready() -> void:
 	MusicPlayer.play_song(\"res://assets/music/escape.ogg\")
 	Ui.create_dialog(\"I need to GYATT out of here!\",\"spongebob\")
-	
+	Singleton.save_game()
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
@@ -164,6 +164,43 @@ func _on_body_entered(body: Node2D) -> void:
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vs8gd"]
 size = Vector2(75, 104)
 
+[sub_resource type="Animation" id="Animation_dj0na"]
+resource_name = "start"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Spongebob:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(4.28, 2.63465),
+"update": 0,
+"values": [Vector2(-433, 169), Vector2(0, -71)]
+}
+
+[sub_resource type="Animation" id="Animation_3qfaf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Spongebob:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-433, 169)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_iv0sw"]
+_data = {
+"RESET": SubResource("Animation_3qfaf"),
+"start": SubResource("Animation_dj0na")
+}
+
 [node name="Prisonescape" type="Node2D"]
 script = SubResource("GDScript_7i7c3")
 
@@ -187,7 +224,7 @@ tile_map_data = PackedByteArray("AAD9////AAABAAIAAAD9/wAAAAABAAMAAAD+////AAADAAI
 tile_set = SubResource("TileSet_u8s5p")
 
 [node name="Spongebob" parent="." instance=ExtResource("1_x7e1u")]
-position = Vector2(-72, 17)
+position = Vector2(-433, 169)
 
 [node name="Skatetoggle" type="Area2D" parent="."]
 position = Vector2(1175, 411)
@@ -264,6 +301,12 @@ position = Vector2(1408, 408)
 scale = Vector2(25.64, 1)
 text = "This Ye again press ATTACK to gain speed and press JUMP to jump. Now get out of here and do a little... [b]runaway.[b]"
 Character = "kanye"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_iv0sw")
+}
+autoplay = "start"
 
 [connection signal="body_entered" from="Skatetoggle" to="Skatetoggle" method="_on_body_entered"]
 [connection signal="body_entered" from="Spongebobhouse/Area2D" to="." method="_on_area_2d_body_entered"]
