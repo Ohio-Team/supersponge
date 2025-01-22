@@ -486,8 +486,8 @@ size = Vector2(12, 30)
 
 [node name="Spongebob" type="CharacterBody2D" groups=["Player"]]
 input_pickable = true
-floor_constant_speed = true
 floor_max_angle = 1.0472
+platform_on_leave = 1
 script = ExtResource("1_uyiiv")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

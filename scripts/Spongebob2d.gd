@@ -108,7 +108,7 @@ func _physics_process(delta):
 		acceleration = lerpf(acceleration, 0, delta * 8)
 	if velocity.x != 0 and anim.animation != "jump" and anim.animation != "fall" and anim.animation != "groundpound" and anim.animation != "hurt" and anim.animation != "attack" and state != "dying":
 		anim.play("run")
-		if !$Walk.playing:
+		if !$Walk.playing and is_on_floor():
 			$Walk.play()
 		state = "walking"
 	if velocity.x == 0 and velocity.y == 0 and anim.animation != "attack" and state != "dying":

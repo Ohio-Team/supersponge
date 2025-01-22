@@ -168,7 +168,10 @@ func _unhandled_input(event):
 		camera_horizontal_rotation_deg += event.relative.x * 0.1 * mouse_x_sensitiveness
 		camera_tilt_deg -= event.relative.y * 0.07 * mouse_y_sensitiveness
 		return
-
+	if event is InputEventJoypadMotion:
+		camera_horizontal_rotation_deg +=  Input.get_joy_axis(0,JOY_AXIS_RIGHT_X)
+		camera_tilt_deg -= Input.get_joy_axis(0,JOY_AXIS_RIGHT_Y)
+		return
 	pass
 
 

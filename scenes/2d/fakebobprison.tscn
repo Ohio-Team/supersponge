@@ -1,7 +1,6 @@
-[gd_scene load_steps=38 format=3 uid="uid://dlpkwjto5urxn"]
+[gd_scene load_steps=29 format=3 uid="uid://dlpkwjto5urxn"]
 
-[ext_resource type="Script" path="res://scripts/fakebob.gd" id="1_4kskl"]
-[ext_resource type="Shader" path="res://scripts/flash.gdshader" id="2_exoty"]
+[ext_resource type="Script" path="res://scripts/fakebobprison.gd" id="1_v5jvp"]
 [ext_resource type="Texture2D" uid="uid://cs3x1llb7ihsh" path="res://assets/2d/fakebob/fakeattack1.png" id="3_4o2sd"]
 [ext_resource type="Texture2D" uid="uid://dxhegfepd27ah" path="res://assets/2d/fakebob/fakeattack2.png" id="4_2btq2"]
 [ext_resource type="Texture2D" uid="uid://l6ruy2ijyvpo" path="res://assets/2d/fakebob/fakeattack3.png" id="5_r1uty"]
@@ -26,15 +25,6 @@
 [ext_resource type="Texture2D" uid="uid://clq51s1in7ckf" path="res://assets/2d/fakebob/fakejump2.png" id="24_ucagw"]
 [ext_resource type="Texture2D" uid="uid://ccc47anr70apd" path="res://assets/2d/fakebob/fakejump3.png" id="25_of6cp"]
 [ext_resource type="Texture2D" uid="uid://ds8htsghftxji" path="res://assets/2d/fakebob/fakejump4.png" id="26_rbxf7"]
-[ext_resource type="Script" path="res://scripts/StateMachine.gd" id="27_h6k6y"]
-[ext_resource type="Script" path="res://scripts/states/FakebobIdle.gd" id="28_pmtsw"]
-[ext_resource type="Script" path="res://scripts/states/FakebobAttack.gd" id="29_kahpb"]
-[ext_resource type="Script" path="res://scripts/states/Fakebobhurt.gd" id="30_4c4db"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ooph5"]
-shader = ExtResource("2_exoty")
-shader_parameter/flash_color = Color(1, 1, 1, 1)
-shader_parameter/flash_value = 0.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1a6kk"]
 animations = [{
@@ -193,66 +183,6 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="Animation" id="Animation_mynlq"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:material:shader_parameter/flash_color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:material:shader_parameter/flash_value")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-
-[sub_resource type="Animation" id="Animation_b1bmm"]
-resource_name = "flash"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:material:shader_parameter/flash_color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:material:shader_parameter/flash_value")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667, 0.333333, 0.4, 0.466667, 0.533333, 0.6, 0.666667, 0.733333, 0.8, 0.866667, 0.933333),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [0.0, 1.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 0.0]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_hntw4"]
-_data = {
-"RESET": SubResource("Animation_mynlq"),
-"flash": SubResource("Animation_b1bmm")
-}
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hc5y4"]
 size = Vector2(20, 31)
 
@@ -260,20 +190,14 @@ size = Vector2(20, 31)
 size = Vector2(22, 33)
 
 [node name="Fakebob" type="CharacterBody2D"]
-script = ExtResource("1_4kskl")
+script = ExtResource("1_v5jvp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-material = SubResource("ShaderMaterial_ooph5")
 sprite_frames = SubResource("SpriteFrames_1a6kk")
 animation = &"jump"
 autoplay = "default"
 frame_progress = 0.900545
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatedSprite2D"]
-libraries = {
-"": SubResource("AnimationLibrary_hntw4")
-}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1.5)
@@ -286,19 +210,6 @@ path_desired_distance = 10.0
 wait_time = 0.1
 autostart = true
 
-[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
-script = ExtResource("27_h6k6y")
-initial_state = NodePath("Idle")
-
-[node name="Idle" type="Node" parent="StateMachine"]
-script = ExtResource("28_pmtsw")
-
-[node name="Attack" type="Node" parent="StateMachine"]
-script = ExtResource("29_kahpb")
-
-[node name="Hurt" type="Node" parent="StateMachine"]
-script = ExtResource("30_4c4db")
-
 [node name="Area2D" type="Area2D" parent="."]
 input_pickable = false
 
@@ -306,6 +217,6 @@ input_pickable = false
 position = Vector2(0, 1.5)
 shape = SubResource("RectangleShape2D_4agns")
 
-[connection signal="timeout" from="NavTimer" to="StateMachine/Idle" method="_on_navtimer_timeout"]
-[connection signal="area_entered" from="Area2D" to="StateMachine/Idle" method="_on_area_2d_area_entered"]
-[connection signal="body_entered" from="Area2D" to="StateMachine/Idle" method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="NavTimer" to="." method="_on_navtimer_timeout"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

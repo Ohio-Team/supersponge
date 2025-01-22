@@ -1,10 +1,12 @@
-[gd_scene load_steps=10 format=3 uid="uid://bkfis34nkbhyv"]
+[gd_scene load_steps=53 format=3 uid="uid://bkfis34nkbhyv"]
 
 [ext_resource type="Script" path="res://scripts/MainMenu.gd" id="1_cki2b"]
 [ext_resource type="FontFile" uid="uid://ia1v43t7vpqa" path="res://assets/fonts/Krabby Patty.ttf" id="1_jb0v5"]
 [ext_resource type="Script" path="res://scripts/MenuButton.gd" id="6_th7r2"]
+[ext_resource type="Texture2D" uid="uid://dr3eskctiurf" path="res://assets/2d/miscsprites/panel.png" id="6_xfwtr"]
 [ext_resource type="PackedScene" uid="uid://behgaq4jmvceh" path="res://scenes/2d/tutorial.tscn" id="7_oxu2a"]
 [ext_resource type="PackedScene" uid="uid://dhxbkh5627l1q" path="res://scenes/Options.tscn" id="8_72lj6"]
+[ext_resource type="PackedScene" uid="uid://c6wbocp76dh62" path="res://scenes/2d/level_select.tscn" id="8_fno0c"]
 [ext_resource type="Texture2D" uid="uid://lw1u60dv5x6a" path="res://assets/2d/miscsprites/ererreyy.png" id="8_ypp24"]
 
 [sub_resource type="Gradient" id="Gradient_ebsv8"]
@@ -16,6 +18,86 @@ colors = PackedColorArray(0, 0, 1, 1, 0.401515, 0.401515, 1, 1, 6.16074e-06, 0.7
 gradient = SubResource("Gradient_ebsv8")
 fill_from = Vector2(0.0306122, 0.0357143)
 fill_to = Vector2(1, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8v5ii"]
+texture = ExtResource("6_xfwtr")
+modulate_color = Color(0.31802, 0.31802, 0.31802, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j4a3m"]
+texture = ExtResource("6_xfwtr")
+modulate_color = Color(0.31802, 0.31802, 0.31802, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wlrvg"]
+texture = ExtResource("6_xfwtr")
+modulate_color = Color(0.31802, 0.31802, 0.31802, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_prbnt"]
+texture = ExtResource("6_xfwtr")
+modulate_color = Color(0.31802, 0.31802, 0.31802, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ptpt0"]
+texture = ExtResource("6_xfwtr")
+modulate_color = Color(0.31802, 0.31802, 0.31802, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6mjld"]
+texture = ExtResource("6_xfwtr")
+modulate_color = Color(0.31802, 0.31802, 0.31802, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bebun"]
+texture = ExtResource("6_xfwtr")
+modulate_color = Color(0.31802, 0.31802, 0.31802, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5ud2a"]
+texture = ExtResource("6_xfwtr")
+modulate_color = Color(0.31802, 0.31802, 0.31802, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_an2ii"]
+texture = ExtResource("6_xfwtr")
+modulate_color = Color(0.31802, 0.31802, 0.31802, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_f33oe"]
+texture = ExtResource("6_xfwtr")
+modulate_color = Color(0.31802, 0.31802, 0.31802, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8eiym"]
+texture = ExtResource("6_xfwtr")
+modulate_color = Color(0.31802, 0.31802, 0.31802, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_24pf0"]
+texture = ExtResource("6_xfwtr")
+modulate_color = Color(0.31802, 0.31802, 0.31802, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dfj3b"]
+texture = ExtResource("6_xfwtr")
+modulate_color = Color(0.31802, 0.31802, 0.31802, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r4cjk"]
+texture = ExtResource("6_xfwtr")
+modulate_color = Color(0.31802, 0.31802, 0.31802, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kiahc"]
+texture = ExtResource("6_xfwtr")
+modulate_color = Color(0.31802, 0.31802, 0.31802, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5673y"]
+texture = ExtResource("6_xfwtr")
+modulate_color = Color(0.31802, 0.31802, 0.31802, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qymsx"]
+texture = ExtResource("6_xfwtr")
+modulate_color = Color(0.31802, 0.31802, 0.31802, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gbabi"]
+texture = ExtResource("6_xfwtr")
+modulate_color = Color(0.31802, 0.31802, 0.31802, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2xeyn"]
+texture = ExtResource("6_xfwtr")
+modulate_color = Color(0.31802, 0.31802, 0.31802, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4usr2"]
+texture = ExtResource("6_xfwtr")
+modulate_color = Color(0.31802, 0.31802, 0.31802, 1)
 
 [sub_resource type="GDScript" id="GDScript_4d45m"]
 resource_name = "load_button"
@@ -33,14 +115,97 @@ func _process(delta: float) -> void:
 
 
 func _on_pressed() -> void:
-	Singleton.inmenu = false
 	Singleton.load_game()
-	
-
+	if not FileAccess.file_exists(\"user://tom.save\"):
+		Singleton.inmenu = true
 
 func _on_mouse_entered() -> void:
 	BMOD.play_sfx(preload(\"res://assets/sfx/menumove.tres\"))
 "
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cloqg"]
+texture = ExtResource("6_xfwtr")
+modulate_color = Color(0.31802, 0.31802, 0.31802, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r1v7w"]
+texture = ExtResource("6_xfwtr")
+modulate_color = Color(0.31802, 0.31802, 0.31802, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_alrdl"]
+texture = ExtResource("6_xfwtr")
+modulate_color = Color(0.31802, 0.31802, 0.31802, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_i872a"]
+texture = ExtResource("6_xfwtr")
+modulate_color = Color(0.31802, 0.31802, 0.31802, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ssfvn"]
+texture = ExtResource("6_xfwtr")
+modulate_color = Color(0.31802, 0.31802, 0.31802, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vg30o"]
+texture = ExtResource("6_xfwtr")
+modulate_color = Color(0.31802, 0.31802, 0.31802, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tmrpa"]
+texture = ExtResource("6_xfwtr")
+modulate_color = Color(0.31802, 0.31802, 0.31802, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_b0phl"]
+texture = ExtResource("6_xfwtr")
+modulate_color = Color(0.31802, 0.31802, 0.31802, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5jo20"]
+texture = ExtResource("6_xfwtr")
+modulate_color = Color(0.31802, 0.31802, 0.31802, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nci4k"]
+texture = ExtResource("6_xfwtr")
+modulate_color = Color(0.31802, 0.31802, 0.31802, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_co1ej"]
+texture = ExtResource("6_xfwtr")
+modulate_color = Color(0.31802, 0.31802, 0.31802, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_racbi"]
+texture = ExtResource("6_xfwtr")
+modulate_color = Color(0.31802, 0.31802, 0.31802, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0b2nq"]
+texture = ExtResource("6_xfwtr")
+modulate_color = Color(0.31802, 0.31802, 0.31802, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_krm0r"]
+texture = ExtResource("6_xfwtr")
+modulate_color = Color(0.31802, 0.31802, 0.31802, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5wt65"]
+texture = ExtResource("6_xfwtr")
+modulate_color = Color(0.31802, 0.31802, 0.31802, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2mivj"]
+texture = ExtResource("6_xfwtr")
+modulate_color = Color(0.31802, 0.31802, 0.31802, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fatkb"]
+texture = ExtResource("6_xfwtr")
+modulate_color = Color(0.31802, 0.31802, 0.31802, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ave8q"]
+texture = ExtResource("6_xfwtr")
+modulate_color = Color(0.31802, 0.31802, 0.31802, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_psryk"]
+texture = ExtResource("6_xfwtr")
+modulate_color = Color(0.31802, 0.31802, 0.31802, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_f20dx"]
+texture = ExtResource("6_xfwtr")
+modulate_color = Color(0.31802, 0.31802, 0.31802, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4e6vd"]
+texture = ExtResource("6_xfwtr")
+modulate_color = Color(0.31802, 0.31802, 0.31802, 1)
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -86,6 +251,16 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("1_jb0v5")
 theme_override_font_sizes/font_size = 35
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxTexture_8v5ii")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_j4a3m")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxTexture_wlrvg")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_prbnt")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxTexture_ptpt0")
+theme_override_styles/hover = SubResource("StyleBoxTexture_6mjld")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_bebun")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_5ud2a")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_an2ii")
+theme_override_styles/normal = SubResource("StyleBoxTexture_f33oe")
 text = "New Game"
 script = ExtResource("6_th7r2")
 scene = ExtResource("7_oxu2a")
@@ -104,6 +279,16 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("1_jb0v5")
 theme_override_font_sizes/font_size = 35
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxTexture_8eiym")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_24pf0")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxTexture_dfj3b")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_r4cjk")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxTexture_kiahc")
+theme_override_styles/hover = SubResource("StyleBoxTexture_5673y")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_qymsx")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_gbabi")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_2xeyn")
+theme_override_styles/normal = SubResource("StyleBoxTexture_4usr2")
 text = "Continue"
 script = SubResource("GDScript_4d45m")
 
@@ -121,9 +306,50 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("1_jb0v5")
 theme_override_font_sizes/font_size = 33
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxTexture_cloqg")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_r1v7w")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxTexture_alrdl")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_i872a")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxTexture_ssfvn")
+theme_override_styles/hover = SubResource("StyleBoxTexture_vg30o")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_tmrpa")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_b0phl")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_5jo20")
+theme_override_styles/normal = SubResource("StyleBoxTexture_nci4k")
 text = "Options"
 script = ExtResource("6_th7r2")
 scene = ExtResource("8_72lj6")
+
+[node name="Menu_Button4" type="Button" parent="Buttons"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 139.0
+offset_top = 160.0
+offset_right = 369.0
+offset_bottom = 224.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_jb0v5")
+theme_override_font_sizes/font_size = 33
+theme_override_styles/focus = SubResource("StyleBoxTexture_co1ej")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxTexture_racbi")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_0b2nq")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxTexture_krm0r")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_5wt65")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxTexture_2mivj")
+theme_override_styles/hover = SubResource("StyleBoxTexture_fatkb")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_ave8q")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_psryk")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_f20dx")
+theme_override_styles/normal = SubResource("StyleBoxTexture_4e6vd")
+disabled = true
+text = "Level Select"
+script = ExtResource("6_th7r2")
+scene = ExtResource("8_fno0c")
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="."]
 layout_mode = 0
@@ -141,3 +367,4 @@ text = "[wave][rainbow]TAP TO START"
 [connection signal="mouse_entered" from="Buttons/Menu_Button" to="Buttons/Menu_Button" method="_on_mouse_entered"]
 [connection signal="pressed" from="Buttons/Menu_Button" to="Buttons/Menu_Button" method="_on_pressed"]
 [connection signal="mouse_entered" from="Buttons/Menu_Button2" to="Buttons/Menu_Button2" method="_on_mouse_entered"]
+[connection signal="mouse_entered" from="Buttons/Menu_Button4" to="Buttons/Menu_Button4" method="_on_mouse_entered"]

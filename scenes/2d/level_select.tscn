@@ -1,0 +1,443 @@
+[gd_scene load_steps=35 format=3 uid="uid://c6wbocp76dh62"]
+
+[ext_resource type="Script" path="res://scripts/level_select.gd" id="1_36kt1"]
+[ext_resource type="Texture2D" uid="uid://dr3eskctiurf" path="res://assets/2d/miscsprites/panel.png" id="2_5eeww"]
+[ext_resource type="Script" path="res://scripts/MenuButton.gd" id="3_c521u"]
+[ext_resource type="PackedScene" uid="uid://behgaq4jmvceh" path="res://scenes/2d/tutorial.tscn" id="4_o7rsb"]
+[ext_resource type="PackedScene" uid="uid://wqoqonv86j4" path="res://scenes/2d/level1.tscn" id="5_2yd1k"]
+[ext_resource type="PackedScene" uid="uid://b2bv5n6x7m2da" path="res://scenes/2d/level2.tscn" id="6_1ul6i"]
+[ext_resource type="PackedScene" uid="uid://bnyal22s58ujp" path="res://scenes/2d/fakebobfight.tscn" id="7_bbdx3"]
+[ext_resource type="FontFile" uid="uid://ia1v43t7vpqa" path="res://assets/fonts/Krabby Patty.ttf" id="8_ha3x3"]
+[ext_resource type="PackedScene" uid="uid://k6460ynggk43" path="res://scenes/3d/level_4.tscn" id="8_qx4s8"]
+[ext_resource type="PackedScene" uid="uid://bxcfx81na4cys" path="res://scenes/2d/bart_bash.tscn" id="9_jq0yf"]
+[ext_resource type="PackedScene" uid="uid://coebr5rjm8gg0" path="res://scenes/3d/level6.tscn" id="10_w0f23"]
+[ext_resource type="PackedScene" uid="uid://ck0qyhot143g8" path="res://scenes/3d/gasstation.tscn" id="11_5tlrf"]
+[ext_resource type="PackedScene" uid="uid://hn8oy18sog1j" path="res://scenes/2d/mariohouse.tscn" id="12_l3fgd"]
+[ext_resource type="PackedScene" uid="uid://dyk3m0ilabu4e" path="res://scenes/3d/maze.tscn" id="13_xe3op"]
+[ext_resource type="PackedScene" uid="uid://fi1roct1auwg" path="res://scenes/2d/angrybirds.tscn" id="14_g65pb"]
+[ext_resource type="PackedScene" uid="uid://dbfmy7gxj813y" path="res://scenes/3d/bossfight3d.tscn" id="15_ly17m"]
+[ext_resource type="PackedScene" uid="uid://dqcaakf56af8d" path="res://scenes/2d/jail_cell.tscn" id="16_dxpav"]
+[ext_resource type="PackedScene" uid="uid://byaafw2p71v8i" path="res://scenes/2d/prison.tscn" id="17_e70q3"]
+[ext_resource type="PackedScene" uid="uid://c5jkxe2gm5xsh" path="res://scenes/2d/prisonescape_3.tscn" id="18_v1y5x"]
+[ext_resource type="PackedScene" uid="uid://c7qx4vicwr8cx" path="res://scenes/2d/shootdown.tscn" id="19_dcswy"]
+
+[sub_resource type="Gradient" id="Gradient_ebsv8"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0, 0.522727, 1)
+colors = PackedColorArray(0, 0, 1, 1, 0.401515, 0.401515, 1, 1, 6.16074e-06, 0.733561, 0.528075, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_1ckt3"]
+gradient = SubResource("Gradient_ebsv8")
+fill_from = Vector2(0.0306122, 0.0357143)
+fill_to = Vector2(1, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mbp4n"]
+texture = ExtResource("2_5eeww")
+modulate_color = Color(0.31802, 0.31802, 0.31802, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_i2rlj"]
+texture = ExtResource("2_5eeww")
+modulate_color = Color(0.31802, 0.31802, 0.31802, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_30kkk"]
+texture = ExtResource("2_5eeww")
+modulate_color = Color(0.31802, 0.31802, 0.31802, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_aptqv"]
+texture = ExtResource("2_5eeww")
+modulate_color = Color(0.31802, 0.31802, 0.31802, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4eubg"]
+texture = ExtResource("2_5eeww")
+modulate_color = Color(0.31802, 0.31802, 0.31802, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_30f8t"]
+texture = ExtResource("2_5eeww")
+modulate_color = Color(0.31802, 0.31802, 0.31802, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pmlg0"]
+texture = ExtResource("2_5eeww")
+modulate_color = Color(0.31802, 0.31802, 0.31802, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3ss5b"]
+texture = ExtResource("2_5eeww")
+modulate_color = Color(0.31802, 0.31802, 0.31802, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qdsbd"]
+texture = ExtResource("2_5eeww")
+modulate_color = Color(0.31802, 0.31802, 0.31802, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ub48h"]
+texture = ExtResource("2_5eeww")
+modulate_color = Color(0.31802, 0.31802, 0.31802, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1xted"]
+texture = ExtResource("2_5eeww")
+modulate_color = Color(0.31802, 0.31802, 0.31802, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jh7ik"]
+bg_color = Color(0.144063, 0.144063, 0.144062, 0.501961)
+
+[node name="LevelSelect" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_36kt1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(20, 11.25)
+texture = SubResource("GradientTexture2D_1ckt3")
+centered = false
+
+[node name="Menu_Button17" type="Button" parent="."]
+layout_mode = 2
+offset_left = 505.0
+offset_top = 639.0
+offset_right = 729.0
+offset_bottom = 684.0
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 32
+theme_override_styles/focus = SubResource("StyleBoxTexture_mbp4n")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxTexture_i2rlj")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_30kkk")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxTexture_aptqv")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_4eubg")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxTexture_30f8t")
+theme_override_styles/hover = SubResource("StyleBoxTexture_pmlg0")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_3ss5b")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_qdsbd")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_ub48h")
+theme_override_styles/normal = SubResource("StyleBoxTexture_1xted")
+text = "Back"
+
+[node name="BoxContainer" type="ScrollContainer" parent="."]
+layout_mode = 2
+offset_left = 284.0
+offset_top = 193.0
+offset_right = 940.0
+offset_bottom = 576.0
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_jh7ik")
+follow_focus = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Menu_Button" type="Button" parent="BoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 32
+theme_override_styles/focus = SubResource("StyleBoxTexture_mbp4n")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxTexture_i2rlj")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_30kkk")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxTexture_aptqv")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_4eubg")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxTexture_30f8t")
+theme_override_styles/hover = SubResource("StyleBoxTexture_pmlg0")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_3ss5b")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_qdsbd")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_ub48h")
+theme_override_styles/normal = SubResource("StyleBoxTexture_1xted")
+text = "Tutorial"
+script = ExtResource("3_c521u")
+scene = ExtResource("4_o7rsb")
+
+[node name="Menu_Button2" type="Button" parent="BoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 32
+theme_override_styles/focus = SubResource("StyleBoxTexture_mbp4n")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxTexture_i2rlj")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_30kkk")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxTexture_aptqv")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_4eubg")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxTexture_30f8t")
+theme_override_styles/hover = SubResource("StyleBoxTexture_pmlg0")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_3ss5b")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_qdsbd")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_ub48h")
+theme_override_styles/normal = SubResource("StyleBoxTexture_1xted")
+text = "Level 1"
+script = ExtResource("3_c521u")
+scene = ExtResource("5_2yd1k")
+
+[node name="Menu_Button3" type="Button" parent="BoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 32
+theme_override_styles/focus = SubResource("StyleBoxTexture_mbp4n")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxTexture_i2rlj")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_30kkk")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxTexture_aptqv")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_4eubg")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxTexture_30f8t")
+theme_override_styles/hover = SubResource("StyleBoxTexture_pmlg0")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_3ss5b")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_qdsbd")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_ub48h")
+theme_override_styles/normal = SubResource("StyleBoxTexture_1xted")
+text = "Level 2"
+script = ExtResource("3_c521u")
+scene = ExtResource("6_1ul6i")
+
+[node name="Menu_Button4" type="Button" parent="BoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 32
+theme_override_styles/focus = SubResource("StyleBoxTexture_mbp4n")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxTexture_i2rlj")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_30kkk")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxTexture_aptqv")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_4eubg")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxTexture_30f8t")
+theme_override_styles/hover = SubResource("StyleBoxTexture_pmlg0")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_3ss5b")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_qdsbd")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_ub48h")
+theme_override_styles/normal = SubResource("StyleBoxTexture_1xted")
+text = "     Fake Bob     "
+script = ExtResource("3_c521u")
+scene = ExtResource("7_bbdx3")
+
+[node name="Menu_Button5" type="Button" parent="BoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 32
+theme_override_styles/focus = SubResource("StyleBoxTexture_mbp4n")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxTexture_i2rlj")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_30kkk")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxTexture_aptqv")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_4eubg")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxTexture_30f8t")
+theme_override_styles/hover = SubResource("StyleBoxTexture_pmlg0")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_3ss5b")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_qdsbd")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_ub48h")
+theme_override_styles/normal = SubResource("StyleBoxTexture_1xted")
+text = "Level 4"
+script = ExtResource("3_c521u")
+scene = ExtResource("8_qx4s8")
+
+[node name="Menu_Button6" type="Button" parent="BoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 32
+theme_override_styles/focus = SubResource("StyleBoxTexture_mbp4n")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxTexture_i2rlj")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_30kkk")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxTexture_aptqv")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_4eubg")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxTexture_30f8t")
+theme_override_styles/hover = SubResource("StyleBoxTexture_pmlg0")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_3ss5b")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_qdsbd")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_ub48h")
+theme_override_styles/normal = SubResource("StyleBoxTexture_1xted")
+text = "Bart Bash"
+script = ExtResource("3_c521u")
+scene = ExtResource("9_jq0yf")
+
+[node name="Menu_Button7" type="Button" parent="BoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 32
+theme_override_styles/focus = SubResource("StyleBoxTexture_mbp4n")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxTexture_i2rlj")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_30kkk")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxTexture_aptqv")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_4eubg")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxTexture_30f8t")
+theme_override_styles/hover = SubResource("StyleBoxTexture_pmlg0")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_3ss5b")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_qdsbd")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_ub48h")
+theme_override_styles/normal = SubResource("StyleBoxTexture_1xted")
+text = "Level 6"
+script = ExtResource("3_c521u")
+scene = ExtResource("10_w0f23")
+
+[node name="Menu_Button8" type="Button" parent="BoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 32
+theme_override_styles/focus = SubResource("StyleBoxTexture_mbp4n")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxTexture_i2rlj")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_30kkk")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxTexture_aptqv")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_4eubg")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxTexture_30f8t")
+theme_override_styles/hover = SubResource("StyleBoxTexture_pmlg0")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_3ss5b")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_qdsbd")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_ub48h")
+theme_override_styles/normal = SubResource("StyleBoxTexture_1xted")
+text = "Gas Station"
+script = ExtResource("3_c521u")
+scene = ExtResource("11_5tlrf")
+
+[node name="Menu_Button9" type="Button" parent="BoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 32
+theme_override_styles/focus = SubResource("StyleBoxTexture_mbp4n")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxTexture_i2rlj")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_30kkk")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxTexture_aptqv")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_4eubg")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxTexture_30f8t")
+theme_override_styles/hover = SubResource("StyleBoxTexture_pmlg0")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_3ss5b")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_qdsbd")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_ub48h")
+theme_override_styles/normal = SubResource("StyleBoxTexture_1xted")
+text = "Mario's House"
+script = ExtResource("3_c521u")
+scene = ExtResource("12_l3fgd")
+
+[node name="Menu_Button10" type="Button" parent="BoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 32
+theme_override_styles/focus = SubResource("StyleBoxTexture_mbp4n")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxTexture_i2rlj")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_30kkk")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxTexture_aptqv")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_4eubg")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxTexture_30f8t")
+theme_override_styles/hover = SubResource("StyleBoxTexture_pmlg0")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_3ss5b")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_qdsbd")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_ub48h")
+theme_override_styles/normal = SubResource("StyleBoxTexture_1xted")
+text = "Maze"
+script = ExtResource("3_c521u")
+scene = ExtResource("13_xe3op")
+
+[node name="Menu_Button11" type="Button" parent="BoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 32
+theme_override_styles/focus = SubResource("StyleBoxTexture_mbp4n")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxTexture_i2rlj")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_30kkk")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxTexture_aptqv")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_4eubg")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxTexture_30f8t")
+theme_override_styles/hover = SubResource("StyleBoxTexture_pmlg0")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_3ss5b")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_qdsbd")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_ub48h")
+theme_override_styles/normal = SubResource("StyleBoxTexture_1xted")
+text = "Angry Birds"
+script = ExtResource("3_c521u")
+scene = ExtResource("14_g65pb")
+
+[node name="Menu_Button12" type="Button" parent="BoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 32
+theme_override_styles/focus = SubResource("StyleBoxTexture_mbp4n")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxTexture_i2rlj")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_30kkk")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxTexture_aptqv")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_4eubg")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxTexture_30f8t")
+theme_override_styles/hover = SubResource("StyleBoxTexture_pmlg0")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_3ss5b")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_qdsbd")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_ub48h")
+theme_override_styles/normal = SubResource("StyleBoxTexture_1xted")
+text = "Ohio Monster"
+script = ExtResource("3_c521u")
+scene = ExtResource("15_ly17m")
+
+[node name="Menu_Button13" type="Button" parent="BoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 32
+theme_override_styles/focus = SubResource("StyleBoxTexture_mbp4n")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxTexture_i2rlj")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_30kkk")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxTexture_aptqv")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_4eubg")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxTexture_30f8t")
+theme_override_styles/hover = SubResource("StyleBoxTexture_pmlg0")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_3ss5b")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_qdsbd")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_ub48h")
+theme_override_styles/normal = SubResource("StyleBoxTexture_1xted")
+text = "Jail Cell"
+script = ExtResource("3_c521u")
+scene = ExtResource("16_dxpav")
+
+[node name="Menu_Button14" type="Button" parent="BoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 32
+theme_override_styles/focus = SubResource("StyleBoxTexture_mbp4n")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxTexture_i2rlj")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_30kkk")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxTexture_aptqv")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_4eubg")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxTexture_30f8t")
+theme_override_styles/hover = SubResource("StyleBoxTexture_pmlg0")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_3ss5b")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_qdsbd")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_ub48h")
+theme_override_styles/normal = SubResource("StyleBoxTexture_1xted")
+text = "Prison"
+script = ExtResource("3_c521u")
+scene = ExtResource("17_e70q3")
+
+[node name="Menu_Button15" type="Button" parent="BoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 32
+theme_override_styles/focus = SubResource("StyleBoxTexture_mbp4n")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxTexture_i2rlj")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_30kkk")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxTexture_aptqv")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_4eubg")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxTexture_30f8t")
+theme_override_styles/hover = SubResource("StyleBoxTexture_pmlg0")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_3ss5b")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_qdsbd")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_ub48h")
+theme_override_styles/normal = SubResource("StyleBoxTexture_1xted")
+text = "Escape"
+script = ExtResource("3_c521u")
+scene = ExtResource("18_v1y5x")
+
+[node name="Menu_Button16" type="Button" parent="BoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 32
+theme_override_styles/focus = SubResource("StyleBoxTexture_mbp4n")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxTexture_i2rlj")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_30kkk")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxTexture_aptqv")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_4eubg")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxTexture_30f8t")
+theme_override_styles/hover = SubResource("StyleBoxTexture_pmlg0")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_3ss5b")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_qdsbd")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_ub48h")
+theme_override_styles/normal = SubResource("StyleBoxTexture_1xted")
+text = "Shootdown"
+script = ExtResource("3_c521u")
+scene = ExtResource("19_dcswy")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 466.0
+offset_top = 138.0
+offset_right = 705.0
+offset_bottom = 178.0
+theme_override_constants/outline_size = 10
+theme_override_fonts/normal_font = ExtResource("8_ha3x3")
+theme_override_font_sizes/normal_font_size = 27
+bbcode_enabled = true
+text = "[center]LEVEL SELECT"
+
+[connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]
+[connection signal="pressed" from="Menu_Button17" to="." method="_on_menu_button_17_pressed"]

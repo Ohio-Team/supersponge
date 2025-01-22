@@ -8,6 +8,7 @@ extends Node
 @export var inmenu:bool = false
 @export var showfps:bool = false
 @export var showspeedrun:bool = false
+@export var gamebeaten:bool = false
 @export var fullscreen:bool = false
 @export var health:int = 3
 @export var mouse_sensitivity:float = 1
@@ -47,7 +48,8 @@ func save_elements():
 		"health" : health,
 		"time" : Ui.time,
 		"tokens" : tokens,
-		"deaths" : deaths
+		"deaths" : deaths,
+		"gamebeaten" : gamebeaten
 	}
 	return save_dict
 func save_game():
@@ -75,6 +77,7 @@ func load_game():
 		health = data["health"]
 		spatulas = data["spatulas"]
 		Ui.time = data["time"]
+		gamebeaten = data["gamebeaten"]
 		tokens = data["tokens"]
 		deaths = data["deaths"]
 		get_tree().change_scene_to_file(data["current_scene"])

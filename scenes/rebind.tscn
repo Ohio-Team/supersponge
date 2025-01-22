@@ -1,6 +1,35 @@
-[gd_scene load_steps=2 format=3 uid="uid://cnnghhi78bxjd"]
+[gd_scene load_steps=10 format=3 uid="uid://cnnghhi78bxjd"]
 
 [ext_resource type="Script" path="res://scripts/rebind.gd" id="1_4o3a6"]
+[ext_resource type="Texture2D" uid="uid://dr3eskctiurf" path="res://assets/2d/miscsprites/panel.png" id="2_sqxws"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gd1ba"]
+texture = ExtResource("2_sqxws")
+modulate_color = Color(0.31802, 0.31802, 0.31802, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bato8"]
+texture = ExtResource("2_sqxws")
+modulate_color = Color(0.31802, 0.31802, 0.31802, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yg5y8"]
+texture = ExtResource("2_sqxws")
+modulate_color = Color(0.31802, 0.31802, 0.31802, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jtovq"]
+texture = ExtResource("2_sqxws")
+modulate_color = Color(0.31802, 0.31802, 0.31802, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_way1a"]
+texture = ExtResource("2_sqxws")
+modulate_color = Color(0.31802, 0.31802, 0.31802, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tgosk"]
+texture = ExtResource("2_sqxws")
+modulate_color = Color(0.31802, 0.31802, 0.31802, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_h0uyu"]
+texture = ExtResource("2_sqxws")
+modulate_color = Color(0.31802, 0.31802, 0.31802, 1)
 
 [node name="Rebind" type="Control" groups=["rebind_button"]]
 layout_mode = 3
@@ -27,6 +56,13 @@ theme_override_constants/separation = 32
 [node name="Button" type="Button" parent="HBoxContainer"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxTexture_gd1ba")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_bato8")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxTexture_yg5y8")
+theme_override_styles/hover = SubResource("StyleBoxTexture_jtovq")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_way1a")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_tgosk")
+theme_override_styles/normal = SubResource("StyleBoxTexture_h0uyu")
 toggle_mode = true
 text = "Action_button"
 
