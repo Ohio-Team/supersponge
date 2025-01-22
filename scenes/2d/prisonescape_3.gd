@@ -4,8 +4,6 @@ extends Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Singleton.save_game()
-	DiscordRPC.details = "Escaping Prison"
-	DiscordRPC.refresh()
 	$Spongebob.camerashake = true
 	Ui.create_dialog("The building is gonna explode in 25 seconds Spongebob!!!","sandy")
 	MusicPlayer.play_song("res://assets/music/escape.ogg")

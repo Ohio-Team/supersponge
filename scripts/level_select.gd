@@ -3,11 +3,6 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	DiscordRPC.app_id = 1178087314182897784 # Application ID
-	DiscordRPC.details = "Level Select"
-	DiscordRPC.state = "Just started"
-	DiscordRPC.large_image = "bigimage"
-	DiscordRPC.refresh()
 	Singleton.inmenu = true
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	MusicPlayer.play_song("res://assets/music/sb-title.mp3")
