@@ -165,9 +165,10 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_c5uoq")
 theme_override_styles/tab_selected = SubResource("StyleBoxTexture_r4uku")
 theme_override_styles/tab_hovered = SubResource("StyleBoxTexture_j68ff")
 theme_override_styles/tab_unselected = SubResource("StyleBoxTexture_kvlr0")
-current_tab = 0
+current_tab = 3
 
 [node name="Audio" type="TabBar" parent="TabContainer"]
+visible = false
 layout_mode = 2
 tab_alignment = 1
 metadata/_tab_index = 0
@@ -313,7 +314,6 @@ step = 0.001
 value = 1.0
 
 [node name="Controls" type="TabBar" parent="TabContainer"]
-visible = false
 layout_mode = 2
 metadata/_tab_index = 3
 

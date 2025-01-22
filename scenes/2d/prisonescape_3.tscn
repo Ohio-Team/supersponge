@@ -430,7 +430,6 @@ script = SubResource("GDScript_j0j8n")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NavalLongGunMg5320/cannon"]
 position = Vector2(134.484, 55.9395)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_yt8rf")
 
 [connection signal="body_entered" from="NavalLongGunMg5320/cannon" to="NavalLongGunMg5320/cannon" method="_on_body_entered"]

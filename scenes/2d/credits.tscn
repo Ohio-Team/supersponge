@@ -13,7 +13,10 @@ script/source = "extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	MusicPlayer.stop()
 	DiscordRPC.details = \"Viewing the Credits\"
+	Singleton.gamebeaten = true
+	Singleton.save_game()
 	DiscordRPC.refresh()
 	Singleton.inmenu = true
 	if Singleton.tokens.has(\"jik\"):
