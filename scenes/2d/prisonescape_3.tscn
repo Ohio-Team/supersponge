@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=4 uid="uid://c5jkxe2gm5xsh"]
+[gd_scene load_steps=34 format=4 uid="uid://c5jkxe2gm5xsh"]
 
 [ext_resource type="Texture2D" uid="uid://culfcrnvqqsnd" path="res://assets/2d/tilesets/jail.png" id="1_oojjp"]
 [ext_resource type="Script" path="res://scenes/2d/prisonescape_3.gd" id="1_xscnf"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://dlpkwjto5urxn" path="res://scenes/2d/fakebobprison.tscn" id="10_samku"]
 [ext_resource type="PackedScene" uid="uid://ul6qixbunia7" path="res://scenes/2d/hurtbox_nonlethal.tscn" id="11_texq2"]
 [ext_resource type="Texture2D" uid="uid://bbpuwj717vfic" path="res://assets/2d/miscsprites/Naval_long_gun_mg_5320.png" id="14_cy0te"]
+[ext_resource type="FontFile" uid="uid://ia1v43t7vpqa" path="res://assets/fonts/Krabby Patty.ttf" id="15_pk5po"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oadpl"]
 texture = ExtResource("1_oojjp")
@@ -432,4 +433,22 @@ script = SubResource("GDScript_j0j8n")
 position = Vector2(134.484, 55.9395)
 shape = SubResource("RectangleShape2D_yt8rf")
 
+[node name="Timer" type="Timer" parent="."]
+wait_time = 25.0
+one_shot = true
+autostart = true
+
+[node name="Control" type="CanvasLayer" parent="."]
+
+[node name="Timer" type="RichTextLabel" parent="Control"]
+offset_left = 1.0
+offset_top = 676.0
+offset_right = 1090.0
+offset_bottom = 734.0
+theme_override_fonts/normal_font = ExtResource("15_pk5po")
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "[center]TIME LEFT:"
+
 [connection signal="body_entered" from="NavalLongGunMg5320/cannon" to="NavalLongGunMg5320/cannon" method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

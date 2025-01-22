@@ -55,7 +55,8 @@ func _physics_process(delta):
 		var forward_direction = -$TwistPivot.transform.basis.z.normalized()
 		newbullet.direction = forward_direction
 		newbullet.position = $TwistPivot/PitchPivot/Camera3D.global_position
-		get_tree().current_scene.add_child(newbullet)
+		if get_tree().current_scene:
+			get_tree().current_scene.add_child(newbullet)
 	twist_input = 0.0
 	pitch_input = 0.0
 	# level.update_ui_distance(distance)

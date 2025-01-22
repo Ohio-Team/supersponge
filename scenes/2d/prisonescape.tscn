@@ -19,6 +19,7 @@ script/source = "extends Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	MusicPlayer.play_song(\"res://assets/music/escape.ogg\")
+	DiscordRPC.details = \"Escaping Prison\"
 	Ui.create_dialog(\"I need to GYATT out of here!\",\"spongebob\")
 	Singleton.save_game()
 

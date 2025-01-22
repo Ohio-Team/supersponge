@@ -1,6 +1,9 @@
 extends CanvasLayer
 
 var time: float = 0.0
+var msec = fmod(time,1) * 100
+var seconds = fmod(time,60)
+var minutes = fmod(time,3600) / 60
 @onready var ohiohealth = $ohiohealth
 signal dialog_finished
 # Called when the node enters the scene tree for the first time.
@@ -16,8 +19,12 @@ func _process(delta):
 		visible = true
 	if Singleton.showspeedrun and !get_tree().paused:
 		time += delta
+		var msec = fmod(time,1) * 100
+		var seconds = fmod(time,60)
+		var minutes = fmod(time,3600) / 60
+		
 		$RichTextLabel.visible = true
-		$RichTextLabel.text = str(round(fmod(time,3600) / 60)) + ":" + str(round(fmod(time,60))) + ":" + str(round(fmod(time,1) * 100))
+		$RichTextLabel.text = "%02d:%02d.%03d" % [minutes,seconds,msec]
 	else:
 		if !Singleton.inmenu:
 			time += delta

@@ -29,7 +29,7 @@ func _ready() -> void:
 			$Truthorsquare.show()
 	$Spatula.text = \"[center] Final Spatula Count: \" + str(Singleton.spatulas)
 	$Deaths.text = \"[center] Deaths: \" + str(Singleton.deaths)
-	$Time.text = \"[center] Time Taken: \" + str(round(fmod(Ui.time,3600) / 60)) + \":\" + str(round(fmod(Ui.time,60))) + \":\" + str(round(fmod(Ui.time,1) * 100))
+	$Time.text = \"[center] Time Taken: \" + \"%02d:%02d.%03d\" % [Ui.minutes,Ui.seconds,Ui.msec]
 func Main_Menu():
 	if get_tree():
 		get_tree().change_scene_to_file(\"res://scenes/Main Menu.tscn\")
@@ -316,9 +316,9 @@ autoplay = true
 
 [node name="Names" type="RichTextLabel" parent="."]
 offset_left = 323.0
-offset_top = -1530.0
+offset_top = 120.0
 offset_right = 918.0
-offset_bottom = 87.0
+offset_bottom = 1737.0
 theme_override_fonts/normal_font = ExtResource("2_8rr7p")
 bbcode_enabled = true
 text = "[center]Ohio Team Presents:
