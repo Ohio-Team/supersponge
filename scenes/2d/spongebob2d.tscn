@@ -1,4 +1,4 @@
-[gd_scene load_steps=94 format=3 uid="uid://cjoo6ilm8eim1"]
+[gd_scene load_steps=96 format=3 uid="uid://cjoo6ilm8eim1"]
 
 [ext_resource type="Script" path="res://scripts/Spongebob2d.gd" id="1_uyiiv"]
 [ext_resource type="Texture2D" uid="uid://d32l5bmmvw7gn" path="res://assets/2d/spongebobby/119.png" id="2_45efo"]
@@ -90,6 +90,7 @@
 [ext_resource type="Texture2D" uid="uid://drgsr887uhj6u" path="res://assets/2d/spongebobby/75.png" id="82_tamco"]
 [ext_resource type="AudioStream" uid="uid://hor4p77c44k" path="res://assets/sfx/sb_walk1.wav" id="89_q1v5j"]
 [ext_resource type="AudioStream" uid="uid://1pv815515q2r" path="res://assets/sfx/sfx_sb_net.ogg" id="90_pssb3"]
+[ext_resource type="AudioStream" uid="uid://cwqfs8uoovj25" path="res://assets/sfx/sb_walk2.wav" id="90_yxlbk"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_u32rl"]
 animations = [{
@@ -481,6 +482,11 @@ size = Vector2(12, 30)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_2240q"]
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_0wdnk"]
+streams_count = 2
+stream_0/stream = ExtResource("89_q1v5j")
+stream_1/stream = ExtResource("90_yxlbk")
+
 [node name="Spongebob" type="CharacterBody2D" groups=["Player"]]
 input_pickable = true
 floor_max_angle = 1.0472
@@ -518,7 +524,7 @@ wait_time = 0.1
 one_shot = true
 
 [node name="Walk" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("89_q1v5j")
+stream = SubResource("AudioStreamRandomizer_0wdnk")
 bus = &"SFX"
 
 [node name="Attack" type="AudioStreamPlayer" parent="."]

@@ -9,7 +9,7 @@ func _ready():
 	Singleton.hasgun = false
 	Singleton.save_game()
 	Ui._clear_dialog()
-	MusicPlayer.play_song("res://assets/music/jelly.mp3")
+	MusicPlayer.play_song("res://assets/music/jelly.ogg")
 	Ui.create_dialog("Here we go. Let's save [b]my ohio hometown.[b]", "spongebob")
 	await Ui.dialog_finished
 	Ui.create_dialog("Watch out spongeboy. There's some [shake]oddities[/shake] ahead. You can press [b]X[/b] to attack.", "sandy+")

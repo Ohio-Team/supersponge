@@ -7,7 +7,7 @@ func _ready():
 	DiscordRPC.refresh()
 	Singleton.save_game()
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-	MusicPlayer.play_song("res://assets/music/bartbash.mp3")
+	MusicPlayer.play_song("res://assets/music/bartbash.ogg")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -18,7 +18,7 @@ func _process(delta: float) -> void:
 			MusicPlayer.stop_song()
 			await Singleton.wait(5)
 		if !$Window.canmove and $Window.visible and $Window.visible:
-			MusicPlayer.play_song("res://assets/music/evilbartbash.wav")
+			MusicPlayer.play_song("res://assets/music/evilbartbash.ogg")
 			OS.alert("You shouldnt have done that.","Ohio Alert")
 			OS.alert("Let's see if you can bash me.","Ohio Alert")
 			OS.alert("(Before we start, we recommend minimizing other tabs so you dont lose bart)")
