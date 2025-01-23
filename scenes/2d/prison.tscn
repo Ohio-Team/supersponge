@@ -23,6 +23,7 @@ func _ready() -> void:
 	DiscordRPC.details = \"On Jail\"
 	DiscordRPC.refresh()
 	Singleton.hashammer = false
+	Singleton.hasgun = false
 	Singleton.escape = false
 	$Spongebob.camerashake = false
 	MusicPlayer.play_song(\"res://assets/music/cell.ogg\")

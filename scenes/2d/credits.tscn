@@ -13,7 +13,7 @@ script/source = "extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	MusicPlayer.stop()
+	MusicPlayer.stop_song()
 	DiscordRPC.details = \"Viewing the Credits\"
 	Singleton.gamebeaten = true
 	Singleton.save_game()
@@ -316,9 +316,9 @@ autoplay = true
 
 [node name="Names" type="RichTextLabel" parent="."]
 offset_left = 323.0
-offset_top = -1530.0
+offset_top = 120.0
 offset_right = 918.0
-offset_bottom = 87.0
+offset_bottom = 1737.0
 theme_override_fonts/normal_font = ExtResource("2_8rr7p")
 bbcode_enabled = true
 text = "[center]Ohio Team Presents:

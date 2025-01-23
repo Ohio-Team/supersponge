@@ -1,4 +1,4 @@
-[gd_scene load_steps=177 format=4 uid="uid://coebr5rjm8gg0"]
+[gd_scene load_steps=176 format=4 uid="uid://coebr5rjm8gg0"]
 
 [ext_resource type="Texture2D" uid="uid://cghdnbutnmdlq" path="res://assets/3d/textures/_albedo000.png" id="1_3wdqi"]
 [ext_resource type="Script" path="res://scripts/driving.gd" id="1_lay5p"]
@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://q1h0c43bbj4p" path="res://scenes/3d/pattywagon.tscn" id="2_dk7po"]
 [ext_resource type="Texture2D" uid="uid://c7wiwlmd3jby6" path="res://assets/3d/bikinibottom/textures/jf_sky_color_77.png" id="2_rskht"]
 [ext_resource type="PackedScene" uid="uid://cyw3j6l7mdr8m" path="res://scenes/3d/fuckeduprock.tscn" id="5_3emhi"]
-[ext_resource type="LightmapGIData" uid="uid://cej3446t8ap6h" path="res://scenes/3d/level6.lmbake" id="5_iax63"]
 [ext_resource type="PackedScene" uid="uid://biv8yra6u0goq" path="res://scenes/3d/fuel.tscn" id="8_gm1q2"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_7k7rw"]
@@ -2718,7 +2717,6 @@ script = ExtResource("1_lay5p")
 transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
 light_color = Color(0.188235, 1, 1, 1)
 light_bake_mode = 1
-shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_a21iv")
@@ -3512,9 +3510,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.393574, 0.5, -1.29782)
 
 [node name="Camera3D" type="Camera3D" parent="pattywagon"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 7.53077, -9.90518)
-
-[node name="LightmapGI" type="LightmapGI" parent="."]
-light_data = ExtResource("5_iax63")
 
 [node name="Fuel" parent="." instance=ExtResource("8_gm1q2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3444, 0.5, 71.9532)

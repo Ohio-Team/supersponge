@@ -43,6 +43,6 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 
 func _on_area_2d_area_entered(area):
 	if area.is_in_group("Projectiles"):
-		$"../../AnimatedSprite2D".play("hurt")
+		$AnimatedSprite2D.play("hurt")
 		Singleton.do_explosion(position)
 		queue_free()

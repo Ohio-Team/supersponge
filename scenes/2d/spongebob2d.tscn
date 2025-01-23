@@ -380,19 +380,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("13_qaynp")
+}, {
+"duration": 1.0,
 "texture": ExtResource("6_kip82")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_m5sdn")
-}, {
-"duration": 1.0,
-"texture": ExtResource("8_n48gl")
-}, {
-"duration": 1.0,
-"texture": ExtResource("9_77oj6")
-}, {
-"duration": 1.0,
-"texture": ExtResource("10_lnnny")
 }, {
 "duration": 1.0,
 "texture": ExtResource("11_8xdw5")
@@ -401,38 +392,44 @@ animations = [{
 "texture": ExtResource("12_8ggsr")
 }, {
 "duration": 1.0,
-"texture": ExtResource("13_qaynp")
-}, {
-"duration": 1.0,
-"texture": ExtResource("14_ukf4j")
-}, {
-"duration": 1.0,
-"texture": ExtResource("15_22q71")
-}, {
-"duration": 1.0,
-"texture": ExtResource("16_1u4si")
+"texture": ExtResource("18_krqdg")
 }, {
 "duration": 1.0,
 "texture": ExtResource("17_7v3wd")
 }, {
 "duration": 1.0,
-"texture": ExtResource("18_krqdg")
+"texture": ExtResource("15_22q71")
 }, {
 "duration": 1.0,
-"texture": ExtResource("19_rvr5r")
+"texture": ExtResource("14_ukf4j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_n48gl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_77oj6")
 }, {
 "duration": 1.0,
 "texture": ExtResource("20_kc5sd")
 }, {
 "duration": 1.0,
+"texture": ExtResource("7_m5sdn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_lnnny")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_rvr5r")
+}, {
+"duration": 1.0,
 "texture": ExtResource("21_3hojc")
 }, {
 "duration": 1.0,
-"texture": ExtResource("22_vldnr")
+"texture": ExtResource("16_1u4si")
 }],
 "loop": true,
 "name": &"run",
-"speed": 20.0
+"speed": 30.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -493,10 +490,9 @@ script = ExtResource("1_uyiiv")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_u32rl")
-animation = &"attack"
+animation = &"run"
 autoplay = "idle"
-frame = 8
-frame_progress = 1.0
+frame_progress = 0.541743
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_putow")
@@ -523,9 +519,11 @@ one_shot = true
 
 [node name="Walk" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("89_q1v5j")
+bus = &"SFX"
 
 [node name="Attack" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("90_pssb3")
+bus = &"SFX"
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
 [connection signal="timeout" from="Invincibility" to="." method="_on_timer_timeout"]

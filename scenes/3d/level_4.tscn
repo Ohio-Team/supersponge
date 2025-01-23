@@ -1,9 +1,8 @@
-[gd_scene load_steps=19 format=3 uid="uid://k6460ynggk43"]
+[gd_scene load_steps=18 format=3 uid="uid://k6460ynggk43"]
 
 [ext_resource type="Script" path="res://scripts/3dtest.gd" id="1_v4in3"]
 [ext_resource type="Texture2D" uid="uid://c7wiwlmd3jby6" path="res://assets/3d/bikinibottom/textures/jf_sky_color_77.png" id="2_lna1d"]
 [ext_resource type="PackedScene" uid="uid://broib4lslli7c" path="res://assets/3d/bikinibottom/bikinibottom3d.tscn" id="3_vhacy"]
-[ext_resource type="LightmapGIData" uid="uid://c7henjsr3yqbd" path="res://scenes/3d/level_4.lmbake" id="4_sy1ug"]
 [ext_resource type="PackedScene" uid="uid://8kbffcc412vs" path="res://scenes/3d/spongebob_3d.tscn" id="5_ehy8v"]
 [ext_resource type="Texture2D" uid="uid://gapq6s2srwla" path="res://assets/2d/miscsprites/smilingfriendsiftheywerethesimpsons.png" id="6_dy3b1"]
 [ext_resource type="Script" path="res://scripts/smiling_friends.gd" id="7_sgdm6"]
@@ -199,14 +198,8 @@ environment = SubResource("Environment_eoepk")
 transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
 light_color = Color(0.729412, 1, 1, 1)
 light_bake_mode = 1
-shadow_enabled = true
 
 [node name="bikinibottom3d" parent="." instance=ExtResource("3_vhacy")]
-
-[node name="LightmapGI" type="LightmapGI" parent="."]
-quality = 0
-texel_scale = 0.5
-light_data = ExtResource("4_sy1ug")
 
 [node name="Spongebob3d" parent="." instance=ExtResource("5_ehy8v")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -53.8024, 0.217664, -31.7717)

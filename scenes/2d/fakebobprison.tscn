@@ -195,9 +195,10 @@ script = ExtResource("1_v5jvp")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_1a6kk")
-animation = &"jump"
+animation = &"hurt"
 autoplay = "default"
-frame_progress = 0.900545
+frame = 5
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1.5)
