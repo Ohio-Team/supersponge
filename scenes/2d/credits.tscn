@@ -30,9 +30,11 @@ func _ready() -> void:
 	$Spatula.text = \"[center] Final Spatula Count: \" + str(Singleton.spatulas)
 	$Deaths.text = \"[center] Deaths: \" + str(Singleton.deaths)
 	$Time.text = \"[center] Time Taken: \" + \"%02d:%02d.%03d\" % [Ui.minutes,Ui.seconds,Ui.msec]
+	
 func Main_Menu():
 	if get_tree():
 		get_tree().change_scene_to_file(\"res://scenes/Main Menu.tscn\")
+		
 "
 
 [sub_resource type="Animation" id="Animation_durno"]
