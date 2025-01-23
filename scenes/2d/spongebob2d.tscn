@@ -505,15 +505,15 @@ shape = SubResource("RectangleShape2D_putow")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 material = SubResource("ShaderMaterial_2240q")
-position = Vector2(70, 0)
+position = Vector2(99, 0)
 zoom = Vector2(3, 3)
 position_smoothing_enabled = true
 position_smoothing_speed = 50.0
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
-drag_left_margin = 0.18
 drag_top_margin = 1.0
-drag_right_margin = 0.18
+editor_draw_limits = true
+editor_draw_drag_margin = true
 
 [node name="Invincibility" type="Timer" parent="."]
 wait_time = 2.0

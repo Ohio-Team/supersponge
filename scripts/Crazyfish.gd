@@ -22,7 +22,7 @@ func _physics_process(delta):
 		velocity.y += gravity * delta
 		
 	if startmoving:
-		velocity.x = direction.x * 250
+		velocity.x = direction.x * 100
 	else:
 		velocity.x = 0
 		
