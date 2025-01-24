@@ -25,6 +25,15 @@ func _process(delta):
 
 	move_and_slide()
 	
+	for body in $Area2D.get_overlapping_bodies():
+		if body == player:
+			if player.state != "dying" and !player.invincible and player.state != "attack" and player.state != "groundpound":
+				Singleton.health -= 1
+				player.state = "hurt"
+			if player.state == "attack" or player.state == "groundpound":
+				Singleton.do_explosion(position)
+				queue_free()
+	
 	if dir.x < 0:
 		$AnimatedSprite2D.flip_h = true
 	else:
@@ -32,17 +41,9 @@ func _process(delta):
 func _on_navtimer_timeout():
 	nav_agent.target_position = player.global_position
 
-func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body == player:
-		if player.state != "dying" and !player.invincible and player.state != "attack" and player.state != "groundpound":
-			Singleton.health -= 1
-			player.state = "hurt"
-		if player.state == "attack" or player.state == "groundpound":
-			Singleton.do_explosion(position)
-			queue_free()
 
 func _on_area_2d_area_entered(area):
 	if area.is_in_group("Projectiles"):
-		$"../../AnimatedSprite2D".play("hurt")
+		$AnimatedSprite2D.play("hurt")
 		Singleton.do_explosion(position)
 		queue_free()

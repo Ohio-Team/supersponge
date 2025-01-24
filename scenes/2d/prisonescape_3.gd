@@ -15,6 +15,14 @@ func change():
 	get_tree().change_scene_to_file("res://scenes/2d/prisonescape.tscn")
 
 
+func cannonsfx():
+	BMOD.play_sfx(preload("res://assets/sfx/cannonenter.tres"))
+	BMOD.play_sfx(preload("res://assets/sfx/cannonready.tres"))
+	await Singleton.wait(1)
+	BMOD.play_sfx(preload("res://assets/sfx/cannonblast.tres"))
+	
+
+
 func _on_timer_timeout() -> void:
 	for i in range(30):
 		BMOD.play_sfx(preload("res://assets/sfx/patscream.tres"))

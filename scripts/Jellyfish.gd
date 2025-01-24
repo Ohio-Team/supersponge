@@ -16,20 +16,17 @@ func _process(delta):
 		$AnimatedSprite2D.flip_h = true
 	elif direction == 1:
 		$AnimatedSprite2D.flip_h  = false
-
+	
+	for body in get_overlapping_bodies():
+		if body == player:
+			if player.state == "groundpound" or player.state == "attack" or player.state == "fall" or player.state == "land":
+				Singleton.do_explosion(position)
+				player.velocity.y = -510
+				queue_free()
+			elif player.state != "dying" and !player.invincible:
+					Singleton.health -= 1
+					player.state = "hurt"
 
 func _on_body_entered(body):
-	if body == player:
-		
-		if player.state == "groundpound" or player.state == "attack" or player.state == "fall" or player.state == "land":
-			if player.state != "attack":
-				player.state = "fall"
-				player.velocity.y = -510
-			Singleton.do_explosion(position)
-			queue_free()
-		elif player.state != "dying" and !player.invincible:
-				Singleton.health -= 1
-				player.state = "hurt"
-
 	if body != player:
 		direction = -direction

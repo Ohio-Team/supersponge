@@ -22,17 +22,16 @@ func _physics_process(delta):
 		velocity.y += gravity * delta
 		
 	if startmoving:
-		velocity.x = direction.x * 250
+		velocity.x = direction.x * 150
 	else:
 		velocity.x = 0
 		
 	move_and_slide()
-
-func _on_hitzone_body_entered(body):
-	if body == player:
-		if player.state == "groundpound" or player.state == "attack" or player.state == "fall" or player.state == "land":
-			Singleton.do_explosion(position)
-			queue_free()
-		elif player.state != "dying" and !player.invincible:
-				Singleton.health -= 1
-				player.state = "hurt"
+	for body in $hitzone.get_overlapping_bodies():
+		if body == player:
+			if player.state == "groundpound" or player.state == "attack" or player.state == "fall" or player.state == "land":
+				Singleton.do_explosion(position)
+				queue_free()
+			elif player.state != "dying" and !player.invincible:
+					Singleton.health -= 1
+					player.state = "hurt"

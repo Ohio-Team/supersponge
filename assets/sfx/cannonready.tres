@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="SingleSoundEffect" load_steps=3 format=3 uid="uid://ds6swtlmejpaq"]
+
+[ext_resource type="Script" path="res://addons/bmod/scripts/resources/single_sound_effect.gd" id="1_07iir"]
+[ext_resource type="AudioStream" uid="uid://brmeq52s4na34" path="res://assets/sfx/cannonready.wav" id="1_o4hj1"]
+
+[resource]
+script = ExtResource("1_07iir")
+audio_stream = ExtResource("1_o4hj1")
+play = false
+play_on_change = false

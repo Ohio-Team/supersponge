@@ -9,9 +9,6 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
-
-
-func _on_body_entered(body):
-	BMOD.play_sfx(preload("res://assets/sfx/spring.tres"))
-	body.velocity.y = bounce_force
+	for body in get_overlapping_bodies():
+		BMOD.play_sfx(preload("res://assets/sfx/spring.tres"))
+		body.velocity.y = bounce_force

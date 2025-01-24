@@ -47,6 +47,7 @@ func _on_body_entered(body: Node2D) -> void:
 size = Vector2(484, 88.2754)
 
 [node name="Mariohouse" type="Node2D"]
+position = Vector2(-4, 91)
 script = SubResource("GDScript_f1x0f")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

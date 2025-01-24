@@ -1,8 +1,7 @@
-[gd_scene load_steps=16 format=3 uid="uid://ck0qyhot143g8"]
+[gd_scene load_steps=15 format=3 uid="uid://ck0qyhot143g8"]
 
 [ext_resource type="PackedScene" uid="uid://8kbffcc412vs" path="res://scenes/3d/spongebob_3d.tscn" id="1_m53n5"]
 [ext_resource type="PackedScene" uid="uid://dvdqiu3kw72wx" path="res://assets/3d/gasstation/station.blend" id="2_4e41y"]
-[ext_resource type="LightmapGIData" uid="uid://iqgq47t50a46" path="res://scenes/3d/gasstation.lmbake" id="3_ygajm"]
 [ext_resource type="Texture2D" uid="uid://vowhokwxio6k" path="res://assets/2d/miscsprites/weed.jpg" id="4_eambt"]
 [ext_resource type="AudioStream" uid="uid://dfq534lof5fma" path="res://assets/sfx/kendrick-scream.mp3" id="5_bgmc0"]
 [ext_resource type="PackedScene" uid="uid://dp4vg3yineb8r" path="res://scenes/3d/token_3d.tscn" id="6_xxni7"]
@@ -201,51 +200,6 @@ environment = SubResource("Environment_ln0gt")
 [node name="Spongebob3d" parent="." instance=ExtResource("1_m53n5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -98, 2.509, -3.987)
 
-[node name="Skeleton3D" parent="Spongebob3d/sponebob/Armature" index="0"]
-bones/0/rotation = Quaternion(-0.707107, 0, 0, 0.707107)
-bones/1/rotation = Quaternion(0, -0.707106, 0, 0.707107)
-bones/2/position = Vector3(2.35193e-07, 0, -1.52589e-07)
-bones/3/position = Vector3(0.00957848, 3.85348, 7.35393e-06)
-bones/4/position = Vector3(-0.00396827, 12.0305, 1.20334e-05)
-bones/5/position = Vector3(-0.429015, 7.04739, 7.27165e-06)
-bones/6/position = Vector3(9.23392e-06, 9.0288, 9.0334e-06)
-bones/7/position = Vector3(-0.00557283, -8.42134, 7.01208)
-bones/8/position = Vector3(3.60885, -1.11773, 1.18248)
-bones/8/rotation = Quaternion(-0.0870057, 0.0919001, -0.0648999, 0.989835)
-bones/8/scale = Vector3(1, 1, 1)
-bones/9/position = Vector3(2.44437, -3.39024, 0.502653)
-bones/9/rotation = Quaternion(0.0896658, -0.13357, 0.0611721, 0.985077)
-bones/10/position = Vector3(-0.0492981, -2.29494, 1.30986)
-bones/10/rotation = Quaternion(-2.61546e-08, 0.938902, 9.58781e-09, 0.344185)
-bones/11/position = Vector3(-1.50634, -4.27337, -1.92051)
-bones/11/rotation = Quaternion(-5.57131e-08, 0.000598326, -3.33351e-11, 1)
-bones/11/scale = Vector3(1, 1, 1)
-bones/12/position = Vector3(-0.326974, -0.929006, -0.417892)
-bones/13/position = Vector3(-0.00559807, -8.50218, -7.28582)
-bones/14/position = Vector3(3.66904, -1.13028, -1.08393)
-bones/14/rotation = Quaternion(0, -0.0924465, 2.23339e-23, 0.995718)
-bones/15/position = Vector3(1.85736, -3.57035, -1.15405)
-bones/15/rotation = Quaternion(-1.33877e-23, 0.134364, -5.45939e-23, 0.990932)
-bones/15/scale = Vector3(1, 1, 1)
-bones/16/position = Vector3(-0.0492613, -2.29492, -1.30991)
-bones/16/rotation = Quaternion(4.94946e-23, 0.938902, 0, -0.344186)
-bones/17/position = Vector3(-1.50631, -4.27342, 1.92049)
-bones/18/position = Vector3(-0.32697, -0.928997, 0.417893)
-bones/18/rotation = Quaternion(1.59978e-22, 0.286623, 7.94094e-23, 0.958043)
-bones/19/position = Vector3(-0.0121345, -2.74753, 2.35983)
-bones/19/scale = Vector3(1, 1, 1)
-bones/20/position = Vector3(-4.88508, 2.4354, -0.0593532)
-bones/21/position = Vector3(-2.56361e-05, -1.14441e-05, 4.88132)
-bones/22/position = Vector3(0.0646168, -4.92662, 4.20288e-06)
-bones/23/position = Vector3(-0.0484409, -3.92096, 5.01643e-06)
-bones/24/position = Vector3(2.05815, -3.06781, 1.13934e-06)
-bones/25/position = Vector3(4.50018, 0.0432192, -4.07227e-08)
-bones/26/position = Vector3(1.4166e-06, 2.28882e-05, -4.88135)
-bones/27/position = Vector3(0.0820764, -4.92637, 4.20344e-06)
-bones/28/position = Vector3(-0.0339704, -3.8529, 4.05997e-06)
-bones/29/position = Vector3(2.02859, -3.08745, 1.61851e-06)
-bones/30/position = Vector3(4.7273, 3.72529e-09, 2.4897e-08)
-
 [node name="AnimationTree" parent="Spongebob3d" index="1"]
 parameters/state/transition_request = "idle"
 
@@ -255,9 +209,6 @@ parameters/state/transition_request = "idle"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.3433, 4.79838, -4.06175)
 billboard = 1
 texture = ExtResource("4_eambt")
-
-[node name="LightmapGI" type="LightmapGI" parent="."]
-light_data = ExtResource("3_ygajm")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

@@ -20,6 +20,14 @@ func Physics_Update(delta):
 		fakebob.velocity.y += gravity * delta
 		
 	fakebob.move_and_slide()
+	for body in $"../../Area2D".get_overlapping_bodies():
+		if body == player:
+			if player.state != "dying" and !player.invincible and player.state != "attack":
+				Singleton.health -= 1
+				player.state = "hurt"
+			if player.state == "attack":
+				Transitioned.emit(self, "Hurt")
+				BMOD.play_sfx(preload("res://assets/sfx/bart.tres"))
 
 func Update(delta):
 	await $"../../AnimatedSprite2D".animation_finished

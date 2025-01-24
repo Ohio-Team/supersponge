@@ -1,4 +1,4 @@
-[gd_scene load_steps=94 format=3 uid="uid://cjoo6ilm8eim1"]
+[gd_scene load_steps=96 format=3 uid="uid://cjoo6ilm8eim1"]
 
 [ext_resource type="Script" path="res://scripts/Spongebob2d.gd" id="1_uyiiv"]
 [ext_resource type="Texture2D" uid="uid://d32l5bmmvw7gn" path="res://assets/2d/spongebobby/119.png" id="2_45efo"]
@@ -90,6 +90,7 @@
 [ext_resource type="Texture2D" uid="uid://drgsr887uhj6u" path="res://assets/2d/spongebobby/75.png" id="82_tamco"]
 [ext_resource type="AudioStream" uid="uid://hor4p77c44k" path="res://assets/sfx/sb_walk1.wav" id="89_q1v5j"]
 [ext_resource type="AudioStream" uid="uid://1pv815515q2r" path="res://assets/sfx/sfx_sb_net.ogg" id="90_pssb3"]
+[ext_resource type="AudioStream" uid="uid://cwqfs8uoovj25" path="res://assets/sfx/sb_walk2.wav" id="90_yxlbk"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_u32rl"]
 animations = [{
@@ -380,19 +381,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("13_qaynp")
+}, {
+"duration": 1.0,
 "texture": ExtResource("6_kip82")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_m5sdn")
-}, {
-"duration": 1.0,
-"texture": ExtResource("8_n48gl")
-}, {
-"duration": 1.0,
-"texture": ExtResource("9_77oj6")
-}, {
-"duration": 1.0,
-"texture": ExtResource("10_lnnny")
 }, {
 "duration": 1.0,
 "texture": ExtResource("11_8xdw5")
@@ -401,38 +393,44 @@ animations = [{
 "texture": ExtResource("12_8ggsr")
 }, {
 "duration": 1.0,
-"texture": ExtResource("13_qaynp")
-}, {
-"duration": 1.0,
-"texture": ExtResource("14_ukf4j")
-}, {
-"duration": 1.0,
-"texture": ExtResource("15_22q71")
-}, {
-"duration": 1.0,
-"texture": ExtResource("16_1u4si")
+"texture": ExtResource("18_krqdg")
 }, {
 "duration": 1.0,
 "texture": ExtResource("17_7v3wd")
 }, {
 "duration": 1.0,
-"texture": ExtResource("18_krqdg")
+"texture": ExtResource("15_22q71")
 }, {
 "duration": 1.0,
-"texture": ExtResource("19_rvr5r")
+"texture": ExtResource("14_ukf4j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_n48gl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_77oj6")
 }, {
 "duration": 1.0,
 "texture": ExtResource("20_kc5sd")
 }, {
 "duration": 1.0,
+"texture": ExtResource("7_m5sdn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_lnnny")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_rvr5r")
+}, {
+"duration": 1.0,
 "texture": ExtResource("21_3hojc")
 }, {
 "duration": 1.0,
-"texture": ExtResource("22_vldnr")
+"texture": ExtResource("16_1u4si")
 }],
 "loop": true,
 "name": &"run",
-"speed": 20.0
+"speed": 30.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -484,6 +482,11 @@ size = Vector2(12, 30)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_2240q"]
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_0wdnk"]
+streams_count = 2
+stream_0/stream = ExtResource("89_q1v5j")
+stream_1/stream = ExtResource("90_yxlbk")
+
 [node name="Spongebob" type="CharacterBody2D" groups=["Player"]]
 input_pickable = true
 floor_max_angle = 1.0472
@@ -493,25 +496,24 @@ script = ExtResource("1_uyiiv")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_u32rl")
-animation = &"attack"
+animation = &"run"
 autoplay = "idle"
-frame = 8
-frame_progress = 1.0
+frame_progress = 0.541743
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_putow")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 material = SubResource("ShaderMaterial_2240q")
-position = Vector2(70, 0)
+position = Vector2(99, 0)
 zoom = Vector2(3, 3)
 position_smoothing_enabled = true
 position_smoothing_speed = 50.0
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
-drag_left_margin = 0.18
 drag_top_margin = 1.0
-drag_right_margin = 0.18
+editor_draw_limits = true
+editor_draw_drag_margin = true
 
 [node name="Invincibility" type="Timer" parent="."]
 wait_time = 2.0
@@ -522,10 +524,12 @@ wait_time = 0.1
 one_shot = true
 
 [node name="Walk" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("89_q1v5j")
+stream = SubResource("AudioStreamRandomizer_0wdnk")
+bus = &"SFX"
 
 [node name="Attack" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("90_pssb3")
+bus = &"SFX"
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
 [connection signal="timeout" from="Invincibility" to="." method="_on_timer_timeout"]

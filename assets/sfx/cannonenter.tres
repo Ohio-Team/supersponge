@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="SingleSoundEffect" load_steps=3 format=3 uid="uid://110xg6y07y7c"]
+
+[ext_resource type="AudioStream" uid="uid://bsql0js2n7c4a" path="res://assets/sfx/cannonenter.wav" id="1_ddpnb"]
+[ext_resource type="Script" path="res://addons/bmod/scripts/resources/single_sound_effect.gd" id="1_hoth5"]
+
+[resource]
+script = ExtResource("1_hoth5")
+audio_stream = ExtResource("1_ddpnb")
+play = false
+play_on_change = false
