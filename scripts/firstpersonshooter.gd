@@ -67,3 +67,6 @@ func _unhandled_input(event):
 	if event is InputEventMouseMotion:
 			twist_input = -event.relative.x * mouse_sensitivity
 			pitch_input = -event.relative.y * mouse_sensitivity
+	if event is InputEventJoypadMotion:
+		twist_input = - Input.get_joy_axis(0,JOY_AXIS_RIGHT_X) * 0.1
+		pitch_input = - Input.get_joy_axis(0,JOY_AXIS_RIGHT_Y) * 0.1

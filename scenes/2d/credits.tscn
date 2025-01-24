@@ -15,7 +15,6 @@ script/source = "extends Node2D
 func _ready() -> void:
 	Singleton.inmenu = true
 	MusicPlayer.stop_song()
-
 	Singleton.gamebeaten = true
 	Singleton.save_game()
 	if Singleton.tokens.has(\"jik\"):
