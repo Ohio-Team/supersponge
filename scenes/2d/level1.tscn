@@ -414,3 +414,6 @@ texture_filter = 1
 position = Vector2(6208, 590)
 scale = Vector2(0.88, 0.785385)
 texture = ExtResource("21_087qa")
+
+[node name="Crazyfish" parent="." instance=ExtResource("9_m2ma8")]
+position = Vector2(426, 594)

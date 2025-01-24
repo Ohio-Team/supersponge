@@ -42,21 +42,22 @@ func Physics_Update(delta):
 		BMOD.play_sfx(preload("res://assets/sfx/bossvulnerable.tres"))
 	
 	fakebob.move_and_slide()
+	
+	for body in $"../../Area2D".get_overlapping_bodies():
+		if body == player:
+			if player.state != "dying" and !player.invincible and player.state != "attack":
+				Singleton.health -= 1
+				player.state = "hurt"
+			if player.state == "attack":
+				Transitioned.emit(self, "Hurt")
+				BMOD.play_sfx(preload("res://assets/sfx/bart.tres"))
+	
 	if dir.x < 0:
 		$"../../AnimatedSprite2D".flip_h = true
 	else:
 		$"../../AnimatedSprite2D".flip_h = false
 func _on_navtimer_timeout():
 	nav_agent.target_position = player.global_position
-
-func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body == player:
-		if player.state != "dying" and !player.invincible and player.state != "attack":
-			Singleton.health -= 1
-			player.state = "hurt"
-		if player.state == "attack":
-			Transitioned.emit(self, "Hurt")
-			BMOD.play_sfx(preload("res://assets/sfx/bart.tres"))
 
 func _on_area_2d_area_entered(area):
 	if area.is_in_group("Projectiles") and $"../../AnimatedSprite2D".animation != "jump" and $"../../AnimatedSprite2D".animation != "hurt" and $"../../AnimatedSprite2D".animation != "attack" and cooldown < 0:

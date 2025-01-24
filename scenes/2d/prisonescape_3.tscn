@@ -454,9 +454,9 @@ bbcode_enabled = true
 text = "[center]TIME LEFT:"
 
 [connection signal="body_entered" from="NavigationRegion2D/TileMapLayer/Spatula" to="NavigationRegion2D/TileMapLayer/Spatula" method="_on_body_entered"]
-[connection signal="body_entered" from="NavigationRegion2D/TileMapLayer/@Area2D@30051" to="NavigationRegion2D/TileMapLayer/@Area2D@30051" method="_on_body_entered"]
-[connection signal="body_entered" from="NavigationRegion2D/TileMapLayer/@Area2D@30052" to="NavigationRegion2D/TileMapLayer/@Area2D@30052" method="_on_body_entered"]
-[connection signal="body_entered" from="NavigationRegion2D/TileMapLayer/@Area2D@30053" to="NavigationRegion2D/TileMapLayer/@Area2D@30053" method="_on_body_entered"]
-[connection signal="body_entered" from="NavigationRegion2D/TileMapLayer/@Area2D@30054" to="NavigationRegion2D/TileMapLayer/@Area2D@30054" method="_on_body_entered"]
+[connection signal="body_entered" from="NavigationRegion2D/TileMapLayer/@Area2D@34897" to="NavigationRegion2D/TileMapLayer/@Area2D@34897" method="_on_body_entered"]
+[connection signal="body_entered" from="NavigationRegion2D/TileMapLayer/@Area2D@34898" to="NavigationRegion2D/TileMapLayer/@Area2D@34898" method="_on_body_entered"]
+[connection signal="body_entered" from="NavigationRegion2D/TileMapLayer/@Area2D@34899" to="NavigationRegion2D/TileMapLayer/@Area2D@34899" method="_on_body_entered"]
+[connection signal="body_entered" from="NavigationRegion2D/TileMapLayer/@Area2D@34900" to="NavigationRegion2D/TileMapLayer/@Area2D@34900" method="_on_body_entered"]
 [connection signal="body_entered" from="NavalLongGunMg5320/cannon" to="NavalLongGunMg5320/cannon" method="_on_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
