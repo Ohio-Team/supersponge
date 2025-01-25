@@ -21,6 +21,7 @@ func inputs(direction, delta):
 	if Singleton.acceptinput:
 		if state == "hurt":
 			BMOD.play_sfx(preload("res://assets/sfx/ouch.tres"))
+			Input.start_joy_vibration(0,0.5,0.5,1)
 			$Invincibility.start()
 			velocity.x += SPEED * 4 * -direction
 			velocity.y = -450

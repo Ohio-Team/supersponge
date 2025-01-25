@@ -19,6 +19,7 @@ func _ready() -> void:
 	DiscordRPC.refresh()
 	Ui.create_dialog(\"Oh... I guess i will have to get to that pillar.\",\"spongebob\")
 	MusicPlayer.play_song(\"res://assets/music/scarysong.ogg\")
+	Input.start_joy_vibration(0,2,2,2)
 
 
 

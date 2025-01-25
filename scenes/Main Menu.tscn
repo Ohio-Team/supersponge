@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://bkfis34nkbhyv"]
+[gd_scene load_steps=54 format=3 uid="uid://bkfis34nkbhyv"]
 
 [ext_resource type="Script" path="res://scripts/MainMenu.gd" id="1_cki2b"]
 [ext_resource type="FontFile" uid="uid://ia1v43t7vpqa" path="res://assets/fonts/Krabby Patty.ttf" id="1_jb0v5"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dhxbkh5627l1q" path="res://scenes/Options.tscn" id="8_72lj6"]
 [ext_resource type="PackedScene" uid="uid://c6wbocp76dh62" path="res://scenes/2d/level_select.tscn" id="8_fno0c"]
 [ext_resource type="Texture2D" uid="uid://lw1u60dv5x6a" path="res://assets/2d/miscsprites/ererreyy.png" id="8_ypp24"]
+[ext_resource type="Texture2D" uid="uid://chuoxbkuhky84" path="res://assets/2d/miscsprites/help.png" id="9_8oq8h"]
 
 [sub_resource type="Gradient" id="Gradient_ebsv8"]
 interpolation_mode = 2
@@ -351,6 +352,38 @@ text = "Level Select"
 script = ExtResource("6_th7r2")
 scene = ExtResource("8_fno0c")
 
+[node name="Menu_Button5" type="Button" parent="Buttons"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 408.0
+offset_top = 311.0
+offset_right = 638.0
+offset_bottom = 375.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_jb0v5")
+theme_override_font_sizes/font_size = 33
+theme_override_styles/focus = SubResource("StyleBoxTexture_co1ej")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxTexture_racbi")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_0b2nq")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxTexture_krm0r")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_5wt65")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxTexture_2mivj")
+theme_override_styles/hover = SubResource("StyleBoxTexture_fatkb")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_ave8q")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_psryk")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_f20dx")
+theme_override_styles/normal = SubResource("StyleBoxTexture_4e6vd")
+text = "Help"
+
+[node name="Help" type="Sprite2D" parent="Buttons"]
+visible = false
+position = Vector2(0, 72)
+texture = ExtResource("9_8oq8h")
+
 [node name="RichTextLabel2" type="RichTextLabel" parent="."]
 layout_mode = 0
 offset_left = 526.0
@@ -368,3 +401,5 @@ text = "[wave][rainbow]PRESS ANY KEY"
 [connection signal="pressed" from="Buttons/Menu_Button" to="Buttons/Menu_Button" method="_on_pressed"]
 [connection signal="mouse_entered" from="Buttons/Menu_Button2" to="Buttons/Menu_Button2" method="_on_mouse_entered"]
 [connection signal="mouse_entered" from="Buttons/Menu_Button4" to="Buttons/Menu_Button4" method="_on_mouse_entered"]
+[connection signal="mouse_entered" from="Buttons/Menu_Button5" to="Buttons/Menu_Button5" method="_on_mouse_entered"]
+[connection signal="pressed" from="Buttons/Menu_Button5" to="." method="_on_menu_button_5_pressed"]

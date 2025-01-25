@@ -16,6 +16,7 @@ func _on_timer_timeout() -> void:
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if body.is_in_group("Player") and istired != 1:
+		Input.start_joy_vibration(0,1,1,1)
 		BMOD.play_sfx(preload("res://assets/sfx/jumpscare.tres"))
 		OS.alert("ONLY IN OHIO! OOOH!","Ohio Alert!")
 		OS.alert("ONLY IN OHIO! OOOH!","Ohio Alert!")

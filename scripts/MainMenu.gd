@@ -44,3 +44,10 @@ func loads():
 		if data["gamebeaten"] == true:
 			$Buttons/Menu_Button4.visible = true
 			$Buttons/Menu_Button4.disabled = false
+
+
+func _on_menu_button_5_pressed() -> void:
+	if !$Buttons/Help.visible:
+		$Buttons/Help.show()
+	else:
+		$Buttons/Help.hide()

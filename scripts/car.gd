@@ -15,4 +15,5 @@ func _process(delta: float) -> void:
 		get_tree().reload_current_scene()
 		
 	if Input.is_action_pressed("front") or Input.is_action_pressed("back"):
+		Input.start_joy_vibration(0,0.3,0.3)
 		Singleton.fuel -= delta * 10
