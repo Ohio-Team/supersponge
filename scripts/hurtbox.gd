@@ -8,16 +8,13 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
-
-func _on_body_entered(body):
-	if body == player:
-		if player.state != "dying" and !player.invincible:
-			Singleton.health -= 1
-			player.velocity.y += -1000
-			player.state = "hurt"
-	if body.is_in_group("Enemy"):
-		BMOD.play_sfx_2d(preload("res://assets/sfx/scream.tres"),body.position)
-		body.queue_free()
+func _physics_process(delta):
+	for body in get_overlapping_bodies():
+		if body == player:
+			if player.state != "dying" and !player.invincible:
+				Singleton.health -= 1
+				player.velocity.y += -1000
+				player.state = "hurt"
+		if body.is_in_group("Enemy"):
+			BMOD.play_sfx_2d(preload("res://assets/sfx/scream.tres"),body.position)
+			body.queue_free()
