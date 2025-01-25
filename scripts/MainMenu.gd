@@ -22,6 +22,7 @@ func _process(delta):
 		BMOD.play_sfx(preload("res://assets/sfx/funnybuttons/buttons.tres"))
 		$RichTextLabel2.hide()
 		$Buttons.show()
+		$Buttons/Menu_Button3.grab_focus()
 	if $Buttons.visible:
 		$Buttons.modulate = lerp($Buttons.modulate,Color(1, 1, 1),delta * 10)
 

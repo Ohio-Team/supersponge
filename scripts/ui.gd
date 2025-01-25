@@ -46,6 +46,7 @@ func _process(delta):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		get_tree().paused = true
 		$Pause.visible = true
+		$Pause/Button2.grab_focus()
 	if get_tree().paused:
 		if Singleton.tokens.has("jik"):
 			$Pause/Jik.show()
@@ -57,6 +58,7 @@ func _process(delta):
 			$Pause/Truthorsquare.show()
 		if !$Pause/AudioStreamPlayer.playing:
 			$Pause/AudioStreamPlayer.play()
+			
 		$Pause/ColorRect.color = lerp($Pause/ColorRect.color, Color(00000078,0.5), delta*10)
 		$Pause/Patricio.position = lerp($Pause/Patricio.position, Vector2(356,317), delta*10)
 		$Pause/Exponja.position = lerp($Pause/Exponja.position, Vector2(919,446), delta*10)

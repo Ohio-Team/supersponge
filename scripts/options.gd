@@ -9,7 +9,7 @@ func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	MusicPlayer.play_song("res://assets/music/options.ogg")
 	load_settings()
-
+	$TabContainer/Audio.grab_focus()
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func load_settings():
 	if err != OK:
