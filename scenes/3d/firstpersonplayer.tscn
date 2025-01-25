@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://eit1pvvg3w60"]
+[gd_scene load_steps=5 format=3 uid="uid://eit1pvvg3w60"]
 
 [ext_resource type="Script" path="res://scripts/firstpersonplayer.gd" id="1_rc5od"]
 [ext_resource type="Texture2D" uid="uid://dj5pmx0pldu06" path="res://assets/2d/miscsprites/SpongeBob_SquarePants_character.svg.png" id="2_55e3b"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5w8ww"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_pptmq"]
 
@@ -12,8 +14,18 @@ script = ExtResource("1_rc5od")
 
 [node name="PitchPivot" type="Node3D" parent="TwistPivot"]
 
-[node name="Camera3D" type="Camera3D" parent="TwistPivot/PitchPivot"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.92162, -0.496052)
+[node name="SpringArm3D" type="SpringArm3D" parent="TwistPivot/PitchPivot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.51883, -0.496052)
+shape = SubResource("BoxShape3D_5w8ww")
+
+[node name="Camera3D" type="Camera3D" parent="TwistPivot/PitchPivot/SpringArm3D"]
+
+[node name="SpotLight3D" type="SpotLight3D" parent="TwistPivot/PitchPivot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.51942, -0.500364)
+light_energy = 10.0
+shadow_enabled = true
+distance_fade_begin = 20.0
+spot_range = 30.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.01956, 0)
