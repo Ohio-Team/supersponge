@@ -12,7 +12,7 @@ func Enter():
 func Update(delta):
 	var direction = (target - spongebot.position).normalized()
 	if spongebot.position != target:
-		accel = lerpf(accel, 2, delta * 2)
+		accel = lerpf(accel, 2, delta)
 		spongebot.position.x += direction.x * 4 * accel
 		spongebot.position.y += direction.y * 4 * accel
 	if spongebot.position.distance_to(target) < 3:

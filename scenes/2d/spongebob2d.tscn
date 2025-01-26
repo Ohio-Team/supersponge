@@ -483,6 +483,7 @@ size = Vector2(12, 30)
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_2240q"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_0wdnk"]
+random_pitch = 1.15
 streams_count = 2
 stream_0/stream = ExtResource("89_q1v5j")
 stream_1/stream = ExtResource("90_yxlbk")
