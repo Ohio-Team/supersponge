@@ -223,7 +223,7 @@ texture = SubResource("GradientTexture2D_23esm")
 centered = false
 
 [node name="Ererreyy" type="Sprite2D" parent="."]
-position = Vector2(640, 176)
+position = Vector2(656, 184)
 scale = Vector2(0.489167, 0.534091)
 texture = ExtResource("8_ypp24")
 
@@ -381,25 +381,26 @@ text = "Help"
 
 [node name="Help" type="Sprite2D" parent="Buttons"]
 visible = false
-position = Vector2(0, 72)
+position = Vector2(24, 20)
 texture = ExtResource("9_8oq8h")
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="."]
 layout_mode = 0
-offset_left = 526.0
-offset_top = 416.0
-offset_right = 963.0
-offset_bottom = 544.0
+offset_left = 432.0
+offset_top = 408.0
+offset_right = 869.0
+offset_bottom = 536.0
 theme_override_constants/outline_size = 10
 theme_override_fonts/normal_font = ExtResource("1_jb0v5")
 theme_override_font_sizes/normal_font_size = 32
 bbcode_enabled = true
-text = "[wave][rainbow]PRESS ANY KEY"
+text = "[center][wave][rainbow]PRESS ANY KEY"
 
 [connection signal="mouse_entered" from="Buttons/Menu_Button3" to="Buttons/Menu_Button3" method="_on_mouse_entered"]
 [connection signal="mouse_entered" from="Buttons/Menu_Button" to="Buttons/Menu_Button" method="_on_mouse_entered"]
 [connection signal="pressed" from="Buttons/Menu_Button" to="Buttons/Menu_Button" method="_on_pressed"]
 [connection signal="mouse_entered" from="Buttons/Menu_Button2" to="Buttons/Menu_Button2" method="_on_mouse_entered"]
+[connection signal="focus_entered" from="Buttons/Menu_Button4" to="Buttons/Menu_Button4" method="_on_focus_entered"]
 [connection signal="mouse_entered" from="Buttons/Menu_Button4" to="Buttons/Menu_Button4" method="_on_mouse_entered"]
 [connection signal="mouse_entered" from="Buttons/Menu_Button5" to="Buttons/Menu_Button5" method="_on_mouse_entered"]
 [connection signal="pressed" from="Buttons/Menu_Button5" to="." method="_on_menu_button_5_pressed"]
