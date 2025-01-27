@@ -21,7 +21,7 @@ func inputs(direction, delta):
 	if Singleton.acceptinput:
 		if state == "hurt":
 			BMOD.play_sfx(preload("res://assets/sfx/ouch.tres"))
-			Input.start_joy_vibration(0,0.5,0.5,1)
+			Input.start_joy_vibration(0,0.5,0.4,1)
 			$Invincibility.start()
 			velocity.x += SPEED * 4 * -direction
 			velocity.y = -450
@@ -84,6 +84,7 @@ func _physics_process(delta):
 		Singleton.health = 3
 		Singleton.spatulas -= 10
 		state = "dying"
+		Input.start_joy_vibration(0,0.5,0.5,1)
 		anim.play("dying")
 		await anim.animation_finished
 		if get_tree():

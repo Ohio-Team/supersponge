@@ -16,8 +16,10 @@ func _process(delta: float) -> void:
 		$Window.show()
 		if !$Window.canmove and $Window.visible:
 			MusicPlayer.stop_song()
+			Input.start_joy_vibration(0,0.5,0.4,0)
 			await Singleton.wait(5)
 		if !$Window.canmove and $Window.visible and $Window.visible:
+			Input.stop_joy_vibration(0)
 			MusicPlayer.play_song("res://assets/music/evilbartbash.ogg")
 			OS.alert("You shouldnt have done that.","Ohio Alert")
 			OS.alert("Let's see if you can bash me.","Ohio Alert")

@@ -8,6 +8,7 @@ script/source = "extends Area2D
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group(\"Player\"):
+		Input.start_joy_vibration(0,0.5,0.4,1)
 		Singleton.do_explosion(position)
 		Singleton.deaths += 1
 		get_tree().reload_current_scene()

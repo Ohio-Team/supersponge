@@ -27,6 +27,7 @@ func cannonsfx():
 
 func _on_timer_timeout() -> void:
 	for i in range(30):
+		Input.start_joy_vibration(0,0.5,0.5,1)
 		BMOD.play_sfx(preload("res://assets/sfx/patscream.tres"))
 		Singleton.do_explosion(Vector2(0,0))
 	get_tree().reload_current_scene()

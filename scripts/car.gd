@@ -17,3 +17,6 @@ func _process(delta: float) -> void:
 	if Input.is_action_pressed("front") or Input.is_action_pressed("back"):
 		Input.start_joy_vibration(0,0.3,0.3)
 		Singleton.fuel -= delta * 10
+	else:
+		if Input.is_action_just_released("front") or Input.is_action_pressed("back"):
+			Input.stop_joy_vibration(0)
