@@ -11,6 +11,7 @@ func _ready() -> void:
 	Singleton.inmenu = true
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	MusicPlayer.play_song("res://assets/music/sb-title.mp3")
+	$BoxContainer/VBoxContainer/Menu_Button.grab_focus()
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
