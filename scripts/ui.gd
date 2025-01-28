@@ -13,12 +13,12 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	time += delta
 	if Singleton.inmenu:
 		visible = false
 	else:
 		visible = true
 	if Singleton.showspeedrun and !get_tree().paused:
-		time += delta
 		msec = fmod(time,1) * 100
 		seconds = fmod(time,60)
 		minutes = fmod(time,3600) / 60

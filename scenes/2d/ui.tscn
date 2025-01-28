@@ -255,6 +255,7 @@ layout_mode = 3
 anchors_preset = 0
 
 [node name="ColorRect" type="ColorRect" parent="Pause"]
+layout_mode = 0
 offset_left = -1.0
 offset_right = 1280.0
 offset_bottom = 720.0
@@ -301,6 +302,7 @@ script = SubResource("GDScript_4xmq8")
 
 [node name="Button4" type="Button" parent="Pause"]
 self_modulate = Color(1, 1, 1, 0.294118)
+layout_mode = 0
 offset_left = 571.0
 offset_top = 497.0
 offset_right = 738.0
@@ -355,6 +357,7 @@ stream = ExtResource("10_tdpyq")
 bus = &"Music"
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Pause"]
+layout_mode = 0
 offset_left = 616.0
 offset_top = 568.0
 offset_right = 718.0
