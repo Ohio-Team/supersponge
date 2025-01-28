@@ -598,7 +598,14 @@ autoplay = "idle"
 position = Vector2(603, 547)
 zoom = Vector2(3, 3)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="CanvasLayer" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 212.0
+offset_top = 404.0
+offset_right = 212.0
+offset_bottom = 404.0
+scale = Vector2(0.5, 0.5)
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer"]
 offset_left = 285.0

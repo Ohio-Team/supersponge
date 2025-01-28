@@ -117,7 +117,7 @@ func _process(delta: float) -> void:
 
 func _on_pressed() -> void:
 	Singleton.load_game()
-	if not FileAccess.file_exists(\"user://tom.save\"):
+	if FileAccess.file_exists(\"user://tom.save\"):
 		Singleton.inmenu = true
 
 func _on_mouse_entered() -> void:
