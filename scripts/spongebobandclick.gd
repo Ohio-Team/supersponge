@@ -17,6 +17,6 @@ func _physics_process(delta: float) -> void:
 		$AnimatedSprite2D.play("front")
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
-		BMOD.play_sfx(preload("res://assets/sfx/walk.tres"))
+		$Walk.play()
 		target = get_global_mouse_position()
 		move_and_collide(get_local_mouse_position())

@@ -1,18 +1,24 @@
-[gd_resource type="Resource" script_class="MultiSoundEffect" load_steps=6 format=3 uid="uid://snxk3icp43jq"]
+[gd_resource type="Resource" script_class="MultiSoundEffect" load_steps=9 format=3 uid="uid://snxk3icp43jq"]
 
 [ext_resource type="Script" path="res://addons/bmod/scripts/resources/multi_sound_effect_item.gd" id="1_6agci"]
+[ext_resource type="AudioStream" uid="uid://bo04wrreqiuja" path="res://assets/sfx/ohiominion1.ogg" id="2_eb58q"]
 [ext_resource type="Script" path="res://addons/bmod/scripts/resources/multi_sound_effect.gd" id="2_o8n62"]
+[ext_resource type="AudioStream" uid="uid://biifrjym0wykr" path="res://assets/sfx/ohiominion2.ogg" id="3_m1nii"]
+[ext_resource type="AudioStream" uid="uid://sropb21eea17" path="res://assets/sfx/ohiominion3.ogg" id="4_dib55"]
 
 [sub_resource type="Resource" id="Resource_e6ape"]
 script = ExtResource("1_6agci")
+audio_stream = ExtResource("2_eb58q")
 weight = 1
 
 [sub_resource type="Resource" id="Resource_mxgef"]
 script = ExtResource("1_6agci")
+audio_stream = ExtResource("3_m1nii")
 weight = 1
 
 [sub_resource type="Resource" id="Resource_syurb"]
 script = ExtResource("1_6agci")
+audio_stream = ExtResource("4_dib55")
 weight = 1
 
 [resource]

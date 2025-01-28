@@ -1,7 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://cbynik26mbfvj"]
+[gd_scene load_steps=12 format=3 uid="uid://cbynik26mbfvj"]
 
 [ext_resource type="Script" path="res://scripts/spongebobandclick.gd" id="1_asbdh"]
 [ext_resource type="Texture2D" uid="uid://bbryoatrojavs" path="res://assets/2d/spongebobby/pointandclick.png" id="2_qdgsq"]
+[ext_resource type="AudioStream" uid="uid://hor4p77c44k" path="res://assets/sfx/sb_walk1.wav" id="3_yey3x"]
+[ext_resource type="AudioStream" uid="uid://cwqfs8uoovj25" path="res://assets/sfx/sb_walk2.wav" id="4_ek5ne"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dbw2f"]
 atlas = ExtResource("2_qdgsq")
@@ -57,6 +59,12 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3vixi"]
 size = Vector2(40, 31)
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_q1r6c"]
+random_pitch = 1.15
+streams_count = 2
+stream_0/stream = ExtResource("3_yey3x")
+stream_1/stream = ExtResource("4_ek5ne")
+
 [node name="Spongebobandclick" type="CharacterBody2D" groups=["Player"]]
 script = ExtResource("1_asbdh")
 
@@ -69,3 +77,7 @@ autoplay = "front"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 15.5)
 shape = SubResource("RectangleShape2D_3vixi")
+
+[node name="Walk" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_q1r6c")
+bus = &"SFX"

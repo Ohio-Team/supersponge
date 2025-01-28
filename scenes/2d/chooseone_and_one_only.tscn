@@ -608,6 +608,7 @@ offset_bottom = 404.0
 scale = Vector2(0.5, 0.5)
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer"]
+layout_mode = 0
 offset_left = 285.0
 offset_top = 45.0
 offset_right = 1035.0
@@ -618,6 +619,7 @@ bbcode_enabled = true
 text = "[center]Kill Fakebob?"
 
 [node name="Button" type="Button" parent="CanvasLayer"]
+layout_mode = 0
 offset_left = 1013.0
 offset_top = 225.0
 offset_right = 1203.0
@@ -628,6 +630,7 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_60af0")
 text = "Yes"
 
 [node name="Button2" type="Button" parent="CanvasLayer"]
+layout_mode = 0
 offset_left = 1013.0
 offset_top = 339.0
 offset_right = 1203.0
@@ -638,6 +641,7 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_jfqxw")
 text = "No"
 
 [node name="Button3" type="Button" parent="CanvasLayer"]
+layout_mode = 0
 offset_left = 1013.0
 offset_top = 441.0
 offset_right = 1203.0
