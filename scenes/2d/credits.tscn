@@ -33,13 +33,14 @@ func _ready() -> void:
 	
 func endings():
 	if get_tree():
-		if Singleton.spatulas >= 10:
+		if Singleton.spatulas <= -5:
+			get_tree().change_scene_to_file(\"res://scenes/2d/bad_ending.tscn\")
+		if Singleton.spatulas >= 0:
 			get_tree().change_scene_to_file(\"res://scenes/2d/good_ending.tscn\")
 		if Singleton.spatulas >= 10 and Singleton.time < 600:
-			print(\"Super fast ending\")
+			OS.alert(\"Wow! Theres no special ending for you but you certainly are really fast with games!\")
 			get_tree().change_scene_to_file(\"res://scenes/2d/good_ending.tscn\")
-		if Singleton.spatulas >= 50:
-			print(\"Super rich ending\")
+		if Singleton.spatulas >= 50 and Singleton.tokens.size() == 4:
 			get_tree().change_scene_to_file(\"res://scenes/2d/good_ending.tscn\")
 "
 
@@ -316,7 +317,7 @@ tracks/10/keys = {
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
-"method": &"Main_Menu"
+"method": &"endings"
 }]
 }
 tracks/11/type = "value"

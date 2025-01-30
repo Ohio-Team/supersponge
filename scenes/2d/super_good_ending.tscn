@@ -1,0 +1,172 @@
+[gd_scene load_steps=6 format=3 uid="uid://bkxo4s12vx8y7"]
+
+[ext_resource type="Texture2D" uid="uid://mrend7c8q3la" path="res://assets/2d/collectables/spatula.png" id="1_2r712"]
+[ext_resource type="Texture2D" uid="uid://brwp5oumstr3p" path="res://assets/2d/miscsprites/kanyebeach.png" id="1_hiytf"]
+
+[sub_resource type="GDScript" id="GDScript_m7yxq"]
+script/source = "extends Node2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	MusicPlayer.play_song(\"res://assets/music/06. Level Theme 1 - Bikini Bottom.mp3\")
+	
+func dialo(text:String,char:String):
+	Ui.create_dialog(text,char)
+
+func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+	get_tree().change_scene_to_file(\"res://scenes/Main Menu.tscn\")
+	Ui._clear_dialog()
+"
+
+[sub_resource type="Animation" id="Animation_51321"]
+resource_name = "new_animation"
+length = 10.0
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4.5, 7.5, 9.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"values": [{
+"args": ["That sure was a trip... And it was all worth it after all right Kanye", "spongebob"],
+"method": &"dialo"
+}, {
+"args": ["Ye, and with these [b]records[/b] we will be even richer..", "kanye"],
+"method": &"dialo"
+}, {
+"args": ["No don't let greed consume you we will use these as trophies", "spongebob"],
+"method": &"dialo"
+}, {
+"args": ["[b] I don't give a FUCK!!", "kanye"],
+"method": &"dialo"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3p7ur"]
+_data = {
+"new_animation": SubResource("Animation_51321")
+}
+
+[node name="Super Good Ending" type="Node2D"]
+script = SubResource("GDScript_m7yxq")
+
+[node name="Kanyebeach" type="Sprite2D" parent="."]
+scale = Vector2(1.25, 0.948617)
+texture = ExtResource("1_hiytf")
+centered = false
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+lifetime = 2.0
+randomness = 1.0
+draw_order = 1
+texture = ExtResource("1_2r712")
+emission_shape = 1
+emission_sphere_radius = 128.0
+spread = 179.6
+gravity = Vector2(100, 980)
+angular_velocity_min = -581.82
+angular_velocity_max = 720.0
+scale_amount_min = 2.0
+scale_amount_max = 2.0
+
+[node name="CPUParticles2D2" type="CPUParticles2D" parent="."]
+position = Vector2(161, 0)
+lifetime = 2.0
+randomness = 1.0
+draw_order = 1
+texture = ExtResource("1_2r712")
+emission_shape = 1
+emission_sphere_radius = 128.0
+spread = 179.6
+gravity = Vector2(100, 980)
+angular_velocity_min = -581.82
+angular_velocity_max = 720.0
+scale_amount_min = 2.0
+scale_amount_max = 2.0
+
+[node name="CPUParticles2D3" type="CPUParticles2D" parent="."]
+position = Vector2(408, 3)
+lifetime = 2.0
+randomness = 1.0
+draw_order = 1
+texture = ExtResource("1_2r712")
+emission_shape = 1
+emission_sphere_radius = 128.0
+spread = 179.6
+gravity = Vector2(100, 980)
+angular_velocity_min = -581.82
+angular_velocity_max = 720.0
+scale_amount_min = 2.0
+scale_amount_max = 2.0
+
+[node name="CPUParticles2D4" type="CPUParticles2D" parent="."]
+position = Vector2(693, 3)
+lifetime = 2.0
+randomness = 1.0
+draw_order = 1
+texture = ExtResource("1_2r712")
+emission_shape = 1
+emission_sphere_radius = 128.0
+spread = 179.6
+gravity = Vector2(100, 980)
+angular_velocity_min = -581.82
+angular_velocity_max = 720.0
+scale_amount_min = 2.0
+scale_amount_max = 2.0
+
+[node name="CPUParticles2D5" type="CPUParticles2D" parent="."]
+position = Vector2(900, 3)
+lifetime = 2.0
+randomness = 1.0
+draw_order = 1
+texture = ExtResource("1_2r712")
+emission_shape = 1
+emission_sphere_radius = 128.0
+spread = 179.6
+gravity = Vector2(100, 980)
+angular_velocity_min = -581.82
+angular_velocity_max = 720.0
+scale_amount_min = 2.0
+scale_amount_max = 2.0
+
+[node name="CPUParticles2D6" type="CPUParticles2D" parent="."]
+position = Vector2(1142, 6)
+lifetime = 2.0
+randomness = 1.0
+draw_order = 1
+texture = ExtResource("1_2r712")
+emission_shape = 1
+emission_sphere_radius = 128.0
+spread = 179.6
+gravity = Vector2(100, 980)
+angular_velocity_min = -581.82
+angular_velocity_max = 720.0
+scale_amount_min = 2.0
+scale_amount_max = 2.0
+
+[node name="CPUParticles2D7" type="CPUParticles2D" parent="."]
+position = Vector2(1276, -2)
+lifetime = 2.0
+randomness = 1.0
+draw_order = 1
+texture = ExtResource("1_2r712")
+emission_shape = 1
+emission_sphere_radius = 128.0
+spread = 179.6
+gravity = Vector2(100, 980)
+angular_velocity_min = -581.82
+angular_velocity_max = 720.0
+scale_amount_min = 2.0
+scale_amount_max = 2.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_3p7ur")
+}
+autoplay = "new_animation"
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
