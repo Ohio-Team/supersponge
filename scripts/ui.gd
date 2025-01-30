@@ -5,6 +5,7 @@ var msec = fmod(time,1) * 100
 var seconds = fmod(time,60)
 var minutes = fmod(time,3600) / 60
 @onready var ohiohealth = $ohiohealth
+@onready var joystick = $Joystick
 signal dialog_finished
 # Called when the node enters the scene tree for the first time.
 func _ready():
