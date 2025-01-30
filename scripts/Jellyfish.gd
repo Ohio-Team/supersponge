@@ -19,9 +19,9 @@ func _process(delta):
 	
 	for body in get_overlapping_bodies():
 		if body == player:
-			if player.state == "groundpound" or player.state == "attack" or player.state == "fall" or player.state == "land":
+			if player.state == "groundpound" or player.state == "attack" or player.state == "fall" or player.state == "walking" and !player.is_on_floor() or player.state == "land":
 				Singleton.do_explosion(position)
-				if player.state == "groundpound":
+				if player.state != "attack":
 					player.velocity.y = -510
 				queue_free()
 			elif player.state != "dying" and !player.invincible:

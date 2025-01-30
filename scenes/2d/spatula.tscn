@@ -1,9 +1,46 @@
-[gd_scene load_steps=4 format=3 uid="uid://b86vokonmmvq5"]
+[gd_scene load_steps=7 format=3 uid="uid://b86vokonmmvq5"]
 
 [ext_resource type="Script" path="res://scripts/spatula.gd" id="1_yyxvo"]
-[ext_resource type="Texture2D" uid="uid://52gml0d00q4w" path="res://assets/2d/collectables/spatula.png" id="2_xj43o"]
+[ext_resource type="Texture2D" uid="uid://mrend7c8q3la" path="res://assets/2d/collectables/spatula.png" id="2_xj43o"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_35llr"]
+
+[sub_resource type="Animation" id="Animation_dytsx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_5315u"]
+resource_name = "new_animation"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1e-05, 1), Vector2(-1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2j3cn"]
+_data = {
+"RESET": SubResource("Animation_dytsx"),
+"new_animation": SubResource("Animation_5315u")
+}
 
 [node name="Spatula" type="Area2D"]
 script = ExtResource("1_yyxvo")
@@ -14,5 +51,11 @@ texture = ExtResource("2_xj43o")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_35llr")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_2j3cn")
+}
+autoplay = "new_animation"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

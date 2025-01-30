@@ -116,9 +116,10 @@ func _process(delta: float) -> void:
 
 
 func _on_pressed() -> void:
-	Singleton.load_game()
 	if FileAccess.file_exists(\"user://tom.save\"):
-		Singleton.inmenu = true
+		print(\"exists\")
+		Singleton.inmenu = false
+	Singleton.load_game()
 
 func _on_mouse_entered() -> void:
 	BMOD.play_sfx(preload(\"res://assets/sfx/menumove.tres\"))
