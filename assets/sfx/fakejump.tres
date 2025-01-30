@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="SingleSoundEffect" load_steps=5 format=3 uid="uid://drrfe5rivxckw"]
 
-[ext_resource type="AudioStream" uid="uid://b31ewgadheert" path="res://assets/sfx/fakejump.wav" id="1_kgmgr"]
+[ext_resource type="AudioStream" uid="uid://b31ewgadheert" path="res://assets/sfx/fakejump.wav" id="1_82cqm"]
 [ext_resource type="Script" path="res://addons/bmod/scripts/resources/sound_effect_meta.gd" id="2_g4q31"]
 [ext_resource type="Script" path="res://addons/bmod/scripts/resources/single_sound_effect.gd" id="2_rrf71"]
 
@@ -13,7 +13,7 @@ pitch_variation = 0.0
 
 [resource]
 script = ExtResource("2_rrf71")
-audio_stream = ExtResource("1_kgmgr")
+audio_stream = ExtResource("1_82cqm")
 meta = SubResource("Resource_7c0v6")
 play = false
 play_on_change = false

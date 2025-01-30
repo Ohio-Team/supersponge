@@ -17,6 +17,7 @@ func _ready() -> void:
 	Singleton.save_game()
 	Ui.create_dialog(\"Oh... I guess i will have to get to that pillar.\",\"spongebob\")
 	MusicPlayer.play_song(\"res://assets/music/scarysong.ogg\")
+	Input.start_joy_vibration(0,2,2,2)
 
 
 
@@ -137,14 +138,6 @@ omni_attenuation = -0.415
 
 [node name="firstpersonplayer" parent="." instance=ExtResource("2_pdilh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.9837, 6.51703, -40.9168)
-
-[node name="Camera3D" parent="firstpersonplayer/TwistPivot/PitchPivot" index="0"]
-fov = 90.0
-
-[node name="SpotLight3D" type="SpotLight3D" parent="firstpersonplayer/TwistPivot/PitchPivot/Camera3D" index="0"]
-light_energy = 9.253
-light_indirect_energy = 9.309
-spot_range = 39.2604
 
 [node name="Spatulas" type="Node3D" parent="."]
 

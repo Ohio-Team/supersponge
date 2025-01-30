@@ -21,6 +21,7 @@ func _physics_process(delta):
 
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
+		BMOD.play_sfx(preload("res://assets/sfx/jump.tres"))
 		velocity.y = JUMP_VELOCITY
 		state = "jump"
 		

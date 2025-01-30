@@ -16,6 +16,7 @@ func _process(delta):
 		BMOD.play_sfx(preload("res://assets/sfx/funnybuttons/buttons.tres"))
 		$RichTextLabel2.hide()
 		$Buttons.show()
+		$Buttons/Menu_Button3.grab_focus()
 	if $Buttons.visible:
 		$Buttons.modulate = lerp($Buttons.modulate,Color(1, 1, 1),delta * 10)
 
@@ -37,3 +38,10 @@ func loads():
 		if data["gamebeaten"] == true:
 			$Buttons/Menu_Button4.visible = true
 			$Buttons/Menu_Button4.disabled = false
+
+
+func _on_menu_button_5_pressed() -> void:
+	if !$Buttons/Help.visible:
+		$Buttons/Help.show()
+	else:
+		$Buttons/Help.hide()

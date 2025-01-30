@@ -90,10 +90,10 @@ centered = false
 
 [node name="Menu_Button17" type="Button" parent="."]
 layout_mode = 2
-offset_left = 505.0
-offset_top = 639.0
-offset_right = 729.0
-offset_bottom = 684.0
+offset_left = 536.0
+offset_top = 632.0
+offset_right = 760.0
+offset_bottom = 677.0
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 32
 theme_override_styles/focus = SubResource("StyleBoxTexture_mbp4n")
@@ -111,10 +111,10 @@ text = "Back"
 
 [node name="BoxContainer" type="ScrollContainer" parent="."]
 layout_mode = 2
-offset_left = 284.0
-offset_top = 193.0
-offset_right = 940.0
-offset_bottom = 576.0
+offset_left = 320.0
+offset_top = 192.0
+offset_right = 976.0
+offset_bottom = 575.0
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_jh7ik")
 follow_focus = true
@@ -429,10 +429,10 @@ scene = ExtResource("19_dcswy")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 layout_mode = 0
-offset_left = 466.0
-offset_top = 138.0
-offset_right = 705.0
-offset_bottom = 178.0
+offset_left = 528.0
+offset_top = 120.0
+offset_right = 767.0
+offset_bottom = 160.0
 theme_override_constants/outline_size = 10
 theme_override_fonts/normal_font = ExtResource("8_ha3x3")
 theme_override_font_sizes/normal_font_size = 27

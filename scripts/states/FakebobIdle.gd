@@ -21,9 +21,9 @@ func Physics_Update(delta):
 	var dir = fakebob.to_local(nav_agent.get_next_path_position()).normalized()
 	if fakebob.is_on_floor():
 		$"../../AnimatedSprite2D".play("default")
-	if fakebob.position.distance_to(dir) > 20:
+	if fakebob.position.distance_to(dir) > 30:
 		fakebob.velocity.x = dir.x * movement_speed
-	print(fakebob.global_position.distance_to(nav_agent.get_next_path_position()))
+
 	if dir.y < 0 and fakebob.is_on_floor():
 		$"../../AnimatedSprite2D".play("jump")
 		BMOD.play_sfx(preload("res://assets/sfx/fakejump.tres"))

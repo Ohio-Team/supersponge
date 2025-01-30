@@ -8,18 +8,17 @@ var minutes = fmod(time,3600) / 60
 signal dialog_finished
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	
 	$Pause.hide()
-
-@onready var joystick = $Joystick
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	time += delta
 	if Singleton.inmenu:
 		visible = false
 	else:
 		visible = true
 	if Singleton.showspeedrun and !get_tree().paused:
-		time += delta
 		msec = fmod(time,1) * 100
 		seconds = fmod(time,60)
 		minutes = fmod(time,3600) / 60
@@ -47,6 +46,7 @@ func _process(delta):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		get_tree().paused = true
 		$Pause.visible = true
+		$Pause/Button2.grab_focus()
 	if get_tree().paused:
 		if Singleton.tokens.has("jik"):
 			$Pause/Jik.show()
@@ -58,6 +58,7 @@ func _process(delta):
 			$Pause/Truthorsquare.show()
 		if !$Pause/AudioStreamPlayer.playing:
 			$Pause/AudioStreamPlayer.play()
+			
 		$Pause/ColorRect.color = lerp($Pause/ColorRect.color, Color(00000078,0.5), delta*10)
 		$Pause/Patricio.position = lerp($Pause/Patricio.position, Vector2(356,317), delta*10)
 		$Pause/Exponja.position = lerp($Pause/Exponja.position, Vector2(919,446), delta*10)

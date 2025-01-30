@@ -124,6 +124,8 @@ shape = SubResource("CapsuleShape3D_x21hn")
 [node name="ThirdPersonCamera" parent="." instance=ExtResource("3_l7qui")]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 3.6897, -0.178368)
 distance_from_pivot = 6.0
+camera_speed = 1.0
+current = true
 mouse_follow = true
 
 [editable path="sponebob"]

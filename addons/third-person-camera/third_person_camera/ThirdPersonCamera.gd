@@ -112,6 +112,8 @@ func _physics_process(_delta):
 		pass
 	#_camera.global_position = _camera_marker.global_position
 	tweenCameraToMarker()
+	camera_horizontal_rotation_deg += Input.get_joy_axis(0,JOY_AXIS_RIGHT_X) * 2
+	camera_tilt_deg -= Input.get_joy_axis(0,JOY_AXIS_RIGHT_Y) * 2
 	_camera_offset_pivot.global_position = _camera_offset_pivot.get_parent().to_global(Vector3(pivot_offset.x, pivot_offset.y, 0.0))
 	_camera_rotation_pivot.global_rotation_degrees.x = initial_dive_angle_deg
 	_camera_rotation_pivot.global_position = global_position
@@ -167,10 +169,6 @@ func _unhandled_input(event):
 	if mouse_follow and event is InputEventMouseMotion:
 		camera_horizontal_rotation_deg += event.relative.x * 0.1 * mouse_x_sensitiveness
 		camera_tilt_deg -= event.relative.y * 0.07 * mouse_y_sensitiveness
-		return
-	if event is InputEventJoypadMotion:
-		camera_horizontal_rotation_deg +=  Input.get_joy_axis(0,JOY_AXIS_RIGHT_X)
-		camera_tilt_deg -= Input.get_joy_axis(0,JOY_AXIS_RIGHT_Y)
 		return
 	pass
 

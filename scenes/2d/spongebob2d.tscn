@@ -483,6 +483,7 @@ size = Vector2(12, 30)
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_2240q"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_0wdnk"]
+random_pitch = 1.15
 streams_count = 2
 stream_0/stream = ExtResource("89_q1v5j")
 stream_1/stream = ExtResource("90_yxlbk")
@@ -505,12 +506,13 @@ shape = SubResource("RectangleShape2D_putow")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 material = SubResource("ShaderMaterial_2240q")
-position = Vector2(99, 0)
+position = Vector2(64, 0)
 zoom = Vector2(3, 3)
 position_smoothing_enabled = true
 position_smoothing_speed = 50.0
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
+drag_left_margin = 0.1
 drag_top_margin = 1.0
 editor_draw_limits = true
 editor_draw_drag_margin = true
