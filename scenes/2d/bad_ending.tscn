@@ -1,4 +1,4 @@
-[gd_scene load_steps=96 format=3 uid="uid://bxfqqtut6mqy4"]
+[gd_scene load_steps=96 format=3 uid="uid://dge3bx5oouoap"]
 
 [ext_resource type="Texture2D" uid="uid://kcmuvimb7er8" path="res://assets/2d/miscsprites/spongebobroom.jpg" id="1_s5cbv"]
 [ext_resource type="Texture2D" uid="uid://d32l5bmmvw7gn" path="res://assets/2d/spongebobby/119.png" id="2_cu0rv"]
@@ -97,13 +97,15 @@ script/source = "extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	MusicPlayer.play_song(\"res://assets/music/41. Ghost House.mp3\")
+	MusicPlayer.play_song(\"res://assets/music/41. Ghost House.ogg\")
 func dialo(text:String,char:String):
 	Ui.create_dialog(text,char)
 
 func kill_game():
 	BMOD.play_sfx(preload(\"res://assets/sfx/patscream.tres\"))
 	await Singleton.wait(0.5)
+	MusicPlayer.stop_song()
+	OS.alert(\"LowLevelFatalError [File:Unknown] [Line:198]\\nUnreal Engine is exiting due to D3D device being lost. [ERROR:0x887A0006 - 'HUNG']\",\"The UE4-Gameface has crashed and will close\")
 	get_tree().quit()
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:

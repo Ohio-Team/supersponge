@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://bkxo4s12vx8y7"]
+[gd_scene load_steps=6 format=3 uid="uid://yp445cc5t4n0"]
 
 [ext_resource type="Texture2D" uid="uid://mrend7c8q3la" path="res://assets/2d/collectables/spatula.png" id="1_2r712"]
 [ext_resource type="Texture2D" uid="uid://brwp5oumstr3p" path="res://assets/2d/miscsprites/kanyebeach.png" id="1_hiytf"]
@@ -9,7 +9,7 @@ script/source = "extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	MusicPlayer.play_song(\"res://assets/music/06. Level Theme 1 - Bikini Bottom.mp3\")
+	MusicPlayer.play_song(\"res://assets/music/goodending.ogg\")
 	
 func dialo(text:String,char:String):
 	Ui.create_dialog(text,char)
@@ -29,7 +29,7 @@ tracks/0/path = NodePath(".")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 4.5, 7.5, 9.5),
+"times": PackedFloat32Array(0, 4.5, 7.5, 9.46667),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "values": [{
 "args": ["That sure was a trip... And it was all worth it after all right Kanye", "spongebob"],
