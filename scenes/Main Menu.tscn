@@ -224,8 +224,8 @@ texture = SubResource("GradientTexture2D_23esm")
 centered = false
 
 [node name="Ererreyy" type="Sprite2D" parent="."]
-position = Vector2(656, 184)
-scale = Vector2(0.489167, 0.534091)
+position = Vector2(647, 183)
+scale = Vector2(0.51375, 0.534091)
 texture = ExtResource("8_ypp24")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]

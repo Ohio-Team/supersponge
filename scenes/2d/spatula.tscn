@@ -58,5 +58,6 @@ libraries = {
 "": SubResource("AnimationLibrary_2j3cn")
 }
 autoplay = "new_animation"
+speed_scale = 0.614
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
