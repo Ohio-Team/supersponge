@@ -33,15 +33,19 @@ func _ready() -> void:
 	
 func endings():
 	if get_tree():
-		if Singleton.spatulas <= -5:
-			get_tree().change_scene_to_file(\"res://scenes/2d/bad_ending.tscn\")
-		if Singleton.spatulas >= 0:
-			get_tree().change_scene_to_file(\"res://scenes/2d/good_ending.tscn\")
-		if Singleton.spatulas >= 10 and Singleton.time < 600:
+		if Singleton.spatulas >= 50 and Singleton.tokens.size() == 4:
+			get_tree().change_scene_to_file(\"res://scenes/2d/super_good_ending.tscn\")
+			return
+		if Singleton.spatulas >= 10 and Ui.time < 600:
 			OS.alert(\"Wow! Theres no special ending for you but you certainly are really fast with games!\")
 			get_tree().change_scene_to_file(\"res://scenes/2d/good_ending.tscn\")
-		if Singleton.spatulas >= 50 and Singleton.tokens.size() == 4:
+			return
+		if Singleton.spatulas >= 0:
 			get_tree().change_scene_to_file(\"res://scenes/2d/good_ending.tscn\")
+			return
+		if Singleton.spatulas <= -5:
+			get_tree().change_scene_to_file(\"res://scenes/2d/bad_ending.tscn\")
+			return
 "
 
 [sub_resource type="Animation" id="Animation_durno"]
@@ -335,20 +339,6 @@ tracks/11/keys = {
 Ohio Team | 2025
 
 [hint=\"Our site\"][url=https://ohio-team.github.io]https://ohio-team.github.io[url]", "[center] Let's see what Bob's up to now.."]
-}
-tracks/12/type = "method"
-tracks/12/imported = false
-tracks/12/enabled = true
-tracks/12/path = NodePath("AudioStreamPlayer")
-tracks/12/interp = 1
-tracks/12/loop_wrap = true
-tracks/12/keys = {
-"times": PackedFloat32Array(56.8333),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"stop"
-}]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_npvk4"]

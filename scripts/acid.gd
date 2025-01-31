@@ -16,9 +16,6 @@ func _on_body_entered(body):
 			Singleton.health -= 1
 			player.velocity.y += -1000
 			player.state = "hurt"
-	if body.is_in_group("Enemy"):
-		BMOD.play_sfx_2d(preload("res://assets/sfx/scream.tres"),body.position)
-		body.queue_free()
 
 func _on_timer_timeout() -> void:
 	var bu = preload("res://scenes/2d/bubble.tscn")
