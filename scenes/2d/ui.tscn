@@ -391,10 +391,10 @@ scale = Vector2(0.05, 0.05)
 texture = ExtResource("14_rxumh")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
-offset_left = 1151.0
-offset_top = 694.0
-offset_right = 1681.0
-offset_bottom = 760.0
+offset_left = 1168.0
+offset_top = 696.0
+offset_right = 1698.0
+offset_bottom = 762.0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 10
 text = "0"
@@ -402,10 +402,10 @@ scroll_active = false
 
 [node name="ohiohealth" type="RichTextLabel" parent="."]
 visible = false
-offset_left = 1044.0
-offset_top = 3.0
-offset_right = 1309.0
-offset_bottom = 43.0
+offset_left = 544.0
+offset_top = 8.0
+offset_right = 809.0
+offset_bottom = 48.0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 10
 theme_override_fonts/normal_font = ExtResource("2_0v11p")

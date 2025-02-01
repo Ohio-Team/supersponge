@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://b76nxoxpwscn2"]
+[gd_scene load_steps=15 format=4 uid="uid://b76nxoxpwscn2"]
 
 [ext_resource type="Texture2D" uid="uid://cbeklu72hm2c2" path="res://scenes/2d/tileset.png" id="1_j1ytw"]
 [ext_resource type="PackedScene" uid="uid://b86vokonmmvq5" path="res://scenes/2d/spatula.tscn" id="2_7s0yx"]
@@ -9,7 +9,6 @@
 [ext_resource type="Texture2D" uid="uid://c4up8of20l12b" path="res://assets/2d/miscsprites/game_bg0.png" id="5_q4vls"]
 [ext_resource type="PackedScene" uid="uid://msrilsl3hgxf" path="res://scenes/2d/token.tscn" id="8_flhek"]
 [ext_resource type="Texture2D" uid="uid://dt03hf2mm17f3" path="res://assets/2d/tokens/truthorsquare.jpg" id="9_p84rw"]
-[ext_resource type="Script" path="res://scripts/MenuButton.gd" id="10_0lq76"]
 [ext_resource type="PackedScene" uid="uid://c68ldtwatsbr7" path="res://scenes/2d/prisonescape.tscn" id="11_d1wim"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2jiw3"]
@@ -160,14 +159,4 @@ position = Vector2(206, 283)
 scale = Vector2(1.2, 1.2)
 image = ExtResource("9_p84rw")
 id = "sbds"
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="Menu_Button" type="Button" parent="CanvasLayer"]
-offset_left = 502.0
-offset_top = 3.0
-offset_right = 573.0
-offset_bottom = 34.0
-text = "Go Back"
-script = ExtResource("10_0lq76")
-scene = ExtResource("11_d1wim")
+goto = ExtResource("11_d1wim")

@@ -166,6 +166,8 @@ func _process(delta: float) -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group(\"Player\"):
+		Singleton.spatulas = 0
+		Singleton.health = 0
 		get_tree().change_scene_to_file(\"res://scenes/2d/level1intro.tscn\")
 "
 
@@ -257,4 +259,26 @@ flip_h = true
 position = Vector2(0, -3.05176e-05)
 shape = SubResource("RectangleShape2D_o15g4")
 
+[connection signal="body_entered" from="TileMapLayer/Spatula" to="TileMapLayer/Spatula" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/Jellyfish" to="TileMapLayer/Jellyfish" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@53262" to="TileMapLayer/@Area2D@53262" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@53263" to="TileMapLayer/@Area2D@53263" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@53264" to="TileMapLayer/@Area2D@53264" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@53265" to="TileMapLayer/@Area2D@53265" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@53266" to="TileMapLayer/@Area2D@53266" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@53267" to="TileMapLayer/@Area2D@53267" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@53268" to="TileMapLayer/@Area2D@53268" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@53269" to="TileMapLayer/@Area2D@53269" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@53270" to="TileMapLayer/@Area2D@53270" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@53271" to="TileMapLayer/@Area2D@53271" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@53272" to="TileMapLayer/@Area2D@53272" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@53273" to="TileMapLayer/@Area2D@53273" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@53274" to="TileMapLayer/@Area2D@53274" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@53275" to="TileMapLayer/@Area2D@53275" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@53276" to="TileMapLayer/@Area2D@53276" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/Soda" to="TileMapLayer/Soda" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@53277" to="TileMapLayer/@Area2D@53277" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@53278" to="TileMapLayer/@Area2D@53278" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@53279" to="TileMapLayer/@Area2D@53279" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@53280" to="TileMapLayer/@Area2D@53280" method="_on_body_entered"]
 [connection signal="body_entered" from="Patrick" to="Patrick" method="_on_body_entered"]
