@@ -4,10 +4,10 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mmiot"]
 
-[node name="acid" type="Area2D"]
+[node name="acid" type="Area2D" groups=["Enemy"]]
 script = ExtResource("1_rrr52")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["Enemy"]]
 shape = SubResource("RectangleShape2D_mmiot")
 
 [node name="Timer" type="Timer" parent="."]

@@ -545,11 +545,20 @@ animations = [{
 
 [sub_resource type="GDScript" id="GDScript_u78ge"]
 resource_name = "CJ"
-script/source = "extends StaticBody2D
+script/source = "extends Area2D
 
+@onready var player = get_tree().get_first_node_in_group(\"Player\")
 
 func _on_input_event(_viewport, event, _shape_idx):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
+		destroy()
+		
+	for body in get_overlapping_bodies():
+		if body == player:
+			if player.state == \"attack\":
+				destroy()
+
+func destroy():
 		BMOD.play_sfx_2d(preload(\"res://assets/sfx/cjhurt.tres\"),position)
 		Singleton.do_explosion(position)
 		var node := preload(\"res://scenes/2d/hammer.tscn\")
@@ -759,10 +768,9 @@ sprite_frames = SubResource("SpriteFrames_24e5k")
 autoplay = "default"
 frame_progress = 0.0240721
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="StaticBody2D" type="Area2D" parent="."]
 position = Vector2(2205, 136)
 scale = Vector2(0.464583, 0.418519)
-input_pickable = true
 script = SubResource("GDScript_u78ge")
 
 [node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="StaticBody2D"]

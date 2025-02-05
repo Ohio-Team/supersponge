@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://bunojm7n7h65f"]
 
-[ext_resource type="AudioStream" uid="uid://b3w4c2n6w2d8a" path="res://assets/music/credits.mp3" id="1_hou2e"]
+[ext_resource type="AudioStream" uid="uid://7objdnbh53uf" path="res://assets/music/credits.ogg" id="1_wume1"]
 [ext_resource type="FontFile" uid="uid://ia1v43t7vpqa" path="res://assets/fonts/Krabby Patty.ttf" id="2_8rr7p"]
 [ext_resource type="Texture2D" uid="uid://dye4odr3qkeck" path="res://assets/2d/tokens/jik.jpg" id="3_nu3fl"]
 [ext_resource type="Texture2D" uid="uid://c7t8gf0osdtxa" path="res://assets/2d/tokens/cubes.png" id="4_yu0vs"]
@@ -32,14 +32,19 @@ func _ready() -> void:
 	
 func endings():
 	if get_tree():
-		if Singleton.spatulas >= 10:
+		if Singleton.spatulas >= 50 and Singleton.tokens.size() == 4:
+			get_tree().change_scene_to_file(\"res://scenes/2d/super_good_ending.tscn\")
+			return
+		if Singleton.spatulas >= 10 and Ui.time < 600:
+			OS.alert(\"Wow! Theres no special ending for you but you certainly are really fast with games!\")
 			get_tree().change_scene_to_file(\"res://scenes/2d/good_ending.tscn\")
-		if Singleton.spatulas >= 10 and Singleton.time < 600:
-			print(\"Super fast ending\")
+			return
+		if Singleton.spatulas >= 0:
 			get_tree().change_scene_to_file(\"res://scenes/2d/good_ending.tscn\")
-		if Singleton.spatulas >= 50:
-			print(\"Super rich ending\")
-			get_tree().change_scene_to_file(\"res://scenes/2d/good_ending.tscn\")
+			return
+		if Singleton.spatulas <= -5:
+			get_tree().change_scene_to_file(\"res://scenes/2d/bad_ending.tscn\")
+			return
 "
 
 [sub_resource type="Animation" id="Animation_durno"]
@@ -191,10 +196,10 @@ tracks/0/path = NodePath("Names:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 29.3667),
+"times": PackedFloat32Array(0, 31.0333),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(323, 718), Vector2(323, -1830)]
+"values": [Vector2(323, 800), Vector2(323, -2030)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -315,7 +320,7 @@ tracks/10/keys = {
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
-"method": &"Main_Menu"
+"method": &"endings"
 }]
 }
 tracks/11/type = "value"
@@ -334,20 +339,6 @@ Ohio Team | 2025
 
 [hint=\"Our site\"][url=https://ohio-team.github.io]https://ohio-team.github.io[url]", "[center] Let's see what Bob's up to now.."]
 }
-tracks/12/type = "method"
-tracks/12/imported = false
-tracks/12/enabled = true
-tracks/12/path = NodePath("AudioStreamPlayer")
-tracks/12/interp = 1
-tracks/12/loop_wrap = true
-tracks/12/keys = {
-"times": PackedFloat32Array(56.8333),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"stop"
-}]
-}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_npvk4"]
 _data = {
@@ -364,14 +355,14 @@ offset_bottom = 720.0
 color = Color(0, 0, 0, 1)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("1_hou2e")
+stream = ExtResource("1_wume1")
 autoplay = true
 
 [node name="Names" type="RichTextLabel" parent="."]
 offset_left = 323.0
-offset_top = 718.0
+offset_top = -1528.45
 offset_right = 918.0
-offset_bottom = 2335.0
+offset_bottom = 569.555
 theme_override_fonts/normal_font = ExtResource("2_8rr7p")
 bbcode_enabled = true
 text = "[center]Ohio Team Presents:
@@ -431,8 +422,22 @@ Juan Enchilada
 
 
 Art:
-Sweaty Cow Balls 105
+Sweaty cow balls 105
 Antaramize
+
+
+
+
+
+
+
+
+Cutscenes:
+Juan Enchilada
+Flowcheer
+
+
+
 
 
 
@@ -440,7 +445,7 @@ Antaramize
 
 Level Design:
 Flowcheer
-Sweaty Cow Balls 105
+Sweaty cow balls 105
 Juan Enchilada
 
 

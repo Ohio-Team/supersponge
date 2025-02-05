@@ -35,7 +35,8 @@ func _on_hitbox_body_entered(body: Node2D) -> void:
 		elif player.state != \"dying\" and !player.invincible:
 				Singleton.health -= 1
 				player.state = \"hurt\"
-	queue_free()
+	if not body.is_in_group(\"Enemy\"):
+		queue_free()
 
 
 func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
@@ -47,14 +48,14 @@ func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cud66"]
 size = Vector2(22, 22)
 
-[node name="bubble" type="CharacterBody2D"]
+[node name="bubble" type="CharacterBody2D" groups=["Enemy"]]
 script = SubResource("GDScript_pbop6")
 
 [node name="Bubble" type="Sprite2D" parent="."]
 texture_filter = 1
 texture = ExtResource("1_14ihv")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["Enemy"]]
 shape = SubResource("RectangleShape2D_76l42")
 
 [node name="Timer" type="Timer" parent="."]
@@ -62,9 +63,9 @@ wait_time = 3.0
 one_shot = true
 autostart = true
 
-[node name="hitbox" type="Area2D" parent="."]
+[node name="hitbox" type="Area2D" parent="." groups=["Enemy"]]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox" groups=["Enemy"]]
 shape = SubResource("RectangleShape2D_cud66")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]

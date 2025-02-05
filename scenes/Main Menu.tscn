@@ -123,6 +123,10 @@ func _on_pressed() -> void:
 
 func _on_mouse_entered() -> void:
 	BMOD.play_sfx(preload(\"res://assets/sfx/menumove.tres\"))
+
+
+func _on_focus_entered() -> void:
+	BMOD.play_sfx(preload(\"res://assets/sfx/menumove.tres\"))
 "
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cloqg"]
@@ -224,8 +228,8 @@ texture = SubResource("GradientTexture2D_23esm")
 centered = false
 
 [node name="Ererreyy" type="Sprite2D" parent="."]
-position = Vector2(656, 184)
-scale = Vector2(0.489167, 0.534091)
+position = Vector2(647, 183)
+scale = Vector2(0.51375, 0.534091)
 texture = ExtResource("8_ypp24")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
@@ -398,6 +402,7 @@ bbcode_enabled = true
 text = "[center][wave][rainbow]PRESS ANY KEY"
 
 [connection signal="mouse_entered" from="Buttons/Menu_Button3" to="Buttons/Menu_Button3" method="_on_mouse_entered"]
+[connection signal="focus_entered" from="Buttons/Menu_Button" to="Buttons/Menu_Button" method="_on_focus_entered"]
 [connection signal="mouse_entered" from="Buttons/Menu_Button" to="Buttons/Menu_Button" method="_on_mouse_entered"]
 [connection signal="pressed" from="Buttons/Menu_Button" to="Buttons/Menu_Button" method="_on_pressed"]
 [connection signal="mouse_entered" from="Buttons/Menu_Button2" to="Buttons/Menu_Button2" method="_on_mouse_entered"]

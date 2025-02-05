@@ -2,6 +2,7 @@ extends Area2D
 @onready var player = get_tree().get_first_node_in_group("Player")
 @export var image:Texture
 @export var id:String
+@export var goto:PackedScene
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -15,7 +16,12 @@ func _on_body_entered(body):
 		BMOD.play_sfx(preload("res://assets/sfx/token.tres"))
 		Singleton.tokens.append(id)
 		Singleton.save_game()
+		teleport()
 		queue_free()
+		
+func teleport():
+	if goto:
+		get_tree().change_scene_to_packed(goto)
 
 
 @export var frequency: int = 6: 

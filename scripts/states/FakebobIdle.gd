@@ -48,6 +48,9 @@ func Physics_Update(delta):
 			if player.state != "dying" and !player.invincible and player.state != "attack":
 				Singleton.health -= 1
 				player.state = "hurt"
+				$"../../AnimatedSprite2D".play("jump")
+				BMOD.play_sfx(preload("res://assets/sfx/fakejump.tres"))
+				fakebob.velocity.y = -430.0
 			if player.state == "attack":
 				Transitioned.emit(self, "Hurt")
 				BMOD.play_sfx(preload("res://assets/sfx/bart.tres"))

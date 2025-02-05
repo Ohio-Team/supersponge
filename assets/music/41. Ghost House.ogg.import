@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://c2p2l3q60q2ro"
+path="res://.godot/imported/41. Ghost House.ogg-3557b36f0f9e08168d00b12d904a03fd.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/music/41. Ghost House.ogg"
+dest_files=["res://.godot/imported/41. Ghost House.ogg-3557b36f0f9e08168d00b12d904a03fd.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

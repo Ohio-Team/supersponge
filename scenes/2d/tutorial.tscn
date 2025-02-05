@@ -22,6 +22,7 @@ script/source = "extends Node2D
 func _ready() -> void:
 	Ui.time = 0
 	Singleton.inmenu = false
+	Singleton.tokens.clear()
 	Singleton.hasgun = false
 	Singleton.hashammer = false
 	Singleton.save_game()
@@ -164,6 +165,8 @@ func _process(delta: float) -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group(\"Player\"):
+		Singleton.spatulas = 0
+		Singleton.health = 3
 		get_tree().change_scene_to_file(\"res://scenes/2d/level1intro.tscn\")
 "
 
@@ -255,4 +258,26 @@ flip_h = true
 position = Vector2(0, -3.05176e-05)
 shape = SubResource("RectangleShape2D_o15g4")
 
+[connection signal="body_entered" from="TileMapLayer/Spatula" to="TileMapLayer/Spatula" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/Jellyfish" to="TileMapLayer/Jellyfish" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@19053" to="TileMapLayer/@Area2D@19053" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@19054" to="TileMapLayer/@Area2D@19054" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@19055" to="TileMapLayer/@Area2D@19055" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@19056" to="TileMapLayer/@Area2D@19056" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@19057" to="TileMapLayer/@Area2D@19057" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@19058" to="TileMapLayer/@Area2D@19058" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@19059" to="TileMapLayer/@Area2D@19059" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@19060" to="TileMapLayer/@Area2D@19060" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@19061" to="TileMapLayer/@Area2D@19061" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@19062" to="TileMapLayer/@Area2D@19062" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@19063" to="TileMapLayer/@Area2D@19063" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@19064" to="TileMapLayer/@Area2D@19064" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@19065" to="TileMapLayer/@Area2D@19065" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@19066" to="TileMapLayer/@Area2D@19066" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@19067" to="TileMapLayer/@Area2D@19067" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/Soda" to="TileMapLayer/Soda" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@19068" to="TileMapLayer/@Area2D@19068" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@19069" to="TileMapLayer/@Area2D@19069" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@19070" to="TileMapLayer/@Area2D@19070" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMapLayer/@Area2D@19071" to="TileMapLayer/@Area2D@19071" method="_on_body_entered"]
 [connection signal="body_entered" from="Patrick" to="Patrick" method="_on_body_entered"]

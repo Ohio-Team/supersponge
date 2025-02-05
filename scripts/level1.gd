@@ -11,7 +11,7 @@ func _ready():
 	MusicPlayer.play_song("res://assets/music/jelly.ogg")
 	Ui.create_dialog("Here we go. Let's save [b]my ohio hometown.[b]", "spongebob")
 	await Ui.dialog_finished
-	Ui.create_dialog("Watch out spongeboy. There's some [shake]oddities[/shake] ahead. You can press [b]X[/b] to attack.", "sandy+")
+	Ui.create_dialog("Watch out spongeboy. There's some [shake]oddities[/shake] ahead" , "sandy+")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

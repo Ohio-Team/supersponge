@@ -19,7 +19,7 @@ func _ready() -> void:
 
 func play_kend() -> void:
 	Ui.create_dialog(\"Oh yeah... This shit is good....wd\")
-	MusicPlayer.play_song(\"res://assets/music/alright.mp3\")
+	MusicPlayer.play_song(\"res://assets/music/alright.ogg\")
 
 func back_to_menu() -> void:
 	MusicPlayer.stop_song()

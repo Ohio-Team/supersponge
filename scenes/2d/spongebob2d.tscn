@@ -321,13 +321,13 @@ animations = [{
 "texture": ExtResource("10_cisgx")
 }, {
 "duration": 1.0,
+"texture": ExtResource("11_wbx5l")
+}, {
+"duration": 1.0,
 "texture": ExtResource("2_mcd8j")
 }, {
 "duration": 1.0,
 "texture": ExtResource("9_x5iv1")
-}, {
-"duration": 1.0,
-"texture": ExtResource("11_wbx5l")
 }, {
 "duration": 1.0,
 "texture": ExtResource("8_yd1yc")
@@ -337,7 +337,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"jump",
-"speed": 15.0
+"speed": 20.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -497,9 +497,10 @@ script = ExtResource("1_uyiiv")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_u32rl")
-animation = &"run"
+animation = &"jump"
 autoplay = "idle"
-frame_progress = 0.541743
+frame = 6
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_putow")
