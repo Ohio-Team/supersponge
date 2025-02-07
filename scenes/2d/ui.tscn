@@ -8,8 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://co678f1m67oho" path="res://assets/2d/pausemenu/animframe2.png" id="9_v8vfu"]
 [ext_resource type="Texture2D" uid="uid://ilrqnrnwq5r" path="res://assets/2d/pausemenu/exponja.png" id="10_73r8n"]
 [ext_resource type="AudioStream" uid="uid://rwgskvwyglrr" path="res://assets/music/pause.ogg" id="10_tdpyq"]
-[ext_resource type="Texture2D" uid="uid://dye4odr3qkeck" path="res://assets/2d/tokens/jik.jpg" id="11_fwb1r"]
 [ext_resource type="Texture2D" uid="uid://cf12yfdq4rhy8" path="res://assets/2d/pausemenu/patricio.png" id="11_g1ndh"]
+[ext_resource type="Texture2D" uid="uid://cr34c86lot7ig" path="res://assets/2d/tokens/craig.png" id="11_l8j5a"]
 [ext_resource type="Texture2D" uid="uid://c7t8gf0osdtxa" path="res://assets/2d/tokens/cubes.png" id="12_7ekmn"]
 [ext_resource type="Texture2D" uid="uid://ciq7335f7ccf2" path="res://assets/2d/pausemenu/pausegr.png" id="12_fxnwe"]
 [ext_resource type="Texture2D" uid="uid://ybte62d4o5fu" path="res://assets/2d/tokens/milkshake.png" id="13_6o23l"]
@@ -368,9 +368,9 @@ text = "Tokens"
 
 [node name="Jik" type="Sprite2D" parent="Pause"]
 visible = false
-position = Vector2(547, 653.5)
-scale = Vector2(0.05, 0.05)
-texture = ExtResource("11_fwb1r")
+position = Vector2(544, 656)
+scale = Vector2(0.086331, 0.0843749)
+texture = ExtResource("11_l8j5a")
 
 [node name="Cubes" type="Sprite2D" parent="Pause"]
 visible = false

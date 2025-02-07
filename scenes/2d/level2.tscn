@@ -18,7 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://msrilsl3hgxf" path="res://scenes/2d/token.tscn" id="16_m2sev"]
 [ext_resource type="PackedScene" uid="uid://c6w27ujk2uor4" path="res://scenes/2d/dialogzone.tscn" id="17_k6k4w"]
 [ext_resource type="PackedScene" uid="uid://ul6qixbunia7" path="res://scenes/2d/hurtbox_nonlethal.tscn" id="19_3chv8"]
-[ext_resource type="Texture2D" uid="uid://dye4odr3qkeck" path="res://assets/2d/tokens/jik.jpg" id="21_gg6d1"]
+[ext_resource type="Texture2D" uid="uid://cr34c86lot7ig" path="res://assets/2d/tokens/craig.png" id="21_l0h47"]
 [ext_resource type="PackedScene" uid="uid://sjqyue4epbwp" path="res://scenes/2d/wood_bridge.tscn" id="21_pgvp4"]
 [ext_resource type="PackedScene" uid="uid://jfrxncqf6st2" path="res://scenes/2d/fakebobgate.tscn" id="22_4yen3"]
 [ext_resource type="PackedScene" uid="uid://wgwcmaewr6g3" path="res://scenes/2d/pipe.tscn" id="22_v7pxu"]
@@ -254,7 +254,7 @@ texture = ExtResource("15_ffbtg")
 
 [node name="Token" parent="." instance=ExtResource("16_m2sev")]
 position = Vector2(3250, 1460)
-image = ExtResource("21_gg6d1")
+image = ExtResource("21_l0h47")
 id = "jik"
 
 [node name="acid5" parent="." instance=ExtResource("14_i5c6b")]
