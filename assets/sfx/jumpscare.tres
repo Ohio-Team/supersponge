@@ -1,10 +1,10 @@
 [gd_resource type="Resource" script_class="SingleSoundEffect" load_steps=3 format=3 uid="uid://bx36rst46o3js"]
 
-[ext_resource type="AudioStream" uid="uid://b8fyqlg04mc4k" path="res://assets/sfx/jumpscare.wav" id="1_7a1w4"]
+[ext_resource type="AudioStream" uid="uid://b22xc4yw3aot5" path="res://assets/sfx/jumpscare.wav" id="1_aqyut"]
 [ext_resource type="Script" path="res://addons/bmod/scripts/resources/single_sound_effect.gd" id="1_qty30"]
 
 [resource]
 script = ExtResource("1_qty30")
-audio_stream = ExtResource("1_7a1w4")
+audio_stream = ExtResource("1_aqyut")
 play = false
 play_on_change = false

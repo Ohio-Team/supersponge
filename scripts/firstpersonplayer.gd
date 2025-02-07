@@ -6,6 +6,7 @@ extends CharacterBody3D
 
 var mouse_sensitivity := 0.001
 var twist_input := 0.0
+var dead_zone := 0.2
 var pitch_input := 0.0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.

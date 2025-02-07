@@ -1,10 +1,10 @@
 [gd_resource type="Resource" script_class="SingleSoundEffect" load_steps=3 format=3 uid="uid://bmlasaq5jpco1"]
 
-[ext_resource type="AudioStream" uid="uid://mkio0cm676l" path="res://assets/sfx/cjhurt.ogg" id="1_lyj62"]
+[ext_resource type="AudioStream" uid="uid://mkio0cm676l" path="res://assets/sfx/cjhurt.ogg" id="1_1murk"]
 [ext_resource type="Script" path="res://addons/bmod/scripts/resources/single_sound_effect.gd" id="1_nqhdm"]
 
 [resource]
 script = ExtResource("1_nqhdm")
-audio_stream = ExtResource("1_lyj62")
+audio_stream = ExtResource("1_1murk")
 play = false
 play_on_change = false

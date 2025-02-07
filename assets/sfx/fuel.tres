@@ -1,10 +1,10 @@
 [gd_resource type="Resource" script_class="SingleSoundEffect" load_steps=3 format=3 uid="uid://boxxhresxc8lg"]
 
-[ext_resource type="AudioStream" uid="uid://d21cabqrkduys" path="res://assets/sfx/sfx_item_level_item.ogg" id="1_1brt2"]
 [ext_resource type="Script" path="res://addons/bmod/scripts/resources/single_sound_effect.gd" id="1_patsa"]
+[ext_resource type="AudioStream" uid="uid://rpdfwml5var1" path="res://assets/sfx/sfx_item_level_item.ogg" id="1_qswsg"]
 
 [resource]
 script = ExtResource("1_patsa")
-audio_stream = ExtResource("1_1brt2")
+audio_stream = ExtResource("1_qswsg")
 play = false
 play_on_change = false
