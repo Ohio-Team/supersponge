@@ -11,8 +11,8 @@ func _ready():
 		$ColorRect/Maxresdefault.texture = preload("res://assets/2d/dialogfaces/Fakebob.png")
 	elif char == "sandy":
 		$ColorRect/Maxresdefault.texture = preload("res://assets/2d/dialogfaces/Sandy.png")
-	elif char == "kanye":
-		$ColorRect/Maxresdefault.texture = preload("res://assets/2d/dialogfaces/kanye.png")
+	elif char == "tyler":
+		$ColorRect/Maxresdefault.texture = preload("res://assets/2d/dialogfaces/Tyler.png")
 	elif char == "patrick":
 		$ColorRect/Maxresdefault.texture = preload("res://assets/2d/dialogfaces/Patrick.png")
 	
