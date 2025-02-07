@@ -80,10 +80,10 @@ shape = SubResource("RectangleShape2D_e4xpu")
 
 [node name="ColorRect" type="ColorRect" parent="Area2D"]
 visible = false
-offset_left = 254.0
-offset_top = 495.744
-offset_right = 423.0
-offset_bottom = 819.744
+offset_left = -18.0
+offset_top = 496.0
+offset_right = 1289.0
+offset_bottom = 820.0
 color = Color(0, 0, 0, 1)
 
 [node name="Spongebob" parent="." instance=ExtResource("3_tm0yy")]
@@ -104,15 +104,12 @@ shape = SubResource("RectangleShape2D_nsgfl")
 
 [node name="Spatula" parent="Collects" instance=ExtResource("4_dxh5o")]
 position = Vector2(512, 528)
-scale = Vector2(1, 1.11146)
 
 [node name="Spatula2" parent="Collects" instance=ExtResource("4_dxh5o")]
 position = Vector2(544, 528)
-scale = Vector2(1, 1.11146)
 
 [node name="Spatula3" parent="Collects" instance=ExtResource("4_dxh5o")]
 position = Vector2(576, 528)
-scale = Vector2(1, 1.11146)
 
 [node name="Spatula4" parent="Collects" instance=ExtResource("4_dxh5o")]
 position = Vector2(336, 520)

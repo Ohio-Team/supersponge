@@ -2,7 +2,7 @@
 
 [ext_resource type="AudioStream" uid="uid://7objdnbh53uf" path="res://assets/music/credits.ogg" id="1_wume1"]
 [ext_resource type="FontFile" uid="uid://ia1v43t7vpqa" path="res://assets/fonts/Krabby Patty.ttf" id="2_8rr7p"]
-[ext_resource type="Texture2D" uid="uid://dye4odr3qkeck" path="res://assets/2d/tokens/jik.jpg" id="3_nu3fl"]
+[ext_resource type="Texture2D" uid="uid://cr34c86lot7ig" path="res://assets/2d/tokens/craig.png" id="3_ac4e6"]
 [ext_resource type="Texture2D" uid="uid://c7t8gf0osdtxa" path="res://assets/2d/tokens/cubes.png" id="4_yu0vs"]
 [ext_resource type="Texture2D" uid="uid://ybte62d4o5fu" path="res://assets/2d/tokens/milkshake.png" id="5_qlwwv"]
 [ext_resource type="Texture2D" uid="uid://dt03hf2mm17f3" path="res://assets/2d/tokens/truthorsquare.jpg" id="6_vahlv"]
@@ -564,7 +564,7 @@ autoplay = "new_animation"
 visible = false
 position = Vector2(386, 420)
 scale = Vector2(0.1, 0.1)
-texture = ExtResource("3_nu3fl")
+texture = ExtResource("3_ac4e6")
 
 [node name="Cubes" type="Sprite2D" parent="."]
 visible = false
