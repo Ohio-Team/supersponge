@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://barskkwg2m1ud"
-path="res://.godot/imported/kanye.png-6031d17a2f4cbd6ed01463c04c8deb38.ctex"
+uid="uid://benx06ynub5n5"
+path="res://.godot/imported/Tyler.png-35a50bbd392190a2110b4c707ab4ecf8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/2d/dialogfaces/kanye.png"
-dest_files=["res://.godot/imported/kanye.png-6031d17a2f4cbd6ed01463c04c8deb38.ctex"]
+source_file="res://assets/2d/dialogfaces/Tyler.png"
+dest_files=["res://.godot/imported/Tyler.png-35a50bbd392190a2110b4c707ab4ecf8.ctex"]
 
 [params]
 
