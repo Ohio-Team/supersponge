@@ -172,4 +172,11 @@ bbcode_enabled = true
 text = "[center] Spongebob Squarepants:
 ..brother, this game sucks. I don't know how this game made me happy but I think it's cursed. Just give me the coordinates man."
 
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = 22.0
+offset_top = 694.0
+offset_right = 189.0
+offset_bottom = 720.0
+color = Color(0.537255, 0.54902, 0.682353, 1)
+
 [connection signal="input_event" from="Window/Area2D" to="Window" method="_on_input_event"]
