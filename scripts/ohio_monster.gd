@@ -19,7 +19,6 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 		Input.start_joy_vibration(0,1,1,1)
 		BMOD.play_sfx(preload("res://assets/sfx/jumpscare.tres"))
 		OS.alert("ONLY IN OHIO! OOOH!","Ohio Alert!")
-		OS.alert("ONLY IN OHIO! OOOH!","Ohio Alert!")
 		if get_tree():
 			Singleton.deaths += 1
 			get_tree().reload_current_scene()

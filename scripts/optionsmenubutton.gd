@@ -6,7 +6,6 @@ var config = ConfigFile.new()
 var err = config.load("user://settings.cfg")
 
 func _on_pressed() -> void:
-	Singleton.inmenu = false
 	BMOD.play_sfx(preload("res://assets/sfx/funnybuttons/buttons.tres"))
 	var save_file = FileAccess.open("user://tom.save", FileAccess.READ)
 	if not FileAccess.file_exists("user://tom.save"):
@@ -22,7 +21,7 @@ func _on_pressed() -> void:
 		
 		var data = json.get_data()
 		save_settings()
-		get_tree().change_scene_to_file(data["current_scene"])
+		get_parent().queue_free()
 		
 func get_keycode(action_name:String):
 	var action_events = InputMap.action_get_events(action_name)

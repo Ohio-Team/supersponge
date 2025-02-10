@@ -10,12 +10,6 @@
 [ext_resource type="Texture2D" uid="uid://dr3eskctiurf" path="res://assets/2d/miscsprites/panel.png" id="5_xmtju"]
 [ext_resource type="PackedScene" uid="uid://cnnghhi78bxjd" path="res://scenes/rebind.tscn" id="6_ye3qy"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_k1wh4"]
-shader = ExtResource("2_3sb6h")
-shader_parameter/motion = Vector2(0.5, 0)
-shader_parameter/scale = -0.14
-shader_parameter/offset = Vector2(0, 0)
-
 [sub_resource type="Gradient" id="Gradient_8v1x4"]
 colors = PackedColorArray(0.0061604, 0, 0.577781, 1, 0.646506, 0.170108, 0.109176, 1)
 
@@ -23,6 +17,12 @@ colors = PackedColorArray(0.0061604, 0, 0.577781, 1, 0.646506, 0.170108, 0.10917
 gradient = SubResource("Gradient_8v1x4")
 fill_from = Vector2(0, 0.5)
 fill_to = Vector2(1, 0.5)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_k1wh4"]
+shader = ExtResource("2_3sb6h")
+shader_parameter/motion = Vector2(0.5, 0)
+shader_parameter/scale = -0.14
+shader_parameter/offset = Vector2(0, 0)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ma72j"]
 texture = ExtResource("5_xmtju")
@@ -109,9 +109,16 @@ func _on_pressed() -> void:
 "
 
 [node name="Options" type="Control"]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_gxje3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+self_modulate = Color(1, 1, 1, 0.501961)
+position = Vector2(640, 360)
+scale = Vector2(20, 11.25)
+texture = SubResource("GradientTexture2D_upkdc")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -124,12 +131,6 @@ material = SubResource("ShaderMaterial_k1wh4")
 position = Vector2(640, 360)
 scale = Vector2(14.2222, 8)
 texture = ExtResource("3_xtwlt")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-self_modulate = Color(1, 1, 1, 0.501961)
-position = Vector2(640, 360)
-scale = Vector2(20, 11.25)
-texture = SubResource("GradientTexture2D_upkdc")
 
 [node name="Menu_Button" type="Button" parent="."]
 layout_mode = 0

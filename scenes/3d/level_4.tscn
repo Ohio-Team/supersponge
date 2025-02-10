@@ -37,7 +37,7 @@ tracks/0/path = NodePath("../Subtitles:text")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.46249, 2.44173, 4.46668, 5.05, 5.75009, 8.99176, 9.75, 10.8834, 11.8834, 12.3, 13.1667, 14.5167, 15.9334),
+"times": PackedFloat32Array(0, 1.23333, 2.15, 4, 4.31667, 4.58333, 7.66667, 8.86667, 9.81667, 10.8, 11.0667, 12.1333, 13.4667, 15.9334),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": ["[center] Smiling Simpsons:

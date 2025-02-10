@@ -32,6 +32,6 @@ offset_top = 691.0
 offset_right = 314.0
 offset_bottom = 714.0
 theme_override_constants/outline_size = 6
-text = "Cutscene pending. Press any key to skip."
+text = "Press any key to skip."
 
 [connection signal="finished" from="VideoStreamPlayer" to="." method="_on_video_stream_player_finished"]
