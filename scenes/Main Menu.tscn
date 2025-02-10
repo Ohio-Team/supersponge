@@ -5,7 +5,6 @@
 [ext_resource type="Script" path="res://scripts/MenuButton.gd" id="6_th7r2"]
 [ext_resource type="Texture2D" uid="uid://dr3eskctiurf" path="res://assets/2d/miscsprites/panel.png" id="6_xfwtr"]
 [ext_resource type="PackedScene" uid="uid://behgaq4jmvceh" path="res://scenes/2d/tutorial.tscn" id="7_oxu2a"]
-[ext_resource type="PackedScene" uid="uid://dhxbkh5627l1q" path="res://scenes/Options.tscn" id="8_72lj6"]
 [ext_resource type="PackedScene" uid="uid://c6wbocp76dh62" path="res://scenes/2d/level_select.tscn" id="8_fno0c"]
 [ext_resource type="Texture2D" uid="uid://lw1u60dv5x6a" path="res://assets/2d/miscsprites/ererreyy.png" id="8_ypp24"]
 [ext_resource type="Texture2D" uid="uid://chuoxbkuhky84" path="res://assets/2d/miscsprites/help.png" id="9_8oq8h"]
@@ -169,6 +168,34 @@ modulate_color = Color(0.31802, 0.31802, 0.31802, 1)
 texture = ExtResource("6_xfwtr")
 modulate_color = Color(0.31802, 0.31802, 0.31802, 1)
 
+[sub_resource type="GDScript" id="GDScript_gislc"]
+script/source = "extends Button
+
+var spawned:bool = false
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+
+
+func _on_pressed() -> void:
+	Singleton.save_game()
+	BMOD.play_sfx(preload(\"res://assets/sfx/funnybuttons/buttons.tres\"))
+	var op = preload(\"res://scenes/Options.tscn\")
+	var options = op.instantiate()
+	if !spawned:
+		get_parent().get_parent().add_child(options)
+		spawned = true
+	else:
+		get_parent().get_parent().get_child(5).queue_free()
+		spawned = false
+"
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_co1ej"]
 texture = ExtResource("6_xfwtr")
 modulate_color = Color(0.31802, 0.31802, 0.31802, 1)
@@ -239,6 +266,14 @@ offset_top = 688.0
 offset_right = 203.0
 offset_bottom = 714.0
 text = "Ohio Team 2024 - 2025"
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 201.0
+offset_top = 688.0
+offset_right = 388.0
+offset_bottom = 714.0
+text = "v1.0.1"
 
 [node name="Buttons" type="Node2D" parent="."]
 position = Vector2(640, 340)
@@ -323,8 +358,7 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_b0phl")
 theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_5jo20")
 theme_override_styles/normal = SubResource("StyleBoxTexture_nci4k")
 text = "Options"
-script = ExtResource("6_th7r2")
-scene = ExtResource("8_72lj6")
+script = SubResource("GDScript_gislc")
 
 [node name="Menu_Button4" type="Button" parent="Buttons"]
 visible = false
@@ -406,6 +440,7 @@ text = "[center][wave][rainbow]PRESS ANY KEY"
 [connection signal="mouse_entered" from="Buttons/Menu_Button" to="Buttons/Menu_Button" method="_on_mouse_entered"]
 [connection signal="pressed" from="Buttons/Menu_Button" to="Buttons/Menu_Button" method="_on_pressed"]
 [connection signal="mouse_entered" from="Buttons/Menu_Button2" to="Buttons/Menu_Button2" method="_on_mouse_entered"]
+[connection signal="pressed" from="Buttons/Menu_Button2" to="Buttons/Menu_Button2" method="_on_pressed"]
 [connection signal="focus_entered" from="Buttons/Menu_Button4" to="Buttons/Menu_Button4" method="_on_focus_entered"]
 [connection signal="mouse_entered" from="Buttons/Menu_Button4" to="Buttons/Menu_Button4" method="_on_mouse_entered"]
 [connection signal="mouse_entered" from="Buttons/Menu_Button5" to="Buttons/Menu_Button5" method="_on_mouse_entered"]

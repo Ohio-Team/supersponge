@@ -385,9 +385,9 @@ autoplay = true
 
 [node name="Names" type="RichTextLabel" parent="."]
 offset_left = 323.0
-offset_top = 120.0
+offset_top = -2300.0
 offset_right = 918.0
-offset_bottom = 2218.0
+offset_bottom = -202.0
 theme_override_fonts/normal_font = ExtResource("2_8rr7p")
 bbcode_enabled = true
 text = "[center]
@@ -561,8 +561,8 @@ autoplay = "new_animation"
 
 [node name="Jik" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(386, 420)
-scale = Vector2(0.1, 0.1)
+position = Vector2(384, 416)
+scale = Vector2(0.136691, 0.13125)
 texture = ExtResource("3_ac4e6")
 
 [node name="Cubes" type="Sprite2D" parent="."]
@@ -584,6 +584,7 @@ scale = Vector2(0.1, 0.1)
 texture = ExtResource("6_vahlv")
 
 [node name="Ererreyy" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(640, 840)
 scale = Vector2(0.42, 0.416667)
 texture = ExtResource("7_33tdw")

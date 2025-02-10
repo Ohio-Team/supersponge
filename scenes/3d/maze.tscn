@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://dyk3m0ilabu4e"]
+[gd_scene load_steps=20 format=3 uid="uid://dyk3m0ilabu4e"]
 
 [ext_resource type="PackedScene" uid="uid://c2a2viyf4hpun" path="res://assets/3d/maze/maze.blend" id="1_6x05c"]
 [ext_resource type="PackedScene" uid="uid://eit1pvvg3w60" path="res://scenes/3d/firstpersonplayer.tscn" id="2_pdilh"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dp4vg3yineb8r" path="res://scenes/3d/token_3d.tscn" id="5_h2jrk"]
 [ext_resource type="Texture2D" uid="uid://84nu6b4ix10w" path="res://assets/2d/miscsprites/patrick.png" id="5_irk2p"]
 [ext_resource type="Texture2D" uid="uid://ybte62d4o5fu" path="res://assets/2d/tokens/milkshake.png" id="6_rx6dn"]
+[ext_resource type="Texture2D" uid="uid://sunsit2gvi6a" path="res://assets/2d/miscsprites/thisway.png" id="7_1dt7n"]
 
 [sub_resource type="GDScript" id="GDScript_tt7vt"]
 resource_name = "maze.gd"
@@ -356,6 +357,21 @@ image = ExtResource("6_rx6dn")
 id = "711"
 frequency = 2
 amplitude = 3
+
+[node name="Sprite3D2" type="Sprite3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 17.7962, 8.13348, -45.8387)
+shaded = true
+texture = ExtResource("7_1dt7n")
+
+[node name="Sprite3D3" type="Sprite3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 14.9641, 8.13348, -13.0436)
+shaded = true
+texture = ExtResource("7_1dt7n")
+
+[node name="Sprite3D4" type="Sprite3D" parent="."]
+transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 48.9193, 8.13348, 43.5437)
+shaded = true
+texture = ExtResource("7_1dt7n")
 
 [connection signal="body_entered" from="trampoline" to="trampoline" method="_on_body_entered"]
 [connection signal="body_entered" from="Sprite3D/Area3D" to="Sprite3D/Area3D" method="_on_body_entered"]

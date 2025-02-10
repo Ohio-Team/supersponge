@@ -30,7 +30,8 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	if !$\"Angry Bird\":
 		await Singleton.wait(5)
-		get_tree().change_scene_to_file(\"res://scenes/3d/bossfight3d.tscn\")
+		if get_tree():
+			get_tree().change_scene_to_file(\"res://scenes/3d/bossfight3d.tscn\")
 "
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xbbkx"]

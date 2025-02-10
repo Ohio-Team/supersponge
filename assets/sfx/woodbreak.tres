@@ -1,10 +1,10 @@
 [gd_resource type="Resource" script_class="SingleSoundEffect" load_steps=3 format=3 uid="uid://v656f4kr8epi"]
 
-[ext_resource type="AudioStream" uid="uid://cwtn6acrhxvnj" path="res://assets/sfx/woodbreak.wav" id="1_gi8sk"]
+[ext_resource type="AudioStream" uid="uid://cwtn6acrhxvnj" path="res://assets/sfx/woodbreak.wav" id="1_cgocq"]
 [ext_resource type="Script" path="res://addons/bmod/scripts/resources/single_sound_effect.gd" id="1_icdjd"]
 
 [resource]
 script = ExtResource("1_icdjd")
-audio_stream = ExtResource("1_gi8sk")
+audio_stream = ExtResource("1_cgocq")
 play = false
 play_on_change = false

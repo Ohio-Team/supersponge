@@ -26,7 +26,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kovty"]
-size = Vector2(46, 24)
+size = Vector2(32, 24)
 
 [node name="Skate" type="CharacterBody2D" groups=["Player"]]
 script = ExtResource("1_ji3oo")

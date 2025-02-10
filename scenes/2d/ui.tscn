@@ -108,11 +108,11 @@ func _process(delta: float) -> void:
 
 
 func _on_pressed() -> void:
-	$\"..\".visible = false
 	Singleton.save_game()
 	BMOD.play_sfx(preload(\"res://assets/sfx/funnybuttons/buttons.tres\"))
-	get_tree().paused = false
-	get_tree().change_scene_to_file(\"res://scenes/Options.tscn\")
+	var op = preload(\"res://scenes/Options.tscn\")
+	var options = op.instantiate()
+	get_parent().get_parent().add_child(options)
 "
 
 [sub_resource type="Animation" id="Animation_jkefl"]
