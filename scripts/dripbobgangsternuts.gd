@@ -1,11 +1,7 @@
-extends Node
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+# hello dripbob gangster fucker
+# this is juan enchilada
+# heres the deal.
+# if you try to deep fry this game again
+# i will find you
+# and break your legs
+# and thats a promise
