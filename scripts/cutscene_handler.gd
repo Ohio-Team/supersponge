@@ -1,6 +1,7 @@
 extends Node2D
 
 @export var after_cutscene:PackedScene
+@onready var ptime:float = 0.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -9,7 +10,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if Input.is_anything_pressed():
+	ptime += delta
+	if ptime > 0.01 and Input.is_anything_pressed():
 		gotonext()
 
 func gotonext():
