@@ -7,3 +7,5 @@ rather one of the best games evah.
 - Discord RPC Plugin
 - BMOD
 - Blender
+
+If you get warnings and parsing errors when opening the project, that's completely fine, just re-enable the Discord RPC plugin
