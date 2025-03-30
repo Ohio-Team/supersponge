@@ -1,7 +1,7 @@
 [gd_scene load_steps=176 format=4 uid="uid://coebr5rjm8gg0"]
 
 [ext_resource type="Texture2D" uid="uid://cghdnbutnmdlq" path="res://assets/3d/textures/_albedo000.png" id="1_3wdqi"]
-[ext_resource type="Script" path="res://scripts/driving.gd" id="1_lay5p"]
+[ext_resource type="Script" uid="uid://bwjlxdntqt5r3" path="res://scripts/driving.gd" id="1_lay5p"]
 [ext_resource type="Texture2D" uid="uid://c7jnb2grw18h8" path="res://assets/3d/textures/Material_albedo000.png" id="2_b2flb"]
 [ext_resource type="PackedScene" uid="uid://q1h0c43bbj4p" path="res://scenes/3d/pattywagon.tscn" id="2_dk7po"]
 [ext_resource type="Texture2D" uid="uid://c7wiwlmd3jby6" path="res://assets/3d/bikinibottom/textures/jf_sky_color_77.png" id="2_rskht"]

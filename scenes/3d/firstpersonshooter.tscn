@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://dwm7vih3bgtyv"]
 
-[ext_resource type="Script" path="res://scripts/firstpersonshooter.gd" id="1_1kqf8"]
+[ext_resource type="Script" uid="uid://cas5ukqmpp3ib" path="res://scripts/firstpersonshooter.gd" id="1_1kqf8"]
 [ext_resource type="Texture2D" uid="uid://yanmhd5kylxm" path="res://assets/2d/doomfaces/normal.png" id="2_1tblf"]
 [ext_resource type="Texture2D" uid="uid://qcgopt40lv88" path="res://assets/2d/doomfaces/health1.png" id="2_w7c7t"]
 [ext_resource type="Texture2D" uid="uid://dpxp1qcs1a65g" path="res://assets/2d/doomfaces/normalleft.png" id="3_2f6xy"]

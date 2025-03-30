@@ -1,6 +1,6 @@
 [gd_scene load_steps=95 format=3 uid="uid://cjoo6ilm8eim1"]
 
-[ext_resource type="Script" path="res://scripts/Spongebob2d.gd" id="1_uyiiv"]
+[ext_resource type="Script" uid="uid://f8c7rrr22x6i" path="res://scripts/Spongebob2d.gd" id="1_uyiiv"]
 [ext_resource type="Texture2D" uid="uid://d32l5bmmvw7gn" path="res://assets/2d/spongebobby/119.png" id="2_45efo"]
 [ext_resource type="Texture2D" uid="uid://do4r7mqil01ed" path="res://assets/2d/spongebobby/4.png" id="2_m3j58"]
 [ext_resource type="Texture2D" uid="uid://crgpccsuefkuo" path="res://assets/2d/spongebobby/82.png" id="2_mcd8j"]
@@ -426,7 +426,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"run",
-"speed": 25.0
+"speed": 100.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -495,7 +495,7 @@ texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_u32rl")
 animation = &"run"
 autoplay = "idle"
-frame_progress = 0.0116223
+frame_progress = 0.572771
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_putow")

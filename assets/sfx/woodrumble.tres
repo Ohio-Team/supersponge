@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="SingleSoundEffect" load_steps=3 format=3 uid="uid://ciea8nd5x471d"]
 
-[ext_resource type="Script" path="res://addons/bmod/scripts/resources/single_sound_effect.gd" id="1_0kge2"]
+[ext_resource type="Script" uid="uid://d30hg3g2wwxsk" path="res://addons/bmod/scripts/resources/single_sound_effect.gd" id="1_0kge2"]
 [ext_resource type="AudioStream" uid="uid://blbwqun6a3hc6" path="res://assets/sfx/woodrumble.wav" id="1_ehn3u"]
 
 [resource]

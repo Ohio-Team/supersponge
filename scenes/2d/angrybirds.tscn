@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://3mnrcq40ss4a" path="res://assets/2d/angrybirds/angrybird (6).png" id="2_0ixhg"]
 [ext_resource type="Texture2D" uid="uid://bxktvi6302o4j" path="res://assets/2d/angrybirds/angrybird (4).png" id="3_boff4"]
 [ext_resource type="Texture2D" uid="uid://dkegt5g3m6cu4" path="res://assets/2d/angrybirds/slingshot (1).png" id="3_wblgb"]
-[ext_resource type="Shader" path="res://scripts/level2.gdshader" id="4_xo47y"]
+[ext_resource type="Shader" uid="uid://c7j0qg78j25al" path="res://scripts/level2.gdshader" id="4_xo47y"]
 [ext_resource type="Texture2D" uid="uid://b8373o7m0yil0" path="res://assets/2d/angrybirds/slingshot (2).png" id="4_yr4jo"]
 [ext_resource type="Texture2D" uid="uid://b6duufffyv7jh" path="res://assets/2d/angrybirds/angrybird (3).png" id="5_xa858"]
 [ext_resource type="Texture2D" uid="uid://lhna2iae4mfo" path="res://assets/2d/angrybirds/angrybird (5).png" id="6_ccfe3"]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=37 format=4 uid="uid://c5jkxe2gm5xsh"]
 
 [ext_resource type="Texture2D" uid="uid://culfcrnvqqsnd" path="res://assets/2d/tilesets/jail.png" id="1_oojjp"]
-[ext_resource type="Script" path="res://scenes/2d/prisonescape_3.gd" id="1_xscnf"]
+[ext_resource type="Script" uid="uid://dwrie707h2kpy" path="res://scenes/2d/prisonescape_3.gd" id="1_xscnf"]
 [ext_resource type="PackedScene" uid="uid://b86vokonmmvq5" path="res://scenes/2d/spatula.tscn" id="2_phji4"]
 [ext_resource type="PackedScene" uid="uid://dolf5os2imxdu" path="res://scenes/2d/crazyfish.tscn" id="3_65kli"]
 [ext_resource type="Texture2D" uid="uid://bo4nxxbehouhb" path="res://assets/2d/fakebob/WoodB04.png" id="3_cjk6q"]
@@ -405,9 +405,9 @@ tracks/4/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_36a6a"]
 _data = {
-"RESET": SubResource("Animation_7c7dy"),
-"alarm": SubResource("Animation_jhhqc"),
-"window": SubResource("Animation_hvauj")
+&"RESET": SubResource("Animation_7c7dy"),
+&"alarm": SubResource("Animation_jhhqc"),
+&"window": SubResource("Animation_hvauj")
 }
 
 [sub_resource type="GDScript" id="GDScript_j0j8n"]

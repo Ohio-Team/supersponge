@@ -1,8 +1,8 @@
 @icon("res://assets/icons/sbicon.svg")
 extends CharacterBody2D
 
-const SPEED = 250.0
-const JUMP_VELOCITY = -430.0
+const SPEED = 150.0
+const JUMP_VELOCITY = -200.0
 
 @onready var camera = $Camera2D
 @onready var anim = $AnimatedSprite2D

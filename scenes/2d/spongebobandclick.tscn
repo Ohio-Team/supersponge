@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://cbynik26mbfvj"]
 
-[ext_resource type="Script" path="res://scripts/spongebobandclick.gd" id="1_asbdh"]
+[ext_resource type="Script" uid="uid://bkrkvarccs4ua" path="res://scripts/spongebobandclick.gd" id="1_asbdh"]
 [ext_resource type="Texture2D" uid="uid://bbryoatrojavs" path="res://assets/2d/spongebobby/pointandclick.png" id="2_qdgsq"]
 [ext_resource type="AudioStream" uid="uid://hor4p77c44k" path="res://assets/sfx/sb_walk1.wav" id="3_yey3x"]
 [ext_resource type="AudioStream" uid="uid://cwqfs8uoovj25" path="res://assets/sfx/sb_walk2.wav" id="4_ek5ne"]

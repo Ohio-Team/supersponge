@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://8kbffcc412vs"]
 
-[ext_resource type="Script" path="res://scripts/Spongebob3d.gd" id="1_pc0ce"]
+[ext_resource type="Script" uid="uid://chh2y4levk3xe" path="res://scripts/Spongebob3d.gd" id="1_pc0ce"]
 [ext_resource type="PackedScene" uid="uid://c6ab7a566bvp" path="res://assets/3d/spongebobby/sponebob.blend" id="2_8hb62"]
 [ext_resource type="PackedScene" uid="uid://wmf2eu0uuhrg" path="res://addons/third-person-camera/third_person_camera/ThirdPersonCamera.tscn" id="3_l7qui"]
 

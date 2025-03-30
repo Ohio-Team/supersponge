@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://dl6ikkl8sefl6"]
 
-[ext_resource type="Script" path="res://scripts/cutscene_handler.gd" id="1_xajdc"]
+[ext_resource type="Script" uid="uid://dnbvxa8lqq5dd" path="res://scripts/cutscene_handler.gd" id="1_xajdc"]
 [ext_resource type="PackedScene" uid="uid://k6460ynggk43" path="res://scenes/3d/level_4.tscn" id="2_8dlju"]
-[ext_resource type="VideoStream" path="res://assets/videos/part2.ogv" id="3_0p8nn"]
+[ext_resource type="VideoStream" uid="uid://csdsrmdhxccyb" path="res://assets/videos/part2.ogv" id="3_0p8nn"]
 
 [node name="cutscene 3" type="Node2D"]
 script = ExtResource("1_xajdc")

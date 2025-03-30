@@ -1,7 +1,7 @@
 [gd_scene load_steps=32 format=4 uid="uid://b2bv5n6x7m2da"]
 
-[ext_resource type="Script" path="res://scripts/level2.gd" id="1_xmle0"]
-[ext_resource type="Shader" path="res://scripts/level2.gdshader" id="2_ac0tm"]
+[ext_resource type="Script" uid="uid://dl1o0lesdckvn" path="res://scripts/level2.gd" id="1_xmle0"]
+[ext_resource type="Shader" uid="uid://c7j0qg78j25al" path="res://scripts/level2.gdshader" id="2_ac0tm"]
 [ext_resource type="Texture2D" uid="uid://cy3y2sjkhfbor" path="res://assets/2d/tilesets/sewers.png" id="2_s0135"]
 [ext_resource type="Texture2D" uid="uid://bpr8aayn2q7ra" path="res://assets/2d/miscsprites/a1843961409a40687a09056418bf6132d0d87ca8.png" id="2_uq4od"]
 [ext_resource type="Texture2D" uid="uid://crxg0778a2di1" path="res://assets/2d/tilesets/Spr_water.png" id="3_nobyt"]

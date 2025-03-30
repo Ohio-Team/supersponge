@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://jfrxncqf6st2"]
 
-[ext_resource type="Script" path="res://scripts/fakebobgate.gd" id="1_munjs"]
+[ext_resource type="Script" uid="uid://bd1ldv3p0k8rm" path="res://scripts/fakebobgate.gd" id="1_munjs"]
 [ext_resource type="Texture2D" uid="uid://b18fsemlahjua" path="res://assets/2d/miscsprites/gateplaceholder.png" id="2_vq6fo"]
 [ext_resource type="Texture2D" uid="uid://depyc7cxfsg8o" path="res://assets/2d/dialogfaces/Fakebob.png" id="3_u6ikl"]
 [ext_resource type="FontFile" uid="uid://ia1v43t7vpqa" path="res://assets/fonts/Krabby Patty.ttf" id="4_b83bu"]

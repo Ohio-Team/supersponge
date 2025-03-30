@@ -1,6 +1,6 @@
 [gd_scene load_steps=92 format=4 uid="uid://byaafw2p71v8i"]
 
-[ext_resource type="Shader" path="res://scripts/flash.gdshader" id="1_a1o0g"]
+[ext_resource type="Shader" uid="uid://b5mflus31djfb" path="res://scripts/flash.gdshader" id="1_a1o0g"]
 [ext_resource type="PackedScene" uid="uid://cjoo6ilm8eim1" path="res://scenes/2d/spongebob2d.tscn" id="1_n1k6g"]
 [ext_resource type="Texture2D" uid="uid://culfcrnvqqsnd" path="res://assets/2d/tilesets/jail.png" id="2_dt8b2"]
 [ext_resource type="Texture2D" uid="uid://84nu6b4ix10w" path="res://assets/2d/miscsprites/patrick.png" id="3_ppubl"]
@@ -694,8 +694,7 @@ func _on_body_entered(body: Node2D) -> void:
 "
 
 [sub_resource type="Curve" id="Curve_2l2rf"]
-min_value = -360.0
-max_value = 360.0
+_limits = [-360.0, 360.0, 0.0, 1.0]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.495098, 360), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
 point_count = 3
 
@@ -739,8 +738,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1ewun"]
 _data = {
-"RESET": SubResource("Animation_kyn65"),
-"alarm": SubResource("Animation_ju6cc")
+&"RESET": SubResource("Animation_kyn65"),
+&"alarm": SubResource("Animation_ju6cc")
 }
 
 [node name="Prison" type="Node2D"]
@@ -842,7 +841,7 @@ text = "Sometimes clicking on objects might reveal something."
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_1ewun")
+&"": SubResource("AnimationLibrary_1ewun")
 }
 
 [connection signal="input_event" from="StaticBody2D" to="StaticBody2D" method="_on_input_event"]

@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bmnbmx44o7bth" path="res://assets/2d/miscsprites/badass.png" id="1_hj74l"]
 [ext_resource type="AudioStream" uid="uid://bfimjcqqg3sil" path="res://assets/sfx/intro.ogg" id="2_avhqf"]
-[ext_resource type="Shader" path="res://scripts/flash.gdshader" id="3_d1pkw"]
+[ext_resource type="Shader" uid="uid://b5mflus31djfb" path="res://scripts/flash.gdshader" id="3_d1pkw"]
 [ext_resource type="Texture2D" uid="uid://d32l5bmmvw7gn" path="res://assets/2d/spongebobby/119.png" id="4_1v0er"]
 [ext_resource type="Texture2D" uid="uid://tdlbn5b7acsm" path="res://assets/2d/spongebobby/117.png" id="5_yhbti"]
 [ext_resource type="Texture2D" uid="uid://do415lx1uejql" path="res://assets/2d/spongebobby/116.png" id="6_d3730"]

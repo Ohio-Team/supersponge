@@ -1,8 +1,8 @@
 [gd_resource type="Resource" script_class="MultiSoundEffect" load_steps=9 format=3 uid="uid://snxk3icp43jq"]
 
-[ext_resource type="Script" path="res://addons/bmod/scripts/resources/multi_sound_effect_item.gd" id="1_6agci"]
+[ext_resource type="Script" uid="uid://cxxshui61aen8" path="res://addons/bmod/scripts/resources/multi_sound_effect_item.gd" id="1_6agci"]
 [ext_resource type="AudioStream" uid="uid://bo04wrreqiuja" path="res://assets/sfx/ohiominion1.ogg" id="2_4ujvl"]
-[ext_resource type="Script" path="res://addons/bmod/scripts/resources/multi_sound_effect.gd" id="2_o8n62"]
+[ext_resource type="Script" uid="uid://c3p1h6shnbi5h" path="res://addons/bmod/scripts/resources/multi_sound_effect.gd" id="2_o8n62"]
 [ext_resource type="AudioStream" uid="uid://biifrjym0wykr" path="res://assets/sfx/ohiominion2.ogg" id="3_4yymm"]
 [ext_resource type="AudioStream" uid="uid://sropb21eea17" path="res://assets/sfx/ohiominion3.ogg" id="4_taa4d"]
 

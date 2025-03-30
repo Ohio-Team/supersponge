@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="SingleSoundEffect" load_steps=3 format=3 uid="uid://vrerbwbmiuyj"]
 
 [ext_resource type="AudioStream" uid="uid://dfnu32yqhhk6x" path="res://assets/sfx/sfx_sb_defeated.ogg" id="1_15gnr"]
-[ext_resource type="Script" path="res://addons/bmod/scripts/resources/single_sound_effect.gd" id="1_jl7ii"]
+[ext_resource type="Script" uid="uid://d30hg3g2wwxsk" path="res://addons/bmod/scripts/resources/single_sound_effect.gd" id="1_jl7ii"]
 
 [resource]
 script = ExtResource("1_jl7ii")

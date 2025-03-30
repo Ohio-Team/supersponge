@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=3 uid="uid://c00q44lt51uac"]
 
-[ext_resource type="Script" path="res://scripts/cutscene_handler.gd" id="1_u1dvs"]
+[ext_resource type="Script" uid="uid://dnbvxa8lqq5dd" path="res://scripts/cutscene_handler.gd" id="1_u1dvs"]
 [ext_resource type="PackedScene" uid="uid://wqoqonv86j4" path="res://scenes/2d/level1.tscn" id="2_nrkfy"]
-[ext_resource type="VideoStream" path="res://assets/videos/intro.ogv" id="3_b5tec"]
+[ext_resource type="VideoStream" uid="uid://qm1ofh3bwnch" path="res://assets/videos/intro.ogv" id="3_b5tec"]
 [ext_resource type="FontFile" uid="uid://ia1v43t7vpqa" path="res://assets/fonts/Krabby Patty.ttf" id="5_skwv8"]
 
 [sub_resource type="Animation" id="Animation_7wd84"]
@@ -57,8 +57,8 @@ Join me in my journey friends, 'cause today we are gonna save Bikini Bottom...",
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wofl4"]
 _data = {
-"RESET": SubResource("Animation_7wd84"),
-"subtitles": SubResource("Animation_kks0j")
+&"RESET": SubResource("Animation_7wd84"),
+&"subtitles": SubResource("Animation_kks0j")
 }
 
 [node name="cutscene 1" type="Node2D"]

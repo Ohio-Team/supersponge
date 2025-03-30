@@ -3,9 +3,9 @@
 [ext_resource type="Texture2D" uid="uid://wigiwrkv8vb5" path="res://assets/2d/enemies/CupheadCharacter1.png" id="2_5k4c5"]
 [ext_resource type="Texture2D" uid="uid://knofwjv5w16" path="res://assets/2d/enemies/CupheadCharacter2.png" id="3_fbs21"]
 [ext_resource type="Texture2D" uid="uid://ct7nxgrr80ia3" path="res://assets/2d/enemies/CupheadCharacter3.png" id="4_u7tle"]
-[ext_resource type="Script" path="res://scripts/StateMachine.gd" id="5_0cro0"]
-[ext_resource type="Script" path="res://scripts/states/SpongeBotIdle.gd" id="5_ewi18"]
-[ext_resource type="Script" path="res://scripts/states/SpongeBotHoming.gd" id="6_2knqe"]
+[ext_resource type="Script" uid="uid://cecdpx2xlh66v" path="res://scripts/StateMachine.gd" id="5_0cro0"]
+[ext_resource type="Script" uid="uid://cvjf2t6ssxf18" path="res://scripts/states/SpongeBotIdle.gd" id="5_ewi18"]
+[ext_resource type="Script" uid="uid://cc1cujhcr0br0" path="res://scripts/states/SpongeBotHoming.gd" id="6_2knqe"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4vio7"]
 animations = [{

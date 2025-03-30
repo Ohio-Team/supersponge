@@ -10,12 +10,12 @@ config_version=5
 
 [application]
 
-config/name="SpongeBob SquarePants: SuperSponge - The Ohio Mix"
+config/name="SpongeBob SquarePants: SuperSponge - The Ohio Mix 2"
 config/version="1.0.2"
 run/main_scene="res://scenes/splashscreen.tscn"
 config/use_custom_user_dir=true
-config/custom_user_dir_name="ohio"
-config/features=PackedStringArray("4.3", "Forward Plus")
+config/custom_user_dir_name="ohio2"
+config/features=PackedStringArray("4.4", "Forward Plus")
 run/max_fps=60
 boot_splash/bg_color=Color(0, 0, 0, 1)
 boot_splash/show_image=false

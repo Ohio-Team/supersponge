@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://b6donerh61idp"]
 
-[ext_resource type="Script" path="res://scripts/limb.gd" id="1_exut2"]
-[ext_resource type="Texture2D" uid="uid://ba6k76gv8wu0l" path="res://assets/2d/fakebob/fakelimbs.png" id="2_6tuer"]
+[ext_resource type="Script" uid="uid://dvax0y60ykq14" path="res://scripts/limb.gd" id="1_exut2"]
+[ext_resource type="Texture2D" uid="uid://ceisgv25oba6x" path="res://assets/2d/fakebob/fakelimbs.png" id="2_6tuer"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gns6w"]
 size = Vector2(21, 22)

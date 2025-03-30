@@ -12,19 +12,8 @@ func _physics_process(delta):
 	var direction = (player.position - position).normalized()
 	
 	var distance = position.distance_to(player.position)
-	
-	if distance < 150 and !player.invincible:
-		startmoving = true
-	else:
-		startmoving = false
-	
 	if not is_on_floor():
 		velocity.y += gravity * delta
-		
-	if startmoving:
-		velocity.x = direction.x * 150
-	else:
-		velocity.x = 0
 		
 	move_and_slide()
 	for body in $hitzone.get_overlapping_bodies():
@@ -35,3 +24,20 @@ func _physics_process(delta):
 			elif player.state != "dying" and !player.invincible:
 					Singleton.health -= 1
 					player.state = "hurt"
+	for body in $laserzone.get_overlapping_bodies():
+		if body == player:
+			generate_bullet()
+			$laserzone/CollisionShape2D2.queue_free()
+			
+func generate_bullet():
+	var direction:int
+	if $AnimatedSprite2D.flip_h:
+		direction = -1
+	else:
+		direction = 1
+	var bullet = preload("res://scenes/2d/enemy_bullet.tscn")
+	var new_node = bullet.instantiate()
+	new_node.direction.x = direction
+	new_node.position.x = position.x + 40 * direction
+	new_node.position.y = position.y - 20
+	get_tree().current_scene.add_child(new_node)

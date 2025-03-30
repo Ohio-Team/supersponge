@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="SingleSoundEffect" load_steps=3 format=3 uid="uid://ugyg8rqqn2tk"]
 
 [ext_resource type="AudioStream" uid="uid://cfdkhfm5g4htw" path="res://assets/sfx/fakebob_attackstart.wav" id="1_bqmww"]
-[ext_resource type="Script" path="res://addons/bmod/scripts/resources/single_sound_effect.gd" id="1_xc305"]
+[ext_resource type="Script" uid="uid://d30hg3g2wwxsk" path="res://addons/bmod/scripts/resources/single_sound_effect.gd" id="1_xc305"]
 
 [resource]
 script = ExtResource("1_xc305")

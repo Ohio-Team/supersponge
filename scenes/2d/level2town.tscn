@@ -1,6 +1,6 @@
 [gd_scene load_steps=16 format=3 uid="uid://cqym6djwfdoeq"]
 
-[ext_resource type="Script" path="res://scripts/level2town.gd" id="1_yv6tt"]
+[ext_resource type="Script" uid="uid://bdgjt0678uvnl" path="res://scripts/level2town.gd" id="1_yv6tt"]
 [ext_resource type="Texture2D" uid="uid://cmgy4wfwn623l" path="res://assets/2d/miscsprites/downtown.png" id="2_5kwty"]
 [ext_resource type="Texture2D" uid="uid://cglsqdf088ikp" path="res://assets/2d/miscsprites/1200.png" id="3_ialdc"]
 [ext_resource type="Texture2D" uid="uid://c4gumkg4inp4i" path="res://assets/2d/miscsprites/gradient.png" id="4_pda6v"]
@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://biiire7ectn7p" path="res://scenes/2d/hurtbox.tscn" id="6_inxqn"]
 [ext_resource type="PackedScene" uid="uid://cjoo6ilm8eim1" path="res://scenes/2d/spongebob2d.tscn" id="8_fe0hr"]
 [ext_resource type="Texture2D" uid="uid://cpfhvt2155qvq" path="res://assets/2d/miscsprites/sewerindicator.png" id="9_0nj7h"]
-[ext_resource type="Script" path="res://scripts/sewerthing.gd" id="9_vhskc"]
+[ext_resource type="Script" uid="uid://duihm1aneq67" path="res://scripts/sewerthing.gd" id="9_vhskc"]
 [ext_resource type="Texture2D" uid="uid://bo1a36m1t7t2g" path="res://assets/2d/miscsprites/truck-side.png" id="10_hlrfk"]
 [ext_resource type="Texture2D" uid="uid://flxjdbyashlv" path="res://assets/2d/miscsprites/truckopen.png" id="11_rtkqr"]
 

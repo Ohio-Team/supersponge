@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://fei51450bkqs"]
 
-[ext_resource type="VideoStream" path="res://assets/videos/prison.ogv" id="1_034ni"]
+[ext_resource type="VideoStream" uid="uid://ccvoj7h778cbt" path="res://assets/videos/prison.ogv" id="1_034ni"]
 
 [sub_resource type="GDScript" id="GDScript_sln2m"]
 resource_name = "intro"

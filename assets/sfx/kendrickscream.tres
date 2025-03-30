@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="SingleSoundEffect" load_steps=3 format=3 uid="uid://dv7vq7u62rfi0"]
 
-[ext_resource type="AudioStream" uid="uid://di0qba0hyf8a2" path="res://assets/sfx/kendrick-scream.mp3" id="1_kun73"]
-[ext_resource type="Script" path="res://addons/bmod/scripts/resources/single_sound_effect.gd" id="1_r6m56"]
+[ext_resource type="AudioStream" uid="uid://dfq534lof5fma" path="res://assets/sfx/kendrick-scream.mp3" id="1_kun73"]
+[ext_resource type="Script" uid="uid://d30hg3g2wwxsk" path="res://addons/bmod/scripts/resources/single_sound_effect.gd" id="1_r6m56"]
 
 [resource]
 script = ExtResource("1_r6m56")

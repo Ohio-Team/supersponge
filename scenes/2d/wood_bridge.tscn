@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://sjqyue4epbwp"]
 
-[ext_resource type="Script" path="res://scripts/wood_bridge.gd" id="1_740v4"]
+[ext_resource type="Script" uid="uid://clgtf0n1mc7uo" path="res://scripts/wood_bridge.gd" id="1_740v4"]
 [ext_resource type="Texture2D" uid="uid://bo4nxxbehouhb" path="res://assets/2d/fakebob/WoodB04.png" id="2_f2vjb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lw4po"]

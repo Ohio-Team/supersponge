@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="SingleSoundEffect" load_steps=3 format=3 uid="uid://cvrm85nxogckq"]
 
-[ext_resource type="Script" path="res://addons/bmod/scripts/resources/single_sound_effect.gd" id="1_krlle"]
+[ext_resource type="Script" uid="uid://d30hg3g2wwxsk" path="res://addons/bmod/scripts/resources/single_sound_effect.gd" id="1_krlle"]
 [ext_resource type="AudioStream" uid="uid://1pv815515q2r" path="res://assets/sfx/sfx_sb_net.ogg" id="1_wi556"]
 
 [resource]

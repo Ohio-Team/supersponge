@@ -1,7 +1,7 @@
 [gd_scene load_steps=104 format=3 uid="uid://0v84mcpu2xno"]
 
 [ext_resource type="FontFile" uid="uid://ia1v43t7vpqa" path="res://assets/fonts/Krabby Patty.ttf" id="1_7x6de"]
-[ext_resource type="Script" path="res://scripts/chooseone_and_one_only.gd" id="1_yow2v"]
+[ext_resource type="Script" uid="uid://wdgld3anphtf" path="res://scripts/chooseone_and_one_only.gd" id="1_yow2v"]
 [ext_resource type="Texture2D" uid="uid://c8rgunv8jbobs" path="res://assets/2d/fakebob/fakebobhurt.png" id="2_31v66"]
 [ext_resource type="Texture2D" uid="uid://b1xqjyvtwjlaq" path="res://assets/2d/miscsprites/rizzage.png" id="2_cch3f"]
 [ext_resource type="Texture2D" uid="uid://cy3y2sjkhfbor" path="res://assets/2d/tilesets/sewers.png" id="3_mdexx"]
@@ -555,8 +555,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_lmwgt"]
 _data = {
-"RESET": SubResource("Animation_13k0u"),
-"flash": SubResource("Animation_8sluf")
+&"RESET": SubResource("Animation_13k0u"),
+&"flash": SubResource("Animation_8sluf")
 }
 
 [node name="chooseone and one only" type="Node2D"]
@@ -662,7 +662,7 @@ color = Color(1, 0, 0, 1)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_lmwgt")
+&"": SubResource("AnimationLibrary_lmwgt")
 }
 
 [connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]

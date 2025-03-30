@@ -1,11 +1,11 @@
 [gd_scene load_steps=10 format=3 uid="uid://bxcfx81na4cys"]
 
-[ext_resource type="Script" path="res://scripts/bart_bash.gd" id="1_pcrrk"]
+[ext_resource type="Script" uid="uid://bvvrexety12kh" path="res://scripts/bart_bash.gd" id="1_pcrrk"]
 [ext_resource type="Texture2D" uid="uid://dwgidujjkvocg" path="res://assets/2d/bartbash/bart bash bg.png" id="2_i40bc"]
 [ext_resource type="PackedScene" uid="uid://dwe0hotw35qse" path="res://scenes/2d/bart.tscn" id="3_x600d"]
 [ext_resource type="Texture2D" uid="uid://dxwcp8gukw0oh" path="res://assets/2d/bartbash/ohio.png" id="4_p534p"]
 [ext_resource type="Texture2D" uid="uid://cup5dpjomtpfp" path="res://assets/2d/bartbash/creepyassbart.png" id="4_sosd2"]
-[ext_resource type="Script" path="res://scripts/evilbart.gd" id="5_mtn8e"]
+[ext_resource type="Script" uid="uid://bs00yhsweoibm" path="res://scripts/evilbart.gd" id="5_mtn8e"]
 [ext_resource type="AudioStream" uid="uid://devsuarryykwf" path="res://assets/voices/spongebob2_output.wav" id="6_md4hw"]
 [ext_resource type="FontFile" uid="uid://ia1v43t7vpqa" path="res://assets/fonts/Krabby Patty.ttf" id="8_woibe"]
 

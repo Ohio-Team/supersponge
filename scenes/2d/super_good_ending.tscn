@@ -48,7 +48,7 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_3p7ur"]
 _data = {
-"new_animation": SubResource("Animation_51321")
+&"new_animation": SubResource("Animation_51321")
 }
 
 [node name="Super Good Ending" type="Node2D"]
@@ -60,10 +60,10 @@ scale = Vector2(1.25, 1.05863)
 texture = ExtResource("2_aykke")
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+texture = ExtResource("1_2r712")
 lifetime = 2.0
 randomness = 1.0
 draw_order = 1
-texture = ExtResource("1_2r712")
 emission_shape = 1
 emission_sphere_radius = 128.0
 spread = 179.6
@@ -75,10 +75,10 @@ scale_amount_max = 2.0
 
 [node name="CPUParticles2D2" type="CPUParticles2D" parent="."]
 position = Vector2(161, 0)
+texture = ExtResource("1_2r712")
 lifetime = 2.0
 randomness = 1.0
 draw_order = 1
-texture = ExtResource("1_2r712")
 emission_shape = 1
 emission_sphere_radius = 128.0
 spread = 179.6
@@ -90,10 +90,10 @@ scale_amount_max = 2.0
 
 [node name="CPUParticles2D3" type="CPUParticles2D" parent="."]
 position = Vector2(408, 3)
+texture = ExtResource("1_2r712")
 lifetime = 2.0
 randomness = 1.0
 draw_order = 1
-texture = ExtResource("1_2r712")
 emission_shape = 1
 emission_sphere_radius = 128.0
 spread = 179.6
@@ -105,10 +105,10 @@ scale_amount_max = 2.0
 
 [node name="CPUParticles2D4" type="CPUParticles2D" parent="."]
 position = Vector2(693, 3)
+texture = ExtResource("1_2r712")
 lifetime = 2.0
 randomness = 1.0
 draw_order = 1
-texture = ExtResource("1_2r712")
 emission_shape = 1
 emission_sphere_radius = 128.0
 spread = 179.6
@@ -120,10 +120,10 @@ scale_amount_max = 2.0
 
 [node name="CPUParticles2D5" type="CPUParticles2D" parent="."]
 position = Vector2(900, 3)
+texture = ExtResource("1_2r712")
 lifetime = 2.0
 randomness = 1.0
 draw_order = 1
-texture = ExtResource("1_2r712")
 emission_shape = 1
 emission_sphere_radius = 128.0
 spread = 179.6
@@ -135,10 +135,10 @@ scale_amount_max = 2.0
 
 [node name="CPUParticles2D6" type="CPUParticles2D" parent="."]
 position = Vector2(1142, 6)
+texture = ExtResource("1_2r712")
 lifetime = 2.0
 randomness = 1.0
 draw_order = 1
-texture = ExtResource("1_2r712")
 emission_shape = 1
 emission_sphere_radius = 128.0
 spread = 179.6
@@ -150,10 +150,10 @@ scale_amount_max = 2.0
 
 [node name="CPUParticles2D7" type="CPUParticles2D" parent="."]
 position = Vector2(1276, -2)
+texture = ExtResource("1_2r712")
 lifetime = 2.0
 randomness = 1.0
 draw_order = 1
-texture = ExtResource("1_2r712")
 emission_shape = 1
 emission_sphere_radius = 128.0
 spread = 179.6
@@ -165,7 +165,7 @@ scale_amount_max = 2.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_3p7ur")
+&"": SubResource("AnimationLibrary_3p7ur")
 }
 autoplay = "new_animation"
 

@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://ul6qixbunia7"]
 
-[ext_resource type="Script" path="res://scripts/hurtbox_nonlethal.gd" id="1_3e608"]
+[ext_resource type="Script" uid="uid://ikd4tej5pwd" path="res://scripts/hurtbox_nonlethal.gd" id="1_3e608"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mmiot"]
 

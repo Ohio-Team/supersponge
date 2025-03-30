@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://covgjw36o2prd"]
 
-[ext_resource type="Script" path="res://addons/bmod/autoloads/bmod/bmod.gd" id="1_g1b2e"]
+[ext_resource type="Script" uid="uid://cel28k5f4e68g" path="res://addons/bmod/autoloads/bmod/bmod.gd" id="1_g1b2e"]
 
 [node name="BMOD" type="Node"]
 process_mode = 3

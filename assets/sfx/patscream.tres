@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="SingleSoundEffect" load_steps=3 format=3 uid="uid://dcsylqwq3q3d7"]
 
 [ext_resource type="AudioStream" uid="uid://blvqwfa7b7one" path="res://assets/sfx/patscream.wav" id="1_6vsqg"]
-[ext_resource type="Script" path="res://addons/bmod/scripts/resources/single_sound_effect.gd" id="1_nscp4"]
+[ext_resource type="Script" uid="uid://d30hg3g2wwxsk" path="res://addons/bmod/scripts/resources/single_sound_effect.gd" id="1_nscp4"]
 
 [resource]
 script = ExtResource("1_nscp4")

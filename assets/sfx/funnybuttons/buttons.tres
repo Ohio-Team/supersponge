@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="MultiSoundEffect" load_steps=23 format=3 uid="uid://bbutvjp2li3rq"]
 
-[ext_resource type="Script" path="res://addons/bmod/scripts/resources/multi_sound_effect_item.gd" id="1_24w2s"]
-[ext_resource type="Script" path="res://addons/bmod/scripts/resources/multi_sound_effect.gd" id="2_24afg"]
+[ext_resource type="Script" uid="uid://cxxshui61aen8" path="res://addons/bmod/scripts/resources/multi_sound_effect_item.gd" id="1_24w2s"]
+[ext_resource type="Script" uid="uid://c3p1h6shnbi5h" path="res://addons/bmod/scripts/resources/multi_sound_effect.gd" id="2_24afg"]
 [ext_resource type="AudioStream" uid="uid://dvywc82jt7pk3" path="res://assets/sfx/funnybuttons/XDzYZdyZ.wav" id="2_81gev"]
 [ext_resource type="AudioStream" uid="uid://crejrofe38fjv" path="res://assets/sfx/funnybuttons/ADYykpqI.wav" id="3_86gil"]
 [ext_resource type="AudioStream" uid="uid://c65vgcgp2cgb2" path="res://assets/sfx/funnybuttons/c8NETLjh.wav" id="4_3sh7t"]

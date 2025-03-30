@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=4 uid="uid://cyw3j6l7mdr8m"]
 
-[ext_resource type="Texture2D" uid="uid://bfuiw54l8whs" path="res://assets/3d/bikinibottom/textures/rock_purple_79.png" id="1_3nggx"]
+[ext_resource type="Texture2D" uid="uid://ctfhb2u7b6mmm" path="res://assets/3d/bikinibottom/textures/rock_purple_79.png" id="1_3nggx"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1pg3t"]
 resource_name = "Material"

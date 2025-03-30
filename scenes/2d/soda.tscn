@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dwh0654dmbwpw"]
 
-[ext_resource type="Script" path="res://scripts/soda.gd" id="1_crvdp"]
+[ext_resource type="Script" uid="uid://cu7vqc0d40ujc" path="res://scripts/soda.gd" id="1_crvdp"]
 [ext_resource type="Texture2D" uid="uid://dcknvvy4du0lb" path="res://assets/2d/collectables/soda.png" id="2_61q40"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ex3pe"]

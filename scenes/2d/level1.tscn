@@ -1,13 +1,13 @@
 [gd_scene load_steps=25 format=3 uid="uid://wqoqonv86j4"]
 
-[ext_resource type="Script" path="res://scripts/level1.gd" id="1_huh3m"]
+[ext_resource type="Script" uid="uid://c8tfmbountupb" path="res://scripts/level1.gd" id="1_huh3m"]
 [ext_resource type="Texture2D" uid="uid://fpk8y04uovju" path="res://assets/2d/miscsprites/busses.png" id="2_gkx4r"]
 [ext_resource type="Texture2D" uid="uid://cmgy4wfwn623l" path="res://assets/2d/miscsprites/downtown.png" id="2_jdhyg"]
 [ext_resource type="Texture2D" uid="uid://gem74ss1rpyt" path="res://assets/2d/miscsprites/townbg1.png" id="3_3ismf"]
-[ext_resource type="Texture2D" uid="uid://c4gumkg4inp4i" path="res://assets/2d/miscsprites/gradient.png" id="3_afw2d"]
 [ext_resource type="Texture2D" uid="uid://cglsqdf088ikp" path="res://assets/2d/miscsprites/1200.png" id="3_ed760"]
 [ext_resource type="PackedScene" uid="uid://biiire7ectn7p" path="res://scenes/2d/hurtbox.tscn" id="5_exgwk"]
 [ext_resource type="PackedScene" uid="uid://ijj6qbkx8vhd" path="res://scenes/2d/platform.tscn" id="5_sdvye"]
+[ext_resource type="Texture2D" uid="uid://b506ymmco73ai" path="res://assets/2d/miscsprites/HD-wallpaper-epic-face.jpg" id="6_2gr8a"]
 [ext_resource type="PackedScene" uid="uid://bmdnpojldt0pf" path="res://scenes/2d/jellyfish.tscn" id="6_lvgs6"]
 [ext_resource type="Texture2D" uid="uid://byooo02dyr3q5" path="res://assets/2d/miscsprites/box.png" id="6_rxmxx"]
 [ext_resource type="PackedScene" uid="uid://bbsr3i06k8mc8" path="res://scenes/2d/cutscene_door_2d.tscn" id="7_2xj00"]
@@ -93,9 +93,9 @@ motion_mirroring = Vector2(240, 0)
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 texture_filter = 2
 texture_repeat = 2
-position = Vector2(4, -4)
-scale = Vector2(1, 1.4)
-texture = ExtResource("3_afw2d")
+position = Vector2(-263, -15)
+scale = Vector2(0.8375, 0.687764)
+texture = ExtResource("6_2gr8a")
 centered = false
 
 [node name="Collisions" type="Node" parent="."]
@@ -363,7 +363,7 @@ position = Vector2(2562, 497)
 position = Vector2(1448, 602)
 
 [node name="Crazyfish2" parent="Enemies" instance=ExtResource("9_m2ma8")]
-position = Vector2(1746, 602)
+position = Vector2(1887, 612)
 
 [node name="Jellyfish16" parent="Enemies" instance=ExtResource("6_lvgs6")]
 position = Vector2(2137, 585)

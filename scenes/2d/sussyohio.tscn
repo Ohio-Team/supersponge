@@ -1,6 +1,6 @@
 [gd_scene load_steps=15 format=3 uid="uid://g0n7avqcnmv3"]
 
-[ext_resource type="Script" path="res://scenes/2d/sussyohio.gd" id="1_8efvl"]
+[ext_resource type="Script" uid="uid://xxnfuha8bj3s" path="res://scenes/2d/sussyohio.gd" id="1_8efvl"]
 [ext_resource type="PackedScene" uid="uid://ijj6qbkx8vhd" path="res://scenes/2d/platform.tscn" id="1_24mg1"]
 [ext_resource type="PackedScene" uid="uid://cjoo6ilm8eim1" path="res://scenes/2d/spongebob2d.tscn" id="2_1wi20"]
 [ext_resource type="Texture2D" uid="uid://byooo02dyr3q5" path="res://assets/2d/miscsprites/box.png" id="4_315sj"]

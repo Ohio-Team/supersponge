@@ -1,7 +1,8 @@
-[gd_scene load_steps=27 format=3 uid="uid://bbrct2r84j0l2"]
+[gd_scene load_steps=28 format=3 uid="uid://bbrct2r84j0l2"]
 
-[ext_resource type="Script" path="res://scripts/ui.gd" id="1_eaqxp"]
+[ext_resource type="Script" uid="uid://cvi0wxngj2ex7" path="res://scripts/ui.gd" id="1_eaqxp"]
 [ext_resource type="FontFile" uid="uid://ia1v43t7vpqa" path="res://assets/fonts/Krabby Patty.ttf" id="2_0v11p"]
+[ext_resource type="FontFile" uid="uid://0u4dciqtpltd" path="res://assets/fonts/Times New Roman.ttf" id="3_w8mu2"]
 [ext_resource type="Texture2D" uid="uid://ccfdmkwhs6vc6" path="res://assets/2d/miscsprites/life.png" id="6_f6ylc"]
 [ext_resource type="Texture2D" uid="uid://cavw5dlwryyol" path="res://assets/2d/miscsprites/spatulaUI.png" id="7_bnkkd"]
 [ext_resource type="Texture2D" uid="uid://bemlcpdbpig3f" path="res://assets/2d/pausemenu/animframe1.png" id="8_jnmey"]
@@ -145,8 +146,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_dsjdq"]
 _data = {
-"RESET": SubResource("Animation_jkefl"),
-"movement": SubResource("Animation_aomkf")
+&"RESET": SubResource("Animation_jkefl"),
+&"movement": SubResource("Animation_aomkf")
 }
 
 [sub_resource type="Animation" id="Animation_e130j"]
@@ -184,8 +185,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fxe0w"]
 _data = {
-"RESET": SubResource("Animation_e130j"),
-"movement": SubResource("Animation_crie4")
+&"RESET": SubResource("Animation_e130j"),
+&"movement": SubResource("Animation_crie4")
 }
 
 [node name="UI" type="CanvasLayer"]
@@ -212,10 +213,10 @@ offset_right = 434.0
 offset_bottom = 74.0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 10
-theme_override_fonts/normal_font = ExtResource("2_0v11p")
+theme_override_fonts/normal_font = ExtResource("3_w8mu2")
 theme_override_font_sizes/normal_font_size = 32
 bbcode_enabled = true
-text = "[shake]x3"
+text = "[shake]3"
 scroll_active = false
 
 [node name="TouchScreenButton" type="TouchScreenButton" parent="."]
@@ -232,10 +233,10 @@ offset_right = 435.0
 offset_bottom = 150.0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 10
-theme_override_fonts/normal_font = ExtResource("2_0v11p")
+theme_override_fonts/normal_font = ExtResource("3_w8mu2")
 theme_override_font_sizes/normal_font_size = 32
 bbcode_enabled = true
-text = "[shake]x0"
+text = "[shake]= 0"
 scroll_active = false
 
 [node name="Spatula" type="Sprite2D" parent="."]
@@ -332,7 +333,7 @@ texture = ExtResource("10_73r8n")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Pause/Exponja"]
 libraries = {
-"": SubResource("AnimationLibrary_dsjdq")
+&"": SubResource("AnimationLibrary_dsjdq")
 }
 autoplay = "movement"
 
@@ -343,7 +344,7 @@ texture = ExtResource("11_g1ndh")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Pause/Patricio"]
 libraries = {
-"": SubResource("AnimationLibrary_fxe0w")
+&"": SubResource("AnimationLibrary_fxe0w")
 }
 autoplay = "movement"
 
@@ -412,6 +413,21 @@ theme_override_fonts/normal_font = ExtResource("2_0v11p")
 theme_override_font_sizes/normal_font_size = 32
 text = "Ohio Health: 250"
 scroll_active = false
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+offset_left = 24.0
+offset_top = 168.0
+offset_right = 240.0
+offset_bottom = 480.0
+text = "BULLETS x 10
+
+KILLS x 0
+
+TRICKS x 7
+
+SAND DOLLARS x 9
+
+CACTI FOUND: 0"
 
 [connection signal="pressed" from="Pause/Button" to="Pause/Button" method="_on_pressed"]
 [connection signal="pressed" from="Pause/Button3" to="Pause/Button3" method="_on_pressed"]

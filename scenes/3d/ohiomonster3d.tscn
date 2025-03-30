@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=4 uid="uid://beoi0esni4p41"]
 
 [ext_resource type="Texture2D" uid="uid://b537nf80ighg" path="res://assets/3d/ohiomonster/textures/ohiomonster.png" id="1_00dwf"]
-[ext_resource type="Script" path="res://scripts/ohio3d.gd" id="1_ctdqv"]
+[ext_resource type="Script" uid="uid://628db37s4rk2" path="res://scripts/ohio3d.gd" id="1_ctdqv"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jp7dc"]
 resource_name = "Material.001"
@@ -899,8 +899,8 @@ tracks/53/keys = PackedFloat32Array(0, 1, 9.34601e-05, 39.8929, -0.000109434)
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_3u2no"]
 _data = {
-"RESET": SubResource("Animation_0gkio"),
-"Run": SubResource("Animation_4ag1a")
+&"RESET": SubResource("Animation_0gkio"),
+&"Run": SubResource("Animation_4ag1a")
 }
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_aifsh"]

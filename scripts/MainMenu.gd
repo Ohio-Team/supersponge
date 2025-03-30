@@ -4,7 +4,7 @@ extends Control
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	DiscordRPC.app_id = 1178087314182897784 # Application ID
-	DiscordRPC.details = "In The Menus"
+	DiscordRPC.details = "In The Menus... TWO!"
 	DiscordRPC.state = "Just started"
 	DiscordRPC.large_image = "bigimage"
 	DiscordRPC.start_timestamp = int(Time.get_unix_time_from_system())

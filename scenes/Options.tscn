@@ -1,9 +1,9 @@
 [gd_scene load_steps=21 format=3 uid="uid://dhxbkh5627l1q"]
 
-[ext_resource type="Script" path="res://scripts/options.gd" id="1_gxje3"]
-[ext_resource type="Script" path="res://scripts/audio___master.gd" id="1_ua5gb"]
-[ext_resource type="Shader" path="res://scripts/level2.gdshader" id="2_3sb6h"]
-[ext_resource type="Script" path="res://scripts/optionsmenubutton.gd" id="3_i0ro2"]
+[ext_resource type="Script" uid="uid://ce5wxlxm6qgcc" path="res://scripts/options.gd" id="1_gxje3"]
+[ext_resource type="Script" uid="uid://712wxgkkcdeh" path="res://scripts/audio___master.gd" id="1_ua5gb"]
+[ext_resource type="Shader" uid="uid://c7j0qg78j25al" path="res://scripts/level2.gdshader" id="2_3sb6h"]
+[ext_resource type="Script" uid="uid://dn8q86s3iok8u" path="res://scripts/optionsmenubutton.gd" id="3_i0ro2"]
 [ext_resource type="Texture2D" uid="uid://cxye7fd6lhi12" path="res://assets/2d/pausemenu/+bubbletile.bmp" id="3_xtwlt"]
 [ext_resource type="Texture2D" uid="uid://dx6868mk0fq8h" path="res://assets/2d/pausemenu/slider_marker.png" id="5_0d4ln"]
 [ext_resource type="Texture2D" uid="uid://dmmb1ovvys5ir" path="res://assets/2d/pausemenu/bamboohorizontal.png" id="5_c6mdv"]

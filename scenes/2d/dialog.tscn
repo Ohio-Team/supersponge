@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://c5cro76q4nkfu"]
 
-[ext_resource type="Script" path="res://scripts/dialog.gd" id="1_hgsve"]
+[ext_resource type="Script" uid="uid://bm0dfbpn7g36r" path="res://scripts/dialog.gd" id="1_hgsve"]
 [ext_resource type="FontFile" uid="uid://ia1v43t7vpqa" path="res://assets/fonts/Krabby Patty.ttf" id="1_tvp7w"]
-[ext_resource type="Script" path="res://scripts/RichTextLabel.gd" id="3_kgofs"]
+[ext_resource type="Script" uid="uid://q10sppioge1" path="res://scripts/RichTextLabel.gd" id="3_kgofs"]
 [ext_resource type="Texture2D" uid="uid://fpqgihr8sxou" path="res://assets/2d/dialogfaces/Sandy.png" id="4_oa5ml"]
 [ext_resource type="AudioStream" uid="uid://jngf3kp5y1ir" path="res://assets/sfx/dialog.wav" id="5_uvd0m"]
 

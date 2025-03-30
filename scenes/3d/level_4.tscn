@@ -1,11 +1,11 @@
 [gd_scene load_steps=18 format=3 uid="uid://k6460ynggk43"]
 
-[ext_resource type="Script" path="res://scripts/3dtest.gd" id="1_v4in3"]
+[ext_resource type="Script" uid="uid://mwmggxhwf6rp" path="res://scripts/3dtest.gd" id="1_v4in3"]
 [ext_resource type="Texture2D" uid="uid://c7wiwlmd3jby6" path="res://assets/3d/bikinibottom/textures/jf_sky_color_77.png" id="2_lna1d"]
 [ext_resource type="PackedScene" uid="uid://broib4lslli7c" path="res://assets/3d/bikinibottom/bikinibottom3d.tscn" id="3_vhacy"]
 [ext_resource type="PackedScene" uid="uid://8kbffcc412vs" path="res://scenes/3d/spongebob_3d.tscn" id="5_ehy8v"]
 [ext_resource type="Texture2D" uid="uid://gapq6s2srwla" path="res://assets/2d/miscsprites/smilingfriendsiftheywerethesimpsons.png" id="6_dy3b1"]
-[ext_resource type="Script" path="res://scripts/smiling_friends.gd" id="7_sgdm6"]
+[ext_resource type="Script" uid="uid://b4bry7m7immd0" path="res://scripts/smiling_friends.gd" id="7_sgdm6"]
 [ext_resource type="AudioStream" uid="uid://b0xhyxp1dxdv5" path="res://assets/voices/smilingfriends_output.wav" id="8_pgru1"]
 [ext_resource type="AudioStream" uid="uid://c52n7mocrelyt" path="res://assets/voices/spongebob1_output.wav" id="9_ninet"]
 [ext_resource type="FontFile" uid="uid://ia1v43t7vpqa" path="res://assets/fonts/Krabby Patty.ttf" id="10_8lon8"]
@@ -184,8 +184,8 @@ tracks/3/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_sovk1"]
 _data = {
-"Cutscene": SubResource("Animation_cca6e"),
-"RESET": SubResource("Animation_vkig0")
+&"Cutscene": SubResource("Animation_cca6e"),
+&"RESET": SubResource("Animation_vkig0")
 }
 
 [node name="Level4" type="Node3D"]

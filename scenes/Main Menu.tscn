@@ -1,8 +1,8 @@
 [gd_scene load_steps=54 format=3 uid="uid://bkfis34nkbhyv"]
 
-[ext_resource type="Script" path="res://scripts/MainMenu.gd" id="1_cki2b"]
+[ext_resource type="Script" uid="uid://dwd0nlapcuotw" path="res://scripts/MainMenu.gd" id="1_cki2b"]
 [ext_resource type="FontFile" uid="uid://ia1v43t7vpqa" path="res://assets/fonts/Krabby Patty.ttf" id="1_jb0v5"]
-[ext_resource type="Script" path="res://scripts/MenuButton.gd" id="6_th7r2"]
+[ext_resource type="Script" uid="uid://y48cmkix6n6j" path="res://scripts/MenuButton.gd" id="6_th7r2"]
 [ext_resource type="Texture2D" uid="uid://dr3eskctiurf" path="res://assets/2d/miscsprites/panel.png" id="6_xfwtr"]
 [ext_resource type="PackedScene" uid="uid://behgaq4jmvceh" path="res://scenes/2d/tutorial.tscn" id="7_oxu2a"]
 [ext_resource type="PackedScene" uid="uid://c6wbocp76dh62" path="res://scenes/2d/level_select.tscn" id="8_fno0c"]
@@ -265,15 +265,15 @@ offset_left = 16.0
 offset_top = 688.0
 offset_right = 203.0
 offset_bottom = 714.0
-text = "Ohio Team 2024 - 2025"
+text = "Ohio Team 2025 2"
 
 [node name="RichTextLabel3" type="RichTextLabel" parent="."]
 layout_mode = 0
-offset_left = 201.0
-offset_top = 688.0
-offset_right = 388.0
-offset_bottom = 714.0
-text = "v1.0.1"
+offset_left = 16.0
+offset_top = 664.0
+offset_right = 203.0
+offset_bottom = 690.0
+text = "v2.2.2"
 
 [node name="Buttons" type="Node2D" parent="."]
 position = Vector2(640, 340)
@@ -416,7 +416,7 @@ theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_ave8q")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_psryk")
 theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_f20dx")
 theme_override_styles/normal = SubResource("StyleBoxTexture_4e6vd")
-text = "Help"
+text = "Help... TWO!"
 
 [node name="Help" type="Sprite2D" parent="Buttons"]
 visible = false
@@ -433,7 +433,7 @@ theme_override_constants/outline_size = 10
 theme_override_fonts/normal_font = ExtResource("1_jb0v5")
 theme_override_font_sizes/normal_font_size = 32
 bbcode_enabled = true
-text = "[center][wave][rainbow]PRESS ANY KEY"
+text = "[center][wave][rainbow]PRESS ANY KEY... TWO!"
 
 [connection signal="mouse_entered" from="Buttons/Menu_Button3" to="Buttons/Menu_Button3" method="_on_mouse_entered"]
 [connection signal="focus_entered" from="Buttons/Menu_Button" to="Buttons/Menu_Button" method="_on_focus_entered"]
