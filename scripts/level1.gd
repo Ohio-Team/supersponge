@@ -10,7 +10,7 @@ func _ready():
 	Singleton.save_game()
 	Ui._clear_dialog()
 	MusicPlayer.play_song("res://assets/music/Unreal Tournament - Foregone Destruction.mp3")
-	Ui.create_dialog("Here we go. Let's save [b]my ohio hometown 2.[b]", "spongebob")
+	Ui.create_dialog("Here we go again. Let's save [b]my ohio hometown 2.[b]", "spongebob")
 	await Ui.dialog_finished
 	Ui.create_dialog("HOW TO GET 2 MILLION DOLLARS USING THIS SIMPLE GUIDE  
 		  -LIKE THE VIDEO 
@@ -18,6 +18,8 @@ func _ready():
 		  -HIT THAT BELL   
 		  -SHARE THE VIDEO  
 		  -CLICK THE LINK BELOW " , "sandy+")
+	await Ui.dialog_finished
+	Ui.create_dialog("Feel like that [b]2[b] may be important for later.", "spongebob")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

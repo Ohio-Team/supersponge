@@ -524,7 +524,8 @@ theme_override_font_sizes/normal_font_size = 96
 bbcode_enabled = true
 text = "     Ts the first
          level
-     SPACE BOB"
+     SPACE BOB
+As in spongebob is in space"
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
 texture_filter = 1

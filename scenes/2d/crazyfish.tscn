@@ -60,4 +60,5 @@ shape = SubResource("RectangleShape2D_38hmy")
 position = Vector2(-123, 0)
 shape = SubResource("RectangleShape2D_1ckib")
 
+[connection signal="area_entered" from="hitzone" to="." method="_on_hitzone_area_entered"]
 [connection signal="body_entered" from="hitzone" to="." method="_on_hitzone_body_entered"]

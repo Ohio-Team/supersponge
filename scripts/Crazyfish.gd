@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 @onready var player = get_tree().get_first_node_in_group("Player")
+@onready var bullet = "res://scenes/2d/enemy_bullet.tscn"
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var startmoving:bool = false
@@ -28,6 +29,7 @@ func _physics_process(delta):
 		if body == player:
 			generate_bullet()
 			$laserzone/CollisionShape2D2.queue_free()
+
 			
 func generate_bullet():
 	var direction:int
@@ -41,3 +43,9 @@ func generate_bullet():
 	new_node.position.x = position.x + 40 * direction
 	new_node.position.y = position.y - 20
 	get_tree().current_scene.add_child(new_node)
+
+
+func _on_hitzone_area_entered(area: Area2D) -> void:
+		if area.is_in_group("Projectiles"):
+			Singleton.do_explosion(position)
+			queue_free()
