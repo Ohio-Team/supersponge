@@ -10,10 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://b506ymmco73ai" path="res://assets/2d/miscsprites/HD-wallpaper-epic-face.jpg" id="6_2gr8a"]
 [ext_resource type="PackedScene" uid="uid://bmdnpojldt0pf" path="res://scenes/2d/jellyfish.tscn" id="6_lvgs6"]
 [ext_resource type="Texture2D" uid="uid://byooo02dyr3q5" path="res://assets/2d/miscsprites/box.png" id="6_rxmxx"]
-[ext_resource type="PackedScene" uid="uid://bbsr3i06k8mc8" path="res://scenes/2d/cutscene_door_2d.tscn" id="7_2xj00"]
 [ext_resource type="PackedScene" uid="uid://b86vokonmmvq5" path="res://scenes/2d/spatula.tscn" id="7_6aubs"]
 [ext_resource type="PackedScene" uid="uid://dwh0654dmbwpw" path="res://scenes/2d/soda.tscn" id="8_o7eu5"]
-[ext_resource type="PackedScene" uid="uid://ce47gwj7i6pua" path="res://scenes/2d/cutscene_1.tscn" id="8_xoxlf"]
 [ext_resource type="PackedScene" uid="uid://dolf5os2imxdu" path="res://scenes/2d/crazyfish.tscn" id="9_m2ma8"]
 [ext_resource type="PackedScene" uid="uid://cjoo6ilm8eim1" path="res://scenes/2d/spongebob2d.tscn" id="10_g8oo3"]
 [ext_resource type="Texture2D" uid="uid://xy1y5ujgrqpt" path="res://assets/2d/miscsprites/3222222.png" id="16_wr076"]
@@ -21,6 +19,8 @@
 [ext_resource type="Texture2D" uid="uid://84nu6b4ix10w" path="res://assets/2d/miscsprites/patrick.png" id="19_5d4hi"]
 [ext_resource type="PackedScene" uid="uid://c6w27ujk2uor4" path="res://scenes/2d/dialogzone.tscn" id="20_im6y2"]
 [ext_resource type="Texture2D" uid="uid://nb1gj5pksbgg" path="res://assets/2d/miscsprites/fishfields.png" id="21_087qa"]
+[ext_resource type="PackedScene" uid="uid://c0mv303ci8si4" path="res://scenes/2d/patrick.tscn" id="21_p0kq1"]
+[ext_resource type="PackedScene" uid="uid://d1djpmbqd6vpa" path="res://scenes/2d/level2.tscn" id="22_2gr8a"]
 [ext_resource type="Texture2D" uid="uid://b8n4fxxupo15c" path="res://assets/2d/miscsprites/4222222.png" id="22_oai0f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ucewm"]
@@ -197,11 +197,6 @@ scale = Vector2(1.86721, 1.13255)
 [node name="hurtbox9" parent="Collisions" instance=ExtResource("5_exgwk")]
 position = Vector2(3935, 630)
 scale = Vector2(1.86721, 1.13255)
-
-[node name="CutsceneDoor2D" parent="Collisions" instance=ExtResource("7_2xj00")]
-position = Vector2(4548, 573)
-scale = Vector2(1.17958, -8.48438)
-cutscene = ExtResource("8_xoxlf")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="Collisions"]
 
@@ -421,3 +416,7 @@ texture_filter = 1
 position = Vector2(6208, 590)
 scale = Vector2(0.88, 0.785385)
 texture = ExtResource("21_087qa")
+
+[node name="Patrick" parent="." instance=ExtResource("21_p0kq1")]
+position = Vector2(4544, 576)
+goto = ExtResource("22_2gr8a")

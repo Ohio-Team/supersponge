@@ -1,0 +1,44 @@
+[gd_scene load_steps=4 format=3 uid="uid://c0mv303ci8si4"]
+
+[ext_resource type="Texture2D" uid="uid://84nu6b4ix10w" path="res://assets/2d/miscsprites/patrick.png" id="1_bbxeb"]
+
+[sub_resource type="GDScript" id="GDScript_bbxeb"]
+script/source = "extends Area2D
+@export var goto:PackedScene
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+func teleport():
+	if goto:
+		get_tree().change_scene_to_packed(goto)
+
+@export var speed:float = 5
+func _process(delta: float) -> void:
+	rotate(speed * delta)
+
+
+func _on_body_entered(body: Node2D) -> void:
+	if body.is_in_group(\"Player\"):
+		teleport()
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bx0y8"]
+size = Vector2(14.4912, 21.5385)
+
+[node name="Patrick" type="Area2D"]
+script = SubResource("GDScript_bbxeb")
+
+[node name="Patrick2" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(9.53674e-07, 0)
+scale = Vector2(2.625, 2.625)
+texture = ExtResource("1_bbxeb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1.90735e-06)
+scale = Vector2(3.5625, 3.25)
+shape = SubResource("RectangleShape2D_bx0y8")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

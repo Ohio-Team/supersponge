@@ -77,15 +77,16 @@ offset_left = 2.0
 offset_top = 691.0
 offset_right = 314.0
 offset_bottom = 714.0
-text = "Press any key to skip."
+text = "You know if you press that button something MIGHTTTT happen but idk try it on your own if you're curious"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_wofl4")
+&"": SubResource("AnimationLibrary_wofl4")
 }
 autoplay = "subtitles"
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
+visible = false
 offset_left = 298.0
 offset_top = 647.0
 offset_right = 1045.0

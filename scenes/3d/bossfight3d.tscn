@@ -207,7 +207,7 @@ shape = SubResource("BoxShape3D_l3g3g")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="NavigationRegion3D/StaticBody3D"]
 libraries = {
-"": SubResource("AnimationLibrary_1be6s")
+&"": SubResource("AnimationLibrary_1be6s")
 }
 autoplay = "default"
 

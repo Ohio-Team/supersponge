@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://bbrct2r84j0l2"]
+[gd_scene load_steps=31 format=3 uid="uid://bbrct2r84j0l2"]
 
 [ext_resource type="Script" uid="uid://cvi0wxngj2ex7" path="res://scripts/ui.gd" id="1_eaqxp"]
 [ext_resource type="FontFile" uid="uid://ia1v43t7vpqa" path="res://assets/fonts/Krabby Patty.ttf" id="2_0v11p"]
@@ -187,6 +187,116 @@ tracks/0/keys = {
 _data = {
 &"RESET": SubResource("Animation_e130j"),
 &"movement": SubResource("Animation_crie4")
+}
+
+[sub_resource type="Animation" id="Animation_w8mu2"]
+resource_name = "new_animation"
+length = 3.15
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1, 0.333333, 0.566667, 0.8, 1.06667, 1.33333, 1.56667, 1.8, 2.06667, 2.33333, 2.6, 2.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [true, false, true, false, true, false, true, false, true, false, true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../O:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.1, 0.566667, 0.8, 1.06667, 1.33333, 1.56667, 1.8, 2.06667, 2.33333, 2.6, 2.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [false, true, false, true, false, true, false, true, false, true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../U:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.06667, 1.33333, 1.56667, 1.8, 2.06667, 2.33333, 2.6, 2.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [false, true, false, true, false, true, false, true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../N:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1.33333, 1.56667, 1.8, 2.06667, 2.33333, 2.6, 2.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [false, false, true, false, true, false, true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../S:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 2.06667, 2.33333, 2.6, 2.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [false, true, false, true, false]
+}
+
+[sub_resource type="Animation" id="Animation_k178t"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../O:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../U:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_so08m"]
+_data = {
+&"RESET": SubResource("Animation_k178t"),
+&"new_animation": SubResource("Animation_w8mu2")
 }
 
 [node name="UI" type="CanvasLayer"]
@@ -428,6 +538,69 @@ TRICKS x 7
 SAND DOLLARS x 9
 
 CACTI FOUND: 0"
+
+[node name="BounsRoundText" type="Node2D" parent="."]
+
+[node name="B" type="RichTextLabel" parent="BounsRoundText"]
+offset_left = 544.0
+offset_top = 24.0
+offset_right = 808.0
+offset_bottom = 72.0
+theme_override_fonts/normal_font = ExtResource("2_0v11p")
+theme_override_font_sizes/normal_font_size = 38
+text = "B"
+
+[node name="O" type="RichTextLabel" parent="BounsRoundText"]
+offset_left = 568.0
+offset_top = 24.0
+offset_right = 608.0
+offset_bottom = 64.0
+theme_override_fonts/normal_font = ExtResource("2_0v11p")
+theme_override_font_sizes/normal_font_size = 36
+text = "O"
+fit_content = true
+scroll_active = false
+
+[node name="U" type="RichTextLabel" parent="BounsRoundText"]
+offset_left = 592.0
+offset_top = 24.0
+offset_right = 632.0
+offset_bottom = 68.0
+theme_override_fonts/normal_font = ExtResource("2_0v11p")
+theme_override_font_sizes/normal_font_size = 38
+text = "U"
+fit_content = true
+scroll_active = false
+
+[node name="N" type="RichTextLabel" parent="BounsRoundText"]
+visible = false
+offset_left = 616.0
+offset_top = 24.0
+offset_right = 656.0
+offset_bottom = 64.0
+theme_override_fonts/normal_font = ExtResource("2_0v11p")
+theme_override_font_sizes/normal_font_size = 38
+text = "N
+"
+scroll_active = false
+
+[node name="S" type="RichTextLabel" parent="BounsRoundText"]
+visible = false
+offset_left = 640.0
+offset_top = 24.0
+offset_right = 680.0
+offset_bottom = 64.0
+theme_override_fonts/normal_font = ExtResource("2_0v11p")
+theme_override_font_sizes/normal_font_size = 38
+text = "S"
+scroll_active = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BounsRoundText"]
+root_node = NodePath("../B")
+libraries = {
+&"": SubResource("AnimationLibrary_so08m")
+}
+autoplay = "new_animation"
 
 [connection signal="pressed" from="Pause/Button" to="Pause/Button" method="_on_pressed"]
 [connection signal="pressed" from="Pause/Button3" to="Pause/Button3" method="_on_pressed"]

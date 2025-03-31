@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var movement_speed: float = 220.0
+var movement_speed: float = 150.0
 @onready var player:CharacterBody2D = get_tree().get_first_node_in_group("Player")
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var nav_agent := $NavigationAgent2D
@@ -21,7 +21,7 @@ func _process(delta):
 	if dir.y < 0 and is_on_floor():
 		$AnimatedSprite2D.play("jump")
 		BMOD.play_sfx(preload("res://assets/sfx/fakejump.tres"))
-		velocity.y = -430.0
+		velocity.y = -200.0
 
 	move_and_slide()
 	
@@ -30,9 +30,6 @@ func _process(delta):
 			if player.state != "dying" and !player.invincible and player.state != "attack" and player.state != "groundpound":
 				Singleton.health -= 1
 				player.state = "hurt"
-			if player.state == "attack" or player.state == "groundpound":
-				Singleton.do_explosion(position)
-				queue_free()
 	
 	if dir.x < 0:
 		$AnimatedSprite2D.flip_h = true

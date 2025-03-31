@@ -120,7 +120,7 @@ polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(16, -16, 16, 16, -16, 16)])
 agent_radius = 0.0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uo2op"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_edkxy"]
 texture = ExtResource("1_oojjp")
 texture_region_size = Vector2i(32, 32)
 2:1/0 = 0
@@ -198,15 +198,15 @@ texture_region_size = Vector2i(32, 32)
 3:4/0/terrains_peering_bit/top_left_corner = 0
 3:4/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_whinx")
 
-[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_28lrn"]
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_367iu"]
 scenes/1/scene = ExtResource("2_phji4")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ov168"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dm2tu"]
 texture = ExtResource("3_cjk6q")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lrqbb"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tev5s"]
 texture = ExtResource("3_ovshm")
 texture_region_size = Vector2i(32, 32)
 5:3/0 = 0
@@ -250,10 +250,10 @@ terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "Terrain 0"
 terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
 navigation_layer_0/layers = 1
-sources/0 = SubResource("TileSetAtlasSource_uo2op")
-sources/1 = SubResource("TileSetScenesCollectionSource_28lrn")
-sources/2 = SubResource("TileSetAtlasSource_ov168")
-sources/3 = SubResource("TileSetAtlasSource_lrqbb")
+sources/0 = SubResource("TileSetAtlasSource_edkxy")
+sources/1 = SubResource("TileSetScenesCollectionSource_367iu")
+sources/2 = SubResource("TileSetAtlasSource_dm2tu")
+sources/3 = SubResource("TileSetAtlasSource_tev5s")
 
 [sub_resource type="Animation" id="Animation_7c7dy"]
 length = 0.001
@@ -516,7 +516,7 @@ scale = Vector2(1512.63, 17.2538)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_36a6a")
+&"": SubResource("AnimationLibrary_36a6a")
 }
 autoplay = "alarm"
 
@@ -553,10 +553,5 @@ theme_override_font_sizes/normal_font_size = 32
 bbcode_enabled = true
 text = "[center]TIME LEFT:"
 
-[connection signal="body_entered" from="NavigationRegion2D/TileMapLayer/Spatula" to="NavigationRegion2D/TileMapLayer/Spatula" method="_on_body_entered"]
-[connection signal="body_entered" from="NavigationRegion2D/TileMapLayer/@Area2D@32633" to="NavigationRegion2D/TileMapLayer/@Area2D@32633" method="_on_body_entered"]
-[connection signal="body_entered" from="NavigationRegion2D/TileMapLayer/@Area2D@32634" to="NavigationRegion2D/TileMapLayer/@Area2D@32634" method="_on_body_entered"]
-[connection signal="body_entered" from="NavigationRegion2D/TileMapLayer/@Area2D@32635" to="NavigationRegion2D/TileMapLayer/@Area2D@32635" method="_on_body_entered"]
-[connection signal="body_entered" from="NavigationRegion2D/TileMapLayer/@Area2D@32636" to="NavigationRegion2D/TileMapLayer/@Area2D@32636" method="_on_body_entered"]
 [connection signal="body_entered" from="NavalLongGunMg5320/cannon" to="NavalLongGunMg5320/cannon" method="_on_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
