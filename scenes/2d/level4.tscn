@@ -20,7 +20,6 @@ func _ready():
 	Singleton.inmenu = false
 	Singleton.hasgun = false
 	Singleton.save_game()
-	Ui.bounstext.show()
 	Ui._clear_dialog()
 	MusicPlayer.play_song(\"res://assets/music/chase.ogg\")
 	Ui.create_dialog(\"Imma coming\", \"fakebob\")

@@ -23,7 +23,6 @@ func _ready():
 	Singleton.inmenu = false
 	Singleton.hasgun = false
 	Singleton.save_game()
-	Ui.bounstext.show()
 	Ui._clear_dialog()
 	MusicPlayer.play_song(\"res://assets/music/bouns.ogg\")
 	Ui.create_dialog(\"It's time for The Ohio Mix Bouns Round TWO\", \"spongebob\")

@@ -1,7 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://pd2gucc61u3v"]
+[gd_scene load_steps=3 format=3 uid="uid://pd2gucc61u3v"]
 
 [ext_resource type="FontFile" uid="uid://ia1v43t7vpqa" path="res://assets/fonts/Krabby Patty.ttf" id="1_ph6yx"]
-[ext_resource type="AudioStream" uid="uid://7objdnbh53uf" path="res://assets/music/credits.ogg" id="2_6g8vd"]
 
 [sub_resource type="GDScript" id="GDScript_ph6yx"]
 script/source = "extends Node2D
@@ -9,7 +8,7 @@ script/source = "extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	MusicPlayer.stop_song()
+	MusicPlayer.play_song(\"res://assets/music/credits.ogg\")
 	DiscordRPC.details = \"Viewing the Credits... TWO!\"
 	Singleton.gamebeaten = true
 	Singleton.save_game()
@@ -54,9 +53,6 @@ Basically everything: Juan Enchilada
 Graphics: Sweaty cow balls 105
 Minor assistance & OG Engine: Flowcheer
 
-April fools!
-Press any button to return to the title screen."
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_6g8vd")
-autoplay = true
+April fools!
+"
