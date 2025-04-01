@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=16 format=3 uid="uid://1ckg38gigcl0"]
+[gd_resource type="TileSet" load_steps=22 format=3 uid="uid://1ckg38gigcl0"]
 
 [ext_resource type="Texture2D" uid="uid://bo4nxxbehouhb" path="res://assets/2d/fakebob/WoodB04.png" id="1_tfjni"]
 [ext_resource type="Texture2D" uid="uid://cy3y2sjkhfbor" path="res://assets/2d/tilesets/sewers.png" id="2_g1s5c"]
@@ -7,9 +7,10 @@
 [ext_resource type="PackedScene" uid="uid://b86vokonmmvq5" path="res://scenes/2d/spatula.tscn" id="5_h4bmk"]
 [ext_resource type="PackedScene" uid="uid://dwh0654dmbwpw" path="res://scenes/2d/soda.tscn" id="6_xecy7"]
 [ext_resource type="PackedScene" uid="uid://l3hvs2p2sier" path="res://scenes/2d/spongebot.tscn" id="7_1eykj"]
-[ext_resource type="PackedScene" uid="uid://wgwcmaewr6g3" path="res://scenes/2d/pipe.tscn" id="8_1fsp6"]
-[ext_resource type="PackedScene" uid="uid://sjqyue4epbwp" path="res://scenes/2d/wood_bridge.tscn" id="9_b4i4y"]
+[ext_resource type="Texture2D" uid="uid://4cfqg5hd1hqp" path="res://assets/2d/miscsprites/pipe.png" id="8_g1s5c"]
+[ext_resource type="AudioStream" uid="uid://dmckilo36yjmw" path="res://assets/sfx/pipe.mp3" id="9_3cvt6"]
 [ext_resource type="PackedScene" uid="uid://dolf5os2imxdu" path="res://scenes/2d/crazyfish.tscn" id="10_sr6cx"]
+[ext_resource type="Script" uid="uid://clgtf0n1mc7uo" path="res://scripts/wood_bridge.gd" id="10_vc437"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6vnxm"]
 texture = ExtResource("1_tfjni")
@@ -127,12 +128,61 @@ texture = ExtResource("4_vc437")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 
+[sub_resource type="GDScript" id="GDScript_gdv6f"]
+script/source = "extends RigidBody2D
+
+
+
+func _on_body_entered(body: Node) -> void:
+	$AudioStreamPlayer2D.play()
+
+
+func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
+	queue_free()
+
+
+func _on_timer_timeout() -> void:
+	queue_free()
+"
+
+[sub_resource type="PackedScene" id="PackedScene_okp28"]
+_bundled = {
+"conn_count": 3,
+"conns": PackedInt32Array(1073741830, 1073741829, 27, 26, 2, 0, 0, 1073741832, 1073741831, 29, 28, 2, 0, 0, 1073741834, 1073741833, 31, 30, 2, 0, 0),
+"editable_instances": [],
+"names": PackedStringArray("Pipe", "RigidBody2D", "input_pickable", "mass", "center_of_mass_mode", "center_of_mass", "contact_monitor", "max_contacts_reported", "script", "Pipe", "Sprite2D", "texture_filter", "texture", "CollisionPolygon2D", "CollisionPolygon2D", "polygon", "AudioStreamPlayer2D", "AudioStreamPlayer2D", "stream", "bus", "VisibleOnScreenNotifier2D", "VisibleOnScreenNotifier2D", "Timer", "Timer", "wait_time", "autostart", "_on_body_entered", "body_entered", "_on_visible_on_screen_notifier_2d_screen_exited", "screen_exited", "_on_timer_timeout", "timeout"),
+"node_count": 6,
+"node_paths": [NodePath("."), NodePath("."), NodePath("."), NodePath("."), NodePath("."), NodePath("."), NodePath("."), NodePath("."), NodePath("VisibleOnScreenNotifier2D"), NodePath("."), NodePath("Timer")],
+"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 7, 2, 0, 3, 1, 4, 2, 5, 3, 6, 4, 7, 5, 8, 6, 0, 1073741824, 0, 10, 9, -1, 2, 11, 7, 12, 8, 0, 1073741825, 0, 14, 13, -1, 1, 15, 9, 0, 1073741826, 0, 17, 16, -1, 2, 18, 10, 19, 11, 0, 1073741827, 0, 21, 20, -1, 0, 0, 1073741828, 0, 23, 22, -1, 2, 24, 12, 25, 13, 0),
+"variants": [true, 5.0, 1, Vector2(10, 0), true, 5061, SubResource("GDScript_gdv6f"), 1, ExtResource("8_g1s5c"), PackedVector2Array(-9, 29, 0, 32, 0, -16, 13, -16, 16, -22, -7, -20), ExtResource("9_3cvt6"), &"SFX", 3.0, true],
+"version": 3
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lw4po"]
+size = Vector2(180, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wq1nf"]
+size = Vector2(182, 29)
+
+[sub_resource type="PackedScene" id="PackedScene_mbjl4"]
+_bundled = {
+"conn_count": 1,
+"conns": PackedInt32Array(1073741829, 1073741828, 22, 21, 2, 0, 0),
+"editable_instances": [],
+"names": PackedStringArray("Wood bridge", "StaticBody2D", "script", "WoodB04", "Sprite2D", "texture_repeat", "position", "scale", "texture", "CollisionShape2D", "CollisionShape2D", "position", "shape", "one_way_collision", "hit", "Area2D", "CollisionShape2D", "CollisionShape2D", "position", "shape", "one_way_collision", "_on_hit_body_entered", "body_entered"),
+"node_count": 5,
+"node_paths": [NodePath("."), NodePath("."), NodePath("."), NodePath("./hit"), NodePath("."), NodePath("hit")],
+"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 1, 2, 0, 0, 1073741824, 0, 4, 3, -1, 4, 5, 1, 6, 2, 7, 3, 8, 4, 0, 1073741825, 0, 10, 9, -1, 3, 11, 5, 12, 6, 13, 7, 0, 1073741826, 0, 15, 14, -1, 0, 0, 1073741827, 0, 17, 16, -1, 3, 18, 8, 19, 9, 20, 10, 0),
+"variants": [ExtResource("10_vc437"), 2, Vector2(74, 0), Vector2(5.625, 1), ExtResource("1_tfjni"), Vector2(74, 0), SubResource("RectangleShape2D_lw4po"), true, Vector2(74, -2.5), SubResource("RectangleShape2D_wq1nf"), true],
+"version": 3
+}
+
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_3kmiv"]
 scenes/1/scene = ExtResource("5_h4bmk")
 scenes/2/scene = ExtResource("6_xecy7")
 scenes/3/scene = ExtResource("7_1eykj")
-scenes/4/scene = ExtResource("8_1fsp6")
-scenes/5/scene = ExtResource("9_b4i4y")
+scenes/4/scene = SubResource("PackedScene_okp28")
+scenes/5/scene = SubResource("PackedScene_mbjl4")
 scenes/6/scene = ExtResource("10_sr6cx")
 
 [resource]

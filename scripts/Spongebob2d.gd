@@ -41,8 +41,6 @@ func inputs(direction, delta):
 				state = "idle"
 				anim.play("idle")
 				$CollisionShape2D.shape.size = Vector2(12,30)
-			else:
-				generate_bullet()
 	# Handle jump.
 		if Input.is_action_just_pressed("jump"):
 			if state != "hurt" and state != "dying":
@@ -120,18 +118,6 @@ func _physics_process(delta):
 	move_and_slide()
 	if was_on_floor and not is_on_floor():
 		$Coyote.start()
-func generate_bullet():
-	var direction:int
-	if $AnimatedSprite2D.flip_h:
-		direction = -1
-	else:
-		direction = 1
-	var bullet = preload("res://scenes/2d/bullet.tscn")
-	var new_node = bullet.instantiate()
-	new_node.direction.x = direction
-	new_node.position.x = position.x + 40 * direction
-	new_node.position.y = position.y - 20
-	get_tree().current_scene.add_child(new_node)
 
 
 func _on_timer_timeout() -> void:

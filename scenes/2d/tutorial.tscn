@@ -28,8 +28,6 @@ func _ready() -> void:
 	Ui._clear_dialog()
 	MusicPlayer.play_song(\"res://assets/music/tutorial.ogg\")
 	Ui.create_dialog(\"Time to walk boy\",\"sandy\")
-	DiscordRPC.details = \"In the Tutorial\"
-	DiscordRPC.refresh()
 "
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_01xcf"]

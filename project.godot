@@ -41,7 +41,6 @@ window/size/viewport_width=1280
 window/size/viewport_height=720
 window/subwindows/embed_subwindows=false
 window/stretch/mode="canvas_items"
-window/stretch/aspect="ignore"
 window/per_pixel_transparency/allowed=true
 mouse_cursor/custom_image="res://assets/2d/miscsprites/cursor.png"
 
@@ -58,7 +57,6 @@ enabled=PackedStringArray("res://addons/YATI/plugin.cfg", "res://addons/bmod/plu
 
 folder_colors={
 "res://assets/2d/": "yellow",
-"res://assets/3d/": "green",
 "res://assets/fonts/": "red",
 "res://assets/music/": "pink"
 }

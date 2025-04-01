@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cmyynlgpadcm4"]
+[gd_scene load_steps=18 format=3 uid="uid://cuf8755vhfhfn"]
 
 [ext_resource type="Script" uid="uid://4e4h1g7lqlwr" path="res://scripts/2dtest.gd" id="1_ltid3"]
 [ext_resource type="Texture2D" uid="uid://cmgy4wfwn623l" path="res://assets/2d/miscsprites/downtown.png" id="1_lx2ql"]
