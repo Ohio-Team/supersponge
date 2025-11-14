@@ -1,6 +1,6 @@
 [gd_scene load_steps=15 format=3 uid="uid://g0n7avqcnmv3"]
 
-[ext_resource type="Script" path="res://scenes/2d/sussyohio.gd" id="1_8efvl"]
+[ext_resource type="Script" uid="uid://5jxv5n7f5hnx" path="res://scenes/2d/sussyohio.gd" id="1_8efvl"]
 [ext_resource type="PackedScene" uid="uid://ijj6qbkx8vhd" path="res://scenes/2d/platform.tscn" id="1_24mg1"]
 [ext_resource type="PackedScene" uid="uid://cjoo6ilm8eim1" path="res://scenes/2d/spongebob2d.tscn" id="2_1wi20"]
 [ext_resource type="Texture2D" uid="uid://byooo02dyr3q5" path="res://assets/2d/miscsprites/box.png" id="4_315sj"]
@@ -21,6 +21,12 @@ script = ExtResource("1_8efvl")
 
 [node name="Spongebob" parent="." instance=ExtResource("2_1wi20")]
 position = Vector2(3560, 592)
+
+[node name="Camera2D" parent="Spongebob" index="2"]
+limit_left = 2
+limit_top = 220
+limit_right = 3676
+limit_bottom = 687
 
 [node name="Collisions" type="Node" parent="."]
 
@@ -130,3 +136,5 @@ position = Vector2(312, 288)
 position = Vector2(-24, 400)
 rotation = -1.56883
 scale = Vector2(-40.1032, -2.90324)
+
+[editable path="Spongebob"]

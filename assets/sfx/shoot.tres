@@ -1,19 +1,14 @@
 [gd_resource type="Resource" script_class="SingleSoundEffect" load_steps=5 format=3 uid="uid://cqxibashbw72y"]
 
-[ext_resource type="Script" path="res://addons/bmod/scripts/resources/single_sound_effect.gd" id="1_d15d3"]
+[ext_resource type="Script" uid="uid://colj2lcmuqpi1" path="res://addons/bmod/scripts/resources/single_sound_effect.gd" id="1_d15d3"]
 [ext_resource type="AudioStream" uid="uid://bn0vdh4tyafo0" path="res://assets/sfx/shoot.mp3" id="1_lrwsx"]
-[ext_resource type="Script" path="res://addons/bmod/scripts/resources/sound_effect_meta.gd" id="2_t3a4s"]
+[ext_resource type="Script" uid="uid://c86jdqi3fbjqa" path="res://addons/bmod/scripts/resources/sound_effect_meta.gd" id="2_t3a4s"]
 
 [sub_resource type="Resource" id="Resource_yibp4"]
 script = ExtResource("2_t3a4s")
 volume_db = -5.0
-volume_variation_db = 0.0
-pitch_scale = 1.0
-pitch_variation = 0.0
 
 [resource]
 script = ExtResource("1_d15d3")
 audio_stream = ExtResource("1_lrwsx")
 meta = SubResource("Resource_yibp4")
-play = false
-play_on_change = false

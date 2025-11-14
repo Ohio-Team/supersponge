@@ -1,6 +1,6 @@
 [gd_scene load_steps=25 format=3 uid="uid://wqoqonv86j4"]
 
-[ext_resource type="Script" path="res://scripts/level1.gd" id="1_huh3m"]
+[ext_resource type="Script" uid="uid://bjb3sy3fjs2tw" path="res://scripts/level1.gd" id="1_huh3m"]
 [ext_resource type="Texture2D" uid="uid://fpk8y04uovju" path="res://assets/2d/miscsprites/busses.png" id="2_gkx4r"]
 [ext_resource type="Texture2D" uid="uid://cmgy4wfwn623l" path="res://assets/2d/miscsprites/downtown.png" id="2_jdhyg"]
 [ext_resource type="Texture2D" uid="uid://gem74ss1rpyt" path="res://assets/2d/miscsprites/townbg1.png" id="3_3ismf"]
@@ -404,6 +404,13 @@ texture = ExtResource("22_oai0f")
 [node name="Spongebob" parent="." instance=ExtResource("10_g8oo3")]
 position = Vector2(192, 589)
 
+[node name="Camera2D" parent="Spongebob" index="2"]
+limit_left = 0
+limit_top = 350
+limit_right = 4799
+limit_bottom = 697
+drag_vertical_enabled = false
+
 [node name="Sprite2D2" type="Sprite2D" parent="."]
 texture_filter = 1
 position = Vector2(-277, 589)
@@ -421,3 +428,5 @@ texture_filter = 1
 position = Vector2(6208, 590)
 scale = Vector2(0.88, 0.785385)
 texture = ExtResource("21_087qa")
+
+[editable path="Spongebob"]
