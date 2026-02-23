@@ -8,6 +8,10 @@
 
 config_version=5
 
+[animation]
+
+compatibility/default_parent_skeleton_in_mesh_instance_3d=true
+
 [application]
 
 config/name="SpongeBob SquarePants: SuperSponge - The Ohio Mix"
@@ -15,7 +19,7 @@ config/version="1.0.2"
 run/main_scene="res://scenes/splashscreen.tscn"
 config/use_custom_user_dir=true
 config/custom_user_dir_name="ohio"
-config/features=PackedStringArray("4.5", "Forward Plus")
+config/features=PackedStringArray("4.6", "Forward Plus")
 run/max_fps=60
 boot_splash/bg_color=Color(0, 0, 0, 1)
 boot_splash/show_image=false
@@ -24,6 +28,7 @@ config/icon="res://icon.png"
 
 [audio]
 
+buses/default_bus_layout="uid://ik4ut7k64676"
 bmod/default_sfx_bus=&"SFX"
 
 [autoload]
@@ -31,7 +36,7 @@ bmod/default_sfx_bus=&"SFX"
 MusicPlayer="*res://scenes/MusicPlayer.tscn"
 Ui="*res://scenes/2d/ui.tscn"
 Singleton="*res://scripts/singleton.gd"
-BMOD="*res://addons/bmod/autoloads/bmod/bmod.tscn"
+BMOD="*uid://covgjw36o2prd"
 DiscordRPCLoader="*res://addons/discord-rpc-gd/nodes/discord_autoload.gd"
 DiscordRpcHandler="*res://scenes/discord_rpc_handler.tscn"
 
@@ -40,8 +45,6 @@ DiscordRpcHandler="*res://scenes/discord_rpc_handler.tscn"
 window/size/viewport_width=1280
 window/size/viewport_height=720
 window/subwindows/embed_subwindows=false
-window/stretch/mode="canvas_items"
-window/stretch/aspect="ignore"
 window/per_pixel_transparency/allowed=true
 mouse_cursor/custom_image="res://assets/2d/miscsprites/cursor.png"
 

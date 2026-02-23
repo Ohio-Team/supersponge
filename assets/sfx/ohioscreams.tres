@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="MultiSoundEffect" load_steps=9 format=3 uid="uid://snxk3icp43jq"]
+[gd_resource type="Resource" script_class="MultiSoundEffect" format=3 uid="uid://snxk3icp43jq"]
 
 [ext_resource type="Script" uid="uid://11hrmk3wbrc7" path="res://addons/bmod/scripts/resources/multi_sound_effect_item.gd" id="1_6agci"]
 [ext_resource type="AudioStream" uid="uid://bo04wrreqiuja" path="res://assets/sfx/ohiominion1.ogg" id="2_4ujvl"]

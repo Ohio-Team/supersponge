@@ -1,4 +1,4 @@
-extends Node2D
+extends Control
 
 @export var after_cutscene:PackedScene
 @onready var ptime:float = 0.0

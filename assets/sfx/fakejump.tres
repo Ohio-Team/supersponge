@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="SingleSoundEffect" load_steps=5 format=3 uid="uid://drrfe5rivxckw"]
+[gd_resource type="Resource" script_class="SingleSoundEffect" format=3 uid="uid://drrfe5rivxckw"]
 
 [ext_resource type="AudioStream" uid="uid://b31ewgadheert" path="res://assets/sfx/fakejump.wav" id="1_40djb"]
 [ext_resource type="Script" uid="uid://c86jdqi3fbjqa" path="res://addons/bmod/scripts/resources/sound_effect_meta.gd" id="2_g4q31"]

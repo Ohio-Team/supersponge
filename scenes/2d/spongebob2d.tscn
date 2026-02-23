@@ -1,6 +1,6 @@
-[gd_scene load_steps=95 format=3 uid="uid://cjoo6ilm8eim1"]
+[gd_scene format=3 uid="uid://cjoo6ilm8eim1"]
 
-[ext_resource type="Script" path="res://scripts/Spongebob2d.gd" id="1_uyiiv"]
+[ext_resource type="Script" uid="uid://cdxmas75sepll" path="res://scripts/Spongebob2d.gd" id="1_uyiiv"]
 [ext_resource type="Texture2D" uid="uid://d32l5bmmvw7gn" path="res://assets/2d/spongebobby/119.png" id="2_45efo"]
 [ext_resource type="Texture2D" uid="uid://do4r7mqil01ed" path="res://assets/2d/spongebobby/4.png" id="2_m3j58"]
 [ext_resource type="Texture2D" uid="uid://crgpccsuefkuo" path="res://assets/2d/spongebobby/82.png" id="2_mcd8j"]
@@ -484,28 +484,28 @@ streams_count = 2
 stream_0/stream = ExtResource("89_q1v5j")
 stream_1/stream = ExtResource("90_yxlbk")
 
-[node name="Spongebob" type="CharacterBody2D" groups=["Player"]]
+[node name="Spongebob" type="CharacterBody2D" unique_id=447066978 groups=["Player"]]
 input_pickable = true
 floor_max_angle = 1.0472
 platform_on_leave = 1
 script = ExtResource("1_uyiiv")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1048682389]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_u32rl")
 animation = &"run"
 autoplay = "idle"
-frame_progress = 0.0116223
+frame_progress = 0.40487272
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1514512648]
 shape = SubResource("RectangleShape2D_putow")
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1462520599]
 material = SubResource("ShaderMaterial_2240q")
 position = Vector2(64, 0)
-zoom = Vector2(3, 3)
+zoom = Vector2(2.8, 2.8)
 position_smoothing_enabled = true
-position_smoothing_speed = 50.0
+position_smoothing_speed = 45.0
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
 drag_left_margin = 0.1
@@ -513,19 +513,19 @@ drag_top_margin = 1.0
 editor_draw_limits = true
 editor_draw_drag_margin = true
 
-[node name="Invincibility" type="Timer" parent="."]
+[node name="Invincibility" type="Timer" parent="." unique_id=221250125]
 wait_time = 2.0
 one_shot = true
 
-[node name="Coyote" type="Timer" parent="."]
+[node name="Coyote" type="Timer" parent="." unique_id=1276614655]
 wait_time = 0.1
 one_shot = true
 
-[node name="Walk" type="AudioStreamPlayer" parent="."]
+[node name="Walk" type="AudioStreamPlayer" parent="." unique_id=287670454]
 stream = SubResource("AudioStreamRandomizer_0wdnk")
 bus = &"SFX"
 
-[node name="Attack" type="AudioStreamPlayer" parent="."]
+[node name="Attack" type="AudioStreamPlayer" parent="." unique_id=1892680417]
 stream = ExtResource("90_pssb3")
 bus = &"SFX"
 

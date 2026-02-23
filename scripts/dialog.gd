@@ -21,6 +21,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	$ColorRect/RichTextLabel.full_text = full_text
+	$ColorRect/RichTextLabel.text = full_text
 	if $ColorRect/RichTextLabel.finishedtext == true:
 		await Singleton.wait(3)
 		finished_dialog.emit()

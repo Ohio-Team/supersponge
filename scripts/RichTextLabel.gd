@@ -18,9 +18,8 @@ func _process(delta):
 	_update_text()
 
 func _update_text():
-	if current_index < full_text.length():
-		text += full_text[current_index]
-		current_index += 1
+	if visible_characters < full_text.length():
+		visible_characters += 1
 		if !$"../../AudioStreamPlayer".playing: 
 			$"../../AudioStreamPlayer".play()
 	else:

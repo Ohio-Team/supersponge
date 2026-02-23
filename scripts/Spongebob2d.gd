@@ -103,7 +103,7 @@ func _physics_process(delta):
 	if direction and anim.animation != "hurt" and anim.animation != "turn" and anim.animation != "attack" and state != "dying":
 		velocity.x = direction * SPEED * acceleration
 		$AnimatedSprite2D.speed_scale = acceleration
-		acceleration = lerpf(acceleration, 1, delta * 3)
+		acceleration = lerpf(acceleration, 1, delta * 10)
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED / 2)
 		$AnimatedSprite2D.speed_scale = 1
